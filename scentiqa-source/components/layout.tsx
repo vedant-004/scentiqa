@@ -249,7 +249,7 @@ export function MobileBottomNav() {
 /* ---------- Footer ---------- */
 export function Footer({ stats }: { stats: { perfumes: number; houses: number; reviews: number; members: number } }) {
   const cols: Array<{ h: string; links: Array<[string, string]> }> = [
-    { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['Compare', '/compare'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['Recommendations', '/finder']] },
+    { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['Compare', '/compare'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Recommendations', '/finder']] },
     { h: 'Community', links: [['Forum', '/forum'], ['Awards 2026', '/awards/2026'], ['Giveaways', '/giveaways'], ['News', '/news'], ['Member spotlight', '/member/arjun_sniffs']] },
     { h: 'Trust', links: [['Our methodology', '/methodology'], ['Climate protocol', '/climate-protocol'], ['Trust charter', '/trust-charter'], ['Spot fakes', '/fake-guide'], ['About', '/about']] },
     { h: 'Company', links: [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy'], ['Log in', '/login']] },
