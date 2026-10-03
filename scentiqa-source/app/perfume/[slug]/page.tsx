@@ -13,6 +13,7 @@ import {
   MeterVote, PriceAlertButton, ReportPriceButton, ReviewModal, SentimentVote,
   StickyCTA, SuggestDupe, WardrobeButtons,
 } from './perfume-client';
+import { AIPredictions } from './ai-predictions';
 
 export async function generateStaticParams() {
   const slugs = await getAllPerfumeSlugs();
@@ -117,6 +118,9 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             <Card className="p-6"><h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-stone-400">Notes</h3><NotePyramid top={p.topNotes} heart={p.heartNotes} base={p.baseNotes} /></Card>
             <p className="mt-4 text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">{p.description}</p>
           </section>
+
+          {/* ===== 2b. AI PREDICTIONS ===== */}
+          <AIPredictions perfumeId={p.id} concentration={p.concentration} />
 
           {/* ===== 3. CLIMATE PANEL ===== */}
           {p.climate && (
