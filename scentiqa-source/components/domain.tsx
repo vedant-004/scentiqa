@@ -185,23 +185,77 @@ export function NotePyramid({ top, heart, base }: { top: string[]; heart: string
   );
 }
 
-/* ---------- BottleVisual: gallery-style CSS bottle ---------- */
+/* ---------- BottleVisual: premium CSS bottle with brand-specific styling ---------- */
+const BRAND_STYLES: Record<string, { bottle: string; liquid: string; cap: string; accent: string; label: string }> = {
+  'chanel': { bottle: 'from-slate-100/95 via-slate-200/80 to-slate-300/70', liquid: 'from-amber-100/40 to-amber-200/30', cap: 'from-stone-800 to-stone-900', accent: 'bg-stone-900', label: 'text-stone-900' },
+  'dior': { bottle: 'from-slate-200/90 via-blue-100/70 to-slate-300/60', liquid: 'from-blue-200/50 to-slate-300/40', cap: 'from-slate-300 to-slate-400', accent: 'bg-slate-700', label: 'text-slate-800' },
+  'versace': { bottle: 'from-amber-100/95 via-yellow-200/80 to-amber-300/70', liquid: 'from-yellow-300/60 to-amber-400/50', cap: 'from-yellow-600 to-yellow-700', accent: 'bg-yellow-700', label: 'text-yellow-900' },
+  'armani': { bottle: 'from-stone-200/90 via-stone-300/70 to-stone-400/60', liquid: 'from-stone-300/40 to-stone-400/30', cap: 'from-stone-700 to-stone-800', accent: 'bg-stone-800', label: 'text-stone-800' },
+  'gucci': { bottle: 'from-emerald-100/90 via-green-200/70 to-emerald-300/60', liquid: 'from-green-200/50 to-emerald-300/40', cap: 'from-amber-700 to-amber-800', accent: 'bg-emerald-800', label: 'text-emerald-900' },
+  'tom ford': { bottle: 'from-stone-800/95 via-stone-900/90 to-black/90', liquid: 'from-amber-900/60 to-stone-900/50', cap: 'from-stone-900 to-black', accent: 'bg-amber-600', label: 'text-amber-100' },
+  'creed': { bottle: 'from-slate-100/95 via-white/90 to-slate-200/80', liquid: 'from-yellow-100/50 to-amber-200/40', cap: 'from-slate-400 to-slate-500', accent: 'bg-slate-800', label: 'text-slate-900' },
+  'yves saint laurent': { bottle: 'from-blue-900/95 via-indigo-900/90 to-slate-900/90', liquid: 'from-blue-800/60 to-indigo-900/50', cap: 'from-slate-700 to-slate-800', accent: 'bg-blue-600', label: 'text-blue-100' },
+  'paco rabanne': { bottle: 'from-yellow-200/95 via-amber-300/90 to-yellow-400/80', liquid: 'from-amber-300/70 to-yellow-500/60', cap: 'from-yellow-500 to-yellow-600', accent: 'bg-yellow-600', label: 'text-yellow-900' },
+  'hugo boss': { bottle: 'from-slate-300/90 via-slate-400/80 to-slate-500/70', liquid: 'from-slate-400/50 to-slate-500/40', cap: 'from-slate-600 to-slate-700', accent: 'bg-slate-700', label: 'text-slate-800' },
+  'calvin klein': { bottle: 'from-slate-100/90 via-white/80 to-slate-200/70', liquid: 'from-slate-200/40 to-white/30', cap: 'from-slate-300 to-slate-400', accent: 'bg-slate-500', label: 'text-slate-700' },
+  'dolce': { bottle: 'from-rose-100/95 via-pink-200/80 to-rose-300/70', liquid: 'from-pink-200/60 to-rose-300/50', cap: 'from-rose-400 to-rose-500', accent: 'bg-rose-600', label: 'text-rose-900' },
+  'default': { bottle: 'from-amber-100/90 via-amber-200/70 to-amber-300/60', liquid: 'from-amber-200/50 to-amber-300/40', cap: 'from-stone-400 to-stone-500', accent: 'bg-amber-700', label: 'text-amber-900' },
+};
+
+function getBrandStyle(house: string) {
+  const h = house.toLowerCase();
+  for (const [key, style] of Object.entries(BRAND_STYLES)) {
+    if (key !== 'default' && h.includes(key)) return style;
+  }
+  return BRAND_STYLES['default'];
+}
+
 export function BottleVisual({ name, house, size = 'md' }: { name: string; house: string; size?: 'sm' | 'md' | 'lg' }) {
   const dims = { sm: 'h-36 w-28', md: 'h-64 w-48', lg: 'h-80 w-60' }[size];
+  const style = getBrandStyle(house);
   const initials = name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+  const displayName = name.length > 20 ? name.substring(0, 20) + '...' : name;
+
   return (
-    <div className={cn('relative flex items-center justify-center', dims)} aria-hidden="true">
-      <div className="absolute inset-x-6 bottom-2 top-10 rounded-[28px] bg-gradient-to-br from-gold-300/50 via-gold-500/25 to-stone-900/30 blur-2xl animate-glow-pulse" />
-      <div className="relative flex h-full w-3/4 flex-col items-center">
-        <div className="h-[12%] w-[26%] rounded-t-lg bg-gradient-to-b from-stone-300 to-stone-400 dark:from-stone-500 dark:to-stone-600 shadow-card" />
-        <div className="h-[6%] w-[16%] bg-stone-400/80 dark:bg-stone-500/80" />
-        <div className="relative flex w-full flex-1 flex-col items-center justify-center overflow-hidden rounded-[22px] border border-white/40 bg-gradient-to-br from-amber-100/90 via-amber-200/60 to-amber-400/50 shadow-lift backdrop-blur dark:from-amber-900/60 dark:via-amber-800/40 dark:to-stone-800/60">
-          <div className="absolute inset-y-0 left-3 w-4 rounded-full bg-white/50 blur-[6px] dark:bg-white/15" />
-          <span className="font-display text-3xl font-bold text-stone-800/80 dark:text-amber-100/80">{initials}</span>
-          <span className="mt-2 max-w-[85%] truncate px-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-600 dark:text-stone-300">{house}</span>
+    <div className={cn('relative flex items-center justify-center overflow-hidden rounded-2xl', dims)} aria-hidden="true">
+      {/* Premium backdrop with radial glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-stone-100 via-stone-200 to-stone-300 dark:from-stone-900 dark:via-stone-800 dark:to-black" />
+      <div className={cn('absolute inset-x-8 bottom-4 top-8 rounded-full blur-3xl opacity-40', style.accent)} />
+
+      {/* Bottle */}
+      <div className="relative flex h-[85%] w-[62%] flex-col items-center">
+        {/* Cap */}
+        <div className={cn('h-[14%] w-[32%] rounded-t-xl bg-gradient-to-b shadow-lg', style.cap)}>
+          <div className="h-full w-full rounded-t-xl bg-gradient-to-r from-transparent via-white/30 to-transparent" />
         </div>
-        <div className="mt-1 h-[4%] w-[110%] rounded-full bg-stone-900/20 blur-md dark:bg-black/50" />
+        {/* Neck */}
+        <div className="h-[5%] w-[20%] bg-gradient-to-b from-stone-300/90 to-stone-400/70 dark:from-stone-600 dark:to-stone-700" />
+
+        {/* Bottle body with liquid */}
+        <div className={cn('relative flex w-full flex-1 flex-col items-center justify-center overflow-hidden rounded-[18px] border border-white/50 bg-gradient-to-br shadow-2xl backdrop-blur-sm', style.bottle)}>
+          {/* Liquid fill */}
+          <div className={cn('absolute inset-x-0 bottom-0 top-[35%] bg-gradient-to-t opacity-80', style.liquid)} />
+
+          {/* Glass reflections */}
+          <div className="absolute inset-y-2 left-2 w-3 rounded-full bg-white/60 blur-[4px] dark:bg-white/20" />
+          <div className="absolute inset-y-4 right-3 w-1.5 rounded-full bg-white/40 blur-[3px] dark:bg-white/10" />
+
+          {/* Label */}
+          <div className="relative z-10 flex flex-col items-center px-3">
+            <div className={cn('mb-1 h-0.5 w-8 rounded-full', style.accent)} />
+            <span className={cn('font-display text-2xl font-bold tracking-tight', style.label)}>{initials}</span>
+            <span className={cn('mt-1 max-w-full truncate text-center text-[9px] font-bold uppercase tracking-[0.2em]', style.label)}>{house}</span>
+            <span className={cn('mt-0.5 max-w-full truncate text-center text-[8px] font-medium uppercase tracking-[0.15em] opacity-70', style.label)}>{displayName}</span>
+            <div className={cn('mt-1 h-0.5 w-8 rounded-full', style.accent)} />
+          </div>
+        </div>
+
+        {/* Shadow */}
+        <div className="mt-1 h-[3%] w-[95%] rounded-full bg-black/25 blur-md dark:bg-black/60" />
       </div>
+
+      {/* Subtle vignette */}
+      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10 dark:ring-white/10" />
     </div>
   );
 }
