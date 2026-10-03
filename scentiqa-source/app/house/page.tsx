@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllHouses } from '@/lib/data';
+import { getAllHouseSlugs, getHouse } from '@/lib/data';
 import { SectionHeading } from '@/components/ui';
 import { HouseCard } from '@/components';
 import { Breadcrumbs } from '@/components';
@@ -10,14 +10,15 @@ export const metadata = {
 };
 
 export default async function HousesPage() {
-  const houses = await getAllHouses();
+  const slugs = await getAllHouseSlugs();
+  const houses = (await Promise.all(slugs.map((s) => getHouse(s)))).filter(Boolean) as Array<NonNullable<Awaited<ReturnType<typeof getHouse>>>>;
 
   // Group by type
-  const byType = houses.reduce((acc, h) => {
+  const byType = houses.reduce((acc: Record<string, typeof houses>, h) => {
     if (!acc[h.type]) acc[h.type] = [];
     acc[h.type].push(h);
     return acc;
-  }, {} as Record<string, typeof houses>);
+  }, {});
 
   const typeOrder = ['indian_clone', 'designer', 'niche', 'middle_eastern', 'attar_maker', 'artisan', 'mass'];
   const typeLabels: Record<string, string> = {

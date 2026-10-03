@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getPerfumesByHouse } from '@/lib/data';
+import { getHouse } from '@/lib/data';
 import { SectionHeading } from '@/components/ui';
 import { Breadcrumbs, PerfumeCard } from '@/components';
 
@@ -9,11 +9,11 @@ export const metadata = {
 };
 
 export default async function HiddenGemsPage() {
-  // Get My Perfume Secrets perfumes
-  const mpsPerfumes = await getPerfumesByHouse('my-perfume-secrets');
+  // Get My Perfume Secrets house
+  const mps = await getHouse('my-perfume-secrets');
   
   // Select hidden gems (high quality, less known)
-  const hiddenGems = mpsPerfumes.slice(0, 12);
+  const hiddenGems = (mps?.perfumes || []).slice(0, 12);
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
@@ -39,7 +39,7 @@ export default async function HiddenGemsPage() {
 
       <h2 className="mb-4 font-display text-2xl font-bold">This Season's Hidden Gems</h2>
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {hiddenGems.map((p) => (
+        {hiddenGems.map((p: any) => (
           <div key={p.slug} className="relative">
             <span className="absolute left-2.5 top-2.5 z-10 rounded-full bg-violet-600/90 px-2 py-0.5 text-[11px] font-bold text-white">
               💎 Gem
