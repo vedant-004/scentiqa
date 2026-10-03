@@ -1,0 +1,3354 @@
+{
+ "site": "Celestial Perfume",
+ "url": "https://celestialperfume.in/",
+ "observedAt": "2026-10-02",
+ "notes": "Shopify store. 105 unique products scraped; 27 Tejasswi -copy duplicate listings excluded; Rs.199 empty gift box excluded. Prices from product JSON (sale + compare-at MRP). Availability from product JSON available flags (inventory not tracked). Note pyramids from brand page descriptions where present.",
+ "products": [
+  {
+   "name": "Allure Homme Sport",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-acqua-di-gio-pr0fumo-copy-2",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Chanel Allure Homme Sport",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Orange",
+    "Sea Notes",
+    "Aldehydes",
+    "Blood Mandarin"
+   ],
+   "notesHeart": [
+    "Pepper",
+    "Neroli",
+    "Cedar"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Tonka Bean",
+    "White Musk",
+    "Amber",
+    "Vetiver",
+    "\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Ultra Male",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-je-n-p-ul-g-ultier-ultra-m-le",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Jean Paul Gaultier Ultra Male",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Hawas Pour Homme",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-r-s-si-h-wµs-p0µr-h0mu-perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Rasasi Hawas",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Bergamot",
+    "Apple",
+    "Cinnamon",
+    "Lemon"
+   ],
+   "notesHeart": [
+    "Watery Notes",
+    "Plum",
+    "Orange Blossom",
+    "Cardamon"
+   ],
+   "notesBase": [
+    "Ambergris",
+    "Musk",
+    "Driftwood",
+    "Patchouli"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Khamrah",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-r-s-si-h-wµs-p0µr-h0mu-perfume-copy",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Lattafa Khamrah",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Cinnamon",
+    "Nutmeg",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Dates",
+    "Praline",
+    "Tuberose",
+    "Mahonial"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Tonka Bean",
+    "Amberwood",
+    "Myrrh",
+    "Benzoin",
+    "Akigalawood\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Wisal Dhahab",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-l-tt-fa-kh-mrah-perfume-copy",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Ajmal Wisal Dhahab",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Pear",
+    "Apple",
+    "Peach",
+    "Grapefruit",
+    "Mandarin Orange"
+   ],
+   "notesHeart": [
+    "Rose",
+    "Orchid",
+    "Jasmine",
+    "Geranium"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Musk",
+    "Patchouli",
+    "Cedar"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Dylan Blue",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-jm-l-wis-l-dh-h-b-perfume-copy",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Versace Dylan Blue",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Calabrian bergamot",
+    "Water Notes",
+    "Grapefruit",
+    "Fig Leaf"
+   ],
+   "notesHeart": [
+    "Ambroxan",
+    "Black Pepper",
+    "Patchouli",
+    "Violet Leaf",
+    "Papyrus"
+   ],
+   "notesBase": [
+    "Incense",
+    "Musk",
+    "Tonka Bean",
+    "Saffron"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "J'adore",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-di0r-j-dore-perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Dior J'adore",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Pear",
+    "Melon",
+    "Magnolia",
+    "Peach",
+    "Mandarin Orange",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Lily-of-the-Valley",
+    "Tuberose",
+    "Freesia",
+    "Rose",
+    "Orchid",
+    "Violet",
+    "Plum"
+   ],
+   "notesBase": [
+    "Musk",
+    "Vanilla",
+    "Cedar",
+    "Blackberry"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Imagination",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-lv-im-gin-tions",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 949.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1299.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Louis Vuitton Imagination",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Citron",
+    "Calabrian bergamot",
+    "Sicilian Orange"
+   ],
+   "notesHeart": [
+    "Tunisian Neroli",
+    "Nigerian Ginger",
+    "Ceylon Cinnamon"
+   ],
+   "notesBase": [
+    "Chinese Black Te\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "My Way",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-my-w-y-gi0rgi0-arm-ni",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Giorgio Armani My Way",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Orange Blossom",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Tuberose",
+    "Indian Jasmine"
+   ],
+   "notesBase": [
+    "Madagascar Vanilla",
+    "White Musk",
+    "Virginian Cedar"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Eden Juicy Apple",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-k-y-li-eden-juicy-apple",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Kayali Eden Juicy Apple",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Red Apple",
+    "Litchi",
+    "Black Currant",
+    "Pink Grapefruit"
+   ],
+   "notesHeart": [
+    "Wild Berries",
+    "Raspberry Bloom",
+    "Jasmine",
+    "May Rose"
+   ],
+   "notesBase": [
+    "Sugar",
+    "Musk",
+    "Vanilla Flower",
+    "Amber",
+    "Moss"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Si",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-gi0rgi0-arm-ni-si",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Giorgio Armani Si",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Vanilla",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-k-yali-v-nilla",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Kayali Vanilla 28",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Vanilla Orchid",
+    "Jasmine"
+   ],
+   "notesHeart": [
+    "Brown sugar",
+    "Tonka Bean"
+   ],
+   "notesBase": [
+    "Amber",
+    "Amberwood",
+    "Musk",
+    "Patchouli"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Obsession",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-c-lvin-klein-0bsessi0n-worn-by-salman-khan",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Calvin Klein Obsession",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Cinnamon",
+    "Lavender",
+    "Coriander",
+    "Mandarin Orange",
+    "Lime",
+    "Bergamot",
+    "Grapefruit"
+   ],
+   "notesHeart": [
+    "Myrhh",
+    "Nutmeg",
+    "Carnation",
+    "Brazilian Rosewood",
+    "Pine Tree",
+    "Sage",
+    "Jasmine",
+    "Red Berries"
+   ],
+   "notesBase": [
+    "Amber",
+    "Vanilla",
+    "Sandalwood",
+    "Musk",
+    "Patchouli",
+    "Vetiver"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Paradoxe",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-pr-da-p-rad0xe",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Prada Paradoxe",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Pear",
+    "Tangerine",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Orange Blossom",
+    "Neroli Essence",
+    "Neroli",
+    "Jasmine Sambac"
+   ],
+   "notesBase": [
+    "Bourbon Vanilla",
+    "Amber",
+    "White Musk",
+    "Benzoin"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Orange Blossom",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-jo-m-lone-0range-bl0ssom-worn-by-deepika-p-duk0ne",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Jo Malone London Orange Blossom",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Flora Gorgeous Orchid",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-gucci-flora-gorgeous-orchid",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Gucci Flora Gorgeous Orchid",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Flora Gorgeous Jasmine",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-gucci-flora-gorgeous-jasmine",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Gucci Flora Gorgeous Jasmine",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Italian Mandarin",
+    "Bergamot",
+    "Black Pepper"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Jasmine Sambac",
+    "Magnolia",
+    "Damask Rose"
+   ],
+   "notesBase": [
+    "Australian Sandalwood",
+    "Benzoin",
+    "Patchouli"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Flora Gorgeous Magnolia",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-gucci-fl0r-gorgeous-magnolia",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Gucci Flora Gorgeous Magnolia",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Dewberry",
+    "Coconut",
+    "Orange"
+   ],
+   "notesHeart": [
+    "Magnolia",
+    "Jasmine Sambac",
+    "Ylang-Ylang",
+    "Lily of the Valley"
+   ],
+   "notesBase": [
+    "Musk",
+    "Patchouli",
+    "Blonde Woods\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Lady Million",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-p-co-rabbane-lady-milli0n-perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Paco Rabanne Lady Million",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Raspberry",
+    "Neroli",
+    "Amalfi Lemon"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "African Orange Flower",
+    "Gardenia"
+   ],
+   "notesBase": [
+    "White Honey",
+    "Patchouli",
+    "Amber"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Miss Dior",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-miss-d-perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Dior Miss Dior",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Iris",
+    "Peony",
+    "Lily-of-the-Valley"
+   ],
+   "notesHeart": [
+    "Rose",
+    "Apricot",
+    "Peach"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Musk",
+    "Tonka Bean",
+    "Sandalwood",
+    "Benzoin"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "CR7",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-cr-7-worn-by-cristi-no-ron-ld0",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Cristiano Ronaldo CR7",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Luxury Gift Set For Him (4x20ml)",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/luxury-perfume-gift-set-for-him-4-x-20ml",
+   "category": "giftset",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "Gift Box",
+     "priceInr": 999.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Italian Cypress",
+    "Myrtle",
+    "Rose"
+   ],
+   "notesHeart": [
+    "Sandalwood",
+    "Cedar"
+   ],
+   "notesBase": [
+    "Brazilian Rosewood",
+    "Spices",
+    "Amber",
+    "White Musk"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Khamrah Waha",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-l-tt-fa-kh-mrah-waha-perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Lattafa Khamrah",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Bergamot",
+    "Yuzu",
+    "Ginger",
+    "Juniper"
+   ],
+   "notesHeart": [
+    "Cucumber",
+    "Sea Salt",
+    "Sage",
+    "Iris"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Tonka Bean",
+    "Musk",
+    "Akigalawood",
+    "Ambrofix™"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Kaaf",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-kaaf-ahmed-al-maghribi",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Ahmed Al Maghribi Kaaf",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Lavender",
+    "Watermelon",
+    "Sicilian Orange",
+    "Red Fruits"
+   ],
+   "notesHeart": [
+    "Lily of the Valley",
+    "Jasmine",
+    "Lotus"
+   ],
+   "notesBase": [
+    "White Musk",
+    "Ambroxan",
+    "Sandalwood"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "First Rain",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/first-rain-perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Bottled Absolute",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-hugo-boss-bottle-absoulte",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Hugo Boss Bottled Absolute",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Incense",
+    "Leather"
+   ],
+   "notesHeart": [
+    "Myrrh",
+    "Patchouli"
+   ],
+   "notesBase": [
+    "Cedarwood",
+    "Davana"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Crystal Noir",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-versace-crystal-noir",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Versace Crystal Noir",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Pepper",
+    "Ginger",
+    "Cardamom"
+   ],
+   "notesHeart": [
+    "Coconut",
+    "Gardenia",
+    "Orange Blossom",
+    "Peony"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Musk",
+    "Amber"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Aqva Pour Homme Marine",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-aqva-pour-homme-marine-bvlgari",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Bvlgari Aqva Pour Homme Marine",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Grapefruit",
+    "Neroli",
+    "Mandarin Orange",
+    "Petitgrain"
+   ],
+   "notesHeart": [
+    "Water Notes",
+    "Seaweed",
+    "Rosemary"
+   ],
+   "notesBase": [
+    "Virg\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Donna Born In Roma",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-valentino-donna-born-in-roma-valentino",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Valentino Donna Born In Roma",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Black Currant",
+    "Pink Pepper",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Jasmine Sambac",
+    "Jasmine Tea"
+   ],
+   "notesBase": [
+    "Bourbon Vanilla",
+    "Cashmeran",
+    "Guaiac Wood"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Symphony",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-lv-symphony",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Louis Vuitton Symphony",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Stronger With You",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-emporio-armani-stronger-with-you",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Emporio Armani Stronger With You",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Chestnut",
+    "Sugar"
+   ],
+   "notesHeart": [
+    "Sage",
+    "Lavender"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Smoke"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "For Her",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-narciso-rodriguez-for-her",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Narciso Rodriguez For Her",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Rose",
+    "Peach"
+   ],
+   "notesHeart": [
+    "Musk",
+    "Amber"
+   ],
+   "notesBase": [
+    "Patchouli",
+    "Sandalwood"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "So Scandal",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-jean-paul-gaultier-so-scandal",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Jean Paul Gaultier So Scandal",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Hypnotic Poison",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-hypnotic-poison-dior",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Dior Hypnotic Poison",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Coconut",
+    "Plum",
+    "Apricot"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Brazilian Rosewood",
+    "Tuberose",
+    "Caraway",
+    "Rose",
+    "Lily-of-the-Valley"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Almond\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Althair",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-althair-parfums-de-marly",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Parfums de Marly Althair",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Cinnamon",
+    "Orange Blossom",
+    "Cardamom",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Bourbon Vanilla",
+    "elemi"
+   ],
+   "notesBase": [
+    "Praline",
+    "Musk",
+    "Ambroxan",
+    "Tonka",
+    "Gu\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "MYSLF",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-yves-saint-laurent-myslf-copy",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Yves Saint Laurent MYSLF",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Good Girl Blush",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-carolina-herrera-good-girl-blush",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Carolina Herrera Good Girl Blush",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Bergamot",
+    "Bitter Almond"
+   ],
+   "notesHeart": [
+    "Peony",
+    "Ylang-Ylang"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Coumari\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Goddess",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-burberry-goddess",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Burberry Goddess",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Oud Maracuja",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-oud-maracuja-by-m-is0n-cr-velli",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Maison Crivelli Oud Maracuja",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Passionfruit",
+    "Fruity Notes",
+    "Saffron",
+    "Turkish Rose"
+   ],
+   "notesHeart": [
+    "Agarwood (Oud)",
+    "Benzoin",
+    "Indonesian Patchouli Leaf"
+   ],
+   "notesBase": [
+    "Leath\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Tuxedo",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-ysl-tuxedo",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Yves Saint Laurent Tuxedo",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Violet Leaf",
+    "Coriander",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Rose",
+    "Black Pepper",
+    "Lily-of-the-Valley"
+   ],
+   "notesBase": [
+    "Patchouli",
+    "Bourbon Vanilla",
+    "Amber\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Purple Oud",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-d-purple-oud",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Luxury Gift Set For Her (4x20ml)",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/luxury-perfume-gift-set-for-her-4-x-20ml",
+   "category": "giftset",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "Gift Box",
+     "priceInr": 999.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Yuzu",
+    "Pomegranate",
+    "Ice"
+   ],
+   "notesHeart": [
+    "Peony",
+    "Lotus",
+    "Magnolia"
+   ],
+   "notesBase": [
+    "Musk",
+    "Mahogany",
+    "Amber"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Tobacco Vanille",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-t0mford-t-abacc0-v-nille",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 949.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1299.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Tom Ford Tobacco Vanille",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Libre",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-ysl-libre",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Yves Saint Laurent Libre",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Lavender",
+    "Mandarin Orange",
+    "Black Currant",
+    "Petitgrain"
+   ],
+   "notesHeart": [
+    "Lavender",
+    "Orange Blossom",
+    "Jasmine"
+   ],
+   "notesBase": [
+    "Madagascar Vanilla",
+    "Musk",
+    "Cedar",
+    "Ambergris"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Ombre Nomade",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-ombre-nom-de",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Louis Vuitton Ombre Nomade",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Pistachio",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/pistachio-perfume-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Marshmallow",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/marshmallow-perfume-100ml-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Eden Apple",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/eden-apple-perfume-100ml-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Eclaire",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/eclaire-perfume-100ml-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Choco Truffle",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/choco-truffle-perfume-100ml-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Mango",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/mango-perfume-100ml-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Strawberry",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/strawberry-perfume-100ml-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Vanilla",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/vanilla-perfume-100ml-gourmet-collection",
+   "category": "gourmet",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "100 ML",
+     "priceInr": 499.0,
+     "mrpInr": 2000.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Gourmet Gift Set (4x20ml)",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/gourmet-gift-set-20ml",
+   "category": "giftset",
+   "concentration": null,
+   "variants": [
+    {
+     "size": "Gift box",
+     "priceInr": 999.0,
+     "mrpInr": 2499.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Oud Maracuja",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/oud-maracuja",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Shanaya",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/shanaya",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Rose",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/rose",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Jannat Ul Firdaus",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/jannat-ul-firdaus",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Noor-e Ajmer",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/noor-e-ajmer",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Mukhallat Saffron",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/mukhallat-saffron",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Arab Ameerat",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/arab-ameerat",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Musk Rijali",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/honey-oud-copy",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Honey Oud",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-d-purple-oud-copy",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Sauvage",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Dior Sauvage",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Calabrian bergamot",
+    "Pepper"
+   ],
+   "notesHeart": [
+    "Sichuan Pepper",
+    "Lavender",
+    "Pink Pepper",
+    "Vetiver",
+    "Patchouli",
+    "Geranium",
+    "elemi"
+   ],
+   "notesBase": [
+    "Ambroxan",
+    "Cedar",
+    "Labdanum"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Acqua di Gio Profumo",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-acqua-di-gio-pr0fumo",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Giorgio Armani Acqua di Gio Profumo",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Lime",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Sea Notes",
+    "Jasmine",
+    "Peace"
+   ],
+   "notesBase": [
+    "Cedar",
+    "Patchouli",
+    "Amber"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Bright Crystal",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/perfume-3",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Versace Bright Crystal",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Yuzu",
+    "Pomegranate",
+    "Ice"
+   ],
+   "notesHeart": [
+    "Peony",
+    "Lotus",
+    "Magnolia"
+   ],
+   "notesBase": [
+    "Musk",
+    "Mahogany",
+    "Amber"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Armani Code",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-armani-c0de",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Giorgio Armani Armani Code",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Lemon",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Star Anise",
+    "Olive Blossom",
+    "Guaiac Wood"
+   ],
+   "notesBase": [
+    "Leather",
+    "Tonka Bean",
+    "Tobacco"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Bleu de Chanel",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-bleu-de-ch-nel",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Chanel Bleu de Chanel",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Grapefruit",
+    "Lemon",
+    "Mint",
+    "Pink Pepper"
+   ],
+   "notesHeart": [
+    "Ginger",
+    "Nutmeg",
+    "Jasmine",
+    "Iso E Super"
+   ],
+   "notesBase": [
+    "Incense",
+    "Vetiver",
+    "Cedar",
+    "Sandalwood",
+    "Patchouli",
+    "Labdanum",
+    "White Musk"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Flora",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-gucci-fl0ra-worn-by-alia-bh-tt",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 799.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 999.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Gucci Flora",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Green Irish Tweed",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-creed-green-irish-twe3d-worn-by-s-hid-kapoor",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Creed Green Irish Tweed",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Man in Black",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-bvlgari-men-in-bl-ck",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Bvlgari Man in Black",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Spices",
+    "Rum",
+    "Tobacco"
+   ],
+   "notesHeart": [
+    "Leather",
+    "iris",
+    "Tuberose"
+   ],
+   "notesBase": [
+    "Tonka Bean",
+    "Guaiac Wood",
+    "Benzoin"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Oud Wood",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-tomford-oud-w00d-worn-by-moni-r0y-am-n-gupta-bo-t-unisex",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Tom Ford Oud Wood",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Terre d'Hermes",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-terre-de-herme-worn-by-sanj-y-dutt",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Hermes Terre d'Hermes",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Orange",
+    "Grapefruit"
+   ],
+   "notesHeart": [
+    "Pepper",
+    "Pelargonium",
+    "Flint"
+   ],
+   "notesBase": [
+    "Vetiver",
+    "Cedar",
+    "Patchouli",
+    "Benzoin"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Aventus",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-creed-av3ntus-worn-by-d-vid-beckh-m-unisex",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Creed Aventus",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Pineapple",
+    "Bergamot",
+    "Black Currant",
+    "Apple"
+   ],
+   "notesHeart": [
+    "Birch",
+    "Patchouli",
+    "Moroccan Jasmine",
+    "Rose"
+   ],
+   "notesBase": [
+    "Musk",
+    "oak moss",
+    "Ambergris",
+    "Vanilla"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Dior Homme Parfum",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-dior-homme-p-rfum",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Dior Homme Parfum",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Tuscan Iris",
+    "Italian Orange"
+   ],
+   "notesHeart": [
+    "Leather",
+    "Rose"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Ambrette (Musk Mallow)",
+    "Agarwood (Oud)",
+    "Cedar"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "CK One",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-ck-0ne",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Calvin Klein CK One",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Lemon",
+    "Green Notes",
+    "Bergamot",
+    "Pineapple",
+    "Mandarin Orange",
+    "Cardamom",
+    "Papaya"
+   ],
+   "notesHeart": [
+    "Lily-of-the-Valley",
+    "Jasmine",
+    "Violet",
+    "Nutmeg",
+    "Rose",
+    "Orris Root",
+    "Freesia"
+   ],
+   "notesBase": [
+    "Green Accord",
+    "Musk",
+    "Cedar",
+    "Sandalwood",
+    "Oakmoss",
+    "Green Tea",
+    "Ambe\">\n    \n\n    \n\n<meta property=\"og:site_name\" content=\"Celestial Perfume\">\n<meta property=\"og:url\" content=\"https://celestialperfume"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "The Most Wanted",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-azzaro-the-most-w-nted",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Azzaro The Most Wanted",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Viking",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-viking-worn-by-vir-t-k0hli",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Creed Viking",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Pink Pepper",
+    "Spicy Mint",
+    "Bergamot",
+    "Lemon",
+    "Absinthe",
+    "Orange"
+   ],
+   "notesHeart": [
+    "Lavender",
+    "Bulgarian Rose",
+    "Clove",
+    "Allspice",
+    "Orris Root",
+    "Jasmine"
+   ],
+   "notesBase": [
+    "Vetiver",
+    "Cedar",
+    "White Musk",
+    "Tonka Bean"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Cool Water",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-david-0ff-cool-w-ter-worn-by-aksh-y-kum-r-unisex",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Davidoff Cool Water",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Sea water",
+    "Lavender",
+    "Mint",
+    "Green Notes",
+    "Rosemary",
+    "Calone",
+    "Coriander"
+   ],
+   "notesHeart": [
+    "Sandalwood",
+    "Geranium",
+    "Neroli",
+    "Jasmine"
+   ],
+   "notesBase": [
+    "Musk",
+    "Tobacco",
+    "Oakmoss",
+    "Cedar",
+    "Amber"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Tam Dao",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-diptyuqe-tam-da0",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Diptyque Tam Dao",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Italian Cypress",
+    "Myrtle",
+    "Rose"
+   ],
+   "notesHeart": [
+    "Sandalwood",
+    "Cedar"
+   ],
+   "notesBase": [
+    "Brazilian Rosewood",
+    "Spices",
+    "Amber",
+    "White Musk"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Eros",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/copy-of-perfum-23",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Versace Eros",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Mint",
+    "Green Apple",
+    "Lemon"
+   ],
+   "notesHeart": [
+    "Tonka Bean",
+    "Ambroxan",
+    "Geranium"
+   ],
+   "notesBase": [
+    "Madagascar Vanilla",
+    "Virginian Cedar",
+    "Atlas Cedar",
+    "Vetiver",
+    "Oakmoss"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Bombshell",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/copy-of-copy-of-perfum-22",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Victoria's Secret Bombshell",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Passionfruit",
+    "Grapefruit",
+    "Pineapple",
+    "Tangerine",
+    "Big Strawberry"
+   ],
+   "notesHeart": [
+    "Peony",
+    "Vanilla orchid",
+    "Red Berries",
+    "Jasmine",
+    "Lily-of-the-Valley"
+   ],
+   "notesBase": [
+    "Musk",
+    "Woody Notes",
+    "Oakmoss"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Icon",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/copy-of-copy-of-perfume-4",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Dunhill Icon",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Neroli",
+    "Bergamot",
+    "Black Pepper",
+    "Petitgrain"
+   ],
+   "notesHeart": [
+    "Black Pepper",
+    "Lavender",
+    "Cardamom",
+    "Juniper Berries",
+    "Sage"
+   ],
+   "notesBase": [
+    "Vetiver",
+    "Oakmoss",
+    "iris",
+    "Leather",
+    "Agarwood (Oud)"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "1 Million",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-paco-rabbane-one-milli0n-worn-by-ed-sheer-n",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Paco Rabanne 1 Million",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Blood Mandarin",
+    "Grapefruit",
+    "Mint"
+   ],
+   "notesHeart": [
+    "Cinnamon",
+    "Spicy Notes",
+    "Rose"
+   ],
+   "notesBase": [
+    "Amber",
+    "Leather",
+    "Woody Notes",
+    "Indian Patchouli"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Ombre Leather",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/copy-of-copy-of-perfume-5",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Tom Ford Ombre Leather",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Good Girl",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-carolina-herrera-go0d-girl",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Carolina Herrera Good Girl",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Almond",
+    "Coffee",
+    "Bergamot",
+    "Lemon"
+   ],
+   "notesHeart": [
+    "Tuberose",
+    "Jasmine Sambac",
+    "Orange Blossom",
+    "Orris",
+    "Bulgarian Rose"
+   ],
+   "notesBase": [
+    "Tonka Bean",
+    "Cacao",
+    "Vanilla",
+    "Praline",
+    "Sandalwood",
+    "Musk",
+    "Amber",
+    "Cashmere Wood",
+    "Cinnamon",
+    "Patchouli",
+    "Cedar"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "King Of Bollywood",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/king-of-bollywood-perfume",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 3499.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Italian Cypress",
+    "Myrtle",
+    "Rose"
+   ],
+   "notesHeart": [
+    "Sandalwood",
+    "Cedar"
+   ],
+   "notesBase": [
+    "Brazilian Rosewood",
+    "Spices",
+    "Amber",
+    "White Musk"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Bloom",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-gucci-blo0m-worn-by-aditi-rao-hydari",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Gucci Bloom",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Galbanum Leaf",
+    "Cassis",
+    "Bergamot",
+    "Lemon"
+   ],
+   "notesHeart": [
+    "Honeysuckle",
+    "Tuberose",
+    "Jasmine",
+    "Lily-of-the-Valley",
+    "Freesia"
+   ],
+   "notesBase": [
+    "Musk",
+    "Iso E Super",
+    "Sandalwood"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Coco Mademoiselle",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-ch-nel-coco-m-demoiselle-worn-by-ileana-dcruz",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Chanel Coco Mademoiselle",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Orange",
+    "Mandarin Orange",
+    "Bergamot",
+    "Orange Blossom"
+   ],
+   "notesHeart": [
+    "Turkish Rose",
+    "Jasmine",
+    "Mimosa",
+    "Ylang-Ylang"
+   ],
+   "notesBase": [
+    "Patchouli",
+    "White Musk",
+    "Vanilla",
+    "Vetiver",
+    "Tonka Bean",
+    "Opoponax"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Black Opium",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-ysl-black-0pium",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Yves Saint Laurent Black Opium",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Pear",
+    "Pink Pepper",
+    "Orange Blossom"
+   ],
+   "notesHeart": [
+    "Coffee",
+    "Jasmine",
+    "Bitter Almond",
+    "Licorice"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Patchouli",
+    "Cashmere Wood",
+    "Cedar"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Baccarat Rouge 540",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-b-ccarat-r0uge-540",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 949.0,
+     "mrpInr": 1299.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1299.0,
+     "mrpInr": 2399.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Maison Francis Kurkdjian Baccarat Rouge 540",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Saffron",
+    "Jasmine"
+   ],
+   "notesHeart": [
+    "Amberwood",
+    "Ambergris"
+   ],
+   "notesBase": [
+    "Fir Resin",
+    "Cedar"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "Elysium",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-roja-ely-ium-worn-by-h-rdik-p-ndya",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 949.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1299.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Roja Parfums Elysium",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Grapefruit",
+    "Lemon",
+    "Bergamot",
+    "Lime",
+    "Thyme",
+    "Artemisia",
+    "Galbanum"
+   ],
+   "notesHeart": [
+    "Vetiver",
+    "Juniper Berries",
+    "Black Currant",
+    "Apple",
+    "Pink Pepper",
+    "Cedar",
+    "Cypriol Oil or Nagarmotha",
+    "Lily-of-the-Valley",
+    "Rose",
+    "Jasmine"
+   ],
+   "notesBase": [
+    "Ambergris",
+    "Leather",
+    "Vanilla",
+    "Benzoin",
+    "Labdanum"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "No 5",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/inspired-by-ch-nel-n0-5-worn-by-s-ra-ali-kh-n",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "60 ML",
+     "priceInr": 849.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    },
+    {
+     "size": "100 ML",
+     "priceInr": 1099.0,
+     "mrpInr": 2100.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Chanel No 5",
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02",
+   "notesTop": [
+    "Aldehydes",
+    "Ylang-Ylang",
+    "Neroli",
+    "Bergamot",
+    "Lemon"
+   ],
+   "notesHeart": [
+    "Iris",
+    "Jasmine",
+    "Rose",
+    "Orris Root",
+    "Lily-of-the-Valley"
+   ],
+   "notesBase": [
+    "Civet",
+    "Musk",
+    "Amber",
+    "Sandalwood",
+    "Moss",
+    "Vanilla",
+    "Vetiver",
+    "Patchouli"
+   ],
+   "notesSource": "brand product page description"
+  },
+  {
+   "name": "White Oud",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/white-oud",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Purple Oud",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/purple-oud",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Mitti",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/mitti",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Ameer Oud",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/ameer-oud",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Imperial",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/imperial",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Flora",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/flora",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Cool Water",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/cool-water",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Kesar Chandan",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/kesar-chandan",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Jasmine",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/jasmine",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Mogra",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/mogra",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Musk Saphire",
+   "brand": "Celestial Perfume",
+   "url": "https://celestialperfume.in/products/musk-saphire",
+   "category": "attar",
+   "concentration": "Attar",
+   "variants": [
+    {
+     "size": "6 ML",
+     "priceInr": 350.0,
+     "mrpInr": 1099.0,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "celestialperfume.in product page",
+   "observedAt": "2026-10-02"
+  }
+ ]
+}

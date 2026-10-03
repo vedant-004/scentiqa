@@ -1,0 +1,1757 @@
+{
+ "site": "Dupify",
+ "url": "https://dupify.in/",
+ "observedAt": "2026-10-02",
+ "notes": "WooCommerce store. 53 perfumes scraped (5ml sample set excluded). Each has 3 variants: Fragrance Oil/Attar 12ml, Perfume 20ml, Perfume 55ml. Prices are variant-specific sale prices with compare-at MRP. inspiredBy only where page title explicitly states it (3 products).",
+ "products": [
+  {
+   "name": "9PM",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-9pm/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Acqua",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-acqua-di-gio/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 149,
+     "mrpInr": 299,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 449,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Afgano",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-afgano/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Alter",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-alter/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Aqva",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-aqva/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 199,
+     "mrpInr": 399,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 449,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Asad",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-asad/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Aventor",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-aventus/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Bleu de",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-bleu-de/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Blue",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-blue/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Chocolate",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-chocolate/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Chrome",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-chrome/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Cool Water with a burst of freshness",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-cool-water/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Eclaiir",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-eclaiir/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Eros",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-eros/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Fire Of God opens with juicy sweetness",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-fire-of-god/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 599,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Fire",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-fire/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Rasasi Hawas Fire",
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Flora",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-flora/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "For Her",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-for-her/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Given Blue",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-given-blue/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Hawas",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-hawas/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Rasasi Hawas",
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Ice",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-ice/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Icon",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-icon/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Imagination",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-imagination/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 399,
+     "mrpInr": 799,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 399,
+     "mrpInr": 799,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 799,
+     "mrpInr": 1599,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Imperial is luxurious, commanding, and beautifully complex.",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-imperial/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 599,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Invictus a Fresh and Powerful Fragrance for Men",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-invictus/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "J Elixir",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-j-elixir/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 599,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Juicy Apple is youthful, uplifting, and irresistibly sweet.",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-juicy-apple/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Khamrah a Luxurious Fragrance for Evenings",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-khamrah/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Leather a Bold Fragrance of Strength and Elegance",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-leather/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Legend",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-legend/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Libre",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-libre/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Lyton",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-lyton/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Oud Maracuja is opulent, vibrant, and memorably unique.",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-maracuja/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "1 Million",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-million/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "MYSLF",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-myslf/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Ombre",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-ombre-nomade/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Oud Wood",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-oud-wood/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Purple Oud",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-purple-oud/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Qahwa is luxurious, cozy, and irresistibly addictive",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-qahwa/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 599,
+     "mrpInr": 1199,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "9PM Rebel",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-rebel/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Savauge",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-sauvage/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "SLY",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-sly/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Spicebomb",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-spicebomb/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Sport",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-sport/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Swim",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-swim/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Timbera",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-timbera/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Tobacco Oud",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-tobacco-oud/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Tuxedo",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-tuxedo/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Male",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-ultra-male/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 399,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Viking",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-viking/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Waha Inspired by Khamrah Waha",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-waha/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 349,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": "Lattafa Khamrah",
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "Wanted is bold, addictive, and dangerously charismatic.",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-wanted/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 499,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 699,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 549,
+     "mrpInr": 1099,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  },
+  {
+   "name": "With You",
+   "brand": "Dupify",
+   "url": "https://dupify.in/product/dupify-with-you/",
+   "category": "perfume",
+   "concentration": "Eau de Parfum",
+   "variants": [
+    {
+     "size": "Attar 12ml",
+     "sizeMl": 12,
+     "priceInr": 249,
+     "mrpInr": 500,
+     "inStock": true
+    },
+    {
+     "size": "20ml",
+     "sizeMl": 20,
+     "priceInr": 299,
+     "mrpInr": 599,
+     "inStock": true
+    },
+    {
+     "size": "55ml",
+     "sizeMl": 55,
+     "priceInr": 499,
+     "mrpInr": 1000,
+     "inStock": true
+    }
+   ],
+   "inspiredBy": null,
+   "source": "dupify.in product page",
+   "observedAt": "2026-10-02"
+  }
+ ]
+}

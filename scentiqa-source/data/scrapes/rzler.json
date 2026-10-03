@@ -1,0 +1,1481 @@
+{
+ "site": "https://perfume.rzler.com",
+ "status": "ok",
+ "houseSlug": "rzler",
+ "sellerSlug": "rzler-official",
+ "importMode": "auto",
+ "priceProvenance": "live",
+ "observedAt": "2026-10-02",
+ "house": {
+  "name": "RZLER",
+  "city": null,
+  "country": "India",
+  "type": "indian_clone",
+  "site": "https://perfume.rzler.com",
+  "founded": 2023,
+  "desc": "Indian dupe house (perfume.rzler.com) with a premium-minimal identity; 50ml EDPs Rs.649-Rs.1299 (sale) with full key-note pyramids and explicit 'Inspired by' lines per scent. Entire catalog marked sold out at observation on 2026-10-02. Researched live 2026-10-02."
+ },
+ "products": [
+  {
+   "name": "RZLER Nautis",
+   "url": "https://perfume.rzler.com/products/nautis",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Rasasi Hawas",
+   "inspiredByRaw": "Rasasi Hawas",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Bergamot",
+    "Lemon",
+    "Apple",
+    "Cinnamon"
+   ],
+   "notesHeart": [
+    "Aquatic notes",
+    "Plum",
+    "Cardamom",
+    "Orange blossom"
+   ],
+   "notesBase": [
+    "Musk",
+    "Ambergris",
+    "Patchouli",
+    "Driftwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Juliet",
+   "url": "https://perfume.rzler.com/products/juliet",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Yves Saint Laurent Libre Intense",
+   "inspiredByRaw": "YSL Libre Intence",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Lavender",
+    "Mandarin",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Orchid",
+    "Orange blossom"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Amber",
+    "Ambergris",
+    "Tonka bean"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Nexorien",
+   "url": "https://perfume.rzler.com/products/nexorien",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 1299,
+   "mrpInr": 1699,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Xerjoff Naxos",
+   "inspiredByRaw": "Xerxoff Nexos",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Juicy citrus",
+    "Bergamot",
+    "Lavender"
+   ],
+   "notesHeart": [
+    "Honey",
+    "Cinnamon",
+    "Cashmeran",
+    "Jasmine"
+   ],
+   "notesBase": [
+    "Tonka bean",
+    "Tobacco leaf",
+    "Vanilla"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Nomade",
+   "url": "https://perfume.rzler.com/products/nomade",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 999,
+   "mrpInr": 1299,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Louis Vuitton Ombre Nomade",
+   "inspiredByRaw": "Louis Vuitton Ombre Nomade",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Rose",
+    "Incense",
+    "Raspberry"
+   ],
+   "notesHeart": [
+    "Oud Rose",
+    "Saffron"
+   ],
+   "notesBase": [
+    "Amber",
+    "Leather",
+    "Musk"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Kamrah",
+   "url": "https://perfume.rzler.com/products/kamrah",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 999,
+   "mrpInr": 1299,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Lattafa Khamrah",
+   "inspiredByRaw": "Latafa Kamrah",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Cinnamon",
+    "Nutmeg",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Dates",
+    "Praline",
+    "Tuberose",
+    "Mahonial"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Amberwood",
+    "Myrrh",
+    "Akigalawood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Durby",
+   "url": "https://perfume.rzler.com/products/durby",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 999,
+   "mrpInr": 1299,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Musk Rizali",
+   "inspiredByRaw": "Musk Rizali",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "White florals",
+    "Lily-of-the-valley"
+   ],
+   "notesHeart": [
+    "Powdery notes",
+    "Tolu balsam"
+   ],
+   "notesBase": [
+    "Vanilla"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Krike",
+   "url": "https://perfume.rzler.com/products/krike",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 999,
+   "mrpInr": 1299,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Tiziana Terenzi Kirke",
+   "inspiredByRaw": "Tiziana Terenzi Kirke",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Passionfruit",
+    "Pear",
+    "Raspberry",
+    "Peach"
+   ],
+   "notesHeart": [
+    "Lily of the valley"
+   ],
+   "notesBase": [
+    "Musk",
+    "Sandalwood",
+    "Patchouli"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Grandoud",
+   "url": "https://perfume.rzler.com/products/grandoud",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Oud Initio",
+   "inspiredByRaw": "Oud Initio",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Bergamot",
+    "Lavender"
+   ],
+   "notesHeart": [
+    "Fir",
+    "Saffron",
+    "Agarwood"
+   ],
+   "notesBase": [
+    "Oud"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Vanilian Tobaco",
+   "url": "https://perfume.rzler.com/products/vanilian-tobaco",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Tom Ford Tobacco Vanille",
+   "inspiredByRaw": "Tomford Tobacco Vanila",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Tobacco leaf",
+    "Spice"
+   ],
+   "notesHeart": [
+    "Vanilla",
+    "Tobacco blossom",
+    "Tonka bean"
+   ],
+   "notesBase": [
+    "Dried fruits",
+    "Wood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Red Monster",
+   "url": "https://perfume.rzler.com/products/red-monster",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Mancera Red Tobacco",
+   "inspiredByRaw": "Moncera Red Tobacco",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Cinnamon",
+    "Saffron",
+    "White pear",
+    "Green apple",
+    "Nutmeg"
+   ],
+   "notesHeart": [
+    "Patchouli",
+    "Jasmine"
+   ],
+   "notesBase": [
+    "Tobacco",
+    "Vanilla",
+    "Amber",
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Spicy Grove",
+   "url": "https://perfume.rzler.com/products/spicy-grove",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Maison Francis Kurkdjian Baccarat Rouge 540",
+   "inspiredByRaw": "BR540",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Saffron",
+    "Jasmine"
+   ],
+   "notesHeart": [
+    "Hedione",
+    "Agarwood",
+    "Ambergris",
+    "Fir"
+   ],
+   "notesBase": [
+    "Oakmoss",
+    "Sugar",
+    "Cedar"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER British Rose",
+   "url": "https://perfume.rzler.com/products/british-rose",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Byredo Rose of No Man's Land",
+   "inspiredByRaw": "Roses of No Man Land",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Rose",
+    "Pink pepper"
+   ],
+   "notesHeart": [
+    "Raspberry blossom",
+    "Rose"
+   ],
+   "notesBase": [
+    "Amber",
+    "Papyrus"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Garden Girl",
+   "url": "https://perfume.rzler.com/products/garden-girl",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Gucci Flora",
+   "inspiredByRaw": "Gucci Flora",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Peony",
+    "Mandarin orange",
+    "Pear",
+    "Pepper"
+   ],
+   "notesHeart": [
+    "Rose",
+    "Osmanthus"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Musk",
+    "Patchouli"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Juicy Apple",
+   "url": "https://perfume.rzler.com/products/juicy-apple",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Kayali Eden Juicy Apple",
+   "inspiredByRaw": "Kayali Eden Juicy Apple",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Red apple",
+    "Lychee",
+    "Blackcurrant"
+   ],
+   "notesHeart": [
+    "Wild berries",
+    "Jasmine",
+    "May rose",
+    "Raspberry blossom"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Sugar",
+    "Amber",
+    "Musk"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Vanilian Berry",
+   "url": "https://perfume.rzler.com/products/vanilian-berry",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Raspberry Vanilla",
+   "inspiredByRaw": "Raspberry Vanilla",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Black currant",
+    "Blueberry",
+    "Red wine"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Oris Root",
+    "Osmanthus"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Over The Week",
+   "url": "https://perfume.rzler.com/products/over-the-week",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Burberry Weekend",
+   "inspiredByRaw": "Burbery Weekend",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Mandarin",
+    "Mignonette",
+    "Sage"
+   ],
+   "notesHeart": [
+    "Peach blossom",
+    "Red cyclamen",
+    "Nectarine"
+   ],
+   "notesBase": [
+    "Musk",
+    "Sandalwood",
+    "Cedar"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Delinia",
+   "url": "https://perfume.rzler.com/products/delinia",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Parfums de Marly Delina Exclusif",
+   "inspiredByRaw": "PDM Delina Exclusive",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Pear",
+    "Grapefruit",
+    "Lychee",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Turkish Rose",
+    "Oud"
+   ],
+   "notesBase": [
+    "Woody notes",
+    "Vanilla",
+    "Amber",
+    "Musk"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Lady Shield",
+   "url": "https://perfume.rzler.com/products/lady-shield",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 999,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Victoria's Secret Bombshell",
+   "inspiredByRaw": "Bombshell",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Passionfruit",
+    "Grapefruit",
+    "Pineapple",
+    "Tangerine",
+    "Strawberry"
+   ],
+   "notesHeart": [
+    "Peony",
+    "Jasmine",
+    "Lily of the valley",
+    "Red berries"
+   ],
+   "notesBase": [
+    "Musk",
+    "Oakmoss"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Nerotic",
+   "url": "https://perfume.rzler.com/products/nerotic",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 999,
+   "mrpInr": 1299,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Fleir Nerotic",
+   "inspiredByRaw": "Fleir Nerotic",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Litchi",
+    "Peach",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Peony",
+    "Orange blossom",
+    "Petalia"
+   ],
+   "notesBase": [
+    "Musk",
+    "Moss",
+    "Woody notes"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Vampblow",
+   "url": "https://perfume.rzler.com/products/vampblow",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Vampior Blood",
+   "inspiredByRaw": "Vampior Blood",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Red berries",
+    "Plum",
+    "Pomegranate"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Gardenia"
+   ],
+   "notesBase": [
+    "Vetiver",
+    "Vanilla Flower"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Veil of Rain",
+   "url": "https://perfume.rzler.com/products/veil-of-rain",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house. H1: 'Inspired by the First Rain Scent' (a concept, not a designer fragrance) - no mapping.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Petrichor",
+    "Creamy Sandalwood"
+   ],
+   "notesHeart": [
+    "Cypriol"
+   ],
+   "notesBase": [
+    "Patchouli"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Oud of Gold",
+   "url": "https://perfume.rzler.com/products/oud-of-gold",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Lattafa Ameer Al Oudh Intense Oud",
+   "inspiredByRaw": "Ameer Al Oudh Intense Oud Lattafa Perfumes",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Woody notes of Agarwood"
+   ],
+   "notesHeart": [
+    "Sugar",
+    "Vanilla"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Oud"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Tharr",
+   "url": "https://perfume.rzler.com/products/tharr",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 1249,
+   "mrpInr": 1699,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Parfums de Marly Althair",
+   "inspiredByRaw": "Althair Parfums de Marly",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Cardamom"
+   ],
+   "notesHeart": [
+    "Bourbon vanilla",
+    "Elemi"
+   ],
+   "notesBase": [
+    "Praline",
+    "Musk",
+    "Tonka"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Honey Kissed",
+   "url": "https://perfume.rzler.com/products/honey-kissed",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house. No 'Inspired by' line on page - no mapping.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Candied apple"
+   ],
+   "notesHeart": [
+    "Honey"
+   ],
+   "notesBase": [
+    "Rose"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Discovery Set: The Voyager Collection",
+   "url": "https://perfume.rzler.com/products/rzler-discovery-set-the-voyager-collection",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 1499,
+   "mrpInr": 1999,
+   "sizeMl": null,
+   "sizeNote": "Discovery/gift set.",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Men's discovery set: 5 x 15ml minis (Nexorien, Nomade, Oud of Gold, Nautis, Durby). No 'Inspired by' line - no mapping.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [],
+   "notesHeart": [],
+   "notesBase": [],
+   "notesUntiered": null,
+   "notesSource": null,
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Discovery Set: The Lush Collection Women",
+   "url": "https://perfume.rzler.com/products/rzler-discovery-set-the-lush-collection-women",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 1499,
+   "mrpInr": 1999,
+   "sizeMl": null,
+   "sizeNote": "Discovery/gift set.",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Women's discovery set: 5 mini perfumes (Lady Shield, Vampblow, Delinia, Juliet, Vanilian Berry). No 'Inspired by' line - no mapping.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [],
+   "notesHeart": [],
+   "notesBase": [],
+   "notesUntiered": null,
+   "notesSource": null,
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Forest Wood",
+   "url": "https://perfume.rzler.com/products/forest-wood",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 899,
+   "mrpInr": 1299,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Tom Ford Oud Wood",
+   "inspiredByRaw": "Tom ford oud wood",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Cardamom",
+    "Pink Pepper"
+   ],
+   "notesHeart": [
+    "Oud",
+    "Patchouli"
+   ],
+   "notesBase": [
+    "Tonka Bean",
+    "Vanilla",
+    "Oud"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Luxury Gold",
+   "url": "https://perfume.rzler.com/products/luxury-gold",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Paco Rabanne 1 Million",
+   "inspiredByRaw": "1 Million by Rabanne",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Blood Mandarin",
+    "Grapefruit",
+    "Mint"
+   ],
+   "notesHeart": [
+    "Cinnamon",
+    "Spicy Notes",
+    "Rose"
+   ],
+   "notesBase": [
+    "Amber",
+    "Leather",
+    "Woody Notes"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Raw",
+   "url": "https://perfume.rzler.com/products/raw",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Titan Skinn Raw",
+   "inspiredByRaw": "Titan Skin Raw",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Bergamot",
+    "Watery Fruits",
+    "Mandarin"
+   ],
+   "notesHeart": [
+    "Violet Leaves",
+    "Pomarose",
+    "Carnation",
+    "Geranium"
+   ],
+   "notesBase": [
+    "Indonesian Patchouli",
+    "Cashmeran",
+    "Gaiac Wood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Dylan Blue",
+   "url": "https://perfume.rzler.com/products/dylan-blue",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Versace Dylan Blue",
+   "inspiredByRaw": "Dylan Blue Versace",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Bergamot",
+    "Grapefruit",
+    "Aquatic Notes"
+   ],
+   "notesHeart": [
+    "Black Pepper",
+    "Patchouli",
+    "Violet Leaf"
+   ],
+   "notesBase": [
+    "Musk",
+    "Saffron",
+    "Tonka Bean",
+    "Incense"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Irish Moss",
+   "url": "https://perfume.rzler.com/products/irish-moss",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Creed Green Irish Tweed",
+   "inspiredByRaw": "Green Irish Tweed",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Vervain",
+    "Iris"
+   ],
+   "notesHeart": [
+    "Violet Leaf",
+    "Geranium"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Oakmoss",
+    "Musk"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Angel Share",
+   "url": "https://perfume.rzler.com/products/angel-share",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 650,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Kilian Angels Share",
+   "inspiredByRaw": "Angels' Share by Kilian",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Cognac",
+    "Raspberry"
+   ],
+   "notesHeart": [
+    "Tonka Bean",
+    "Oak",
+    "Caramel"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Sandalwood",
+    "Oakmoss"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Terre d herm",
+   "url": "https://perfume.rzler.com/products/terre-d-herm",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Hermes Terre d'Hermes Intense",
+   "inspiredByRaw": "Terre d'Hermes Intense by Hermes",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house. Name spelled 'Terre d herm' on site.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Bergamot",
+    "Black Pepper"
+   ],
+   "notesHeart": [
+    "Coffee",
+    "Licorice"
+   ],
+   "notesBase": [
+    "Woody Notes",
+    "Lava",
+    "Stone"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Flowerbomb",
+   "url": "https://perfume.rzler.com/products/flowerbomb",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Viktor and Rolf Flowerbomb",
+   "inspiredByRaw": "Flowerbomb Viktor&Rolf",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Tea",
+    "Bergamot",
+    "Osmanthus"
+   ],
+   "notesHeart": [
+    "Orchid",
+    "Jasmine",
+    "Rose",
+    "Freesia",
+    "African Orange Flower"
+   ],
+   "notesBase": [
+    "Patchouli",
+    "Musk",
+    "Vanilla"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Eternal Blossom",
+   "url": "https://perfume.rzler.com/products/eternal-blossom",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Gucci Bloom",
+   "inspiredByRaw": "Gucci Bloom",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Tuberose"
+   ],
+   "notesHeart": [
+    "Jasmine Bud"
+   ],
+   "notesBase": [
+    "Rangoon Creeper"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER My Essence",
+   "url": "https://perfume.rzler.com/products/my-essence",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Giorgio Armani My Way",
+   "inspiredByRaw": "Armani My Way",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Pear",
+    "Bergamot",
+    "Orange Blossom"
+   ],
+   "notesHeart": [
+    "Violet Leaf",
+    "Tuberose",
+    "Jasmine"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "White Musk",
+    "Cedarwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Her Legacy",
+   "url": "https://perfume.rzler.com/products/her-legacy",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Burberry Her",
+   "inspiredByRaw": "Burberry Her",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Strawberry",
+    "Raspberry",
+    "Blackberry"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Violet"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Musk",
+    "Amberwood",
+    "Oakmoss"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Adorable Blossom",
+   "url": "https://perfume.rzler.com/products/adorable-blossom",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Dior J'adore",
+   "inspiredByRaw": "CD J'adore",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Melon",
+    "Pear",
+    "Magnolia",
+    "Peach",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Rose",
+    "Freesia",
+    "Tuberose",
+    "Orchid",
+    "Lily of the Valley",
+    "Violet",
+    "Plum"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Vanilla",
+    "Cedar"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Eternal Grace",
+   "url": "https://perfume.rzler.com/products/eternal-grace",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Calvin Klein Eternity",
+   "inspiredByRaw": "CK Eternity",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Passionflower",
+    "Grapefruit",
+    "Ginger"
+   ],
+   "notesHeart": [
+    "White Florals",
+    "Lily-of-the-Valley",
+    "Peony"
+   ],
+   "notesBase": [
+    "Musk",
+    "Amber"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Y Essence",
+   "url": "https://perfume.rzler.com/products/y-essence",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Yves Saint Laurent Y",
+   "inspiredByRaw": "YSL Y",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Lemon",
+    "Mint",
+    "Bergamot",
+    "Ginger"
+   ],
+   "notesHeart": [
+    "Apple",
+    "Sage",
+    "Geranium",
+    "Violet Leaf",
+    "Pineapple"
+   ],
+   "notesBase": [
+    "Amberwood",
+    "Tonka Bean",
+    "Cedarwood",
+    "Incense"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Midnight Seduction",
+   "url": "https://perfume.rzler.com/products/midnight-seduction",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 650,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Yves Saint Laurent Black Opium",
+   "inspiredByRaw": "Black Opium",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Pink Pepper",
+    "Orange Blossom",
+    "Pear"
+   ],
+   "notesHeart": [
+    "Coffee",
+    "Jasmine",
+    "Bitter Almond",
+    "Licorice"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Patchouli",
+    "Cedarwood",
+    "Cashmere Wood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Women Guilt",
+   "url": "https://perfume.rzler.com/products/women-guilt",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 650,
+   "mrpInr": 899,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Gucci Guilty",
+   "inspiredByRaw": "Gucci guilty",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Pink Pepper",
+    "Mandarin Orange",
+    "Bergamot"
+   ],
+   "notesHeart": [
+    "Lilac",
+    "Violet",
+    "Geranium",
+    "Rose"
+   ],
+   "notesBase": [
+    "Patchouli",
+    "Amber"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  },
+  {
+   "name": "RZLER Vanillin Blast",
+   "url": "https://perfume.rzler.com/products/vanillin-blast",
+   "conc": "edp",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1199,
+   "sizeMl": 50,
+   "sizeNote": null,
+   "inspiredBy": "Kayali Capri in a Bottle Lemon Sugar",
+   "inspiredByRaw": "Kayali Capri in a Bottle Lemon Sugar 14",
+   "claimedAccuracy": null,
+   "claimText": "Key notes as published by the house.",
+   "accords": [],
+   "accordSource": null,
+   "notesTop": [
+    "Sugar",
+    "Lemon"
+   ],
+   "notesHeart": [
+    "Raspberry",
+    "Freesia"
+   ],
+   "notesBase": [
+    "Vanilla",
+    "Musk"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": false,
+   "stockNote": "Marked 'Sold out' on every product page at observation (2026-10-02)."
+  }
+ ],
+ "notes": "43 products via Shop All (3 pages) cross-verified against the official sitemap, 2026-10-02 IST. 41 single 50ml perfumes + 2 discovery sets. Every product page opened individually. All marked sold out."
+}

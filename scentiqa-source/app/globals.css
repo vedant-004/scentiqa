@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --color-cream-50: #faf8f4;
+  --color-cream-100: #f4efe6;
+  --color-cream-200: #e9e0d2;
+
+  --color-ink-950: #141110;
+  --color-ink-900: #1e1a16;
+  --color-ink-800: #2a241f;
+  --color-ink-700: #3a322b;
+
+  --color-gold-300: #f3c96b;
+  --color-gold-400: #e8a83e;
+  --color-gold-500: #d97706;
+  --color-gold-600: #b45309;
+  --color-gold-700: #92400e;
+
+  --shadow-card: 0 1px 2px rgb(28 25 23 / 0.05), 0 8px 24px -12px rgb(28 25 23 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(28 25 23 / 0.06), 0 16px 40px -12px rgb(28 25 23 / 0.28);
+  --shadow-glow: 0 0 48px -8px rgb(217 119 6 / 0.45);
+
+  --animate-shimmer: shimmer 1.8s linear infinite;
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 5s ease-in-out infinite;
+
+  @keyframes shimmer {
+    from { background-position: -400px 0; }
+    to { background-position: 400px 0; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream-50 text-stone-900 antialiased dark:bg-ink-950 dark:text-stone-100;
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(217 119 6 / 0.25);
+}
+
+/* ============ NOIR ROUGE — dark theme ============
+   Fragrantica-inspired: charcoal-black surfaces, crimson accent.
+   Tailwind v4 utilities reference these variables, so overriding them
+   under .dark reskins every gold/ink utility in dark mode at once.
+   Light mode keeps the original gold palette untouched. */
+.dark {
+  --color-ink-950: #0c0c0e;
+  --color-ink-900: #141416;
+  --color-ink-800: #1d1d21;
+  --color-ink-700: #2a2a30;
+
+  --color-gold-200: #fecdd3;
+  --color-gold-300: #fda4af;
+  --color-gold-400: #fb7185;
+  --color-gold-500: #f43f5e;
+  --color-gold-600: #e11d48;
+  --color-gold-700: #be123c;
+  --color-gold-800: #9f1239;
+
+  --shadow-glow: 0 0 48px -8px rgb(244 63 94 / 0.5);
+}
+.dark ::selection {
+  background: rgb(244 63 94 / 0.35);
+}
+
+/* Refined focus ring everywhere */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Slim, theme-aware scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(120 113 108 / 0.5) transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: rgb(120 113 108 / 0.45); border-radius: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* Skeleton shimmer surface */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgb(120 113 108 / 0.12) 25%,
+    rgb(120 113 108 / 0.22) 37%,
+    rgb(120 113 108 / 0.12) 63%
+  );
+  background-size: 800px 100%;
+  animation: var(--animate-shimmer);
+}
+
+/* Premium range slider */
+input[type="range"].slider-gold {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--color-gold-500) var(--fill, 50%), rgb(120 113 108 / 0.25) var(--fill, 50%));
+  cursor: pointer;
+}
+input[type="range"].slider-gold::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid var(--color-gold-600);
+  box-shadow: 0 2px 8px rgb(28 25 23 / 0.25);
+  transition: transform 0.15s ease;
+}
+input[type="range"].slider-gold::-webkit-slider-thumb:hover { transform: scale(1.15); }
+input[type="range"].slider-gold::-moz-range-thumb {
+  width: 20px; height: 20px; border-radius: 999px;
+  background: #fff; border: 2px solid var(--color-gold-600);
+  box-shadow: 0 2px 8px rgb(28 25 23 / 0.25);
+}
+
+/* Wordmark letter-spacing */
+.wordmark { letter-spacing: -0.02em; }
+
+/* Stagger helper for grids */
+.stagger > * { animation: var(--animate-fade-up); }
+.stagger > *:nth-child(2) { animation-delay: 0.06s; }
+.stagger > *:nth-child(3) { animation-delay: 0.12s; }
+.stagger > *:nth-child(4) { animation-delay: 0.18s; }
+.stagger > *:nth-child(5) { animation-delay: 0.24s; }
+.stagger > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger > *:nth-child(n+7) { animation-delay: 0.36s; }

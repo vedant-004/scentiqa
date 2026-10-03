@@ -1,0 +1,1457 @@
+{
+ "site": "https://kannaujfragrance.com",
+ "status": "ok",
+ "houseSlug": "kannauj-fragrance",
+ "sellerSlug": "kannauj-fragrance-official",
+ "importMode": "auto",
+ "priceProvenance": "live",
+ "observedAt": "2026-10-02",
+ "house": {
+  "name": "Kannauj Fragrance",
+  "city": "Kannauj",
+  "country": "India",
+  "type": "attar_maker",
+  "site": "https://kannaujfragrance.com",
+  "founded": null,
+  "desc": "Kannauj-based house (kannaujfragrance.com) selling traditional alcohol-free attars distilled in India's perfume capital - mitti, ruh khus, shamama-style blends, ouds and florals from Rs.499. Site-wide promo code KANNAUJ gives 20% off above Rs.999; free shipping above Rs.499. Researched live 2026-10-02."
+ },
+ "products": [
+  {
+   "name": "Kannauj Mitti Attar",
+   "fullName": "Kannauj Mitti Attar | Authentic Indian Attar | Pure Natural Mitti Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/buy-online-mitti-attar-by-kannaujfragrance",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 749,
+   "mrpInr": 949,
+   "sizeMl": 3,
+   "sizeNote": "3ML luxury glass bottle; also 6ML glass, 6ML gifting box, 12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Kannauj Mitti Attar | Authentic Indian Attar | Pure Natural Mitti Attar By Kannauj. Petrichor - scent of first rain on dry baked earth. Natural, grounding, unisex; stress-relieving. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Damp Clay",
+    "Wet Soil"
+   ],
+   "notesHeart": [
+    "Clay Warmth",
+    "Woody Undertones"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Soft Woody Musk"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Rose Attar (Rosa damascena)",
+   "fullName": "Rose Attar (Rosa damascena) | Authentic Indian Attar | Pure Natural Rose Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/buy-online-rose-attar-by-kannaujfragrance",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 749,
+   "mrpInr": 999,
+   "sizeMl": 3,
+   "sizeNote": "3ML luxury glass bottle; also 6/12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Rose Attar (Rosa damascena) | Authentic Indian Attar | Pure Natural Rose Attar By Kannauj. Distilled from Rosa damascena petals. Sweet, floral, romantic, long-lasting. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Fresh Dewy Rose",
+    "Citrus"
+   ],
+   "notesHeart": [
+    "Rich Soft Floral",
+    "Romantic Floral"
+   ],
+   "notesBase": [
+    "Warm Creamy Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Ruh Khus (Vetiver) Attar",
+   "fullName": "Ruh Khus (Vetiver) Attar | Authentic Indian Attar",
+   "url": "https://kannaujfragrance.com/products/ruh-khus-vetiver-attar-authentic-indian-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 749,
+   "mrpInr": 949,
+   "sizeMl": 3,
+   "sizeNote": "3ML luxury glass bottle; also 6/12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Ruh Khus (Vetiver) Attar | Authentic Indian Attar. Distilled vetiver root (Khus). Cooling summer companion; calming. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Earthy",
+    "Green",
+    "Fresh"
+   ],
+   "notesHeart": [
+    "Woody",
+    "Balsamic",
+    "Herbal"
+   ],
+   "notesBase": [
+    "Smoky Woods",
+    "Resinous Vetiver",
+    "Amber"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Sandalwood Attar (Chandan)",
+   "fullName": "Sandalwood Attar (Chandan) | Authentic Indian Attar | Pure Natural",
+   "url": "https://kannaujfragrance.com/products/buy-online-sandalwood-attar-kannaujfragrance",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 999,
+   "mrpInr": 1199,
+   "sizeMl": 3,
+   "sizeNote": "3ML luxury glass bottle; also 6/12/25/50/100ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Sandalwood Attar (Chandan) | Authentic Indian Attar | Pure Natural. Pure sandalwood oil (Chandan). Woody, creamy, soft, sacred; meditation use. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Light Woody",
+    "Sweet",
+    "Creamy"
+   ],
+   "notesHeart": [
+    "Milky Sandalwood",
+    "Warm"
+   ],
+   "notesBase": [
+    "Deep Woody",
+    "Earthy",
+    "Resin"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Chameli Attar",
+   "fullName": "Chameli Attar | Natural Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/chameli-attar-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 899,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Chameli Attar | Natural Attar By Kannauj. Natural distilled jasmine (Chameli) perfume oil. Used in aromatherapy and Hindu rituals. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Jasmine",
+    "Sweet Floral"
+   ],
+   "notesHeart": [
+    "Rich Floral",
+    "Calming"
+   ],
+   "notesBase": [
+    "Soft Warmth"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Saffron Attar",
+   "fullName": "Saffron Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/saffron-attar-authentic-indian-attar-pure-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 849,
+   "sizeMl": 6,
+   "sizeNote": "6ML; also 12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Saffron Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj. Kashmiri saffron (Crocus sativus) attar, hydro-distilled. Blends with rose/jasmine. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Saffron",
+    "Spicy"
+   ],
+   "notesHeart": [
+    "Floral",
+    "Intense"
+   ],
+   "notesBase": [
+    "Warm",
+    "Resinous"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Jasmine Attar (Jasminum sambac)",
+   "fullName": "Jasmine Attar (Jasminum sambac) | Authentic Indian Attar | Pure Natural Jasmine Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/jasmine-attar-jasminum-sambac-authentic-indian-attar-pure-natural-jasmine-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 749,
+   "mrpInr": 949,
+   "sizeMl": 3,
+   "sizeNote": "3ML luxury glass bottle; also 6/12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Jasmine Attar (Jasminum sambac) | Authentic Indian Attar | Pure Natural Jasmine Attar By Kannauj. Jasminum sambac attar. Sweet, floral, warm, exotic; alcohol-free. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Fresh Sweet Jasmine"
+   ],
+   "notesHeart": [
+    "Soft Creamy Floral",
+    "Warm Sensual"
+   ],
+   "notesBase": [
+    "Light Woody",
+    "Musky Warmth",
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Champa Attar",
+   "fullName": "Champa Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/champa-authentic-indian-attar-pure-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 849,
+   "sizeMl": 6,
+   "sizeNote": "6ML; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Champa Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj. Golden Champa (Plumeria) flowers. Popular for Diwali pooja, meditation, festive gifting. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Golden Champa",
+    "Sweet Floral"
+   ],
+   "notesHeart": [
+    "Floral",
+    "Calming"
+   ],
+   "notesBase": [
+    "Slightly Woody"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "White Lotus Attar",
+   "fullName": "White Lotus Attar - Essences of Nature, Captured by Kannauj",
+   "url": "https://kannaujfragrance.com/products/white-lotus-attar-arabic-attar-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 899,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: White Lotus Attar - Essences of Nature, Captured by Kannauj. Wild-harvested Nelumbo nucifera (Tamil Nadu). Medium strength. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Warm Spicy",
+    "Fresh",
+    "Camphorous"
+   ],
+   "notesHeart": [
+    "Sandalwood",
+    "Fruity",
+    "Sweet"
+   ],
+   "notesBase": [
+    "Sweetness"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Kesar Chandan Attar",
+   "fullName": "Kesar Chandan Attar | Handcrafted Fragrance from Kannauj",
+   "url": "https://kannaujfragrance.com/products/kesar-chandan-attar-arabic-attar-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 499,
+   "mrpInr": 599,
+   "sizeMl": 6,
+   "sizeNote": "6ML; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Kesar Chandan Attar | Handcrafted Fragrance from Kannauj. Saffron (kesar) + sandalwood (chandan) blend. Unisex, long-lasting; religious rituals. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Warm Saffron",
+    "Exotic Spice"
+   ],
+   "notesHeart": [
+    "Sweet Creamy Sandalwood"
+   ],
+   "notesBase": [
+    "Smooth Balsamic"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Premium Mitti Attar",
+   "fullName": "Premium Mitti Attar | Gifting Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/premium-mitti-attar-gifting-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 1749,
+   "mrpInr": 2149,
+   "sizeMl": 6,
+   "sizeNote": "6ML only (single variant)",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Premium Mitti Attar | Gifting Attar By Kannauj. Premium petrichor attar - baked clay blended with sandalwood oil, deg-bhapka distilled. 100% natural. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Baked Clay",
+    "Petrichor"
+   ],
+   "notesHeart": [
+    "Clay Warmth"
+   ],
+   "notesBase": [
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Kasturi Attar",
+   "fullName": "Kasturi Attar | Authentic Indian Attar",
+   "url": "https://kannaujfragrance.com/products/kasturi-attar-authentic-indian-attar-pure-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 1149,
+   "mrpInr": 1399,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Kasturi Attar | Authentic Indian Attar. Herbal musk attar. Vegan-friendly botanical musk distilled over sandalwood oil. Unisex. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Herbal",
+    "Woody"
+   ],
+   "notesHeart": [
+    "Musky",
+    "Warm Earthy"
+   ],
+   "notesBase": [
+    "Deep Amber",
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Premium Rose Attar",
+   "fullName": "Premium Rose Attar | Gifting Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/premium-rose-attar-gifting-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 1649,
+   "mrpInr": 2149,
+   "sizeMl": 6,
+   "sizeNote": "6ML only (single variant)",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Premium Rose Attar | Gifting Attar By Kannauj. Premium freshly-bloomed Kannauj rose attar. Diwali, weddings, anniversaries. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Fresh Blooming Rose",
+    "Dewy"
+   ],
+   "notesHeart": [
+    "Sweet Floral",
+    "Romantic"
+   ],
+   "notesBase": [
+    "Soft Warmth"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Kadamb Attar",
+   "fullName": "Kadamb Attar (Kadam) | Authentic Indian Attar | Pure Natural kadamb Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/kadamb-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 799,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Kadamb Attar (Kadam) | Authentic Indian Attar | Pure Natural kadamb Attar By Kannauj. Kadamba tree flowers, sacred to Lord Krishna. Ayurvedic cooling. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Fresh Floral",
+    "Citrus"
+   ],
+   "notesHeart": [
+    "Sweet Floral",
+    "Honey"
+   ],
+   "notesBase": [
+    "Mild Woody",
+    "Soft Musk",
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Musk Amber Attar",
+   "fullName": "Musk Amber Attar | Authentic Indian Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/musk-gajali-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 849,
+   "mrpInr": 1099,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Musk Amber Attar | Authentic Indian Attar By Kannauj. Musk + golden amber blend. Long-lasting, alcohol-free, unisex; meditation. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Musk",
+    "Golden Amber"
+   ],
+   "notesHeart": [
+    "Warm Deep Earthy"
+   ],
+   "notesBase": [
+    "Sweet Resinous"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Premium Sandalwood Attar",
+   "fullName": "Premium Sandalwood Attar | Gifting Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/premium-sandalwood-attar-attar-gifting-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 1449,
+   "mrpInr": 2049,
+   "sizeMl": 6,
+   "sizeNote": "6ML only (single variant)",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Premium Sandalwood Attar | Gifting Attar By Kannauj. Premium handcrafted Kannauj sandalwood attar. Daily wear, prayer, meditation, gifting. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Warm Woody"
+   ],
+   "notesHeart": [
+    "Rich Sandalwood"
+   ],
+   "notesBase": [
+    "Lingering Woody"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Desi Gulab Attar",
+   "fullName": "Desi Gulab Attar By Kannauj | Authentic Indian Attar",
+   "url": "https://kannaujfragrance.com/products/kannauj-desi-gulab-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 999,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML, 25ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Desi Gulab Attar By Kannauj | Authentic Indian Attar. Traditional Indian attar from desi roses, deg-bhapka distilled over sandalwood oil. Aged for depth. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Desi Rose"
+   ],
+   "notesHeart": [
+    "Rich Floral"
+   ],
+   "notesBase": [
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Shahi Gulab Attar",
+   "fullName": "Shahi Gulab Attar By Kannauj | Authentic Indian Attar",
+   "url": "https://kannaujfragrance.com/products/shahi-gulab-attar-by-kannauj-authentic-indian-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 999,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML, 25ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Shahi Gulab Attar By Kannauj | Authentic Indian Attar. 'Shahi' (royal) rose attar from premium rose petals. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Fresh Dewy Rose"
+   ],
+   "notesHeart": [
+    "Rich Sweet Floral"
+   ],
+   "notesBase": [
+    "Woody Creamy Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Kewra Attar",
+   "fullName": "Kewra Attar (Pandanus) | Authentic Indian Attar | Pure Natural Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/kewra-attar-authentic-indian-attar-pure-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 849,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Kewra Attar (Pandanus) | Authentic Indian Attar | Pure Natural Attar By Kannauj. Distilled from Pandanus odorifer (screw pine) flowers. Ayurvedic cooling. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Sweet",
+    "Fresh Floral",
+    "Fruity"
+   ],
+   "notesHeart": [
+    "Honey-like",
+    "Rose",
+    "Hyacinth"
+   ],
+   "notesBase": [
+    "Calming"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Blue Lotus Attar",
+   "fullName": "Blue Lotus Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/blue-lotus-attar-authentic-indian-attar-pure-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 849,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Blue Lotus Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj. Nymphaea caerulea attar, therapeutic grade. Blends with sandalwood, vetiver, musks. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Sweet Deep Floral"
+   ],
+   "notesHeart": [
+    "Herbaceous",
+    "Powdery"
+   ],
+   "notesBase": [
+    "Calming"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Premium Jasmine Attar",
+   "fullName": "Premium Jasmine Attar | Gifting Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/premium-jasmine-attar-gifting-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 1649,
+   "mrpInr": 2149,
+   "sizeMl": 6,
+   "sizeNote": "6ML only (single variant)",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Premium Jasmine Attar | Gifting Attar By Kannauj. Premium freshly-bloomed jasmine attar. Festive gifting, pooja rituals, daily wear. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Intoxicating Jasmine"
+   ],
+   "notesHeart": [
+    "Rich Floral"
+   ],
+   "notesBase": [
+    "Warmth"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Shyam Darbar Attar",
+   "fullName": "Shyam Darbar Attar - Nature's Purity, Kannauj Heritage",
+   "url": "https://kannaujfragrance.com/products/natural-shyam-darbar-attar-authentic-indian-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 499,
+   "mrpInr": 699,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML, 25ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Shyam Darbar Attar - Nature's Purity, Kannauj Heritage. Devotional attar blending traditional floral, herbal, woody essences. Temples, meditation. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Floral",
+    "Herbal"
+   ],
+   "notesHeart": [
+    "Woody",
+    "Earthy"
+   ],
+   "notesBase": [
+    "Spiritual Warmth"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Tobacco Oud Attar",
+   "fullName": "Tobacco Oud Attar | Best Quality Attar | Pure Natural Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/tobacco-oud-attar-best-quality-attar-pure-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 849,
+   "sizeMl": 6,
+   "sizeNote": "6ML; also 12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Tobacco Oud Attar | Best Quality Attar | Pure Natural Attar By Kannauj. Smoky natural tobacco leaves fused with oud (agarwood). Evening, winter. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Whiskey",
+    "Spicy"
+   ],
+   "notesHeart": [
+    "Woody",
+    "Leathery Oud"
+   ],
+   "notesBase": [
+    "Warm Resinous",
+    "Musky"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Arabian Oud Attar",
+   "fullName": "Arabian Oud Attar | Natural Attar from Kannauj",
+   "url": "https://kannaujfragrance.com/products/arabian-oud-attar-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 499,
+   "mrpInr": 699,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Arabian Oud Attar | Natural Attar from Kannauj. Deep, opulent oud from Aquilaria heartwood. Unisex; up to 24h longevity. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Smoky",
+    "Spicy",
+    "Sweet"
+   ],
+   "notesHeart": [
+    "Deep Oud Wood",
+    "Incense",
+    "Warm Resins"
+   ],
+   "notesBase": [
+    "Earthy",
+    "Leathery"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Aseel Attar",
+   "fullName": "Aseel Attar - A Legacy of Luxury, Distilled in Kannauj",
+   "url": "https://kannaujfragrance.com/products/aseel-attar-arabic-attar-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 499,
+   "mrpInr": 599,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Aseel Attar - A Legacy of Luxury, Distilled in Kannauj. Traditional Arabian-style fragrance. Prayer, meditation, festive occasions. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Deep",
+    "Warm"
+   ],
+   "notesHeart": [
+    "Musk",
+    "Amber",
+    "Exotic Woods"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Aqua Notes"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Bela Attar",
+   "fullName": "Bela Attar Authentically Kannauj",
+   "url": "https://kannaujfragrance.com/products/bela-attar-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 899,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12/25/50/100/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Bela Attar Authentically Kannauj. Distilled from Bela white blossoms (Jasminum sambac variant), hydro-distilled over sandalwood oil. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Sweet Floral",
+    "Exotic"
+   ],
+   "notesHeart": [
+    "Intoxicating",
+    "Warm"
+   ],
+   "notesBase": [
+    "Soft Warmth"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Bindas Attar",
+   "fullName": "Bindas Attar - Fragrance of Royal India",
+   "url": "https://kannaujfragrance.com/products/bindas-attar-fragrance-of-royal-india",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 649,
+   "mrpInr": 999,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Bindas Attar - Fragrance of Royal India. Bold, confident fragrance oil. Alcohol-free, unisex, strong projection. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Citrus",
+    "Bergamot",
+    "Fresh Herbs"
+   ],
+   "notesHeart": [
+    "Sandalwood",
+    "Cedarwood",
+    "Soft Spices"
+   ],
+   "notesBase": [
+    "Musk",
+    "Amber",
+    "Warm Woods"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Blue Lady Attar",
+   "fullName": "Blue Lady Attar - A Symphony of Pure Scent",
+   "url": "https://kannaujfragrance.com/products/blue-lady-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 499,
+   "mrpInr": 699,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML",
+   "inspiredBy": "Rasasi Blue Lady",
+   "inspiredByRaw": "Blue Lady by Rasasi (site's own wording)",
+   "claimedAccuracy": null,
+   "claimText": "Page title: Blue Lady Attar - A Symphony of Pure Scent. Feminine floral perfume oil with a vintage twist. Alcohol-free. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Violet Leaves",
+    "Ylang-Ylang",
+    "Tuberose",
+    "Orange Blossom"
+   ],
+   "notesHeart": [
+    "Jasmine",
+    "Rose",
+    "Narcissus"
+   ],
+   "notesBase": [
+    "Sandalwood",
+    "Musk",
+    "Vetiver",
+    "Vanilla"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Bombay Oud Special Attar",
+   "fullName": "Bombay Oud Special Attar | Handcrafted Fragrance from Kannauj",
+   "url": "https://kannaujfragrance.com/products/bombay-oud-special-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 699,
+   "mrpInr": 999,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML, 25ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Bombay Oud Special Attar | Handcrafted Fragrance from Kannauj. Dark golden to brownish, thick oil; very long-lasting. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Warm Spicy",
+    "Woody",
+    "Sweet"
+   ],
+   "notesHeart": [
+    "Deep Oud",
+    "Soft Florals",
+    "Amber"
+   ],
+   "notesBase": [
+    "Earthy",
+    "Leathery",
+    "Smoky",
+    "Musky Woody"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Cambodian Oud Attar",
+   "fullName": "Cambodian Oud Attar | Authentic Indian Attar",
+   "url": "https://kannaujfragrance.com/products/cambodian-oud-attar-by-kannauj-authentic-indian-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 1099,
+   "mrpInr": 1549,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML, 25ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Cambodian Oud Attar | Authentic Indian Attar. Agarwood oud sourced from Cambodia. Softer and sweeter than Hindi oud. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Warm",
+    "Sweet",
+    "Honey-like"
+   ],
+   "notesHeart": [
+    "Woody",
+    "Leathery",
+    "Earthy"
+   ],
+   "notesBase": [
+    "Resinous",
+    "Animalic",
+    "Smoky"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Dehn-Al-Oud Attar",
+   "fullName": "Dehn-Al-Oud Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj",
+   "url": "https://kannaujfragrance.com/products/dehn-al-oud-attar-authentic-indian-attar-pure-natural-attar-by-kannauj",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 1149,
+   "mrpInr": 1499,
+   "sizeMl": 6,
+   "sizeNote": "6ML; also 12/25/50/100/250/500ML, 1KG",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Dehn-Al-Oud Attar | Authentic Indian Attar | Pure Natural Attar By Kannauj. Most prestigious natural attar; distilled from resinous Agarwood. 'Liquid black' in perfumery. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Deep Woody",
+    "Smoky"
+   ],
+   "notesHeart": [
+    "Resinous",
+    "Balsamic"
+   ],
+   "notesBase": [
+    "Sweet Undertones"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  },
+  {
+   "name": "Fasli Gulab Attar",
+   "fullName": "Fasli Gulab Attar (Rose Intense)-Authentic Indian Attar",
+   "url": "https://kannaujfragrance.com/products/fasli-gulab-attar-rose-intense-authentic-indian-attar",
+   "conc": "attar",
+   "gender": "unisex",
+   "priceInr": 499,
+   "mrpInr": 699,
+   "sizeMl": 6,
+   "sizeNote": "6ML luxury glass bottle; also 12ML",
+   "inspiredBy": null,
+   "inspiredByRaw": null,
+   "claimedAccuracy": null,
+   "claimText": "Page title: Fasli Gulab Attar (Rose Intense)-Authentic Indian Attar. 'Rose Intense' from finest seasonal (Fasli) roses, hydro-distilled. 100% natural. Alcohol-free natural attar.",
+   "accords": [
+    [
+     "Oriental",
+     85
+    ],
+    [
+     "Resinous",
+     75
+    ],
+    [
+     "Natural",
+     90
+    ]
+   ],
+   "accordSource": "house-type",
+   "notesTop": [
+    "Deep Blooming Rose"
+   ],
+   "notesHeart": [
+    "Rich Intoxicating Floral"
+   ],
+   "notesBase": [
+    "Sandalwood"
+   ],
+   "notesUntiered": null,
+   "notesSource": "brand",
+   "inStock": true
+  }
+ ],
+ "notes": "32 attars from the 'Traditional Attar' (23) and 'Arabic Attar' (9) collections, observed 2026-10-02 IST. Prices are for the default variant (3ML for mitti/rose/ruh khus/jasmine/sandalwood, 6ML otherwise); regularPrice recorded as MRP. Note pyramids parsed from brand-published descriptions. Excluded: a mislinked Bakhoor card and a combo/sample set. Only Blue Lady carries an explicit inspired-by statement."
+}
