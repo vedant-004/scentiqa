@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
-      <body className="flex min-h-dvh flex-col">
+      <body className="flex min-h-dvh flex-col floral-bg">
         <ToastProvider>
           <Header stats={stats} />
           <main className="flex-1 pb-20 md:pb-0">{children}</main>
