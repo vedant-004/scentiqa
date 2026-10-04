@@ -17,6 +17,7 @@ function select<T extends (...args: any[]) => Promise<any>>(demoFn: T, liveFn: T
 export const getPerfume = select(demo.getPerfume, live.getPerfume);
 export const getAllPerfumeSlugs = select(demo.getAllPerfumeSlugs, live.getAllPerfumeSlugs);
 export const getAllHouseSlugs = select(demo.getAllHouseSlugs, live.getAllHouseSlugs);
+export const getAllHouses = select(demo.getAllHouses, live.getAllHouses);
 export const getAllArticleSlugs = select(demo.getAllArticleSlugs, live.getAllArticleSlugs);
 export const getHouse = select(demo.getHouse, live.getHouse);
 export const searchPerfumes = select(demo.searchPerfumes, live.searchPerfumes);

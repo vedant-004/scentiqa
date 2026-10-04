@@ -41,7 +41,7 @@ export default async function HousePage({ params }: { params: Promise<{ slug: st
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Houses' }, { label: h.name }]} />
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Houses', href: '/houses' }, { label: h.name }]} />
 
       {/* Header */}
       <section className="relative overflow-hidden rounded-3xl border border-stone-200/70 bg-white p-6 sm:p-10 dark:border-ink-700/50 dark:bg-ink-900">

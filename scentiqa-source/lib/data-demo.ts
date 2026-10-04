@@ -91,6 +91,10 @@ export async function getAllPerfumeSlugs(): Promise<string[]> {
 export async function getAllHouseSlugs(): Promise<string[]> {
   return seed.houses.map((h) => h.slug);
 }
+/** All houses, alphabetically, for the /houses directory. */
+export async function getAllHouses(): Promise<House[]> {
+  return [...seed.houses].sort((a, b) => a.name.localeCompare(b.name));
+}
 export async function getAllArticleSlugs(): Promise<string[]> {
   return seed.articles.map((a) => a.slug);
 }

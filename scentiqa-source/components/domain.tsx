@@ -321,6 +321,7 @@ export function HouseCard({ house }: { house: House }) {
           <p className="mt-0.5 flex items-center gap-2 text-[13px] text-stone-500 dark:text-stone-400">
             <span className="font-semibold text-gold-600 dark:text-gold-400">{HOUSE_TYPE_LABEL[house.type]}</span>
             <span>·</span><span>{house.country}</span>
+            {house.perfumeCount > 0 && <><span>·</span><span>{house.perfumeCount} fragrances</span></>}
             {house.avgSimilarity ? <><span>·</span><span className="font-semibold text-emerald-600 dark:text-emerald-400">{house.avgSimilarity}% avg</span></> : null}
           </p>
         </div>

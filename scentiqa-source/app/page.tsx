@@ -168,7 +168,7 @@ export default async function Home() {
         {/* ============ NEW FROM INDIAN HOUSES ============ */}
         <section>
           <SectionHeading kicker="Desi perfumery" title="New from Indian houses"
-            action={<Link href="/house/house-of-em5"><Button variant="ghost" size="sm">All houses →</Button></Link>} />
+            action={<Link href="/houses"><Button variant="ghost" size="sm">All houses →</Button></Link>} />
           <div className="stagger grid grid-cols-2 gap-4 lg:grid-cols-4">
             {latest.slice(0, 4).map((p: Perfume) => <PerfumeCard key={p.slug} perfume={p} />)}
           </div>

@@ -114,6 +114,12 @@ export async function getAllHouseSlugs(): Promise<string[]> {
   const { data } = await c.from('houses').select('slug');
   return (data ?? []).map((r: { slug: string }) => r.slug);
 }
+/** All houses, alphabetically, for the /houses directory. */
+export async function getAllHouses(): Promise<House[]> {
+  const c = sb(); if (!c) return [];
+  const { data } = await c.from('houses').select('*').order('name', { ascending: true });
+  return (data ?? []).map((r) => mapHouse(r as Record<string, unknown>));
+}
 export async function getAllArticleSlugs(): Promise<string[]> {
   const c = sb(); if (!c) return [];
   const { data } = await c.from('articles').select('slug').eq('is_published', true);

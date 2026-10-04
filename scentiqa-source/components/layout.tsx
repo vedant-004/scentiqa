@@ -134,7 +134,7 @@ export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocu
 /* ---------- Header ---------- */
 const NAV = [
   { href: '/find-alternative', label: 'Find a Dupe' },
-  { href: '/house/house-of-em5', label: 'Houses' },
+  { href: '/houses', label: 'Houses' },
   { href: '/sellers', label: 'Sellers' },
   { href: '/news', label: 'News' },
   { href: '/forum', label: 'Community' },
@@ -217,6 +217,49 @@ function AuthButton() {
   );
 }
 
+/* ---------- Mobile nav drawer ---------- */
+function MobileMenu() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('mousedown', close);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', close);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+  return (
+    <div ref={menuRef} className="relative lg:hidden">
+      <button onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}
+        className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
+      </button>
+      {open && (
+        <div className="absolute right-0 z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href} onClick={() => setOpen(false)}
+              className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
+              {n.label}
+            </Link>
+          ))}
+          <Link href="/contact" onClick={() => setOpen(false)}
+            className="block border-t border-stone-100 px-4 py-3 text-sm font-semibold text-stone-500 hover:bg-stone-50 dark:border-ink-700 dark:text-stone-400 dark:hover:bg-white/5">
+            Contact
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Header({ stats }: { stats?: { perfumes: number; houses: number; reviews: number; members: number } }) {
   const { toast } = useToast();
   const [scrolled, setScrolled] = useState(false);
@@ -240,6 +283,7 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
         </nav>
         <div className="ml-auto hidden w-72 md:block xl:w-96"><SearchBar /></div>
         <div className="ml-auto flex items-center gap-1 md:ml-0">
+          <MobileMenu />
           <ThemeToggle />
           <button onClick={() => toast('Connect Supabase to enable accounts & notifications', 'info')} aria-label="Notifications"
             className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
@@ -327,7 +371,7 @@ export function MobileBottomNav() {
 /* ---------- Footer ---------- */
 export function Footer({ stats }: { stats: { perfumes: number; houses: number; reviews: number; members: number } }) {
   const cols: Array<{ h: string; links: Array<[string, string]> }> = [
-    { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['Compare', '/compare'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Hidden Gems', '/hidden-gems'], ['Recommendations', '/finder']] },
+    { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['All houses', '/houses'], ['Compare', '/compare'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Hidden Gems', '/hidden-gems'], ['Recommendations', '/finder']] },
     { h: 'Community', links: [['Forum', '/forum'], ['Awards 2026', '/awards/2026'], ['Giveaways', '/giveaways'], ['News', '/news'], ['Member spotlight', '/member/arjun_sniffs']] },
     { h: 'Trust', links: [['Our methodology', '/methodology'], ['Climate protocol', '/climate-protocol'], ['Trust charter', '/trust-charter'], ['Verified sellers', '/sellers'], ['Spot fakes', '/fake-guide'], ['About', '/about']] },
     { h: 'Company', links: [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy'], ['Log in', '/login']] },
