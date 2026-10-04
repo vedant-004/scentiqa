@@ -13,20 +13,28 @@ export default function Awards2026Page() {
       <SectionHeading kicker="Scentiqa Awards" title="2026 Ultimate Winner" />
       
       <Card className="mb-8 overflow-hidden">
-        <div className="bg-gradient-to-br from-gold-600/20 via-gold-500/10 to-transparent p-8 sm:p-12 text-center">
-          <p className="mb-2 text-6xl">🏆</p>
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-700 dark:text-gold-300">
-            Ultimate Winner 2026
-          </p>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
-            My Perfume Secrets Tygar
-          </h2>
-          <p className="mt-3 text-lg text-stone-600 dark:text-stone-300">
-            Best Clone of Bvlgari Tygar
-          </p>
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold-600/15 px-6 py-2.5">
-            <span className="text-2xl">⭐</span>
-            <span className="font-bold text-gold-700 dark:text-gold-300">Scentiqa's Choice 2026</span>
+        <div className="relative overflow-hidden text-center">
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/awards/awards-hero-uhd.jpg')" }}
+          />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
+          <div className="relative p-8 sm:p-12">
+            <p className="mb-2 text-6xl">🏆</p>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-300">
+              Ultimate Winner 2026
+            </p>
+            <h2 className="font-display text-4xl font-bold text-white sm:text-5xl">
+              My Perfume Secrets Tygar
+            </h2>
+            <p className="mt-3 text-lg text-stone-200">
+              Best Clone of Bvlgari Tygar
+            </p>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold-500/20 px-6 py-2.5 ring-1 ring-gold-400/40">
+              <span className="text-2xl">⭐</span>
+              <span className="font-bold text-gold-200">Scentiqa's Choice 2026</span>
+            </div>
           </div>
         </div>
         
