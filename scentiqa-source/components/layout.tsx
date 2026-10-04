@@ -144,16 +144,44 @@ const NAV = [
 /* ---------- Auth-aware nav button ---------- */
 function AuthButton() {
   const { user, loading, signOut } = useAuth();
+  const router = useRouter();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  // Safety net: the menu must never stay open across a route change.
+  useEffect(() => { setOpen(false); }, [pathname]);
   useEffect(() => {
     if (!open) return;
     const close = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
     };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('mousedown', close);
-    return () => document.removeEventListener('mousedown', close);
-  }, [open ]);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', close);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+  const goDashboard = () => {
+    setOpen(false);
+    router.push('/account');
+  };
+  const doSignOut = async () => {
+    if (busy) return;
+    setBusy(true);
+    setOpen(false);
+    try {
+      await signOut();
+    } finally {
+      // Mirror the working /account sign-out: always land home and refresh,
+      // even if the remote sign-out call failed.
+      router.push('/');
+      router.refresh();
+      setBusy(false);
+    }
+  };
   if (loading) return <span className="ml-1 hidden h-10 w-20 animate-pulse rounded-xl bg-stone-200 sm:inline-flex dark:bg-ink-700" />;
   if (!user) {
     return (
@@ -165,7 +193,7 @@ function AuthButton() {
   const initial = (user.email ?? 'S')[0].toUpperCase();
   return (
     <div ref={menuRef} className="relative ml-1 hidden sm:block">
-      <button onClick={() => setOpen((o) => !o)} aria-label="Account"
+      <button onClick={() => setOpen((o) => !o)} aria-label="Account" aria-expanded={open}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform active:scale-95">
         {initial}
       </button>
@@ -175,13 +203,13 @@ function AuthButton() {
             <p className="truncate text-sm font-semibold">{user.email}</p>
             <p className="text-xs text-stone-400">Signed in{user.app_metadata?.provider === 'google' ? ' with Google' : ''}</p>
           </div>
-          <Link href="/account" onClick={() => setOpen(false)}
-            className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
+          <button onClick={goDashboard}
+            className="block w-full px-4 py-3 text-left text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
             My dashboard
-          </Link>
-          <button onClick={() => { setOpen(false); signOut(); }}
-            className="block w-full border-t border-stone-100 px-4 py-3 text-left text-sm font-semibold text-stone-600 hover:bg-stone-50 dark:border-ink-700 dark:text-stone-300 dark:hover:bg-white/5">
-            Sign out
+          </button>
+          <button onClick={doSignOut} disabled={busy}
+            className="block w-full border-t border-stone-100 px-4 py-3 text-left text-sm font-semibold text-stone-600 hover:bg-stone-50 disabled:opacity-60 dark:border-ink-700 dark:text-stone-300 dark:hover:bg-white/5">
+            {busy ? 'Signing out…' : 'Sign out'}
           </button>
         </div>
       )}

@@ -21,8 +21,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = async () => {
     const sb = getSupabaseBrowser();
-    if (sb) await sb.auth.signOut();
-    setUser(null);
+    try {
+      if (sb) {
+        // Never let a hanging/failed network call freeze the UI or leave a
+        // half-signed-out state: cap the remote call at 8s, then move on.
+        await Promise.race([
+          sb.auth.signOut(),
+          new Promise((_, rej) => setTimeout(() => rej(new Error('signOut timeout')), 8000)),
+        ]);
+      }
+    } catch {
+      // Remote sign-out failed or timed out — cookies may already be cleared.
+      // Either way, drop local auth state so the UI never lies about it.
+    } finally {
+      setUser(null);
+    }
   };
 
   return <Ctx.Provider value={{ user, loading, signOut }}>{children}</Ctx.Provider>;
