@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import {
   getArticles, getDupeOfWeek, getLatestLaunches, getLatestReviews,
-  getPriceDrops, getStats, getTrending,
+  getPerfumeOfTheDay, getPriceDrops, getStats, getTrending,
 } from '@/lib/data';
 import { inr } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Button, Card, SectionHeading } from '@/components/ui';
 import { JsonLd, organizationJsonLd, websiteJsonLd } from '@/components/seo';
-import { BottleVisual, PerfumeCard, ScoreBadge, SearchBar, StarRating } from '@/components';
+import { AccordStack, BottleVisual, NotePyramid, PerfumeCard, ProductImage, ScoreBadge, SearchBar, StarRating } from '@/components';
 import type { Perfume } from '@/lib/types';
 
 export const metadata = { title: 'Scentiqa — India\u2019s Perfume Encyclopedia & Dupe Finder' };
@@ -22,8 +22,8 @@ function Rail({ children }: { children: React.ReactNode }) {
 
 export default async function Home() {
   const demo = !isSupabaseConfigured();
-  const [trending, latest, drops, dupeWeek, articles, reviews, stats] = await Promise.all([
-    getTrending(), getLatestLaunches(), getPriceDrops(), getDupeOfWeek(),
+  const [trending, latest, drops, dupeWeek, potd, articles, reviews, stats] = await Promise.all([
+    getTrending(), getLatestLaunches(), getPriceDrops(), getDupeOfWeek(), getPerfumeOfTheDay(),
     getArticles(3), getLatestReviews(3), getStats(),
   ]);
 
@@ -79,6 +79,48 @@ export default async function Home() {
             ))}
           </Rail>
         </section>
+
+        {/* ============ PERFUME OF THE DAY ============ */}
+        {potd && (
+          <section>
+            <SectionHeading kicker="Daily pick" title="Perfume of the day"
+              action={<Link href={`/perfume/${potd.slug}`}><Button variant="ghost" size="sm">Full details →</Button></Link>} />
+            <Card className="relative overflow-hidden p-0">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold-300/20 via-transparent to-transparent dark:from-gold-600/10" aria-hidden="true" />
+              <div className="relative grid gap-8 p-6 sm:p-10 lg:grid-cols-[auto_1fr] lg:items-start">
+                <Link href={`/perfume/${potd.slug}`} className="group mx-auto flex flex-col items-center text-center">
+                  <ProductImage name={potd.name} house={potd.house} image={potd.bottleImage} size="lg" />
+                  {potd.ratingCount > 0 && (
+                    <div className="mt-3"><StarRating value={potd.ratingAvg} /> <span className="text-xs text-stone-500">({potd.ratingCount})</span></div>
+                  )}
+                </Link>
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-600 dark:text-gold-400">{potd.house}</p>
+                  <Link href={`/perfume/${potd.slug}`}>
+                    <h3 className="mt-1 font-display text-3xl font-bold tracking-tight hover:text-gold-700 dark:hover:text-gold-300">{potd.name}</h3>
+                  </Link>
+                  <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">{potd.description}</p>
+                  {potd.accords.length > 0 && (
+                    <div className="mt-6">
+                      <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-stone-500">Main accords</p>
+                      <AccordStack accords={potd.accords.slice(0, 5)} />
+                    </div>
+                  )}
+                  {(potd.topNotes.length > 0 || potd.heartNotes.length > 0 || potd.baseNotes.length > 0) && (
+                    <div className="mt-6">
+                      <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-stone-500">Notes</p>
+                      <NotePyramid top={potd.topNotes} heart={potd.heartNotes} base={potd.baseNotes} />
+                    </div>
+                  )}
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <Link href={`/perfume/${potd.slug}`}><Button>View perfume</Button></Link>
+                    {potd.lowestPriceInr && <span className="text-lg font-bold">{inr(potd.lowestPriceInr)}</span>}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </section>
+        )}
 
         {/* ============ DUPE OF THE WEEK ============ */}
         {dupeWeek && (

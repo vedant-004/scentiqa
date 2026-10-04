@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/components/ui";
+import { AuthProvider } from "@/components/auth";
 import { Footer, Header, MobileBottomNav } from "@/components/layout";
 import { getStats } from "@/lib/data";
 
@@ -27,10 +28,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="flex min-h-dvh flex-col floral-bg">
         <ToastProvider>
-          <Header stats={stats} />
-          <main className="flex-1 pb-20 md:pb-0">{children}</main>
-          <Footer stats={stats} />
-          <MobileBottomNav />
+          <AuthProvider>
+            <Header stats={stats} />
+            <main className="flex-1 pb-20 md:pb-0">{children}</main>
+            <Footer stats={stats} />
+            <MobileBottomNav />
+          </AuthProvider>
         </ToastProvider>
       </body>
     </html>

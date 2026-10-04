@@ -154,6 +154,15 @@ export async function getDupeOfWeek(): Promise<{ original: Perfume; dupe: DupeEn
   return { original, dupe };
 }
 
+export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
+  const eligible = [...perfBySlug.values()].filter((p) => p.description && p.accords.length);
+  if (!eligible.length) return null;
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((now.getTime() - start.getTime()) / 86400000);
+  return eligible[dayOfYear % eligible.length] ?? null;
+}
+
 export async function getLatestReviews(limit = 6): Promise<Array<Review & { perfume: Perfume }>> {
   return [...seed.reviews]
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt))

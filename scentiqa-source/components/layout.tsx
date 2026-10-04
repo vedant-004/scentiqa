@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { useToast } from './ui';
 import { ThemeToggle } from './domain';
+import { useAuth } from './auth';
 import type { Perfume } from '@/lib/types';
 
 export const isDemoMode = !isSupabaseConfigured();
@@ -138,6 +139,41 @@ const NAV = [
   { href: '/forum', label: 'Forum' },
   { href: '/awards/2026', label: 'Awards' },
 ];
+/* ---------- Auth-aware nav button ---------- */
+function AuthButton() {
+  const { user, loading, signOut } = useAuth();
+  const [open, setOpen] = useState(false);
+  if (loading) return <span className="ml-1 hidden h-10 w-20 animate-pulse rounded-xl bg-stone-200 sm:inline-flex dark:bg-ink-700" />;
+  if (!user) {
+    return (
+      <Link href="/login" className="ml-1 hidden h-10 items-center whitespace-nowrap rounded-xl bg-stone-900 px-4 text-sm font-semibold text-white transition-all hover:bg-stone-700 active:scale-95 sm:inline-flex dark:bg-white dark:text-stone-900 dark:hover:bg-stone-200">
+        Log in
+      </Link>
+    );
+  }
+  const initial = (user.email ?? 'S')[0].toUpperCase();
+  return (
+    <div className="relative ml-1 hidden sm:block">
+      <button onClick={() => setOpen((o) => !o)} aria-label="Account"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform active:scale-95">
+        {initial}
+      </button>
+      {open && (
+        <div className="absolute right-0 z-50 mt-2 w-60 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
+          <div className="border-b border-stone-100 px-4 py-3 dark:border-ink-700">
+            <p className="truncate text-sm font-semibold">{user.email}</p>
+            <p className="text-xs text-stone-400">Signed in with Google</p>
+          </div>
+          <button onClick={() => { setOpen(false); signOut(); }}
+            className="block w-full px-4 py-3 text-left text-sm font-semibold text-stone-600 hover:bg-stone-50 dark:text-stone-300 dark:hover:bg-white/5">
+            Sign out
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Header({ stats }: { stats?: { perfumes: number; houses: number; reviews: number; members: number } }) {
   const { toast } = useToast();
   const [scrolled, setScrolled] = useState(false);
@@ -166,9 +202,7 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
             className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M10.3 21a2 2 0 0 0 3.4 0" /></svg>
           </button>
-          <Link href="/login" className="ml-1 hidden h-10 items-center whitespace-nowrap rounded-xl bg-stone-900 px-4 text-sm font-semibold text-white transition-all hover:bg-stone-700 active:scale-95 sm:inline-flex dark:bg-white dark:text-stone-900 dark:hover:bg-stone-200">
-            Log in
-          </Link>
+          <AuthButton />
         </div>
       </div>
       <div className="border-t border-stone-200/50 px-4 py-2 md:hidden dark:border-ink-700/40"><SearchBar /></div>

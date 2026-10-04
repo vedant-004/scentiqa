@@ -25,6 +25,7 @@ export const getTrending = select(demo.getTrending, live.getTrending);
 export const getLatestLaunches = select(demo.getLatestLaunches, live.getLatestLaunches);
 export const getPriceDrops = select(demo.getPriceDrops, live.getPriceDrops);
 export const getDupeOfWeek = select(demo.getDupeOfWeek, live.getDupeOfWeek);
+export const getPerfumeOfTheDay = select(demo.getPerfumeOfTheDay, live.getPerfumeOfTheDay);
 export const getLatestReviews = select(demo.getLatestReviews, live.getLatestReviews);
 export const getArticles = select(demo.getArticles, live.getArticles);
 export const getArticle = select(demo.getArticle, live.getArticle);

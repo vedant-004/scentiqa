@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { cn, inr } from '@/lib/utils';
 import { Button, Chip, Dialog, DialogTitle, Input, Textarea, useToast } from '@/components/ui';
+import { useAuth } from '@/components/auth';
 import { StarInput } from '@/components';
 import { castVote, createPriceAlert, postReview, reportPriceError, setWardrobe, suggestDupe } from '@/lib/actions';
 import type { Perfume } from '@/lib/types';
@@ -12,9 +13,20 @@ function demoToast(toast: (t: string, tone?: 'ok' | 'err' | 'info') => void) {
   toast('Connect Supabase to enable accounts — this is demo mode', 'info');
 }
 
+/* ---------- Shown instead of vote controls when logged out ---------- */
+function SignInToVote({ label }: { label: string }) {
+  return (
+    <Link href="/login"
+      className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-4 py-2 text-sm font-semibold text-stone-600 transition-all hover:border-gold-600 hover:text-gold-700 dark:border-ink-700 dark:text-stone-300 dark:hover:border-gold-400 dark:hover:text-gold-300">
+      🔒 Sign in to {label}
+    </Link>
+  );
+}
+
 /* ---------- Love / Like / Dislike ---------- */
 export function SentimentVote({ perfumeId }: { perfumeId: string }) {
   const { toast } = useToast();
+  const { user, loading } = useAuth();
   const [val, setVal] = useState<'love' | 'like' | 'dislike' | null>(null);
   const [counts] = useState({ love: 1240, like: 860, dislike: 95 });
   const vote = async (v: 'love' | 'like' | 'dislike') => {
@@ -23,6 +35,7 @@ export function SentimentVote({ perfumeId }: { perfumeId: string }) {
     if (r.demo) demoToast(toast); else if (r.ok) toast('Vote recorded');
   };
   const opts = [['love', '❤️ Love', counts.love], ['like', '👍 Like', counts.like], ['dislike', '👎 Dislike', counts.dislike]] as const;
+  if (!loading && !user) return <SignInToVote label="vote" />;
   return (
     <div className="flex flex-wrap gap-2">
       {opts.map(([v, label, c]) => (
@@ -37,6 +50,7 @@ export function SentimentVote({ perfumeId }: { perfumeId: string }) {
 /* ---------- Wardrobe shelf buttons ---------- */
 export function WardrobeButtons({ perfumeId, name }: { perfumeId: string; name: string }) {
   const { toast } = useToast();
+  const { user, loading } = useAuth();
   const [shelf, setShelf] = useState<string | null>(null);
   const add = async (s: string) => {
     setShelf(s);
@@ -44,6 +58,7 @@ export function WardrobeButtons({ perfumeId, name }: { perfumeId: string; name: 
     if (r.demo) { demoToast(toast); setShelf(null); } else if (r.ok) toast(`“${name}” added to “${s}” shelf`);
   };
   const shelves = [['have', 'Have it'], ['want', 'Want it'], ['had', 'Had it'], ['test', 'Want to test']] as const;
+  if (!loading && !user) return <SignInToVote label="save to your wardrobe" />;
   return (
     <div className="flex flex-wrap gap-2">
       {shelves.map(([s, label]) => (
@@ -189,6 +204,7 @@ export function ReportPriceButton({ perfumeId }: { perfumeId: string }) {
 /* ---------- Community meter voting (demo: local optimistic) ---------- */
 export function MeterVote({ label, perfumeId, voteType }: { label: string; perfumeId: string; voteType: string }) {
   const { toast } = useToast();
+  const { user, loading } = useAuth();
   const [mine, setMine] = useState<number | null>(null);
   const [dist] = useState(() => [8, 14, 26, 32, 20]);
   const vote = async (v: number) => {
@@ -196,6 +212,7 @@ export function MeterVote({ label, perfumeId, voteType }: { label: string; perfu
     const r = await castVote(perfumeId, voteType, String(v));
     if (r.demo) demoToast(toast); else if (r.ok) toast('Vote recorded');
   };
+  if (!loading && !user) return <SignInToVote label={`rate ${label.toLowerCase()}`} />;
   return (
     <div>
       <p className="mb-2 text-sm font-semibold">{label} <span className="font-normal text-stone-400">— tap to vote</span></p>

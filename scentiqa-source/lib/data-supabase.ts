@@ -149,6 +149,42 @@ export async function getLatestLaunches(): Promise<Perfume[]> {
 export async function getPriceDrops(): Promise<Array<PriceDrop & { perfume: Perfume; seller: Seller | undefined }>> { return []; }
 export async function getDupeOfWeek(): Promise<{ original: Perfume; dupe: DupeEntry } | null> { return null; }
 
+/** Deterministic "perfume of the day": rotates daily through perfumes that have a photo, accords, notes and a description. */
+export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
+  const c = sb(); if (!c) return null;
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((now.getTime() - start.getTime()) / 86400000);
+  const { count } = await c.from('perfumes')
+    .select('id', { count: 'exact', head: true })
+    .not('bottle_image_url', 'is', null)
+    .not('description', 'is', null)
+    .neq('description', '');
+  if (!count) return null;
+  const idx = dayOfYear % count;
+  const { data } = await c.from('perfumes')
+    .select('*, houses(slug, name)')
+    .not('bottle_image_url', 'is', null)
+    .not('description', 'is', null)
+    .neq('description', '')
+    .order('slug', { ascending: true })
+    .range(idx, idx)
+    .limit(1);
+  if (!data || !data.length) return null;
+  const p = mapPerfume(data[0] as Record<string, unknown>);
+  // Require accords + at least some notes; otherwise fall through to a second attempt nearby.
+  if (p.accords.length && (p.topNotes.length || p.heartNotes.length || p.baseNotes.length)) return p;
+  const { data: retry } = await c.from('perfumes')
+    .select('*, houses(slug, name)')
+    .not('bottle_image_url', 'is', null)
+    .not('description', 'is', null)
+    .neq('description', '')
+    .order('slug', { ascending: true })
+    .range((idx + 7) % count, (idx + 7) % count)
+    .limit(1);
+  return retry && retry.length ? mapPerfume(retry[0] as Record<string, unknown>) : p;
+}
+
 export async function getLatestReviews(limit = 6): Promise<Array<Review & { perfume: Perfume }>> {
   const c = sb(); if (!c) return [];
   const { data } = await c.from('reviews').select('*, users(username), perfumes(*, houses(slug, name))').order('created_at', { ascending: false }).limit(limit);
