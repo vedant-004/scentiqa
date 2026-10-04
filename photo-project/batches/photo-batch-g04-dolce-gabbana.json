@@ -1,0 +1,322 @@
+[
+  {
+    "perfume_id": "perf_designer_anthology-l-imperatrice-3",
+    "slug": "anthology-l-imperatrice-3",
+    "name": "Anthology L'Imperatrice 3",
+    "image_path": "/images/dolce-gabbana/anthology-l-imperatrice-3.jpg",
+    "source_url": null,
+    "verify_note": "already-local: /images/designer/d-g-anthology-l-imperatrice-3-dolce-gabbana.jpg (copied to destination; bottle reads 3 L Imperatrice, Anthology line)"
+  },
+  {
+    "perfume_id": "perf_designer_anthology-l-imperatrice-3-eau-de-toilett",
+    "slug": "anthology-l-imperatrice-3-eau-de-toilette",
+    "name": "Anthology L'Imperatrice 3 Eau de Toilette",
+    "image_path": "/images/dolce-gabbana/anthology-l-imperatrice-3-eau-de-toilette.jpg",
+    "source_url": null,
+    "verify_note": "already-local: /images/designer/d-g-anthology-l-imperatrice-3-dolce-gabbana.jpg (copied to destination; Anthology L Imperatrice 3 is Eau de Toilette)"
+  },
+  {
+    "perfume_id": "perf_designer_devotion",
+    "slug": "devotion",
+    "name": "Devotion",
+    "image_path": "/images/dolce-gabbana/devotion.jpg",
+    "source_url": "https://www.sephora.com/ca/en/product/devotion-eau-de-parfum-P508461",
+    "verify_note": "pre-existing download, visually verified (Sephora productimages s2703940-main-zoom, standard Devotion EDP bottle with sacred-heart cap)"
+  },
+  {
+    "perfume_id": "perf_w_devotion-dolce-gabbana",
+    "slug": "devotion-dolce-gabbana",
+    "name": "Devotion Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/devotion-dolce-gabbana.jpg",
+    "source_url": "https://www.sephora.com/ca/en/product/devotion-eau-de-parfum-P508461",
+    "verify_note": "pre-existing download, visually verified (byte copy of devotion.jpg — same product, Devotion EDP)"
+  },
+  {
+    "perfume_id": "perf_designer_devotion-eau-de-parfum-intense",
+    "slug": "devotion-eau-de-parfum-intense",
+    "name": "Devotion Eau de Parfum Intense",
+    "image_path": "/images/dolce-gabbana/devotion-eau-de-parfum-intense.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified (Sephora CDN productimages s2800415-main-zoom, item 2800415, amber Devotion EDP Intense 2024 bottle — NOT the 2025 My Devotion flanker)"
+  },
+  {
+    "perfume_id": "perf_w_dolce-dolce-gabbana",
+    "slug": "dolce-dolce-gabbana",
+    "name": "Dolce Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/dolce-dolce-gabbana.jpg",
+    "source_url": "https://www.sephora.com/product/dolce-P385301",
+    "verify_note": "Sephora product page dolce-P385301; productimages s1601301-main-zoom; visually verified (white flower cap, black bow, Dolce script — original Dolce EDP 2014)"
+  },
+  {
+    "perfume_id": "perf_w_dolce-gabbana-pour-femme-dolce-gabbana",
+    "slug": "dolce-gabbana-pour-femme-dolce-gabbana",
+    "name": "Dolce&Gabbana Pour Femme Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/dolce-gabbana-pour-femme-dolce-gabbana.jpg",
+    "source_url": "https://www.booztlet.com/is/is/dolce-gabbana/dolce-gabbana-pour-femme-edp-100ml_32217703",
+    "verify_note": "Boozt product page Dolce Gabbana Pour Femme EDP 100ml; visually verified (bottle reads DOLCE & GABBANA / POUR FEMME / EAU DE PARFUM)"
+  },
+  {
+    "perfume_id": "perf_w_dolce-gabbana-pour-femme-intense-dolce-gabban",
+    "slug": "dolce-gabbana-pour-femme-intense-dolce-gabbana",
+    "name": "Dolce&Gabbana Pour Femme Intense Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/dolce-gabbana-pour-femme-intense-dolce-gabbana.jpg",
+    "source_url": "https://www.trepiprofumerie.com/dolce-gabbana-pour-femme-intense-edp-50-ml.html",
+    "verify_note": "Trepiprofumerie product page Pour Femme Intense EDP 50ml; visually verified (red bottle reads DOLCE & GABBANA / INTENSE / EAU DE PARFUM)"
+  },
+  {
+    "perfume_id": "perf_w_dolce-gabbana-pour-homme-1994-dolce-gabbana",
+    "slug": "dolce-gabbana-pour-homme-1994-dolce-gabbana",
+    "name": "Dolce&Gabbana pour Homme (1994) Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/dolce-gabbana-pour-homme-1994-dolce-gabbana.jpg",
+    "source_url": "https://www.Sephora.co.uk/p/dolce-gabbana-pour-homme-eau-de-toilette-P30524",
+    "verify_note": "Sephora UK product page Pour Homme Eau de Toilette P30524; visually verified (yellow bottle and box read POUR HOMME / EAU DE TOILETTE)"
+  },
+  {
+    "perfume_id": "perf_w_dolce-gabbana-pour-homme-2012-dolce-gabbana",
+    "slug": "dolce-gabbana-pour-homme-2012-dolce-gabbana",
+    "name": "Dolce&Gabbana Pour Homme (2012) Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/dolce-gabbana-pour-homme-2012-dolce-gabbana.jpg",
+    "source_url": "https://www.Sephora.co.uk/p/dolce-gabbana-pour-homme-eau-de-toilette-P30524",
+    "verify_note": "copy of dolce-gabbana-pour-homme-1994-dolce-gabbana.jpg — same product (Pour Homme EDT; 2012 = reformulation era of the same product)"
+  },
+  {
+    "perfume_id": "perf_w_dolce-gabbana-pour-homme-intenso-dolce-gabban",
+    "slug": "dolce-gabbana-pour-homme-intenso-dolce-gabbana",
+    "name": "Dolce&Gabbana Pour Homme Intenso Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/dolce-gabbana-pour-homme-intenso-dolce-gabbana.jpg",
+    "source_url": "https://sephora.in/product/dolce--gabbana-intenso-pour-homme-eau-de-parfum-v-75ml",
+    "verify_note": "copy of intenso.jpg — same product (Sephora India confirms Intenso Pour Homme Eau De Parfum 75ml)"
+  },
+  {
+    "perfume_id": "perf_designer_dolce-garden",
+    "slug": "dolce-garden",
+    "name": "Dolce Garden",
+    "image_path": "/images/dolce-gabbana/dolce-garden.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified (bottle reads Dolce / DOLCE&GABBANA / garden)"
+  },
+  {
+    "perfume_id": "perf_w_dolce-garden-dolce-gabbana",
+    "slug": "dolce-garden-dolce-gabbana",
+    "name": "Dolce Garden Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/dolce-garden-dolce-gabbana.jpg",
+    "source_url": null,
+    "verify_note": "copy of dolce-garden.jpg — same product (Dolce Garden)"
+  },
+  {
+    "perfume_id": "perf_designer_dolce-peony",
+    "slug": "dolce-peony",
+    "name": "Dolce Peony",
+    "image_path": "/images/dolce-gabbana/dolce-peony.jpg",
+    "source_url": "https://www.sephora.ph/",
+    "verify_note": "Sephora Asia official product image (filename: Product_8057971186297-Dolce-Gabbana-Dolce-Peony-Eau-De-Parfum-75ml); visually verified (purple Dolce bottle reading Dolce / peony)"
+  },
+  {
+    "perfume_id": "perf_designer_intenso",
+    "slug": "intenso",
+    "name": "Intenso",
+    "image_path": "/images/dolce-gabbana/intenso.jpg",
+    "source_url": "https://www.strawberrynet.com/cs-CZ/dolce-gabbana-intzh-hans-myso-eau-de-parfum-spray-75ml-2-5oz/180952",
+    "verify_note": "Strawberrynet product page titled Dolce & Gabbana Intenso Eau de Parfum Spray 75ml; visually verified (bottle and box read INTENSO / DOLCE & GABBANA / POUR HOMME / EAU DE PARFUM)"
+  },
+  {
+    "perfume_id": "perf_designer_k-by-d-g",
+    "slug": "k-by-d-g",
+    "name": "K by D&G",
+    "image_path": "/images/dolce-gabbana/k-by-d-g.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified (K bottle with crown cap; concentration not legible on bottle but base K EDP is the only standard flanker)"
+  },
+  {
+    "perfume_id": "perf_designer_k-by-d-g-eau-de-parfum-intense",
+    "slug": "k-by-d-g-eau-de-parfum-intense",
+    "name": "K by D&G Eau de Parfum Intense",
+    "image_path": "/images/dolce-gabbana/k-by-d-g-eau-de-parfum-intense.jpg",
+    "source_url": "https://www.sephora.ph/products/dolce-and-gabbana-k-pour-homme-eau-de-parfum-intense",
+    "verify_note": "Sephora PH product page K Pour Homme Eau de Parfum Intense; barcode 8057971187904 in image filename; visually verified (dark-blue K bottle, crown cap)"
+  },
+  {
+    "perfume_id": "perf_designer_k-by-d-g-eau-de-toilette",
+    "slug": "k-by-d-g-eau-de-toilette",
+    "name": "K by D&G Eau de Toilette",
+    "image_path": "/images/dolce-gabbana/k-by-d-g-eau-de-toilette.jpg",
+    "source_url": "https://www.sephora.com.br/dolce-ga-dg-k-edt-50ml-482598.html",
+    "verify_note": "Sephora BR product page dolce-ga-dg-k-edt-50ml; barcode 3423473042853; visually verified (box reads EAU DE TOILETTE 50 ml)"
+  },
+  {
+    "perfume_id": "perf_w_k-by-dolce-gabbana-dolce-gabbana",
+    "slug": "k-by-dolce-gabbana-dolce-gabbana",
+    "name": "K by Dolce & Gabbana Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/k-by-dolce-gabbana-dolce-gabbana.jpg",
+    "source_url": null,
+    "verify_note": "copy of k-by-d-g.jpg — same product (K by Dolce & Gabbana EDP)"
+  },
+  {
+    "perfume_id": "perf_w_light-blue-eau-intense-dolce-gabbana",
+    "slug": "light-blue-eau-intense-dolce-gabbana",
+    "name": "Light Blue Eau Intense Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/light-blue-eau-intense-dolce-gabbana.jpg",
+    "source_url": "https://www.ulta.com/",
+    "verify_note": "Ulta product image (media.ulta.com/i/ulta/2509962); visually verified (bottle reads DOLCE & GABBANA light blue / eau intense — womens flanker)"
+  },
+  {
+    "perfume_id": "perf_w_light-blue-eau-intense-pour-homme-dolce-gabba",
+    "slug": "light-blue-eau-intense-pour-homme-dolce-gabbana",
+    "name": "Light Blue Eau Intense Pour Homme Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/light-blue-eau-intense-pour-homme-dolce-gabbana.jpg",
+    "source_url": "https://www.sephora.com.mx/products/100-ml-390999.html",
+    "verify_note": "Sephora MX product page; barcode 3423473032878; visually verified (bottle reads light blue / eau intense / POUR HOMME)"
+  },
+  {
+    "perfume_id": "perf_w_light-blue-forever-pour-homme-dolce-gabbana",
+    "slug": "light-blue-forever-pour-homme-dolce-gabbana",
+    "name": "Light Blue Forever pour Homme Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/light-blue-forever-pour-homme-dolce-gabbana.jpg",
+    "source_url": "https://www.nykaa.com/",
+    "verify_note": "Nykaa CDN image (barcode 3423222016036 in filename); visually verified (bottle reads light blue / forever / POUR HOMME / EAU DE PARFUM)"
+  },
+  {
+    "perfume_id": "perf_designer_light-blue-love-is-love",
+    "slug": "light-blue-love-is-love",
+    "name": "Light Blue Love Is Love",
+    "image_path": "/images/dolce-gabbana/light-blue-love-is-love.jpg",
+    "source_url": "https://bagallery.com/products/dolce-gabbana-light-blue-love-is-love-women-edt-100ml",
+    "verify_note": "Bagallery product page Dolce Gabbana Light Blue Love Is Love Women EDT 100ml; visually verified (bottle reads love is love / EAU DE TOILETTE)"
+  },
+  {
+    "perfume_id": "perf_designer_light-blue-love-is-love-eau-de-toilette",
+    "slug": "light-blue-love-is-love-eau-de-toilette",
+    "name": "Light Blue Love Is Love Eau de Toilette",
+    "image_path": "/images/dolce-gabbana/light-blue-love-is-love-eau-de-toilette.jpg",
+    "source_url": "https://bagallery.com/products/dolce-gabbana-light-blue-love-is-love-women-edt-100ml",
+    "verify_note": "copy of light-blue-love-is-love.jpg — same product (Love Is Love is Eau de Toilette)"
+  },
+  {
+    "perfume_id": "perf_designer_light-blue-men",
+    "slug": "light-blue-men",
+    "name": "Light Blue Men",
+    "image_path": "/images/dolce-gabbana/light-blue-men.jpg",
+    "source_url": "https://www.sephora.com.mx/products/dolce-and-gabbana-light-blue-homme-edt-767100.html",
+    "verify_note": "copy of light-blue-pour-homme-dolce-gabbana.jpg — same product (Light Blue pour Homme EDT)"
+  },
+  {
+    "perfume_id": "perf_designer_light-blue-men-eau-de-toilette",
+    "slug": "light-blue-men-eau-de-toilette",
+    "name": "Light Blue Men Eau de Toilette",
+    "image_path": "/images/dolce-gabbana/light-blue-men-eau-de-toilette.jpg",
+    "source_url": "https://www.sephora.com.mx/products/dolce-and-gabbana-light-blue-homme-edt-767100.html",
+    "verify_note": "copy of light-blue-pour-homme-dolce-gabbana.jpg — same product (Light Blue pour Homme is EDT)"
+  },
+  {
+    "perfume_id": "perf_w_light-blue-pour-homme-dolce-gabbana",
+    "slug": "light-blue-pour-homme-dolce-gabbana",
+    "name": "Light Blue pour Homme Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/light-blue-pour-homme-dolce-gabbana.jpg",
+    "source_url": "https://www.sephora.com.mx/products/dolce-and-gabbana-light-blue-homme-edt-767100.html",
+    "verify_note": "Sephora MX product page Light Blue Homme EDT; barcode 8057971188116; visually verified (classic Light Blue pour Homme bottle)"
+  },
+  {
+    "perfume_id": "perf_designer_q-by-d-g",
+    "slug": "q-by-d-g",
+    "name": "Q by D&G",
+    "image_path": "/images/dolce-gabbana/q-by-d-g.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified (Q EDP pink bottle with red crown)"
+  },
+  {
+    "perfume_id": "perf_designer_q-by-d-g-eau-de-parfum-intense",
+    "slug": "q-by-d-g-eau-de-parfum-intense",
+    "name": "Q by D&G Eau de Parfum Intense",
+    "image_path": "/images/dolce-gabbana/q-by-d-g-eau-de-parfum-intense.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified (Q EDP Intense)"
+  },
+  {
+    "perfume_id": "perf_w_rose-the-one-dolce-gabbana",
+    "slug": "rose-the-one-dolce-gabbana",
+    "name": "Rose The One Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/rose-the-one-dolce-gabbana.jpg",
+    "source_url": "https://www.strawberrynet.com/en-US/rose-the-one-eau-de-parfum-spray-75ml-2-5oz/95629",
+    "verify_note": "Strawberrynet product page Rose The One Eau de Parfum Spray 75ml; visually verified (bottle reads DOLCE & GABBANA rose the one)"
+  },
+  {
+    "perfume_id": "perf_designer_sicily",
+    "slug": "sicily",
+    "name": "Sicily",
+    "image_path": "/images/dolce-gabbana/sicily.jpg",
+    "source_url": "https://www.faces.sa/en/p/dolce-gabbana-sicily-eau-de-parfum-009415735114.html",
+    "verify_note": "Faces (Middle East beauty retailer) Sicily EDP product page; visually verified (bottle and box both labeled DOLCE & GABBANA SICILY)"
+  },
+  {
+    "perfume_id": "perf_w_sicily-dolce-gabbana",
+    "slug": "sicily-dolce-gabbana",
+    "name": "Sicily Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/sicily-dolce-gabbana.jpg",
+    "source_url": "https://www.faces.sa/en/p/dolce-gabbana-sicily-eau-de-parfum-009415735114.html",
+    "verify_note": "copy of sicily.jpg — same product (Sicily EDP)"
+  },
+  {
+    "perfume_id": "perf_w_the-one-desire-dolce-gabbana",
+    "slug": "the-one-desire-dolce-gabbana",
+    "name": "The One Desire Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/the-one-desire-dolce-gabbana.jpg",
+    "source_url": "https://nationalpost.com/",
+    "verify_note": "National Post press pack shot of The One Desire; visually verified (black bottle reads Desire / DOLCE & GABBANA / the one)"
+  },
+  {
+    "perfume_id": "perf_designer_the-one-men",
+    "slug": "the-one-men",
+    "name": "The One Men",
+    "image_path": "/images/dolce-gabbana/the-one-men.jpg",
+    "source_url": null,
+    "verify_note": "already-local: /images/designer/the-one-for-men-dolce-gabbana.jpg (copied to destination; gradient amber-black the one bottle = The One for Men EDT)"
+  },
+  {
+    "perfume_id": "perf_designer_the-one-men-eau-de-toilette",
+    "slug": "the-one-men-eau-de-toilette",
+    "name": "The One Men Eau de Toilette",
+    "image_path": "/images/dolce-gabbana/the-one-men-eau-de-toilette.jpg",
+    "source_url": null,
+    "verify_note": "already-local: /images/designer/the-one-for-men-dolce-gabbana.jpg (copied to destination; The One for Men EDT)"
+  },
+  {
+    "perfume_id": "perf_designer_the-one-women",
+    "slug": "the-one-women",
+    "name": "The One Women",
+    "image_path": "/images/dolce-gabbana/the-one-women.jpg",
+    "source_url": null,
+    "verify_note": "already-local: /images/designer/the-one-dolce-gabbana.jpg (copied to destination; gold-cap the one bottle = The One for Women EDP)"
+  },
+  {
+    "perfume_id": "perf_designer_the-one-women-eau-de-parfum-intense",
+    "slug": "the-one-women-eau-de-parfum-intense",
+    "name": "The One Women Eau de Parfum Intense",
+    "image_path": "/images/dolce-gabbana/the-one-women-eau-de-parfum-intense.jpg",
+    "source_url": "https://duciel.co.kr/product/돌체앤가바나-더원-포우먼-오드퍼퓸-인텐스-50ml/6108/",
+    "verify_note": "Korean retailer product page The One for Women Eau de Parfum Intense 50ml (2025 launch); visually verified (gold box reads EAU DE PARFUM INTENSE, the one bottle)"
+  },
+  {
+    "perfume_id": "perf_w_the-only-one-dolce-gabbana",
+    "slug": "the-only-one-dolce-gabbana",
+    "name": "The Only One Dolce&Gabbana",
+    "image_path": "/images/dolce-gabbana/the-only-one-dolce-gabbana.jpg",
+    "source_url": "https://www.nykaa.com/dolce-gabbana-the-only-one-eau-de-parfum/p/445835",
+    "verify_note": "Nykaa product page The Only One Eau de Parfum; barcode 3423478452657; visually verified (box reads The Only One EAU DE PARFUM 100ml)"
+  },
+  {
+    "perfume_id": "perf_designer_velvet-bergamot",
+    "slug": "velvet-bergamot",
+    "name": "Velvet Bergamot",
+    "image_path": "/images/dolce-gabbana/velvet-bergamot.jpg",
+    "source_url": "https://fragrancerich.co.uk/dolce-gabbana-velvet-bergamot-eau-de-parfum-spray-50ml/",
+    "verify_note": "Fragrance Rich (UK retailer) Velvet Bergamot EDP 50ml page; visually verified (bottle label reads DOLCE & GABBANA / VELVET BERGAMOT)"
+  },
+  {
+    "perfume_id": "perf_designer_velvet-desert-oud",
+    "slug": "velvet-desert-oud",
+    "name": "Velvet Desert Oud",
+    "image_path": "/images/dolce-gabbana/velvet-desert-oud.jpg",
+    "source_url": "https://perfumedubai.com/products/dolce-and-gabbana-velvet-desert-oud-edp-50ml",
+    "verify_note": "Perfume Dubai product page Velvet Desert Oud EDP 50ml; visually verified (bottle label reads DOLCE & GABBANA / VELVET DESERT OUD)"
+  }
+]

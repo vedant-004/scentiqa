@@ -1,0 +1,170 @@
+[
+  {
+    "perfume_id": "perf_ajmal-dahn-al-oudh",
+    "slug": "ajmal-dahn-al-oudh",
+    "name": "Ajmal Dahn Al Oudh",
+    "reason": "generic Dahn Al Oudh pure oud oil is not sold on in.ajmal.com (India, 180-product catalog checked); only the UAE/Kuwait Ajmal storefronts list it"
+  },
+  {
+    "perfume_id": "perf_arabian-aroma-ombre-leather",
+    "slug": "arabian-aroma-ombre-leather",
+    "name": "Arabian Aroma Ombre Leather",
+    "reason": "not listed on arabianaroma.in or arabianaroma.co.in (full catalogs checked)"
+  },
+  {
+    "perfume_id": "perf_dupify-tobacco-vanille",
+    "slug": "dupify-tobacco-vanille",
+    "name": "Dupify Tobacco Vanille",
+    "reason": "dupify.in sells only \"Dupify Tobacco Oud\" - no exact Tobacco Vanille match"
+  },
+  {
+    "perfume_id": "perf_scentedelic-dopamine-absolu-2-0",
+    "slug": "scentedelic-dopamine-absolu-2-0",
+    "name": "Scentedelic Dopamine Absolu 2.0",
+    "reason": "no exact product on scentedelic.com (only \"DOPAMINE 2.0\" Sospiro Vibrato cover and \"DOPAMINE ABSOLU\" blend)"
+  },
+  {
+    "perfume_id": "perf_artisans-sandalwood-reserve",
+    "slug": "artisans-sandalwood-reserve",
+    "name": "Artisans Sandalwood Reserve",
+    "reason": "not in aromaartisans.com catalog (57 products); synthetic row"
+  },
+  {
+    "perfume_id": "perf_qinaam-oudh-maliki",
+    "slug": "qinaam-oudh-maliki",
+    "name": "Qinaam Oudh Maliki",
+    "reason": "not on qinaam.in (83 products); no \"Oudh Maliki\""
+  },
+  {
+    "perfume_id": "perf_celestial-aventus-noir",
+    "slug": "celestial-aventus-noir",
+    "name": "Celestial Aventus Noir",
+    "reason": "not on celestialperfume.in (134 products); no exact match"
+  },
+  {
+    "perfume_id": "perf_celestial-velvet-rose",
+    "slug": "celestial-velvet-rose",
+    "name": "Celestial Velvet Rose",
+    "reason": "not on celestialperfume.in (134 products); no exact match"
+  },
+  {
+    "perfume_id": "perf_zidaan-citrus-musk",
+    "slug": "zidaan-citrus-musk",
+    "name": "Zidaan Citrus Musk",
+    "reason": "not on zidaanperfumes.com (225 products); no exact match"
+  },
+  {
+    "perfume_id": "perf_zidaan-noir-oud",
+    "slug": "zidaan-noir-oud",
+    "name": "Zidaan Noir Oud",
+    "reason": "not on zidaanperfumes.com (225 products); no exact match"
+  },
+  {
+    "perfume_id": "perf_inkpot-monsoon-petrichor",
+    "slug": "inkpot-monsoon-petrichor",
+    "name": "Inkpot Monsoon Petrichor",
+    "reason": "no official brand site found; synthetic row"
+  },
+  {
+    "perfume_id": "perf_mradul-oudh-hindi",
+    "slug": "mradul-oudh-hindi",
+    "name": "Mradul Oudh Hindi",
+    "reason": "traditional Kannauj bulk-attar house; no named-bottle product page exists; synthetic row"
+  },
+  {
+    "perfume_id": "perf_asam-shamama-supreme",
+    "slug": "asam-shamama-supreme",
+    "name": "Asam Shamama Supreme",
+    "reason": "traditional Kannauj bulk-attar house; no named-bottle product page exists; synthetic row"
+  },
+  {
+    "perfume_id": "perf_gauri-sugandh-chameli",
+    "slug": "gauri-sugandh-chameli",
+    "name": "Gauri Sugandh Chameli",
+    "reason": "traditional Kannauj bulk-attar house; no named-bottle product page exists; synthetic row"
+  },
+  {
+    "perfume_id": "perf_kedarnath-ruh-khus",
+    "slug": "kedarnath-ruh-khus",
+    "name": "Kedarnath Ruh Khus",
+    "reason": "traditional Kannauj bulk-attar house; no named-bottle product page exists; synthetic row"
+  },
+  {
+    "perfume_id": "perf_pooja-ruh-motia",
+    "slug": "pooja-ruh-motia",
+    "name": "Pooja Ruh Motia",
+    "reason": "traditional Kannauj bulk-attar house; no named-bottle product page exists; synthetic row"
+  },
+  {
+    "perfume_id": "perf_bella-vita-citrus-edp-100ml",
+    "slug": "bella-vita-citrus-edp-100ml",
+    "name": "Bella Vita Citrus EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-discovery-set-10-x-5ml",
+    "slug": "bella-vita-discovery-set-10-x-5ml",
+    "name": "Bella Vita Discovery Set - 10 x 5ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-dominant-man-edp-100ml",
+    "slug": "bella-vita-dominant-man-edp-100ml",
+    "name": "Bella Vita Dominant Man EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-floral-edp-100ml",
+    "slug": "bella-vita-floral-edp-100ml",
+    "name": "Bella Vita Floral EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-luxury-trial-set-of-4",
+    "slug": "bella-vita-luxury-trial-set-of-4",
+    "name": "Bella Vita Luxury Trial Set of 4",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-luxury-white-oud-unisex-edp-100ml",
+    "slug": "bella-vita-luxury-white-oud-unisex-edp-100ml",
+    "name": "Bella Vita Luxury White Oud Unisex EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-orange-blossom-edp-100ml",
+    "slug": "bella-vita-orange-blossom-edp-100ml",
+    "name": "Bella Vita Orange Blossom EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-oud-parfum-men-edp-100ml",
+    "slug": "bella-vita-oud-parfum-men-edp-100ml",
+    "name": "Bella Vita Oud Parfum Men EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-spice-bomb-edp-100ml",
+    "slug": "bella-vita-spice-bomb-edp-100ml",
+    "name": "Bella Vita Spice Bomb EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-spice-edp-100ml",
+    "slug": "bella-vita-spice-edp-100ml",
+    "name": "Bella Vita Spice EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-white-oud-men-edp-100ml",
+    "slug": "bella-vita-white-oud-men-edp-100ml",
+    "name": "Bella Vita White Oud Men EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  },
+  {
+    "perfume_id": "perf_bella-vita-woody-edp-100ml",
+    "slug": "bella-vita-woody-edp-100ml",
+    "name": "Bella Vita Woody EDP 100ml",
+    "reason": "legacy SKU not in bellavitaorganic.com products.json; only discontinued or unverifiable marketplace listings found"
+  }
+]

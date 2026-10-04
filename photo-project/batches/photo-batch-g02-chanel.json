@@ -1,0 +1,370 @@
+[
+  {
+    "perfume_id": "perf_w_allure-homme-chanel",
+    "slug": "allure-homme-chanel",
+    "name": "Allure Homme Chanel",
+    "image_path": "/images/chanel/allure-homme-chanel.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_allure-homme-eau-de-toilette",
+    "slug": "allure-homme-eau-de-toilette",
+    "name": "Allure Homme Eau de Toilette",
+    "image_path": "/images/chanel/allure-homme-eau-de-toilette.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_w_allure-homme-edition-blanche-chanel",
+    "slug": "allure-homme-edition-blanche-chanel",
+    "name": "Allure Homme Edition Blanche Chanel",
+    "image_path": "/images/chanel/allure-homme-edition-blanche-chanel.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_w_allure-homme-edition-blanche-eau-de-parfum-ch",
+    "slug": "allure-homme-edition-blanche-eau-de-parfum-chanel",
+    "name": "Allure Homme Edition Blanche Eau de Parfum Chanel",
+    "image_path": "/images/chanel/allure-homme-edition-blanche-eau-de-parfum-chanel.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_w_allure-homme-sport-eau-extreme-chanel",
+    "slug": "allure-homme-sport-eau-extreme-chanel",
+    "name": "Allure Homme Sport Eau Extreme Chanel",
+    "image_path": "/images/chanel/allure-homme-sport-eau-extreme-chanel.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_allure-homme-sport-eau-extreme",
+    "slug": "allure-homme-sport-eau-extreme",
+    "name": "Allure Homme Sport Eau Extreme",
+    "image_path": "/images/chanel/allure-homme-sport-eau-extreme.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_allure-homme",
+    "slug": "allure-homme",
+    "name": "Allure Homme",
+    "image_path": "/images/chanel/allure-homme.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_bleu-de-chanel-eau-de-toilette",
+    "slug": "bleu-de-chanel-eau-de-toilette",
+    "name": "Bleu de Chanel Eau de Toilette",
+    "image_path": "/images/chanel/bleu-de-chanel-eau-de-toilette.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chanel-no-5-eau-de-parfum-chanel",
+    "slug": "chanel-no-5-eau-de-parfum-chanel",
+    "name": "Chanel No 5 Eau de Parfum Chanel",
+    "image_path": "/images/chanel/chanel-no-5-eau-de-parfum-chanel.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chanel-no-5-l-eau-chanel",
+    "slug": "chanel-no-5-l-eau-chanel",
+    "name": "Chanel No 5 L'Eau Chanel",
+    "image_path": "/images/chanel/chanel-no-5-l-eau-chanel.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_coco-eau-de-parfum",
+    "slug": "coco-eau-de-parfum",
+    "name": "Coco Eau de Parfum",
+    "image_path": "/images/chanel/coco-eau-de-parfum.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_w_coco-mademoiselle-intense-chanel",
+    "slug": "coco-mademoiselle-intense-chanel",
+    "name": "Coco Mademoiselle Intense Chanel",
+    "image_path": "/images/chanel/coco-mademoiselle-intense-chanel.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_no-5-eau-de-parfum",
+    "slug": "no-5-eau-de-parfum",
+    "name": "No 5 Eau de Parfum",
+    "image_path": "/images/chanel/no-5-eau-de-parfum.jpg",
+    "source_url": "",
+    "verify_note": "pre-existing download, visually verified"
+  },
+  {
+    "perfume_id": "perf_w_wanted-azzaro",
+    "slug": "wanted-azzaro",
+    "name": "Wanted Azzaro",
+    "image_path": "/images/azzaro/wanted-azzaro.jpg",
+    "source_url": "",
+    "verify_note": "already-local: /images/azzaro/wanted-azzaro.jpg"
+  },
+  {
+    "perfume_id": "perf_designer_coco-noir",
+    "slug": "coco-noir",
+    "name": "Coco Noir",
+    "image_path": "/images/designer/coco-noir-chanel.jpg",
+    "source_url": "",
+    "verify_note": "already-local: /images/designer/coco-noir-chanel.jpg"
+  },
+  {
+    "perfume_id": "perf_w_bleu-de-chanel-parfum-chanel",
+    "slug": "bleu-de-chanel-parfum-chanel",
+    "name": "Bleu de Chanel Parfum Chanel",
+    "image_path": "/images/designer/bleu-de-chanel-parfum.jpg",
+    "source_url": "",
+    "verify_note": "already-local: /images/designer/bleu-de-chanel-parfum.jpg"
+  },
+  {
+    "perfume_id": "perf_designer_chance-eau-fraiche",
+    "slug": "chance-eau-fraiche",
+    "name": "Chance Eau Fraiche",
+    "image_path": "/images/designer/chance-eau-fraiche-chanel.jpg",
+    "source_url": "",
+    "verify_note": "already-local: /images/designer/chance-eau-fraiche-chanel.jpg"
+  },
+  {
+    "perfume_id": "perf_designer_allure-homme-sport-eau-de-toilette",
+    "slug": "allure-homme-sport-eau-de-toilette",
+    "name": "Allure Homme Sport Eau de Toilette",
+    "image_path": "/images/designer/allure-homme-sport-chanel.jpg",
+    "source_url": "",
+    "verify_note": "already-local: /images/designer/allure-homme-sport-chanel.jpg (bottle shows no concentration marking; accepted as the Allure Homme Sport bottle)"
+  },
+  {
+    "perfume_id": "perf_w_allure-sensuelle-chanel",
+    "slug": "allure-sensuelle-chanel",
+    "name": "Allure Sensuelle Chanel",
+    "image_path": "/images/chanel/allure-sensuelle-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-allure-sensuelle-eau-de-parfum-spray/snsp/20008679",
+    "verify_note": "Nykaa page CHANEL Allure Sensuelle Eau de Parfum Spray; bottle reads Allure Sensuelle; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_antaeus",
+    "slug": "antaeus",
+    "name": "Antaeus",
+    "image_path": "/images/chanel/antaeus.jpg",
+    "source_url": "https://www.nykaa.com/chanel-antaeus-eau-de-toilette-spray/snsp/20008667",
+    "verify_note": "Nykaa page CHANEL Antaeus Eau de Toilette Spray; bottle reads Antaeus; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_antaeus-chanel",
+    "slug": "antaeus-chanel",
+    "name": "Antaeus Chanel",
+    "image_path": "/images/chanel/antaeus-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-antaeus-eau-de-toilette-spray/snsp/20008667",
+    "verify_note": "Nykaa page CHANEL Antaeus Eau de Toilette Spray; bottle reads Antaeus; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_antaeus-eau-de-toilette",
+    "slug": "antaeus-eau-de-toilette",
+    "name": "Antaeus Eau de Toilette",
+    "image_path": "/images/chanel/antaeus-eau-de-toilette.jpg",
+    "source_url": "https://www.nykaa.com/chanel-antaeus-eau-de-toilette-spray/snsp/20008667",
+    "verify_note": "Nykaa page CHANEL Antaeus Eau de Toilette Spray; bottle reads Antaeus; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_egoiste",
+    "slug": "egoiste",
+    "name": "Egoiste",
+    "image_path": "/images/chanel/egoiste.jpg",
+    "source_url": "https://www.nykaa.com/chanel-egoiste-eau-de-toilette-spray/snsp/20008664",
+    "verify_note": "Nykaa page CHANEL Egoiste Eau de Toilette Spray; bottle reads EGOISTE / CHANEL PARIS / EAU DE TOILETTE; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_egoiste-chanel",
+    "slug": "egoiste-chanel",
+    "name": "Egoiste Chanel",
+    "image_path": "/images/chanel/egoiste-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-egoiste-eau-de-toilette-spray/snsp/20008664",
+    "verify_note": "Nykaa page CHANEL Egoiste Eau de Toilette Spray; bottle reads EGOISTE / CHANEL PARIS / EAU DE TOILETTE; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_egoiste-eau-de-toilette",
+    "slug": "egoiste-eau-de-toilette",
+    "name": "Egoiste Eau de Toilette",
+    "image_path": "/images/chanel/egoiste-eau-de-toilette.jpg",
+    "source_url": "https://www.nykaa.com/chanel-egoiste-eau-de-toilette-spray/snsp/20008664",
+    "verify_note": "Nykaa page CHANEL Egoiste Eau de Toilette Spray; bottle reads EGOISTE / CHANEL PARIS / EAU DE TOILETTE; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_egoiste-platinum-chanel",
+    "slug": "egoiste-platinum-chanel",
+    "name": "Egoiste Platinum Chanel",
+    "image_path": "/images/chanel/egoiste-platinum-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-platinum-egoiste-eau-de-toilette-spray/snsp/20008663",
+    "verify_note": "Nykaa page CHANEL Platinum Egoiste Eau de Toilette Spray; bottle reads PLATINUM EGOISTE / CHANEL PARIS / EAU DE TOILETTE; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_gabrielle",
+    "slug": "gabrielle",
+    "name": "Gabrielle",
+    "image_path": "/images/chanel/gabrielle.jpg",
+    "source_url": "https://www.nykaa.com/chanel-gabrielle-chanel-eau-de-parfum-spray/snsp/20008716",
+    "verify_note": "Nykaa page CHANEL Gabrielle Chanel Eau de Parfum Spray; bottle reads GABRIELLE / CHANEL PARIS; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_gabrielle-chanel",
+    "slug": "gabrielle-chanel",
+    "name": "Gabrielle Chanel",
+    "image_path": "/images/chanel/gabrielle-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-gabrielle-chanel-eau-de-parfum-spray/snsp/20008716",
+    "verify_note": "Nykaa page CHANEL Gabrielle Chanel Eau de Parfum Spray; bottle reads GABRIELLE / CHANEL PARIS; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_gabrielle-essence-chanel",
+    "slug": "gabrielle-essence-chanel",
+    "name": "Gabrielle Essence Chanel",
+    "image_path": "/images/chanel/gabrielle-essence-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-gabrielle-chanel-essence-eau-de-parfum-spray/snsp/20008702",
+    "verify_note": "Nykaa page CHANEL Gabrielle Chanel Essence Eau de Parfum Spray; bottle reads GABRIELLE / CHANEL PARIS / ESSENCE; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_pour-monsieur",
+    "slug": "pour-monsieur",
+    "name": "Pour Monsieur",
+    "image_path": "/images/chanel/pour-monsieur.jpg",
+    "source_url": "https://www.nykaa.com/chanel-pour-monsieur-eau-de-toilette-spray/snsp/20008666",
+    "verify_note": "Nykaa page CHANEL Pour Monsieur Eau de Toilette Spray; bottle reads POUR MONSIEUR / CHANEL PARIS / EAU DE TOILETTE; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_pour-monsieur-eau-de-toilette",
+    "slug": "pour-monsieur-eau-de-toilette",
+    "name": "Pour Monsieur Eau de Toilette",
+    "image_path": "/images/chanel/pour-monsieur-eau-de-toilette.jpg",
+    "source_url": "https://www.nykaa.com/chanel-pour-monsieur-eau-de-toilette-spray/snsp/20008666",
+    "verify_note": "Nykaa page CHANEL Pour Monsieur Eau de Toilette Spray; bottle reads POUR MONSIEUR / CHANEL PARIS / EAU DE TOILETTE; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chance-eau-tendre-eau-de-parfum-chanel",
+    "slug": "chance-eau-tendre-eau-de-parfum-chanel",
+    "name": "Chance Eau Tendre Eau de Parfum Chanel",
+    "image_path": "/images/chanel/chance-eau-tendre-eau-de-parfum-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-chance-eau-tendre-eau-de-parfum-spray/snsp/20008706",
+    "verify_note": "Nykaa page CHANEL Chance Eau Tendre Eau de Parfum Spray; pink round bottle reads CHANCE / CHANEL / EAU TENDRE; visually verified (supersedes earlier skip)"
+  },
+  {
+    "perfume_id": "perf_w_chance-eau-de-parfum-chanel",
+    "slug": "chance-eau-de-parfum-chanel",
+    "name": "Chance Eau de Parfum Chanel",
+    "image_path": "/images/chanel/chance-eau-de-parfum-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-chance-eau-de-parfum-spray/snsp/20008718",
+    "verify_note": "Nykaa page CHANEL Chance Eau de Parfum Spray; round bottle reads CHANCE / CHANEL; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_chance-eau-vive",
+    "slug": "chance-eau-vive",
+    "name": "Chance Eau Vive",
+    "image_path": "/images/chanel/chance-eau-vive.jpg",
+    "source_url": "https://www.nykaa.com/chanel-chance-eau-vive-eau-de-toilette/snsp/20008708",
+    "verify_note": "Nykaa page CHANEL Chance Eau Vive Eau de Toilette; bottle reads CHANCE / CHANEL / EAU VIVE; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chance-eau-vive-chanel",
+    "slug": "chance-eau-vive-chanel",
+    "name": "Chance Eau Vive Chanel",
+    "image_path": "/images/chanel/chance-eau-vive-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-chance-eau-vive-eau-de-toilette/snsp/20008708",
+    "verify_note": "Nykaa page CHANEL Chance Eau Vive Eau de Toilette; bottle reads CHANCE / CHANEL / EAU VIVE; visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_chance-eau-vive-eau-de-toilette",
+    "slug": "chance-eau-vive-eau-de-toilette",
+    "name": "Chance Eau Vive Eau de Toilette",
+    "image_path": "/images/chanel/chance-eau-vive-eau-de-toilette.jpg",
+    "source_url": "https://www.nykaa.com/chanel-chance-eau-vive-eau-de-toilette/snsp/20008708",
+    "verify_note": "Nykaa page CHANEL Chance Eau Vive Eau de Toilette; bottle reads CHANCE / CHANEL / EAU VIVE; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chanel-no-5-eau-de-toilette-chanel",
+    "slug": "chanel-no-5-eau-de-toilette-chanel",
+    "name": "Chanel No 5 Eau de Toilette Chanel",
+    "image_path": "/images/chanel/chanel-no-5-eau-de-toilette-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-ndeg5-eau-de-toilette-spray/snsp/25706356",
+    "verify_note": "Nykaa page CHANEL N5 Eau de Toilette Spray; bottle reads N5 / CHANEL PARIS (streamlined 1924-design reissue per page); visually verified"
+  },
+  {
+    "perfume_id": "perf_designer_no-19-poudre",
+    "slug": "no-19-poudre",
+    "name": "No 19 Poudre",
+    "image_path": "/images/chanel/no-19-poudre.jpg",
+    "source_url": "https://www.nykaa.com/chanel-no19-poudre-eau-de-parfum-spray/snsp/20008682",
+    "verify_note": "Nykaa page CHANEL No19 Poudre Eau de Parfum Spray; bottle reads N19 POUDRE / CHANEL PARIS / EAU DE PARFUM; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chanel-no-19-poudre-chanel",
+    "slug": "chanel-no-19-poudre-chanel",
+    "name": "Chanel No 19 Poudre Chanel",
+    "image_path": "/images/chanel/chanel-no-19-poudre-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-no19-poudre-eau-de-parfum-spray/snsp/20008682",
+    "verify_note": "Nykaa page CHANEL No19 Poudre Eau de Parfum Spray; bottle reads N19 POUDRE / CHANEL PARIS / EAU DE PARFUM; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_cristalle-eau-de-toilette-chanel",
+    "slug": "cristalle-eau-de-toilette-chanel",
+    "name": "Cristalle Eau de Toilette Chanel",
+    "image_path": "/images/chanel/cristalle-eau-de-toilette-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-cristalle-eau-de-toilette-spray/snsp/20008685",
+    "verify_note": "Nykaa page CHANEL Cristalle Eau de Toilette Spray; tall bottle reads CRISTALLE / CHANEL PARIS; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chanel-n-5-eau-premiere-chanel",
+    "slug": "chanel-n-5-eau-premiere-chanel",
+    "name": "Chanel N°5 Eau Premiere Chanel",
+    "image_path": "/images/chanel/chanel-n-5-eau-premiere-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-no5-eau-premiere-spray/snsp/20008713",
+    "verify_note": "Nykaa page CHANEL N5 Eau Premiere Spray; bottle reads N5 / CHANEL PARIS / EAU PREMIERE; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chanel-no-5-eau-premiere-2015-chanel",
+    "slug": "chanel-no-5-eau-premiere-2015-chanel",
+    "name": "Chanel No 5 Eau Premiere (2015) Chanel",
+    "image_path": "/images/chanel/chanel-no-5-eau-premiere-2015-chanel.jpg",
+    "source_url": "https://www.nykaa.com/chanel-no5-eau-premiere-spray/snsp/20008713",
+    "verify_note": "Nykaa page CHANEL N5 Eau Premiere Spray; bottle reads N5 / CHANEL PARIS / EAU PREMIERE; visually verified (same product, duplicate record)"
+  },
+  {
+    "perfume_id": "perf_w_azzaro-pour-homme-azzaro",
+    "slug": "azzaro-pour-homme-azzaro",
+    "name": "Azzaro pour Homme Azzaro",
+    "image_path": "/images/azzaro/azzaro-pour-homme-azzaro.jpg",
+    "source_url": "https://www.azzaro.com/en/fragrances/azzaro-pour-homme/eau-de-toilette",
+    "verify_note": "Azzaro official site, Azzaro Pour Homme Eau de Toilette page; iconic octagonal amber bottle reads AZZARO POUR HOMME; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_chrome-azzaro",
+    "slug": "chrome-azzaro",
+    "name": "Chrome Azzaro",
+    "image_path": "/images/azzaro/chrome-azzaro.jpg",
+    "source_url": "https://www.azzaro.com/en/fragrances/azzaro-chrome/eau-de-toilette",
+    "verify_note": "Azzaro official site, Azzaro Chrome Eau de Toilette page; blue glass bottle embossed CHROME / AZZARO; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_the-most-wanted-parfum-azzaro",
+    "slug": "the-most-wanted-parfum-azzaro",
+    "name": "The Most Wanted Parfum Azzaro",
+    "image_path": "/images/azzaro/the-most-wanted-parfum-azzaro.jpg",
+    "source_url": "https://sephora.in/product/azzaro-the-most-wanted-parfum-v-100ml?Audience=New",
+    "verify_note": "Sephora India (authorized retailer) page The Most Wanted Parfum 100ml; black barrel bottle with amber gradient, AZZARO embossed; visually verified"
+  },
+  {
+    "perfume_id": "perf_w_wanted-by-night-azzaro",
+    "slug": "wanted-by-night-azzaro",
+    "name": "Wanted by Night Azzaro",
+    "image_path": "/images/azzaro/wanted-by-night-azzaro.jpg",
+    "source_url": "https://sephora.in/product/azzaro-wanted-by-night-eau-de-parfum-v-100ml",
+    "verify_note": "Sephora India (authorized retailer) page Wanted By Night Eau de Parfum 100ml; gunmetal barrel bottle with amber juice, AZZARO embossed; visually verified"
+  }
+]

@@ -1,0 +1,354 @@
+[
+ {
+  "perfume_id": "perf_skinn-amalfi-riviera-unisex-edp-90ml",
+  "slug": "skinn-amalfi-riviera-unisex-edp-90ml",
+  "name": "SKINN Amalfi Riviera Unisex EDP 90ml",
+  "image_path": "/images/skinn-by-titan/skinn-amalfi-riviera-unisex-edp-90ml.jpg",
+  "source_url": "https://www.skinn.in/product/skinn-amalfi-riviera-unisex-eau-de-parfum-90-ml-faqu02pk.html",
+  "verify_note": "official skinn.in product image (SKU FAQU02PK); bottle visually verified | processed 640x640 q88 22KB"
+ },
+ {
+  "perfume_id": "perf_skinn-aura-for-women-100ml",
+  "slug": "skinn-aura-for-women-100ml",
+  "name": "SKINN Aura for Women 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-aura-for-women-100ml.jpg",
+  "source_url": "https://www.skinn.in/shop/100ml-perfumes",
+  "verify_note": "official skinn.in CDN image (SKU FCLW05PC); bottle label \"AURA\" visually verified | processed 640x640 q88 34KB"
+ },
+ {
+  "perfume_id": "perf_skinn-celeste-beyond-for-women-edp-100ml",
+  "slug": "skinn-celeste-beyond-for-women-edp-100ml",
+  "name": "SKINN Celeste Beyond for Women EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-celeste-beyond-for-women-edp-100ml.jpg",
+  "source_url": "https://www.lifestylestores.com/in/en/SHOP-SKINN-Neutral-SKINN-Celeste-Beyond-Women-Eau-De-Parfum--100ml-For-W",
+  "verify_note": "lifestylestores exact product page; bottle \"CELESTE beyond\" visually verified | processed 615x831 q88 26KB"
+ },
+ {
+  "perfume_id": "perf_skinn-celeste-for-women-edp-100ml",
+  "slug": "skinn-celeste-for-women-edp-100ml",
+  "name": "SKINN Celeste for Women EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-celeste-for-women-edp-100ml.jpg",
+  "source_url": "https://pixies.in/products/skinn-by-titan-celeste-perfume-for-women-edp-100ml",
+  "verify_note": "pixies.in exact product page; bottle \"CELESTE\" visually verified | processed 1042x1042 q88 115KB"
+ },
+ {
+  "perfume_id": "perf_skinn-escapade-country-road-for-men-edp-100ml",
+  "slug": "skinn-escapade-country-road-for-men-edp-100ml",
+  "name": "SKINN Escapade Country Road for Men EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-escapade-country-road-for-men-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU NFFM08PC1); bottle+box \"COUNTRY ROAD 100 ml\" visually verified; Nykaa alt image rejected (showed 20ml box) | processed 360x360 q88 16KB"
+ },
+ {
+  "perfume_id": "perf_skinn-escapade-forest-rouge-for-men-edp-100ml",
+  "slug": "skinn-escapade-forest-rouge-for-men-edp-100ml",
+  "name": "SKINN Escapade Forest Rouge for Men EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-escapade-forest-rouge-for-men-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU NFFM07PC1); bottle+box \"ESCAPADE FOREST ROUGE\" visually verified | processed 640x640 q88 35KB"
+ },
+ {
+  "perfume_id": "perf_skinn-escapade-mediterranean-grove-for-men-edp-100ml",
+  "slug": "skinn-escapade-mediterranean-grove-for-men-edp-100ml",
+  "name": "SKINN Escapade Mediterranean Grove for Men EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-escapade-mediterranean-grove-for-men-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU NFFM09PC1); bottle+box \"MEDITERRANEAN GROVE\" visually verified | processed 640x641 q88 42KB"
+ },
+ {
+  "perfume_id": "perf_skinn-mini-gift-set-for-men-2x25ml",
+  "slug": "skinn-mini-gift-set-for-men-2x25ml",
+  "name": "SKINN Mini Gift Set for Men (2x25ml)",
+  "image_path": "/images/skinn-by-titan/skinn-mini-gift-set-for-men-2x25ml.jpg",
+  "source_url": "https://www.skinn.in/shop/men",
+  "verify_note": "official skinn.in image (SKU FM05PG2); shows Raw + Verge 2x25ml gift set, visually verified | processed 640x640 q88 44KB"
+ },
+ {
+  "perfume_id": "perf_skinn-noura-floret-edp-for-her-100ml",
+  "slug": "skinn-noura-floret-edp-for-her-100ml",
+  "name": "SKINN Noura Floret EDP for Her 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-noura-floret-edp-for-her-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU FW21PC1); bottle+box \"Noura Floret\" visually verified | processed 640x640 q88 30KB"
+ },
+ {
+  "perfume_id": "perf_skinn-noura-iris-edp-for-her-100ml",
+  "slug": "skinn-noura-iris-edp-for-her-100ml",
+  "name": "SKINN Noura Iris EDP for Her 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-noura-iris-edp-for-her-100ml.jpg",
+  "source_url": "https://shopnexusone.com/product/noura-iris-eau-de-parfum-for-women-100-ml-96307142",
+  "verify_note": "shopnexusone exact product page; bottle+box \"Noura Iris 100ml\" visually verified | processed 800x1200 q88 67KB"
+ },
+ {
+  "perfume_id": "perf_skinn-noura-nectar-edp-for-her-100ml",
+  "slug": "skinn-noura-nectar-edp-for-her-100ml",
+  "name": "SKINN Noura Nectar EDP for Her 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-noura-nectar-edp-for-her-100ml.jpg",
+  "source_url": "https://www.nykaa.com/skinn-by-titan-noura-nectar-eau-de-parfum/p/22036135",
+  "verify_note": "Nykaa exact product page (sold by Nykaa E-Retail, 100% authentic); bottle+box \"Noura Nectar 100ml\" visually verified | processed 800x800 q88 81KB"
+ },
+ {
+  "perfume_id": "perf_skinn-nova-for-men-100ml",
+  "slug": "skinn-nova-for-men-100ml",
+  "name": "SKINN Nova for Men 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-nova-for-men-100ml.jpg",
+  "source_url": "https://www.skinn.in/shop/100ml-perfumes",
+  "verify_note": "official skinn.in CDN image (SKU FCLM04PC); bottle \"NOVA\" visually verified | processed 640x640 q88 23KB"
+ },
+ {
+  "perfume_id": "perf_skinn-nox-pour-femme-edp-100ml",
+  "slug": "skinn-nox-pour-femme-edp-100ml",
+  "name": "SKINN Nox Pour Femme EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-nox-pour-femme-edp-100ml.jpg",
+  "source_url": "https://www.netmeds.com/product/skinn-by-titan-nox-pour-femme-eau-de-parfum-100-ml-lui5wg-83145",
+  "verify_note": "Netmeds exact product page; bottle+box \"SKINN NOX FEMME 100ml\" visually verified | processed 600x600 q88 51KB"
+ },
+ {
+  "perfume_id": "perf_skinn-nox-pour-homme-edp-100ml",
+  "slug": "skinn-nox-pour-homme-edp-100ml",
+  "name": "SKINN Nox Pour Homme EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-nox-pour-homme-edp-100ml.jpg",
+  "source_url": "https://www.netmeds.com/product/skinn-by-titan-nox-pour-homme-eau-de-parfum-100-ml-lufus1-75286",
+  "verify_note": "Netmeds exact product page; bottle+box \"SKINN NOX HOMME 100ml\" visually verified | processed 600x600 q88 49KB"
+ },
+ {
+  "perfume_id": "perf_skinn-nude-for-women-edp-100ml",
+  "slug": "skinn-nude-for-women-edp-100ml",
+  "name": "SKINN Nude for Women EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-nude-for-women-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/shop/100ml-perfumes",
+  "verify_note": "official skinn.in CDN image (SKU FW03PFC); bottle+box \"NUDE\" visually verified | processed 640x640 q88 33KB"
+ },
+ {
+  "perfume_id": "perf_skinn-pristine-for-women-edp-100ml",
+  "slug": "skinn-pristine-for-women-edp-100ml",
+  "name": "SKINN Pristine for Women EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-pristine-for-women-edp-100ml.jpg",
+  "source_url": "https://www.luluhypermarket.in/en-ae/skinn-by-titan-pristine-eau-de-parfum-for-women-100-ml/p/1786029",
+  "verify_note": "LuLu Hypermarket exact product page; bottle \"PRISTINE\" visually verified | processed 1200x1200 q88 48KB"
+ },
+ {
+  "perfume_id": "perf_skinn-raw-for-men-edp-100ml",
+  "slug": "skinn-raw-for-men-edp-100ml",
+  "name": "SKINN Raw for Men EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-raw-for-men-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU FM02PF6); bottle+box \"RAW 100ml\" visually verified | processed 640x640 q88 25KB"
+ },
+ {
+  "perfume_id": "perf_skinn-raw-for-men-edp-50ml",
+  "slug": "skinn-raw-for-men-edp-50ml",
+  "name": "SKINN Raw for Men EDP 50ml",
+  "image_path": "/images/skinn-by-titan/skinn-raw-for-men-edp-50ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU FM01PFC, 50ml variant); bottle \"RAW\" visually verified | processed 640x640 q88 25KB"
+ },
+ {
+  "perfume_id": "perf_skinn-raw-instinct-for-men-edp-100ml",
+  "slug": "skinn-raw-instinct-for-men-edp-100ml",
+  "name": "SKINN Raw Instinct for Men EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-raw-instinct-for-men-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/shop/100ml-perfumes",
+  "verify_note": "official skinn.in CDN image (SKU FM02PFC); bottle+box \"RAW INSTINCT 100ml\" visually verified | processed 640x640 q88 40KB"
+ },
+ {
+  "perfume_id": "perf_skinn-sea-breeze-edp-for-men-100ml",
+  "slug": "skinn-sea-breeze-edp-for-men-100ml",
+  "name": "SKINN Sea Breeze EDP for Men 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-sea-breeze-edp-for-men-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU FCSM01PC); bottle+box \"SEA BREEZE\" visually verified | processed 360x360 q88 16KB"
+ },
+ {
+  "perfume_id": "perf_skinn-sheer-for-women-edp-100ml",
+  "slug": "skinn-sheer-for-women-edp-100ml",
+  "name": "SKINN Sheer for Women EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-sheer-for-women-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU FW04PFC); bottle+box \"SHEER\" visually verified | processed 640x640 q88 32KB"
+ },
+ {
+  "perfume_id": "perf_skinn-silk-rose-edp-for-women-100ml",
+  "slug": "skinn-silk-rose-edp-for-women-100ml",
+  "name": "SKINN Silk Rose EDP for Women 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-silk-rose-edp-for-women-100ml.jpg",
+  "source_url": "https://www.skinn.in/shop/100ml-perfumes",
+  "verify_note": "official skinn.in CDN image (SKU FCSW01PC); bottle \"Silk Rose\" visually verified | processed 640x640 q88 26KB"
+ },
+ {
+  "perfume_id": "perf_skinn-steele-for-men-edp-100ml",
+  "slug": "skinn-steele-for-men-edp-100ml",
+  "name": "SKINN Steele for Men EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-steele-for-men-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/",
+  "verify_note": "official skinn.in CDN image (SKU FM06PGC); bottle+box \"STEELE\" visually verified | processed 640x640 q88 26KB"
+ },
+ {
+  "perfume_id": "perf_skinn-verge-for-men-edp-100ml",
+  "slug": "skinn-verge-for-men-edp-100ml",
+  "name": "SKINN Verge for Men EDP 100ml",
+  "image_path": "/images/skinn-by-titan/skinn-verge-for-men-edp-100ml.jpg",
+  "source_url": "https://www.skinn.in/shop/100ml-perfumes",
+  "verify_note": "official skinn.in CDN image (SKU FM04PGC); bottle+box \"VERGE\" visually verified | processed 640x640 q88 35KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-amrita-intense-perfume",
+  "slug": "forest-essentials-amrita-intense-perfume",
+  "name": "Forest Essentials Amrita Intense Perfume",
+  "image_path": "/images/forest-essentials/forest-essentials-amrita-intense-perfume.jpg",
+  "source_url": "https://www.forestessentialsindia.com/intense-perfume-amrita.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 62KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-body-mist-honey-vanilla",
+  "slug": "forest-essentials-body-mist-honey-vanilla",
+  "name": "Forest Essentials Body Mist Honey & Vanilla",
+  "image_path": "/images/forest-essentials/forest-essentials-body-mist-honey-vanilla.jpg",
+  "source_url": "https://www.forestessentialsindia.com/body-mist-honey-vanilla.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 36KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-body-mist-iced-pomegranate-kerala-lime",
+  "slug": "forest-essentials-body-mist-iced-pomegranate-kerala-lime",
+  "name": "Forest Essentials Body Mist Iced Pomegranate & Kerala Lime",
+  "image_path": "/images/forest-essentials/forest-essentials-body-mist-iced-pomegranate-kerala-lime.jpg",
+  "source_url": "https://www.forestessentialsindia.com/body-mist-iced-pomegranate-kerala-lime.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 44KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-body-mist-lime-saffron-oudh",
+  "slug": "forest-essentials-body-mist-lime-saffron-oudh",
+  "name": "Forest Essentials Body Mist Lime Saffron & Oudh",
+  "image_path": "/images/forest-essentials/forest-essentials-body-mist-lime-saffron-oudh.jpg",
+  "source_url": "https://www.forestessentialsindia.com/body-mist-lime-saffron-oudh.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 40KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-body-mist-nargis",
+  "slug": "forest-essentials-body-mist-nargis",
+  "name": "Forest Essentials Body Mist Nargis",
+  "image_path": "/images/forest-essentials/forest-essentials-body-mist-nargis.jpg",
+  "source_url": "https://www.forestessentialsindia.com/body-mist-nargis-new.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 38KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-body-mist-oudh-green-tea",
+  "slug": "forest-essentials-body-mist-oudh-green-tea",
+  "name": "Forest Essentials Body Mist Oudh & Green Tea",
+  "image_path": "/images/forest-essentials/forest-essentials-body-mist-oudh-green-tea.jpg",
+  "source_url": "https://www.forestessentialsindia.com/body-mist-oudh-green-tea-new.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 37KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-body-mist-rose-cardamom",
+  "slug": "forest-essentials-body-mist-rose-cardamom",
+  "name": "Forest Essentials Body Mist Rose & Cardamom",
+  "image_path": "/images/forest-essentials/forest-essentials-body-mist-rose-cardamom.jpg",
+  "source_url": "https://www.forestessentialsindia.com/body-mist-rose-cardamom-new.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 40KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-body-mist-sandalwood-vetiver",
+  "slug": "forest-essentials-body-mist-sandalwood-vetiver",
+  "name": "Forest Essentials Body Mist Sandalwood & Vetiver",
+  "image_path": "/images/forest-essentials/forest-essentials-body-mist-sandalwood-vetiver.jpg",
+  "source_url": "https://www.forestessentialsindia.com/body-mist-sandalwood-vetiver-new.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 37KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-chandani-raatein-intense-perfume-100ml",
+  "slug": "forest-essentials-chandani-raatein-intense-perfume-100ml",
+  "name": "Forest Essentials Chandani Raatein Intense Perfume 100ml",
+  "image_path": "/images/forest-essentials/forest-essentials-chandani-raatein-intense-perfume-100ml.jpg",
+  "source_url": "https://www.forestessentialsindia.com/intense-perfumed-body-mist-chandani-raatein.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 55KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-cologne-musk-lime-patchouli-100ml",
+  "slug": "forest-essentials-cologne-musk-lime-patchouli-100ml",
+  "name": "Forest Essentials Cologne - Musk, Lime & Patchouli 100ml",
+  "image_path": "/images/forest-essentials/forest-essentials-cologne-musk-lime-patchouli-100ml.jpg",
+  "source_url": "https://www.forestessentialsindia.com/cologne-musk-lime-patchouli.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 88KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-cooling-body-mist-mogra",
+  "slug": "forest-essentials-cooling-body-mist-mogra",
+  "name": "Forest Essentials Cooling Body Mist Mogra",
+  "image_path": "/images/forest-essentials/forest-essentials-cooling-body-mist-mogra.jpg",
+  "source_url": "https://www.forestessentialsindia.com/cooling-body-mist-mogra-130ml.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 40KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-gulnar-intense-perfume",
+  "slug": "forest-essentials-gulnar-intense-perfume",
+  "name": "Forest Essentials Gulnar Intense Perfume",
+  "image_path": "/images/forest-essentials/forest-essentials-gulnar-intense-perfume.jpg",
+  "source_url": "https://www.forestessentialsindia.com/intense-perfume-gulnar.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 63KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-kesari-intense-perfume",
+  "slug": "forest-essentials-kesari-intense-perfume",
+  "name": "Forest Essentials Kesari Intense Perfume",
+  "image_path": "/images/forest-essentials/forest-essentials-kesari-intense-perfume.jpg",
+  "source_url": "https://www.forestessentialsindia.com/intense-perfume-kesari.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 62KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-mallika-intense-perfume",
+  "slug": "forest-essentials-mallika-intense-perfume",
+  "name": "Forest Essentials Mallika Intense Perfume",
+  "image_path": "/images/forest-essentials/forest-essentials-mallika-intense-perfume.jpg",
+  "source_url": "https://www.forestessentialsindia.com/mallika-intense-perfume.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 61KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-mallika-intense-perfume-10ml",
+  "slug": "forest-essentials-mallika-intense-perfume-10ml",
+  "name": "Forest Essentials Mallika Intense Perfume 10ml",
+  "image_path": "/images/forest-essentials/forest-essentials-mallika-intense-perfume-10ml.jpg",
+  "source_url": "https://www.forestessentialsindia.com/intense-perfume-mallika-jasmine-oudh-sandalwood.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 28KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-pushpa-fragrance-experience",
+  "slug": "forest-essentials-pushpa-fragrance-experience",
+  "name": "Forest Essentials Pushpa - Fragrance Experience",
+  "image_path": "/images/forest-essentials/forest-essentials-pushpa-fragrance-experience.jpg",
+  "source_url": "https://www.forestessentialsindia.com/pushpa-fragrance-experience.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 139KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-solid-perfume-parijat",
+  "slug": "forest-essentials-solid-perfume-parijat",
+  "name": "Forest Essentials Solid Perfume Parijat",
+  "image_path": "/images/forest-essentials/forest-essentials-solid-perfume-parijat.jpg",
+  "source_url": "https://www.forestessentialsindia.com/solid-perfume-parijat.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 204KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-solid-perfume-raat-ki-rani",
+  "slug": "forest-essentials-solid-perfume-raat-ki-rani",
+  "name": "Forest Essentials Solid Perfume Raat Ki Rani",
+  "image_path": "/images/forest-essentials/forest-essentials-solid-perfume-raat-ki-rani.jpg",
+  "source_url": "https://www.forestessentialsindia.com/solid-perfume-raat-ki-rani.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 214KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-sugandha-scented-delights",
+  "slug": "forest-essentials-sugandha-scented-delights",
+  "name": "Forest Essentials Sugandha - Scented Delights",
+  "image_path": "/images/forest-essentials/forest-essentials-sugandha-scented-delights.jpg",
+  "source_url": "https://www.forestessentialsindia.com/sugandha-scented-delights.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match; image visually verified | processed 1200x1200 q88 153KB"
+ },
+ {
+  "perfume_id": "perf_forest-essentials-sunehre-din-intense-perfume-100ml",
+  "slug": "forest-essentials-sunehre-din-intense-perfume-100ml",
+  "name": "Forest Essentials Sunehre Din Intense Perfume 100ml",
+  "image_path": "/images/forest-essentials/forest-essentials-sunehre-din-intense-perfume-100ml.jpg",
+  "source_url": "https://www.forestessentialsindia.com/intense-perfumed-body-mist-sunehre-din.html",
+  "verify_note": "official forestessentialsindia.com product-page og:image; exact page-title match | processed 1200x1200 q88 53KB"
+ }
+]

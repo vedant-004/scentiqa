@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Acqua di Giò Absolu",
+    "perfume_id": "perf_designer_acqua-di-gi-absolu",
+    "reason": "Real product (discontinued ~2021) but the only authorized-India image found (Nykaa CDN asset EAN 3614271992901) returns 404 on fetch; no live listing on Nykaa, Myntra, Sephora India or Tata CLiQ.",
+    "slug": "acqua-di-gi-absolu"
+  },
+  {
+    "name": "Acqua di Giò Absolu Eau de Parfum Intense",
+    "perfume_id": "perf_designer_acqua-di-gi-absolu-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); only Acqua di Giò Absolu EDP exists.",
+    "slug": "acqua-di-gi-absolu-eau-de-parfum-intense"
+  },
+  {
+    "name": "Acqua di Giò Absolu Eau de Toilette",
+    "perfume_id": "perf_designer_acqua-di-gi-absolu-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); only Acqua di Giò Absolu EDP exists.",
+    "slug": "acqua-di-gi-absolu-eau-de-toilette"
+  },
+  {
+    "name": "Acqua di Giò Profumo",
+    "perfume_id": "perf_designer_acqua-di-gi-profumo",
+    "reason": "Real product (discontinued ~2020) but not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "acqua-di-gi-profumo"
+  },
+  {
+    "name": "Acqua di Giò Profumo Eau de Parfum Intense",
+    "perfume_id": "perf_designer_acqua-di-gi-profumo-eau-de-parfum-intens",
+    "reason": "No such product exists (fictional base×concentration expansion); only Acqua di Giò Profumo EDP exists.",
+    "slug": "acqua-di-gi-profumo-eau-de-parfum-intense"
+  },
+  {
+    "name": "Acqua di Giò Profumo Eau de Toilette",
+    "perfume_id": "perf_designer_acqua-di-gi-profumo-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); only Acqua di Giò Profumo EDP exists.",
+    "slug": "acqua-di-gi-profumo-eau-de-toilette"
+  },
+  {
+    "name": "Acqua di Gioia Eau de Parfum Intense",
+    "perfume_id": "perf_designer_acqua-di-gioia-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); Acqua di Gioia launched as EDP only.",
+    "slug": "acqua-di-gioia-eau-de-parfum-intense"
+  },
+  {
+    "name": "Acqua di Gioia Eau de Toilette",
+    "perfume_id": "perf_designer_acqua-di-gioia-eau-de-toilette",
+    "reason": "No such product exists; Acqua di Gioia was launched as Eau de Parfum only (no EDT flanker). Not on Nykaa/Myntra/Tata CLiQ.",
+    "slug": "acqua-di-gioia-eau-de-toilette"
+  },
+  {
+    "name": "Attitude",
+    "perfume_id": "perf_designer_attitude",
+    "reason": "Real product (Armani Attitude EDT, 2007, discontinued) but not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "attitude"
+  },
+  {
+    "name": "Attitude Eau de Parfum Intense",
+    "perfume_id": "perf_designer_attitude-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion).",
+    "slug": "attitude-eau-de-parfum-intense"
+  },
+  {
+    "name": "Attitude Eau de Toilette",
+    "perfume_id": "perf_designer_attitude-eau-de-toilette",
+    "reason": "Same real product as 'attitude' (Armani Attitude EDT, discontinued); not carried by any authorized Indian retailer.",
+    "slug": "attitude-eau-de-toilette"
+  },
+  {
+    "name": "Because It's You Eau de Parfum Intense",
+    "perfume_id": "perf_designer_because-it-s-you-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); Because It's You exists as EDP only.",
+    "slug": "because-it-s-you-eau-de-parfum-intense"
+  },
+  {
+    "name": "Because It's You Eau de Toilette",
+    "perfume_id": "perf_designer_because-it-s-you-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Because It's You exists as EDP only.",
+    "slug": "because-it-s-you-eau-de-toilette"
+  },
+  {
+    "name": "Code Pour Femme Eau de Parfum Intense",
+    "perfume_id": "perf_designer_code-pour-femme-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); Armani Code Pour Femme exists as EDP only.",
+    "slug": "code-pour-femme-eau-de-parfum-intense"
+  },
+  {
+    "name": "Code Pour Femme Eau de Toilette",
+    "perfume_id": "perf_designer_code-pour-femme-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Armani Code Pour Femme exists as EDP only.",
+    "slug": "code-pour-femme-eau-de-toilette"
+  },
+  {
+    "name": "Code Pour Homme Eau de Parfum Intense",
+    "perfume_id": "perf_designer_code-pour-homme-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); the men's Code EDP is the 'Code Eau de Parfum' flanker already covered by code-pour-homme.",
+    "slug": "code-pour-homme-eau-de-parfum-intense"
+  },
+  {
+    "name": "Diamonds Pour Homme Eau de Parfum Intense",
+    "perfume_id": "perf_designer_diamonds-pour-homme-eau-de-parfum-intens",
+    "reason": "No such product exists (fictional base×concentration expansion); Emporio Armani Diamonds for Men exists as EDT only.",
+    "slug": "diamonds-pour-homme-eau-de-parfum-intense"
+  },
+  {
+    "name": "Eau de Nuit Eau de Parfum Intense",
+    "perfume_id": "perf_designer_eau-de-nuit-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); Armani Eau de Nuit exists as EDT only.",
+    "slug": "eau-de-nuit-eau-de-parfum-intense"
+  },
+  {
+    "name": "Emporio Diamonds Eau de Parfum Intense",
+    "perfume_id": "perf_designer_emporio-diamonds-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); Emporio Armani Diamonds (women's) exists as EDP only.",
+    "slug": "emporio-diamonds-eau-de-parfum-intense"
+  },
+  {
+    "name": "Emporio Diamonds Eau de Toilette",
+    "perfume_id": "perf_designer_emporio-diamonds-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Emporio Armani Diamonds (women's) exists as EDP only.",
+    "slug": "emporio-diamonds-eau-de-toilette"
+  },
+  {
+    "name": "In Love With You",
+    "perfume_id": "perf_designer_in-love-with-you",
+    "reason": "Real product but not carried by Nykaa, Myntra, Sephora India or Tata CLiQ (appears discontinued in India); only unverifiable foreign/grey-market sellers found.",
+    "slug": "in-love-with-you"
+  },
+  {
+    "name": "In Love With You Eau de Parfum Intense",
+    "perfume_id": "perf_designer_in-love-with-you-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); In Love With You exists as EDP only.",
+    "slug": "in-love-with-you-eau-de-parfum-intense"
+  },
+  {
+    "name": "In Love With You Eau de Toilette",
+    "perfume_id": "perf_designer_in-love-with-you-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); In Love With You exists as EDP only.",
+    "slug": "in-love-with-you-eau-de-toilette"
+  },
+  {
+    "name": "Mania Pour Femme",
+    "perfume_id": "perf_designer_mania-pour-femme",
+    "reason": "Real product (Mania pour Femme EDP, 2004, discontinued) but not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "mania-pour-femme"
+  },
+  {
+    "name": "Mania Pour Femme Eau de Parfum Intense",
+    "perfume_id": "perf_designer_mania-pour-femme-eau-de-parfum-intense",
+    "reason": "No such product exists (fictional base×concentration expansion); Mania pour Femme exists as EDP only.",
+    "slug": "mania-pour-femme-eau-de-parfum-intense"
+  },
+  {
+    "name": "Mania Pour Femme Eau de Toilette",
+    "perfume_id": "perf_designer_mania-pour-femme-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Mania pour Femme exists as EDP only.",
+    "slug": "mania-pour-femme-eau-de-toilette"
+  },
+  {
+    "name": "My Way Eau de Toilette",
+    "perfume_id": "perf_designer_my-way-eau-de-toilette",
+    "reason": "No such product exists; the My Way line has EDP, Parfum, Intense, Floral and Nacre flankers but no Eau de Toilette. Not on Nykaa/Myntra/Tata CLiQ.",
+    "slug": "my-way-eau-de-toilette"
+  },
+  {
+    "name": "Prive Ambre Eccentrico",
+    "perfume_id": "perf_designer_prive-ambre-eccentrico",
+    "reason": "Real product (Armani Privé Ambre Eccentrico EDT) but Armani Privé is not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "prive-ambre-eccentrico"
+  },
+  {
+    "name": "Prive Ambre Eccentrico Eau de Parfum Intense",
+    "perfume_id": "perf_designer_prive-ambre-eccentrico-eau-de-parfum-int",
+    "reason": "No such product exists (fictional base×concentration expansion); Ambre Eccentrico exists as EDT only.",
+    "slug": "prive-ambre-eccentrico-eau-de-parfum-intense"
+  },
+  {
+    "name": "Prive Ambre Eccentrico Eau de Toilette",
+    "perfume_id": "perf_designer_prive-ambre-eccentrico-eau-de-toilette",
+    "reason": "Same real product as prive-ambre-eccentrico (Ambre Eccentrico is EDT); not carried by any authorized Indian retailer.",
+    "slug": "prive-ambre-eccentrico-eau-de-toilette"
+  },
+  {
+    "name": "Prive Bleu Turquoise",
+    "perfume_id": "perf_designer_prive-bleu-turquoise",
+    "reason": "Real product (Armani Privé Bleu Turquoise EDP) but Armani Privé is not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "prive-bleu-turquoise"
+  },
+  {
+    "name": "Prive Bleu Turquoise Eau de Parfum Intense",
+    "perfume_id": "perf_designer_prive-bleu-turquoise-eau-de-parfum-inten",
+    "reason": "No such product exists (fictional base×concentration expansion); Bleu Turquoise exists as EDP only.",
+    "slug": "prive-bleu-turquoise-eau-de-parfum-intense"
+  },
+  {
+    "name": "Prive Bleu Turquoise Eau de Toilette",
+    "perfume_id": "perf_designer_prive-bleu-turquoise-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Bleu Turquoise exists as EDP only.",
+    "slug": "prive-bleu-turquoise-eau-de-toilette"
+  },
+  {
+    "name": "Prive Cuir Noir",
+    "perfume_id": "perf_designer_prive-cuir-noir",
+    "reason": "Real product (Armani Privé Cuir Noir EDP, also sold as Cuir Noir Intense) but Armani Privé is not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "prive-cuir-noir"
+  },
+  {
+    "name": "Prive Cuir Noir Eau de Parfum Intense",
+    "perfume_id": "perf_designer_prive-cuir-noir-eau-de-parfum-intense",
+    "reason": "Fictional expansion; Cuir Noir exists as EDP (and 'Cuir Noir Intense' is a separate real flanker not in this group).",
+    "slug": "prive-cuir-noir-eau-de-parfum-intense"
+  },
+  {
+    "name": "Prive Cuir Noir Eau de Toilette",
+    "perfume_id": "perf_designer_prive-cuir-noir-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Cuir Noir exists as EDP only.",
+    "slug": "prive-cuir-noir-eau-de-toilette"
+  },
+  {
+    "name": "Prive Santal Danzza",
+    "perfume_id": "perf_designer_prive-santal-danzza",
+    "reason": "Real product (Armani Privé Santal Dān Sha EDP) but Armani Privé is not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "prive-santal-danzza"
+  },
+  {
+    "name": "Prive Santal Danzza Eau de Parfum Intense",
+    "perfume_id": "perf_designer_prive-santal-danzza-eau-de-parfum-intens",
+    "reason": "No such product exists (fictional base×concentration expansion); Santal Dān Sha exists as EDP only.",
+    "slug": "prive-santal-danzza-eau-de-parfum-intense"
+  },
+  {
+    "name": "Prive Santal Danzza Eau de Toilette",
+    "perfume_id": "perf_designer_prive-santal-danzza-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Santal Dān Sha exists as EDP only.",
+    "slug": "prive-santal-danzza-eau-de-toilette"
+  },
+  {
+    "name": "Sì Passione Eau de Toilette",
+    "perfume_id": "perf_designer_s-passione-eau-de-toilette",
+    "reason": "No such product exists (fictional base×concentration expansion); Sì Passione exists as EDP and EDP Intense only.",
+    "slug": "s-passione-eau-de-toilette"
+  },
+  {
+    "name": "Stronger With You Eau de Parfum Intense",
+    "perfume_id": "perf_designer_stronger-with-you-eau-de-parfum-intense",
+    "reason": "No product exists under this exact name; the real flanker is named 'Stronger With You Intensely'. Skipped to avoid misattribution.",
+    "slug": "stronger-with-you-eau-de-parfum-intense"
+  },
+  {
+    "name": "Virgin Island Water Creed",
+    "perfume_id": "perf_w_virgin-island-water-creed",
+    "reason": "Real product but not carried by Nykaa, Myntra, Sephora India or Tata CLiQ (Nykaa's Creed range is limited; Tata CLiQ Luxury lists other Creeds but not this one); only foreign retailers found.",
+    "slug": "virgin-island-water-creed"
+  },
+  {
+    "name": "Oud Satin Mood",
+    "perfume_id": "perf_oud-satin-mood",
+    "reason": "Real product (MFK Oud Satin Mood EDP 200ml) but MFK is not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; the official franciskurkdjian.com product image is hotlink-blocked (403 on direct fetch).",
+    "slug": "oud-satin-mood"
+  },
+  {
+    "name": "Layton",
+    "perfume_id": "perf_layton",
+    "reason": "Real product but Parfums de Marly is not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "layton"
+  },
+  {
+    "name": "Pegasus",
+    "perfume_id": "perf_pegasus",
+    "reason": "Real product but Parfums de Marly is not carried by Nykaa, Myntra, Sephora India or Tata CLiQ; no verifiable authorized-India source for a photo.",
+    "slug": "pegasus"
+  }
+]
