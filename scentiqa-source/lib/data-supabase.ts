@@ -74,7 +74,7 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
   const { data: pricesR } = await c.from('prices').select('*, sellers(*)').eq('perfume_id', p.id);
   const prices: PriceEntry[] = (pricesR ?? []).filter((pr: Record<string, unknown>) => pr.sellers).map((pr: Record<string, unknown>) => ({
     id: pr.id as string, perfumeSlug: slug, sellerSlug: (pr.sellers as Record<string, string>).slug,
-    priceInr: pr.price_inr as number, mrpInr: (pr.mrp_inr as number) ?? null,
+    priceInr: (pr.price_inr as number) ?? null, mrpInr: (pr.mrp_inr as number) ?? null,
     sizeMl: (pr.size_ml as number) ?? null, inStock: pr.in_stock as boolean, url: (pr.product_url as string) ?? null,
     provenance: (pr.price_provenance as PriceEntry['provenance']) ?? 'demo',
     checkedAt: (pr.checked_at as string) ?? '2026-09-30',
@@ -85,7 +85,7 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
       type: ((pr.sellers as Record<string, string>).seller_type as Seller['type']) ?? 'marketplace',
       verified: !!((pr.sellers as Record<string, unknown>).verified),
     },
-  })).sort((a, b) => a.priceInr - b.priceInr);
+  })).sort((a, b) => (a.priceInr ?? Number.MAX_SAFE_INTEGER) - (b.priceInr ?? Number.MAX_SAFE_INTEGER));
   const { data: clim } = await c.from('climate_scores').select('*').eq('perfume_id', p.id).single();
   const climate: ClimateScore | null = clim ? {
     id: clim.id, perfumeSlug: slug, heatLongevity: clim.heat_longevity,

@@ -63,7 +63,7 @@ export interface Seller {
 
 export interface PriceEntry {
   id: string; perfumeSlug: string; sellerSlug: string;
-  priceInr: number; mrpInr: number | null; sizeMl: number | null;
+  priceInr: number | null; mrpInr: number | null; sizeMl: number | null;
   inStock: boolean; url: string | null;
   /** live = observed on a live page fetch; mixed/indexed/stale = needs re-verification; demo = synthetic sample. */
   provenance: 'live' | 'mixed' | 'indexed' | 'stale' | 'demo';
