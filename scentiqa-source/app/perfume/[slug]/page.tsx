@@ -117,6 +117,20 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             <SectionHeading kicker="Composition" title="What it smells like" />
             <Card className="p-6"><h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-stone-400">Notes</h3><NotePyramid top={p.topNotes} heart={p.heartNotes} base={p.baseNotes} /></Card>
             <p className="mt-4 text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">{p.description}</p>
+            {p.scentStory && (
+              <Card className="relative mt-6 overflow-hidden p-6 sm:p-8">
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-gold-400 to-gold-600" aria-hidden="true" />
+                <h3 className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-gold-700 dark:text-gold-300">Scent story</h3>
+                <blockquote className="whitespace-pre-line font-display text-[17px] italic leading-relaxed text-stone-700 dark:text-stone-200">
+                  {p.scentStory}
+                </blockquote>
+                {p.beginnerFriendly !== null && (
+                  <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-stone-900/5 px-3 py-1.5 text-xs font-bold text-stone-600 dark:bg-white/10 dark:text-stone-300">
+                    {p.beginnerFriendly ? '✓ Beginner-friendly' : '⚠ Not for beginners'}
+                  </p>
+                )}
+              </Card>
+            )}
           </section>
 
           {/* ===== 2b. AI PREDICTIONS ===== */}

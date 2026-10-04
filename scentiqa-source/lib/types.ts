@@ -22,6 +22,10 @@ export interface Perfume {
   topNotes: string[]; heartNotes: string[]; baseNotes: string[];
   inspiredBy: string | null; claimedAccuracy: string | null; isDupe: boolean;
   needsVerification?: boolean;
+  /** Evocative "what it smells like" scent story, written in the house voice. */
+  scentStory: string | null;
+  /** Whether the fragrance is approachable for beginners. */
+  beginnerFriendly: boolean | null;
   /** Real catalog record researched 2026-09-30 (vs synthetic demo fixture). */
   real?: boolean;
   /** Date the real catalog record was observed (2026-09-30 or 2026-10-02). */

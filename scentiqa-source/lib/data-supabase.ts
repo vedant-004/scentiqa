@@ -23,6 +23,8 @@ function mapPerfume(r: Record<string, unknown>): Perfume {
     accords: (r.accords as Perfume['accords']) ?? [],
     topNotes: (r.top_notes as string[]) ?? [], heartNotes: (r.heart_notes as string[]) ?? [],
     baseNotes: (r.base_notes as string[]) ?? [],
+    scentStory: (r.scent_story as string) ?? null,
+    beginnerFriendly: typeof r.beginner_friendly === 'boolean' ? r.beginner_friendly : null,
     inspiredBy: null, claimedAccuracy: null, isDupe: false,
     // Every row in the live database is catalog data, never synthetic demo content.
     real: true,
