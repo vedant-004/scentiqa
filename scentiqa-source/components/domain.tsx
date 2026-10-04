@@ -331,6 +331,18 @@ export function HouseCard({ house }: { house: House }) {
 }
 
 /* ---------- DupeCard ---------- */
+function BrandClaimNote({ text }: { text: string }) {
+  const urlMatch = text.match(/https?:\/\/\S+/);
+  const body = urlMatch ? text.slice(0, urlMatch.index).replace(/\s*Source:\s*$/, '') : text;
+  return (
+    <p className="mt-2 text-xs leading-relaxed text-stone-500 dark:text-stone-400">
+      <span className="font-semibold text-stone-600 dark:text-stone-300">Brand's stated inspiration:</span> {body}
+      {urlMatch ? (
+        <> <a href={urlMatch[0]} target="_blank" rel="nofollow noopener" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">source →</a></>
+      ) : null}
+    </p>
+  );
+}
 export function DupeCard({ entry, originalName }: { entry: DupeEntry; originalName: string }) {
   const { dupe, dupeHouse, similarityScore, testedBy, claimedAccuracy, verdict, lowestPrice } = entry;
   const lab = testedBy === 'lab' && similarityScore !== null;
@@ -352,6 +364,7 @@ export function DupeCard({ entry, originalName }: { entry: DupeEntry; originalNa
             <span className={cn('rounded-full px-2.5 py-1 font-bold text-white', scoreClasses(scoreTone(similarityScore)))}>Scentiqa lab{demo ? ' (sample)' : ''}: {similarityScore}%</span>
           </div>
         )}
+        {claimedAccuracy && !lab && <BrandClaimNote text={claimedAccuracy} />}
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <span className="text-lg font-bold">{lowestPrice ? inr(lowestPrice.priceInr) : '—'}</span>
           {lowestPrice && <span className="text-xs text-stone-400">at {lowestPrice.seller?.name}</span>}
