@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
+import type { ResponseCookie } from 'next/dist/compiled/@edge-runtime/cookies';
 
 /** Exchanges the OAuth code for a session after Google sign-in, persisting it in cookies. */
 export async function GET(request: Request) {
@@ -16,7 +17,7 @@ export async function GET(request: Request) {
       {
         cookies: {
           getAll: () => cookieStore.getAll(),
-          setAll: (toSet) => {
+          setAll: (toSet: { name: string; value: string; options?: Partial<ResponseCookie> }[]) => {
             toSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options));
           },
         },

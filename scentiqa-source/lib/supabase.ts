@@ -1,4 +1,5 @@
 // Supabase client factory. Returns null when env vars are absent (demo mode).
+import { createBrowserClient } from '@supabase/ssr';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 let browserClient: SupabaseClient | null = null;
@@ -7,10 +8,15 @@ export function isSupabaseConfigured(): boolean {
   return !!(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 }
 
+/**
+ * Cookie-based browser client, consistent with the SSR session that
+ * /auth/callback persists via createServerClient. Must only run client-side.
+ */
 export function getSupabaseBrowser(): SupabaseClient | null {
+  if (typeof window === 'undefined') return null;
   if (!isSupabaseConfigured()) return null;
   if (!browserClient) {
-    browserClient = createClient(
+    browserClient = createBrowserClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     );

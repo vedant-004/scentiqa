@@ -152,37 +152,31 @@ export async function getDupeOfWeek(): Promise<{ original: Perfume; dupe: DupeEn
 /** Deterministic "perfume of the day": rotates daily through perfumes that have a photo, accords, notes and a description. */
 export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   const c = sb(); if (!c) return null;
+  // Candidate pool: rows with a photo and description. Accords/notes completeness
+  // is verified in code because empty arrays can't be filtered reliably in PostgREST.
+  const { data } = await c.from('perfumes')
+    .select('slug, accords, top_notes, heart_notes, base_notes')
+    .not('bottle_image_url', 'is', null)
+    .not('description', 'is', null)
+    .neq('description', '')
+    .order('slug', { ascending: true })
+    .limit(5000);
+  const pool = (data ?? []).filter((r: Record<string, unknown>) => {
+    const accords = (r.accords as unknown[]) ?? [];
+    const notes = [
+      ...((r.top_notes as string[]) ?? []),
+      ...((r.heart_notes as string[]) ?? []),
+      ...((r.base_notes as string[]) ?? []),
+    ];
+    return accords.length > 0 && notes.length > 0;
+  });
+  if (!pool.length) return null;
   const now = new Date();
   const start = new Date(now.getFullYear(), 0, 0);
   const dayOfYear = Math.floor((now.getTime() - start.getTime()) / 86400000);
-  const { count } = await c.from('perfumes')
-    .select('id', { count: 'exact', head: true })
-    .not('bottle_image_url', 'is', null)
-    .not('description', 'is', null)
-    .neq('description', '');
-  if (!count) return null;
-  const idx = dayOfYear % count;
-  const { data } = await c.from('perfumes')
-    .select('*, houses(slug, name)')
-    .not('bottle_image_url', 'is', null)
-    .not('description', 'is', null)
-    .neq('description', '')
-    .order('slug', { ascending: true })
-    .range(idx, idx)
-    .limit(1);
-  if (!data || !data.length) return null;
-  const p = mapPerfume(data[0] as Record<string, unknown>);
-  // Require accords + at least some notes; otherwise fall through to a second attempt nearby.
-  if (p.accords.length && (p.topNotes.length || p.heartNotes.length || p.baseNotes.length)) return p;
-  const { data: retry } = await c.from('perfumes')
-    .select('*, houses(slug, name)')
-    .not('bottle_image_url', 'is', null)
-    .not('description', 'is', null)
-    .neq('description', '')
-    .order('slug', { ascending: true })
-    .range((idx + 7) % count, (idx + 7) % count)
-    .limit(1);
-  return retry && retry.length ? mapPerfume(retry[0] as Record<string, unknown>) : p;
+  const pick = pool[dayOfYear % pool.length] as { slug: string };
+  const { data: full } = await c.from('perfumes').select('*, houses(slug, name)').eq('slug', pick.slug).single();
+  return full ? mapPerfume(full as Record<string, unknown>) : null;
 }
 
 export async function getLatestReviews(limit = 6): Promise<Array<Review & { perfume: Perfume }>> {

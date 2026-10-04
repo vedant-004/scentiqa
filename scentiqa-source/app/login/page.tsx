@@ -2,7 +2,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { isSupabaseConfigured } from '@/lib/supabase';
+import { getSupabaseBrowser, isSupabaseConfigured } from '@/lib/supabase';
 import { Button, Card, Input, SectionHeading } from '@/components';
 import { Breadcrumbs } from '@/components';
 
@@ -17,8 +17,8 @@ export default function LoginPage() {
     setError('');
     if (!configured) { setError('Supabase is not connected in this demo. See the README to enable sign-in.'); return; }
     try {
-      const { createClient } = await import('@supabase/supabase-js');
-      const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+      const supabase = getSupabaseBrowser();
+      if (!supabase) { setError('Sign-in failed.'); return; }
       const { error: err } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin } });
       if (err) setError(err.message);
       else setSent(true);
@@ -31,8 +31,8 @@ export default function LoginPage() {
     setError('');
     if (!configured) { setError('Supabase is not connected in this demo. See the README to enable sign-in.'); return; }
     try {
-      const { createClient } = await import('@supabase/supabase-js');
-      const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+      const supabase = getSupabaseBrowser();
+      if (!supabase) { setError('Sign-in failed.'); return; }
       const { error: err } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {

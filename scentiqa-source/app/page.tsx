@@ -12,6 +12,9 @@ import type { Perfume } from '@/lib/types';
 
 export const metadata = { title: 'Scentiqa — India\u2019s Perfume Encyclopedia & Dupe Finder' };
 
+// Revalidate daily so "Perfume of the Day" actually rotates.
+export const revalidate = 86400;
+
 function Rail({ children }: { children: React.ReactNode }) {
   return (
     <div className="-mx-4 overflow-x-auto px-4 pb-2 sm:-mx-6 sm:px-6" style={{ scrollbarWidth: 'none' }}>

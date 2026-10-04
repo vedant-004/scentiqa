@@ -1,0 +1,5 @@
+scentiqa-source/node_modules/
+scentiqa-source/.next/
+**/tsconfig.tsbuildinfo
+.DS_Store
+*.local
