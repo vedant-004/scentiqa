@@ -38,7 +38,7 @@ function toDupeEntry(r: SeedData['dupeRelationships'][number]): DupeEntry | null
   const dupeHouse = houseBySlug.get(dupe.houseSlug);
   if (!dupeHouse) return null;
   const prices = seed.prices.filter((p) => p.perfumeSlug === dupe.slug).map(withSeller);
-  const lowest = prices.length ? prices.reduce((a, b) => (a.priceInr <= b.priceInr ? a : b)) : null;
+  const lowest = prices.length ? prices.reduce((a, b) => ((a.priceInr ?? Infinity) <= (b.priceInr ?? Infinity) ? a : b)) : null;
   return { ...r, dupe, dupeHouse, lowestPrice: lowest };
 }
 
@@ -69,7 +69,7 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
     .map(toDupeEntry)
     .filter((d): d is DupeEntry => !!d);
   const prices = seed.prices.filter((pr) => pr.perfumeSlug === slug).map(withSeller)
-    .sort((a, b) => a.priceInr - b.priceInr);
+    .sort((a, b) => (a.priceInr ?? Number.MAX_SAFE_INTEGER) - (b.priceInr ?? Number.MAX_SAFE_INTEGER));
   const reviews = seed.reviews.filter((r) => r.perfumeSlug === slug)
     .sort((a, b) => b.helpfulVotes - a.helpfulVotes);
   const similar = seed.perfumes

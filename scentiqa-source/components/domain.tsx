@@ -401,7 +401,7 @@ export function PriceTable({ prices }: { prices: PriceEntry[] }) {
           </div>
           <div className="text-right">
             <p className="text-[15px] font-bold">{inr(pr.priceInr)}</p>
-            {pr.mrpInr && pr.mrpInr > pr.priceInr && <p className="text-xs text-stone-400 line-through">{inr(pr.mrpInr)}</p>}
+            {pr.mrpInr && pr.priceInr && pr.mrpInr > pr.priceInr && <p className="text-xs text-stone-400 line-through">{inr(pr.mrpInr)}</p>}
           </div>
           {pr.url ? (
             <a href={pr.url} target="_blank" rel="noopener noreferrer"
