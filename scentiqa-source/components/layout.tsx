@@ -143,6 +143,15 @@ const NAV = [
 function AuthButton() {
   const { user, loading, signOut } = useAuth();
   const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', close);
+    return () => document.removeEventListener('mousedown', close);
+  }, [open ]);
   if (loading) return <span className="ml-1 hidden h-10 w-20 animate-pulse rounded-xl bg-stone-200 sm:inline-flex dark:bg-ink-700" />;
   if (!user) {
     return (
@@ -153,7 +162,7 @@ function AuthButton() {
   }
   const initial = (user.email ?? 'S')[0].toUpperCase();
   return (
-    <div className="relative ml-1 hidden sm:block">
+    <div ref={menuRef} className="relative ml-1 hidden sm:block">
       <button onClick={() => setOpen((o) => !o)} aria-label="Account"
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform active:scale-95">
         {initial}
@@ -162,10 +171,14 @@ function AuthButton() {
         <div className="absolute right-0 z-50 mt-2 w-60 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
           <div className="border-b border-stone-100 px-4 py-3 dark:border-ink-700">
             <p className="truncate text-sm font-semibold">{user.email}</p>
-            <p className="text-xs text-stone-400">Signed in with Google</p>
+            <p className="text-xs text-stone-400">Signed in{user.app_metadata?.provider === 'google' ? ' with Google' : ''}</p>
           </div>
+          <Link href="/account" onClick={() => setOpen(false)}
+            className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
+            My dashboard
+          </Link>
           <button onClick={() => { setOpen(false); signOut(); }}
-            className="block w-full px-4 py-3 text-left text-sm font-semibold text-stone-600 hover:bg-stone-50 dark:text-stone-300 dark:hover:bg-white/5">
+            className="block w-full border-t border-stone-100 px-4 py-3 text-left text-sm font-semibold text-stone-600 hover:bg-stone-50 dark:border-ink-700 dark:text-stone-300 dark:hover:bg-white/5">
             Sign out
           </button>
         </div>
@@ -243,6 +256,7 @@ function StatsStrip({ stats }: { stats: { perfumes: number; houses: number; revi
 /* ---------- Mobile bottom nav ---------- */
 export function MobileBottomNav() {
   const pathname = usePathname();
+  const { user } = useAuth();
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
   useEffect(() => {
@@ -274,7 +288,7 @@ export function MobileBottomNav() {
           Find Dupe
         </Link>
         {item('/member/arjun_sniffs', 'Wardrobe', 'M4 7h16M4 7v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2', pathname.startsWith('/member'))}
-        {item('/login', 'Profile', 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 8a7 7 0 0 1 14 0', pathname.startsWith('/login'))}
+        {item(user ? '/account' : '/login', user ? 'Account' : 'Profile', 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 8a7 7 0 0 1 14 0', pathname.startsWith('/account') || (!user && pathname.startsWith('/login')))}
       </div>
     </nav>
   );

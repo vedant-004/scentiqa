@@ -1,16 +1,31 @@
 // /login — Supabase auth. Demo mode explains the read-only state.
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { getSupabaseBrowser, isSupabaseConfigured } from '@/lib/supabase';
+import { useAuth } from '@/components/auth';
 import { Button, Card, Input, SectionHeading } from '@/components';
 import { Breadcrumbs } from '@/components';
 
 export default function LoginPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+  useEffect(() => {
+    if (!loading && user) router.replace('/account');
+  }, [user, loading, router]);
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
   const configured = isSupabaseConfigured();
+
+  if (!loading && user) {
+    return (
+      <div className="mx-auto max-w-md px-4 pt-16 text-center sm:px-6">
+        <p className="text-stone-500 dark:text-stone-400">You&rsquo;re signed in — taking you to your dashboard…</p>
+      </div>
+    );
+  }
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();

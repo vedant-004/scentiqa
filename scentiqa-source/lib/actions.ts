@@ -16,7 +16,10 @@ export async function requireAccount(): Promise<{ sb: NonNullable<ReturnType<typ
   const sb = await authed();
   if (!sb) return { demo: true };
   const { data } = await sb.auth.getUser();
-  return { sb, userId: data.user!.id };
+  if (!data.user) return { demo: true };
+  // Self-heal: ensure the public.users row this user_id FKs against exists.
+  await sb.rpc('ensure_public_user');
+  return { sb, userId: data.user.id };
 }
 
 export async function postReview(perfumeId: string, rating: number, title: string, body: string): Promise<ActionResult> {
@@ -43,6 +46,20 @@ export async function setWardrobe(perfumeId: string, shelf: string): Promise<Act
     { user_id: a.userId, perfume_id: perfumeId, shelf },
     { onConflict: 'user_id,perfume_id,shelf' },
   );
+  return error ? { ok: false, error: error.message } : { ok: true };
+}
+
+export async function removeWardrobe(perfumeId: string, shelf: string): Promise<ActionResult> {
+  const a = await requireAccount();
+  if ('demo' in a) return { ok: false, demo: true };
+  const { error } = await a.sb.from('wardrobe_items').delete().eq('user_id', a.userId).eq('perfume_id', perfumeId).eq('shelf', shelf);
+  return error ? { ok: false, error: error.message } : { ok: true };
+}
+
+export async function removePriceAlert(alertId: number): Promise<ActionResult> {
+  const a = await requireAccount();
+  if ('demo' in a) return { ok: false, demo: true };
+  const { error } = await a.sb.from('price_alerts').delete().eq('user_id', a.userId).eq('id', alertId);
   return error ? { ok: false, error: error.message } : { ok: true };
 }
 
