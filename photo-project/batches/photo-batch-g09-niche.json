@@ -1,0 +1,442 @@
+[
+ {
+  "perfume_id": "perf_w_blossom-love-amouage",
+  "slug": "blossom-love-amouage",
+  "name": "Blossom Love Amouage",
+  "image_path": "/images/amouage/blossom-love-amouage.jpg",
+  "source_url": "pre-existing file",
+  "verify_note": "pre-existing download, visually verified"
+ },
+ {
+  "perfume_id": "perf_w_ciel-pour-femme-amouage",
+  "slug": "ciel-pour-femme-amouage",
+  "name": "Ciel Pour Femme Amouage",
+  "image_path": "/images/amouage/ciel-pour-femme-amouage.jpg",
+  "source_url": "pre-existing file",
+  "verify_note": "pre-existing download, visually verified"
+ },
+ {
+  "perfume_id": "perf_w_dia-woman-amouage",
+  "slug": "dia-woman-amouage",
+  "name": "Dia Woman Amouage",
+  "image_path": "/images/amouage/dia-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/dia-woman-100ml",
+  "verify_note": "official amouage.com catalog (exact title 'Dia Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_epic-man-amouage",
+  "slug": "epic-man-amouage",
+  "name": "Epic Man Amouage",
+  "image_path": "/images/amouage/epic-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/epic-man-100ml",
+  "verify_note": "official amouage.com catalog (exact title 'Epic Man'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_epic-woman-amouage",
+  "slug": "epic-woman-amouage",
+  "name": "Epic Woman Amouage",
+  "image_path": "/images/amouage/epic-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/epic-woman",
+  "verify_note": "official amouage.com catalog (exact title 'Epic Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_guidance-amouage",
+  "slug": "guidance-amouage",
+  "name": "Guidance Amouage",
+  "image_path": "/images/amouage/guidance-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/100ml-guidance",
+  "verify_note": "official amouage.com catalog (exact title 'Guidance'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_honour-woman-amouage",
+  "slug": "honour-woman-amouage",
+  "name": "Honour Woman Amouage",
+  "image_path": "/images/amouage/honour-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/honour-woman-100ml",
+  "verify_note": "official amouage.com catalog (exact title 'Honour Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_interlude-man",
+  "slug": "interlude-man",
+  "name": "Interlude Man",
+  "image_path": "/images/amouage/interlude-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/interlude-man-100ml",
+  "verify_note": "same product as interlude-man-amouage (EDP); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_interlude-man-amouage",
+  "slug": "interlude-man-amouage",
+  "name": "Interlude Man Amouage",
+  "image_path": "/images/amouage/interlude-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/interlude-man-100ml",
+  "verify_note": "official amouage.com catalog (exact title 'Interlude Man'); blue bottle with sapphire cap crystal, visually verified"
+ },
+ {
+  "perfume_id": "perf_w_interlude-woman-amouage",
+  "slug": "interlude-woman-amouage",
+  "name": "Interlude Woman Amouage",
+  "image_path": "/images/amouage/interlude-woman-amouage.jpg",
+  "source_url": "https://allbeauty.com/products/p-amouage-interlude-woman-eau-de-parfum-spray-100ml-13096588",
+  "verify_note": "allbeauty.com product page 'Amouage Interlude Woman Eau de Parfum Spray 100ml'; blue bottle with sapphire cap crystal (same design as Man), visually verified"
+ },
+ {
+  "perfume_id": "perf_w_journey-woman-amouage",
+  "slug": "journey-woman-amouage",
+  "name": "Journey Woman Amouage",
+  "image_path": "/images/amouage/journey-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/journey-woman",
+  "verify_note": "official amouage.com catalog (exact title 'Journey Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_jubilation-xxv",
+  "slug": "jubilation-xxv",
+  "name": "Jubilation XXV",
+  "image_path": "/images/amouage/jubilation-xxv-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/jubilation-xxv-man",
+  "verify_note": "same product as jubilation-xxv-man-amouage (EDP); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_jubilation-xxv-man-amouage",
+  "slug": "jubilation-xxv-man-amouage",
+  "name": "Jubilation XXV Man Amouage",
+  "image_path": "/images/amouage/jubilation-xxv-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/jubilation-xxv-man",
+  "verify_note": "official amouage.com catalog (exact title 'Jubilation XXV Man'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_lilac-love-amouage",
+  "slug": "lilac-love-amouage",
+  "name": "Lilac Love Amouage",
+  "image_path": "/images/amouage/lilac-love-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/lilac-love",
+  "verify_note": "official amouage.com catalog (exact title 'Lilac Love'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_lyric-man-amouage",
+  "slug": "lyric-man-amouage",
+  "name": "Lyric Man Amouage",
+  "image_path": "/images/amouage/lyric-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/lyric-man",
+  "verify_note": "official amouage.com catalog (exact title 'Lyric Man'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_lyric-woman-amouage",
+  "slug": "lyric-woman-amouage",
+  "name": "Lyric Woman Amouage",
+  "image_path": "/images/amouage/lyric-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/lyricwoman",
+  "verify_note": "official amouage.com catalog (exact title 'Lyric Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_memoir-man-amouage",
+  "slug": "memoir-man-amouage",
+  "name": "Memoir Man Amouage",
+  "image_path": "/images/amouage/memoir-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/memoir-man",
+  "verify_note": "official amouage.com catalog (exact title 'Memoir Man'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_memoir-woman-amouage",
+  "slug": "memoir-woman-amouage",
+  "name": "Memoir Woman Amouage",
+  "image_path": "/images/amouage/memoir-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/memoir-woman",
+  "verify_note": "official amouage.com catalog (exact title 'Memoir Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_purpose-50",
+  "slug": "purpose-50",
+  "name": "Purpose 50",
+  "image_path": "/images/amouage/purpose-50.jpg",
+  "source_url": "https://www.amouage.com/products/new-purpose-50",
+  "verify_note": "official amouage.com catalog (exact title 'Purpose 50'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_reflection-man",
+  "slug": "reflection-man",
+  "name": "Reflection Man",
+  "image_path": "/images/amouage/reflection-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/reflection-man-100ml",
+  "verify_note": "same product as reflection-man-amouage (EDP); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_reflection-man-amouage",
+  "slug": "reflection-man-amouage",
+  "name": "Reflection Man Amouage",
+  "image_path": "/images/amouage/reflection-man-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/reflection-man-100ml",
+  "verify_note": "official amouage.com catalog (exact title 'Reflection Man'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_reflection-woman-amouage",
+  "slug": "reflection-woman-amouage",
+  "name": "Reflection Woman Amouage",
+  "image_path": "/images/amouage/reflection-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/reflection-woman",
+  "verify_note": "official amouage.com catalog (exact title 'Reflection Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_sunshine-woman-amouage",
+  "slug": "sunshine-woman-amouage",
+  "name": "Sunshine Woman Amouage",
+  "image_path": "/images/amouage/sunshine-woman-amouage.jpg",
+  "source_url": "https://www.amouage.com/products/sunshine-woman",
+  "verify_note": "official amouage.com catalog (exact title 'Sunshine Woman'); label verified on packshot"
+ },
+ {
+  "perfume_id": "perf_w_40-knots-xerjoff",
+  "slug": "40-knots-xerjoff",
+  "name": "40 Knots Xerjoff",
+  "image_path": "/images/xerjoff/40-knots-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/40-knots-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title '40 Knots'); visually verified"
+ },
+ {
+  "perfume_id": "perf_alexandria-ii",
+  "slug": "alexandria-ii",
+  "name": "Alexandria II",
+  "image_path": "/images/xerjoff/alexandria-ii-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/alexandria-ll-parfum",
+  "verify_note": "same product as alexandria-ii-xerjoff (EDP); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_alexandria-ii-xerjoff",
+  "slug": "alexandria-ii-xerjoff",
+  "name": "Alexandria II Xerjoff",
+  "image_path": "/images/xerjoff/alexandria-ii-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/alexandria-ll-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Alexandria II'); bottle marked 'ALEXANDRIA II', visually verified"
+ },
+ {
+  "perfume_id": "perf_w_bouquet-ideale-xerjoff",
+  "slug": "bouquet-ideale-xerjoff",
+  "name": "Bouquet Ideale Xerjoff",
+  "image_path": "/images/xerjoff/bouquet-ideale-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/bouquet-ideale-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Bouquet Ideale'); visually verified"
+ },
+ {
+  "perfume_id": "perf_w_dama-bianca-xerjoff",
+  "slug": "dama-bianca-xerjoff",
+  "name": "Dama Bianca Xerjoff",
+  "image_path": "/images/xerjoff/dama-bianca-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/dama-bianca-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Dama Bianca'); visually verified"
+ },
+ {
+  "perfume_id": "perf_w_dolce-amalfi-xerjoff",
+  "slug": "dolce-amalfi-xerjoff",
+  "name": "Dolce Amalfi Xerjoff",
+  "image_path": "/images/xerjoff/dolce-amalfi-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/dolce-amalfi-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Dolce Amalfi'); visually verified"
+ },
+ {
+  "perfume_id": "perf_erba-pura",
+  "slug": "erba-pura",
+  "name": "Erba Pura",
+  "image_path": "/images/xerjoff/erba-pura-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/erba-pura-eau-de-parfum",
+  "verify_note": "same product as erba-pura-xerjoff (EDP); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_erba-pura-xerjoff",
+  "slug": "erba-pura-xerjoff",
+  "name": "Erba Pura Xerjoff",
+  "image_path": "/images/xerjoff/erba-pura-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/erba-pura-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Erba Pura'); visually verified"
+ },
+ {
+  "perfume_id": "perf_w_italica-2021-xerjoff",
+  "slug": "italica-2021-xerjoff",
+  "name": "Italica (2021) Xerjoff",
+  "image_path": "/images/xerjoff/italica-2021-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/italica-au-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Casamorati Italica 2021'); visually verified"
+ },
+ {
+  "perfume_id": "perf_w_lira-xerjoff",
+  "slug": "lira-xerjoff",
+  "name": "Lira Xerjoff",
+  "image_path": "/images/xerjoff/lira-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/lira-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Lira'); visually verified"
+ },
+ {
+  "perfume_id": "perf_w_mefisto-xerjoff",
+  "slug": "mefisto-xerjoff",
+  "name": "Mefisto Xerjoff",
+  "image_path": "/images/xerjoff/mefisto-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/mefisto-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'Mefisto'); visually verified"
+ },
+ {
+  "perfume_id": "perf_naxos",
+  "slug": "naxos",
+  "name": "Naxos",
+  "image_path": "/images/xerjoff/xj-1861-naxos-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/naxos-eau-de-parfum",
+  "verify_note": "same product as xj-1861-naxos-xerjoff (XJ 1861 Naxos, EDP); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_xj-1861-naxos-xerjoff",
+  "slug": "xj-1861-naxos-xerjoff",
+  "name": "XJ 1861 Naxos Xerjoff",
+  "image_path": "/images/xerjoff/xj-1861-naxos-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/naxos-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'XJ 1861 Naxos'); visually verified"
+ },
+ {
+  "perfume_id": "perf_w_xj-1861-renaissance-xerjoff",
+  "slug": "xj-1861-renaissance-xerjoff",
+  "name": "XJ 1861 Renaissance Xerjoff",
+  "image_path": "/images/xerjoff/xj-1861-renaissance-xerjoff.jpg",
+  "source_url": "https://www.xerjoff.com/products/renaissance-eau-de-parfum",
+  "verify_note": "official xerjoff.com catalog (exact title 'XJ 1861 Renaissance'); visually verified"
+ },
+ {
+  "perfume_id": "perf_w_ani-nishane",
+  "slug": "ani-nishane",
+  "name": "Ani Nishane",
+  "image_path": "/images/nishane/ani-nishane.jpg",
+  "source_url": "https://nishane.com/product/ani/",
+  "verify_note": "official nishane.com store (exact product 'ANI'); label 'NISHANE / ANI' visually verified"
+ },
+ {
+  "perfume_id": "perf_hacivat",
+  "slug": "hacivat",
+  "name": "Hacivat",
+  "image_path": "/images/nishane/hacivat-nishane.jpg",
+  "source_url": "https://nishane.com/product/hacivat/",
+  "verify_note": "same product as hacivat-nishane; bottle label reads 'Extrait de Parfum' (no separate Hacivat EDP exists); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_hacivat-nishane",
+  "slug": "hacivat-nishane",
+  "name": "Hacivat Nishane",
+  "image_path": "/images/nishane/hacivat-nishane.jpg",
+  "source_url": "https://nishane.com/product/hacivat/",
+  "verify_note": "official nishane.com store (exact product 'HACIVAT'); label 'NISHANE / HACIVAT' visually verified"
+ },
+ {
+  "perfume_id": "perf_w_hundred-silent-ways-nishane",
+  "slug": "hundred-silent-ways-nishane",
+  "name": "Hundred Silent Ways Nishane",
+  "image_path": "/images/nishane/hundred-silent-ways-nishane.jpg",
+  "source_url": "https://nishane.com/product/hundred-silent-ways/",
+  "verify_note": "official nishane.com store (exact product 'HUNDRED SILENT WAYS'); label visually verified"
+ },
+ {
+  "perfume_id": "perf_w_wul-ng-ch-nishane",
+  "slug": "wul-ng-ch-nishane",
+  "name": "Wulóng Chá Nishane",
+  "image_path": "/images/nishane/wul-ng-ch-nishane.jpg",
+  "source_url": "https://nishane.com/product/wulong-cha/",
+  "verify_note": "official nishane.com store (exact product 'WŪLÓNG CHÁ'); label visually verified"
+ },
+ {
+  "perfume_id": "perf_w_aoud-lemon-mint-mancera",
+  "slug": "aoud-lemon-mint-mancera",
+  "name": "Aoud Lemon Mint Mancera",
+  "image_path": "/images/mancera/aoud-lemon-mint-mancera.jpg",
+  "source_url": "https://dikochi.com/products/mancera-aoud-lemon-mint-for-unisex-eau-de-parfum-120ml",
+  "verify_note": "Dikochi retailer product page 'Mancera - Aoud Lemon Mint Eau de Parfum'; label 'MANCERA PARIS / AOUD LEMON MINT / EAU DE PARFUM 120 ML' visually verified"
+ },
+ {
+  "perfume_id": "perf_cedrat-boise",
+  "slug": "cedrat-boise",
+  "name": "Cedrat Boise",
+  "image_path": "/images/mancera/cedrat-boise-mancera.jpg",
+  "source_url": "https://www.thefirstscent.com/en/products/cedrat-boise-u-edp",
+  "verify_note": "same product as cedrat-boise-mancera (EDP); shared verified image"
+ },
+ {
+  "perfume_id": "perf_w_cedrat-boise-mancera",
+  "slug": "cedrat-boise-mancera",
+  "name": "Cedrat Boise Mancera",
+  "image_path": "/images/mancera/cedrat-boise-mancera.jpg",
+  "source_url": "https://www.thefirstscent.com/en/products/cedrat-boise-u-edp",
+  "verify_note": "The Perfume Shop HK product page 'Cedrat Boise U EDP'; label 'MANCERA PARIS / CEDRAT BOISE / EAU DE PARFUM 120 ML' visually verified"
+ },
+ {
+  "perfume_id": "perf_w_instant-crush-mancera",
+  "slug": "instant-crush-mancera",
+  "name": "Instant Crush Mancera",
+  "image_path": "/images/mancera/instant-crush-mancera.jpg",
+  "source_url": "https://www.ozhairandbeauty.com/products/mancera-instant-crush-edp-120ml",
+  "verify_note": "Oz Hair & Beauty product page 'Mancera Instant Crush Eau De Parfum 120ml'; label 'MANCERA PARIS / INSTANT CRUSH / EAU DE PARFUM 120 ML' visually verified"
+ },
+ {
+  "perfume_id": "perf_w_red-tobacco-mancera",
+  "slug": "red-tobacco-mancera",
+  "name": "Red Tobacco Mancera",
+  "image_path": "/images/mancera/red-tobacco-mancera.jpg",
+  "source_url": "https://cdn.notinoimg.com/detail_main_mq/mancera/3760265191864_01-o/red-tobacco___181023.jpg",
+  "verify_note": "official Notino image CDN (notinoimg.com; Notino is a major authorized EU fragrance retailer); filename 'red-tobacco'; label 'MANCERA PARIS / RED TOBACCO / EAU DE PARFUM 120 ML' visually verified"
+ },
+ {
+  "perfume_id": "perf_w_roses-vanille-mancera",
+  "slug": "roses-vanille-mancera",
+  "name": "Roses Vanille Mancera",
+  "image_path": "/images/mancera/roses-vanille-mancera.jpg",
+  "source_url": "https://www.centrepointstores.com/om/en/buy-mancera-roses-vanille-eau-de-parfum-spray-for-women-120-ml/p/165198014",
+  "verify_note": "Centrepoint product page 'Shop Mancera Roses Vanille Eau de Parfum Spray for Women - 120 ml'; label 'MANCERA PARIS / ROSES VANILLE / EAU DE PARFUM' visually verified"
+ },
+ {
+  "perfume_id": "perf_w_tonka-cola-mancera",
+  "slug": "tonka-cola-mancera",
+  "name": "Tonka Cola Mancera",
+  "image_path": "/images/mancera/tonka-cola-mancera.jpg",
+  "source_url": "https://www.viproermond.com/cdn/shop/files/TONKA-COLA-120ml-Mancera-Perfumes-241012213923.png?v=1772834444&width=400",
+  "verify_note": "retailer Shopify CDN; filename 'TONKA-COLA-120ml-Mancera'; label 'TONKA COLA / MANCERA PARIS' visually verified"
+ },
+ {
+  "perfume_id": "perf_w_club-de-nuit-intense-armaf",
+  "slug": "club-de-nuit-intense-armaf",
+  "name": "Club de Nuit Intense Armaf",
+  "image_path": "/images/designer/club-de-nuit-intense-man-armaf.png",
+  "source_url": "pre-existing file",
+  "verify_note": "already-local: /images/designer/club-de-nuit-intense-man-armaf.png (Armaf Club de Nuit Intense Man bottle), visually verified"
+ },
+ {
+  "perfume_id": "perf_club-de-nuit-intense-man",
+  "slug": "club-de-nuit-intense-man",
+  "name": "Club de Nuit Intense Man",
+  "image_path": "/images/designer/club-de-nuit-intense-man-armaf.png",
+  "source_url": "pre-existing file",
+  "verify_note": "same bottle as club-de-nuit-intense-armaf; shared already-local image /images/designer/club-de-nuit-intense-man-armaf.png; concentration not distinguishable on packshot"
+ },
+ {
+  "perfume_id": "perf_w_club-de-nuit-milestone-armaf",
+  "slug": "club-de-nuit-milestone-armaf",
+  "name": "Club de Nuit Milestone Armaf",
+  "image_path": "/images/armaf/club-de-nuit-milestone-armaf.jpg",
+  "source_url": "https://www.armaf.com/products/club-de-nuit-milestone-3-6-oz",
+  "verify_note": "official armaf.com catalog (exact title 'CLUB DE NUIT MILESTONE 3.6 OZ'); bottle marked 'club de nuit MILESTONE / EAU DE PARFUM', visually verified"
+ },
+ {
+  "perfume_id": "perf_w_club-de-nuit-sillage-armaf",
+  "slug": "club-de-nuit-sillage-armaf",
+  "name": "Club de Nuit Sillage Armaf",
+  "image_path": "/images/armaf/club-de-nuit-sillage-armaf.jpg",
+  "source_url": "https://www.armaf.com/products/club-de-nuit-sillage-3-6",
+  "verify_note": "official armaf.com catalog (exact title 'CLUB DE NUIT SILLAGE 3.6'); bottle marked 'club de nuit Sillage / EAU DE PARFUM', visually verified"
+ },
+ {
+  "perfume_id": "perf_w_tres-nuit-armaf",
+  "slug": "tres-nuit-armaf",
+  "name": "Tres Nuit Armaf",
+  "image_path": "/images/armaf/tres-nuit-armaf.jpg",
+  "source_url": "https://armafperfume.com/products/armaf_tres_nuit_pour_homme_eau_de_toilette_100ml",
+  "verify_note": "official Armaf India store product page 'Armaf Tres Nuit Pour Homme Eau De Parfum (EDP) 100ML'; clean bottle shot from online-fragrance.com retailer listing 'Armaf Tres Nuit by Armaf - 3.4oz (100 ml)'; bottle marked 'Tres Nuit POUR HOMME', visually verified"
+ },
+ {
+  "perfume_id": "perf_w_9pm-afnan",
+  "slug": "9pm-afnan",
+  "name": "9pm Afnan",
+  "image_path": "/images/designer/9pm.png",
+  "source_url": "pre-existing file",
+  "verify_note": "already-local: /images/designer/9pm.png (bottle shows 'AFNAN 9 PM EDP'), visually verified"
+ }
+]

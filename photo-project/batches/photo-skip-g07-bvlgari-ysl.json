@@ -1,0 +1,230 @@
+[
+  {
+    "perfume_id": "perf_designer_aqva-amara-eau-de-parfum-intense",
+    "slug": "aqva-amara-eau-de-parfum-intense",
+    "name": "Aqva Amara Eau de Parfum Intense",
+    "reason": "No such product exists — Bvlgari Aqva Amara is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_aqva-pour-homme-eau-de-parfum-intense",
+    "slug": "aqva-pour-homme-eau-de-parfum-intense",
+    "name": "Aqva Pour Homme Eau de Parfum Intense",
+    "reason": "No such product exists — Bvlgari Aqva Pour Homme is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_goldea-eau-de-parfum-intense",
+    "slug": "goldea-eau-de-parfum-intense",
+    "name": "Goldea Eau de Parfum Intense",
+    "reason": "No such product exists — Bvlgari Goldea is EDP only (no 'Intense' version)."
+  },
+  {
+    "perfume_id": "perf_designer_goldea-eau-de-toilette",
+    "slug": "goldea-eau-de-toilette",
+    "name": "Goldea Eau de Toilette",
+    "reason": "No such product exists — Bvlgari Goldea is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_jasmin-noir-eau-de-parfum-intense",
+    "slug": "jasmin-noir-eau-de-parfum-intense",
+    "name": "Jasmin Noir Eau de Parfum Intense",
+    "reason": "No such product exists — Bvlgari Jasmin Noir is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_jasmin-noir-eau-de-toilette",
+    "slug": "jasmin-noir-eau-de-toilette",
+    "name": "Jasmin Noir Eau de Toilette",
+    "reason": "No such product exists — Bvlgari Jasmin Noir is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_le-gemme-tygar-eau-de-parfum-intense",
+    "slug": "le-gemme-tygar-eau-de-parfum-intense",
+    "name": "Le Gemme Tygar Eau de Parfum Intense",
+    "reason": "No such product exists — Le Gemme Tygar is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_le-gemme-tygar-eau-de-toilette",
+    "slug": "le-gemme-tygar-eau-de-toilette",
+    "name": "Le Gemme Tygar Eau de Toilette",
+    "reason": "No such product exists — Le Gemme Tygar is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_man-glacial-essence-eau-de-parfum-intens",
+    "slug": "man-glacial-essence-eau-de-parfum-intense",
+    "name": "Man Glacial Essence Eau de Parfum Intense",
+    "reason": "No such product exists — Man Glacial Essence is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_man-glacial-essence-eau-de-toilette",
+    "slug": "man-glacial-essence-eau-de-toilette",
+    "name": "Man Glacial Essence Eau de Toilette",
+    "reason": "No such product exists — Man Glacial Essence is EDP only."
+  },
+  {
+    "perfume_id": "perf_w_omnia-bvlgari",
+    "slug": "omnia-bvlgari",
+    "name": "Omnia Bvlgari",
+    "reason": "No verifiable product page found for the original Bvlgari Omnia (2003) EDT after multiple targeted searches — needs re-research."
+  },
+  {
+    "perfume_id": "perf_designer_omnia-coral-eau-de-parfum-intense",
+    "slug": "omnia-coral-eau-de-parfum-intense",
+    "name": "Omnia Coral Eau de Parfum Intense",
+    "reason": "No such product exists — Omnia Coral is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_omnia-crystalline-eau-de-parfum-intense",
+    "slug": "omnia-crystalline-eau-de-parfum-intense",
+    "name": "Omnia Crystalline Eau de Parfum Intense",
+    "reason": "No such product exists — Omnia Crystalline is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_rose-goldea-eau-de-parfum-intense",
+    "slug": "rose-goldea-eau-de-parfum-intense",
+    "name": "Rose Goldea Eau de Parfum Intense",
+    "reason": "No such product exists — Rose Goldea is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_rose-goldea-eau-de-toilette",
+    "slug": "rose-goldea-eau-de-toilette",
+    "name": "Rose Goldea Eau de Toilette",
+    "reason": "No such product exists — Rose Goldea is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_splendida-tubereuse-mystique-eau-de-parf",
+    "slug": "splendida-tubereuse-mystique-eau-de-parfum-intense",
+    "name": "Splendida Tubereuse Mystique Eau de Parfum Intense",
+    "reason": "No such product exists — Splendida Tubereuse Mystique is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_splendida-tubereuse-mystique-eau-de-toil",
+    "slug": "splendida-tubereuse-mystique-eau-de-toilette",
+    "name": "Splendida Tubereuse Mystique Eau de Toilette",
+    "reason": "No such product exists — Splendida Tubereuse Mystique is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_tygar-eau-de-parfum-intense",
+    "slug": "tygar-eau-de-parfum-intense",
+    "name": "Tygar Eau de Parfum Intense",
+    "reason": "No such product exists — Tygar (Le Gemme Tygar) is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_tygar-eau-de-toilette",
+    "slug": "tygar-eau-de-toilette",
+    "name": "Tygar Eau de Toilette",
+    "reason": "No such product exists — Tygar (Le Gemme Tygar) is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_cinema-eau-de-parfum-intense",
+    "slug": "cinema-eau-de-parfum-intense",
+    "name": "Cinema Eau de Parfum Intense",
+    "reason": "No such product exists — YSL Cinema is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_cinema-eau-de-toilette",
+    "slug": "cinema-eau-de-toilette",
+    "name": "Cinema Eau de Toilette",
+    "reason": "No such product exists — YSL Cinema is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_jazz-eau-de-parfum-intense",
+    "slug": "jazz-eau-de-parfum-intense",
+    "name": "Jazz Eau de Parfum Intense",
+    "reason": "No such product exists — YSL Jazz is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_kouros-eau-de-parfum-intense",
+    "slug": "kouros-eau-de-parfum-intense",
+    "name": "Kouros Eau de Parfum Intense",
+    "reason": "No such product exists — YSL Kouros is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_l-homme-ultime-eau-de-parfum-intense",
+    "slug": "l-homme-ultime-eau-de-parfum-intense",
+    "name": "L'Homme Ultime Eau de Parfum Intense",
+    "reason": "No such product exists — L'Homme Ultime is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_l-homme-ultime-eau-de-toilette",
+    "slug": "l-homme-ultime-eau-de-toilette",
+    "name": "L'Homme Ultime Eau de Toilette",
+    "reason": "No such product exists — L'Homme Ultime is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_la-nuit-de-l-homme-eau-de-parfum-intense",
+    "slug": "la-nuit-de-l-homme-eau-de-parfum-intense",
+    "name": "La Nuit de l'Homme Eau de Parfum Intense",
+    "reason": "No such product exists — La Nuit de l'Homme is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_m7-eau-de-parfum-intense",
+    "slug": "m7-eau-de-parfum-intense",
+    "name": "M7 Eau de Parfum Intense",
+    "reason": "No such product exists — YSL M7 is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_manifesto-eau-de-parfum-intense",
+    "slug": "manifesto-eau-de-parfum-intense",
+    "name": "Manifesto Eau de Parfum Intense",
+    "reason": "No such product exists — YSL Manifesto is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_manifesto-eau-de-toilette",
+    "slug": "manifesto-eau-de-toilette",
+    "name": "Manifesto Eau de Toilette",
+    "reason": "No such product exists — YSL Manifesto is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_mon-paris-eau-de-parfum-intense",
+    "slug": "mon-paris-eau-de-parfum-intense",
+    "name": "Mon Paris Eau de Parfum Intense",
+    "reason": "No such product exists as a standalone product — Mon Paris is EDP only (Intensement is a separate flanker)."
+  },
+  {
+    "perfume_id": "perf_designer_mon-paris-eau-de-toilette",
+    "slug": "mon-paris-eau-de-toilette",
+    "name": "Mon Paris Eau de Toilette",
+    "reason": "No such product exists — YSL Mon Paris is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_opium-eau-de-parfum-intense",
+    "slug": "opium-eau-de-parfum-intense",
+    "name": "Opium Eau de Parfum Intense",
+    "reason": "No such product exists — Opium EDP exists but there is no 'Intense' version."
+  },
+  {
+    "perfume_id": "perf_designer_opium-eau-de-toilette",
+    "slug": "opium-eau-de-toilette",
+    "name": "Opium Eau de Toilette",
+    "reason": "Classic Opium EDT exists but no exact photo of the classic EDT bottle was obtained; the modern EDP photo is a different bottle — needs re-research."
+  },
+  {
+    "perfume_id": "perf_designer_rive-gauche-eau-de-parfum-intense",
+    "slug": "rive-gauche-eau-de-parfum-intense",
+    "name": "Rive Gauche Eau de Parfum Intense",
+    "reason": "No such product exists — Rive Gauche is EDT only."
+  },
+  {
+    "perfume_id": "perf_designer_saharienne-eau-de-parfum-intense",
+    "slug": "saharienne-eau-de-parfum-intense",
+    "name": "Saharienne Eau de Parfum Intense",
+    "reason": "No such product exists — Saharienne (Le Vestiaire) is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_saharienne-eau-de-toilette",
+    "slug": "saharienne-eau-de-toilette",
+    "name": "Saharienne Eau de Toilette",
+    "reason": "No such product exists — Saharienne (Le Vestiaire) is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_splendid-wood-eau-de-parfum-intense",
+    "slug": "splendid-wood-eau-de-parfum-intense",
+    "name": "Splendid Wood Eau de Parfum Intense",
+    "reason": "No such product exists — Splendid Wood (Le Vestiaire) is EDP only."
+  },
+  {
+    "perfume_id": "perf_designer_splendid-wood-eau-de-toilette",
+    "slug": "splendid-wood-eau-de-toilette",
+    "name": "Splendid Wood Eau de Toilette",
+    "reason": "No such product exists — Splendid Wood (Le Vestiaire) is EDP only."
+  }
+]

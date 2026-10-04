@@ -1,0 +1,394 @@
+[
+  {
+    "perfume_id": "perf_designer_aqva-amara",
+    "slug": "aqva-amara",
+    "name": "Aqva Amara",
+    "image_path": "/images/bvlgari/aqva-amara.jpg",
+    "source_url": "https://dnkparfum.ru/catalog/bvlgari-aqva-amara-tualetnaya-voda-muzhskie-100ml/",
+    "verify_note": "Product page for Bvlgari Aqva Amara EDT; actual concentration is EDT. Bottle text verified."
+  },
+  {
+    "perfume_id": "perf_w_aqva-amara-bvlgari",
+    "slug": "aqva-amara-bvlgari",
+    "name": "Aqva Amara Bvlgari",
+    "image_path": "/images/bvlgari/aqva-amara-bvlgari.jpg",
+    "source_url": "https://dnkparfum.ru/catalog/bvlgari-aqva-amara-tualetnaya-voda-muzhskie-100ml/",
+    "verify_note": "Product page for Bvlgari Aqva Amara EDT; actual concentration is EDT. Bottle text verified. Same bottle as Aqva Amara (identical product)."
+  },
+  {
+    "perfume_id": "perf_designer_aqva-amara-eau-de-toilette",
+    "slug": "aqva-amara-eau-de-toilette",
+    "name": "Aqva Amara Eau de Toilette",
+    "image_path": "/images/bvlgari/aqva-amara-eau-de-toilette.jpg",
+    "source_url": "https://dnkparfum.ru/catalog/bvlgari-aqva-amara-tualetnaya-voda-muzhskie-100ml/",
+    "verify_note": "Product page for Bvlgari Aqva Amara EDT; actual concentration is EDT. Bottle text verified. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_designer_aqva-pour-homme",
+    "slug": "aqva-pour-homme",
+    "name": "Aqva Pour Homme",
+    "image_path": "/images/bvlgari/aqva-pour-homme.jpg",
+    "source_url": "https://www.notino.hu/bvlgari/aqva-pour-homme-eau-de-toilette-ferfiaknak/",
+    "verify_note": "Notino product page for Bvlgari Aqva Pour Homme EDT; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_w_aqva-pour-homme-bvlgari",
+    "slug": "aqva-pour-homme-bvlgari",
+    "name": "Aqva Pour Homme Bvlgari",
+    "image_path": "/images/bvlgari/aqva-pour-homme-bvlgari.jpg",
+    "source_url": "https://www.notino.hu/bvlgari/aqva-pour-homme-eau-de-toilette-ferfiaknak/",
+    "verify_note": "Notino product page for Bvlgari Aqva Pour Homme EDT; actual concentration is EDT. Same bottle as Aqva Pour Homme (identical product)."
+  },
+  {
+    "perfume_id": "perf_designer_aqva-pour-homme-eau-de-toilette",
+    "slug": "aqva-pour-homme-eau-de-toilette",
+    "name": "Aqva Pour Homme Eau de Toilette",
+    "image_path": "/images/bvlgari/aqva-pour-homme-eau-de-toilette.jpg",
+    "source_url": "https://www.notino.hu/bvlgari/aqva-pour-homme-eau-de-toilette-ferfiaknak/",
+    "verify_note": "Notino product page for Bvlgari Aqva Pour Homme EDT; actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_w_aqva-pour-homme-marine-bvlgari",
+    "slug": "aqva-pour-homme-marine-bvlgari",
+    "name": "Aqva Pour Homme Marine Bvlgari",
+    "image_path": "/images/bvlgari/aqva-pour-homme-marine-bvlgari.jpg",
+    "source_url": "https://www.myperfumeshop.co.nz/collections/bvlgari",
+    "verify_note": "My Perfume Shop product page for Bvlgari Aqva Pour Homme Marine EDT; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_w_black-bvlgari",
+    "slug": "black-bvlgari",
+    "name": "Black Bvlgari",
+    "image_path": "/images/bvlgari/black-bvlgari.jpg",
+    "source_url": "https://www.hiris.ro/parfumuri-unisex/bvlgari/bvlgari-black-apa-de-toaleta-barbati",
+    "verify_note": "Product page for Bvlgari Black EDT ('Apa de Toaleta', 1998). Bottle verified visually."
+  },
+  {
+    "perfume_id": "perf_w_bvlgari-man-in-black-bvlgari",
+    "slug": "bvlgari-man-in-black-bvlgari",
+    "name": "Bvlgari Man In Black Bvlgari",
+    "image_path": "/images/bvlgari/bvlgari-man-in-black-bvlgari.jpg",
+    "source_url": "https://nexalia.de/Bvlgari-Man-In-Black-Edp-Spray-100-ml_1",
+    "verify_note": "Product page for Bvlgari Man In Black EDP (2014, gold cap). Bottle reads 'EAU DE PARFUM'; visually verified."
+  },
+  {
+    "perfume_id": "perf_w_bvlgari-pour-femme-bvlgari",
+    "slug": "bvlgari-pour-femme-bvlgari",
+    "name": "Bvlgari Pour Femme Bvlgari",
+    "image_path": "/images/bvlgari/bvlgari-pour-femme-bvlgari.jpg",
+    "source_url": "https://priceritemart.com.au/products/bvlgari-pour-femme-100ml-edp-l-sp",
+    "verify_note": "Product page for Bvlgari Pour Femme EDP 100ml."
+  },
+  {
+    "perfume_id": "perf_designer_goldea",
+    "slug": "goldea",
+    "name": "Goldea",
+    "image_path": "/images/bvlgari/goldea.jpg",
+    "source_url": "https://shop.shajgoj.com/product/bvlgari-goldea-eau-de-parfum",
+    "verify_note": "Product page for Bvlgari Goldea EDP; bottle reads 'BVLGARI GOLDEA'; visually verified."
+  },
+  {
+    "perfume_id": "perf_designer_jasmin-noir",
+    "slug": "jasmin-noir",
+    "name": "Jasmin Noir",
+    "image_path": "/images/bvlgari/jasmin-noir.jpg",
+    "source_url": "https://ramfabeauty.com/products/jasmin-noir-edp-l",
+    "verify_note": "Product page for Bvlgari Jasmin Noir EDP 100ml; bottle reads 'BVLGARI Jasmin Noir'; visually verified."
+  },
+  {
+    "perfume_id": "perf_w_jasmin-noir-bvlgari",
+    "slug": "jasmin-noir-bvlgari",
+    "name": "Jasmin Noir Bvlgari",
+    "image_path": "/images/bvlgari/jasmin-noir-bvlgari.jpg",
+    "source_url": "https://ramfabeauty.com/products/jasmin-noir-edp-l",
+    "verify_note": "Product page for Bvlgari Jasmin Noir EDP 100ml; bottle reads 'BVLGARI Jasmin Noir'; visually verified. Same bottle as Jasmin Noir (identical product)."
+  },
+  {
+    "perfume_id": "perf_designer_le-gemme-tygar",
+    "slug": "le-gemme-tygar",
+    "name": "Le Gemme Tygar",
+    "image_path": "/images/bvlgari/le-gemme-tygar.jpg",
+    "source_url": "https://escentials.com/products/bvlgari-le-gemme-tygar-eau-de-parfum",
+    "verify_note": "Escentials (Singapore luxury retailer) product page for Bvlgari Le Gemme Tygar EDP."
+  },
+  {
+    "perfume_id": "perf_designer_man-glacial-essence",
+    "slug": "man-glacial-essence",
+    "name": "Man Glacial Essence",
+    "image_path": "/images/bvlgari/man-glacial-essence.jpg",
+    "source_url": "https://scentedmeadow.com/product/bvlgari-man-glacial-essence-edp-men/",
+    "verify_note": "Product page for Bvlgari Man Glacial Essence EDP (2018; distinct from Man Black Essence)."
+  },
+  {
+    "perfume_id": "perf_w_mon-jasmin-noir-bvlgari",
+    "slug": "mon-jasmin-noir-bvlgari",
+    "name": "Mon Jasmin Noir Bvlgari",
+    "image_path": "/images/bvlgari/mon-jasmin-noir-bvlgari.jpg",
+    "source_url": "https://www.riah.ae/en/product/ra-444/mon-jasmin-noir-eau-de-parfum-for-women-bvlgari",
+    "verify_note": "Riah product page for Bvlgari Mon Jasmin Noir EDP; bottle text verified."
+  },
+  {
+    "perfume_id": "perf_w_omnia-amethyste-bvlgari",
+    "slug": "omnia-amethyste-bvlgari",
+    "name": "Omnia Amethyste Bvlgari",
+    "image_path": "/images/bvlgari/omnia-amethyste-bvlgari.jpg",
+    "source_url": "https://www.parfumcenter.hu/bvlgari-omnia-amethyste-eau-de-toilette",
+    "verify_note": "Product page for Bvlgari Omnia Amethyste EDT; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_designer_omnia-coral",
+    "slug": "omnia-coral",
+    "name": "Omnia Coral",
+    "image_path": "/images/bvlgari/omnia-coral.jpg",
+    "source_url": "https://dayimports.com.br/produtos/omnia-coral-bvlgari/",
+    "verify_note": "Product page for Bvlgari Omnia Coral EDT; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_w_omnia-coral-bvlgari",
+    "slug": "omnia-coral-bvlgari",
+    "name": "Omnia Coral Bvlgari",
+    "image_path": "/images/bvlgari/omnia-coral-bvlgari.jpg",
+    "source_url": "https://dayimports.com.br/produtos/omnia-coral-bvlgari/",
+    "verify_note": "Product page for Bvlgari Omnia Coral EDT; actual concentration is EDT. Same bottle as Omnia Coral (identical product)."
+  },
+  {
+    "perfume_id": "perf_designer_omnia-coral-eau-de-toilette",
+    "slug": "omnia-coral-eau-de-toilette",
+    "name": "Omnia Coral Eau de Toilette",
+    "image_path": "/images/bvlgari/omnia-coral-eau-de-toilette.jpg",
+    "source_url": "https://dayimports.com.br/produtos/omnia-coral-bvlgari/",
+    "verify_note": "Product page for Bvlgari Omnia Coral EDT; actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_designer_omnia-crystalline",
+    "slug": "omnia-crystalline",
+    "name": "Omnia Crystalline",
+    "image_path": "/images/bvlgari/omnia-crystalline.jpg",
+    "source_url": "https://www.aromanto.com/product/bulgari-omnia-crystalline-eau-de-toilette-100-ml/",
+    "verify_note": "Product page for Bvlgari Omnia Crystalline EDT; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_w_omnia-crystalline-bvlgari",
+    "slug": "omnia-crystalline-bvlgari",
+    "name": "Omnia Crystalline Bvlgari",
+    "image_path": "/images/bvlgari/omnia-crystalline-bvlgari.jpg",
+    "source_url": "https://www.aromanto.com/product/bulgari-omnia-crystalline-eau-de-toilette-100-ml/",
+    "verify_note": "Product page for Bvlgari Omnia Crystalline EDT; actual concentration is EDT. Same bottle as Omnia Crystalline (identical product)."
+  },
+  {
+    "perfume_id": "perf_designer_omnia-crystalline-eau-de-toilette",
+    "slug": "omnia-crystalline-eau-de-toilette",
+    "name": "Omnia Crystalline Eau de Toilette",
+    "image_path": "/images/bvlgari/omnia-crystalline-eau-de-toilette.jpg",
+    "source_url": "https://www.aromanto.com/product/bulgari-omnia-crystalline-eau-de-toilette-100-ml/",
+    "verify_note": "Product page for Bvlgari Omnia Crystalline EDT; actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_w_rose-essentielle-bvlgari",
+    "slug": "rose-essentielle-bvlgari",
+    "name": "Rose Essentielle Bvlgari",
+    "image_path": "/images/bvlgari/rose-essentielle-bvlgari.jpg",
+    "source_url": "https://perfumaste.com/producto/perfume-rose-essentielle-eau-parfum-de-bvlgari-para-mujer-100-ml/",
+    "verify_note": "Product page for Bvlgari Rose Essentielle EDP (SKU M-ROSE-ESSENTIALLE-EDP-100ML)."
+  },
+  {
+    "perfume_id": "perf_designer_rose-goldea",
+    "slug": "rose-goldea",
+    "name": "Rose Goldea",
+    "image_path": "/images/bvlgari/rose-goldea.jpg",
+    "source_url": "https://www.olfactoryfactoryllc.com/products/bvlgari-rose-goldea-edp",
+    "verify_note": "Product page for Bvlgari Rose Goldea EDP."
+  },
+  {
+    "perfume_id": "perf_designer_splendida-tubereuse-mystique",
+    "slug": "splendida-tubereuse-mystique",
+    "name": "Splendida Tubereuse Mystique",
+    "image_path": "/images/bvlgari/splendida-tubereuse-mystique.jpg",
+    "source_url": "https://pinoyfragrance.com/products/bvlgari-splendida-tubereuse-mystique-edp-100ml",
+    "verify_note": "Product page for Bvlgari Splendida Tubereuse Mystique EDP."
+  },
+  {
+    "perfume_id": "perf_tygar",
+    "slug": "tygar",
+    "name": "Tygar",
+    "image_path": "/images/bvlgari/tygar.jpg",
+    "source_url": "https://escentials.com/products/bvlgari-le-gemme-tygar-eau-de-parfum",
+    "verify_note": "Escentials (Singapore luxury retailer) product page for Bvlgari Le Gemme Tygar EDP. Tygar is the short name for Le Gemme Tygar (same product)."
+  },
+  {
+    "perfume_id": "perf_black-opium",
+    "slug": "black-opium",
+    "name": "Black Opium",
+    "image_path": "/images/yves-saint-laurent/black-opium.jpg",
+    "source_url": "https://www.yslbeauty.fr/parfums/parfum-femme/black-opium/black-opium-eau-de-parfum/WW-40701YSL.html",
+    "verify_note": "Official YSL Beauty (France) product page for Black Opium EDP; bottle verified visually."
+  },
+  {
+    "perfume_id": "perf_designer_cinema",
+    "slug": "cinema",
+    "name": "Cinema",
+    "image_path": "/images/yves-saint-laurent/cinema.jpg",
+    "source_url": "https://acegiftsplus.ca/products/yslcinema-woman",
+    "verify_note": "Product page listing 'Ysl Cinema Edp W 90Ml Boxed'; Cinema EDP bottle verified visually."
+  },
+  {
+    "perfume_id": "perf_designer_jazz",
+    "slug": "jazz",
+    "name": "Jazz",
+    "image_path": "/images/yves-saint-laurent/jazz.jpg",
+    "source_url": "https://www.fruugo.dk/yves-saint-laurent-jazz-eau-de-toilette-80ml/p-61754279-124424496?language=en",
+    "verify_note": "Fruugo listing sold by Landys Chemist for YSL Jazz EDT 80ml; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_designer_jazz-eau-de-toilette",
+    "slug": "jazz-eau-de-toilette",
+    "name": "Jazz Eau de Toilette",
+    "image_path": "/images/yves-saint-laurent/jazz-eau-de-toilette.jpg",
+    "source_url": "https://www.fruugo.dk/yves-saint-laurent-jazz-eau-de-toilette-80ml/p-61754279-124424496?language=en",
+    "verify_note": "Fruugo listing sold by Landys Chemist for YSL Jazz EDT 80ml; actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_designer_kouros",
+    "slug": "kouros",
+    "name": "Kouros",
+    "image_path": "/images/yves-saint-laurent/kouros.jpg",
+    "source_url": "https://parfemivanila.me/products/kouros-yves-saint-laurent",
+    "verify_note": "Product page for YSL Kouros EDT 100ml; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_designer_kouros-eau-de-toilette",
+    "slug": "kouros-eau-de-toilette",
+    "name": "Kouros Eau de Toilette",
+    "image_path": "/images/yves-saint-laurent/kouros-eau-de-toilette.jpg",
+    "source_url": "https://parfemivanila.me/products/kouros-yves-saint-laurent",
+    "verify_note": "Product page for YSL Kouros EDT 100ml; actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_designer_l-homme-ultime",
+    "slug": "l-homme-ultime",
+    "name": "L'Homme Ultime",
+    "image_path": "/images/yves-saint-laurent/l-homme-ultime.jpg",
+    "source_url": "https://alhajisoman.com/products/ysl-l-homme-ultime-100ml-edp",
+    "verify_note": "Product page for YSL L'Homme Ultime EDP 100ml."
+  },
+  {
+    "perfume_id": "perf_designer_la-nuit-de-l-homme",
+    "slug": "la-nuit-de-l-homme",
+    "name": "La Nuit de l'Homme",
+    "image_path": "/images/yves-saint-laurent/la-nuit-de-l-homme.jpg",
+    "source_url": "https://www.morele.net/yves-saint-laurent-la-nuit-de-lhomme-edt-100ml-7699292/",
+    "verify_note": "Product page for YSL La Nuit de L'Homme EDT 100ml; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_designer_la-nuit-de-l-homme-eau-de-toilette",
+    "slug": "la-nuit-de-l-homme-eau-de-toilette",
+    "name": "La Nuit de l'Homme Eau de Toilette",
+    "image_path": "/images/yves-saint-laurent/la-nuit-de-l-homme-eau-de-toilette.jpg",
+    "source_url": "https://www.morele.net/yves-saint-laurent-la-nuit-de-lhomme-edt-100ml-7699292/",
+    "verify_note": "Product page for YSL La Nuit de L'Homme EDT 100ml; actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_designer_libre-edp",
+    "slug": "libre-edp",
+    "name": "Libre EDP",
+    "image_path": "/images/yves-saint-laurent/libre-edp.jpg",
+    "source_url": "https://nicehair.dk/ysl-libre-for-her-edp-50-ml.html",
+    "verify_note": "Product page for YSL Libre EDP 50ml."
+  },
+  {
+    "perfume_id": "perf_designer_libre-intense",
+    "slug": "libre-intense",
+    "name": "Libre Intense",
+    "image_path": "/images/yves-saint-laurent/libre-intense.jpg",
+    "source_url": "https://glam42.co.il/collections/ysl/products/ysl-libre-intense-edp-90ml-yves-saint-laurent",
+    "verify_note": "Product page for YSL Libre Eau de Parfum Intense 90ml (barcode 3614273069557); bottle verified visually."
+  },
+  {
+    "perfume_id": "perf_designer_m7",
+    "slug": "m7",
+    "name": "M7",
+    "image_path": "/images/yves-saint-laurent/m7.jpg",
+    "source_url": "https://tayna.by/products/30725/",
+    "verify_note": "Product page for YSL M7 EDT 80ml; actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_designer_m7-eau-de-toilette",
+    "slug": "m7-eau-de-toilette",
+    "name": "M7 Eau de Toilette",
+    "image_path": "/images/yves-saint-laurent/m7-eau-de-toilette.jpg",
+    "source_url": "https://tayna.by/products/30725/",
+    "verify_note": "Product page for YSL M7 EDT 80ml; actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_designer_manifesto",
+    "slug": "manifesto",
+    "name": "Manifesto",
+    "image_path": "/images/yves-saint-laurent/manifesto.jpg",
+    "source_url": "https://blissim.fr/marques/yves-saint-laurent/manifesto-eau-de-parfum",
+    "verify_note": "Blissim product page for YSL Manifesto EDP."
+  },
+  {
+    "perfume_id": "perf_designer_mon-paris",
+    "slug": "mon-paris",
+    "name": "Mon Paris",
+    "image_path": "/images/yves-saint-laurent/mon-paris.jpg",
+    "source_url": "https://www.perfumeclub.net/products/mon-paris-eau-de-parfum-90m",
+    "verify_note": "Product page for YSL Mon Paris EDP 90ml; iconic bottle with black bow verified visually."
+  },
+  {
+    "perfume_id": "perf_designer_opium",
+    "slug": "opium",
+    "name": "Opium",
+    "image_path": "/images/yves-saint-laurent/opium.jpg",
+    "source_url": "https://www.breuninger.com/ch/marken/yves-saint-laurent-beaute/opium/1000501341/p/",
+    "verify_note": "Breuninger product page for YSL Opium EDP; modern EDP bottle verified visually."
+  },
+  {
+    "perfume_id": "perf_designer_rive-gauche",
+    "slug": "rive-gauche",
+    "name": "Rive Gauche",
+    "image_path": "/images/yves-saint-laurent/rive-gauche.jpg",
+    "source_url": "https://www.vperfumes.com/product/ysl-rive-gauche-edt-for-women-100ml",
+    "verify_note": "Product page for YSL Rive Gauche EDT 100ml (1971); bottle and box read 'eau de toilette'; visually verified. Actual concentration is EDT."
+  },
+  {
+    "perfume_id": "perf_designer_rive-gauche-eau-de-toilette",
+    "slug": "rive-gauche-eau-de-toilette",
+    "name": "Rive Gauche Eau de Toilette",
+    "image_path": "/images/yves-saint-laurent/rive-gauche-eau-de-toilette.jpg",
+    "source_url": "https://www.vperfumes.com/product/ysl-rive-gauche-edt-for-women-100ml",
+    "verify_note": "Product page for YSL Rive Gauche EDT 100ml (1971); bottle and box read 'eau de toilette'; visually verified. Actual concentration is EDT. Entry names the real product's concentration (EDT); same bottle."
+  },
+  {
+    "perfume_id": "perf_designer_saharienne",
+    "slug": "saharienne",
+    "name": "Saharienne",
+    "image_path": "/images/yves-saint-laurent/saharienne.jpg",
+    "source_url": "https://www.myperfumeshop.co.nz/products/yves-saint-laurent-le-vestiaire-des-saharienne-edp",
+    "verify_note": "Product page for YSL Le Vestiaire des Parfums Saharienne EDP."
+  },
+  {
+    "perfume_id": "perf_designer_splendid-wood",
+    "slug": "splendid-wood",
+    "name": "Splendid Wood",
+    "image_path": "/images/yves-saint-laurent/splendid-wood.jpg",
+    "source_url": "https://tagomago.pl/products/yves-saint-laurent-splendid-wood-woda-perfumowana",
+    "verify_note": "Product page for YSL Le Vestiaire des Parfums Splendid Wood EDP."
+  },
+  {
+    "perfume_id": "perf_y-eau-de-parfum",
+    "slug": "y-eau-de-parfum",
+    "name": "Y Eau de Parfum",
+    "image_path": "/images/yves-saint-laurent/y-eau-de-parfum.jpg",
+    "source_url": "https://perfumeheadquarters.com/products/yves-saint-laurent-y-eau-de-parfum-fragrance-mens",
+    "verify_note": "Product page for YSL Y Eau de Parfum for Men (also confirmed on official yslbeauty.com)."
+  },
+  {
+    "perfume_id": "perf_designer_y-edp",
+    "slug": "y-edp",
+    "name": "Y EDP",
+    "image_path": "/images/yves-saint-laurent/y-edp.jpg",
+    "source_url": "https://perfumeheadquarters.com/products/yves-saint-laurent-y-eau-de-parfum-fragrance-mens",
+    "verify_note": "Product page for YSL Y Eau de Parfum for Men (also confirmed on official yslbeauty.com). Same product as Y Eau de Parfum."
+  }
+]

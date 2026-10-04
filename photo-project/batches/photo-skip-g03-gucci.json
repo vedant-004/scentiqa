@@ -1,0 +1,344 @@
+[
+  {
+    "perfume_id": "perf_designer_a-midnight-stroll",
+    "slug": "a-midnight-stroll",
+    "name": "A Midnight Stroll",
+    "reason": "Real product (The Alchemist's Garden EDP) but gucci.com-exclusive; official gucci.com packshot located (media.gucci.com) but unreachable from this environment, and it is not stocked by Nykaa/Myntra/Sephora India/Tata Cliq — no authorized-source image obtainable."
+  },
+  {
+    "perfume_id": "perf_designer_a-midnight-stroll-eau-de-parfum-intense",
+    "slug": "a-midnight-stroll-eau-de-parfum-intense",
+    "name": "A Midnight Stroll Eau de Parfum Intense",
+    "reason": "No such Gucci product — the Alchemist's Garden line is EDP-only; no 'Eau de Parfum Intense' variant exists. Skipped rather than approximating."
+  },
+  {
+    "perfume_id": "perf_designer_a-midnight-stroll-eau-de-toilette",
+    "slug": "a-midnight-stroll-eau-de-toilette",
+    "name": "A Midnight Stroll Eau de Toilette",
+    "reason": "No such Gucci product — the Alchemist's Garden line is EDP-only; no Eau de Toilette variant exists."
+  },
+  {
+    "perfume_id": "perf_designer_a-song-for-the-rose",
+    "slug": "a-song-for-the-rose",
+    "name": "A Song for the Rose",
+    "reason": "Real product (The Alchemist's Garden EDP) but gucci.com/boutique-exclusive; no image obtainable from gucci.com or authorized retailers (Nykaa/Myntra/Sephora India/Tata Cliq)."
+  },
+  {
+    "perfume_id": "perf_designer_a-song-for-the-rose-eau-de-parfum-intens",
+    "slug": "a-song-for-the-rose-eau-de-parfum-intense",
+    "name": "A Song for the Rose Eau de Parfum Intense",
+    "reason": "No such Gucci product — A Song for the Rose exists only as EDP; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_a-song-for-the-rose-eau-de-toilette",
+    "slug": "a-song-for-the-rose-eau-de-toilette",
+    "name": "A Song for the Rose Eau de Toilette",
+    "reason": "No such Gucci product — A Song for the Rose exists only as EDP; no EDT variant."
+  },
+  {
+    "perfume_id": "perf_designer_bamboo-eau-de-parfum-intense",
+    "slug": "bamboo-eau-de-parfum-intense",
+    "name": "Bamboo Eau de Parfum Intense",
+    "reason": "No such Gucci product — Gucci Bamboo was sold only as Eau de Parfum; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_bamboo-eau-de-toilette",
+    "slug": "bamboo-eau-de-toilette",
+    "name": "Bamboo Eau de Toilette",
+    "reason": "No such Gucci product — Gucci Bamboo was sold only as Eau de Parfum; no EDT variant."
+  },
+  {
+    "perfume_id": "perf_designer_envy",
+    "slug": "envy",
+    "name": "Envy",
+    "reason": "Real but discontinued (Gucci Envy, 1997 — sold as EDT); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_designer_envy-eau-de-parfum-intense",
+    "slug": "envy-eau-de-parfum-intense",
+    "name": "Envy Eau de Parfum Intense",
+    "reason": "No such Gucci product — Envy (1997) exists only as Eau de Toilette; no EDP Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_envy-eau-de-toilette",
+    "slug": "envy-eau-de-toilette",
+    "name": "Envy Eau de Toilette",
+    "reason": "Same real product as 'Envy' (the 1997 Envy is itself an EDT, discontinued); no authorized-retailer image obtainable."
+  },
+  {
+    "perfume_id": "perf_w_envy-for-men-gucci",
+    "slug": "envy-for-men-gucci",
+    "name": "Envy for Men Gucci",
+    "reason": "Real but discontinued (Gucci Envy for Men, 1998); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_envy-gucci",
+    "slug": "envy-gucci",
+    "name": "Envy Gucci",
+    "reason": "Same real product as 'Envy' (discontinued 1997 EDT); no authorized-retailer image obtainable."
+  },
+  {
+    "perfume_id": "perf_w_envy-me-gucci",
+    "slug": "envy-me-gucci",
+    "name": "Envy Me Gucci",
+    "reason": "Real but discontinued (Gucci Envy Me, 2004); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_flora",
+    "slug": "flora",
+    "name": "Flora",
+    "reason": "Ambiguous name — maps to the discontinued Flora by Gucci EDP (2009); no authorized-retailer image obtainable."
+  },
+  {
+    "perfume_id": "perf_w_flora-by-gucci-eau-de-parfum-gucci",
+    "slug": "flora-by-gucci-eau-de-parfum-gucci",
+    "name": "Flora by Gucci Eau de Parfum Gucci",
+    "reason": "Real but discontinued (Flora by Gucci EDP, 2009); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_flora-by-gucci-eau-de-toilette-gucci",
+    "slug": "flora-by-gucci-eau-de-toilette-gucci",
+    "name": "Flora by Gucci Eau de Toilette Gucci",
+    "reason": "Real but discontinued (Flora by Gucci EDT, 2009); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_flora-by-gucci-gorgeous-gardenia-gucci",
+    "slug": "flora-by-gucci-gorgeous-gardenia-gucci",
+    "name": "Flora by Gucci Gorgeous Gardenia Gucci",
+    "reason": "Real but discontinued (Flora by Gucci Gorgeous Gardenia EDT, 2012 — distinct from the 2021 relaunch); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_designer_flora-gorgeous-gardenia-eau-de-toilette",
+    "slug": "flora-gorgeous-gardenia-eau-de-toilette",
+    "name": "Flora Gorgeous Gardenia Eau de Toilette",
+    "reason": "No such Gucci product — the 2021 Flora Gorgeous Gardenia line has no Eau de Toilette flanker (EDP only)."
+  },
+  {
+    "perfume_id": "perf_w_gucci-by-gucci-eau-de-parfum-gucci",
+    "slug": "gucci-by-gucci-eau-de-parfum-gucci",
+    "name": "Gucci by Gucci Eau de Parfum Gucci",
+    "reason": "Real but discontinued (Gucci by Gucci EDP, 2007); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_gucci-by-gucci-pour-homme-gucci",
+    "slug": "gucci-by-gucci-pour-homme-gucci",
+    "name": "Gucci by Gucci Pour Homme Gucci",
+    "reason": "Real but discontinued (Gucci by Gucci Pour Homme, 2008); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_gucci-eau-de-parfum-gucci",
+    "slug": "gucci-eau-de-parfum-gucci",
+    "name": "Gucci Eau de Parfum Gucci",
+    "reason": "Real but discontinued (Gucci Eau de Parfum, 2002); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_gucci-eau-de-parfum-ii-gucci",
+    "slug": "gucci-eau-de-parfum-ii-gucci",
+    "name": "Gucci Eau de Parfum II Gucci",
+    "reason": "Real but discontinued (Gucci Eau de Parfum II, 2004); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_gucci-guilty-absolute-pour-femme-gucci",
+    "slug": "gucci-guilty-absolute-pour-femme-gucci",
+    "name": "Gucci Guilty Absolute pour Femme Gucci",
+    "reason": "Real product (Gucci Guilty Absolute Pour Femme) but no image obtainable from gucci.com or authorized retailers (Nykaa/Myntra/Sephora India/Tata Cliq)."
+  },
+  {
+    "perfume_id": "perf_w_gucci-guilty-gucci",
+    "slug": "gucci-guilty-gucci",
+    "name": "Gucci Guilty Gucci",
+    "reason": "Real product (Gucci Guilty Pour Femme EDT — listed on Nykaa) but no downloadable image obtainable from an authorized retailer's CDN; official gucci.com packshot located (media.gucci.com) but unreachable from this environment."
+  },
+  {
+    "perfume_id": "perf_w_gucci-guilty-intense-gucci",
+    "slug": "gucci-guilty-intense-gucci",
+    "name": "Gucci Guilty Intense Gucci",
+    "reason": "Ambiguous name — could be the 2011 'Gucci Guilty Intense' (Pour Femme or Pour Homme, both discontinued) or the 2022 'Gucci Guilty Eau de Parfum Intense Pour Femme'; per exact-match rule, skipped rather than guessing."
+  },
+  {
+    "perfume_id": "perf_designer_gucci-oud",
+    "slug": "gucci-oud",
+    "name": "Gucci Oud",
+    "reason": "Real product (Gucci Oud EDP); official gucci.com packshot located (media.gucci.com) but unreachable from this environment; not listed on Nykaa/Myntra/Sephora India/Tata Cliq — no authorized-source image obtainable."
+  },
+  {
+    "perfume_id": "perf_designer_gucci-oud-eau-de-parfum-intense",
+    "slug": "gucci-oud-eau-de-parfum-intense",
+    "name": "Gucci Oud Eau de Parfum Intense",
+    "reason": "No such Gucci product — Gucci Oud exists only as EDP; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_gucci-oud-eau-de-toilette",
+    "slug": "gucci-oud-eau-de-toilette",
+    "name": "Gucci Oud Eau de Toilette",
+    "reason": "No such Gucci product — Gucci Oud exists only as EDP; no EDT variant."
+  },
+  {
+    "perfume_id": "perf_w_gucci-pour-homme-2003-gucci",
+    "slug": "gucci-pour-homme-2003-gucci",
+    "name": "Gucci pour Homme (2003) Gucci",
+    "reason": "Real but discontinued (Gucci pour Homme, 2003); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_designer_gucci-pour-homme-ii",
+    "slug": "gucci-pour-homme-ii",
+    "name": "Gucci Pour Homme II",
+    "reason": "Real but discontinued (Gucci Pour Homme II, 2004); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_designer_gucci-pour-homme-ii-eau-de-parfum-intens",
+    "slug": "gucci-pour-homme-ii-eau-de-parfum-intense",
+    "name": "Gucci Pour Homme II Eau de Parfum Intense",
+    "reason": "No such Gucci product — Gucci Pour Homme II was EDT-only; no Intense/EDP variant."
+  },
+  {
+    "perfume_id": "perf_designer_gucci-pour-homme-ii-eau-de-toilette",
+    "slug": "gucci-pour-homme-ii-eau-de-toilette",
+    "name": "Gucci Pour Homme II Eau de Toilette",
+    "reason": "Generated duplicate-concentration row: the real Gucci Pour Homme II is itself an EDT; no separately verifiable product — and the base entry's research also found no authorized-retailer image (discontinued)."
+  },
+  {
+    "perfume_id": "perf_w_gucci-pour-homme-ii-gucci",
+    "slug": "gucci-pour-homme-ii-gucci",
+    "name": "Gucci Pour Homme II Gucci",
+    "reason": "Same real product as 'Gucci Pour Homme II' (discontinued); no authorized-retailer image obtainable."
+  },
+  {
+    "perfume_id": "perf_w_gucci-premiere-gucci",
+    "slug": "gucci-premiere-gucci",
+    "name": "Gucci Premiere Gucci",
+    "reason": "Real but discontinued (Gucci Premiere EDP, 2012); no image obtainable from authorized retailers — only unverifiable marketplace/grey-market sellers."
+  },
+  {
+    "perfume_id": "perf_w_gucci-rush-2-gucci",
+    "slug": "gucci-rush-2-gucci",
+    "name": "Gucci Rush 2 Gucci",
+    "reason": "Real but discontinued (Gucci Rush 2, 2001); no image obtainable from authorized retailers."
+  },
+  {
+    "perfume_id": "perf_w_gucci-rush-gucci",
+    "slug": "gucci-rush-gucci",
+    "name": "Gucci Rush Gucci",
+    "reason": "Real but discontinued (Gucci Rush EDT, 1999); no image obtainable from authorized retailers — Amazon.in listings are unverifiable third-party sellers (buyer reviews report fakes)."
+  },
+  {
+    "perfume_id": "perf_designer_guilty-absolute-eau-de-parfum-intense",
+    "slug": "guilty-absolute-eau-de-parfum-intense",
+    "name": "Guilty Absolute Eau de Parfum Intense",
+    "reason": "No such Gucci product — Guilty Absolute exists only as EDP; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_guilty-absolute-eau-de-toilette",
+    "slug": "guilty-absolute-eau-de-toilette",
+    "name": "Guilty Absolute Eau de Toilette",
+    "reason": "No such Gucci product — Guilty Absolute exists only as EDP; no EDT variant."
+  },
+  {
+    "perfume_id": "perf_designer_intense-oud",
+    "slug": "intense-oud",
+    "name": "Intense Oud",
+    "reason": "Real product (Gucci Intense Oud EDP 90ml) but a Middle-East/Asia exclusive; no image obtainable from authorized India retailers or gucci.com."
+  },
+  {
+    "perfume_id": "perf_designer_love-at-your-darkest",
+    "slug": "love-at-your-darkest",
+    "name": "Love at Your Darkest",
+    "reason": "Real product (The Alchemist's Garden EDP) but gucci.com/boutique-exclusive; no image obtainable from gucci.com or authorized retailers."
+  },
+  {
+    "perfume_id": "perf_designer_love-at-your-darkest-eau-de-parfum-inten",
+    "slug": "love-at-your-darkest-eau-de-parfum-intense",
+    "name": "Love at Your Darkest Eau de Parfum Intense",
+    "reason": "No such Gucci product — Love at Your Darkest exists only as EDP; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_love-at-your-darkest-eau-de-toilette",
+    "slug": "love-at-your-darkest-eau-de-toilette",
+    "name": "Love at Your Darkest Eau de Toilette",
+    "reason": "No such Gucci product — Love at Your Darkest exists only as EDP; no EDT variant."
+  },
+  {
+    "perfume_id": "perf_designer_m-moire-d-une-odeur-eau-de-parfum-intens",
+    "slug": "m-moire-d-une-odeur-eau-de-parfum-intense",
+    "name": "Mémoire d'une Odeur Eau de Parfum Intense",
+    "reason": "No such Gucci product — Memoire d'une Odeur exists only as EDP; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_m-moire-d-une-odeur-eau-de-toilette",
+    "slug": "m-moire-d-une-odeur-eau-de-toilette",
+    "name": "Mémoire d'une Odeur Eau de Toilette",
+    "reason": "No such Gucci product — Memoire d'une Odeur exists only as EDP; no EDT variant."
+  },
+  {
+    "perfume_id": "perf_designer_premiere",
+    "slug": "premiere",
+    "name": "Premiere",
+    "reason": "Same real product as 'Gucci Premiere' (discontinued); no authorized-retailer image obtainable."
+  },
+  {
+    "perfume_id": "perf_designer_premiere-eau-de-parfum-intense",
+    "slug": "premiere-eau-de-parfum-intense",
+    "name": "Premiere Eau de Parfum Intense",
+    "reason": "No such Gucci product — Gucci Premiere exists only as EDP; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_premiere-eau-de-toilette",
+    "slug": "premiere-eau-de-toilette",
+    "name": "Premiere Eau de Toilette",
+    "reason": "No such Gucci product — Gucci Premiere exists only as EDP; no EDT variant."
+  },
+  {
+    "perfume_id": "perf_designer_rush",
+    "slug": "rush",
+    "name": "Rush",
+    "reason": "Same real product as 'Gucci Rush' (discontinued 1999 EDT); no authorized-retailer image obtainable."
+  },
+  {
+    "perfume_id": "perf_designer_rush-eau-de-parfum-intense",
+    "slug": "rush-eau-de-parfum-intense",
+    "name": "Rush Eau de Parfum Intense",
+    "reason": "No such Gucci product — Gucci Rush exists only as EDT; no EDP Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_rush-eau-de-toilette",
+    "slug": "rush-eau-de-toilette",
+    "name": "Rush Eau de Toilette",
+    "reason": "Same real product as 'Gucci Rush' (the 1999 Rush is itself an EDT, discontinued); no authorized-retailer image obtainable."
+  },
+  {
+    "perfume_id": "perf_designer_the-alchemist-s-garden",
+    "slug": "the-alchemist-s-garden",
+    "name": "The Alchemist's Garden",
+    "reason": "Not a single perfume — 'The Alchemist's Garden' is the name of Gucci's haute-perfumery collection, not an individual fragrance."
+  },
+  {
+    "perfume_id": "perf_designer_the-alchemist-s-garden-eau-de-parfum-int",
+    "slug": "the-alchemist-s-garden-eau-de-parfum-intense",
+    "name": "The Alchemist's Garden Eau de Parfum Intense",
+    "reason": "Not a real product — collection name with a generated concentration suffix."
+  },
+  {
+    "perfume_id": "perf_designer_the-alchemist-s-garden-eau-de-toilette",
+    "slug": "the-alchemist-s-garden-eau-de-toilette",
+    "name": "The Alchemist's Garden Eau de Toilette",
+    "reason": "Not a real product — collection name with a generated concentration suffix."
+  },
+  {
+    "perfume_id": "perf_designer_the-voice-of-the-snake",
+    "slug": "the-voice-of-the-snake",
+    "name": "The Voice of the Snake",
+    "reason": "Real product (The Alchemist's Garden EDP); official gucci.com 1200px packshot located (media.gucci.com) but unreachable from this environment, and it is not stocked by authorized India retailers — no authorized-source image obtainable."
+  },
+  {
+    "perfume_id": "perf_designer_the-voice-of-the-snake-eau-de-parfum-int",
+    "slug": "the-voice-of-the-snake-eau-de-parfum-intense",
+    "name": "The Voice of the Snake Eau de Parfum Intense",
+    "reason": "No such Gucci product — The Voice of the Snake exists only as EDP; no Intense variant."
+  },
+  {
+    "perfume_id": "perf_designer_the-voice-of-the-snake-eau-de-toilette",
+    "slug": "the-voice-of-the-snake-eau-de-toilette",
+    "name": "The Voice of the Snake Eau de Toilette",
+    "reason": "No such Gucci product — The Voice of the Snake exists only as EDP; no EDT variant."
+  }
+]

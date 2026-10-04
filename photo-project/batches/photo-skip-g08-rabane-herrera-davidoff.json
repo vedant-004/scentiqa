@@ -1,0 +1,356 @@
+[
+ {
+  "perfume_id": "perf_designer_1-million-eau-de-parfum-intense",
+  "slug": "1-million-eau-de-parfum-intense",
+  "name": "1 Million Eau de Parfum Intense",
+  "reason": "Non-existent as named: the current intense flanker is '1 Million Gold EDP Intense' / '1 Million Elixir'; no product sold as '1 Million Eau de Parfum Intense'."
+ },
+ {
+  "perfume_id": "perf_designer_212-men-eau-de-parfum-intense",
+  "slug": "212-men-eau-de-parfum-intense",
+  "name": "212 Men Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_212-vip-eau-de-parfum-intense",
+  "slug": "212-vip-eau-de-parfum-intense",
+  "name": "212 VIP Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_212-vip-rose-eau-de-parfum-intense",
+  "slug": "212-vip-rose-eau-de-parfum-intense",
+  "name": "212 VIP Rose Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_212-women-eau-de-parfum-intense",
+  "slug": "212-women-eau-de-parfum-intense",
+  "name": "212 Women Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_adventure",
+  "slug": "adventure",
+  "name": "Adventure",
+  "reason": "Real but long-discontinued Davidoff flanker; only grey-market import sellers (desertcart etc.). No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_adventure-eau-de-parfum-intense",
+  "slug": "adventure-eau-de-parfum-intense",
+  "name": "Adventure Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_adventure-eau-de-toilette",
+  "slug": "adventure-eau-de-toilette",
+  "name": "Adventure Eau de Toilette",
+  "reason": "Same as 'adventure': discontinued, grey-market only. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_bad-boy-eau-de-parfum-intense",
+  "slug": "bad-boy-eau-de-parfum-intense",
+  "name": "Bad Boy Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_black-xs-eau-de-parfum-intense",
+  "slug": "black-xs-eau-de-parfum-intense",
+  "name": "Black XS Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_black-xs-for-her",
+  "slug": "black-xs-for-her",
+  "name": "Black XS for Her",
+  "reason": "Real product (Black XS for Her EDT) but not listed on any approved Indian retailer (Nykaa/Myntra/Sephora India/Tata Cliq); only grey-market import sellers. Myntra listing 2233577 has conflicting gender data and its image could not be verified."
+ },
+ {
+  "perfume_id": "perf_designer_black-xs-for-her-eau-de-parfum-intense",
+  "slug": "black-xs-for-her-eau-de-parfum-intense",
+  "name": "Black XS for Her Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_black-xs-for-her-eau-de-toilette",
+  "slug": "black-xs-for-her-eau-de-toilette",
+  "name": "Black XS for Her Eau de Toilette",
+  "reason": "Same as 'black-xs-for-her': real product but no approved Indian retailer listing found; cannot verify an exact photo."
+ },
+ {
+  "perfume_id": "perf_designer_calandre",
+  "slug": "calandre",
+  "name": "Calandre",
+  "reason": "Discontinued vintage (Calandre EDT/Pure Perfume); not listed on Nykaa/Myntra/Sephora India/Tata Cliq. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_calandre-eau-de-parfum-intense",
+  "slug": "calandre-eau-de-parfum-intense",
+  "name": "Calandre Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_calandre-eau-de-toilette",
+  "slug": "calandre-eau-de-toilette",
+  "name": "Calandre Eau de Toilette",
+  "reason": "Discontinued vintage; not on approved Indian retailers. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_ch-men",
+  "slug": "ch-men",
+  "name": "CH Men",
+  "reason": "Real product (CH Men EDT) but not listed on Nykaa/Myntra/Sephora India/Tata Cliq as of 2026-10-04. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_ch-men-eau-de-parfum-intense",
+  "slug": "ch-men-eau-de-parfum-intense",
+  "name": "CH Men Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_ch-men-eau-de-toilette",
+  "slug": "ch-men-eau-de-toilette",
+  "name": "CH Men Eau de Toilette",
+  "reason": "Same as 'ch-men': real product but no approved Indian retailer listing. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_ch-women",
+  "slug": "ch-women",
+  "name": "CH Women",
+  "reason": "Real product (CH Women EDP) but not listed on Nykaa/Myntra/Sephora India/Tata Cliq as of 2026-10-04. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_ch-women-eau-de-parfum-intense",
+  "slug": "ch-women-eau-de-parfum-intense",
+  "name": "CH Women Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_ch-women-eau-de-toilette",
+  "slug": "ch-women-eau-de-toilette",
+  "name": "CH Women Eau de Toilette",
+  "reason": "Non-existent: CH Women is EDP-only; no EDT release (and no approved retailer listing regardless)."
+ },
+ {
+  "perfume_id": "perf_designer_champion",
+  "slug": "champion",
+  "name": "Champion",
+  "reason": "Real but discontinued Davidoff flanker; only grey-market import sellers. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_champion-eau-de-parfum-intense",
+  "slug": "champion-eau-de-parfum-intense",
+  "name": "Champion Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_champion-eau-de-toilette",
+  "slug": "champion-eau-de-toilette",
+  "name": "Champion Eau de Toilette",
+  "reason": "Same as 'champion': discontinued, grey-market only. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_cool-water-women-eau-de-parfum-intense",
+  "slug": "cool-water-women-eau-de-parfum-intense",
+  "name": "Cool Water Women Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_echo",
+  "slug": "echo",
+  "name": "Echo",
+  "reason": "Real but discontinued Davidoff flanker; only grey-market import sellers. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_echo-eau-de-parfum-intense",
+  "slug": "echo-eau-de-parfum-intense",
+  "name": "Echo Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_echo-eau-de-toilette",
+  "slug": "echo-eau-de-toilette",
+  "name": "Echo Eau de Toilette",
+  "reason": "Same as 'echo': discontinued, grey-market only. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_fame-eau-de-parfum-intense",
+  "slug": "fame-eau-de-parfum-intense",
+  "name": "Fame Eau de Parfum Intense",
+  "reason": "Real flanker (Fame Intense) but not listed on Nykaa/Myntra/Sephora India/Tata Cliq as of 2026-10-04. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_fame-eau-de-toilette",
+  "slug": "fame-eau-de-toilette",
+  "name": "Fame Eau de Toilette",
+  "reason": "Non-existent: Fame is EDP/Parfum only; no EDT release."
+ },
+ {
+  "perfume_id": "perf_designer_good-girl-blush-eau-de-parfum-intense",
+  "slug": "good-girl-blush-eau-de-parfum-intense",
+  "name": "Good Girl Blush Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_good-girl-blush-eau-de-toilette",
+  "slug": "good-girl-blush-eau-de-toilette",
+  "name": "Good Girl Blush Eau de Toilette",
+  "reason": "Non-existent: Good Girl Blush is EDP-only; no EDT release."
+ },
+ {
+  "perfume_id": "perf_designer_good-girl-eau-de-parfum-intense",
+  "slug": "good-girl-eau-de-parfum-intense",
+  "name": "Good Girl Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_good-girl-eau-de-toilette",
+  "slug": "good-girl-eau-de-toilette",
+  "name": "Good Girl Eau de Toilette",
+  "reason": "Non-existent: Good Girl is EDP-only; no EDT release."
+ },
+ {
+  "perfume_id": "perf_designer_hot-water",
+  "slug": "hot-water",
+  "name": "Hot Water",
+  "reason": "Real but discontinued Davidoff flanker; only grey-market import sellers. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_hot-water-eau-de-parfum-intense",
+  "slug": "hot-water-eau-de-parfum-intense",
+  "name": "Hot Water Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_hot-water-eau-de-toilette",
+  "slug": "hot-water-eau-de-toilette",
+  "name": "Hot Water Eau de Toilette",
+  "reason": "Same as 'hot-water': discontinued, grey-market only. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_invictus-eau-de-parfum-intense",
+  "slug": "invictus-eau-de-parfum-intense",
+  "name": "Invictus Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_lady-million-eau-de-parfum-intense",
+  "slug": "lady-million-eau-de-parfum-intense",
+  "name": "Lady Million Eau de Parfum Intense",
+  "reason": "Non-existent as named: the intense flanker is 'Lady Million Fabulous EDP Intense'; no product sold as 'Lady Million Eau de Parfum Intense'."
+ },
+ {
+  "perfume_id": "perf_designer_lady-million-eau-de-toilette",
+  "slug": "lady-million-eau-de-toilette",
+  "name": "Lady Million Eau de Toilette",
+  "reason": "Non-existent: Lady Million was never released as an EDT."
+ },
+ {
+  "perfume_id": "perf_designer_olympea-eau-de-parfum-intense",
+  "slug": "olympea-eau-de-parfum-intense",
+  "name": "Olympea Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_olympea-eau-de-toilette",
+  "slug": "olympea-eau-de-toilette",
+  "name": "Olympea Eau de Toilette",
+  "reason": "Non-existent: Olympéa is EDP/Parfum only; no EDT release."
+ },
+ {
+  "perfume_id": "perf_designer_phantom-eau-de-parfum-intense",
+  "slug": "phantom-eau-de-parfum-intense",
+  "name": "Phantom Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_pure-xs",
+  "slug": "pure-xs",
+  "name": "Pure XS",
+  "reason": "Pure XS Men EDT appears discontinued; not listed on Nykaa/Myntra/Sephora India/Tata Cliq. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_pure-xs-eau-de-parfum-intense",
+  "slug": "pure-xs-eau-de-parfum-intense",
+  "name": "Pure XS Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_pure-xs-eau-de-toilette",
+  "slug": "pure-xs-eau-de-toilette",
+  "name": "Pure XS Eau de Toilette",
+  "reason": "Same as 'pure-xs': discontinued, no approved Indian retailer listing. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_the-game",
+  "slug": "the-game",
+  "name": "The Game",
+  "reason": "Real but discontinued Davidoff flanker; only grey-market import sellers. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_the-game-eau-de-parfum-intense",
+  "slug": "the-game-eau-de-parfum-intense",
+  "name": "The Game Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_the-game-eau-de-toilette",
+  "slug": "the-game-eau-de-toilette",
+  "name": "The Game Eau de Toilette",
+  "reason": "Same as 'the-game': discontinued, grey-market only. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_ultraviolet",
+  "slug": "ultraviolet",
+  "name": "Ultraviolet",
+  "reason": "Discontinued (Ultraviolet Women EDP); not on approved Indian retailers. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_ultraviolet-eau-de-parfum-intense",
+  "slug": "ultraviolet-eau-de-parfum-intense",
+  "name": "Ultraviolet Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_ultraviolet-eau-de-toilette",
+  "slug": "ultraviolet-eau-de-toilette",
+  "name": "Ultraviolet Eau de Toilette",
+  "reason": "Same as 'ultraviolet': discontinued, no approved Indian retailer listing. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_very-good-girl-eau-de-parfum-intense",
+  "slug": "very-good-girl-eau-de-parfum-intense",
+  "name": "Very Good Girl Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_very-good-girl-eau-de-toilette",
+  "slug": "very-good-girl-eau-de-toilette",
+  "name": "Very Good Girl Eau de Toilette",
+  "reason": "Non-existent: Very Good Girl is EDP-only; no EDT release."
+ },
+ {
+  "perfume_id": "perf_designer_zino",
+  "slug": "zino",
+  "name": "Zino",
+  "reason": "Real but discontinued Davidoff classic; only grey-market import sellers. No approved source."
+ },
+ {
+  "perfume_id": "perf_w_zino-davidoff-davidoff",
+  "slug": "zino-davidoff-davidoff",
+  "name": "Zino Davidoff Davidoff",
+  "reason": "Garbled duplicate row of 'zino' (name 'Zino Davidoff Davidoff'); same product, discontinued, grey-market only. No approved source."
+ },
+ {
+  "perfume_id": "perf_designer_zino-eau-de-parfum-intense",
+  "slug": "zino-eau-de-parfum-intense",
+  "name": "Zino Eau de Parfum Intense",
+  "reason": "Non-existent product/variant: not a real commercial release; row is a generated '-eau-de-parfum-intense'/'-eau-de-toilette' permutation."
+ },
+ {
+  "perfume_id": "perf_designer_zino-eau-de-toilette",
+  "slug": "zino-eau-de-toilette",
+  "name": "Zino Eau de Toilette",
+  "reason": "Same as 'zino': discontinued, grey-market only. No approved source."
+ }
+]

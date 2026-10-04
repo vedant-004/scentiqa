@@ -1,0 +1,202 @@
+[
+ {
+  "perfume_id": "perf_designer_1-million-eau-de-toilette",
+  "slug": "1-million-eau-de-toilette",
+  "name": "1 Million Eau de Toilette",
+  "image_path": "/images/paco-rabanne/1-million-eau-de-toilette.jpg",
+  "source_url": "https://www.nykaa.com/paco-rabanne-1-million-eau-de-toilette-config/p/15609?eq=desktop",
+  "verify_note": "already-local: /images/paco-rabanne/1-million-eau-de-toilette.jpg (pre-existing; not overwritten). Visually verified: gold bar bottle reads '1 MILLION / rabanne' = 1 Million EDT."
+ },
+ {
+  "perfume_id": "perf_designer_212-men",
+  "slug": "212-men",
+  "name": "212 Men",
+  "image_path": "/images/carolina-herrera/212-men.jpg",
+  "source_url": "https://www.nykaa.com/carolina-herrera-212-men-nyc-edt-200ml/p/3780915",
+  "verify_note": "Nykaa CDN primary image (adn-static2.nykaa.com, filename 'carolina-herrera-212-nyc-men-eau-de-toilette-50ml_1.jpg'); bottle is the graphite cylinder with blue '212' = 212 Men NYC EDT."
+ },
+ {
+  "perfume_id": "perf_designer_212-men-eau-de-toilette",
+  "slug": "212-men-eau-de-toilette",
+  "name": "212 Men Eau de Toilette",
+  "image_path": "/images/carolina-herrera/212-men-eau-de-toilette.jpg",
+  "source_url": "https://www.nykaa.com/carolina-herrera-212-men-nyc-edt-200ml/p/3780915",
+  "verify_note": "Same product as '212-men' (212 Men NYC EDT); identical verified bytes saved under both slug paths."
+ },
+ {
+  "perfume_id": "perf_designer_212-vip",
+  "slug": "212-vip",
+  "name": "212 VIP",
+  "image_path": "/images/carolina-herrera/212-vip.jpg",
+  "source_url": "https://www.nykaa.com/carolina-herrera-212-vip-men-carolina-herrera-edt-50ml/p/1063993",
+  "verify_note": "already-local: /images/carolina-herrera/212-vip.jpg (pre-existing; not overwritten). Visually verified: silver '212 VIP' bottle = 212 VIP Men EDT."
+ },
+ {
+  "perfume_id": "perf_designer_212-vip-eau-de-toilette",
+  "slug": "212-vip-eau-de-toilette",
+  "name": "212 VIP Eau de Toilette",
+  "image_path": "/images/carolina-herrera/212-vip.jpg",
+  "source_url": "https://www.nykaa.com/carolina-herrera-212-vip-men-carolina-herrera-edt-50ml/p/1063993",
+  "verify_note": "already-local: /images/carolina-herrera/212-vip.jpg covers both '212-vip' and '212-vip-eau-de-toilette' (same product, 212 VIP Men EDT); not duplicated."
+ },
+ {
+  "perfume_id": "perf_designer_212-vip-rose",
+  "slug": "212-vip-rose",
+  "name": "212 VIP Rose",
+  "image_path": "/images/carolina-herrera/212-vip-rose.jpg",
+  "source_url": "https://www.nykaa.com/carolina-herrera-212-vip-rose-eau-de-parfum/p/177075?productId=177075&pps=7",
+  "verify_note": "already-local: /images/carolina-herrera/212-vip-rose.jpg (pre-existing; not overwritten). Visually verified: pink '212 VIP ROSÉ' bottle = 212 VIP Rosé."
+ },
+ {
+  "perfume_id": "perf_designer_212-vip-rose-eau-de-toilette",
+  "slug": "212-vip-rose-eau-de-toilette",
+  "name": "212 VIP Rose Eau de Toilette",
+  "image_path": "/images/carolina-herrera/212-vip-rose.jpg",
+  "source_url": "https://www.nykaa.com/carolina-herrera-212-vip-rose-eau-de-parfum/p/177075?productId=177075&pps=7",
+  "verify_note": "already-local: /images/carolina-herrera/212-vip-rose.jpg covers both '212-vip-rose' and '212-vip-rose-eau-de-toilette' (same product); not duplicated."
+ },
+ {
+  "perfume_id": "perf_designer_212-women",
+  "slug": "212-women",
+  "name": "212 Women",
+  "image_path": "/images/carolina-herrera/212-women.jpg",
+  "source_url": "https://www.myntra.com/perfume/carolinaherrera/carolina-herrera-women-212-nyc-eau-de-toilette---30ml/7322582/buy",
+  "verify_note": "Myntra CDN image from 'Carolina Herrera Women 212 NYC Eau de Toilette - 30ml' page; white/silver pill bottle reads '212 / CAROLINA HERRERA / NEW YORK' = 212 Women EDT."
+ },
+ {
+  "perfume_id": "perf_designer_212-women-eau-de-toilette",
+  "slug": "212-women-eau-de-toilette",
+  "name": "212 Women Eau de Toilette",
+  "image_path": "/images/carolina-herrera/212-women-eau-de-toilette.jpg",
+  "source_url": "https://www.myntra.com/perfume/carolinaherrera/carolina-herrera-women-212-nyc-eau-de-toilette---30ml/7322582/buy",
+  "verify_note": "Same product as '212-women' (212 Women EDT); identical verified bytes saved under both slug paths."
+ },
+ {
+  "perfume_id": "perf_bad-boy",
+  "slug": "bad-boy",
+  "name": "Bad Boy",
+  "image_path": "/images/carolina-herrera/bad-boy.jpg",
+  "source_url": "https://www.myntra.com/perfume/carolina+herrera/carolina-herrera-bad-boy-eau-de-toilette-100ml/10772264/buy",
+  "verify_note": "already-local: /images/carolina-herrera/bad-boy.jpg (pre-existing; not overwritten). HONEST CAVEAT: file is a styled lifestyle shot (lightning-bolt bottle with leaves/chocolate backdrop), not a clean packshot; bottle is Bad Boy EDT. Kept per add-only rule."
+ },
+ {
+  "perfume_id": "perf_designer_bad-boy-eau-de-toilette",
+  "slug": "bad-boy-eau-de-toilette",
+  "name": "Bad Boy Eau de Toilette",
+  "image_path": "/images/carolina-herrera/bad-boy.jpg",
+  "source_url": "https://www.myntra.com/perfume/carolina+herrera/carolina-herrera-bad-boy-eau-de-toilette-100ml/10772264/buy",
+  "verify_note": "already-local: /images/carolina-herrera/bad-boy.jpg covers both 'bad-boy' and 'bad-boy-eau-de-toilette' (same product, Bad Boy EDT); not duplicated."
+ },
+ {
+  "perfume_id": "perf_designer_black-xs",
+  "slug": "black-xs",
+  "name": "Black XS",
+  "image_path": "/images/paco-rabanne/black-xs.jpg",
+  "source_url": "https://luxury.tatacliq.com/paco-rabanne-black-xs-eau-de-toilette-100-ml-for-men-65118505/p-mp000000005928478",
+  "verify_note": "og:image from Tata Cliq Luxury product page 'Paco Rabanne Black Xs Eau de Toilette 100 ml for Men'; bottle shows faceted black 'Black XS' bottle = Black XS EDT for Men. 320x357 official packshot."
+ },
+ {
+  "perfume_id": "perf_designer_black-xs-eau-de-toilette",
+  "slug": "black-xs-eau-de-toilette",
+  "name": "Black XS Eau de Toilette",
+  "image_path": "/images/paco-rabanne/black-xs-eau-de-toilette.jpg",
+  "source_url": "https://luxury.tatacliq.com/paco-rabanne-black-xs-eau-de-toilette-100-ml-for-men-65118505/p-mp000000005928478",
+  "verify_note": "Same product as 'black-xs' (Black XS EDT for Men); identical verified bytes saved under both slug paths."
+ },
+ {
+  "perfume_id": "perf_w_cool-water-intense-davidoff",
+  "slug": "cool-water-intense-davidoff",
+  "name": "Cool Water Intense Davidoff",
+  "image_path": "/images/davidoff/cool-water-intense-davidoff.jpg",
+  "source_url": "https://www.nykaa.com/davidoff-coolwater-man-intense-eau-de-parfum/p/662210",
+  "verify_note": "Nykaa CDN image from 'Davidoff Cool Water Man Intense Eau De Parfum' page; dark-blue bottle reads 'DAVIDOFF / Cool Water / INTENSE' and 'EAU DE PARFUM' = Cool Water Intense EDP (not classic Cool Water)."
+ },
+ {
+  "perfume_id": "perf_designer_cool-water-men",
+  "slug": "cool-water-men",
+  "name": "Cool Water Men",
+  "image_path": "/images/davidoff/cool-water-men.jpg",
+  "source_url": "https://www.nykaa.com/davidoff-cool-water-eau-de-toilete-for-men/p/17283",
+  "verify_note": "Nykaa CDN image from 'Davidoff Cool Water Eau De Toilette For Men' page; bottle reads 'DAVIDOFF / Cool Water / EAU DE TOILETTE' = Cool Water Men EDT."
+ },
+ {
+  "perfume_id": "perf_designer_cool-water-men-eau-de-parfum-intense",
+  "slug": "cool-water-men-eau-de-parfum-intense",
+  "name": "Cool Water Men Eau de Parfum Intense",
+  "image_path": "/images/davidoff/cool-water-men-eau-de-parfum-intense.jpg",
+  "source_url": "https://www.nykaa.com/davidoff-coolwater-man-intense-eau-de-parfum/p/662210",
+  "verify_note": "Same product as 'cool-water-intense-davidoff' (Davidoff Cool Water Intense EDP for Men); identical verified bytes saved under both slug paths."
+ },
+ {
+  "perfume_id": "perf_designer_cool-water-men-eau-de-toilette",
+  "slug": "cool-water-men-eau-de-toilette",
+  "name": "Cool Water Men Eau de Toilette",
+  "image_path": "/images/davidoff/cool-water-men-eau-de-toilette.jpg",
+  "source_url": "https://www.nykaa.com/davidoff-cool-water-eau-de-toilete-for-men/p/17283",
+  "verify_note": "Same product as 'cool-water-men' (Cool Water Men EDT); identical verified bytes saved under both slug paths."
+ },
+ {
+  "perfume_id": "perf_designer_cool-water-women",
+  "slug": "cool-water-women",
+  "name": "Cool Water Women",
+  "image_path": "/images/designer/cool-water-davidoff.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/designer/cool-water-davidoff.jpg (pre-existing; not overwritten). Visually verified: 'DAVIDOFF / Cool Water' bottle = Cool Water Woman EDT."
+ },
+ {
+  "perfume_id": "perf_designer_cool-water-women-eau-de-toilette",
+  "slug": "cool-water-women-eau-de-toilette",
+  "name": "Cool Water Women Eau de Toilette",
+  "image_path": "/images/designer/cool-water-davidoff.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/designer/cool-water-davidoff.jpg covers both 'cool-water-women' and 'cool-water-women-eau-de-toilette' (same product, Cool Water Woman EDT); not duplicated."
+ },
+ {
+  "perfume_id": "perf_designer_fame",
+  "slug": "fame",
+  "name": "Fame",
+  "image_path": "/images/paco-rabanne/fame.jpg",
+  "source_url": "https://www.nykaa.com/paco-rabanne-fame-eau-de-parfum/p/6941045",
+  "verify_note": "already-local: /images/paco-rabanne/fame.jpg (pre-existing; not overwritten). HONEST CAVEAT: file is a 3-panel brand collage (FAME EDP / FAME INTENSE / FAME PARFUM); left panel shows the Fame EDP bottle. Kept per add-only rule."
+ },
+ {
+  "perfume_id": "perf_designer_invictus-eau-de-toilette",
+  "slug": "invictus-eau-de-toilette",
+  "name": "Invictus Eau de Toilette",
+  "image_path": "/images/designer/invictus.jpg",
+  "source_url": "https://www.nykaa.com/paco-rabanne-invictus-eau-de-toilette/p/177124?redirectpath=slug",
+  "verify_note": "already-local: /images/designer/invictus.jpg (pre-existing; not overwritten). Visually verified: classic Invictus EDT trophy-cup bottle."
+ },
+ {
+  "perfume_id": "perf_designer_olympea",
+  "slug": "olympea",
+  "name": "Olympea",
+  "image_path": "/images/paco-rabanne/olympea.jpg",
+  "source_url": "https://www.nykaa.com/paco-rabanne-olympea-eau-de-parfum-config/p/177110",
+  "verify_note": "Nykaa CDN image from 'Paco Rabanne Olympea Eau De Parfum' page; bottle reads 'OLYMPÉA' with rose-gold cap = classic Olympéa EDP (clean bottle, not a Blossom/Flora flanker)."
+ },
+ {
+  "perfume_id": "perf_designer_phantom",
+  "slug": "phantom",
+  "name": "Phantom",
+  "image_path": "/images/paco-rabanne/phantom.jpg",
+  "source_url": "https://www.nykaa.com/paco-rabanne-phantom-for-men-eau-de-toilette/p/2795676?productId=2795676&pps=16",
+  "verify_note": "already-local: /images/paco-rabanne/phantom.jpg (pre-existing; not overwritten). Visually verified: chrome robot bottle = Phantom EDT."
+ },
+ {
+  "perfume_id": "perf_designer_phantom-eau-de-toilette",
+  "slug": "phantom-eau-de-toilette",
+  "name": "Phantom Eau de Toilette",
+  "image_path": "/images/paco-rabanne/phantom.jpg",
+  "source_url": "https://www.nykaa.com/paco-rabanne-phantom-for-men-eau-de-toilette/p/2795676?productId=2795676&pps=16",
+  "verify_note": "already-local: /images/paco-rabanne/phantom.jpg covers both 'phantom' and 'phantom-eau-de-toilette' (same product, Phantom EDT); not duplicated."
+ },
+ {
+  "perfume_id": "perf_designer_very-good-girl",
+  "slug": "very-good-girl",
+  "name": "Very Good Girl",
+  "image_path": "/images/carolina-herrera/very-good-girl.jpg",
+  "source_url": "https://www.nykaa.com/carolina-herrera-very-good-girl-eau-de-parfum/p/1473876?productId=1473876&pps=16",
+  "verify_note": "Nykaa CDN primary image from 'Carolina Herrera Very Good Girl Eau De Parfum' page; red stiletto bottle with black toe cap and gold heel = Very Good Girl EDP (not Good Girl)."
+ }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "perfume_id": "perf_xlnc-blue-marine",
+    "slug": "xlnc-blue-marine",
+    "name": "XLNC Blue Marine",
+    "reason": "No product named 'Blue Marine' on the official XLNC site (xlncperfumery.com): site search plus the full product sitemap (219 products) checked 2026-10-04; closest match 'Azure Blue' is a different product. No exact photo can be verified."
+  },
+  {
+    "perfume_id": "perf_club-de-nuit-intense-inspired-perfume",
+    "slug": "club-de-nuit-intense-inspired-perfume",
+    "name": "Club De Nuit Intense Inspired Perfume",
+    "reason": "No such product on the official Perfume Oil Corner site: perfumeoilcorner.com site search returned 'No results found' for club de nuit (2026-10-04). No exact photo can be verified."
+  },
+  {
+    "perfume_id": "perf_erba-pura-inspired-perfume",
+    "slug": "erba-pura-inspired-perfume",
+    "name": "Erba Pura Inspired Perfume",
+    "reason": "No such product on the official Perfume Oil Corner site: perfumeoilcorner.com site search returned 'No results found' for erba pura (2026-10-04). No exact photo can be verified."
+  },
+  {
+    "perfume_id": "perf_imagination-inspired-attar",
+    "slug": "imagination-inspired-attar",
+    "name": "Imagination Inspired Attar",
+    "reason": "No attar version on the official Perfume Oil Corner site: perfumeoilcorner.com site search found only the EDP spray version ('Imagination Louis Vuitton' type perfume). No exact photo for an attar product can be verified."
+  }
+]

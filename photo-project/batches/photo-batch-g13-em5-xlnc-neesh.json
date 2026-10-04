@@ -1,0 +1,530 @@
+[
+  {
+    "perfume_id": "perf_aghori-extrait-de-parfum",
+    "slug": "aghori-extrait-de-parfum",
+    "name": "Aghori | Extrait De Parfum",
+    "image_path": "/images/products/houseofem5.com_products_aghori.jpg",
+    "source_url": "https://www.houseofem5.com/products/aghori",
+    "verify_note": "already-local: /images/products/houseofem5.com_products_aghori.jpg; bottle label reads 'AGHORI Extrait De Parfum'"
+  },
+  {
+    "perfume_id": "perf_antonia-eau-de-parfum",
+    "slug": "antonia-eau-de-parfum",
+    "name": "Antonia | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_antonia-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/antonia-eau-de-parfum",
+    "verify_note": "already-local: /images/products/houseofem5_antonia-eau-de-parfum.jpg; byte-identical to houseofem5_em5-antonia.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_aqua-profumo-eau-de-parfum",
+    "slug": "aqua-profumo-eau-de-parfum",
+    "name": "Aqua Profumo | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_aqua-profumo-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-aqua-profumo-armani-perfume-for-men-eau-de-parfum-spray-amber-marine-fresh-spicy-fragrance-luxury-gift-for-him-sizes-available-50-ml-15-ml",
+    "verify_note": "already-local: /images/products/houseofem5_aqua-profumo-eau-de-parfum.jpg; bottle label reads 'AQUA PROFUMO' (distinct from EM5 Aqua)"
+  },
+  {
+    "perfume_id": "perf_br-540-eau-de-parfum",
+    "slug": "br-540-eau-de-parfum",
+    "name": "BR 540 | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_br-540-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-br-540-unisex-perfume-eau-de-parfum-spray-for-men-women-tobacco-vanilla-warm-spicy-strong-and-long-lasting-edp-luxury-gift-for-men-women-50-ml",
+    "verify_note": "already-local: /images/products/houseofem5_br-540-eau-de-parfum.jpg; byte-identical to houseofem5_em5-br-540.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_coffee-elixir-eau-de-parfum",
+    "slug": "coffee-elixir-eau-de-parfum",
+    "name": "Coffee Elixir | Eau De Parfum",
+    "image_path": "/images/products/houseofem5.com_products_coffee-elixir-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/coffee-elixir-eau-de-parfum",
+    "verify_note": "already-local: /images/products/houseofem5.com_products_coffee-elixir-eau-de-parfum.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_em5-antonia",
+    "slug": "em5-antonia",
+    "name": "EM5 Antonia",
+    "image_path": "/images/products/houseofem5_em5-antonia.jpg",
+    "source_url": "https://www.houseofem5.com/products/antonia-eau-de-parfum",
+    "verify_note": "already-local: /images/products/houseofem5_em5-antonia.jpg; byte-identical to houseofem5_antonia-eau-de-parfum.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_em5-aqua",
+    "slug": "em5-aqua",
+    "name": "EM5 Aqua",
+    "image_path": "/images/products/houseofem5_em5-aqua.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-aqua-davidoff-cool-wateredp-perfume-spray-for-men-eau-de-parfum-50-ml-strong-and-long-lasting-fragrance-sweet-aromatic-warm-spicy-accords-luxury-gift-for-men",
+    "verify_note": "already-local: /images/products/houseofem5_em5-aqua.jpg; bottle label reads 'AQUA'"
+  },
+  {
+    "perfume_id": "perf_em5-br-540",
+    "slug": "em5-br-540",
+    "name": "EM5 BR 540",
+    "image_path": "/images/products/houseofem5_em5-br-540.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-br-540-unisex-perfume-eau-de-parfum-spray-for-men-women-tobacco-vanilla-warm-spicy-strong-and-long-lasting-edp-luxury-gift-for-men-women-50-ml",
+    "verify_note": "already-local: /images/products/houseofem5_em5-br-540.jpg; byte-identical to houseofem5_br-540-eau-de-parfum.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_em5-most-wanted",
+    "slug": "em5-most-wanted",
+    "name": "EM5 Most Wanted",
+    "image_path": "/images/products/houseofem5_em5-most-wanted.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-most-wanted-perfume-for-men-eau-de-parfum-spray-vanilla-woody-warm-spicy-fragrance-luxury-gift-for-him-sizes-available-50-ml-15-ml",
+    "verify_note": "already-local: /images/products/houseofem5_em5-most-wanted.jpg; byte-identical to houseofem5_most-wanted-eau-de-parfum.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_em5-ocean-breeze",
+    "slug": "em5-ocean-breeze",
+    "name": "EM5 Ocean Breeze",
+    "image_path": "/images/products/houseofem5_em5-ocean-breeze.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-ocean-breeze-perfume-for-men-fruity-citrus-fresh-warm-spicy-fragrance-50-ml-eau-de-parfum-spray-luxury-gift-for-him",
+    "verify_note": "already-local: /images/products/houseofem5_em5-ocean-breeze.jpg; byte-identical to houseofem5_ocean-breeze-eau-de-parfum.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_em5-one",
+    "slug": "em5-one",
+    "name": "EM5 One",
+    "image_path": "/images/products/houseofem5_em5-one.jpg",
+    "source_url": "https://houseofem5.com",
+    "verify_note": "already-local: /images/products/houseofem5_em5-one.jpg; house's own EM5 One product photo; product no longer listed on the house site (discontinued/renamed), so source is the house official site"
+  },
+  {
+    "perfume_id": "perf_imagination-eau-de-parfum",
+    "slug": "imagination-eau-de-parfum",
+    "name": "Imagination | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_imagination-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-imagination-perfume-for-men-louis-vitton-citrus-amber-fresh-spricy-fragrance-luxury-gift-for-him-50-ml-spray-15-ml-spray-10-ml-non-alcoholic-roll-on",
+    "verify_note": "already-local: /images/products/houseofem5_imagination-eau-de-parfum.jpg; filename matches EM5's Imagination product on house official site"
+  },
+  {
+    "perfume_id": "perf_ispahan-eau-de-parfum",
+    "slug": "ispahan-eau-de-parfum",
+    "name": "Ispahan | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_ispahan-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-oud-ispahan-dior-unisex-perfume-oud-rose-woody-warm-spicy-eau-de-parfum-spray-for-men-women-luxury-gift-for-him-her-sizes-available-50-ml-15-ml",
+    "verify_note": "already-local: /images/products/houseofem5_ispahan-eau-de-parfum.jpg; filename matches EM5's Ispahan product on house official site"
+  },
+  {
+    "perfume_id": "perf_kashmir-50ml-perfume-spray",
+    "slug": "kashmir-50ml-perfume-spray",
+    "name": "Kashmir 50ml Perfume Spray",
+    "image_path": "/images/products/houseofem5.com_products_kashmir-50ml-perfume-spray.jpg",
+    "source_url": "https://www.houseofem5.com/products/kashmir-50ml-perfume-spray",
+    "verify_note": "already-local: /images/products/houseofem5.com_products_kashmir-50ml-perfume-spray.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_most-wanted-eau-de-parfum",
+    "slug": "most-wanted-eau-de-parfum",
+    "name": "Most Wanted | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_most-wanted-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-most-wanted-perfume-for-men-eau-de-parfum-spray-vanilla-woody-warm-spicy-fragrance-luxury-gift-for-him-sizes-available-50-ml-15-ml",
+    "verify_note": "already-local: /images/products/houseofem5_most-wanted-eau-de-parfum.jpg; byte-identical to houseofem5_em5-most-wanted.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_ocean-breeze-eau-de-parfum",
+    "slug": "ocean-breeze-eau-de-parfum",
+    "name": "Ocean Breeze | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_ocean-breeze-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-ocean-breeze-perfume-for-men-fruity-citrus-fresh-warm-spicy-fragrance-50-ml-eau-de-parfum-spray-luxury-gift-for-him",
+    "verify_note": "already-local: /images/products/houseofem5_ocean-breeze-eau-de-parfum.jpg; byte-identical to houseofem5_em5-ocean-breeze.jpg; same EM5 product"
+  },
+  {
+    "perfume_id": "perf_sundarban-50ml-perfume-spray",
+    "slug": "sundarban-50ml-perfume-spray",
+    "name": "Sundarban 50ml Perfume Spray",
+    "image_path": "/images/products/houseofem5.com_products_sundarban-50ml-perfume-spray.jpg",
+    "source_url": "https://www.houseofem5.com/products/sundarban-50ml-perfume-spray",
+    "verify_note": "already-local: /images/products/houseofem5.com_products_sundarban-50ml-perfume-spray.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_uno-eau-de-parfum",
+    "slug": "uno-eau-de-parfum",
+    "name": "Uno | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_uno-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5-uno-ck-one-unisex-perfume-eau-de-parfum-spray-for-men-women-50-ml-citus-fresh-woody-strong-and-long-lasting-edp-luxury-gift-for-him-her",
+    "verify_note": "already-local: /images/products/houseofem5_uno-eau-de-parfum.jpg; filename matches EM5's Uno product on house official site"
+  },
+  {
+    "perfume_id": "perf_woody-oud-eau-de-parfum",
+    "slug": "woody-oud-eau-de-parfum",
+    "name": "Woody Oud | Eau De Parfum",
+    "image_path": "/images/products/houseofem5_woody-oud-eau-de-parfum.jpg",
+    "source_url": "https://www.houseofem5.com/products/em5s-woody-oud-inspired-by-tomm-forrrrd-ouddd-woood-intensee-eau-de-parfum-50-ml-1-69oz-luxury-spray-2-free-fragrance-samples",
+    "verify_note": "already-local: /images/products/houseofem5_woody-oud-eau-de-parfum.jpg; filename matches EM5's Woody Oud product on house official site"
+  },
+  {
+    "perfume_id": "perf_xlnc-ambition-50",
+    "slug": "xlnc-ambition-50",
+    "name": "XLNC Ambition 50",
+    "image_path": "/images/products/xlncperfumery.com_products_xlnc-ambition-50.jpg",
+    "source_url": "https://xlncperfumery.com/products/xlnc-ambition-50",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xlnc-ambition-50.jpg; page title 'XLNC Ambition 50 - XLNC Perfumery' confirmed live"
+  },
+  {
+    "perfume_id": "perf_xlnc-imperial-oud",
+    "slug": "xlnc-imperial-oud",
+    "name": "XLNC Imperial Oud",
+    "image_path": "/images/products/xlncperfumery.com_products_imperial-od.jpg",
+    "source_url": "https://xlncperfumery.com/products/imperial-od",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_imperial-od.jpg; bottle label reads 'IMPERIAL OUD'"
+  },
+  {
+    "perfume_id": "perf_xlnc-obsession",
+    "slug": "xlnc-obsession",
+    "name": "XLNC Obsession",
+    "image_path": "/images/products/xlncperfumery.com_products_xlnc-obsession.jpg",
+    "source_url": "https://xlncperfumery.com/products/xlnc-obsession",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xlnc-obsession.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp01-xlnc-sauvage-elixir",
+    "slug": "xp01-xlnc-sauvage-elixir",
+    "name": "XP01 XLNC Sauvage Elixir",
+    "image_path": "/images/products/xlncperfumery.com_products_xp01-xlnc-sauvage-elixir.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp01-xlnc-sauvage-elixir",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp01-xlnc-sauvage-elixir.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp109-xlnc-ombre-nomade",
+    "slug": "xp109-xlnc-ombre-nomade",
+    "name": "XP109 XLNC Ombre Nomade",
+    "image_path": "/images/products/xlncperfumery.com_products_xp109-xlnc-ombre-nomade.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp109-xlnc-ombre-nomade",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp109-xlnc-ombre-nomade.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp110-xlnc-one-million",
+    "slug": "xp110-xlnc-one-million",
+    "name": "XP110 XLNC One Million",
+    "image_path": "/images/products/xlncperfumery.com_products_xp110-xlnc-one-million.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp110-xlnc-one-million",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp110-xlnc-one-million.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp12-xlnc-sauvage",
+    "slug": "xp12-xlnc-sauvage",
+    "name": "XP12 XLNC Sauvage",
+    "image_path": "/images/products/xlncperfumery.com_products_xp12-xlnc-sauvage.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp12-xlnc-sauvage",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp12-xlnc-sauvage.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp126-xlnc-flora",
+    "slug": "xp126-xlnc-flora",
+    "name": "XP126 XLNC Flora",
+    "image_path": "/images/products/xlncperfumery.com_products_xp126-xlnc-flora.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp126-xlnc-flora",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp126-xlnc-flora.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp138-xlnc-ombre-leather",
+    "slug": "xp138-xlnc-ombre-leather",
+    "name": "XP138 XLNC Ombre Leather",
+    "image_path": "/images/products/xlncperfumery.com_products_xp138-xlnc-ombre-leather.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp138-xlnc-ombre-leather",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp138-xlnc-ombre-leather.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp17-xlnc-eros",
+    "slug": "xp17-xlnc-eros",
+    "name": "XP17 XLNC Eros",
+    "image_path": "/images/products/xlncperfumery.com_products_xp17-xlnc-eros.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp17-xlnc-eros",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp17-xlnc-eros.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp21-xlnc-av3ntus",
+    "slug": "xp21-xlnc-av3ntus",
+    "name": "XP21 XLNC Av3ntus",
+    "image_path": "/images/products/xlncperfumery.com_products_xp21-xlnc-aventus.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp21-xlnc-aventus",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp21-xlnc-aventus.jpg; bottle label reads 'AVENTUS'; page title 'XLNC Aventus: XP21 XLNC Aventus Online India' confirmed live"
+  },
+  {
+    "perfume_id": "perf_xp24-xlnc-baccarat-rouge",
+    "slug": "xp24-xlnc-baccarat-rouge",
+    "name": "XP24 XLNC Baccarat Rouge",
+    "image_path": "/images/products/xlncperfumery.com_products_xp24-xlnc-baccarat-rouge.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp24-xlnc-baccarat-rouge",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp24-xlnc-baccarat-rouge.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp28-xlnc-acqua-di-gio",
+    "slug": "xp28-xlnc-acqua-di-gio",
+    "name": "XP28 XLNC Acqua Di Gio",
+    "image_path": "/images/products/xlncperfumery.com_products_xp28-inspired-by-xlnc-acqua-di-gio.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp28-inspired-by-xlnc-acqua-di-gio",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp28-inspired-by-xlnc-acqua-di-gio.jpg; bottle label reads 'ACQUA DI GIO' (XLNC house product)"
+  },
+  {
+    "perfume_id": "perf_xp31-xlnc-bombshell",
+    "slug": "xp31-xlnc-bombshell",
+    "name": "XP31 XLNC Bombshell",
+    "image_path": "/images/products/xlncperfumery.com_products_xp31-xlnc-bombshell.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp31-xlnc-bombshell",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp31-xlnc-bombshell.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp43-xlnc-oud-wood",
+    "slug": "xp43-xlnc-oud-wood",
+    "name": "XP43 XLNC Oud Wood",
+    "image_path": "/images/products/xlncperfumery.com_products_xp43-xlnc-oud-wood.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp43-xlnc-oud-wood",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp43-xlnc-oud-wood.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_xp62-xlnc-bright-crystal",
+    "slug": "xp62-xlnc-bright-crystal",
+    "name": "XP62 XLNC Bright Crystal",
+    "image_path": "/images/products/xlncperfumery.com_products_xp62-xlnc-bright-crystal.jpg",
+    "source_url": "https://xlncperfumery.com/products/xp62-xlnc-bright-crystal",
+    "verify_note": "already-local: /images/products/xlncperfumery.com_products_xp62-xlnc-bright-crystal.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_neesh-discovery-set-5x2ml",
+    "slug": "neesh-discovery-set-5x2ml",
+    "name": "NEESH Discovery Set (5x2ml)",
+    "image_path": "/images/products/neeshperfumes.com_neesh-discovery-set-5x2ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/neesh-discovery-set",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-discovery-set-5x2ml.jpg; box photo reads 'DISCOVERY SET / NEESH / 12 FRAGRANCES'; identical to the image on the live NEESH Discovery Set product page (old neesh-discovery-set-5x2ml handle now 404, merged into the Discovery Set)"
+  },
+  {
+    "perfume_id": "perf_neesh-flora-divine-extrait-de-parfum-100ml",
+    "slug": "neesh-flora-divine-extrait-de-parfum-100ml",
+    "name": "NEESH Flora Divine Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-flora-divine-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/flora-divine",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-flora-divine-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: flora-divine)"
+  },
+  {
+    "perfume_id": "perf_neesh-glazed-water-extrait-de-parfum-100ml",
+    "slug": "neesh-glazed-water-extrait-de-parfum-100ml",
+    "name": "NEESH Glazed Water Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-glazed-water-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/glazed-water",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-glazed-water-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: glazed-water)"
+  },
+  {
+    "perfume_id": "perf_neesh-haute-tobacco-extrait-de-parfum-100ml",
+    "slug": "neesh-haute-tobacco-extrait-de-parfum-100ml",
+    "name": "NEESH Haute Tobacco Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-haute-tobacco-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/haute-tobacco",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-haute-tobacco-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: haute-tobacco)"
+  },
+  {
+    "perfume_id": "perf_neesh-luxe-aoud-extrait-de-parfum-100ml",
+    "slug": "neesh-luxe-aoud-extrait-de-parfum-100ml",
+    "name": "NEESH Luxe Aoud Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-luxe-aoud-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/luxe-aoud",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-luxe-aoud-extrait-de-parfum-100ml.jpg; bottle label reads 'NEESH LUXE AOUD EXTRAIT DE PARFUM' (image carries house's own 'SOON TO BE DISCONTINUED' overlay)"
+  },
+  {
+    "perfume_id": "perf_neesh-luxe-hayat-extrait-de-parfum-100ml",
+    "slug": "neesh-luxe-hayat-extrait-de-parfum-100ml",
+    "name": "NEESH Luxe Hayat Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-luxe-hayat-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/luxe-hayat",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-luxe-hayat-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: luxe-hayat)"
+  },
+  {
+    "perfume_id": "perf_neesh-luxe-mirage-extrait-de-parfum-100ml",
+    "slug": "neesh-luxe-mirage-extrait-de-parfum-100ml",
+    "name": "NEESH Luxe Mirage Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-luxe-mirage-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/luxe-mirage",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-luxe-mirage-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: luxe-mirage)"
+  },
+  {
+    "perfume_id": "perf_neesh-mehr-extrait-de-parfum-100ml",
+    "slug": "neesh-mehr-extrait-de-parfum-100ml",
+    "name": "NEESH Mehr Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-mehr-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/mehr-1",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-mehr-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: mehr-1)"
+  },
+  {
+    "perfume_id": "perf_neesh-milky-way-extrait-de-parfum-100ml",
+    "slug": "neesh-milky-way-extrait-de-parfum-100ml",
+    "name": "NEESH Milky Way Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-milky-way-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/milky-way",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-milky-way-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: milky-way)"
+  },
+  {
+    "perfume_id": "perf_neesh-shafran-extrait-de-parfum-100ml",
+    "slug": "neesh-shafran-extrait-de-parfum-100ml",
+    "name": "NEESH Shafran Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-shafran-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/shafran",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-shafran-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: shafran)"
+  },
+  {
+    "perfume_id": "perf_neesh-song-of-serenity-extrait-de-parfum-100ml",
+    "slug": "neesh-song-of-serenity-extrait-de-parfum-100ml",
+    "name": "NEESH Song Of Serenity Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-song-of-serenity-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/song-of-serenity",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-song-of-serenity-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: song-of-serenity)"
+  },
+  {
+    "perfume_id": "perf_neesh-tobacco-vanilla-extrait-de-parfum-100ml",
+    "slug": "neesh-tobacco-vanilla-extrait-de-parfum-100ml",
+    "name": "NEESH Tobacco Vanilla Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-tobacco-vanilla-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/tobacco-vanilla-perfume",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-tobacco-vanilla-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: tobacco-vanilla-perfume)"
+  },
+  {
+    "perfume_id": "perf_neesh-tsunara-extrait-de-parfum-100ml",
+    "slug": "neesh-tsunara-extrait-de-parfum-100ml",
+    "name": "NEESH Tsunara Extrait De Parfum 100ml",
+    "image_path": "/images/products/neeshperfumes.com_neesh-tsunara-extrait-de-parfum-100ml.jpg",
+    "source_url": "https://neeshperfumes.com/products/tsunara",
+    "verify_note": "already-local: /images/products/neeshperfumes.com_neesh-tsunara-extrait-de-parfum-100ml.jpg; filename matches product handle on house official site (current handle: tsunara)"
+  },
+  {
+    "perfume_id": "perf_heavenduft-amor-psyche",
+    "slug": "heavenduft-amor-psyche",
+    "name": "Heavenduft Amor & Psyche",
+    "image_path": "/images/products/heavenduft.in_products_amor-psyche.jpg",
+    "source_url": "https://heavenduft.in/products/amor-psyche",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_amor-psyche.jpg; product page returned HTTP 200"
+  },
+  {
+    "perfume_id": "perf_heavenduft-firdaus-extreme",
+    "slug": "heavenduft-firdaus-extreme",
+    "name": "Heavenduft Firdaus Extreme",
+    "image_path": "/images/products/heavenduft.in_products_firdaus-extreme-1.jpg",
+    "source_url": "https://heavenduft.in/products/firdaus-extreme",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_firdaus-extreme-1.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_heavenduft-golden-sand",
+    "slug": "heavenduft-golden-sand",
+    "name": "Heavenduft Golden Sand",
+    "image_path": "/images/products/heavenduft.in_products_golden-sand.jpg",
+    "source_url": "https://heavenduft.in/products/golden-sand",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_golden-sand.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_heavenduft-hajr-e-aswad-50ml",
+    "slug": "heavenduft-hajr-e-aswad-50ml",
+    "name": "Heavenduft Hajr e Aswad 50ml",
+    "image_path": "/images/products/heavenduft.in_products_hajr-e-aswad-50ml.jpg",
+    "source_url": "https://heavenduft.in/products/hajr-e-aswad-50ml",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_hajr-e-aswad-50ml.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_heavenduft-musk-sami",
+    "slug": "heavenduft-musk-sami",
+    "name": "Heavenduft Musk Sami",
+    "image_path": "/images/products/heavenduft.in_products_musk-sami.jpg",
+    "source_url": "https://heavenduft.in/products/musk-sami",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_musk-sami.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_heavenduft-oudh-sami",
+    "slug": "heavenduft-oudh-sami",
+    "name": "Heavenduft Oudh Sami",
+    "image_path": "/images/products/heavenduft.in_products_oudh-sami.jpg",
+    "source_url": "https://heavenduft.in/products/oudh-sami",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_oudh-sami.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_heavenduft-pious-50ml",
+    "slug": "heavenduft-pious-50ml",
+    "name": "Heavenduft Pious 50ml",
+    "image_path": "/images/products/heavenduft.in_products_pious-50-ml.jpg",
+    "source_url": "https://heavenduft.in/products/pious-50-ml",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_pious-50-ml.jpg; bottle label reads 'HEAVENDUFT PIOUS'; product page returned HTTP 200"
+  },
+  {
+    "perfume_id": "perf_heavenduft-rose-oud",
+    "slug": "heavenduft-rose-oud",
+    "name": "Heavenduft Rose Oud",
+    "image_path": "/images/products/heavenduft.in_products_rose-oud.jpg",
+    "source_url": "https://heavenduft.in/products/rose-oud",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_rose-oud.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_heavenduft-royal-cinnamon",
+    "slug": "heavenduft-royal-cinnamon",
+    "name": "Heavenduft Royal Cinnamon",
+    "image_path": "/images/products/heavenduft.in_products_royal-cinnamon.jpg",
+    "source_url": "https://heavenduft.in/products/royal-cinnamon",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_royal-cinnamon.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_heavenduft-sabah",
+    "slug": "heavenduft-sabah",
+    "name": "Heavenduft Sabah",
+    "image_path": "/images/products/heavenduft.in_products_sabah.jpg",
+    "source_url": "https://heavenduft.in/products/sabah",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_sabah.jpg; bottle label reads 'HEAVENDUFT SABAH ARTISANAL PERFUME'; product page returned HTTP 200"
+  },
+  {
+    "perfume_id": "perf_heavenduft-tonka-tobacco",
+    "slug": "heavenduft-tonka-tobacco",
+    "name": "Heavenduft Tonka Tobacco",
+    "image_path": "/images/products/heavenduft.in_products_tonka-tobacco.jpg",
+    "source_url": "https://heavenduft.in/products/tonka-tobacco",
+    "verify_note": "already-local: /images/products/heavenduft.in_products_tonka-tobacco.jpg; filename matches product handle on house official site"
+  },
+  {
+    "perfume_id": "perf_aventus-inspired-perfume",
+    "slug": "aventus-inspired-perfume",
+    "name": "Aventus Inspired Perfume",
+    "image_path": "/images/products/perfumeoilcorner.in_products_creed-aventus-type-perfume-copy.webp",
+    "source_url": "https://perfumeoilcorner.com/products/creed-aventus-type-perfume-copy",
+    "verify_note": "already-local: /images/products/perfumeoilcorner.in_products_creed-aventus-type-perfume-copy.webp; house bottle labeled 'POC PerfumeOilCorner.com Creed Aventus'; note: official page image is a comparison shot showing the designer original alongside the house bottle"
+  },
+  {
+    "perfume_id": "perf_black-opium-inspired-perfume",
+    "slug": "black-opium-inspired-perfume",
+    "name": "Black Opium Inspired Perfume",
+    "image_path": "/images/products/perfumeoilcorner.in_products_black-opium-by-ysl-perfume-oil.webp",
+    "source_url": "https://perfumeoilcorner.com/products/black-opium-by-ysl-perfume-oil",
+    "verify_note": "already-local: /images/products/perfumeoilcorner.in_products_black-opium-by-ysl-perfume-oil.webp; house bottle labeled 'POC PerfumeOilCorner.com Black Opium'; note: official page image is a comparison shot showing the designer original alongside the house bottle"
+  },
+  {
+    "perfume_id": "perf_br-540-inspired-perfume",
+    "slug": "br-540-inspired-perfume",
+    "name": "BR 540 Inspired Perfume",
+    "image_path": "/images/products/perfumeoilcorner.in_products_baccarat-rouge-540-perfume-oil.webp",
+    "source_url": "https://perfumeoilcorner.com/products/baccarat-rouge-540-perfume-oil",
+    "verify_note": "already-local: /images/products/perfumeoilcorner.in_products_baccarat-rouge-540-perfume-oil.webp; house bottle labeled 'POC PerfumeOilCorner.com Baccarat Rouge 540'; note: official page image is a comparison shot showing the designer original alongside the house bottle"
+  },
+  {
+    "perfume_id": "perf_dior-sauvage-elixir-inspired-perfume",
+    "slug": "dior-sauvage-elixir-inspired-perfume",
+    "name": "Dior Sauvage Elixir Inspired Perfume",
+    "image_path": "/images/products/perfumeoilcorner.in_products_dior-sauvage-elixir-type-perfume-oil.webp",
+    "source_url": "https://perfumeoilcorner.com/products/dior-sauvage-elixir-type-perfume-oil",
+    "verify_note": "already-local: /images/products/perfumeoilcorner.in_products_dior-sauvage-elixir-type-perfume-oil.webp; house bottle labeled 'POC PerfumeOilCorner.com Dior Sauvage Elixir'; note: official page image is a comparison shot showing the designer original alongside the house bottle"
+  },
+  {
+    "perfume_id": "perf_imagination-inspired-perfume",
+    "slug": "imagination-inspired-perfume",
+    "name": "Imagination Inspired Perfume",
+    "image_path": "/images/products/perfumeoilcorner.in_products_imagination-louis-vuitton-type-perfume.webp",
+    "source_url": "https://perfumeoilcorner.com/products/imagination-louis-vuitton-type-perfume",
+    "verify_note": "already-local: /images/products/perfumeoilcorner.in_products_imagination-louis-vuitton-type-perfume.webp; house bottle labeled 'POC PerfumeOilCorner.com Imagination'; note: official page image is a comparison shot showing the designer original alongside the house bottle"
+  },
+  {
+    "perfume_id": "perf_oud-satin-mood-inspired-perfume",
+    "slug": "oud-satin-mood-inspired-perfume",
+    "name": "Oud Satin Mood Inspired Perfume",
+    "image_path": "/images/products/perfumeoilcorner.in_products_maison-francis-kurkdjian-oud-satin-mood-type-perfume-oil.jpg",
+    "source_url": "https://perfumeoilcorner.com/products/maison-francis-kurkdjian-oud-satin-mood-type-perfume-oil",
+    "verify_note": "already-local: /images/products/perfumeoilcorner.in_products_maison-francis-kurkdjian-oud-satin-mood-type-perfume-oil.jpg; house bottle labeled 'POC PerfumeOilCorner.com Oud Satin Mood'; note: official page image is a comparison shot showing the designer original alongside the house bottle"
+  },
+  {
+    "perfume_id": "perf_tygar-inspired-perfume",
+    "slug": "tygar-inspired-perfume",
+    "name": "Tygar Inspired Perfume",
+    "image_path": "/images/products/perfumeoilcorner.in_products_tygar-by-bvlgari-for-men-type-perfume.jpg",
+    "source_url": "https://perfumeoilcorner.com/products/tygar-by-bvlgari-for-men-type-perfume",
+    "verify_note": "already-local: /images/products/perfumeoilcorner.in_products_tygar-by-bvlgari-for-men-type-perfume.jpg; house bottle labeled 'poc PerfumeOilCorner.com Tygar Bvlgari'; product page returned HTTP 200; note: official page image is a comparison shot showing the designer original alongside the house bottle"
+  }
+]

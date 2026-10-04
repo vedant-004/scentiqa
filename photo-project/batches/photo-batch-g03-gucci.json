@@ -1,0 +1,90 @@
+[
+  {
+    "perfume_id": "perf_designer_bamboo",
+    "slug": "bamboo",
+    "name": "Bamboo",
+    "image_path": "/images/gucci/bamboo.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified: bottle reads 'GUCCI BAMBOO' (the standard Bamboo EDP bottle)."
+  },
+  {
+    "perfume_id": "perf_designer_flora-gorgeous-gardenia",
+    "slug": "flora-gorgeous-gardenia",
+    "name": "Flora Gorgeous Gardenia",
+    "image_path": "/images/gucci/flora-gorgeous-gardenia.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified: pink bottle + box read 'GUCCI FLORA GORGEOUS GARDENIA', box marked 'EAU DE PARFUM' (2021 relaunch EDP)."
+  },
+  {
+    "perfume_id": "perf_designer_flora-gorgeous-gardenia-eau-de-parfum-in",
+    "slug": "flora-gorgeous-gardenia-eau-de-parfum-intense",
+    "name": "Flora Gorgeous Gardenia Eau de Parfum Intense",
+    "image_path": "/images/gucci/flora-gorgeous-gardenia-eau-de-parfum-intense.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified: deep-red bottle label reads 'GUCCI FLORA GORGEOUS GARDENIA INTENSE'."
+  },
+  {
+    "perfume_id": "perf_w_flora-gorgeous-gardenia-gucci",
+    "slug": "flora-gorgeous-gardenia-gucci",
+    "name": "Flora Gorgeous Gardenia Gucci",
+    "image_path": "/images/gucci/flora-gorgeous-gardenia-gucci.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified: same 2021 Flora Gorgeous Gardenia EDP pink bottle + box as flora-gorgeous-gardenia.jpg."
+  },
+  {
+    "perfume_id": "perf_w_gucci-bamboo-gucci",
+    "slug": "gucci-bamboo-gucci",
+    "name": "Gucci Bamboo Gucci",
+    "image_path": "/images/gucci/gucci-bamboo-gucci.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified: bottle reads 'GUCCI BAMBOO' (same standard Bamboo EDP bottle; byte-identical to bamboo.jpg)."
+  },
+  {
+    "perfume_id": "perf_w_gucci-bloom-gucci",
+    "slug": "gucci-bloom-gucci",
+    "name": "Gucci Bloom Gucci",
+    "image_path": "/images/gucci/gucci-bloom-gucci.jpg",
+    "source_url": null,
+    "verify_note": "pre-existing download, visually verified: bottle reads 'GUCCI BLOOM' (classic Bloom EDP bottle with powder-pink cap)."
+  },
+  {
+    "perfume_id": "perf_w_gucci-guilty-absolute-gucci",
+    "slug": "gucci-guilty-absolute-gucci",
+    "name": "Gucci Guilty Absolute Gucci",
+    "image_path": "/images/gucci/gucci-guilty-absolute-gucci.jpg",
+    "source_url": "https://images-static.nykaa.com/media/catalog/product/d/7/d7624ac8005610344157_1.jpg",
+    "verify_note": "Same real product as 'Guilty Absolute' (Gucci Guilty Absolute, men's EDP); Nykaa CDN packshot, bottle reads 'GUCCI GUILTY ABSOLUTE POUR HOMME'; visually verified exact."
+  },
+  {
+    "perfume_id": "perf_designer_guilty-absolute",
+    "slug": "guilty-absolute",
+    "name": "Guilty Absolute",
+    "image_path": "/images/gucci/guilty-absolute.jpg",
+    "source_url": "https://images-static.nykaa.com/media/catalog/product/d/7/d7624ac8005610344157_1.jpg",
+    "verify_note": "Nykaa CDN packshot (filename carries EAN 8005610344157, the Guilty Absolute Pour Homme EAN); bottle reads 'GUCCI GUILTY ABSOLUTE POUR HOMME'; visually verified exact."
+  },
+  {
+    "perfume_id": "perf_w_guilty-pour-homme-gucci",
+    "slug": "guilty-pour-homme-gucci",
+    "name": "Guilty Pour Homme Gucci",
+    "image_path": "/images/gucci/guilty-pour-homme-gucci.jpg",
+    "source_url": "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/2/8/28bad63NYGUC00000024_1.jpg",
+    "verify_note": "Nykaa CDN packshot from Nykaa product page 'Gucci Guilty Eau De Toilette For Him' (nykaa.com/gucci-guilty-eau-de-toilette-for-him/p/836724); bottle reads 'GUCCI GUILTY POUR HOMME'; visually verified exact."
+  },
+  {
+    "perfume_id": "perf_designer_m-moire-d-une-odeur",
+    "slug": "m-moire-d-une-odeur",
+    "name": "Mémoire d'une Odeur",
+    "image_path": "/images/gucci/m-moire-d-une-odeur.jpg",
+    "source_url": "https://images-static.nykaa.com/media/catalog/product/5/c/5cd64ac3614225307553_1.jpg",
+    "verify_note": "Nykaa CDN packshot (filename carries EAN 3614225307553, the Memoire d'une Odeur 100ml EAN); bottle reads 'GUCCI MEMOIRE D'UNE ODEUR'; visually verified exact."
+  },
+  {
+    "perfume_id": "perf_w_m-moire-d-une-odeur-gucci",
+    "slug": "m-moire-d-une-odeur-gucci",
+    "name": "Mémoire d’une Odeur Gucci",
+    "image_path": "/images/gucci/m-moire-d-une-odeur-gucci.jpg",
+    "source_url": "https://images-static.nykaa.com/media/catalog/product/5/c/5cd64ac3614225307553_1.jpg",
+    "verify_note": "Same real product as 'Memoire d'une Odeur' (EDP); Nykaa CDN packshot, bottle reads 'GUCCI MEMOIRE D'UNE ODEUR'; visually verified exact."
+  }
+]

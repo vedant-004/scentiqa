@@ -1,0 +1,394 @@
+[
+ {
+  "perfume_id": "perf_sauvage-eau-de-toilette",
+  "slug": "sauvage-eau-de-toilette",
+  "name": "Sauvage Eau de Toilette",
+  "image_path": "/images/dior/sauvage-eau-de-toilette.jpg",
+  "source_url": "https://www.brownthomas.com/ni/beauty/fragrance/men/sauvage-eau-de-toilette/2000061588.html",
+  "verify_note": "Page title 'DIOR Sauvage Eau de Toilette' on Brown Thomas (authorized Dior retailer); main packshot _01 downloaded; ribbed cap confirms EDT flanker."
+ },
+ {
+  "perfume_id": "perf_w_sauvage-eau-de-parfum-dior",
+  "slug": "sauvage-eau-de-parfum-dior",
+  "name": "Sauvage Eau de Parfum Dior",
+  "image_path": "/images/dior/sauvage-eau-de-parfum-dior.jpg",
+  "source_url": "https://www.brownthomas.com/beauty/fragrance/men/sauvage-eau-de-parfum/2000062192.html",
+  "verify_note": "Page title 'DIOR Sauvage Eau de Parfum' on Brown Thomas (authorized Dior retailer); main packshot _01 downloaded; smooth cap confirms EDP flanker."
+ },
+ {
+  "perfume_id": "perf_designer_sauvage-parfum",
+  "slug": "sauvage-parfum",
+  "name": "Sauvage Parfum",
+  "image_path": "/images/dior/sauvage-parfum.jpg",
+  "source_url": "https://www.brownthomas.com/beauty/fragrance/men/sauvage-parfum/2000061731.html",
+  "verify_note": "Page title 'DIOR Sauvage Parfum' on Brown Thomas (authorized Dior retailer); main packshot _01 downloaded."
+ },
+ {
+  "perfume_id": "perf_w_sauvage-parfum-dior",
+  "slug": "sauvage-parfum-dior",
+  "name": "Sauvage Parfum Dior",
+  "image_path": "/images/dior/sauvage-parfum-dior.jpg",
+  "source_url": "",
+  "verify_note": "same product as /images/dior/sauvage-parfum.jpg (shared verified image)"
+ },
+ {
+  "perfume_id": "perf_sauvage-elixir",
+  "slug": "sauvage-elixir",
+  "name": "Sauvage Elixir",
+  "image_path": "/images/dior/sauvage-elixir.jpg",
+  "source_url": "https://www.brownthomas.com/ni/beauty/fragrance/men/sauvage-elixir/2000061645.html",
+  "verify_note": "Page title 'DIOR Sauvage Elixir' on Brown Thomas (authorized Dior retailer); main packshot _01 downloaded."
+ },
+ {
+  "perfume_id": "perf_designer_dior-homme",
+  "slug": "dior-homme",
+  "name": "Dior Homme",
+  "image_path": "/images/dior/dior-homme.jpg",
+  "source_url": "https://www.brownthomas.com/ni/beauty/fragrance/men/dior-homme-eau-de-toilette/2000061756.html",
+  "verify_note": "Page title 'DIOR Dior Homme Eau de Toilette' on Brown Thomas (authorized Dior retailer); main packshot _01 downloaded."
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-dior",
+  "slug": "dior-homme-dior",
+  "name": "Dior Homme Dior",
+  "image_path": "/images/dior/dior-homme-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-homme-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-2020-dior",
+  "slug": "dior-homme-2020-dior",
+  "name": "Dior Homme 2020 Dior",
+  "image_path": "/images/dior/dior-homme-2020-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-homme-2020-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-2005-dior",
+  "slug": "dior-homme-2005-dior",
+  "name": "Dior Homme 2005 Dior",
+  "image_path": "/images/dior/dior-homme-2005-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-homme-2005-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_dior-homme-eau-de-toilette",
+  "slug": "dior-homme-eau-de-toilette",
+  "name": "Dior Homme Eau de Toilette",
+  "image_path": "/images/dior/dior-homme-eau-de-toilette.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-homme-eau-de-toilette.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-sport-dior",
+  "slug": "dior-homme-sport-dior",
+  "name": "Dior Homme Sport Dior",
+  "image_path": "/images/dior/dior-homme-sport-dior.jpg",
+  "source_url": "https://www.brownthomas.com/ni/brands/dior/mens-fragrances/dior-homme-sport-eau-de-toilette/2000315622.html",
+  "verify_note": "Page title 'DIOR Dior Homme Sport Eau de Toilette' on Brown Thomas (authorized Dior retailer); main packshot _01 downloaded."
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-sport-2021-dior",
+  "slug": "dior-homme-sport-2021-dior",
+  "name": "Dior Homme Sport 2021 Dior",
+  "image_path": "/images/dior/dior-homme-sport-2021-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-homme-sport-2021-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_homme-sport",
+  "slug": "homme-sport",
+  "name": "Homme Sport",
+  "image_path": "/images/dior/homme-sport.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/homme-sport.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_homme-sport-eau-de-toilette",
+  "slug": "homme-sport-eau-de-toilette",
+  "name": "Homme Sport Eau de Toilette",
+  "image_path": "/images/dior/homme-sport-eau-de-toilette.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/homme-sport-eau-de-toilette.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-parfum-dior",
+  "slug": "dior-homme-parfum-dior",
+  "name": "Dior Homme Parfum Dior",
+  "image_path": "/images/dior/dior-homme-parfum-dior.jpg",
+  "source_url": "https://www.brownthomas.com/beauty/fragrance/men/homme-parfum/2001165825.html",
+  "verify_note": "Page title 'DIOR Homme Parfum' on Brown Thomas (authorized Dior retailer); bottle shows 'DIOR HOMME' cap and 'PARFUM' on glass confirming exact flanker; alt-view _02 image used since main _01 not exposed."
+ },
+ {
+  "perfume_id": "perf_designer_homme-intense",
+  "slug": "homme-intense",
+  "name": "Homme Intense",
+  "image_path": "/images/dior/homme-intense.jpg",
+  "source_url": "https://www.nykaa.com/dior-homme-intense-eau-de-parfum-intense/p/950905",
+  "verify_note": "Nykaa (authorized Dior retailer, '100% Authentic, directly purchased from DIOR') product page for Dior Homme Intense EDP; bottle shows 'Dior HOMME INTENSE' plaque confirming exact flanker."
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-intense-2007-dior",
+  "slug": "dior-homme-intense-2007-dior",
+  "name": "Dior Homme Intense 2007 Dior",
+  "image_path": "/images/dior/dior-homme-intense-2007-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-homme-intense-2007-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_dior-homme-eau-de-parfum-intense",
+  "slug": "dior-homme-eau-de-parfum-intense",
+  "name": "Dior Homme Eau de Parfum Intense",
+  "image_path": "/images/dior/dior-homme-eau-de-parfum-intense.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-homme-eau-de-parfum-intense.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_addict",
+  "slug": "addict",
+  "name": "Addict",
+  "image_path": "/images/dior/addict.jpg",
+  "source_url": "https://www.brownthomas.com/beauty/fragrance/women/dior-addict-eau-de-parfum/2000061373.html",
+  "verify_note": "Page title 'DIOR Dior Addict Eau de Parfum' on Brown Thomas (authorized Dior retailer); main _01 packshot; dark-blue tall bottle matches Dior Addict EDP."
+ },
+ {
+  "perfume_id": "perf_w_dior-addict-eau-de-parfum-dior",
+  "slug": "dior-addict-eau-de-parfum-dior",
+  "name": "Dior Addict Eau de Parfum Dior",
+  "image_path": "/images/dior/dior-addict-eau-de-parfum-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-addict-eau-de-parfum-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_dior-addict-eau-de-parfum-2014-dior",
+  "slug": "dior-addict-eau-de-parfum-2014-dior",
+  "name": "Dior Addict Eau de Parfum 2014 Dior",
+  "image_path": "/images/dior/dior-addict-eau-de-parfum-2014-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/dior-addict-eau-de-parfum-2014-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_addict-eau-de-toilette",
+  "slug": "addict-eau-de-toilette",
+  "name": "Addict Eau de Toilette",
+  "image_path": "/images/dior/addict-eau-de-toilette.jpg",
+  "source_url": "https://www.nykaa.com/dior-addict-eau-de-toilette/p/950902",
+  "verify_note": "Nykaa (authorized Dior retailer) product page 'DIOR Addict Eau De Toilette'; CDN image tied to this page; bottle is the clear Dior Addict EDT flacon (small 'WOMEN' retailer overlay badge top-right, not part of product)."
+ },
+ {
+  "perfume_id": "perf_designer_dior-addict-eau-fraiche",
+  "slug": "dior-addict-eau-fraiche",
+  "name": "Dior Addict Eau Fraiche Dior",
+  "image_path": "/images/dior/dior-addict-eau-fraiche.jpg",
+  "source_url": "https://www.nykaa.com/dior-addict-eau-fraiche/p/950903",
+  "verify_note": "Nykaa (authorized Dior retailer) product page 'DIOR Addict Eau Fraiche'; CDN image tied to this exact page (EAN 3348901181853); pink Dior Addict Eau Fraiche flacon confirms exact product (small 'WOMEN' retailer overlay badge top-right, not part of product)."
+ },
+ {
+  "perfume_id": "perf_w_poison-girl-dior",
+  "slug": "poison-girl-dior",
+  "name": "Poison Girl Dior",
+  "image_path": "/images/dior/poison-girl-dior.jpg",
+  "source_url": "https://www.dior.com/en_fi/beauty/products/poison-girl-Y0763220.html",
+  "verify_note": "dior.com (brand official site) product page 'Poison Girl, Eau de parfum'; bottle reads 'Poison girl Dior' confirming exact product; image is the brand's official product asset (downloaded via official Dior regional store CDN, same product code Y0763220)."
+ },
+ {
+  "perfume_id": "perf_w_poison-girl-eau-de-toilette-dior",
+  "slug": "poison-girl-eau-de-toilette-dior",
+  "name": "Poison Girl Eau de Toilette Dior",
+  "image_path": "/images/dior/poison-girl-eau-de-toilette-dior.jpg",
+  "source_url": "https://www.dior.com/ar_sa/beauty/products/poison-girl-Y0263210.html",
+  "verify_note": "dior.com (brand official site) product page for Poison Girl Eau de Toilette; bottle reads 'Poison girl EAU DE TOILETTE Dior' confirming exact flanker; official brand product asset (same code Y0263210, downloaded via official Dior regional store CDN)."
+ },
+ {
+  "perfume_id": "perf_w_hypnotic-poison-eau-de-parfum-dior",
+  "slug": "hypnotic-poison-eau-de-parfum-dior",
+  "name": "Hypnotic Poison Eau de Parfum Dior",
+  "image_path": "/images/dior/hypnotic-poison-eau-de-parfum-dior.jpg",
+  "source_url": "https://www.brownthomas.com/brands/dior/womens-fragrances/poison/hypnotic-poison/119034611.html",
+  "verify_note": "Page 'DIOR Hypnotic Poison' on Brown Thomas (authorized Dior retailer); description confirms 'Hypnotic Poison Eau de Parfum'; bottle reads 'HYPNOTIC Poison EAU DE PARFUM Dior' confirming exact flanker; main _01 packshot."
+ },
+ {
+  "perfume_id": "perf_designer_hypnotic-poison-eau-de-toilette",
+  "slug": "hypnotic-poison-eau-de-toilette",
+  "name": "Hypnotic Poison Eau de Toilette",
+  "image_path": "/images/dior/hypnotic-poison-eau-de-toilette.jpg",
+  "source_url": "https://www.brownthomas.com/ni/brands/dior/womens-fragrances/hypnotic-poison-eau-de-toilette/2000061491.html",
+  "verify_note": "Page title 'DIOR Hypnotic Poison Eau de Toilette' on Brown Thomas (authorized Dior retailer); bottle reads 'HYPNOTIC Poison Dior' on the bright-red apple flacon confirming exact flanker; main _01 packshot."
+ },
+ {
+  "perfume_id": "perf_designer_poison",
+  "slug": "poison",
+  "name": "Poison",
+  "image_path": "/images/dior/poison.jpg",
+  "source_url": "https://www.nykaa.com/dior-poison-eau-de-toilette/p/950939",
+  "verify_note": "Nykaa (authorized Dior retailer) product page 'DIOR Poison Eau De Toilette'; CDN image tied to this exact page (EAN 3348900011632); dark-purple apple bottle reads 'Poison Dior' confirming exact product."
+ },
+ {
+  "perfume_id": "perf_designer_poison-eau-de-toilette",
+  "slug": "poison-eau-de-toilette",
+  "name": "Poison Eau de Toilette",
+  "image_path": "/images/dior/poison-eau-de-toilette.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/poison-eau-de-toilette.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_pure-poison",
+  "slug": "pure-poison",
+  "name": "Pure Poison",
+  "image_path": "/images/dior/pure-poison.jpg",
+  "source_url": "https://www.nykaa.com/dior-pure-poison-eau-de-parfum/p/950937",
+  "verify_note": "Nykaa (authorized Dior retailer) product page 'DIOR Pure Poison Eau De Parfum'; CDN image tied to this exact page (EAN 3348900606708); clear apple bottle reads 'PURE Poison Dior' confirming exact product."
+ },
+ {
+  "perfume_id": "perf_designer_fahrenheit-eau-de-toilette",
+  "slug": "fahrenheit-eau-de-toilette",
+  "name": "Fahrenheit Eau de Toilette",
+  "image_path": "/images/dior/fahrenheit-eau-de-toilette.jpg",
+  "source_url": "https://www.brownthomas.com/beauty/fragrance/men/fahrenheit-eau-de-toilette/103072445.html",
+  "verify_note": "Brown Thomas product page titled 'DIOR Fahrenheit Eau de Toilette' (authorized Dior retailer); also verified on dior.com (Fahrenheit Eau de Toilette, code Y0066001). Downloaded canonical BT packshot 2000061437_01.jpg; visual check: bottle reads 'Fahrenheit Dior'."
+ },
+ {
+  "perfume_id": "perf_designer_eau-sauvage",
+  "slug": "eau-sauvage",
+  "name": "Eau Sauvage",
+  "image_path": "/images/dior/eau-sauvage.jpg",
+  "source_url": "https://sephora.in/product/dior-eau-sauvage-eau-de-toilette-v-100ml",
+  "verify_note": "Sephora India product page titled 'Eau Sauvage Eau De Toilette' (authorized retailer); image is the page's og:image (fynd CDN). Visual check: ribbed square bottle labeled 'EAU SAUVAGE Christian Dior PARIS'."
+ },
+ {
+  "perfume_id": "perf_w_eau-sauvage-dior",
+  "slug": "eau-sauvage-dior",
+  "name": "Eau Sauvage Dior",
+  "image_path": "/images/dior/eau-sauvage-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/eau-sauvage-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_eau-sauvage-eau-de-toilette",
+  "slug": "eau-sauvage-eau-de-toilette",
+  "name": "Eau Sauvage Eau de Toilette",
+  "image_path": "/images/dior/eau-sauvage-eau-de-toilette.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/eau-sauvage-eau-de-toilette.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_miss-dior-blooming-bouquet-dior",
+  "slug": "miss-dior-blooming-bouquet-dior",
+  "name": "Miss Dior Blooming Bouquet Dior",
+  "image_path": "/images/dior/miss-dior-blooming-bouquet-dior.jpg",
+  "source_url": "https://www.brownthomas.com/ni/brands/dior/womens-fragrances/miss-dior/miss-dior-blooming-bouquet-eau-de-toilette/2000456401.html",
+  "verify_note": "Brown Thomas page titled 'DIOR Miss Dior Blooming Bouquet Eau de Toilette' (authorized retailer); canonical BT packshot 2000456401_01.jpg."
+ },
+ {
+  "perfume_id": "perf_w_miss-dior-absolutely-blooming-dior",
+  "slug": "miss-dior-absolutely-blooming-dior",
+  "name": "Miss Dior Absolutely Blooming Dior",
+  "image_path": "/images/dior/miss-dior-absolutely-blooming-dior.jpg",
+  "source_url": "https://brownthomas.com/beauty/fragrance/women/miss-dior-absolutely-blooming/2000062220.html",
+  "verify_note": "Brown Thomas page titled 'DIOR Miss Dior Absolutely Blooming' (authorized retailer); canonical BT packshot 2000062220_01.jpg."
+ },
+ {
+  "perfume_id": "perf_w_miss-dior-rose-n-roses-dior",
+  "slug": "miss-dior-rose-n-roses-dior",
+  "name": "Miss Dior Rose N'Roses Dior",
+  "image_path": "/images/dior/miss-dior-rose-n-roses-dior.jpg",
+  "source_url": "https://www.brownthomas.com/ni/beauty/fragrance/miss-dior-rose-nroses-eau-de-toilette/145990050.html",
+  "verify_note": "Brown Thomas page titled 'DIOR Miss Dior Rose N'Roses Eau de Toilette' (authorized retailer; <title> confirms); canonical BT packshot 2000061712_01.jpg."
+ },
+ {
+  "perfume_id": "perf_w_miss-dior-eau-de-parfum-2021-dior",
+  "slug": "miss-dior-eau-de-parfum-2021-dior",
+  "name": "Miss Dior Eau de Parfum 2021 Dior",
+  "image_path": "/images/dior/miss-dior-eau-de-parfum-2021-dior.jpg",
+  "source_url": "https://www.brownthomas.com/beauty/fragrance/women/miss-dior-eau-de-parfum/2000061429.html",
+  "verify_note": "Brown Thomas page titled 'DIOR Miss Dior Eau de Parfum' (authorized retailer) \u2014 this is the current (2021-reformulated) Miss Dior EDP; canonical BT packshot 2000061429_01.jpg."
+ },
+ {
+  "perfume_id": "perf_w_miss-dior-dior",
+  "slug": "miss-dior-dior",
+  "name": "Miss Dior Dior",
+  "image_path": "/images/dior/miss-dior-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/miss-dior-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_miss-dior-2012-dior",
+  "slug": "miss-dior-2012-dior",
+  "name": "Miss Dior 2012 Dior",
+  "image_path": "/images/dior/miss-dior-2012-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/miss-dior-2012-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_miss-dior-eau-de-parfum-2017-dior",
+  "slug": "miss-dior-eau-de-parfum-2017-dior",
+  "name": "Miss Dior Eau de Parfum 2017 Dior",
+  "image_path": "/images/dior/miss-dior-eau-de-parfum-2017-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/miss-dior-eau-de-parfum-2017-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_w_joy-by-dior-dior",
+  "slug": "joy-by-dior-dior",
+  "name": "Joy by Dior Dior",
+  "image_path": "/images/dior/joy-by-dior-dior.jpg",
+  "source_url": "https://www.brownthomas.com/ni/beauty/fragrance/women/joy-by-dior-eau-de-parfum/135550376.html",
+  "verify_note": "Brown Thomas page titled 'DIOR JOY by Dior Eau de Parfum' (authorized retailer); canonical BT packshot 2000061792_01.jpg."
+ },
+ {
+  "perfume_id": "perf_designer_ambre-nuit",
+  "slug": "ambre-nuit",
+  "name": "Ambre Nuit",
+  "image_path": "/images/dior/ambre-nuit.jpg",
+  "source_url": "https://shop-beauty.dior.com.kw/products/ambre-nuit",
+  "verify_note": "Dior's official Kuwait beauty store page (og:title 'AMBRE NUIT', description 'Ambre Nuit eau de parfum'); official product image Y0958160_C099700412_E01_GHC."
+ },
+ {
+  "perfume_id": "perf_w_ambre-nuit-dior",
+  "slug": "ambre-nuit-dior",
+  "name": "Ambre Nuit Dior",
+  "image_path": "/images/dior/ambre-nuit-dior.jpg",
+  "source_url": "",
+  "verify_note": "already-local: /images/dior/ambre-nuit-dior.jpg (pre-existing file; not overwritten)"
+ },
+ {
+  "perfume_id": "perf_designer_bois-d-argent",
+  "slug": "bois-d-argent",
+  "name": "Bois D'Argent",
+  "image_path": "/images/dior/bois-d-argent.jpg",
+  "source_url": "https://shop-beauty.dior.com.kw/products/bois-dargent",
+  "verify_note": "Dior official Kuwait store page (og:title BOIS D'ARGENT, 'Bois d'Argent eau de parfum'); official product image Y0959160_C099700414_E01_GHC."
+ },
+ {
+  "perfume_id": "perf_designer_oud-rosewood",
+  "slug": "oud-rosewood",
+  "name": "Oud Rosewood",
+  "image_path": "/images/dior/oud-rosewood.jpg",
+  "source_url": "https://shop-beauty.dior.com.kw/products/oud-rosewood",
+  "verify_note": "Dior official Kuwait store page (og:title OUD ROSEWOOD); official product image Y0996414_C099700422_E01_GHC."
+ },
+ {
+  "perfume_id": "perf_designer_sakura",
+  "slug": "sakura",
+  "name": "Sakura",
+  "image_path": "/images/dior/sakura.jpg",
+  "source_url": "https://shop-beauty.dior.com.kw/products/sakura",
+  "verify_note": "Dior official Kuwait store page (og:title SAKURA, 'The Sakura eau de parfum'); official product image Y0749427_C099700426_E01_GHC."
+ },
+ {
+  "perfume_id": "perf_w_diorissimo-dior",
+  "slug": "diorissimo-dior",
+  "name": "Diorissimo Dior",
+  "image_path": "/images/dior/diorissimo-dior.jpg",
+  "source_url": "https://sephora.in/product/dior-diorissimo-eau-de-toilette-v-50ml",
+  "verify_note": "Sephora India page (authorized retailer) titled 'Diorissimo Eau De Toilette' by Dior; official product image KW3483SYIXL-1. Note: group file lists concentration 'edp' but Diorissimo is an EDT \u2014 name+house verified on the page."
+ },
+ {
+  "perfume_id": "perf_w_dior-homme-cologne-2013-dior",
+  "slug": "dior-homme-cologne-2013-dior",
+  "name": "Dior Homme Cologne 2013 Dior",
+  "image_path": "/images/dior/dior-homme-cologne-2013-dior.jpg",
+  "source_url": "https://www.brownthomas.com/ni/brands/dior/mens-fragrances/dior-homme/dior-homme-cologne-eau-de-toilette-75-ml/118048860.html",
+  "verify_note": "Brown Thomas page titled 'DIOR Dior Homme Cologne' (authorized retailer); canonical BT packshot 2000057233_01.jpg. Note: image shows the current bottle (2020 repackaging); group entry names the 2013 launch \u2014 same product lineage, per the Dior Homme year-variant precedent."
+ }
+]
