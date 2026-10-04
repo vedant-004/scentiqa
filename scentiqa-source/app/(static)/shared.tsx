@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Card } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
+import { ContactForm } from './contact/contact-form';
 
 function DocPage({ title, kicker, children }: { title: string; kicker: string; children: React.ReactNode }) {
   return (
@@ -95,11 +96,26 @@ export function ContactPage() {
     <DocPage title="Contact us" kicker="Say hello">
       <p>Corrections, lab partnerships, seller verification, press — we read everything.</p>
       <Card className="mt-6 p-6">
-        <p className="text-sm"><strong>Email:</strong> hello@scentiqa.in</p>
-        <p className="mt-2 text-sm"><strong>Corrections:</strong> corrections@scentiqa.in</p>
-        <p className="mt-2 text-sm"><strong>Seller verification:</strong> sellers@scentiqa.in</p>
+        <p className="text-sm">
+          <strong>Email:</strong>{' '}
+          <a href="mailto:vedanttyagi.official@gmail.com" className="font-semibold text-gold-700 underline dark:text-gold-300">
+            vedanttyagi.official@gmail.com
+          </a>
+        </p>
+        <p className="mt-2 text-sm">
+          <strong>Phone:</strong>{' '}
+          <a href="tel:+917017921949" className="font-semibold text-gold-700 underline dark:text-gold-300">
+            +91 70179 21949
+          </a>
+          <span className="text-stone-400"> · </span>
+          <a href="https://wa.me/917017921949" target="_blank" rel="noreferrer" className="font-semibold text-gold-700 underline dark:text-gold-300">
+            WhatsApp
+          </a>
+        </p>
         <p className="mt-2 text-xs text-stone-400">Response time: usually within 2 working days.</p>
       </Card>
+      <h2>Send us a message</h2>
+      <ContactForm />
     </DocPage>
   );
 }

@@ -3,6 +3,8 @@ import { getForumTopic } from '@/lib/data';
 import { Card, EmptyState } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
 
+export const revalidate = 3600;
+
 export default async function TopicPage({ params }: { params: Promise<{ slug: string; topic: string }> }) {
   const { slug, topic } = await params;
   const t = await getForumTopic(topic);

@@ -136,7 +136,7 @@ const NAV = [
   { href: '/find-alternative', label: 'Find a Dupe' },
   { href: '/house/house-of-em5', label: 'Houses' },
   { href: '/news', label: 'News' },
-  { href: '/forum', label: 'Forum' },
+  { href: '/forum', label: 'Community' },
   { href: '/awards/2026', label: 'Awards' },
 ];
 /* ---------- Auth-aware nav button ---------- */

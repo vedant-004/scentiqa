@@ -3,6 +3,8 @@ import { getForumCategory } from '@/lib/data';
 import { Card, EmptyState, SectionHeading } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
 
+export const revalidate = 3600;
+
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const cat = await getForumCategory(slug);

@@ -3,6 +3,8 @@ import { getForumCategories } from '@/lib/data';
 import { Card, SectionHeading } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
 
+export const revalidate = 3600;
+
 export const metadata = { title: 'Community Forum', description: 'Discuss perfumes, dupes, sellers and Indian perfumery with fellow enthusiasts.' };
 
 const ICONS: Record<string, string> = {
@@ -14,9 +16,9 @@ export default async function ForumPage() {
   const cats = await getForumCategories();
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Forum' }]} />
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Community' }]} />
       <SectionHeading kicker="Community" title="Discussion forum" />
-      <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">Talk dupes, sellers, layering and Indian perfumery.</p>
+      <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">Talk dupes, sellers, layering and Indian perfumery with fellow enthusiasts.</p>
       <div className="grid gap-4 md:grid-cols-2">
         {cats.map((c) => {
           const postCount = c.topics.reduce((n, t) => n + t.posts.length, 0);
