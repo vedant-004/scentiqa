@@ -71,5 +71,5 @@ export const HOUSE_TYPE_LABEL: Record<string, string> = {
 
 export const CONC_LABEL: Record<string, string> = {
   edp: 'Eau de Parfum', edt: 'Eau de Toilette', extrait: 'Extrait de Parfum',
-  parfum: 'Parfum', oil: 'Perfume Oil', attar: 'Attar',
+  parfum: 'Parfum', oil: 'Perfume Oil', attar: 'Attar', edc: 'Eau de Cologne',
 };
