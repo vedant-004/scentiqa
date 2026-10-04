@@ -24,6 +24,9 @@ function mapPerfume(r: Record<string, unknown>): Perfume {
     topNotes: (r.top_notes as string[]) ?? [], heartNotes: (r.heart_notes as string[]) ?? [],
     baseNotes: (r.base_notes as string[]) ?? [],
     inspiredBy: null, claimedAccuracy: null, isDupe: false,
+    // Every row in the live database is catalog data, never synthetic demo content.
+    real: true,
+    observedAt: typeof r.created_at === 'string' ? r.created_at.slice(0, 10) : null,
   };
 }
 
