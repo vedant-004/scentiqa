@@ -135,6 +135,7 @@ export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocu
 const NAV = [
   { href: '/find-alternative', label: 'Find a Dupe' },
   { href: '/house/house-of-em5', label: 'Houses' },
+  { href: '/sellers', label: 'Sellers' },
   { href: '/news', label: 'News' },
   { href: '/forum', label: 'Community' },
   { href: '/awards/2026', label: 'Awards' },
@@ -299,7 +300,7 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
   const cols: Array<{ h: string; links: Array<[string, string]> }> = [
     { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['Compare', '/compare'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Hidden Gems', '/hidden-gems'], ['Recommendations', '/finder']] },
     { h: 'Community', links: [['Forum', '/forum'], ['Awards 2026', '/awards/2026'], ['Giveaways', '/giveaways'], ['News', '/news'], ['Member spotlight', '/member/arjun_sniffs']] },
-    { h: 'Trust', links: [['Our methodology', '/methodology'], ['Climate protocol', '/climate-protocol'], ['Trust charter', '/trust-charter'], ['Spot fakes', '/fake-guide'], ['About', '/about']] },
+    { h: 'Trust', links: [['Our methodology', '/methodology'], ['Climate protocol', '/climate-protocol'], ['Trust charter', '/trust-charter'], ['Verified sellers', '/sellers'], ['Spot fakes', '/fake-guide'], ['About', '/about']] },
     { h: 'Company', links: [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy'], ['Log in', '/login']] },
   ];
   return (
