@@ -71,8 +71,8 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
     .select('*, dupe:dupe_perfume_id(*, houses(slug, name))')
     .eq('original_perfume_id', p.id);
   const dupes = (rels ?? []).map(mapDupe).sort((a, b) => (b.similarityScore ?? -1) - (a.similarityScore ?? -1));
-  const { data: pricesR } = await c.from('verified_prices').select('*, sellers(*)').eq('perfume_id', p.id);
-  const prices: PriceEntry[] = (pricesR ?? []).map((pr: Record<string, unknown>) => ({
+  const { data: pricesR } = await c.from('prices').select('*, sellers(*)').eq('perfume_id', p.id);
+  const prices: PriceEntry[] = (pricesR ?? []).filter((pr: Record<string, unknown>) => pr.sellers).map((pr: Record<string, unknown>) => ({
     id: pr.id as string, perfumeSlug: slug, sellerSlug: (pr.sellers as Record<string, string>).slug,
     priceInr: pr.price_inr as number, mrpInr: (pr.mrp_inr as number) ?? null,
     sizeMl: (pr.size_ml as number) ?? null, inStock: pr.in_stock as boolean, url: (pr.product_url as string) ?? null,
@@ -83,7 +83,7 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
       name: (pr.sellers as Record<string, string>).name,
       website: ((pr.sellers as Record<string, string>).website_url as string) ?? null,
       type: ((pr.sellers as Record<string, string>).seller_type as Seller['type']) ?? 'marketplace',
-      verified: true,
+      verified: !!((pr.sellers as Record<string, unknown>).verified),
     },
   })).sort((a, b) => a.priceInr - b.priceInr);
   const { data: clim } = await c.from('climate_scores').select('*').eq('perfume_id', p.id).single();

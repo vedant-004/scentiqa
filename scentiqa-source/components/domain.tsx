@@ -403,7 +403,14 @@ export function PriceTable({ prices }: { prices: PriceEntry[] }) {
             <p className="text-[15px] font-bold">{inr(pr.priceInr)}</p>
             {pr.mrpInr && pr.mrpInr > pr.priceInr && <p className="text-xs text-stone-400 line-through">{inr(pr.mrpInr)}</p>}
           </div>
-          <Button size="sm" disabled={!pr.inStock}>{pr.inStock ? 'Buy' : 'Notify me'}</Button>
+          {pr.url ? (
+            <a href={pr.url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex h-8 items-center justify-center gap-2 rounded-lg bg-gold-600 px-3 text-[13px] font-semibold tracking-tight text-white shadow-sm transition-all duration-200 select-none hover:bg-gold-700 hover:shadow-lift active:scale-[0.98] dark:bg-gold-500 dark:text-ink-950 dark:hover:bg-gold-400">
+              {pr.inStock ? 'Buy' : 'View'}
+            </a>
+          ) : (
+            <Button size="sm" disabled={!pr.inStock}>{pr.inStock ? 'Buy' : 'Notify me'}</Button>
+          )}
         </div>
       ))}
       <p className="border-t border-stone-200/70 bg-cream-100/50 px-4 py-2.5 text-[11px] text-stone-400 dark:border-ink-700/50 dark:bg-white/[0.02]">
