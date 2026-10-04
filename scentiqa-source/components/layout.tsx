@@ -136,6 +136,7 @@ const NAV = [
   { href: '/find-alternative', label: 'Find a Dupe' },
   { href: '/houses', label: 'Houses' },
   { href: '/notes', label: 'Notes' },
+  { href: '/accords', label: 'Accords' },
   { href: '/sellers', label: 'Sellers' },
   { href: '/news', label: 'News' },
   { href: '/forum', label: 'Community' },

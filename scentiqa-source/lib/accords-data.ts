@@ -1,0 +1,79 @@
+// Accords encyclopedia data: maps each accord to the perfumes built around it.
+import { cache } from 'react';
+import { getSupabaseServer } from './supabase';
+
+export interface AccordPerfumeRef {
+  id: string; slug: string; name: string; house: string;
+  bottleImage: string | null; ratingAvg: number; strength: number;
+}
+
+export interface AccordIndexData {
+  /** normalized accord name -> perfumes sorted by strength desc */
+  index: Map<string, AccordPerfumeRef[]>;
+  /** perfume id -> set of normalized accord names */
+  perfumeAccords: Map<string, Set<string>>;
+  /** normalized accord name -> display name (first-seen casing) */
+  displayNames: Map<string, string>;
+  /** normalized accord name -> average strength */
+  avgStrength: Map<string, number>;
+}
+
+const norm = (s: string) => s.toLowerCase().trim();
+export const accordSlug = (name: string) => norm(name).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+export const getAccordIndex = cache(async (): Promise<AccordIndexData> => {
+  const data: AccordIndexData = { index: new Map(), perfumeAccords: new Map(), displayNames: new Map(), avgStrength: new Map() };
+  const c = getSupabaseServer();
+  if (!c) return data;
+  const strengthSum = new Map<string, number>();
+  const strengthN = new Map<string, number>();
+  let offset = 0;
+  for (;;) {
+    const { data: rows } = await c.from('perfumes')
+      .select('id,slug,name,bottle_image_url,rating_avg,accords,houses(name)')
+      .range(offset, offset + 999);
+    if (!rows?.length) break;
+    for (const p of rows as Record<string, unknown>[]) {
+      const seen = new Set<string>();
+      for (const a of (p.accords as Array<{ name?: string; strength?: number }>) ?? []) {
+        const raw = String(a?.name ?? '').trim();
+        const k = norm(raw);
+        if (!k) continue;
+        const strength = Number(a?.strength ?? 0);
+        if (!data.displayNames.has(k)) data.displayNames.set(k, raw);
+        const ref: AccordPerfumeRef = {
+          id: p.id as string, slug: p.slug as string, name: p.name as string,
+          house: ((p.houses as Record<string, string> | null)?.name) ?? '',
+          bottleImage: (p.bottle_image_url as string) ?? null,
+          ratingAvg: Number(p.rating_avg ?? 0), strength,
+        };
+        const arr = data.index.get(k) ?? [];
+        arr.push(ref);
+        data.index.set(k, arr);
+        seen.add(k);
+        strengthSum.set(k, (strengthSum.get(k) ?? 0) + strength);
+        strengthN.set(k, (strengthN.get(k) ?? 0) + 1);
+      }
+      data.perfumeAccords.set(p.id as string, seen);
+    }
+    offset += 1000;
+    if (rows.length < 1000) break;
+  }
+  for (const [k, arr] of data.index) {
+    arr.sort((a, b) => b.strength - a.strength || b.ratingAvg - a.ratingAvg);
+    data.avgStrength.set(k, Math.round((strengthSum.get(k) ?? 0) / Math.max(1, strengthN.get(k) ?? 1)));
+  }
+  return data;
+});
+
+export async function getAccordDescription(slug: string): Promise<string | null> {
+  try {
+    const { promises: fs } = await import('fs');
+    const { default: path } = await import('path');
+    const raw = await fs.readFile(path.join(process.cwd(), 'public', 'ml', 'accord-descriptions.json'), 'utf8');
+    const map = JSON.parse(raw) as Record<string, string>;
+    return map[slug] ?? null;
+  } catch {
+    return null;
+  }
+}

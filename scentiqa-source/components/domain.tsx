@@ -8,6 +8,8 @@ import { Badge, Button, Card } from './ui';
 import { noteSlug } from '@/lib/note-slugs';
 import type { DupeEntry, House, PriceEntry } from '@/lib/types';
 
+const accordSlug = (name: string) => name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
 /* ---------- ScoreBadge: counts up when scrolled into view ---------- */
 export function ScoreBadge({ score, size = 'md', label }: { score: number | null; size?: 'sm' | 'md' | 'lg'; label?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -149,7 +151,9 @@ export function AccordBars({ accords, compact = false }: { accords: Array<{ name
     <div className={cn('flex flex-col', compact ? 'gap-1.5' : 'gap-2.5')}>
       {sorted.map((a) => (
         <div key={a.name} className="flex items-center gap-3">
-          <span className={cn('shrink-0 font-medium text-stone-600 dark:text-stone-300', compact ? 'w-24 truncate text-xs' : 'w-28 truncate text-sm')}>{a.name}</span>
+          <Link href={`/accords/${accordSlug(a.name)}`} className="shrink-0 font-medium text-stone-600 transition hover:text-gold-700 dark:text-stone-300 dark:hover:text-gold-300">
+            <span className={cn(compact ? 'w-24 truncate text-xs' : 'w-28 truncate text-sm')}>{a.name}</span>
+          </Link>
           <div className="h-2 flex-1 overflow-hidden rounded-full bg-stone-200/70 dark:bg-ink-700/70">
             <div className="h-full rounded-full transition-all duration-700" style={{ width: `${a.strength}%`, background: accordColor(a.name) }} />
           </div>

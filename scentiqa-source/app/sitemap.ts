@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getAllPerfumeSlugs(), getAllHouseSlugs(), getAllArticleSlugs(),
   ]);
   const staticRoutes = [
-    '', '/find-alternative', '/compare', '/finder', '/notes', '/search/notes', '/search/accords',
+    '', '/find-alternative', '/compare', '/finder', '/notes', '/accords', '/search/notes', '/search/accords',
     '/forum', '/news', '/giveaways', '/awards/2026',
     '/methodology', '/climate-protocol', '/trust-charter', '/fake-guide',
     '/about', '/contact', '/terms', '/privacy',
