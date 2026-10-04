@@ -21,6 +21,19 @@ export interface AccordIndexData {
 const norm = (s: string) => s.toLowerCase().trim();
 export const accordSlug = (name: string) => norm(name).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
+/** Parse accord strength: numeric as-is; legacy label strings mapped to numbers. */
+function parseStrength(v: unknown): number {
+  if (typeof v === 'number' && Number.isFinite(v)) return v;
+  const s = String(v ?? '').toLowerCase().trim();
+  const map: Record<string, number> = {
+    'very high': 90, 'high': 75, 'moderate': 55, 'medium': 55,
+    'low': 35, 'very low': 20, 'trace': 10,
+  };
+  if (s in map) return map[s];
+  const n = Number(s);
+  return Number.isFinite(n) ? n : 0;
+}
+
 export const getAccordIndex = cache(async (): Promise<AccordIndexData> => {
   const data: AccordIndexData = { index: new Map(), perfumeAccords: new Map(), displayNames: new Map(), avgStrength: new Map() };
   const c = getSupabaseServer();
@@ -39,7 +52,7 @@ export const getAccordIndex = cache(async (): Promise<AccordIndexData> => {
         const raw = String(a?.name ?? '').trim();
         const k = norm(raw);
         if (!k) continue;
-        const strength = Number(a?.strength ?? 0);
+        const strength = parseStrength(a?.strength);
         if (!data.displayNames.has(k)) data.displayNames.set(k, raw);
         const ref: AccordPerfumeRef = {
           id: p.id as string, slug: p.slug as string, name: p.name as string,
