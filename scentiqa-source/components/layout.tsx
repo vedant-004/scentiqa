@@ -153,14 +153,16 @@ function AuthButton() {
   useEffect(() => { setOpen(false); }, [pathname]);
   useEffect(() => {
     if (!open) return;
-    const close = (e: MouseEvent) => {
+    const close = (e: MouseEvent | TouchEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
     };
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('mousedown', close);
+    document.addEventListener('touchstart', close, { passive: true });
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('mousedown', close);
+      document.removeEventListener('touchstart', close);
       document.removeEventListener('keydown', onKey);
     };
   }, [open]);
@@ -192,7 +194,7 @@ function AuthButton() {
   }
   const initial = (user.email ?? 'S')[0].toUpperCase();
   return (
-    <div ref={menuRef} className="relative ml-1 hidden sm:block">
+    <div ref={menuRef} className="relative ml-1 block">
       <button onClick={() => setOpen((o) => !o)} aria-label="Account" aria-expanded={open}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform active:scale-95">
         {initial}
@@ -225,14 +227,16 @@ function MobileMenu() {
   useEffect(() => { setOpen(false); }, [pathname]);
   useEffect(() => {
     if (!open) return;
-    const close = (e: MouseEvent) => {
+    const close = (e: MouseEvent | TouchEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
     };
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('mousedown', close);
+    document.addEventListener('touchstart', close, { passive: true });
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('mousedown', close);
+      document.removeEventListener('touchstart', close);
       document.removeEventListener('keydown', onKey);
     };
   }, [open]);
