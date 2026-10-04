@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { accordColor, cn, HOUSE_TYPE_LABEL, inr, scoreClasses, scoreTone } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, Button, Card } from './ui';
+import { noteSlug } from '@/lib/note-slugs';
 import type { DupeEntry, House, PriceEntry } from '@/lib/types';
 
 /* ---------- ScoreBadge: counts up when scrolled into view ---------- */
@@ -176,10 +177,15 @@ export function NotePyramid({ top, heart, base }: { top: string[]; heart: string
         ))}
       </div>
       <div className="flex flex-wrap gap-2" key={tab}>
-        {rows[tab].map((n, i) => (
-          <span key={n} className="animate-[fade-up_0.3s_ease] rounded-full border border-stone-200 bg-cream-100 px-3.5 py-1.5 text-sm font-medium text-stone-700 dark:border-ink-700 dark:bg-ink-800 dark:text-stone-200"
-            style={{ animationDelay: `${i * 0.04}s` }}>{n}</span>
-        ))}
+        {rows[tab].map((n, i) => {
+          const slug = noteSlug(n);
+          const cls = 'animate-[fade-up_0.3s_ease] rounded-full border border-stone-200 bg-cream-100 px-3.5 py-1.5 text-sm font-medium text-stone-700 transition hover:border-gold-400 hover:text-gold-700 dark:border-ink-700 dark:bg-ink-800 dark:text-stone-200 dark:hover:text-gold-300';
+          return slug ? (
+            <Link key={n} href={`/notes/${slug}`} className={cls} style={{ animationDelay: `${i * 0.04}s` }}>{n}</Link>
+          ) : (
+            <span key={n} className={cls} style={{ animationDelay: `${i * 0.04}s` }}>{n}</span>
+          );
+        })}
       </div>
     </div>
   );
