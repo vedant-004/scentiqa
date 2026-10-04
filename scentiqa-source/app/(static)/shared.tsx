@@ -84,9 +84,20 @@ export function AboutPage() {
   return (
     <DocPage title="About Scentiqa" kicker="Our story">
       <p>Scentiqa is India&rsquo;s independent perfume encyclopedia and dupe lab. We started with a simple frustration: the world&rsquo;s best fragrance databases ignore Indian weather, Indian sellers, and the incredible Indian houses making world-class alternatives at honest prices.</p>
-      <p>So we built the database we wanted — every perfume rated for Indian heat, every dupe blind-tested by our panel, every price in rupees from sellers we&rsquo;ve actually verified.</p>
+      <p>So we built the database we wanted — every perfume rated for Indian heat, every dupe compared openly, every price in rupees from sellers we&rsquo;ve actually verified.</p>
       <h2>What we do</h2>
-      <p>Lab-tested similarity scores. Climate performance panels. Verified INR pricing. Honest house profiles from Kannauj attar makers to modern clone houses. And a community of Indian fragrance lovers keeping everyone honest.</p>
+      <p><strong>The encyclopedia.</strong> Thousands of perfumes — designer, niche, Middle Eastern, and Indian — with notes, accords, and honest descriptions, all in one place.</p>
+      <p><strong>The dupe finder.</strong> Type any expensive perfume and find affordable Indian alternatives, with similarity scores and side-by-side comparisons.</p>
+      <p><strong>AI discovery.</strong> An AI scent quiz, accord finder, and note search that learn what your nose likes and point you to your next favourite.</p>
+      <p><strong>Verified sellers.</strong> A curated list of authentic Indian sellers — official brand stores only. No grey market, no fakes, ever.</p>
+      <p><strong>The community.</strong> Reviews, forums, and awards driven by Indian fragrance lovers — from first-time buyers to seasoned collectors.</p>
+      <h2>Our aim</h2>
+      <p>Fragrance in India has a trust problem: inflated claims, fake bottles, and advice written for European weather. Our aim is simple — <strong>make it safe and joyful for every Indian to explore perfume</strong>.</p>
+      <p>That means honest data over marketing, Indian prices over dollar conversions, and heat-tested opinions over air-conditioned reviews. Whether you spend ₹500 or ₹50,000, you deserve to know exactly what you&rsquo;re getting.</p>
+      <h2>How we stay independent</h2>
+      <p>We don&rsquo;t sell perfume ourselves, and sellers can&rsquo;t pay for better scores. When we get something wrong, the community corrects us — publicly. That&rsquo;s the deal.</p>
+      <h2>Join us</h2>
+      <p>Create a free account to vote, build your wardrobe, and review what you own. Or just <Link href="/contact">say hello</Link> — we read everything.</p>
     </DocPage>
   );
 }

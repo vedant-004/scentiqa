@@ -139,6 +139,7 @@ const NAV = [
   { href: '/news', label: 'News' },
   { href: '/forum', label: 'Community' },
   { href: '/awards/2026', label: 'Awards' },
+  { href: '/about', label: 'About' },
 ];
 /* ---------- Auth-aware nav button ---------- */
 function AuthButton() {
