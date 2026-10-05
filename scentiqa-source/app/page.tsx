@@ -268,7 +268,7 @@ export default async function Home() {
         </section>
 
         <p className="pb-4 text-center text-sm text-stone-400">
-          {stats.perfumes} perfumes · {stats.houses} houses · {stats.reviews.toLocaleString('en-IN')}+ reviews · {stats.members.toLocaleString('en-IN')}+ members
+          {stats.perfumes.toLocaleString('en-IN')} perfumes · {stats.houses} houses{stats.reviews > 0 ? ` · ${stats.reviews.toLocaleString('en-IN')} reviews` : ''}{stats.members > 0 ? ` · ${stats.members.toLocaleString('en-IN')} members` : ''}
         </p>
       </div>
     </div>

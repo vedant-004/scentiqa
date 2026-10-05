@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/ui';
 import { Breadcrumbs, PerfumeCard } from '@/components';
 
 export const metadata = {
-  title: 'Hidden Gems — Underrated Clone Fragrances | Scentiqa',
+  title: 'Hidden Gems — Underrated Clone Fragrances',
   description: 'Discover hidden gem clone fragrances — exceptional quality dupes that fly under the radar.',
 };
 

@@ -5,7 +5,7 @@ import { HouseCard } from '@/components';
 import { Breadcrumbs } from '@/components';
 
 export const metadata = {
-  title: 'All Perfume Houses | Scentiqa',
+  title: 'All Perfume Houses',
   description: 'Browse all perfume houses on Scentiqa — Indian clone brands, designer houses, niche perfumeries.',
 };
 
