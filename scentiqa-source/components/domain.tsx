@@ -6,7 +6,7 @@ import { accordColor, cn, HOUSE_TYPE_LABEL, inr, scoreClasses, scoreTone } from 
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, Button, Card } from './ui';
 import { noteSlug } from '@/lib/note-slugs';
-import type { DupeEntry, House, PriceEntry } from '@/lib/types';
+import type { Accord, DupeEntry, House, PriceEntry } from '@/lib/types';
 
 const accordSlug = (name: string) => name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
@@ -110,30 +110,42 @@ export function MeterBar({ label, value, hint }: { label: string; value: number;
   );
 }
 
-/* ---------- AccordStack — Fragrantica-style stacked accord bars ---------- */
-export function AccordStack({ accords }: { accords: Array<{ name: string; strength: number }> }) {
-  const sorted = [...accords].sort((a, b) => b.strength - a.strength).slice(0, 10);
-  const max = Math.max(1, ...sorted.map((a) => a.strength));
-  if (sorted.length === 0) {
+/* ---------- AccordStack — honest ranked accord list ----------
+ * Order is the verified prominence order (most prominent first).
+ * We never render invented strength numbers or proportional bars. */
+export function AccordStack({ accords }: { accords: Accord[] }) {
+  const list = accords.filter((a) => a && a.name).slice(0, 10);
+  if (list.length === 0) {
     return <p className="py-6 text-center text-sm text-stone-500 dark:text-stone-400">No accord data yet — be the first to suggest accords for this perfume.</p>;
   }
   return (
     <div>
-      <div className="flex flex-col gap-[3px]" role="img" aria-label={`Main accords: ${sorted.map((a) => `${a.name} ${a.strength}`).join(', ')}`}>
-        {sorted.map((a) => (
-          <Link
-            key={a.name}
-            href="/search/accords"
-            title={`${a.name} — search perfumes with this accord`}
-            className="group relative h-9 shrink-0 overflow-hidden rounded-l-md rounded-r-xl transition-transform duration-200 hover:scale-[1.015] sm:h-10"
-            style={{ width: `${Math.max(22, Math.round((a.strength / max) * 100))}%`, background: accordColor(a.name) }}
-          >
-            <span className="absolute inset-0 flex items-center justify-center px-3 text-[13px] font-bold tracking-wide text-stone-950/85 transition-transform group-hover:scale-105 sm:text-sm">
-              {a.name.toLowerCase()}
-            </span>
-          </Link>
+      <ol className="flex flex-col gap-2" aria-label={`Main accords in prominence order: ${list.map((a) => a.name).join(', ')}`}>
+        {list.map((a, i) => (
+          <li key={`${a.name}-${i}`}>
+            <Link
+              href="/search/accords"
+              title={`${a.name} — search perfumes with this accord`}
+              className="group flex items-center gap-3 rounded-xl border border-stone-200/70 bg-white/60 px-3 py-2 transition hover:-translate-y-px hover:border-gold-400/60 hover:shadow-card dark:border-white/10 dark:bg-white/[0.03]"
+            >
+              <span
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[13px] font-black text-white shadow-sm transition-transform group-hover:scale-110"
+                style={{ background: accordColor(a.name) }}
+                aria-hidden="true"
+              >
+                {i + 1}
+              </span>
+              <span className="text-sm font-semibold capitalize text-stone-800 dark:text-stone-100">{a.name}</span>
+              {i === 0 && (
+                <span className="ml-auto shrink-0 rounded-full bg-gold-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gold-700 dark:text-gold-300">
+                  Most prominent
+                </span>
+              )}
+            </Link>
+          </li>
         ))}
-      </div>
+      </ol>
+      <p className="mt-3 text-xs text-stone-500 dark:text-stone-400">Ranked by prominence — strongest first, weakest last.</p>
       <div className="mt-4 text-center sm:text-left">
         <Link href="/search/accords" className="inline-flex items-center gap-1.5 rounded-xl bg-gold-600/15 px-4 py-2 text-sm font-bold text-gold-700 transition-colors hover:bg-gold-600/25 dark:text-gold-300">
           Search by accords
@@ -144,20 +156,23 @@ export function AccordStack({ accords }: { accords: Array<{ name: string; streng
   );
 }
 
-/* ---------- AccordBars ---------- */
-export function AccordBars({ accords, compact = false }: { accords: Array<{ name: string; strength: number }>; compact?: boolean }) {
-  const sorted = [...accords].sort((a, b) => b.strength - a.strength).slice(0, compact ? 4 : 8);
+/* ---------- AccordBars — compact honest ranked list (compare view) ---------- */
+export function AccordBars({ accords, compact = false }: { accords: Accord[]; compact?: boolean }) {
+  const list = accords.filter((a) => a && a.name).slice(0, compact ? 4 : 8);
   return (
     <div className={cn('flex flex-col', compact ? 'gap-1.5' : 'gap-2.5')}>
-      {sorted.map((a) => (
-        <div key={a.name} className="flex items-center gap-3">
-          <Link href={`/accords/${accordSlug(a.name)}`} className="shrink-0 font-medium text-stone-600 transition hover:text-gold-700 dark:text-stone-300 dark:hover:text-gold-300">
-            <span className={cn(compact ? 'w-24 truncate text-xs' : 'w-28 truncate text-sm')}>{a.name}</span>
+      {list.map((a, i) => (
+        <div key={`${a.name}-${i}`} className="flex items-center gap-2.5">
+          <span
+            className={cn('flex shrink-0 items-center justify-center rounded-full font-black text-white', compact ? 'h-5 w-5 text-[10px]' : 'h-6 w-6 text-xs')}
+            style={{ background: accordColor(a.name) }}
+            aria-hidden="true"
+          >
+            {i + 1}
+          </span>
+          <Link href={`/accords/${accordSlug(a.name)}`} className="truncate font-medium capitalize text-stone-600 transition hover:text-gold-700 dark:text-stone-300 dark:hover:text-gold-300">
+            <span className={cn(compact ? 'text-xs' : 'text-sm')}>{a.name}</span>
           </Link>
-          <div className="h-2 flex-1 overflow-hidden rounded-full bg-stone-200/70 dark:bg-ink-700/70">
-            <div className="h-full rounded-full transition-all duration-700" style={{ width: `${a.strength}%`, background: accordColor(a.name) }} />
-          </div>
-          {!compact && <span className="w-8 text-right text-xs font-semibold text-stone-500">{a.strength}</span>}
         </div>
       ))}
     </div>

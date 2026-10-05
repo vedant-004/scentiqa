@@ -16,16 +16,20 @@ const str = (fd: FormData, k: string) => { const v = fd.get(k); return typeof v 
 const numOrNull = (fd: FormData, k: string) => { const v = str(fd, k); if (!v) return null; const n = Number(v); return Number.isFinite(n) ? n : null; };
 const listOf = (s: string) => s.split(',').map((x) => x.trim()).filter(Boolean);
 
-function parseAccords(raw: string): { name: string; strength: number }[] {
+function parseAccords(raw: string): { name: string; strength: number | null }[] {
   const t = raw.trim();
   if (!t) return [];
   try {
     const j = JSON.parse(t);
-    if (Array.isArray(j)) return j.map((a) => ({ name: String(a.name ?? a.accord ?? ''), strength: Number(a.strength ?? a.value ?? 50) })).filter((a) => a.name);
+    if (Array.isArray(j)) return j.map((a) => {
+      const s = Number(a.strength ?? a.value);
+      return { name: String(a.name ?? a.accord ?? ''), strength: Number.isFinite(s) ? s : null };
+    }).filter((a) => a.name);
   } catch { /* fall through to line format */ }
   return t.split('\n').map((l) => l.trim()).filter(Boolean).map((l) => {
     const m = l.match(/^(.+?)\s*[:=]\s*(\d+)\s*$/);
-    return m ? { name: m[1].trim(), strength: Math.min(100, Math.max(0, Number(m[2]))) } : { name: l, strength: 50 };
+    // No strength given = null (never invented). Order of lines = prominence order.
+    return m ? { name: m[1].trim(), strength: Math.min(100, Math.max(0, Number(m[2]))) } : { name: l, strength: null };
   });
 }
 

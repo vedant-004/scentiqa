@@ -12,7 +12,10 @@ export interface House {
   needsVerification?: boolean;
 }
 
-export interface Accord { name: string; strength: number }
+/** An accord in prominence order. `strength` is null unless a source published
+ *  a real numeric value — we never invent or estimate it. Order of the array
+ *  is the verified prominence order (most prominent first). */
+export interface Accord { name: string; strength: number | null }
 
 export interface Perfume {
   id: string; slug: string; name: string; houseSlug: string; house: string;

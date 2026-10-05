@@ -46,7 +46,7 @@ function sharedScore(a: Perfume, b: Perfume): number {
   let s = 0;
   for (const ac of a.accords) {
     const m = b.accords.find((x) => x.name.toLowerCase() === ac.name.toLowerCase());
-    if (m) s += (ac.strength * m.strength) / 100;
+    if (m) s += ((ac.strength ?? 0) * (m.strength ?? 0)) / 100;
   }
   const notesA = new Set([...a.topNotes, ...a.heartNotes, ...a.baseNotes].map((n) => n.toLowerCase()));
   const notesB = new Set([...b.topNotes, ...b.heartNotes, ...b.baseNotes].map((n) => n.toLowerCase()));
@@ -268,7 +268,7 @@ export async function findByAccords(
     let score = 0; let matched = 0;
     for (const w of wanted) {
       const a = p.accords.find((x) => x.name.toLowerCase() === w.name.toLowerCase());
-      if (a && a.strength >= w.min) { matched++; score += a.strength; }
+      if (a && (a.strength ?? 0) >= w.min) { matched++; score += a.strength ?? 0; }
     }
     if (matched === 0) continue;
     list.push({ ...p, matchScore: Math.round((score / wanted.length) * (matched / wanted.length)) });
@@ -291,7 +291,7 @@ export async function finderRecommendations(likedSlugs: string[]): Promise<Array
         if (rel?.testedBy === 'lab') { s += 60; reasons.push(`Lab-tested ${(rel.similarityScore ?? 0)}% match to ${l.name}`); }
       }
       if (!reasons.length) {
-        const top = p.accords.slice().sort((a, b) => b.strength - a.strength)[0];
+        const top = p.accords.slice().sort((a, b) => (b.strength ?? 0) - (a.strength ?? 0))[0];
         if (top) reasons.push(`Strong ${top.name.toLowerCase()} character like your picks`);
       }
       return { p, s, reason: reasons[0] ?? 'Similar character to your picks' };

@@ -28,7 +28,9 @@ function PerfumeRow({ p }: { p: AccordPerfumeRef }) {
         <p className="truncate text-xs text-stone-400">{p.house}</p>
       </div>
       <div className="ml-auto flex shrink-0 items-center gap-2">
-        <span className="rounded-full bg-gold-500/15 px-2 py-0.5 text-xs font-bold text-gold-700 dark:text-gold-300">{p.strength}</span>
+        {p.strength !== null && (
+          <span className="rounded-full bg-gold-500/15 px-2 py-0.5 text-xs font-bold text-gold-700 dark:text-gold-300">{p.strength}</span>
+        )}
         {p.ratingAvg > 0 && <StarRating value={p.ratingAvg} size={13} />}
       </div>
     </Link>
@@ -68,8 +70,8 @@ export default async function AccordDetail({ params }: { params: Promise<{ slug:
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {[
           [`${refs.length.toLocaleString('en-IN')}`, 'perfumes carry this accord'],
-          [`${data.avgStrength.get(key) ?? 0}/100`, 'average strength'],
-          [`${refs.filter((r) => r.strength >= 70).length.toLocaleString('en-IN')}`, 'where it dominates (70+)'],
+          [data.avgStrength.has(key) ? `${data.avgStrength.get(key)}/100` : '—', 'average strength'],
+          [`${refs.filter((r) => (r.strength ?? 0) >= 70).length.toLocaleString('en-IN')}`, 'where it dominates (70+)'],
         ].map(([v, l]) => (
           <Card key={l} className="p-4 text-center">
             <p className="font-display text-2xl font-bold capitalize">{v}</p>
@@ -92,8 +94,8 @@ export default async function AccordDetail({ params }: { params: Promise<{ slug:
         </div>
       )}
 
-      <h2 className="mb-1 font-display text-xl font-bold">Loudest {displayName} perfumes</h2>
-      <p className="mb-4 text-xs text-stone-400">Ranked by accord strength in the composition</p>
+      <h2 className="mb-1 font-display text-xl font-bold">Top {displayName} perfumes</h2>
+      <p className="mb-4 text-xs text-stone-400">Ranked by prominence in the composition, then community rating</p>
       <div className="grid gap-2 sm:grid-cols-2">
         {refs.slice(0, 24).map((p) => <PerfumeRow key={p.id} p={p} />)}
       </div>

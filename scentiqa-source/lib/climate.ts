@@ -36,7 +36,7 @@ export async function getClimateStats(perfumeId: string): Promise<ClimateStats |
  * light citrus/aquatic/fresh accords evaporate fast. Derived from accord
  * prominence — no invented data, clearly labeled as predicted.
  */
-export function predictHeatScore(accords: Array<{ name: string; strength: number }>): number {
+export function predictHeatScore(accords: Array<{ name: string; strength: number | null }>): number {
   if (!accords.length) return 50;
   // Accord heat-affinity weights (higher = better heat survival)
   const HEAT_AFFINITY: Record<string, number> = {

@@ -19,7 +19,7 @@ const SHELVES: Array<[string, string]> = [
 interface JoinedPerfume {
   id: string; slug: string; name: string;
   bottle_image_url: string | null; rating_avg: number; lowest_price_inr: number | null;
-  accords?: Array<{ name: string; strength: number }>;
+  accords?: Array<{ name: string; strength: number | null }>;
   houses: { name: string } | Array<{ name: string }> | null;
 }
 

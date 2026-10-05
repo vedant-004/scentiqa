@@ -24,7 +24,7 @@ export function PerfumeForm({ initial, action, submitLabel }: {
   const g = (k: string, d = '') => (initial?.[k] as string) ?? d;
   const arr = (k: string) => ((initial?.[k] as string[]) ?? []).join(', ');
   const accords = initial?.accords
-    ? (initial.accords as { name: string; strength: number }[]).map((a) => `${a.name}: ${a.strength}`).join('\n')
+    ? (initial.accords as { name: string; strength: number | null }[]).map((a) => (a.strength === null || a.strength === undefined ? a.name : `${a.name}: ${a.strength}`)).join('\n')
     : '';
   return (
     <form action={action} className="grid gap-4 rounded-2xl border border-stone-200/70 bg-white/60 p-6 dark:border-white/10 dark:bg-white/[0.03]">
@@ -56,8 +56,8 @@ export function PerfumeForm({ initial, action, submitLabel }: {
         <Field label="Heart notes" hint="comma separated"><input name="heart_notes" defaultValue={arr('heart_notes')} className={inputCls} /></Field>
         <Field label="Base notes" hint="comma separated"><input name="base_notes" defaultValue={arr('base_notes')} className={inputCls} /></Field>
       </div>
-      <Field label="Accords" hint='One per line as "name: strength" (0–100), or JSON'>
-        <textarea name="accords" rows={4} defaultValue={accords} className={inputCls} placeholder={'woody: 80\nmusky: 65'} />
+      <Field label="Accords" hint='One per line: "name" or "name: strength" (0–100, only if a source published it). Order = prominence.'>
+        <textarea name="accords" rows={4} defaultValue={accords} className={inputCls} placeholder={'woody\nmusky: 65'} />
       </Field>
       <Field label="Scent story"><textarea name="scent_story" rows={6} defaultValue={g('scent_story')} className={inputCls} /></Field>
       <div className="flex flex-wrap gap-6">

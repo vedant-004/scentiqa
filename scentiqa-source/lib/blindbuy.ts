@@ -85,7 +85,7 @@ export async function computeBlindBuyScore(perfumeId: string): Promise<BlindBuyS
   factors.push({ key: 'consensus', label: 'Community consensus', points: consensusPts, detail: consensusDetail });
 
   // 4. Accord familiarity (0-25): familiar families = safer
-  const accords = (p.accords as Array<{ name: string; strength: number }> | null) ?? [];
+  const accords = (p.accords as Array<{ name: string; strength: number | null }> | null) ?? [];
   let famWeight = 0, totalWeight = 0;
   for (const a of accords) {
     const s = a.strength || 50;

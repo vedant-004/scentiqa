@@ -226,7 +226,7 @@ export interface PerfumeRow {
   gender: string; concentration: string; description: string;
   bottleImage: string | null;
   topNotes: string[]; heartNotes: string[]; baseNotes: string[];
-  accords: { name: string; strength: number }[];
+  accords: { name: string; strength: number | null }[];
   lowestPriceInr: number | null;
   ratingAvg: number; ratingCount: number;
 }

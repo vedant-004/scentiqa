@@ -10,7 +10,7 @@ import { loadML, isMLReady, accordMatchScore } from '@/lib/ml/engine';
 interface P {
   id: string; slug: string; name: string; house: string; gender: string; isDupe: boolean;
   ratingAvg: number; lowestPriceInr: number | null;
-  accords: Array<{ name: string; strength: number }>; summerRating: number;
+  accords: Array<{ name: string; strength: number | null }>; summerRating: number;
 }
 
 const ACCORDS = ['Ambery', 'Woody', 'Citrus', 'Fresh', 'Floral', 'Sweet', 'Gourmand', 'Smoky', 'Musky', 'Warm Spicy', 'Tobacco', 'Aquatic', 'Green', 'Leathery'];
@@ -49,7 +49,7 @@ export default function AccordsPage() {
         let score = 0, matched = 0;
         for (const k of keys) {
           const a = p.accords.find((x) => x.name.toLowerCase() === k.toLowerCase());
-          if (a && a.strength >= wanted[k]) { matched++; score += a.strength; }
+          if (a && (a.strength ?? 0) >= wanted[k]) { matched++; score += a.strength ?? 0; }
         }
         return { p, match: matched ? Math.round((score / keys.length) * (matched / keys.length)) : 0, matched, explanation: [] as string[] };
       })

@@ -4,7 +4,7 @@ import { getSupabaseServer } from './supabase';
 
 export interface AccordPerfumeRef {
   id: string; slug: string; name: string; house: string;
-  bottleImage: string | null; ratingAvg: number; strength: number;
+  bottleImage: string | null; ratingAvg: number; strength: number | null;
 }
 
 export interface AccordIndexData {
@@ -21,17 +21,19 @@ export interface AccordIndexData {
 const norm = (s: string) => s.toLowerCase().trim();
 export const accordSlug = (name: string) => norm(name).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
-/** Parse accord strength: numeric as-is; legacy label strings mapped to numbers. */
-function parseStrength(v: unknown): number {
+/** Parse accord strength: numeric as-is; legacy label strings mapped to numbers.
+ *  Returns null when no strength data exists — we never invent a value. */
+function parseStrength(v: unknown): number | null {
   if (typeof v === 'number' && Number.isFinite(v)) return v;
   const s = String(v ?? '').toLowerCase().trim();
+  if (!s) return null;
   const map: Record<string, number> = {
     'very high': 90, 'high': 75, 'moderate': 55, 'medium': 55,
     'low': 35, 'very low': 20, 'trace': 10,
   };
   if (s in map) return map[s];
   const n = Number(s);
-  return Number.isFinite(n) ? n : 0;
+  return Number.isFinite(n) ? n : null;
 }
 
 export const getAccordIndex = cache(async (): Promise<AccordIndexData> => {
@@ -48,7 +50,7 @@ export const getAccordIndex = cache(async (): Promise<AccordIndexData> => {
     if (!rows?.length) break;
     for (const p of rows as Record<string, unknown>[]) {
       const seen = new Set<string>();
-      for (const a of (p.accords as Array<{ name?: string; strength?: number }>) ?? []) {
+      for (const a of (p.accords as Array<{ name?: string; strength?: number | null }>) ?? []) {
         const raw = String(a?.name ?? '').trim();
         const k = norm(raw);
         if (!k) continue;
@@ -64,8 +66,11 @@ export const getAccordIndex = cache(async (): Promise<AccordIndexData> => {
         arr.push(ref);
         data.index.set(k, arr);
         seen.add(k);
-        strengthSum.set(k, (strengthSum.get(k) ?? 0) + strength);
-        strengthN.set(k, (strengthN.get(k) ?? 0) + 1);
+        // Average only over perfumes that actually have strength data.
+        if (strength !== null) {
+          strengthSum.set(k, (strengthSum.get(k) ?? 0) + strength);
+          strengthN.set(k, (strengthN.get(k) ?? 0) + 1);
+        }
       }
       data.perfumeAccords.set(p.id as string, seen);
     }
@@ -73,8 +78,10 @@ export const getAccordIndex = cache(async (): Promise<AccordIndexData> => {
     if (rows.length < 1000) break;
   }
   for (const [k, arr] of data.index) {
-    arr.sort((a, b) => b.strength - a.strength || b.ratingAvg - a.ratingAvg);
-    data.avgStrength.set(k, Math.round((strengthSum.get(k) ?? 0) / Math.max(1, strengthN.get(k) ?? 1)));
+    // Known strengths first (desc), then rating as tiebreak; unknown strengths last.
+    arr.sort((a, b) => (b.strength ?? -1) - (a.strength ?? -1) || b.ratingAvg - a.ratingAvg);
+    const n = strengthN.get(k) ?? 0;
+    if (n > 0) data.avgStrength.set(k, Math.round((strengthSum.get(k) ?? 0) / n));
   }
   return data;
 });

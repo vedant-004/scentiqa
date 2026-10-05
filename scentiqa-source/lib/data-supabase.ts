@@ -12,16 +12,19 @@ const sb = () => getSupabaseServer();
 
 function normalizeAccords(raw: unknown): Perfume['accords'] {
   if (!Array.isArray(raw)) return [];
-  return raw.map((a, i) => {
-    if (typeof a === 'string') return { name: a, strength: 80 - (i * 5) };
-    if (a && typeof a === 'object' && typeof (a as Record<string, unknown>).name === 'string') {
-      return {
-        name: (a as Record<string, unknown>).name as string,
-        strength: Number((a as Record<string, unknown>).strength ?? 50),
-      };
+  return raw.map((a) => {
+    // Plain name: prominence order preserved, no invented strength.
+    if (typeof a === 'string') return { name: a, strength: null };
+    if (a && typeof a === 'object') {
+      const r = a as Record<string, unknown>;
+      if (typeof r.name !== 'string' || !r.name.trim()) return null;
+      const s = r.strength;
+      // Keep only source-published numeric strengths (legacy catalog rows);
+      // never invent: no rank-derived defaults, no 50 fallback.
+      return { name: r.name, strength: typeof s === 'number' && Number.isFinite(s) ? s : null };
     }
     return null;
-  }).filter((a): a is { name: string; strength: number } => a !== null && !!a.name);
+  }).filter((a): a is { name: string; strength: number | null } => a !== null);
 }
 
 function mapPerfume(r: Record<string, unknown>): Perfume {
