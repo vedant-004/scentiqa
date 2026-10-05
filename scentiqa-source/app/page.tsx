@@ -12,8 +12,9 @@ import type { Perfume } from '@/lib/types';
 
 export const metadata = { title: 'Scentiqa — India\u2019s Perfume Encyclopedia & Dupe Finder' };
 
-// Revalidate daily so "Perfume of the Day" actually rotates.
-export const revalidate = 86400;
+// Revalidate hourly so catalog stats (perfume/house counts) stay fresh
+// after data imports; "Perfume of the Day" still rotates daily via its own logic.
+export const revalidate = 3600;
 
 function Rail({ children }: { children: React.ReactNode }) {
   return (
