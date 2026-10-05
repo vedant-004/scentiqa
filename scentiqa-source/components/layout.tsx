@@ -268,7 +268,7 @@ export function MobileBottomNav() {
     </Link>
   );
   return (
-    <nav aria-label="Mobile" className="fixed inset-x-0 bottom-0 z-[60] border-t border-stone-200/80 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl dark:border-ink-700/60 dark:bg-ink-950/95 md:hidden">
+    <nav aria-label="Mobile" className="scentiqa-site-mobile-nav fixed inset-x-0 bottom-0 z-[60] border-t border-stone-200/80 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl dark:border-ink-700/60 dark:bg-ink-950/95 md:hidden">
       <div className="flex items-end justify-around px-2 pb-2 pt-1.5">
         {item('/', 'Home', 'M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5', pathname === '/')}
         {item('/news', 'Discover', 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm10 17-3.5-3.5', pathname.startsWith('/news') || pathname.startsWith('/search'))}
@@ -295,7 +295,7 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
     { h: 'Company', links: [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy'], ['Log in', '/login']] },
   ];
   return (
-    <footer className="mt-20 border-t border-stone-200/70 bg-white/60 dark:border-ink-700/50 dark:bg-ink-900/40">
+    <footer className="scentiqa-site-footer mt-20 border-t border-stone-200/70 bg-white/60 dark:border-ink-700/50 dark:bg-ink-900/40">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {cols.map((c) => (

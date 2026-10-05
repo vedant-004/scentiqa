@@ -2,7 +2,7 @@
 // with precision-ranked, explainable recommendations.
 // Mobile-first, premium feel.
 'use client';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { cn, inr } from '@/lib/utils';
 import { Button, Card, Skeleton } from '@/components';
@@ -364,6 +364,9 @@ const DEFAULTS: Answers = {
   budget: 5000, gender: 'any', clonePref: 'any', concentration: [],
 };
 
+// useLayoutEffect on client (no paint flash), useEffect on server (no SSR warning)
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
 function encodeAnswers(a: Answers): string {
   return btoa(unescape(encodeURIComponent(JSON.stringify(a))));
 }
@@ -385,6 +388,14 @@ export default function FinderPage() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
+
+  // Wizard takeover: hide the global footer + site mobile bottom nav while the
+  // user is answering (or while analyzing). Shown again on the results page.
+  // Runs before paint so there is no flash of the footer under the wizard bar.
+  useIsomorphicLayoutEffect(() => {
+    document.body.dataset.finderPhase = phase;
+    return () => { delete document.body.dataset.finderPhase; };
+  }, [phase]);
 
   // Load notes + houses
   useEffect(() => {
@@ -852,15 +863,21 @@ export default function FinderPage() {
         )}
       </div>
 
-      {/* sticky bottom nav */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-white/95 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur dark:border-ink-700 dark:bg-ink-950/95">
+      {/* sticky bottom nav — the only bottom chrome during the wizard.
+          z-[70] keeps it above page content; the site footer + mobile nav
+          are hidden via body[data-finder-phase] while answering. */}
+      <div className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-white/95 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur dark:border-ink-700 dark:bg-ink-950/95">
         <div className="mx-auto flex max-w-xl items-center gap-3 px-4">
           {step > 0 ? (
-            <Button variant="outline" onClick={goBack} className="shrink-0">← Back</Button>
+            <Button variant="outline" onClick={goBack} className="min-h-[52px] shrink-0 touch-manipulation px-5">← Back</Button>
           ) : (
-            <Link href="/" className="shrink-0"><Button variant="outline">✕</Button></Link>
+            <Link href="/" className="shrink-0" aria-label="Exit finder"><Button variant="outline" className="min-h-[52px] touch-manipulation px-5">✕</Button></Link>
           )}
-          <Button onClick={goNext} disabled={!canContinue} className="flex-1 py-3 text-[16px]">
+          <Button
+            onClick={goNext}
+            disabled={!canContinue}
+            className="min-h-[52px] flex-1 touch-manipulation py-3 text-[16px] shadow-lg shadow-violet-600/30 transition-all duration-150 active:scale-[0.97] disabled:shadow-none"
+          >
             {step === STEPS.length - 1
               ? '✨ Find my scents'
               : s.skippable
