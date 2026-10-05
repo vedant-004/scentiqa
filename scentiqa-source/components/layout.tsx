@@ -25,8 +25,8 @@ export function DemoPill() {
 export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
     <Link href="/" className="wordmark flex items-center gap-2.5" aria-label="Scentiqa home">
-      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-gold-400 via-gold-600 to-gold-700 font-display text-lg font-bold text-white shadow-card">
-        S
+      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-gold-400 via-gold-600 to-gold-700 text-white shadow-card">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2v4M14 2v4M10 2h4" strokeLinecap="round" /><rect x="9" y="6" width="6" height="3" rx="0.5" /><path d="M7 10h10l1 9.2a1.8 1.8 0 0 1-1.8 1.8H7.8A1.8 1.8 0 0 1 6 19.2L7 10z" strokeLinejoin="round" /><path d="M7.5 14h9" strokeLinecap="round" opacity="0.6" /></svg>
       </span>
       {!compact && (
         <span className="font-display text-[22px] font-bold tracking-tight text-stone-900 dark:text-white">
