@@ -48,7 +48,7 @@ export default async function AccountPage() {
   await sb.rpc('ensure_public_user');
   const uid = user.id;
 
-  const [wardrobeR, votesR, reviewsR, alertsR] = await Promise.all([
+  const [wardrobeR, votesR, reviewsR, alertsR, diaryR] = await Promise.all([
     sb.from('wardrobe_items')
       .select('shelf, created_at, perfumes(id, slug, name, bottle_image_url, rating_avg, lowest_price_inr, accords, houses(name))')
       .eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
@@ -61,6 +61,9 @@ export default async function AccountPage() {
     sb.from('price_alerts')
       .select('id, target_price_inr, created_at, perfumes(slug, name, bottle_image_url, lowest_price_inr)')
       .eq('user_id', uid).order('created_at', { ascending: false }).limit(50),
+    sb.from('wear_logs')
+      .select('worn_on')
+      .eq('user_id', uid).order('worn_on', { ascending: false }).limit(400),
   ]);
 
   const wardrobe = ((wardrobeR.data ?? []) as unknown as Array<{ shelf: string; perfumes: JoinedPerfume | JoinedPerfume[] | null }>)
@@ -85,6 +88,21 @@ export default async function AccountPage() {
     });
   });
   const topAccords = [...accordCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
+
+  // Wear streak: consecutive days with a diary log
+  const wearDays = new Set(((diaryR.data ?? []) as Array<{ worn_on: string }>).map((r) => r.worn_on));
+  let streak = 0;
+  {
+    const today = new Date();
+    for (let offset = 0; offset < 400; offset++) {
+      const d = new Date(today);
+      d.setDate(d.getDate() - offset);
+      const key = d.toISOString().slice(0, 10);
+      if (wearDays.has(key)) { streak++; continue; }
+      if (offset === 0) continue;
+      break;
+    }
+  }
 
   const provider = (user.app_metadata?.provider as string) || 'email';
   const initial = (user.email ?? 'S')[0].toUpperCase();
@@ -117,11 +135,15 @@ export default async function AccountPage() {
           </div>
           <SignOutButton />
         </div>
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
           <Stat value={wardrobe.length} label="In wardrobe" />
           <Stat value={votes.length} label="Votes cast" />
           <Stat value={reviews.length} label="Reviews" />
           <Stat value={alerts.length} label="Price alerts" />
+          <Link href="/diary" className="rounded-2xl border border-gold-500/40 bg-gold-600/10 p-4 text-center transition hover:bg-gold-600/20">
+            <p className="font-display text-2xl font-bold text-gold-700 dark:text-gold-300">{streak} 🔥</p>
+            <p className="mt-1 text-xs font-semibold text-stone-500 dark:text-stone-400">Day streak · Diary →</p>
+          </Link>
         </div>
       </Card>
 
