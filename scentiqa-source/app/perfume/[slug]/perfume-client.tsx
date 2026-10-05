@@ -251,3 +251,118 @@ export function StickyCTA({ perfume, bestDupePrice }: { perfume: Perfume; bestDu
     </div>
   );
 }
+
+/* ---------- India Heat Performance (Climate Lab) ---------- */
+interface ClimateData {
+  test_count: number; avg_hours: number | null; avg_projection: number | null;
+  avg_sweat: number | null; avg_temp_c: number | null; heat_score: number | null;
+  ai_predicted: boolean; verdict: string | null;
+}
+
+export function ClimateSection({ slug, perfumeId, perfumeName }: { slug: string; perfumeId: string; perfumeName: string }) {
+  const { toast } = useToast();
+  const { user, loading } = useAuth();
+  const [data, setData] = useState<ClimateData | null>(null);
+  const [showForm, setShowForm] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [form, setForm] = useState({ temp_c: 35, humidity_pct: 70, hours_lasted: 6, projection: 3, sweat_survival: 3, city: '', notes: '' });
+
+  useEffect(() => {
+    fetch(`/api/perfumes/${slug}/climate`).then((r) => r.json()).then(setData).catch(() => {});
+  }, [slug]);
+
+  const submit = async () => {
+    if (!user) { toast('Sign in to log a wear test', 'info'); return; }
+    setBusy(true);
+    try {
+      const r = await fetch('/api/wear-tests', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ perfume_id: perfumeId, ...form }),
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error ?? 'Failed');
+      toast('Wear test logged — thanks for contributing data!', 'ok');
+      setShowForm(false);
+      const updated = await fetch(`/api/perfumes/${slug}/climate`).then((r) => r.json()).catch(() => null);
+      if (updated) setData(updated);
+    } catch (e) {
+      toast(e instanceof Error ? e.message : 'Failed to log test', 'err');
+    } finally { setBusy(false); }
+  };
+
+  if (!data) return null;
+
+  return (
+    <div>
+      <div className="flex items-center gap-4">
+        <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 font-display text-2xl font-bold text-white shadow-card">
+          {data.heat_score ?? '—'}
+        </div>
+        <div className="min-w-0">
+          <p className="font-display text-lg font-bold">{data.verdict ?? 'No data yet'}</p>
+          <p className="text-xs text-stone-500 dark:text-stone-400">
+            {data.ai_predicted
+              ? '🤖 AI predicted from accord profile — log a test to verify'
+              : `☀️ ${data.test_count} community test${data.test_count === 1 ? '' : 's'}`}
+            {data.avg_temp_c !== null && !data.ai_predicted && ` · avg ${Math.round(data.avg_temp_c)}°C`}
+          </p>
+          {!data.ai_predicted && data.avg_hours !== null && (
+            <p className="mt-1 text-xs text-stone-500">
+              Lasts ~{data.avg_hours.toFixed(1)}h · projection {data.avg_projection?.toFixed(1)}/5
+            </p>
+          )}
+        </div>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <Link href="/climate" className="text-xs font-bold text-gold-700 hover:underline dark:text-gold-300">
+          Heat leaderboard →
+        </Link>
+        <span className="text-stone-300">·</span>
+        {loading ? null : user ? (
+          <button onClick={() => setShowForm((s) => !s)} className="text-xs font-bold text-gold-700 hover:underline dark:text-gold-300">
+            {showForm ? 'Cancel' : '🌡️ Log a wear test'}
+          </button>
+        ) : (
+          <Link href="/login" className="text-xs font-bold text-gold-700 hover:underline dark:text-gold-300">
+            Sign in to log a test
+          </Link>
+        )}
+      </div>
+
+      {showForm && (
+        <div className="mt-4 space-y-3 rounded-2xl border border-stone-200/70 bg-stone-50/60 p-4 dark:border-ink-700 dark:bg-white/[0.02]">
+          <div className="grid grid-cols-2 gap-3">
+            <label className="text-xs font-bold">Temp (°C): {form.temp_c}°
+              <input type="range" min={20} max={48} value={form.temp_c}
+                onChange={(e) => setForm({ ...form, temp_c: Number(e.target.value) })} className="mt-1 w-full" />
+            </label>
+            <label className="text-xs font-bold">Humidity: {form.humidity_pct}%
+              <input type="range" min={10} max={100} value={form.humidity_pct}
+                onChange={(e) => setForm({ ...form, humidity_pct: Number(e.target.value) })} className="mt-1 w-full" />
+            </label>
+            <label className="text-xs font-bold">Hours lasted: {form.hours_lasted}h
+              <input type="range" min={0} max={16} step={0.5} value={form.hours_lasted}
+                onChange={(e) => setForm({ ...form, hours_lasted: Number(e.target.value) })} className="mt-1 w-full" />
+            </label>
+            <label className="text-xs font-bold">Projection: {form.projection}/5
+              <input type="range" min={1} max={5} value={form.projection}
+                onChange={(e) => setForm({ ...form, projection: Number(e.target.value) })} className="mt-1 w-full" />
+            </label>
+            <label className="text-xs font-bold">Sweat survival: {form.sweat_survival}/5
+              <input type="range" min={1} max={5} value={form.sweat_survival}
+                onChange={(e) => setForm({ ...form, sweat_survival: Number(e.target.value) })} className="mt-1 w-full" />
+            </label>
+            <label className="text-xs font-bold">City
+              <Input value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} placeholder="e.g. Chennai" className="mt-1" />
+            </label>
+          </div>
+          <Textarea value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })}
+            placeholder="Any notes? (setting, sprays, occasion…)" rows={2} />
+          <Button onClick={submit} disabled={busy} size="sm">
+            {busy ? 'Logging…' : `Log test for ${perfumeName}`}
+          </Button>
+        </div>
+      )}
+    </div>
+  );
+}

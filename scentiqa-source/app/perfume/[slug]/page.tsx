@@ -11,7 +11,7 @@ import {
 } from '@/components';
 import {
   MeterVote, PriceAlertButton, ReportPriceButton, ReviewModal, SentimentVote,
-  StickyCTA, SuggestDupe, WardrobeButtons,
+  StickyCTA, SuggestDupe, WardrobeButtons, ClimateSection,
 } from './perfume-client';
 import { AIPredictions } from './ai-predictions';
 
@@ -187,6 +187,14 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               action={<PriceAlertButton perfumeId={p.id} currentPrice={p.lowestPriceInr} />} />
             <PriceTable prices={p.prices} />
             <ReportPriceButton perfumeId={p.id} />
+          </section>
+
+          {/* ===== 5b. CLIMATE PERFORMANCE LAB ===== */}
+          <section>
+            <SectionHeading kicker="Climate Performance Lab" title="India Heat Performance" />
+            <Card className="p-5">
+              <ClimateSection slug={slug} perfumeId={p.id} perfumeName={p.name} />
+            </Card>
           </section>
 
           {/* ===== 6. COMMUNITY VOTES ===== */}
