@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {
-  getArticles, getDupeOfWeek, getLatestLaunches, getLatestReviews,
+  getArticles, getDupeOfWeek, getHeroContent, getLatestLaunches, getLatestReviews,
   getPerfumeOfTheDay, getPriceDrops, getStats, getTrending,
 } from '@/lib/data';
 import { inr } from '@/lib/utils';
@@ -25,9 +25,9 @@ function Rail({ children }: { children: React.ReactNode }) {
 
 export default async function Home() {
   const demo = !isSupabaseConfigured();
-  const [trending, latest, drops, dupeWeek, potd, articles, reviews, stats] = await Promise.all([
+  const [trending, latest, drops, dupeWeek, potd, articles, reviews, stats, hero] = await Promise.all([
     getTrending(), getLatestLaunches(), getPriceDrops(), getDupeOfWeek(), getPerfumeOfTheDay(),
-    getArticles(3), getLatestReviews(3), getStats(),
+    getArticles(3), getLatestReviews(3), getStats(), getHeroContent(),
   ]);
 
   const savePct = dupeWeek && dupeWeek.original.lowestPriceInr && dupeWeek.dupe.lowestPrice?.priceInr
@@ -51,11 +51,15 @@ export default async function Home() {
               India&rsquo;s independent fragrance lab
             </p>
             <h1 className="font-display text-[42px] font-bold leading-[1.05] tracking-tight text-stone-900 dark:text-white sm:text-6xl">
-              Find a cheaper alternative<br className="hidden sm:block" /> to <span className="bg-gradient-to-r from-gold-600 to-gold-400 bg-clip-text text-transparent">any perfume.</span>
+              {hero.headline ? hero.headline : (
+                <>Find a cheaper alternative<br className="hidden sm:block" /> to <span className="bg-gradient-to-r from-gold-600 to-gold-400 bg-clip-text text-transparent">any perfume.</span></>
+              )}
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-stone-600 dark:text-stone-300">
-              Lab-tested dupe similarity scores, INR prices from verified Indian sellers,
-              and performance ratings for Indian heat — not marketing claims.
+              {hero.subheadline ? hero.subheadline : (
+                <>Lab-tested dupe similarity scores, INR prices from verified Indian sellers,
+                and performance ratings for Indian heat — not marketing claims.</>
+              )}
             </p>
             <div className="mx-auto mt-8 max-w-xl"><SearchBar big autoFocus={false} /></div>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm">

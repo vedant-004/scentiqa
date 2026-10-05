@@ -167,6 +167,19 @@ export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   return eligible[dayOfYear % eligible.length] ?? null;
 }
 
+// Demo mode has no site_settings table — always return defaults.
+export async function getSiteSetting(_key: string): Promise<Record<string, unknown> | null> {
+  return null;
+}
+
+export async function getHeroContent(): Promise<{ headline: string; subheadline: string }> {
+  return { headline: '', subheadline: '' };
+}
+
+export async function getBanner(): Promise<{ text: string; link: string; enabled: boolean }> {
+  return { text: '', link: '', enabled: false };
+}
+
 export async function getLatestReviews(limit = 6): Promise<Array<Review & { perfume: Perfume }>> {
   return [...seed.reviews]
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt))

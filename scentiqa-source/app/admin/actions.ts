@@ -33,7 +33,7 @@ function slugify(s: string) {
   return s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80) || 'perfume';
 }
 
-async function uniqueSlug(base: string, table: 'perfumes' | 'houses' | 'sellers') {
+async function uniqueSlug(base: string, table: 'perfumes' | 'houses' | 'sellers' | 'articles') {
   const c = db();
   let slug = base, i = 2;
   for (;;) {
@@ -253,4 +253,70 @@ export async function uploadPhoto(fd: FormData): Promise<string> {
   const { data } = c.storage.from('product-images').getPublicUrl(path);
   revalidatePath('/admin/perfumes');
   return data.publicUrl;
+}
+
+/* ---------------- site settings ---------------- */
+
+export async function updateSiteSetting(key: string, value: Record<string, unknown>) {
+  await requireAdmin();
+  const { error } = await db().from('site_settings').upsert(
+    { key, value, updated_at: new Date().toISOString() },
+    { onConflict: 'key' },
+  );
+  if (error) throw new Error(error.message);
+  revalidatePath('/');
+  revalidatePath('/admin/settings');
+}
+
+/* ---------------- articles ---------------- */
+
+const ARTICLE_CATEGORIES = ['news', 'guide', 'review', 'interview', 'announcement'];
+
+export async function createArticle(fd: FormData) {
+  await requireAdmin();
+  const c = db();
+  const title = str(fd, 'title');
+  if (!title) throw new Error('Title is required');
+  const slug = await uniqueSlug(slugify(title), 'articles');
+  const id = `art_${slug}`.slice(0, 60);
+  const cat = str(fd, 'category');
+  const { error } = await c.from('articles').insert({
+    id, slug, title,
+    category: ARTICLE_CATEGORIES.includes(cat) ? cat : 'news',
+    excerpt: str(fd, 'excerpt'),
+    body: str(fd, 'body'),
+    author_name: str(fd, 'author_name') || 'Scentiqa Editorial',
+    is_published: fd.get('is_published') === 'on',
+    published_at: str(fd, 'published_at') || new Date().toISOString(),
+  });
+  if (error) throw new Error(error.message);
+  revalidatePath('/admin/articles');
+  revalidatePath('/news');
+  redirect(`/admin/articles/${id}`);
+}
+
+export async function updateArticle(id: string, fd: FormData) {
+  await requireAdmin();
+  const c = db();
+  const cat = str(fd, 'category');
+  const { error } = await c.from('articles').update({
+    title: str(fd, 'title'),
+    category: ARTICLE_CATEGORIES.includes(cat) ? cat : 'news',
+    excerpt: str(fd, 'excerpt'),
+    body: str(fd, 'body'),
+    author_name: str(fd, 'author_name') || 'Scentiqa Editorial',
+    is_published: fd.get('is_published') === 'on',
+    published_at: str(fd, 'published_at') || new Date().toISOString(),
+  }).eq('id', id);
+  if (error) throw new Error(error.message);
+  revalidatePath('/admin/articles');
+  revalidatePath('/news');
+}
+
+export async function deleteArticle(id: string) {
+  await requireAdmin();
+  const { error } = await db().from('articles').delete().eq('id', id);
+  if (error) throw new Error(error.message);
+  revalidatePath('/admin/articles');
+  revalidatePath('/news');
 }

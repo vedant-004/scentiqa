@@ -163,6 +163,14 @@ export async function getDupeOfWeek(): Promise<{ original: Perfume; dupe: DupeEn
 /** Deterministic "perfume of the day": rotates daily through perfumes that have a photo, accords, notes and a description. */
 export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   const c = sb(); if (!c) return null;
+  // Admin override first: if potd_override.perfume_slug is set, feature that perfume.
+  const override = await getSiteSetting('potd_override');
+  const slug = typeof override?.perfume_slug === 'string' ? override.perfume_slug : '';
+  if (slug) {
+    const { data } = await c.from('perfumes').select('*, houses(slug, name)').eq('slug', slug).maybeSingle();
+    if (data) return mapPerfume(data as Record<string, unknown>);
+    // Fall through to auto-rotation if the slug no longer exists.
+  }
   // Candidate pool: rows with a photo and description. Accords/notes completeness
   // is verified in code because empty arrays can't be filtered reliably in PostgREST.
   const { data } = await c.from('perfumes')
@@ -188,6 +196,35 @@ export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   const pick = pool[dayOfYear % pool.length] as { slug: string };
   const { data: full } = await c.from('perfumes').select('*, houses(slug, name)').eq('slug', pick.slug).single();
   return full ? mapPerfume(full as Record<string, unknown>) : null;
+}
+
+/** Raw site_settings row value (jsonb) or null when unset / table missing. */
+export async function getSiteSetting(key: string): Promise<Record<string, unknown> | null> {
+  const c = sb(); if (!c) return null;
+  try {
+    const { data } = await c.from('site_settings').select('value').eq('key', key).maybeSingle();
+    const v = (data as { value?: unknown } | null)?.value;
+    return v && typeof v === 'object' ? (v as Record<string, unknown>) : null;
+  } catch {
+    return null; // table not migrated yet — behave as unset
+  }
+}
+
+export async function getHeroContent(): Promise<{ headline: string; subheadline: string }> {
+  const s = await getSiteSetting('hero');
+  return {
+    headline: typeof s?.headline === 'string' ? s.headline : '',
+    subheadline: typeof s?.subheadline === 'string' ? s.subheadline : '',
+  };
+}
+
+export async function getBanner(): Promise<{ text: string; link: string; enabled: boolean }> {
+  const s = await getSiteSetting('banner');
+  return {
+    text: typeof s?.text === 'string' ? s.text : '',
+    link: typeof s?.link === 'string' ? s.link : '',
+    enabled: s?.enabled === true,
+  };
 }
 
 export async function getLatestReviews(limit = 6): Promise<Array<Review & { perfume: Perfume }>> {
