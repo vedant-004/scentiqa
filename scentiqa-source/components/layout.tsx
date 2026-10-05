@@ -272,12 +272,12 @@ export function MobileBottomNav() {
       <div className="flex items-end justify-around px-2 pb-2 pt-1.5">
         {item('/', 'Home', 'M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5', pathname === '/')}
         {item('/news', 'Discover', 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm10 17-3.5-3.5', pathname.startsWith('/news') || pathname.startsWith('/search'))}
-        <Link href="/find-alternative" aria-label="Find a dupe"
+        <Link href="/finder" aria-label="AI Scent Finder"
           className="flex flex-col items-center gap-1 px-3 text-[10px] font-bold text-gold-700 dark:text-gold-300">
           <span className="-mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-400 to-gold-700 text-white shadow-glow transition-transform active:scale-95">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 3h6M10 3v5.5L4.8 18a2.4 2.4 0 0 0 2.1 3.5h10.2a2.4 2.4 0 0 0 2.1-3.5L14 8.5V3" strokeLinecap="round" strokeLinejoin="round" /><path d="M7.5 14h9" strokeLinecap="round" /></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" strokeLinecap="round" strokeLinejoin="round" /><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </span>
-          Find Dupe
+          AI Finder
         </Link>
         {item('/member/arjun_sniffs', 'Wardrobe', 'M4 7h16M4 7v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2', pathname.startsWith('/member'))}
         {item(user ? '/account' : '/login', user ? 'Account' : 'Profile', 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 8a7 7 0 0 1 14 0', pathname.startsWith('/account') || (!user && pathname.startsWith('/login')))}
