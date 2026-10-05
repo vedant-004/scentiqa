@@ -33,13 +33,15 @@ const ACCORD_HUE: Record<string, [number, number]> = {
   incense: [25, 40], aromatic: [160, 50], chypre: [120, 40], fougere: [150, 45],
 };
 
-export function accordColor(name: string, dark = false): string {
+export function accordColor(name: string | null | undefined, dark = false): string {
+  if (!name || typeof name !== 'string') return `hsl(36 60% ${dark ? 62 : 42}% / 0.9)`;
   const key = Object.keys(ACCORD_HUE).find((k) => name.toLowerCase().includes(k));
   const [h, s] = key ? ACCORD_HUE[key] : [36, 60];
   return `hsl(${h} ${s}% ${dark ? 62 : 42}% / 0.9)`;
 }
 
-export function accordBg(name: string, dark = false): string {
+export function accordBg(name: string | null | undefined, dark = false): string {
+  if (!name || typeof name !== 'string') return `hsl(36 60% ${dark ? 30 : 88}% / 0.55)`;
   const key = Object.keys(ACCORD_HUE).find((k) => name.toLowerCase().includes(k));
   const [h, s] = key ? ACCORD_HUE[key] : [36, 60];
   return `hsl(${h} ${s}% ${dark ? 30 : 88}% / 0.55)`;

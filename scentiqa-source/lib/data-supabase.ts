@@ -10,6 +10,20 @@ import type { HouseFull } from './data-demo';
 
 const sb = () => getSupabaseServer();
 
+function normalizeAccords(raw: unknown): Perfume['accords'] {
+  if (!Array.isArray(raw)) return [];
+  return raw.map((a, i) => {
+    if (typeof a === 'string') return { name: a, strength: 80 - (i * 5) };
+    if (a && typeof a === 'object' && typeof (a as Record<string, unknown>).name === 'string') {
+      return {
+        name: (a as Record<string, unknown>).name as string,
+        strength: Number((a as Record<string, unknown>).strength ?? 50),
+      };
+    }
+    return null;
+  }).filter((a): a is { name: string; strength: number } => a !== null && !!a.name);
+}
+
 function mapPerfume(r: Record<string, unknown>): Perfume {
   return {
     id: r.id as string, slug: r.slug as string, name: r.name as string,
@@ -20,7 +34,7 @@ function mapPerfume(r: Record<string, unknown>): Perfume {
     bottleImage: (r.bottle_image_url as string) ?? null,
     ratingAvg: Number(r.rating_avg ?? 0), ratingCount: Number(r.rating_count ?? 0),
     lowestPriceInr: (r.lowest_price_inr as number) ?? null,
-    accords: (r.accords as Perfume['accords']) ?? [],
+    accords: normalizeAccords(r.accords),
     topNotes: (r.top_notes as string[]) ?? [], heartNotes: (r.heart_notes as string[]) ?? [],
     baseNotes: (r.base_notes as string[]) ?? [],
     scentStory: (r.scent_story as string) ?? null,
