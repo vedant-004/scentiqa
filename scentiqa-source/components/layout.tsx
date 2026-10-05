@@ -161,12 +161,13 @@ function AuthButton() {
   const doSignOut = async () => {
     if (busy) return;
     setBusy(true);
-    setOpen(false);
     try {
       await signOut();
     } finally {
       // Mirror the working /account sign-out: always land home and refresh,
       // even if the remote sign-out call failed.
+      // Note: don't call setOpen(false) here — the menu unmounts when user
+      // becomes null, and closing it early can interrupt the click event.
       router.push('/');
       router.refresh();
       setBusy(false);
@@ -190,14 +191,19 @@ function AuthButton() {
       </button>
       {open && (
         <>
-          {/* Transparent backdrop: clicking anywhere outside closes the menu. Bulletproof - no event timing issues. */}
+          {/* Transparent backdrop: clicking anywhere outside closes the menu.
+              Must be BELOW the menu in stacking order (z-40 vs z-[70]) so
+              clicks on menu items reach the items, not the backdrop. */}
           <div className="fixed inset-0 z-40 cursor-default" onClick={() => setOpen(false)} aria-hidden="true" />
-          <div role="menu" className="absolute right-0 z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-[#2a2a30] dark:bg-[#141416]">
+          <div role="menu" className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-[#2a2a30] dark:bg-[#141416]">
             <div className="border-b border-stone-100 px-4 py-3 dark:border-[#2a2a30]">
               <p className="truncate text-sm font-semibold text-stone-900 dark:text-white">{user.email}</p>
               <p className="text-xs text-stone-400">Signed in{user.app_metadata?.provider === 'google' ? ' with Google' : ''}</p>
             </div>
-            <Link href="/account" onClick={() => setOpen(false)} role="menuitem"
+            {/* Note: no onClick to close here — the pathname-change effect closes
+                the menu after navigation. Closing it in onClick can unmount the
+                Link before Next.js processes the navigation. */}
+            <Link href="/account" role="menuitem"
               className="flex w-full items-center gap-3 px-4 py-3.5 text-left text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-stone-400"><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></svg>
               My dashboard
@@ -234,7 +240,7 @@ function MobileMenu() {
       {open && (
         <>
           <div className="fixed inset-0 z-40 cursor-default" onClick={() => setOpen(false)} aria-hidden="true" />
-          <div className="absolute right-0 z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-[#2a2a30] dark:bg-[#141416]">
+          <div className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-[#2a2a30] dark:bg-[#141416]">
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} onClick={() => setOpen(false)}
               className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
