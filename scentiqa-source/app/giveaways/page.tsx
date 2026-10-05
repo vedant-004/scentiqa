@@ -35,7 +35,7 @@ export default function GiveawaysPage() {
       <Card className="mt-4 p-6 opacity-75">
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-stone-400">Ended</p>
         <h2 className="mt-1 font-display text-xl font-bold">September Blind Test Kit</h2>
-        <p className="mt-2 text-sm text-stone-500 dark:text-stone-400">Won by @mumbai_nose, @deodorant_slayer and 3 others. Results thread in the forum.</p>
+        <p className="mt-2 text-sm text-stone-500 dark:text-stone-400">Winners have been notified. Results will be posted in the forum.</p>
       </Card>
     </div>
   );
