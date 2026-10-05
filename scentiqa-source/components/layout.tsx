@@ -41,6 +41,7 @@ export function Wordmark({ compact = false }: { compact?: boolean }) {
 /* ---------- Autocomplete search ---------- */
 export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocus?: boolean; big?: boolean; onPick?: (slug: string, name: string) => void }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [q, setQ] = useState('');
   const [results, setResults] = useState<Perfume[]>([]);
   const [open, setOpen] = useState(false);
@@ -58,6 +59,9 @@ export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocu
     return () => document.removeEventListener('mousedown', onClick);
   }, []);
 
+  // Close dropdown on navigation (replaces the setOpen(false) in pick())
+  useEffect(() => { setOpen(false); }, [pathname]);
+
   useEffect(() => {
     if (timer.current) clearTimeout(timer.current);
     if (!q.trim()) return;
@@ -73,13 +77,15 @@ export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocu
   }, [q]);
 
   const pick = (slug: string, name: string) => {
-    if (onPick) { onPick(slug, name); setOpen(false); setQ(''); return; }
+    if (onPick) { onPick(slug, name); setQ(''); return; }
     try {
       const r = [name, ...recent.filter((x) => x !== name)].slice(0, 5);
       localStorage.setItem('scentiqa-recent', JSON.stringify(r));
       setRecent(r);
     } catch { /* noop */ }
-    setOpen(false);
+    // Don't call setOpen(false) here — it can unmount the button before
+    // the tap registers on mobile. The pathname effect below closes it.
+    setQ('');
     router.push(`/perfume/${slug}`);
   };
 
