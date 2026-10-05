@@ -1,7 +1,6 @@
 // Site chrome: header, autocomplete search, mobile bottom nav, footer.
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -175,47 +174,14 @@ function AuthButton() {
 
 /* ---------- Mobile nav drawer ---------- */
 function MobileMenu() {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
-  useEffect(() => { setOpen(false); }, [pathname]);
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open]);
+  // Simple link to a dedicated menu page — no overlay, no portal,
+  // no z-index issues. Bulletproof on mobile.
   return (
     <div className="lg:hidden">
-      <button onClick={() => setOpen(true)} aria-label="Menu" aria-expanded={open}
+      <Link href="/menu" aria-label="Menu"
         className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
-      </button>
-      {open && mounted && createPortal(
-        <div className="z-[100] flex flex-col bg-white dark:bg-stone-950" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100dvh' }}>
-          <div className="flex h-16 shrink-0 items-center justify-between border-b border-stone-200 px-4 dark:border-stone-800">
-            <span className="font-display text-xl font-bold text-stone-900 dark:text-white">Menu</span>
-            <button onClick={() => setOpen(false)} aria-label="Close menu"
-              className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 hover:bg-stone-100 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" /></svg>
-            </button>
-          </div>
-          <nav className="flex-1 overflow-y-auto px-4 py-4" aria-label="Mobile">
-            {NAV.map((n) => (
-              <Link key={n.href} href={n.href}
-                className="block rounded-xl px-4 py-4 text-lg font-semibold text-stone-800 hover:bg-stone-100 active:bg-stone-200 dark:text-stone-100 dark:hover:bg-white/10">
-                {n.label}
-              </Link>
-            ))}
-            <Link href="/contact"
-              className="mt-2 block rounded-xl border-t border-stone-200 px-4 py-4 text-lg font-semibold text-stone-500 hover:bg-stone-100 dark:border-stone-800 dark:text-stone-400 dark:hover:bg-white/10">
-              Contact
-            </Link>
-          </nav>
-        </div>,
-        document.body
-      )}
+      </Link>
     </div>
   );
 }
@@ -290,17 +256,7 @@ function StatsStrip({ stats }: { stats: { perfumes: number; houses: number; revi
 export function MobileBottomNav() {
   const pathname = usePathname();
   const { user } = useAuth();
-  const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
-  useEffect(() => {
-    const on = () => {
-      const y = window.scrollY;
-      setHidden(y > lastY.current && y > 140);
-      lastY.current = y;
-    };
-    window.addEventListener('scroll', on, { passive: true });
-    return () => window.removeEventListener('scroll', on);
-  }, []);
+  // Always visible — no hide-on-scroll (users found it confusing).
   const item = (href: string, label: string, d: string, active: boolean) => (
     <Link key={href + label} href={href} aria-label={label}
       className={cn('flex flex-col items-center gap-1 px-3 py-1 text-[10px] font-semibold transition-colors', active ? 'text-gold-600 dark:text-gold-400' : 'text-stone-400 dark:text-stone-500')}>
@@ -309,7 +265,7 @@ export function MobileBottomNav() {
     </Link>
   );
   return (
-    <nav aria-label="Mobile" className={cn('fixed inset-x-0 bottom-0 z-[60] border-t border-stone-200/80 bg-white/92 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl transition-transform duration-300 dark:border-ink-700/60 dark:bg-ink-950/92 md:hidden', hidden && 'translate-y-full')}>
+    <nav aria-label="Mobile" className="fixed inset-x-0 bottom-0 z-[60] border-t border-stone-200/80 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl dark:border-ink-700/60 dark:bg-ink-950/95 md:hidden">
       <div className="flex items-end justify-around px-2 pb-2 pt-1.5">
         {item('/', 'Home', 'M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5', pathname === '/')}
         {item('/news', 'Discover', 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm10 17-3.5-3.5', pathname.startsWith('/news') || pathname.startsWith('/search'))}
