@@ -193,7 +193,7 @@ function MobileMenu() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
       </button>
       {open && mounted && createPortal(
-        <div className="fixed inset-0 z-[100] flex flex-col bg-white dark:bg-stone-950">
+        <div className="z-[100] flex flex-col bg-white dark:bg-stone-950" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100dvh' }}>
           <div className="flex h-16 shrink-0 items-center justify-between border-b border-stone-200 px-4 dark:border-stone-800">
             <span className="font-display text-xl font-bold text-stone-900 dark:text-white">Menu</span>
             <button onClick={() => setOpen(false)} aria-label="Close menu"
