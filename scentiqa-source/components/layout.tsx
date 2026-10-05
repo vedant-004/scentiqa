@@ -168,10 +168,6 @@ function AuthButton() {
       document.removeEventListener('keydown', onKey);
     };
   }, [open]);
-  const goDashboard = () => {
-    setOpen(false);
-    router.push('/account');
-  };
   const doSignOut = async () => {
     if (busy) return;
     setBusy(true);
@@ -186,33 +182,36 @@ function AuthButton() {
       setBusy(false);
     }
   };
-  if (loading) return <span className="ml-1 hidden h-10 w-20 animate-pulse rounded-xl bg-stone-200 sm:inline-flex dark:bg-ink-700" />;
+  if (loading) return <span className="ml-1 inline-flex h-10 w-10 animate-pulse rounded-full bg-stone-200 dark:bg-ink-700" />;
   if (!user) {
     return (
-      <Link href="/login" className="ml-1 hidden h-10 items-center whitespace-nowrap rounded-xl bg-stone-900 px-4 text-sm font-semibold text-white transition-all hover:bg-stone-700 active:scale-95 sm:inline-flex dark:bg-white dark:text-stone-900 dark:hover:bg-stone-200">
-        Log in
+      <Link href="/login" aria-label="Log in"
+        className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-white transition-all hover:bg-stone-700 active:scale-95 dark:bg-white dark:text-stone-900 dark:hover:bg-stone-200">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 8a7 7 0 0 1 14 0" strokeLinecap="round" /></svg>
       </Link>
     );
   }
   const initial = (user.email ?? 'S')[0].toUpperCase();
   return (
     <div ref={menuRef} className="relative ml-1 block">
-      <button onClick={() => setOpen((o) => !o)} aria-label="Account" aria-expanded={open}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform active:scale-95">
+      <button onClick={() => setOpen((o) => !o)} aria-label="Account" aria-expanded={open} aria-haspopup="menu"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform hover:scale-105 active:scale-95">
         {initial}
       </button>
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-60 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
-          <div className="border-b border-stone-100 px-4 py-3 dark:border-ink-700">
-            <p className="truncate text-sm font-semibold">{user.email}</p>
+        <div role="menu" className="absolute right-0 z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-[#2a2a30] dark:bg-[#141416]">
+          <div className="border-b border-stone-100 px-4 py-3 dark:border-[#2a2a30]">
+            <p className="truncate text-sm font-semibold text-stone-900 dark:text-white">{user.email}</p>
             <p className="text-xs text-stone-400">Signed in{user.app_metadata?.provider === 'google' ? ' with Google' : ''}</p>
           </div>
-          <button onClick={goDashboard}
-            className="block w-full px-4 py-3 text-left text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
+          <Link href="/account" onClick={() => setOpen(false)} role="menuitem"
+            className="flex w-full items-center gap-3 px-4 py-3.5 text-left text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-stone-400"><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></svg>
             My dashboard
-          </button>
-          <button onClick={doSignOut} disabled={busy}
-            className="block w-full border-t border-stone-100 px-4 py-3 text-left text-sm font-semibold text-stone-600 hover:bg-stone-50 disabled:opacity-60 dark:border-ink-700 dark:text-stone-300 dark:hover:bg-white/5">
+          </Link>
+          <button onClick={doSignOut} disabled={busy} role="menuitem"
+            className="flex w-full items-center gap-3 border-t border-stone-100 px-4 py-3.5 text-left text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-50 disabled:opacity-60 dark:border-[#2a2a30] dark:text-stone-300 dark:hover:bg-white/5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-stone-400"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" strokeLinecap="round" strokeLinejoin="round" /></svg>
             {busy ? 'Signing out…' : 'Sign out'}
           </button>
         </div>
@@ -249,7 +248,7 @@ function MobileMenu() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
       </button>
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
+        <div className="absolute right-0 z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-[#2a2a30] dark:bg-[#141416]">
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} onClick={() => setOpen(false)}
               className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
@@ -257,7 +256,7 @@ function MobileMenu() {
             </Link>
           ))}
           <Link href="/contact" onClick={() => setOpen(false)}
-            className="block border-t border-stone-100 px-4 py-3 text-sm font-semibold text-stone-500 hover:bg-stone-50 dark:border-ink-700 dark:text-stone-400 dark:hover:bg-white/5">
+            className="block border-t border-stone-100 px-4 py-3 text-sm font-semibold text-stone-500 hover:bg-stone-50 dark:border-[#2a2a30] dark:text-stone-400 dark:hover:bg-white/5">
             Contact
           </Link>
         </div>
