@@ -252,7 +252,6 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
           <AuthButton />
         </div>
       </div>
-      <div className="border-t border-stone-200/50 px-4 py-2 md:hidden dark:border-ink-700/40"><SearchBar /></div>
       {stats && <StatsStrip stats={stats} />}
     </header>
   );
