@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 };
 
 const SECTIONS: { href: string; label: string; desc: string }[] = [
+  { href: '/finder', label: '✨ AI Scent Finder', desc: 'Answer 10 questions, get your ranked scent matches' },
   { href: '/find-alternative', label: 'Find a Dupe', desc: 'Find a cheaper alternative to any perfume' },
   { href: '/battles', label: 'Scent Battles', desc: 'Weekly head-to-head fragrance tournaments' },
   { href: '/climate', label: 'Heat Lab', desc: 'Which perfumes survive Indian summer?' },
