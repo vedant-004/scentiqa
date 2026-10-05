@@ -145,34 +145,7 @@ const NAV = [
 ];
 /* ---------- Auth-aware nav button ---------- */
 function AuthButton() {
-  const { user, loading, signOut } = useAuth();
-  const router = useRouter();
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const [busy, setBusy] = useState(false);
-  // Safety net: the menu must never stay open across a route change.
-  useEffect(() => { setOpen(false); }, [pathname]);
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open]);
-  const doSignOut = async () => {
-    if (busy) return;
-    setBusy(true);
-    try {
-      await signOut();
-    } finally {
-      // Mirror the working /account sign-out: always land home and refresh,
-      // even if the remote sign-out call failed.
-      // Note: don't call setOpen(false) here — the menu unmounts when user
-      // becomes null, and closing it early can interrupt the click event.
-      router.push('/');
-      router.refresh();
-      setBusy(false);
-    }
-  };
+  const { user, loading } = useAuth();
   if (loading) return <span className="ml-1 inline-flex h-10 w-10 animate-pulse rounded-full bg-stone-200 dark:bg-ink-700" />;
   if (!user) {
     return (
@@ -183,40 +156,13 @@ function AuthButton() {
     );
   }
   const initial = (user.email ?? 'S')[0].toUpperCase();
+  // Direct link to dashboard — no dropdown. The /account page has the
+  // sign-out button. Simpler and bulletproof on mobile.
   return (
-    <div className="relative ml-1 block">
-      <button onClick={() => setOpen((o) => !o)} aria-label="Account" aria-expanded={open} aria-haspopup="menu"
-        className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform hover:scale-105 active:scale-95">
-        {initial}
-      </button>
-      {open && (
-        <>
-          {/* Transparent backdrop: clicking anywhere outside closes the menu.
-              Must be BELOW the menu in stacking order (z-40 vs z-[70]) so
-              clicks on menu items reach the items, not the backdrop. */}
-          <div className="fixed inset-0 z-40 cursor-default bg-black/60" onClick={() => setOpen(false)} aria-hidden="true" />
-          <div role="menu" className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 shadow-lift" style={{ backgroundColor: '#ffffff' }}>
-            <div className="border-b border-stone-100 px-4 py-3 dark:border-stone-700">
-              <p className="truncate text-sm font-semibold text-stone-900 dark:text-white">{user.email}</p>
-              <p className="text-xs text-stone-400">Signed in{user.app_metadata?.provider === 'google' ? ' with Google' : ''}</p>
-            </div>
-            {/* Note: no onClick to close here — the pathname-change effect closes
-                the menu after navigation. Closing it in onClick can unmount the
-                Link before Next.js processes the navigation. */}
-            <Link href="/account" role="menuitem"
-              className="flex w-full items-center gap-3 px-4 py-3.5 text-left text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-stone-400"><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></svg>
-              My dashboard
-            </Link>
-            <button onClick={doSignOut} disabled={busy} role="menuitem"
-              className="flex w-full items-center gap-3 border-t border-stone-100 px-4 py-3.5 text-left text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-50 disabled:opacity-60 dark:border-stone-700 dark:text-stone-300 dark:hover:bg-white/5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-stone-400"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              {busy ? 'Signing out…' : 'Sign out'}
-            </button>
-          </div>
-        </>
-      )}
-    </div>
+    <Link href="/account" aria-label="My dashboard"
+      className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-gold-600 font-display text-sm font-bold text-white shadow-card transition-transform hover:scale-105 active:scale-95">
+      {initial}
+    </Link>
   );
 }
 
