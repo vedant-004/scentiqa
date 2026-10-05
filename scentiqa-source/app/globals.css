@@ -182,9 +182,13 @@ input[type="range"].slider-gold::-moz-range-thumb {
    While the user is answering / analyzing, hide the global footer and the
    site-wide mobile bottom nav so the wizard's own Back/Continue bar is the
    only bottom chrome — always visible and tappable. Shown again on results. */
+body[data-finder-phase="entry"] .scentiqa-site-footer,
 body[data-finder-phase="wizard"] .scentiqa-site-footer,
 body[data-finder-phase="loading"] .scentiqa-site-footer,
+body[data-finder-phase="reveal"] .scentiqa-site-footer,
+body[data-finder-phase="entry"] .scentiqa-site-mobile-nav,
 body[data-finder-phase="wizard"] .scentiqa-site-mobile-nav,
-body[data-finder-phase="loading"] .scentiqa-site-mobile-nav {
+body[data-finder-phase="loading"] .scentiqa-site-mobile-nav,
+body[data-finder-phase="reveal"] .scentiqa-site-mobile-nav {
   display: none !important;
 }
