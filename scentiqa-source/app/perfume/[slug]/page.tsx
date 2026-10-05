@@ -227,12 +227,14 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
           </section>
 
           {/* ===== 8. SIMILAR ===== */}
-          <section>
-            <SectionHeading kicker="Keep exploring" title="Similar fragrances" />
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-              {p.similar.slice(0, 4).map((s) => <PerfumeCard key={s.slug} perfume={s} />)}
-            </div>
-          </section>
+          {p.similar.length > 0 && (
+            <section>
+              <SectionHeading kicker="Keep exploring" title="Similar fragrances" />
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+                {p.similar.slice(0, 4).map((s) => <PerfumeCard key={s.slug} perfume={s} />)}
+              </div>
+            </section>
+          )}
         </div>
 
         {/* ===== SIDEBAR ===== */}
