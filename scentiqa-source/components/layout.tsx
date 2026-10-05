@@ -175,30 +175,41 @@ function MobileMenu() {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    // Lock body scroll when menu is open
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
   }, [open]);
   return (
-    <div className="relative lg:hidden">
-      <button onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}
-        className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
+    <div className="lg:hidden">
+      <button onClick={() => setOpen(true)} aria-label="Menu" aria-expanded={open}
+        className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
       </button>
       {open && (
-        <>
-          <div className="fixed inset-0 z-40 cursor-default bg-black/60" onClick={() => setOpen(false)} aria-hidden="true" />
-          <div className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 shadow-lift dark:border-stone-700" style={{ backgroundColor: '#ffffff' }}>
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href} onClick={() => setOpen(false)}
-              className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-100">
-              {n.label}
-            </Link>
-          ))}
-          <Link href="/contact" onClick={() => setOpen(false)}
-            className="block border-t border-stone-100 px-4 py-3 text-sm font-semibold text-stone-500 hover:bg-stone-100">
-            Contact
-          </Link>
+        <div className="fixed inset-0 z-[100] flex flex-col bg-white dark:bg-stone-950">
+          <div className="flex h-16 items-center justify-between border-b border-stone-200 px-4 dark:border-stone-800">
+            <span className="font-display text-xl font-bold text-stone-900 dark:text-white">Menu</span>
+            <button onClick={() => setOpen(false)} aria-label="Close menu"
+              className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-white/10">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" /></svg>
+            </button>
           </div>
-        </>
+          <nav className="flex-1 overflow-y-auto px-4 py-4" aria-label="Mobile">
+            {NAV.map((n) => (
+              <Link key={n.href} href={n.href}
+                className="block rounded-xl px-4 py-4 text-lg font-semibold text-stone-800 hover:bg-stone-100 active:bg-stone-200 dark:text-stone-100 dark:hover:bg-white/10">
+                {n.label}
+              </Link>
+            ))}
+            <Link href="/contact"
+              className="mt-2 block rounded-xl border-t border-stone-200 px-4 py-4 text-lg font-semibold text-stone-500 hover:bg-stone-100 dark:border-stone-800 dark:text-stone-400 dark:hover:bg-white/10">
+              Contact
+            </Link>
+          </nav>
+        </div>
       )}
     </div>
   );
