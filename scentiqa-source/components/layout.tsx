@@ -194,8 +194,8 @@ function AuthButton() {
           {/* Transparent backdrop: clicking anywhere outside closes the menu.
               Must be BELOW the menu in stacking order (z-40 vs z-[70]) so
               clicks on menu items reach the items, not the backdrop. */}
-          <div className="fixed inset-0 z-40 cursor-default bg-black/50" onClick={() => setOpen(false)} aria-hidden="true" />
-          <div role="menu" className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-stone-700 dark:bg-stone-900">
+          <div className="fixed inset-0 z-40 cursor-default bg-black/60" onClick={() => setOpen(false)} aria-hidden="true" />
+          <div role="menu" className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 shadow-lift" style={{ backgroundColor: '#ffffff' }}>
             <div className="border-b border-stone-100 px-4 py-3 dark:border-stone-700">
               <p className="truncate text-sm font-semibold text-stone-900 dark:text-white">{user.email}</p>
               <p className="text-xs text-stone-400">Signed in{user.app_metadata?.provider === 'google' ? ' with Google' : ''}</p>
@@ -239,16 +239,16 @@ function MobileMenu() {
       </button>
       {open && (
         <>
-          <div className="fixed inset-0 z-40 cursor-default bg-black/50" onClick={() => setOpen(false)} aria-hidden="true" />
-          <div className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-stone-700 dark:bg-stone-900">
+          <div className="fixed inset-0 z-40 cursor-default bg-black/60" onClick={() => setOpen(false)} aria-hidden="true" />
+          <div className="absolute right-0 z-[70] mt-2 w-64 overflow-hidden rounded-2xl border border-stone-200 shadow-lift dark:border-stone-700" style={{ backgroundColor: '#ffffff' }}>
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} onClick={() => setOpen(false)}
-              className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5">
+              className="block px-4 py-3 text-sm font-semibold text-stone-700 hover:bg-stone-100">
               {n.label}
             </Link>
           ))}
           <Link href="/contact" onClick={() => setOpen(false)}
-            className="block border-t border-stone-100 px-4 py-3 text-sm font-semibold text-stone-500 hover:bg-stone-50 dark:border-[#2a2a30] dark:text-stone-400 dark:hover:bg-white/5">
+            className="block border-t border-stone-100 px-4 py-3 text-sm font-semibold text-stone-500 hover:bg-stone-100">
             Contact
           </Link>
           </div>
