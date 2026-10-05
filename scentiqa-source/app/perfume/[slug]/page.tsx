@@ -11,7 +11,7 @@ import {
 } from '@/components';
 import {
   MeterVote, PriceAlertButton, ReportPriceButton, ReviewModal, SentimentVote,
-  StickyCTA, SuggestDupe, WardrobeButtons, ClimateSection,
+  StickyCTA, SuggestDupe, WardrobeButtons, ClimateSection, BlindBuyBadge,
 } from './perfume-client';
 import { AIPredictions } from './ai-predictions';
 
@@ -185,6 +185,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
           <section>
             <SectionHeading kicker="Verified sellers" title="Where to buy in India"
               action={<PriceAlertButton perfumeId={p.id} currentPrice={p.lowestPriceInr} />} />
+            <div className="mb-4"><BlindBuyBadge slug={slug} /></div>
             <PriceTable prices={p.prices} />
             <ReportPriceButton perfumeId={p.id} />
           </section>

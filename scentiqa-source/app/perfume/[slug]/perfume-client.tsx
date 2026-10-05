@@ -366,3 +366,52 @@ export function ClimateSection({ slug, perfumeId, perfumeName }: { slug: string;
     </div>
   );
 }
+
+/* ---------- Blind-Buy Risk Score badge ---------- */
+interface BlindBuyData {
+  score: number; verdict: string;
+  factors: Array<{ key: string; label: string; points: number; detail: string }>;
+}
+
+export function BlindBuyBadge({ slug }: { slug: string }) {
+  const [data, setData] = useState<BlindBuyData | null>(null);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    fetch(`/api/perfumes/${slug}/blindbuy`).then((r) => r.json()).then((j) => {
+      if (typeof j.score === 'number') setData(j);
+    }).catch(() => {});
+  }, [slug]);
+
+  if (!data) return null;
+  const tone = data.score >= 80 ? 'bg-emerald-600' : data.score >= 60 ? 'bg-lime-600' : data.score >= 40 ? 'bg-amber-600' : 'bg-red-600';
+
+  return (
+    <div className="relative inline-block">
+      <button onClick={() => setOpen((o) => !o)}
+        className={cn('inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-white shadow-card transition hover:brightness-110', tone)}
+        title="Blind-buy safety score — click for the breakdown">
+        🎲 {data.score}/100 · {data.verdict}
+      </button>
+      {open && (
+        <div className="absolute left-0 top-full z-40 mt-2 w-80 rounded-2xl border border-stone-200 bg-white p-4 shadow-lift dark:border-ink-700 dark:bg-ink-900">
+          <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Why this score</p>
+          <div className="mt-2 space-y-2.5">
+            {data.factors.map((f) => (
+              <div key={f.key}>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-bold">{f.label}</span>
+                  <span className="font-bold text-gold-700 dark:text-gold-300">+{f.points}</span>
+                </div>
+                <p className="text-xs text-stone-500 dark:text-stone-400">{f.detail}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 border-t border-stone-100 pt-2 text-[11px] text-stone-400 dark:border-white/10">
+            Computed from dupe graph, INR prices, ratings &amp; accord profile. Not financial advice — noses differ.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
