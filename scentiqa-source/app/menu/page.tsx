@@ -8,6 +8,10 @@ export const metadata: Metadata = {
 
 const SECTIONS: { href: string; label: string; desc: string }[] = [
   { href: '/find-alternative', label: 'Find a Dupe', desc: 'Find a cheaper alternative to any perfume' },
+  { href: '/battles', label: 'Scent Battles', desc: 'Weekly head-to-head fragrance tournaments' },
+  { href: '/climate', label: 'Heat Lab', desc: 'Which perfumes survive Indian summer?' },
+  { href: '/blindbuy', label: 'Blind-Buy Guide', desc: 'Safest blind buys under ₹2,000' },
+  { href: '/diary', label: 'Wear Diary', desc: 'Log your scent of the day, build a streak' },
   { href: '/houses', label: 'Houses', desc: 'Browse all perfume houses' },
   { href: '/notes', label: 'Notes', desc: 'Explore the notes encyclopedia' },
   { href: '/accords', label: 'Accords', desc: 'Discover accord profiles' },

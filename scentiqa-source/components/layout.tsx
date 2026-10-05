@@ -140,6 +140,8 @@ export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocu
 /* ---------- Header ---------- */
 const NAV = [
   { href: '/find-alternative', label: 'Find a Dupe' },
+  { href: '/battles', label: 'Battles' },
+  { href: '/climate', label: 'Heat Lab' },
   { href: '/houses', label: 'Houses' },
   { href: '/notes', label: 'Notes' },
   { href: '/accords', label: 'Accords' },
@@ -286,7 +288,7 @@ export function MobileBottomNav() {
 /* ---------- Footer ---------- */
 export function Footer({ stats }: { stats: { perfumes: number; houses: number; reviews: number; members: number } }) {
   const cols: Array<{ h: string; links: Array<[string, string]> }> = [
-    { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['All houses', '/houses'], ['Compare', '/compare'], ['Notes encyclopedia', '/notes'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Hidden Gems', '/hidden-gems'], ['Recommendations', '/finder']] },
+    { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['Scent Battles', '/battles'], ['Heat Lab', '/climate'], ['Blind-Buy Guide', '/blindbuy'], ['Wear Diary', '/diary'], ['All houses', '/houses'], ['Compare', '/compare'], ['Notes encyclopedia', '/notes'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Hidden Gems', '/hidden-gems'], ['Recommendations', '/finder']] },
     { h: 'Community', links: [['Forum', '/forum'], ['Awards 2026', '/awards/2026'], ['Giveaways', '/giveaways'], ['News', '/news'], ['Member spotlight', '/member/arjun_sniffs']] },
     { h: 'Trust', links: [['Our methodology', '/methodology'], ['Climate protocol', '/climate-protocol'], ['Trust charter', '/trust-charter'], ['Verified sellers', '/sellers'], ['Spot fakes', '/fake-guide'], ['About', '/about']] },
     { h: 'Company', links: [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy'], ['Log in', '/login']] },
