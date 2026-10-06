@@ -8,18 +8,32 @@ import type { House } from '@/lib/types';
 
 const TYPE_ORDER = ['indian_clone', 'designer', 'niche', 'middle_eastern', 'attar_maker', 'artisan', 'mass'];
 
+type HouseSort = 'count' | 'name' | 'name-desc';
+
+const HOUSE_SORTS: { key: HouseSort; label: string }[] = [
+  { key: 'count', label: 'Most perfumes' },
+  { key: 'name', label: 'Name A–Z' },
+  { key: 'name-desc', label: 'Name Z–A' },
+];
+
 export default function HousesExplorer({ houses }: { houses: House[] }) {
   const [q, setQ] = useState('');
+  const [sort, setSort] = useState<HouseSort>('count');
   const query = q.trim().toLowerCase();
 
   const filtered = useMemo(() => {
-    if (!query) return houses;
-    return houses.filter(
-      (h) =>
-        h.name.toLowerCase().includes(query) ||
-        h.slug.toLowerCase().includes(query)
-    );
-  }, [houses, query]);
+    const list = !query
+      ? [...houses]
+      : houses.filter(
+          (h) =>
+            h.name.toLowerCase().includes(query) ||
+            h.slug.toLowerCase().includes(query)
+        );
+    if (sort === 'name') list.sort((a, b) => a.name.localeCompare(b.name));
+    else if (sort === 'name-desc') list.sort((a, b) => b.name.localeCompare(a.name));
+    else list.sort((a, b) => (b.perfumeCount || 0) - (a.perfumeCount || 0));
+    return list;
+  }, [houses, query, sort]);
 
   const groups = useMemo(() => {
     const gs = TYPE_ORDER
@@ -36,26 +50,41 @@ export default function HousesExplorer({ houses }: { houses: House[] }) {
 
   return (
     <>
-      <div className="relative mt-6 max-w-xl">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-stone-400">
-          <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
-        </svg>
-        <input
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          placeholder="Search houses by name…"
-          aria-label="Search houses"
-          className="h-12 w-full rounded-2xl border border-stone-300 bg-white pl-11 pr-10 text-[15px] text-stone-900 outline-none transition-all placeholder:text-stone-400 focus:border-gold-600 focus:shadow-glow dark:border-ink-700 dark:bg-ink-800 dark:text-white dark:placeholder:text-stone-500"
-        />
-        {q && (
-          <button
-            onClick={() => setQ('')}
-            aria-label="Clear house search"
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200"
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="relative max-w-xl flex-1 basis-72">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-stone-400">
+            <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+          </svg>
+          <input
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Search houses by name…"
+            aria-label="Search houses"
+            className="h-12 w-full rounded-2xl border border-stone-300 bg-white pl-11 pr-10 text-[15px] text-stone-900 outline-none transition-all placeholder:text-stone-400 focus:border-gold-600 focus:shadow-glow dark:border-ink-700 dark:bg-ink-800 dark:text-white dark:placeholder:text-stone-500"
+          />
+          {q && (
+            <button
+              onClick={() => setQ('')}
+              aria-label="Clear house search"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+        <label className="flex items-center gap-2 text-sm">
+          <span className="font-medium text-stone-500 dark:text-stone-400">Sort by</span>
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value as HouseSort)}
+            aria-label="Sort houses"
+            className="h-12 rounded-2xl border border-stone-300 bg-white px-3 text-sm font-semibold text-stone-800 outline-none focus:border-gold-600 dark:border-ink-700 dark:bg-ink-800 dark:text-stone-100"
           >
-            ✕
-          </button>
-        )}
+            {HOUSE_SORTS.map((s) => (
+              <option key={s.key} value={s.key}>{s.label}</option>
+            ))}
+          </select>
+        </label>
       </div>
       {query && (
         <p className="mt-3 text-sm text-stone-500 dark:text-stone-400">

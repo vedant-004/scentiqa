@@ -3,7 +3,8 @@ import { getAllHouseSlugs, getHouse } from '@/lib/data';
 import { HOUSE_TYPE_LABEL } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, SectionHeading } from '@/components/ui';
-import { Breadcrumbs, HouseCard, PerfumeCard, ScoreBadge } from '@/components';
+import { Breadcrumbs, HouseCard, ScoreBadge } from '@/components';
+import HouseCatalog from './house-catalog';
 
 export async function generateStaticParams() {
   const slugs = await getAllHouseSlugs();
@@ -87,22 +88,7 @@ export default async function HousePage({ params }: { params: Promise<{ slug: st
       </section>
 
       {/* Catalog */}
-      {dupes.length > 0 && (
-        <section className="mt-12">
-          <SectionHeading kicker="Dupe lab" title={`Inspired fragrances (${dupes.length})`} />
-          <div className="stagger grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {dupes.map((p) => <PerfumeCard key={p.slug} perfume={p} />)}
-          </div>
-        </section>
-      )}
-      {originals.length > 0 && (
-        <section className="mt-12">
-          <SectionHeading kicker="Catalog" title={dupes.length ? `Original creations (${originals.length})` : `Fragrances (${originals.length})`} />
-          <div className="stagger grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {originals.map((p) => <PerfumeCard key={p.slug} perfume={p} />)}
-          </div>
-        </section>
-      )}
+      <HouseCatalog dupes={dupes} originals={originals} />
 
       <section className="mt-12">
         <SectionHeading kicker="Explore" title="More houses" />
