@@ -43,13 +43,24 @@ export async function POST(req: Request) {
   const sb = await getAuthedServerClient();
   if (!sb) return NextResponse.json({ error: 'Database not configured' }, { status: 500 });
 
-  // Fetch full catalog slice needed for scoring
-  const { data, error } = await sb
-    .from('perfumes')
-    .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, accords, lowest_price_inr, rating_avg, rating_count, houses(slug, name)')
-    .limit(7000);
-  if (error || !data) {
-    return NextResponse.json({ error: 'Failed to load catalog' }, { status: 500 });
+  // Fetch the FULL catalog (paginated) — the finder must score every scent, not just the first N.
+  const PAGE = 2000;
+  const all: any[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const { data: page, error: pageErr } = await sb
+      .from('perfumes')
+      .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, accords, lowest_price_inr, rating_avg, rating_count, houses(slug, name)')
+      .range(from, from + PAGE - 1);
+    if (pageErr) {
+      return NextResponse.json({ error: 'Failed to load catalog' }, { status: 500 });
+    }
+    if (!page || page.length === 0) break;
+    all.push(...page);
+    if (page.length < PAGE) break;
+  }
+  const data = all;
+  if (data.length === 0) {
+    return NextResponse.json({ error: 'Catalog is empty' }, { status: 500 });
   }
 
   const rows: PerfumeRow[] = data.map((p: any) => ({

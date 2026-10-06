@@ -10,12 +10,21 @@ export async function GET() {
     if (!url || !key) throw new Error('no supabase');
 
     const sb = createSb(url, key);
-    const { data, error } = await sb
-      .from('perfumes')
-      .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, houses(slug, name)')
-      .limit(5000);
+    // Fetch the full catalog (paginated) — must cover all 8k+ perfumes, not just the first 5000.
+    const PAGE = 2000;
+    const data: any[] = [];
+    for (let from = 0; ; from += PAGE) {
+      const { data: page, error: pageErr } = await sb
+        .from('perfumes')
+        .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, houses(slug, name)')
+        .range(from, from + PAGE - 1);
+      if (pageErr) throw new Error('query failed');
+      if (!page || page.length === 0) break;
+      data.push(...page);
+      if (page.length < PAGE) break;
+    }
 
-    if (error || !data) throw new Error('query failed');
+    if (data.length === 0) throw new Error('query failed');
 
     // Get lowest prices
     const { data: prices } = await sb

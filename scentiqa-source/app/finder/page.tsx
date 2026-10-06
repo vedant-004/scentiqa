@@ -774,8 +774,13 @@ export default function FinderPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(a),
       });
-      const j = await r.json();
-      if (!r.ok) throw new Error(j.error || 'Something went wrong');
+      let j: any = null;
+      try {
+        j = await r.json();
+      } catch {
+        throw new Error('The finder service did not respond properly. Please check your connection and try again.');
+      }
+      if (!r.ok) throw new Error(j?.error || 'Something went wrong');
       setOut(j);
       // dramatic reveal beat before results
       setPhase('reveal');

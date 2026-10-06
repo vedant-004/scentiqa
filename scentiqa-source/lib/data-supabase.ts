@@ -190,14 +190,22 @@ export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   }
   // Candidate pool: rows with a photo and description. Accords/notes completeness
   // is verified in code because empty arrays can't be filtered reliably in PostgREST.
-  const { data } = await c.from('perfumes')
-    .select('slug, accords, top_notes, heart_notes, base_notes')
-    .not('bottle_image_url', 'is', null)
-    .not('description', 'is', null)
-    .neq('description', '')
-    .order('slug', { ascending: true })
-    .limit(5000);
-  const pool = (data ?? []).filter((r: Record<string, unknown>) => {
+  // Paginated to cover the full 8k+ catalog.
+  const PAGE = 2000;
+  const rows: Record<string, unknown>[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const { data: page } = await c.from('perfumes')
+      .select('slug, accords, top_notes, heart_notes, base_notes')
+      .not('bottle_image_url', 'is', null)
+      .not('description', 'is', null)
+      .neq('description', '')
+      .order('slug', { ascending: true })
+      .range(from, from + PAGE - 1);
+    if (!page || page.length === 0) break;
+    rows.push(...(page as Record<string, unknown>[]));
+    if (page.length < PAGE) break;
+  }
+  const pool = rows.filter((r: Record<string, unknown>) => {
     const accords = (r.accords as unknown[]) ?? [];
     const notes = [
       ...((r.top_notes as string[]) ?? []),
