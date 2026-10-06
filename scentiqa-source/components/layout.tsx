@@ -97,7 +97,7 @@ export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocu
 
   return (
     <div ref={boxRef} className="relative w-full">
-      <div className={cn('flex items-center gap-2 rounded-2xl border border-stone-300/80 bg-white/80 backdrop-blur transition-all duration-200 focus-within:border-gold-600 focus-within:shadow-glow dark:border-ink-700 dark:bg-ink-800/80', big ? 'h-14 px-5' : 'h-11 px-4')}>
+      <div className={cn('flex items-center gap-2 rounded-2xl border border-stone-300/80 bg-white transition-all duration-200 focus-within:border-gold-600 focus-within:shadow-glow dark:border-ink-700 dark:bg-ink-800', big ? 'h-14 px-5' : 'h-11 px-4')}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-stone-400"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
         <input
           value={q} onChange={(e) => { const v = e.target.value; setQ(v); if (!v.trim()) { setResults([]); setHi(-1); } }} onKeyDown={onKey} onFocus={() => setOpen(true)}
@@ -107,7 +107,7 @@ export function SearchBar({ autoFocus = false, big = false, onPick }: { autoFocu
         {q && <button onClick={() => setQ('')} aria-label="Clear search" className="text-stone-400 hover:text-stone-700 dark:hover:text-stone-200">✕</button>}
       </div>
       {open && (q.trim() ? results.length > 0 : recent.length > 0) && (
-        <div id="scentiqa-search-list" role="listbox" className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
+        <div id="scentiqa-search-list" role="listbox" className="absolute inset-x-0 top-full z-[60] mt-2 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl dark:border-ink-600 dark:bg-ink-900">
           {!q.trim() && recent.length > 0 && (
             <div className="p-2">
               <p className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-stone-400">Recent</p>
