@@ -56,12 +56,19 @@ async function handleRecommend(req: Request) {
   if (!sb) return NextResponse.json({ error: 'Database not configured' }, { status: 500 });
 
   // Fetch the FULL catalog (paginated) — the finder must score every scent, not just the first N.
+  // Houses are fetched separately (199 rows) to avoid a costly join on 8k+ rows.
   const PAGE = 2000;
+  const [housesRes] = await Promise.all([
+    sb.from('houses').select('id, slug, name'),
+  ]);
+  const houseMap = new Map<string, { slug: string; name: string }>();
+  for (const h of housesRes.data ?? []) houseMap.set(h.id, { slug: h.slug, name: h.name });
+
   const all: any[] = [];
   for (let from = 0; ; from += PAGE) {
     const { data: page, error: pageErr } = await sb
       .from('perfumes')
-      .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, accords, lowest_price_inr, rating_avg, rating_count, houses(slug, name)')
+      .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, accords, lowest_price_inr, rating_avg, rating_count')
       .range(from, from + PAGE - 1);
     if (pageErr) {
       return NextResponse.json({ error: 'Failed to load catalog' }, { status: 500 });
@@ -75,16 +82,19 @@ async function handleRecommend(req: Request) {
     return NextResponse.json({ error: 'Catalog is empty' }, { status: 500 });
   }
 
-  const rows: PerfumeRow[] = data.map((p: any) => ({
-    id: p.id, slug: p.slug, name: p.name,
-    houseSlug: p.houses?.slug ?? '', house: p.houses?.name ?? '',
-    gender: p.gender ?? '', concentration: p.concentration ?? '',
-    description: p.description ?? '', bottleImage: p.bottle_image_url ?? null,
-    topNotes: p.top_notes ?? [], heartNotes: p.heart_notes ?? [], baseNotes: p.base_notes ?? [],
-    accords: p.accords ?? [],
-    lowestPriceInr: p.lowest_price_inr ?? null,
-    ratingAvg: Number(p.rating_avg ?? 0), ratingCount: Number(p.rating_count ?? 0),
-  }));
+  const rows: PerfumeRow[] = data.map((p: any) => {
+    const h = houseMap.get(p.house_id);
+    return {
+      id: p.id, slug: p.slug, name: p.name,
+      houseSlug: h?.slug ?? '', house: h?.name ?? '',
+      gender: p.gender ?? '', concentration: p.concentration ?? '',
+      description: p.description ?? '', bottleImage: p.bottle_image_url ?? null,
+      topNotes: p.top_notes ?? [], heartNotes: p.heart_notes ?? [], baseNotes: p.base_notes ?? [],
+      accords: p.accords ?? [],
+      lowestPriceInr: p.lowest_price_inr ?? null,
+      ratingAvg: Number(p.rating_avg ?? 0), ratingCount: Number(p.rating_count ?? 0),
+    };
+  });
 
   // Pass 1: strict scoring
   let scored = await scorePerfumes(rows, a);
@@ -105,6 +115,7 @@ async function handleRecommend(req: Request) {
 
   return NextResponse.json({
     answers: a,
+    catalogSize: rows.length,
     totalScored: scored.length,
     relaxed: relaxedNote ?? null,
     tensions,
