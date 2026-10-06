@@ -29,6 +29,18 @@ function sanitizeAnswers(body: any): FinderAnswers {
 }
 
 export async function POST(req: Request) {
+  try {
+    return await handleRecommend(req);
+  } catch (e: any) {
+    console.error('[finder/recommend] unhandled:', e?.message || e);
+    return NextResponse.json(
+      { error: `Finder crashed: ${e?.message || 'unknown error'}` },
+      { status: 500 }
+    );
+  }
+}
+
+async function handleRecommend(req: Request) {
   let body: any;
   try {
     body = await req.json();
