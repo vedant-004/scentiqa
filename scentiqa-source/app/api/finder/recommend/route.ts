@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { getAuthedServerClient } from '@/lib/supabase-server';
 import {
   scorePerfumes, pickWildcard, detectTensions,
   type FinderAnswers, type PerfumeRow,
@@ -52,8 +51,13 @@ async function handleRecommend(req: Request) {
     return NextResponse.json({ error: 'Pick at least 3 notes you love.' }, { status: 400 });
   }
 
-  const sb = await getAuthedServerClient();
-  if (!sb) return NextResponse.json({ error: 'Database not configured' }, { status: 500 });
+  // Direct anon client (same pattern as /api/perfumes, which works reliably).
+  // The finder is public; no user session needed.
+  const { createClient: createSb } = await import('@supabase/supabase-js');
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return NextResponse.json({ error: 'Database not configured' }, { status: 500 });
+  const sb = createSb(url, key);
 
   // Fetch the FULL catalog (paginated) — the finder must score every scent, not just the first N.
   // Houses are fetched separately (199 rows) to avoid a costly join on 8k+ rows.
