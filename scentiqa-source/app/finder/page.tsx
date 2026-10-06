@@ -712,15 +712,10 @@ export default function FinderPage() {
   // Load notes + houses
   useEffect(() => {
     fetch('/api/notes').then((r) => r.json()).then((j) => setNotes(j.notes ?? [])).catch(() => {});
-    fetch('/api/perfumes').then((r) => r.json()).then((j) => {
-      const map = new Map<string, House>();
-      for (const p of j.perfumes ?? []) {
-        if (!p.houseSlug) continue;
-        const h = map.get(p.houseSlug) ?? { slug: p.houseSlug, name: p.house, count: 0 };
-        h.count += 1;
-        map.set(p.houseSlug, h);
-      }
-      setHouses([...map.values()].sort((a, b) => b.count - a.count));
+    // Lightweight houses endpoint (was: full /api/perfumes catalog — far too slow on mobile)
+    fetch('/api/houses').then((r) => r.json()).then((j) => {
+      const list = (j.houses ?? []) as { slug: string; name: string; count: number }[];
+      setHouses(list.map((h) => ({ slug: h.slug, name: h.name, count: h.count })));
     }).catch(() => {});
     // shared profile via #p=... → skip straight to results
     if (typeof window !== 'undefined' && window.location.hash.startsWith('#p=')) {
