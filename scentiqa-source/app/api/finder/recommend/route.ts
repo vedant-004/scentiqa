@@ -87,6 +87,9 @@ async function handleRecommend(req: Request) {
     return NextResponse.json({ error: 'Catalog is empty' }, { status: 500 });
   }
 
+  const strList = (v: unknown): string[] =>
+    Array.isArray(v) ? v.map((x) => String(x ?? '').trim()).filter(Boolean) : [];
+
   const rows: PerfumeRow[] = data.map((p: any) => {
     const h = houseMap.get(p.house_id);
     return {
@@ -94,8 +97,8 @@ async function handleRecommend(req: Request) {
       houseSlug: h?.slug ?? '', house: h?.name ?? '',
       gender: p.gender ?? '', concentration: p.concentration ?? '',
       description: p.description ?? '', bottleImage: p.bottle_image_url ?? null,
-      topNotes: p.top_notes ?? [], heartNotes: p.heart_notes ?? [], baseNotes: p.base_notes ?? [],
-      accords: p.accords ?? [],
+      topNotes: strList(p.top_notes), heartNotes: strList(p.heart_notes), baseNotes: strList(p.base_notes),
+      accords: strList(p.accords),
       lowestPriceInr: p.lowest_price_inr ?? null,
       ratingAvg: Number(p.rating_avg ?? 0), ratingCount: Number(p.rating_count ?? 0),
     };

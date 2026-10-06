@@ -82,17 +82,18 @@ const ACCORD_ALIASES: Record<string, string> = {
   leathery: 'leather',
 };
 
-function accordIndex(accords: string[], name: string): number {
-  const nl = name.toLowerCase().trim();
-  let idx = accords.findIndex((a) => a.toLowerCase() === nl);
+function accordIndex(accords: unknown[], name: unknown): number {
+  const nl = norm(name);
+  if (!nl) return -1;
+  let idx = accords.findIndex((a) => norm(a) === nl);
   if (idx < 0 && ACCORD_ALIASES[nl]) {
-    idx = accords.findIndex((a) => a.toLowerCase() === ACCORD_ALIASES[nl]);
+    idx = accords.findIndex((a) => norm(a) === ACCORD_ALIASES[nl]);
   }
   return idx;
 }
 
-function norm(s: string): string {
-  return s.toLowerCase().trim();
+function norm(s: unknown): string {
+  return String(s ?? '').toLowerCase().trim();
 }
 
 /** Canonical concentration bucket: attar | parfum | edp | edt | other */
