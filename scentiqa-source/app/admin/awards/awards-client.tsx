@@ -1,6 +1,7 @@
 // Client-side forms for admin awards management.
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   createCategory, updateCategory, deleteCategory, cloneEdition,
   addNominee, removeNominee, setWinner, searchPerfumes, searchHouses,
@@ -20,9 +21,10 @@ function Err({ msg }: { msg: string }) {
 
 export function EditionTools({ years, currentYear }: { years: number[]; currentYear: number }) {
   const [err, setErr] = useState('');
+  const router = useRouter();
   const run = async (fn: () => Promise<unknown>) => {
     setErr('');
-    try { await fn(); } catch (e) { setErr(e instanceof Error ? e.message : 'Failed'); }
+    try { await fn(); router.refresh(); } catch (e) { setErr(e instanceof Error ? e.message : 'Failed'); }
   };
   return (
     <div className="mb-6 flex flex-wrap items-end gap-6 rounded-2xl border border-stone-200 bg-white p-5 dark:border-white/10 dark:bg-white/[0.03]">
@@ -48,9 +50,10 @@ export function EditionTools({ years, currentYear }: { years: number[]; currentY
 
 function AddCategoryForm({ year }: { year: number }) {
   const [err, setErr] = useState('');
+  const router = useRouter();
   return (
     <form className="flex flex-wrap items-end gap-2"
-      action={(fd) => { setErr(''); createCategory(year, fd).catch((e) => setErr(e instanceof Error ? e.message : 'Failed')); }}>
+      action={(fd) => { setErr(''); createCategory(year, fd).then(() => router.refresh()).catch((e) => setErr(e instanceof Error ? e.message : 'Failed')); }}>
       <div>
         <p className="mb-1 text-xs font-bold uppercase tracking-wider text-stone-400">Add category</p>
         <div className="flex flex-wrap gap-2">
@@ -77,9 +80,10 @@ function AddCategoryForm({ year }: { year: number }) {
 export function CategoryManager({ category }: { category: AwardCategory }) {
   const [err, setErr] = useState('');
   const [confirmingDelete, setConfirmingDelete] = useState(false);
+  const router = useRouter();
   const run = async (fn: () => Promise<unknown>) => {
     setErr('');
-    try { await fn(); } catch (e) { setErr(e instanceof Error ? e.message : 'Failed'); }
+    try { await fn(); router.refresh(); } catch (e) { setErr(e instanceof Error ? e.message : 'Failed'); }
   };
   return (
     <div className="rounded-2xl border border-stone-200 bg-white p-5 dark:border-white/10 dark:bg-white/[0.03]">
@@ -147,6 +151,7 @@ function NomineePicker({ categoryId, kind }: { categoryId: number; kind: 'perfum
   const [results, setResults] = useState<Array<{ id: string; name: string; house?: string }>>([]);
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
+  const router = useRouter();
 
   const search = async (v: string) => {
     setQ(v);
@@ -160,6 +165,7 @@ function NomineePicker({ categoryId, kind }: { categoryId: number; kind: 'perfum
     try {
       await addNominee(categoryId, kind, id);
       setResults([]); setQ('');
+      router.refresh();
     } catch (e) { setErr(e instanceof Error ? e.message : 'Failed'); }
     setBusy(false);
   };

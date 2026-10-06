@@ -7,6 +7,7 @@ import { Button, Chip, Dialog, DialogTitle, Input, Textarea, useToast } from '@/
 import { useAuth } from '@/components/auth';
 import { StarInput } from '@/components';
 import { castVote, createPriceAlert, postReview, reportPriceError, setWardrobe, suggestDupe } from '@/lib/actions';
+import { getSupabaseBrowser } from '@/lib/supabase';
 import type { Perfume } from '@/lib/types';
 
 function demoToast(toast: (t: string, tone?: 'ok' | 'err' | 'info') => void) {
@@ -32,7 +33,7 @@ export function SentimentVote({ perfumeId }: { perfumeId: string }) {
   const vote = async (v: 'love' | 'like' | 'dislike') => {
     setVal(v);
     const r = await castVote(perfumeId, 'love_like_dislike', v);
-    if (r.demo) demoToast(toast); else if (r.ok) toast('Vote recorded');
+    if (r.demo) demoToast(toast); else if (r.ok) toast('Vote recorded'); else toast(r.error ?? 'Could not record vote', 'err');
   };
   const opts = [['love', '❤️ Love', counts.love], ['like', '👍 Like', counts.like], ['dislike', '👎 Dislike', counts.dislike]] as const;
   if (!loading && !user) return <SignInToVote label="vote" />;
@@ -77,7 +78,7 @@ export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perf
   const [body, setBody] = useState('');
   const [verified, setVerified] = useState(false);
   const [busy, setBusy] = useState(false);
-  const valid = rating > 0 && body.trim().length >= 50;
+  const valid = rating > 0 && body.trim().length >= 10;
   const submit = async () => {
     if (!valid) return;
     setBusy(true);
@@ -96,9 +97,9 @@ export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perf
           <div><p className="mb-2 text-sm font-semibold">Your rating</p><StarInput value={rating} onChange={setRating} /></div>
           <div><p className="mb-2 text-sm font-semibold">Headline <span className="font-normal text-stone-400">(optional)</span></p>
             <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Sum it up in a line" maxLength={80} /></div>
-          <div><p className="mb-2 text-sm font-semibold">Your review <span className="font-normal text-stone-400">(min 50 characters)</span></p>
+          <div><p className="mb-2 text-sm font-semibold">Your review <span className="font-normal text-stone-400">(min 10 characters)</span></p>
             <Textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="How does it perform in Indian weather? How long does it last on you?" maxLength={2000} />
-            <p className={cn('mt-1 text-right text-xs', body.trim().length >= 50 ? 'text-emerald-600' : 'text-stone-400')}>{body.trim().length}/50 min</p></div>
+            <p className={cn('mt-1 text-right text-xs', body.trim().length >= 10 ? 'text-emerald-600' : 'text-stone-400')}>{body.trim().length}/10 min</p></div>
           <label className="flex cursor-pointer items-center gap-2.5 text-sm">
             <input type="checkbox" checked={verified} onChange={(e) => setVerified(e.target.checked)} className="h-4 w-4 accent-amber-600" />
             I bought this in India <span className="text-stone-400">(verified purchase badge)</span>
@@ -201,21 +202,60 @@ export function ReportPriceButton({ perfumeId }: { perfumeId: string }) {
   );
 }
 
-/* ---------- Community meter voting (demo: local optimistic) ---------- */
+/* ---------- Community meter voting (live distribution from community_votes) ---------- */
 export function MeterVote({ label, perfumeId, voteType }: { label: string; perfumeId: string; voteType: string }) {
   const { toast } = useToast();
   const { user, loading } = useAuth();
   const [mine, setMine] = useState<number | null>(null);
-  const [dist] = useState(() => [8, 14, 26, 32, 20]);
+  const [dist, setDist] = useState<number[]>([8, 14, 26, 32, 20]);
+  const [total, setTotal] = useState(0);
+
+  const load = async () => {
+    const sb = getSupabaseBrowser();
+    if (!sb) return;
+    try {
+      const { data, error } = await sb.from('community_votes')
+        .select('vote_value')
+        .eq('perfume_id', perfumeId)
+        .eq('vote_type', voteType);
+      if (!error && data && data.length > 0) {
+        const counts = [0, 0, 0, 0, 0];
+        for (const row of data) {
+          const v = parseInt(String(row.vote_value), 10);
+          if (v >= 1 && v <= 5) counts[v - 1]++;
+        }
+        setTotal(data.length);
+        setDist(counts.map((c) => Math.round((c / data.length) * 100)));
+      }
+      const { data: { user: u } } = await sb.auth.getUser();
+      if (u) {
+        const { data: mv } = await sb.from('community_votes')
+          .select('vote_value')
+          .eq('user_id', u.id)
+          .eq('perfume_id', perfumeId)
+          .eq('vote_type', voteType)
+          .maybeSingle();
+        if (mv) {
+          const v = parseInt(String(mv.vote_value), 10);
+          if (v >= 1 && v <= 5) setMine(v);
+        }
+      }
+    } catch { /* keep placeholder distribution on read failure */ }
+  };
+
+  useEffect(() => { load(); }, [perfumeId, voteType]);
+
   const vote = async (v: number) => {
     setMine(v);
     const r = await castVote(perfumeId, voteType, String(v));
-    if (r.demo) demoToast(toast); else if (r.ok) toast('Vote recorded');
+    if (r.demo) demoToast(toast);
+    else if (r.ok) { toast('Vote recorded'); load(); }
+    else toast(r.error ?? 'Could not record vote', 'err');
   };
   if (!loading && !user) return <SignInToVote label={`rate ${label.toLowerCase()}`} />;
   return (
     <div>
-      <p className="mb-2 text-sm font-semibold">{label} <span className="font-normal text-stone-400">— tap to vote</span></p>
+      <p className="mb-2 text-sm font-semibold">{label} <span className="font-normal text-stone-400">— tap to vote{total > 0 ? ` · ${total} vote${total === 1 ? '' : 's'}` : ''}</span></p>
       <div className="flex items-end gap-1.5">
         {dist.map((d, i) => (
           <button key={i} onClick={() => vote(i + 1)} aria-label={`${label} ${i + 1} out of 5`}
