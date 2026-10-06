@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { rateLimit } from '@/lib/rate-limit';
 import {
   scorePerfumes, pickWildcard, detectTensions,
   type FinderAnswers, type PerfumeRow,
@@ -33,13 +34,19 @@ export async function POST(req: Request) {
   } catch (e: any) {
     console.error('[finder/recommend] unhandled:', e?.message || e);
     return NextResponse.json(
-      { error: `Finder crashed: ${e?.message || 'unknown error'}`, stack: String(e?.stack || '').slice(0, 2000) },
+      { error: 'Something went wrong generating recommendations. Please try again.' },
       { status: 500 }
     );
   }
 }
 
 async function handleRecommend(req: Request) {
+  // 20 recommendations per IP per minute — this endpoint scores the whole catalog.
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+  if (!rateLimit(`finder:${ip}`, 20, 60_000)) {
+    return NextResponse.json({ error: 'Too many requests — please wait a moment and try again.' }, { status: 429 });
+  }
+
   let body: any;
   try {
     body = await req.json();

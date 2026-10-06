@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { getAllPerfumeSlugs, getAllHouseSlugs, getAllArticleSlugs } from '@/lib/data';
+import { SITE_URL } from '@/lib/site-url';
 
-const BASE = 'https://scentiqa.in';
+const BASE = SITE_URL;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [perfumes, houses, articles] = await Promise.all([

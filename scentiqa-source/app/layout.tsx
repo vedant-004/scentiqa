@@ -6,6 +6,7 @@ import { ToastProvider } from "@/components/ui";
 import { AuthProvider } from "@/components/auth";
 import { Footer, Header, MobileBottomNav } from "@/components/layout";
 import { getStats, getBanner } from "@/lib/data";
+import { SITE_URL } from "@/lib/site-url";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: "swap" });
@@ -14,7 +15,7 @@ const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["lati
 const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('scentiqa-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://scentiqa.in"),
+  metadataBase: new URL(SITE_URL),
   title: { default: "Scentiqa — India's Perfume Encyclopedia & Dupe Finder", template: "%s | Scentiqa" },
   description: "Discover perfumes in India: honest reviews, lab-tested dupe similarity scores, INR prices from verified sellers, and climate testing for Indian heat.",
   openGraph: { type: "website", siteName: "Scentiqa", locale: "en_IN" },
