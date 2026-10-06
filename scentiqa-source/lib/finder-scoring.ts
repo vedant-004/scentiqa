@@ -226,7 +226,7 @@ export interface PerfumeRow {
   gender: string; concentration: string; description: string;
   bottleImage: string | null;
   topNotes: string[]; heartNotes: string[]; baseNotes: string[];
-  accords: { name: string; strength: number | null }[];
+  accords: (string | { name: string; strength: number | null })[];
   lowestPriceInr: number | null;
   ratingAvg: number; ratingCount: number;
 }
@@ -333,8 +333,12 @@ export async function scorePerfumes(
     if (!vec && p.accords.length > 0) {
       vec = new Array(ml.accords.length).fill(0);
       for (const ac of p.accords) {
-        const idx = accordIndex(ml.accords, ac.name);
-        if (idx >= 0) vec[idx] = (ac.strength || 50) / 100;
+        // accords may be plain strings ('vanilla') or objects ({name, strength})
+        const acName = typeof ac === 'string' ? ac : ac?.name;
+        const acStrength = typeof ac === 'string' ? 50 : (ac?.strength || 50);
+        if (!acName) continue;
+        const idx = accordIndex(ml.accords, acName);
+        if (idx >= 0) vec[idx] = acStrength / 100;
       }
     }
     let accordPts = 12; // neutral default when no vector data
