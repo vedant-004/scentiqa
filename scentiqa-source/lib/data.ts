@@ -37,6 +37,7 @@ export const getForumCategories = select(demo.getForumCategories, live.getForumC
 export const getForumCategory = select(demo.getForumCategory, live.getForumCategory);
 export const getForumTopic = select(demo.getForumTopic, live.getForumTopic);
 export const getAwards = select(demo.getAwards, live.getAwards);
+export const getAwardYears = select(demo.getAwardYears, live.getAwardYears);
 export const getGiveaways = select(demo.getGiveaways, live.getGiveaways);
 export const getMember = select(demo.getMember, live.getMember);
 export const getReviewsByMember = select(demo.getReviewsByMember, live.getReviewsByMember);

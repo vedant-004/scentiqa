@@ -1,7 +1,7 @@
 // Demo-mode data layer: everything reads from data/seed.json (no network, no auth).
 import seedJson from '@/data/seed.json';
 import type {
-  Article, Award, ClimateScore, DupeEntry, ForumCategory, ForumTopic,
+  Article, Award, AwardCategory, ClimateScore, DupeEntry, ForumCategory, ForumTopic,
   Giveaway, House, Member, NoteInfo, Perfume, PerfumeFull, PriceDrop,
   PriceEntry, Review, Seller,
 } from './types';
@@ -208,8 +208,21 @@ export async function getForumTopic(id: string): Promise<{ topic: ForumTopic; ca
   return null;
 }
 
-export async function getAwards(year: number): Promise<Award[]> {
-  return seed.awards.filter((a) => a.year === year);
+export async function getAwards(year: number): Promise<AwardCategory[]> {
+  const cats = (seed.awards as unknown as Award[]).filter((a) => a.year === year);
+  return cats.map((a, i) => ({
+    id: i, year, slug: a.category.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    name: a.category, description: '', icon: '🏆',
+    section: 'global' as const, nomineeType: a.type, sortOrder: i,
+    nominees: a.nominees.map(([slug, votes], j) => ({
+      rowId: j, kind: a.type, slug, name: slug, houseName: '', image: null, votes, isWinner: j === 0,
+    })),
+    winner: null,
+  }));
+}
+export async function getAwardYears(): Promise<number[]> {
+  const years = [...new Set((seed.awards as unknown as Award[]).map((a) => a.year))];
+  return years.sort((a, b) => b - a);
 }
 export async function getGiveaways(): Promise<Giveaway[]> { return seed.giveaways; }
 

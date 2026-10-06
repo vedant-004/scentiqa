@@ -2,7 +2,7 @@
 // Used only when NEXT_PUBLIC_SUPABASE_URL is set. Requires supabase/schema.sql applied.
 import { getSupabaseServer } from './supabase';
 import type {
-  Article, Award, ClimateScore, DupeEntry, ForumCategory, ForumTopic,
+  Article, Award, AwardCategory, AwardNominee, ClimateScore, DupeEntry, ForumCategory, ForumTopic,
   Giveaway, House, NoteInfo, Perfume, PerfumeFull, PriceDrop,
   PriceEntry, Review, Seller,
 } from './types';
@@ -320,21 +320,72 @@ export async function getForumTopic(id: string): Promise<{ topic: ForumTopic; ca
   };
 }
 
-export async function getAwards(year: number): Promise<Award[]> {
+export async function getAwardYears(): Promise<number[]> {
   const c = sb(); if (!c) return [];
-  const { data } = await c.from('awards').select('*').eq('year', year);
-  const byCat = new Map<string, Award>();
-  for (const r of data ?? []) {
-    const rec = r as Record<string, unknown>;
-    const key = rec.category as string;
-    if (!byCat.has(key)) byCat.set(key, { id: `${year}-${key}`, year, category: key, type: (rec.nominee_kind as Award['type']) ?? 'perfume', nominees: [] });
-    const a = byCat.get(key)!;
-    const slug = rec.nominee_kind === 'house'
-      ? ((rec.nominee_house_id as string) ?? '').replace(/^house_/, '')
-      : ((rec.nominee_perfume_id as string) ?? '').replace(/^perf_/, '');
-    a.nominees.push([slug, Number(rec.vote_count ?? 0)]);
+  const { data } = await c.from('award_categories').select('year').order('year', { ascending: false });
+  const years = [...new Set((data ?? []).map((r) => (r as Record<string, unknown>).year as number))];
+  return years;
+}
+
+export async function getAwards(year: number): Promise<AwardCategory[]> {
+  const c = sb(); if (!c) return [];
+  const { data: cats } = await c.from('award_categories')
+    .select('*').eq('year', year).order('sort_order', { ascending: true });
+  const { data: rows } = await c.from('awards')
+    .select('id, category_slug, nominee_kind, nominee_perfume_id, nominee_house_id, vote_count, is_winner')
+    .eq('year', year);
+  // Resolve nominee display data in bulk
+  const perfIds = [...new Set((rows ?? []).filter((r) => (r as Record<string, unknown>).nominee_kind === 'perfume').map((r) => (r as Record<string, unknown>).nominee_perfume_id as string).filter(Boolean))];
+  const houseIds = [...new Set((rows ?? []).filter((r) => (r as Record<string, unknown>).nominee_kind === 'house').map((r) => (r as Record<string, unknown>).nominee_house_id as string).filter(Boolean))];
+  const perfMap = new Map<string, { slug: string; name: string; house: string; image: string | null }>();
+  const houseMap = new Map<string, { slug: string; name: string }>();
+  if (perfIds.length > 0) {
+    const { data: perfs } = await c.from('perfumes').select('id, slug, name, bottle_image_url, houses(slug, name)').in('id', perfIds);
+    for (const p of perfs ?? []) {
+      const r = p as Record<string, unknown>;
+      const h = r.houses as Record<string, string> | undefined;
+      perfMap.set(r.id as string, { slug: r.slug as string, name: r.name as string, house: h?.name ?? '', image: (r.bottle_image_url as string) ?? null });
+    }
   }
-  return [...byCat.values()];
+  if (houseIds.length > 0) {
+    const { data: houses } = await c.from('houses').select('id, slug, name').in('id', houseIds);
+    for (const h of houses ?? []) {
+      const r = h as Record<string, unknown>;
+      houseMap.set(r.id as string, { slug: r.slug as string, name: r.name as string });
+    }
+  }
+  const byCat = new Map<string, AwardNominee[]>();
+  for (const r of rows ?? []) {
+    const rec = r as Record<string, unknown>;
+    const kind = rec.nominee_kind as 'house' | 'perfume';
+    const refId = (kind === 'house' ? rec.nominee_house_id : rec.nominee_perfume_id) as string;
+    const info = kind === 'house' ? houseMap.get(refId) : perfMap.get(refId);
+    if (!info) continue;
+    const key = (rec.category_slug as string) ?? '';
+    if (!byCat.has(key)) byCat.set(key, []);
+    byCat.get(key)!.push({
+      rowId: Number(rec.id), kind,
+      slug: info.slug, name: info.name,
+      houseName: (info as { house?: string }).house ?? '',
+      image: (info as { image?: string | null }).image ?? null,
+      votes: Number(rec.vote_count ?? 0), isWinner: !!rec.is_winner,
+    });
+  }
+  return (cats ?? []).map((cr) => {
+    const rec = cr as Record<string, unknown>;
+    const slug = rec.slug as string;
+    const nominees = (byCat.get(slug) ?? []).sort((a, b) => Number(b.isWinner) - Number(a.isWinner) || b.votes - a.votes);
+    return {
+      id: Number(rec.id), year, slug,
+      name: rec.name as string, description: (rec.description as string) ?? '',
+      icon: (rec.icon as string) ?? '🏆',
+      section: (rec.section as 'global' | 'indian') ?? 'global',
+      nomineeType: (rec.nominee_type as 'house' | 'perfume') ?? 'perfume',
+      sortOrder: Number(rec.sort_order ?? 0),
+      nominees,
+      winner: nominees.find((n) => n.isWinner) ?? null,
+    };
+  });
 }
 export async function getGiveaways(): Promise<Giveaway[]> {
   const c = sb(); if (!c) return [];

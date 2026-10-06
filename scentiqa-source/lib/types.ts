@@ -102,6 +102,21 @@ export interface ForumPost { id: string; username: string; body: string }
 export interface ForumTopic { id: string; title: string; author: string; posts: ForumPost[] }
 export interface ForumCategory { id: string; slug: string; name: string; description: string; topics: ForumTopic[] }
 
+export interface AwardNominee {
+  rowId: number; kind: 'house' | 'perfume';
+  slug: string; name: string; houseName: string; image: string | null;
+  votes: number; isWinner: boolean;
+}
+
+export interface AwardCategory {
+  id: number; year: number; slug: string; name: string;
+  description: string; icon: string;
+  section: 'global' | 'indian'; nomineeType: 'house' | 'perfume';
+  sortOrder: number; nominees: AwardNominee[];
+  winner: AwardNominee | null;
+}
+
+/** Legacy shape (kept for compat, no longer produced by getAwards). */
 export interface Award { id: string; year: number; category: string; type: 'house' | 'perfume'; nominees: Array<[string, number]> }
 
 export interface Giveaway {
