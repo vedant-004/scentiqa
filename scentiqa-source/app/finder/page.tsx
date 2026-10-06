@@ -462,7 +462,7 @@ function BigSlider({ value, onChange, min, max, labels, format }: {
 
 /* ---------------- entry screen ---------------- */
 
-function EntryScreen({ onStart }: { onStart: () => void }) {
+function EntryScreen({ onStart, catalogCount }: { onStart: () => void; catalogCount: number | null }) {
   const motes = useMemo(() => {
     const arr: Array<{ left: string; size: number; dur: number; delay: number; hue: number }> = [];
     const hues = [268, 310, 190, 36, 140];
@@ -508,7 +508,7 @@ function EntryScreen({ onStart }: { onStart: () => void }) {
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-sm text-[15px] leading-relaxed text-stone-400">
-          60 seconds. 10 questions. One perfect match — ranked from 6,639 perfumes by an AI trained on real perfumery data.
+          60 seconds. 10 questions. One perfect match — ranked from {catalogCount !== null ? `${catalogCount.toLocaleString('en-IN')} perfumes` : 'a catalog of thousands of perfumes'} by an AI trained on real perfumery data.
         </p>
       </div>
 
@@ -520,7 +520,7 @@ function EntryScreen({ onStart }: { onStart: () => void }) {
           Start My Journey →
         </button>
         <p className="mt-4 text-xs font-medium text-stone-400">
-          6,639 perfumes · AI-matched · No account needed
+          {catalogCount !== null ? `${catalogCount.toLocaleString('en-IN')} perfumes · ` : ''}AI-matched · No account needed
         </p>
       </div>
 
@@ -543,12 +543,14 @@ function EntryScreen({ onStart }: { onStart: () => void }) {
 
 /* ---------------- reveal / analyzing screen ---------------- */
 
-function RevealScreen({ dna }: { dna: DnaParams }) {
+function RevealScreen({ dna, catalogCount }: { dna: DnaParams; catalogCount: number | null }) {
   const [count, setCount] = useState(0);
   const [line, setLine] = useState(0);
+  const target = catalogCount ?? 0;
+  const targetLabel = target > 0 ? target.toLocaleString('en-IN') : null;
   const lines = [
     'Reading your scent DNA…',
-    'Comparing 6,639 perfumes…',
+    targetLabel ? `Comparing ${targetLabel} perfumes…` : 'Comparing the catalog…',
     'Scoring notes, accords & performance…',
     'Checking live Indian prices…',
     'Finding your archetype…',
@@ -560,7 +562,7 @@ function RevealScreen({ dna }: { dna: DnaParams }) {
     const tick = (t: number) => {
       const p = Math.min(1, (t - t0) / dur);
       const eased = 1 - Math.pow(1 - p, 3);
-      setCount(Math.round(eased * 6639));
+      setCount(target > 0 ? Math.round(eased * target) : 0);
       if (p < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
@@ -574,9 +576,9 @@ function RevealScreen({ dna }: { dna: DnaParams }) {
       <div className="reveal-flourish">
         <ScentDnaOrb dna={{ ...dna, glow: 1, particles: Math.max(dna.particles, 26) }} size={168} />
       </div>
-      <p className="tick-glow mt-6 font-display text-5xl font-extrabold tabular-nums tracking-tight">
-        {count.toLocaleString('en-IN')}
-      </p>
+        <p className="tick-glow mt-6 font-display text-5xl font-extrabold tabular-nums tracking-tight">
+          {target > 0 ? count.toLocaleString('en-IN') : '···'}
+        </p>
       <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.22em] text-stone-400">
         perfumes analyzed
       </p>
@@ -585,7 +587,7 @@ function RevealScreen({ dna }: { dna: DnaParams }) {
       </p>
       <div className="mt-6 h-1.5 w-56 overflow-hidden rounded-full bg-stone-200 dark:bg-ink-700">
         <div className="progress-shimmer h-full rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-gold-500"
-          style={{ width: `${Math.min(100, (count / 6639) * 100)}%` }} />
+          style={{ width: `${target > 0 ? Math.min(100, (count / target) * 100) : 0}%` }} />
       </div>
     </div>
   );
@@ -691,6 +693,7 @@ export default function FinderPage() {
   const [phase, setPhase] = useState<Phase>('entry');
   const [out, setOut] = useState<ApiOut | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [catalogCount, setCatalogCount] = useState<number | null>(null);
   const topRef = useRef<HTMLDivElement>(null);
 
   // Wizard takeover: hide the global footer + site mobile bottom nav while the
@@ -716,6 +719,7 @@ export default function FinderPage() {
     fetch('/api/houses').then((r) => r.json()).then((j) => {
       const list = (j.houses ?? []) as { slug: string; name: string; count: number }[];
       setHouses(list.map((h) => ({ slug: h.slug, name: h.name, count: h.count })));
+      if (typeof j.totalPerfumes === 'number' && j.totalPerfumes > 0) setCatalogCount(j.totalPerfumes);
     }).catch(() => {});
     // shared profile via #p=... → skip straight to results
     if (typeof window !== 'undefined' && window.location.hash.startsWith('#p=')) {
@@ -802,7 +806,7 @@ export default function FinderPage() {
     return (
       <div ref={topRef} className="bg-stone-950 text-white">
         <FinderStyles />
-        <EntryScreen onStart={() => { setPhase('wizard'); topRef.current?.scrollIntoView(); }} />
+        <EntryScreen catalogCount={catalogCount} onStart={() => { setPhase('wizard'); topRef.current?.scrollIntoView(); }} />
       </div>
     );
   }
@@ -822,7 +826,7 @@ export default function FinderPage() {
           <span className="absolute inset-0 flex items-center justify-center text-3xl">🌸</span>
         </div>
         <h2 className="font-display text-2xl font-extrabold">Consulting the AI…</h2>
-        <LoadingLine />
+        <LoadingLine catalogCount={catalogCount} />
       </div>
     );
   }
@@ -832,7 +836,7 @@ export default function FinderPage() {
     return (
       <div ref={topRef}>
         <FinderStyles />
-        <RevealScreen dna={resultDna} />
+        <RevealScreen dna={resultDna} catalogCount={catalogCount} />
       </div>
     );
   }
@@ -1372,11 +1376,11 @@ function ProfileRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-function LoadingLine() {
+function LoadingLine({ catalogCount }: { catalogCount: number | null }) {
   const [i, setI] = useState(0);
   const lines = [
     'Reading your note preferences…',
-    'Comparing 6,600+ perfumes…',
+    catalogCount !== null ? `Comparing ${catalogCount.toLocaleString('en-IN')} perfumes…` : 'Comparing the catalog…',
     'Checking Indian prices…',
     'Scoring longevity & projection…',
     'Ranking your perfect matches…',

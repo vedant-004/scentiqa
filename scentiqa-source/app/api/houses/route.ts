@@ -29,9 +29,13 @@ export async function GET() {
       if (!data || data.length < pageSize) break;
       page += 1;
     }
-    return NextResponse.json({ houses });
+    const { count: totalPerfumes, error: countError } = await sb
+      .from('perfumes')
+      .select('id', { count: 'exact', head: true });
+    if (countError) throw countError;
+    return NextResponse.json({ houses, totalPerfumes: totalPerfumes ?? 0 });
   } catch (e) {
     console.error('GET /api/houses failed', e);
-    return NextResponse.json({ houses: [] }, { status: 200 });
+    return NextResponse.json({ houses: [], totalPerfumes: 0 }, { status: 200 });
   }
 }
