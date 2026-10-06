@@ -13,6 +13,9 @@ import {
   MeterVote, PriceAlertButton, ReportPriceButton, ReviewModal, SentimentVote,
   StickyCTA, SuggestDupe, WardrobeButtons, ClimateSection, BlindBuyBadge,
 } from './perfume-client';
+
+// Revalidate hourly so new catalog data (notes, accords, prices) appears without a redeploy.
+export const revalidate = 3600;
 import { AIPredictions } from './ai-predictions';
 
 export async function generateStaticParams() {
