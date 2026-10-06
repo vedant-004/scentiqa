@@ -87,7 +87,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               <span className="whitespace-nowrap font-sans text-[0.5em] font-semibold text-gold-600 dark:text-gold-400">{GENDER_LABEL[p.gender].toLowerCase()}</span>
             </h1>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-stone-500 dark:text-stone-400">
-              <span>{p.launchYear}</span><span aria-hidden="true">·</span><span>{CONC_LABEL[p.concentration] ?? p.concentration}</span>
+              {p.launchYear ? <><span>{p.launchYear}</span><span aria-hidden="true">·</span></> : null}<span>{CONC_LABEL[p.concentration] ?? p.concentration}</span>
             </div>
             <div className="mt-3 flex justify-center"><StarRating value={p.ratingAvg} count={p.ratingCount} size={18} /></div>
           </div>
@@ -251,7 +251,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
           <Card className="p-6">
             <h3 className="mb-3 font-display text-lg font-semibold">At a glance</h3>
             <dl className="space-y-2.5 text-sm">
-              {[['House', p.houseInfo.name], ['Launched', String(p.launchYear)], ['Concentration', CONC_LABEL[p.concentration] ?? p.concentration], ['Best price', inr(p.lowestPriceInr)], ['Lab-tested dupes', String(labDupes.length)]].map(([k, v]) => (
+              {[['House', p.houseInfo.name], ['Launched', p.launchYear ? String(p.launchYear) : '—'], ['Concentration', CONC_LABEL[p.concentration] ?? p.concentration], ['Best price', inr(p.lowestPriceInr)], ['Lab-tested dupes', String(labDupes.length)]].map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-3"><dt className="text-stone-400">{k}</dt><dd className="text-right font-semibold">{v}</dd></div>
               ))}
             </dl>

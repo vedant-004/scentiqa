@@ -19,7 +19,7 @@ export interface Accord { name: string; strength: number | null }
 
 export interface Perfume {
   id: string; slug: string; name: string; houseSlug: string; house: string;
-  gender: Gender; launchYear: number; concentration: string; description: string;
+  gender: Gender; launchYear: number | null; concentration: string; description: string;
   bottleImage: string | null; ratingAvg: number; ratingCount: number;
   lowestPriceInr: number | null; accords: Accord[];
   topNotes: string[]; heartNotes: string[]; baseNotes: string[];
