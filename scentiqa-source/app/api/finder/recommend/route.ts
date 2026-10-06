@@ -33,7 +33,7 @@ export async function POST(req: Request) {
   } catch (e: any) {
     console.error('[finder/recommend] unhandled:', e?.message || e);
     return NextResponse.json(
-      { error: `Finder crashed: ${e?.message || 'unknown error'}` },
+      { error: `Finder crashed: ${e?.message || 'unknown error'}`, stack: String(e?.stack || '').slice(0, 2000) },
       { status: 500 }
     );
   }
