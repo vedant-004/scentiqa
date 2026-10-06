@@ -1,12 +1,26 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAwards } from '@/lib/data';
+import { getAwards, getAwardYears } from '@/lib/data';
 import type { AwardNominee } from '@/lib/types';
 import { Card, SectionHeading, Badge } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
 import { NomineeImg, nomineeHref } from '../../components';
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  try {
+    const years = await getAwardYears();
+    const params: Array<{ year: string; category: string }> = [];
+    for (const year of years) {
+      const cats = await getAwards(year);
+      for (const c of cats) params.push({ year: String(year), category: c.slug });
+    }
+    return params;
+  } catch {
+    return [];
+  }
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ year: string; category: string }> }) {
   const { year, category } = await params;

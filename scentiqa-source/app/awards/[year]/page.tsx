@@ -8,6 +8,15 @@ import { NomineeImg, nomineeHref } from '../components';
 
 export const revalidate = 3600;
 
+export async function generateStaticParams() {
+  try {
+    const years = await getAwardYears();
+    return years.map((year) => ({ year: String(year) }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ year: string }> }) {
   const { year } = await params;
   return {

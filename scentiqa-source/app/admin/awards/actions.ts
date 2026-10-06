@@ -19,8 +19,8 @@ function slugify(s: string) {
 
 function touch(year: number) {
   revalidatePath('/admin/awards');
-  revalidatePath(`/awards/${year}`);
-  revalidatePath('/awards');
+  // Layout-level invalidation covers /awards, /awards/[year] and /awards/[year]/[category]
+  revalidatePath('/awards', 'layout');
 }
 
 /* ---------------- categories ---------------- */
