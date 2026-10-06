@@ -10,8 +10,9 @@ export async function GET() {
     if (!url || !key) throw new Error('no supabase');
 
     const sb = createSb(url, key);
-    // Fetch the full catalog (paginated) — must cover all 8k+ perfumes, not just the first 5000.
-    const PAGE = 2000;
+    // Fetch the full catalog (paginated) — must cover all 8k+ perfumes, not just the first 1000.
+    // NOTE: Supabase/PostgREST caps at 1000 rows per request, so PAGE must be <= 1000.
+    const PAGE = 1000;
     const data: any[] = [];
     for (let from = 0; ; from += PAGE) {
       const { data: page, error: pageErr } = await sb

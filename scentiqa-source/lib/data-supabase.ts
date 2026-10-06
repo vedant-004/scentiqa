@@ -190,8 +190,8 @@ export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   }
   // Candidate pool: rows with a photo and description. Accords/notes completeness
   // is verified in code because empty arrays can't be filtered reliably in PostgREST.
-  // Paginated to cover the full 8k+ catalog.
-  const PAGE = 2000;
+  // Paginated to cover the full 8k+ catalog (Supabase caps at 1000 rows/request).
+  const PAGE = 1000;
   const rows: Record<string, unknown>[] = [];
   for (let from = 0; ; from += PAGE) {
     const { data: page } = await c.from('perfumes')

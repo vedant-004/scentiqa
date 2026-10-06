@@ -57,7 +57,8 @@ async function handleRecommend(req: Request) {
 
   // Fetch the FULL catalog (paginated) — the finder must score every scent, not just the first N.
   // Houses are fetched separately (199 rows) to avoid a costly join on 8k+ rows.
-  const PAGE = 2000;
+  // NOTE: Supabase/PostgREST caps at 1000 rows per request, so PAGE must be <= 1000.
+  const PAGE = 1000;
   const [housesRes] = await Promise.all([
     sb.from('houses').select('id, slug, name'),
   ]);
