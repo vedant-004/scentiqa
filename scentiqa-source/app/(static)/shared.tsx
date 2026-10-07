@@ -102,28 +102,53 @@ export function AboutPage() {
   );
 }
 
-export function ContactPage() {
+export interface ContactSettings {
+  intro?: string;
+  email?: string;
+  phoneDisplay?: string;
+  phoneDigits?: string;
+  whatsapp?: boolean;
+  responseNote?: string;
+}
+
+const CONTACT_DEFAULTS: Required<ContactSettings> = {
+  intro: 'Corrections, lab partnerships, seller verification, press — we read everything.',
+  email: 'vedanttyagi.official@gmail.com',
+  phoneDisplay: '+91 70179 21949',
+  phoneDigits: '917017921949',
+  whatsapp: true,
+  responseNote: 'Response time: usually within 2 working days.',
+};
+
+export function ContactPage({ settings }: { settings?: ContactSettings }) {
+  const s = { ...CONTACT_DEFAULTS, ...(settings ?? {}) };
   return (
     <DocPage title="Contact us" kicker="Say hello">
-      <p>Corrections, lab partnerships, seller verification, press — we read everything.</p>
+      <p>{s.intro}</p>
       <Card className="mt-6 p-6">
         <p className="text-sm">
           <strong>Email:</strong>{' '}
-          <a href="mailto:vedanttyagi.official@gmail.com" className="font-semibold text-gold-700 underline dark:text-gold-300">
-            vedanttyagi.official@gmail.com
+          <a href={`mailto:${s.email}`} className="font-semibold text-gold-700 underline dark:text-gold-300">
+            {s.email}
           </a>
         </p>
-        <p className="mt-2 text-sm">
-          <strong>Phone:</strong>{' '}
-          <a href="tel:+917017921949" className="font-semibold text-gold-700 underline dark:text-gold-300">
-            +91 70179 21949
-          </a>
-          <span className="text-stone-400"> · </span>
-          <a href="https://wa.me/917017921949" target="_blank" rel="noreferrer" className="font-semibold text-gold-700 underline dark:text-gold-300">
-            WhatsApp
-          </a>
-        </p>
-        <p className="mt-2 text-xs text-stone-400">Response time: usually within 2 working days.</p>
+        {s.phoneDisplay && (
+          <p className="mt-2 text-sm">
+            <strong>Phone:</strong>{' '}
+            <a href={`tel:+${s.phoneDigits}`} className="font-semibold text-gold-700 underline dark:text-gold-300">
+              {s.phoneDisplay}
+            </a>
+            {s.whatsapp && (
+              <>
+                <span className="text-stone-400"> · </span>
+                <a href={`https://wa.me/${s.phoneDigits}`} target="_blank" rel="noreferrer" className="font-semibold text-gold-700 underline dark:text-gold-300">
+                  WhatsApp
+                </a>
+              </>
+            )}
+          </p>
+        )}
+        {s.responseNote && <p className="mt-2 text-xs text-stone-400">{s.responseNote}</p>}
       </Card>
       <h2>Send us a message</h2>
       <ContactForm />

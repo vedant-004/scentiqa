@@ -270,6 +270,26 @@ export async function updateSiteSetting(key: string, value: Record<string, unkno
   if (error) throw new Error(error.message);
   revalidatePath('/');
   revalidatePath('/admin/settings');
+  if (key === 'contact') {
+    revalidatePath('/contact');
+    revalidatePath('/admin/contact');
+  }
+}
+
+/* ---------------- contact inbox ---------------- */
+
+export async function setContactMessageRead(id: string, read: boolean) {
+  await requireAdmin();
+  const { error } = await db().from('contact_messages').update({ is_read: read }).eq('id', id);
+  if (error) throw new Error(error.message);
+  revalidatePath('/admin/contact');
+}
+
+export async function deleteContactMessage(id: string) {
+  await requireAdmin();
+  const { error } = await db().from('contact_messages').delete().eq('id', id);
+  if (error) throw new Error(error.message);
+  revalidatePath('/admin/contact');
 }
 
 /* ---------------- articles ---------------- */

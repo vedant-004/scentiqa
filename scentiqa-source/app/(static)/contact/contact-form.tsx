@@ -1,9 +1,9 @@
-// Contact form: delivers messages to the site owner's inbox via FormSubmit (AJAX).
+// Contact form: saves the message to the Scentiqa inbox (/admin/contact) via /api/contact.
 'use client';
 import { useState } from 'react';
 import { Button, Card, Input } from '@/components';
 
-const OWNER_EMAIL = 'vedanttyagi.official@gmail.com';
+const TOPICS = ['Correction', 'Lab partnership', 'Seller verification', 'Press', 'Feedback', 'Other'];
 
 export function ContactForm() {
   const [name, setName] = useState('');
@@ -11,25 +11,23 @@ export function ContactForm() {
   const [topic, setTopic] = useState('Correction');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
+    setErrorMsg('');
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${OWNER_EMAIL}`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name,
-          email,
-          topic,
-          message,
-          _subject: `[Scentiqa contact] ${topic} — ${name}`,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, topic, message }),
       });
-      if (!res.ok) throw new Error('delivery failed');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'delivery failed');
       setStatus('sent');
-    } catch {
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong.');
       setStatus('error');
     }
   };
@@ -65,7 +63,7 @@ export function ContactForm() {
             id="cf-topic" value={topic} onChange={(e) => setTopic(e.target.value)}
             className="w-full rounded-xl border border-stone-200 bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-gold-500 dark:border-ink-700 dark:bg-ink-900"
           >
-            {['Correction', 'Lab partnership', 'Seller verification', 'Press', 'Feedback', 'Other'].map((t) => (
+            {TOPICS.map((t) => (
               <option key={t}>{t}</option>
             ))}
           </select>
@@ -80,8 +78,7 @@ export function ContactForm() {
         </div>
         {status === 'error' && (
           <p className="rounded-xl bg-red-500/10 p-3 text-sm text-red-600 dark:text-red-400">
-            Couldn&rsquo;t send just now — please email us directly at{' '}
-            <a href={`mailto:${OWNER_EMAIL}`} className="font-semibold underline">{OWNER_EMAIL}</a>.
+            {errorMsg || 'Could not send just now — please try again.'}
           </p>
         )}
         <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={status === 'sending'}>

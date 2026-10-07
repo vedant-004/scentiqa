@@ -13,6 +13,7 @@ const NAV = [
   { href: '/admin/dupes', label: 'Dupe mappings', icon: '⇄' },
   { href: '/admin/reviews', label: 'Reviews', icon: '✎' },
   { href: '/admin/reports', label: 'Reports', icon: '⚑' },
+  { href: '/admin/contact', label: 'Contact', icon: '✉' },
   { href: '/admin/users', label: 'Users', icon: '◉' },
   { href: '/admin/health', label: 'Data health', icon: '♥' },
   { href: '/admin/articles', label: 'Articles', icon: '📰' },
