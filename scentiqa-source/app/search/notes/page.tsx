@@ -1,17 +1,14 @@
-// /search/notes — AI-powered note search with 400 notes and ML match scoring.
-// Trained on 24k Fragrantica perfumes.
+// /search/notes — note include/exclude search, scored against live note pyramids.
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Button, Card, Chip, EmptyState, SectionHeading, Select, Skeleton } from '@/components';
 import { PerfumeCard } from '@/components/domain';
-import { loadML, isMLReady, noteMatchScore, suggestNotes } from '@/lib/ml/engine';
 
-interface P {
-  id: string; slug: string; name: string; house: string; gender: string; isDupe: boolean;
-  ratingAvg: number; ratingCount: number; lowestPriceInr: number | null;
-  topNotes: string[]; heartNotes: string[]; baseNotes: string[];
+interface Hit {
+  id: string; slug: string; name: string; house: string; match: number; matchedNotes: string[];
+  ratingAvg: number; lowestPriceInr: number | null; isDupe: boolean; bottleImage: string | null;
 }
 interface N { slug: string; name: string; category: string }
 
@@ -23,64 +20,38 @@ const CAT_LABEL: Record<string, string> = {
 
 export default function NotesSearchPage() {
   const [notes, setNotes] = useState<N[]>([]);
-  const [perfumes, setPerfumes] = useState<P[]>([]);
-  const [mlReady, setMlReady] = useState(false);
+  const [hits, setHits] = useState<Hit[]>([]);
+  const [loading, setLoading] = useState(false);
   const [inc, setInc] = useState<string[]>([]);
   const [exc, setExc] = useState<string[]>([]);
   const [gender, setGender] = useState('any');
   const [noteQuery, setNoteQuery] = useState('');
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    Promise.all([fetch('/api/notes').then((r) => r.json()), fetch('/api/perfumes').then((r) => r.json())])
-      .then(([n, p]) => { setNotes(n.notes ?? []); setPerfumes(p.perfumes ?? []); })
-      .catch(() => {});
-    loadML().then(() => setMlReady(true)).catch(() => {});
+    fetch('/api/notes').then((r) => r.json()).then((j) => setNotes(j.notes ?? [])).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (timer.current) clearTimeout(timer.current);
+    if (inc.length === 0 && exc.length === 0) { setHits([]); return; }
+    setLoading(true);
+    timer.current = setTimeout(async () => {
+      try {
+        const r = await fetch(`/api/search/notes?inc=${encodeURIComponent(inc.join(','))}&exc=${encodeURIComponent(exc.join(','))}&gender=${gender}&limit=24`);
+        const j = await r.json();
+        setHits(j.results ?? []);
+      } catch { /* offline */ }
+      setLoading(false);
+    }, 350);
+    return () => { if (timer.current) clearTimeout(timer.current); };
+  }, [inc, exc, gender]);
 
   const cycle = (name: string) => {
     if (inc.includes(name)) { setInc(inc.filter((x) => x !== name)); setExc([...exc, name]); }
     else if (exc.includes(name)) setExc(exc.filter((x) => x !== name));
     else setInc([...inc, name]);
   };
-
-  // AI smart suggestions based on selected notes
-  const suggestions = useMemo(() => {
-    if (!mlReady || inc.length === 0) return [];
-    const sug = suggestNotes(inc, 6);
-    // Map to display names (match against notes list)
-    return sug.map((s) => {
-      const found = notes.find((n) => n.name.toLowerCase() === s || n.slug === s.replace(/ /g, '-'));
-      return found ? found.name : s.split(' ').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-    }).filter((s) => !inc.includes(s) && !exc.includes(s));
-  }, [inc, exc, mlReady, notes]);
-
-  const results = useMemo(() => {
-    const filtered = perfumes.filter((p) => {
-      if (gender !== 'any' && p.gender !== gender) return false;
-      return true;
-    });
-
-    if (mlReady && isMLReady() && (inc.length > 0 || exc.length > 0)) {
-      // ML-powered scoring
-      return filtered
-        .map((p) => {
-          const { score, matchedNotes } = noteMatchScore(inc, exc, p.id);
-          return { p, score, matchedNotes };
-        })
-        .filter((x) => x.score > 10)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 24);
-    }
-
-    // Fallback: simple include/exclude
-    const il = inc.map((s) => s.toLowerCase()), el = exc.map((s) => s.toLowerCase());
-    return filtered.filter((p) => {
-      const all = [...p.topNotes, ...p.heartNotes, ...p.baseNotes].map((n) => n.toLowerCase());
-      if (el.some((e) => all.some((n) => n.includes(e)))) return false;
-      return il.every((i) => all.some((n) => n.includes(i)));
-    }).map((p) => ({ p, score: 80, matchedNotes: [] as string[] }))
-      .sort((a, b) => b.p.ratingCount - a.p.ratingCount).slice(0, 24);
-  }, [perfumes, inc, exc, gender, mlReady]);
 
   const grouped = useMemo(() => {
     const m = new Map<string, N[]>();
@@ -95,28 +66,11 @@ export default function NotesSearchPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
-      <SectionHeading kicker="Discovery · AI-Powered" title="Search by notes" />
+      <SectionHeading kicker="Discovery" title="Search by notes" />
       <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
         Tap a note once to <strong className="text-emerald-600">include</strong> it, again to <strong className="text-red-500">exclude</strong> it, a third time to clear.
-        Choose from <strong>{notes.length} notes</strong> — our AI scores every perfume by note harmony.
+        Choose from <strong>{notes.length} notes</strong> — we score every perfume by note harmony against live pyramids.
       </p>
-
-      {/* AI Smart Suggestions */}
-      {suggestions.length > 0 && (
-        <Card className="mb-6 p-4">
-          <h3 className="mb-2 text-sm font-bold text-stone-700 dark:text-stone-200">
-            🤖 AI suggests — pairs well with your picks:
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {suggestions.map((s) => (
-              <button key={s} onClick={() => cycle(s)}
-                className="rounded-full border border-violet-400 bg-violet-500/10 px-3.5 py-1.5 text-sm font-medium text-violet-700 transition-all hover:bg-violet-500/20 dark:text-violet-300">
-                + {s}
-              </button>
-            ))}
-          </div>
-        </Card>
-      )}
 
       <div className="mb-6">
         <input
@@ -155,7 +109,7 @@ export default function NotesSearchPage() {
               <Button variant="ghost" size="sm" onClick={() => { setInc([]); setExc([]); setGender('any'); }}>Clear</Button>
             </div>
             <Select value={gender} onChange={(e) => setGender(e.target.value)} aria-label="Gender">
-              <option value="any">Any gender</option><option value="men">For men</option>
+              <option value="any">Any gender</option><option value="for men">For men</option>
               <option value="women">For women</option><option value="unisex">Unisex</option>
             </Select>
             {(inc.length > 0 || exc.length > 0) && (
@@ -164,32 +118,32 @@ export default function NotesSearchPage() {
                 {exc.map((n) => <Chip key={'e' + n} onClick={() => cycle(n)} className="border-red-400 text-red-500">− {n}</Chip>)}
               </div>
             )}
-            {mlReady && (
-              <p className="mt-4 text-xs text-emerald-600 dark:text-emerald-400">✓ AI scoring active</p>
-            )}
+            <p className="mt-4 text-xs text-emerald-600 dark:text-emerald-400">✓ Live pyramid scoring</p>
           </Card>
         </aside>
       </div>
 
       <div className="mt-10">
-        <h2 className="mb-4 font-display text-2xl font-semibold tracking-tight">AI Results <span className="text-base font-normal text-stone-400">({results.length})</span></h2>
-        {results.length === 0 ? (
-          <EmptyState icon="🌿" title="No matches" body="Try fewer required notes — or remove an exclusion." />
+        <h2 className="mb-4 font-display text-2xl font-semibold tracking-tight">Results <span className="text-base font-normal text-stone-400">({hits.length})</span></h2>
+        {loading ? (
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">{[1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-64" />)}</div>
+        ) : hits.length === 0 ? (
+          <EmptyState icon="🌿" title={inc.length || exc.length ? 'No matches' : 'Pick some notes'} body={inc.length || exc.length ? 'Try fewer required notes — or remove an exclusion.' : 'Tap notes above to include or exclude them.'} />
         ) : (
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {results.map(({ p, score, matchedNotes }) => (
-              <div key={p.slug} className="relative">
-                {score > 0 && (
-                  <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-stone-900/85 px-2 py-0.5 text-[11px] font-bold text-white backdrop-blur dark:bg-white/90 dark:text-stone-900" title={matchedNotes.length > 0 ? `Contains: ${matchedNotes.join(', ')}` : 'AI note harmony score'}>
-                    {score}%
+            {hits.map((h) => (
+              <div key={h.slug} className="relative">
+                {h.match > 0 && (
+                  <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-stone-900/85 px-2 py-0.5 text-[11px] font-bold text-white backdrop-blur dark:bg-white/90 dark:text-stone-900" title={h.matchedNotes.length > 0 ? `Contains: ${h.matchedNotes.join(', ')}` : 'Note harmony score'}>
+                    {h.match}%
                   </span>
                 )}
-                <PerfumeCard perfume={p} />
+                <PerfumeCard perfume={{ slug: h.slug, name: h.name, house: h.house, ratingAvg: h.ratingAvg, lowestPriceInr: h.lowestPriceInr, isDupe: h.isDupe, bottleImage: h.bottleImage }} />
               </div>
             ))}
           </div>
         )}
-        <p className="mt-6 text-center"><Link href="/search/accords" className="text-sm font-semibold text-gold-700 hover:underline dark:text-gold-300">Prefer vibes over notes? Try the AI accord finder →</Link></p>
+        <p className="mt-6 text-center"><Link href="/search/accords" className="text-sm font-semibold text-gold-700 hover:underline dark:text-gold-300">Prefer vibes over notes? Try the accord finder →</Link></p>
       </div>
     </div>
   );

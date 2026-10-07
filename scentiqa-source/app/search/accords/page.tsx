@@ -1,62 +1,43 @@
-// /search/accords — AI-powered accord finder with ML match scoring.
-// Trained on 24k Fragrantica perfumes for intelligent similarity ranking.
+// /search/accords — accord profile finder, scored against live accord data.
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { inr } from '@/lib/utils';
 import { Button, Card, EmptyState, SectionHeading, Select, Skeleton } from '@/components';
 import { PerfumeCard } from '@/components/domain';
-import { loadML, isMLReady, accordMatchScore } from '@/lib/ml/engine';
 
-interface P {
-  id: string; slug: string; name: string; house: string; gender: string; isDupe: boolean;
-  ratingAvg: number; lowestPriceInr: number | null;
-  accords: Array<{ name: string; strength: number | null }>; summerRating: number;
-}
+interface Hit { id: string; slug: string; name: string; house: string; match: number; explanation: string[]; ratingAvg: number; lowestPriceInr: number | null; isDupe: boolean; bottleImage: string | null }
 
 const ACCORDS = ['Ambery', 'Woody', 'Citrus', 'Fresh', 'Floral', 'Sweet', 'Gourmand', 'Smoky', 'Musky', 'Warm Spicy', 'Tobacco', 'Aquatic', 'Green', 'Leathery'];
 
 export default function AccordsPage() {
-  const [perfumes, setPerfumes] = useState<P[]>([]);
-  const [mlReady, setMlReady] = useState(false);
+  const [hits, setHits] = useState<Hit[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
   const [wanted, setWanted] = useState<Record<string, number>>({ Ambery: 70, Woody: 60 });
   const [maxPrice, setMaxPrice] = useState(10000);
-  const [minSummer, setMinSummer] = useState(0);
   const [gender, setGender] = useState('any');
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const wantedParam = useMemo(() => {
+    const parts = Object.entries(wanted).filter(([, v]) => v > 0).map(([k, v]) => `${k}:${v}`);
+    return parts.join(',');
+  }, [wanted]);
 
   useEffect(() => {
-    fetch('/api/perfumes').then((r) => r.json()).then((j) => setPerfumes(j.perfumes ?? [])).catch(() => {});
-    loadML().then(() => setMlReady(true)).catch(() => {});
-  }, []);
-
-  const results = useMemo(() => {
-    const keys = Object.keys(wanted);
-    if (keys.length === 0) return [];
-
-    return perfumes
-      .filter((p) => {
-        if (gender !== 'any' && p.gender !== gender) return false;
-        if ((p.lowestPriceInr ?? Infinity) > maxPrice) return false;
-        if (p.summerRating < minSummer) return false;
-        return true;
-      })
-      .map((p) => {
-        if (mlReady && isMLReady() && p.id) {
-          // ML-powered cosine similarity scoring
-          const { score, explanation } = accordMatchScore(wanted, p.id);
-          return { p, match: score, matched: explanation.length, explanation };
-        }
-        // Fallback: simple threshold matching
-        let score = 0, matched = 0;
-        for (const k of keys) {
-          const a = p.accords.find((x) => x.name.toLowerCase() === k.toLowerCase());
-          if (a && (a.strength ?? 0) >= wanted[k]) { matched++; score += a.strength ?? 0; }
-        }
-        return { p, match: matched ? Math.round((score / keys.length) * (matched / keys.length)) : 0, matched, explanation: [] as string[] };
-      })
-      .filter((x) => x.match > 5)
-      .sort((a, b) => b.match - a.match)
-      .slice(0, 24);
-  }, [perfumes, wanted, maxPrice, minSummer, gender, mlReady]);
+    if (timer.current) clearTimeout(timer.current);
+    if (!wantedParam) { setHits([]); setSearched(false); return; }
+    setLoading(true);
+    timer.current = setTimeout(async () => {
+      try {
+        const r = await fetch(`/api/search/accords?wanted=${encodeURIComponent(wantedParam)}&maxPrice=${maxPrice}&gender=${gender}&limit=24`);
+        const j = await r.json();
+        setHits(j.results ?? []);
+        setSearched(true);
+      } catch { /* offline */ }
+      setLoading(false);
+    }, 350);
+    return () => { if (timer.current) clearTimeout(timer.current); };
+  }, [wantedParam, maxPrice, gender]);
 
   const setAccord = (name: string, v: number) => {
     setWanted((w) => {
@@ -68,10 +49,10 @@ export default function AccordsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
-      <SectionHeading kicker="Discovery · AI-Powered" title="Accord finder" />
+      <SectionHeading kicker="Discovery" title="Accord finder" />
       <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
-        Describe the vibe you want — slide each accord&rsquo;s intensity. Our AI, trained on 24,000+ perfumes,
-        ranks every fragrance by how strongly it matches your desired profile.
+        Describe the vibe you want — slide each accord&rsquo;s intensity. We rank every fragrance
+        against your profile using live accord data from the full catalog.
       </p>
       <div className="grid gap-8 lg:grid-cols-[380px_1fr]">
         <div className="lg:sticky lg:top-24 lg:self-start">
@@ -99,33 +80,30 @@ export default function AccordsPage() {
               <Select value={gender} onChange={(e) => setGender(e.target.value)} aria-label="Gender">
                 <option value="any">Any gender</option><option value="men">Men</option><option value="women">Women</option><option value="unisex">Unisex</option>
               </Select>
-              <Select value={String(minSummer)} onChange={(e) => setMinSummer(Number(e.target.value))} aria-label="Minimum summer rating">
-                <option value="0">Any summer score</option><option value="3">Summer 3+</option><option value="4">Summer 4+</option><option value="5">Summer 5</option>
-              </Select>
             </div>
-            <Button variant="ghost" size="sm" className="w-full" onClick={() => { setWanted({}); setMaxPrice(10000); setMinSummer(0); setGender('any'); }}>Reset all</Button>
+            <Button variant="ghost" size="sm" className="w-full" onClick={() => { setWanted({}); setMaxPrice(10000); setGender('any'); }}>Reset all</Button>
           </Card>
         </div>
         <div>
           <h2 className="mb-4 font-display text-2xl font-semibold tracking-tight">
-            AI Matches <span className="text-base font-normal text-stone-400">({results.length})</span>
-            {mlReady && <span className="ml-2 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-300">ML Active</span>}
+            Matches <span className="text-base font-normal text-stone-400">({hits.length})</span>
+            <span className="ml-2 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-300">Live accord data</span>
           </h2>
-          {perfumes.length === 0 ? (
+          {loading && !searched ? (
             <div className="grid grid-cols-2 gap-4">{[1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-64" />)}</div>
-          ) : results.length === 0 ? (
-            <EmptyState icon="🎚️" title="No matches" body="Lower an accord intensity or widen the India filters." />
+          ) : hits.length === 0 ? (
+            <EmptyState icon="🎚️" title="No matches" body={wantedParam ? 'Lower an accord intensity or widen the price filter.' : 'Slide an accord intensity to start matching.'} />
           ) : (
             <div className="grid grid-cols-2 gap-4 xl:grid-cols-3">
-              {results.map(({ p, match, explanation }) => (
-                <div key={p.slug} className="relative">
-                  <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-stone-900/85 px-2 py-0.5 text-[11px] font-bold text-white backdrop-blur dark:bg-white/90 dark:text-stone-900" title={explanation.length > 0 ? `Strong in: ${explanation.join(', ')}` : 'AI match score'}>
-                    {match}%
+              {hits.map((h) => (
+                <div key={h.slug} className="relative">
+                  <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-stone-900/85 px-2 py-0.5 text-[11px] font-bold text-white backdrop-blur dark:bg-white/90 dark:text-stone-900" title={h.explanation.length > 0 ? `Strong in: ${h.explanation.join(', ')}` : 'Accord match score'}>
+                    {h.match}%
                   </span>
-                  <PerfumeCard perfume={p} />
-                  {explanation.length > 0 && (
+                  <PerfumeCard perfume={{ slug: h.slug, name: h.name, house: h.house, ratingAvg: h.ratingAvg, lowestPriceInr: h.lowestPriceInr, isDupe: h.isDupe, bottleImage: h.bottleImage }} />
+                  {h.explanation.length > 0 && (
                     <p className="mt-1 px-1 text-[11px] text-stone-500 dark:text-stone-400">
-                      Matches your {explanation.join(' + ')}
+                      Matches your {h.explanation.join(' + ')}
                     </p>
                   )}
                 </div>

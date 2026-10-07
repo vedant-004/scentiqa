@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { getSupabaseServer } from '@/lib/supabase';
 import { Card, SectionHeading } from '@/components';
-import { computeBlindBuyScore } from '@/lib/blindbuy';
+import { computeBlindBuyScores } from '@/lib/blindbuy';
 
 export const metadata = {
   title: 'Safest Blind Buys Under ₹2,000 | Scentiqa',
   description: 'Ranked blind-buy safety scores for affordable Indian fragrances — buy without smelling, with confidence.',
 };
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 interface Candidate {
   id: string; slug: string; name: string; rating_count: number | null;
@@ -27,17 +27,29 @@ export default async function BlindBuyPage() {
   if (c) {
     // Candidates: priced under ₹2000, sorted by rating count (community signal first)
     const { data } = await c.from('perfumes')
-      .select('id, slug, name, rating_count, lowest_price_inr, houses(name)')
+      .select('id, slug, name, rating_count, rating_avg, lowest_price_inr, accords, houses(name)')
       .lt('lowest_price_inr', 2000)
       .gt('lowest_price_inr', 0)
       .order('rating_count', { ascending: false, nullsFirst: false })
       .limit(60);
-    const scored: Array<{ candidate: Candidate; score: number; verdict: string; price: number }> = [];
-    for (const row of (data ?? []) as Array<Candidate & { lowest_price_inr: number | null }>) {
-      const res = await computeBlindBuyScore(row.id);
-      if (res) scored.push({ candidate: row, score: res.score, verdict: res.verdict, price: row.lowest_price_inr ?? 0 });
-    }
-    ranked = scored.sort((a, b) => b.score - a.score).slice(0, 24);
+    const rows = (data ?? []) as Array<Candidate & { lowest_price_inr: number | null; rating_avg: number | null; accords: unknown }>;
+    // Batch scoring: 3 bulk queries for all 60 instead of ~180 sequential ones.
+    const scores = await computeBlindBuyScores(rows.map((r) => ({
+      id: r.id,
+      lowest_price_inr: r.lowest_price_inr,
+      rating_avg: r.rating_avg,
+      rating_count: r.rating_count,
+      accords: r.accords,
+    })));
+    ranked = rows
+      .map((row) => {
+        const res = scores.get(row.id);
+        if (!res) return null;
+        return { candidate: row, score: res.score, verdict: res.verdict, price: row.lowest_price_inr ?? 0 };
+      })
+      .filter((x): x is { candidate: (typeof rows)[number]; score: number; verdict: string; price: number } => x !== null)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 24);
   }
 
   return (
