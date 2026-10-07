@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { getHouse } from '@/lib/data';
+import { getSupabaseServer } from '@/lib/supabase';
 import { Breadcrumbs } from '@/components';
 import { Button, Card, SectionHeading } from '@/components';
 
@@ -8,88 +7,97 @@ export const metadata = {
   description: 'Authentic perfume sellers in India, verified by the Scentiqa team.',
 };
 
-export const revalidate = 86400;
+export const revalidate = 3600;
 
-// Curated by the site owner: only these sellers are listed for now.
-const SELLERS = [
-  {
-    houseSlug: 'house-of-em5',
-    name: 'House of EM5',
-    website: 'https://www.houseofem5.com',
-    blurb:
-      'Mumbai-born clone house crafting inspired EDPs of popular designer and niche fragrances at honest Indian prices.',
-    tags: ['Clone house', 'Made in India', 'EDPs'],
-  },
-  {
-    houseSlug: 'my-perfume-secrets',
-    name: 'My Perfume Secrets',
-    website: 'https://myperfumesecrets.com',
-    blurb:
-      'High-concentration extrait-style dupes of luxury designer scents — one of India\u2019s most loved affordable fragrance brands.',
-    tags: ['Dupe house', 'High concentration', 'Bestsellers'],
-  },
-];
+const TYPE_LABEL: Record<string, string> = {
+  official: 'Official store',
+  marketplace: 'Marketplace',
+  reseller: 'Reseller',
+  decanter: 'Decanter',
+};
+
+interface SellerRow {
+  id: string; slug: string; name: string; website_url: string | null;
+  seller_type: string | null; verified: boolean; trust_notes: string | null;
+  listingCount: number;
+}
 
 export default async function SellersPage() {
-  const houses = await Promise.all(SELLERS.map((s) => getHouse(s.houseSlug)));
+  const sb = getSupabaseServer();
+  let sellers: SellerRow[] = [];
+
+  if (sb) {
+    const { data } = await sb.from('sellers')
+      .select('id, slug, name, website_url, seller_type, verified, trust_notes')
+      .order('verified', { ascending: false })
+      .order('name', { ascending: true });
+    const rows = (data ?? []) as Array<Omit<SellerRow, 'listingCount'>>;
+    // Count live price listings per seller in one query.
+    const ids = rows.map((r) => r.id);
+    const counts = new Map<string, number>();
+    if (ids.length > 0) {
+      const { data: prices } = await sb.from('prices').select('seller_id').in('seller_id', ids);
+      for (const p of (prices ?? []) as Array<{ seller_id: string }>) {
+        counts.set(p.seller_id, (counts.get(p.seller_id) ?? 0) + 1);
+      }
+    }
+    sellers = rows.map((r) => ({ ...r, listingCount: counts.get(r.id) ?? 0 }));
+  }
+
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Verified Sellers' }]} />
       <SectionHeading kicker="Buy with confidence" title="Verified sellers" />
       <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">
-        Every seller listed here is <strong>authentic and verified by the Scentiqa team</strong>.
-        These are the brands&rsquo; own official stores — no grey market, no fakes, ever.
+        Sellers marked <strong>verified</strong> have been checked by the Scentiqa team.
+        Always re-verify prices on the seller&rsquo;s site before buying.
       </p>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {SELLERS.map((s, i) => {
-          const house = houses[i];
-          const count = house?.perfumes.length ?? null;
-          return (
-            <Card key={s.houseSlug} className="relative overflow-hidden p-0">
+      {sellers.length === 0 ? (
+        <p className="text-sm text-stone-500">Seller directory is being built — check back soon.</p>
+      ) : (
+        <div className="grid gap-6 md:grid-cols-2">
+          {sellers.map((s) => (
+            <Card key={s.slug} className="relative overflow-hidden p-0">
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold-300/20 via-transparent to-transparent dark:from-gold-600/10" aria-hidden="true" />
               <div className="relative p-6 sm:p-8">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
-                    <span aria-hidden="true">✓</span> Verified by Scentiqa
-                  </span>
-                  {s.tags.map((t) => (
-                    <span key={t} className="rounded-full bg-stone-900/5 px-3 py-1 text-xs font-semibold text-stone-500 dark:bg-white/10 dark:text-stone-300">
-                      {t}
+                  {s.verified ? (
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                      <span aria-hidden="true">✓</span> Verified by Scentiqa
                     </span>
-                  ))}
+                  ) : (
+                    <span className="rounded-full bg-stone-900/5 px-3 py-1 text-xs font-semibold text-stone-500 dark:bg-white/10 dark:text-stone-300">
+                      Unverified
+                    </span>
+                  )}
+                  {s.seller_type && (
+                    <span className="rounded-full bg-stone-900/5 px-3 py-1 text-xs font-semibold text-stone-500 dark:bg-white/10 dark:text-stone-300">
+                      {TYPE_LABEL[s.seller_type] ?? s.seller_type}
+                    </span>
+                  )}
+                  {s.listingCount > 0 && (
+                    <span className="rounded-full bg-stone-900/5 px-3 py-1 text-xs font-semibold text-stone-500 dark:bg-white/10 dark:text-stone-300">
+                      {s.listingCount} price{s.listingCount === 1 ? '' : 's'} tracked
+                    </span>
+                  )}
                 </div>
-                <h2 className="mt-4 font-display text-3xl font-bold tracking-tight">{s.name}</h2>
-                <p className="mt-2 text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">{s.blurb}</p>
-                {house?.description ? (
-                  <p className="mt-3 line-clamp-3 text-sm text-stone-500 dark:text-stone-400">{house.description}</p>
-                ) : null}
-                {count !== null && (
-                  <p className="mt-3 text-sm font-semibold text-gold-700 dark:text-gold-300">
-                    {count} perfumes in the Scentiqa catalog
-                  </p>
+                <h2 className="mt-4 font-display text-2xl font-bold">{s.name}</h2>
+                {s.trust_notes && (
+                  <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-300">{s.trust_notes}</p>
                 )}
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <a href={s.website} target="_blank" rel="noreferrer noopener">
-                    <Button size="lg">Visit official website ↗</Button>
-                  </a>
-                  <Link href={`/house/${s.houseSlug}`}>
-                    <Button variant="outline" size="lg">Browse their perfumes</Button>
-                  </Link>
+                  {s.website_url ? (
+                    <a href={s.website_url} target="_blank" rel="noopener noreferrer">
+                      <Button size="sm">Visit store →</Button>
+                    </a>
+                  ) : null}
                 </div>
-                <p className="mt-4 break-all text-xs text-stone-400">{s.website}</p>
               </div>
             </Card>
-          );
-        })}
-      </div>
-
-      <Card className="mt-8 p-6 text-center">
-        <p className="text-sm text-stone-500 dark:text-stone-400">
-          Know a seller we should verify? <Link href="/contact" className="font-semibold text-gold-700 underline dark:text-gold-300">Tell us</Link> — we
-          check every submission before listing.
-        </p>
-      </Card>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

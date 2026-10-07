@@ -3,11 +3,26 @@ import { getArticles, getArticle } from '@/lib/data';
 import { Card, EmptyState } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateStaticParams() {
+  const articles = await getArticles();
+  return articles.map((a) => ({ slug: a.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = await getArticle(slug);
+  if (!a) return { title: 'Article not found' };
+  return {
+    title: `${a.title} | Scentiqa`,
+    description: a.excerpt ?? a.body.slice(0, 160),
+  };
+}
+
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const [a, all] = await Promise.all([getArticle(slug), getArticles()]);
   if (!a) return <div className="mx-auto max-w-3xl px-4 pt-6"><EmptyState icon="📰" title="Article not found" body="This article doesn't exist." /></div>;
-  const related = (await getArticles()).filter((x) => x.slug !== a.slug).slice(0, 2);
+  const related = all.filter((x) => x.slug !== a.slug).slice(0, 2);
   const readMinutes = Math.max(1, Math.round(a.body.split(/\s+/).length / 200));
   return (
     <div className="mx-auto max-w-3xl px-4 pt-6 sm:px-6">

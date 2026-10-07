@@ -26,6 +26,11 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   if (perfume_id !== m.perfume_a_id && perfume_id !== m.perfume_b_id) {
     return NextResponse.json({ error: 'Perfume is not in this matchup' }, { status: 400 });
   }
+  // Battle must be live — no votes on upcoming or completed battles.
+  const { data: battle } = await admin.from('battles').select('status').eq('id', battleId).single();
+  if (!battle || battle.status !== 'active') {
+    return NextResponse.json({ error: 'Voting is not open for this battle' }, { status: 400 });
+  }
 
   // One vote per user per matchup (upsert switches the vote)
   const { data: existing } = await admin.from('battle_votes')
@@ -35,20 +40,22 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     return NextResponse.json({ ok: true, unchanged: true });
   }
 
-  // Decrement old side if switching
-  if (existing) {
-    const col = existing.perfume_id === m.perfume_a_id ? 'votes_a' : 'votes_b';
-    await admin.from('battle_matchups').update({ [col]: Math.max(0, (m[col] as number) - 1) }).eq('id', matchup_id);
-  }
-
   const { error: vErr } = await admin.from('battle_votes').upsert(
     { matchup_id, user_id: user.id, perfume_id },
     { onConflict: 'matchup_id,user_id' }
   );
   if (vErr) return NextResponse.json({ error: vErr.message }, { status: 400 });
 
-  const col = perfume_id === m.perfume_a_id ? 'votes_a' : 'votes_b';
-  await admin.from('battle_matchups').update({ [col]: (m[col] as number) + 1 }).eq('id', matchup_id);
+  // Recompute counters from the votes table (race-safe — no read-modify-write).
+  const { count: votesA } = await admin.from('battle_votes')
+    .select('perfume_id', { count: 'exact', head: true })
+    .eq('matchup_id', matchup_id).eq('perfume_id', m.perfume_a_id);
+  const { count: votesB } = await admin.from('battle_votes')
+    .select('perfume_id', { count: 'exact', head: true })
+    .eq('matchup_id', matchup_id).eq('perfume_id', m.perfume_b_id);
+  await admin.from('battle_matchups')
+    .update({ votes_a: votesA ?? 0, votes_b: votesB ?? 0 })
+    .eq('id', matchup_id);
 
   return NextResponse.json({ ok: true });
 }

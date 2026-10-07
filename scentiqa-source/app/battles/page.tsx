@@ -29,6 +29,7 @@ export default function BattlesPage() {
   const [matchups, setMatchups] = useState<Matchup[]>([]);
   const [busy, setBusy] = useState<string | null>(null);
   const [myVotes, setMyVotes] = useState<Record<string, string>>({});
+  const [voteError, setVoteError] = useState('');
 
   const load = useCallback(async () => {
     try {
@@ -44,6 +45,7 @@ export default function BattlesPage() {
   const vote = async (matchup: Matchup, perfume_id: string) => {
     if (!user) { window.location.href = '/login?next=/battles'; return; }
     setBusy(matchup.id);
+    setVoteError('');
     try {
       const r = await fetch(`/api/battles/${battle!.id}/vote`, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -54,7 +56,7 @@ export default function BattlesPage() {
       setMyVotes((v) => ({ ...v, [matchup.id]: perfume_id }));
       await load();
     } catch (e) {
-      alert(e instanceof Error ? e.message : 'Vote failed');
+      setVoteError(e instanceof Error ? e.message : 'Vote failed');
     } finally { setBusy(null); }
   };
 
@@ -68,6 +70,11 @@ export default function BattlesPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <SectionHeading kicker="Scent Battles" title="Head-to-head tournaments" />
+      {voteError && (
+        <div className="mb-4 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700 dark:border-red-900 dark:bg-red-950/40 dark:text-red-300">
+          {voteError}
+        </div>
+      )}
       <p className="mt-3 max-w-2xl text-sm text-stone-500 dark:text-stone-400">
         Weekly fragrance showdowns voted by the community. Indian themes, single elimination, one champion.
       </p>
