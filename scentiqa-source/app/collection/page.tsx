@@ -1,136 +1,122 @@
-// Complete Your Collection — ML-powered recommendations based on what you own.
-// Finds gaps in your scent wardrobe and suggests complementary perfumes.
+// Complete Your Collection — real wardrobe-gap recommendations.
+// Finds the scent families your wardrobe under-covers (from real accord data)
+// and suggests highly-rated perfumes prominent in those families.
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { cn, inr } from '@/lib/utils';
-import { Button, Card, SectionHeading, Skeleton } from '@/components';
-import { PerfumeCard } from '@/components/domain';
-import { loadML, isMLReady } from '@/lib/ml/engine';
+import { Button, Card, SectionHeading } from '@/components';
 
-interface P {
-  id: string; slug: string; name: string; house: string; gender: string;
-  lowestPriceInr: number | null;
-}
+interface Owned { id: string; slug: string; name: string; house: string }
+interface Reco { id: string; slug: string; name: string; house: string; score: number; reason: string; gap: string }
 
 export default function CollectionPage() {
-  const [perfumes, setPerfumes] = useState<P[]>([]);
-  const [mlReady, setMlReady] = useState(false);
-  const [owned, setOwned] = useState<string[]>([]);
+  const [owned, setOwned] = useState<Owned[]>([]);
   const [search, setSearch] = useState('');
+  const [hits, setHits] = useState<Owned[]>([]);
+  const [showHits, setShowHits] = useState(false);
+  const [gaps, setGaps] = useState<string[]>([]);
+  const [recos, setRecos] = useState<Reco[]>([]);
+  const [analyzing, setAnalyzing] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [error, setError] = useState('');
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    fetch('/api/perfumes').then((r) => r.json()).then((j) => setPerfumes(j.perfumes ?? [])).catch(() => {});
-    loadML().then(() => setMlReady(true)).catch(() => {});
-    // Load from localStorage
     try {
       const saved = localStorage.getItem('scentiqa-collection');
       if (saved) setOwned(JSON.parse(saved));
-    } catch {}
+    } catch { /* noop */ }
   }, []);
 
   useEffect(() => {
-    try {
-      localStorage.setItem('scentiqa-collection', JSON.stringify(owned));
-    } catch {}
+    try { localStorage.setItem('scentiqa-collection', JSON.stringify(owned)); } catch { /* noop */ }
   }, [owned]);
 
-  const toggle = (id: string) => {
-    setOwned((o) => (o.includes(id) ? o.filter((x) => x !== id) : [...o, id]));
+  // Server-side search — no full-catalog download.
+  useEffect(() => {
+    if (timer.current) clearTimeout(timer.current);
+    const q = search.trim();
+    if (q.length < 2) { setHits([]); setShowHits(false); return; }
+    timer.current = setTimeout(async () => {
+      try {
+        const r = await fetch(`/api/search?q=${encodeURIComponent(q)}&limit=8`);
+        const j = await r.json();
+        setHits((j.results ?? []).filter((h: Owned) => !owned.some((o) => o.id === h.id)));
+        setShowHits(true);
+      } catch { /* offline */ }
+    }, 250);
+    return () => { if (timer.current) clearTimeout(timer.current); };
+  }, [search, owned]);
+
+  const toggle = (p: Owned) => {
+    setOwned((o) => (o.some((x) => x.id === p.id) ? o.filter((x) => x.id !== p.id) : [...o, p]));
   };
 
-  const searchResults = useMemo(() => {
-    if (!search.trim()) return [];
-    const q = search.toLowerCase();
-    return perfumes
-      .filter((p) => p.name.toLowerCase().includes(q) || p.house.toLowerCase().includes(q))
-      .slice(0, 8);
-  }, [search, perfumes]);
-
-  const ownedPerfumes = useMemo(() => perfumes.filter((p) => owned.includes(p.id)), [perfumes, owned]);
-
-  // ML analysis: find accord gaps and recommend complementary scents
-  const analysis = useMemo(() => {
-    if (!showResults || !mlReady || !isMLReady() || owned.length === 0) return null;
-
-    // This would use the ML engine to analyze accord coverage
-    // For now, we'll do a simplified version
-    // In a full implementation, we'd load vectors and compute coverage
-
-    return {
-      ownedCount: owned.length,
-      // Placeholder for ML analysis
-      gaps: ['Evening / Night', 'Winter'],
-      recommendations: [] as Array<{ p: P; score: number; reason: string }>,
-    };
-  }, [showResults, mlReady, owned]);
-
-  // Simple ML-inspired recommendations: find perfumes different from owned
-  const recommendations = useMemo(() => {
-    if (!showResults || owned.length === 0) return [];
-
-    // Get owned perfume names for diversity
-    const ownedNames = new Set(ownedPerfumes.map((p) => p.name.toLowerCase()));
-
-    // Recommend highly-rated perfumes not owned, with diversity
-    // In full ML version, this would use vector distance to find complementary accords
-    return perfumes
-      .filter((p) => !owned.includes(p.id))
-      .slice(0, 12)
-      .map((p, i) => ({
-        p,
-        score: 85 - i * 2,
-        reason: i % 3 === 0 ? 'Fills a fresh gap' : i % 3 === 1 ? 'Perfect for evenings' : 'Complements your style',
-      }));
-  }, [showResults, perfumes, owned, ownedPerfumes]);
+  const analyze = async () => {
+    if (owned.length === 0) return;
+    setAnalyzing(true); setError('');
+    try {
+      const r = await fetch(`/api/collection/recommend?owned=${owned.map((o) => o.id).join(',')}`);
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error ?? 'Analysis failed');
+      setGaps(j.gaps ?? []);
+      setRecos(j.recommendations ?? []);
+      setShowResults(true);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Analysis failed');
+    } finally { setAnalyzing(false); }
+  };
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
-      <SectionHeading kicker="ML Recommendations" title="Complete your collection" />
+      <SectionHeading kicker="Wardrobe analysis" title="Complete your collection" />
       <p className="mb-8 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
-        Tell us what you own. Our AI analyzes your scent wardrobe and finds the missing pieces —
-        complementary fragrances for every occasion.
+        Tell us what you own. We map your wardrobe&apos;s scent families from real accord data
+        and find the missing pieces — complementary fragrances for every occasion.
       </p>
 
       {!showResults ? (
         <>
-          {/* Search and add */}
           <Card className="mb-6 p-6">
             <h3 className="mb-3 font-display text-lg font-semibold">What do you own?</h3>
-            <input
-              type="text" value={search} onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search perfumes you own... (e.g. Aventus, Sauvage)"
-              className="w-full rounded-full border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-gold-500 dark:border-ink-700 dark:bg-ink-800"
-            />
-            {searchResults.length > 0 && (
-              <div className="mt-3 space-y-2">
-                {searchResults.map((p) => (
-                  <button
-                    key={p.id} onClick={() => { toggle(p.id); setSearch(''); }}
-                    className="flex w-full items-center justify-between rounded-xl border border-stone-200 px-4 py-2.5 text-left hover:border-gold-500 dark:border-ink-700"
-                  >
-                    <span>
-                      <span className="font-medium">{p.name}</span>
-                      <span className="ml-2 text-sm text-stone-500">{p.house}</span>
-                    </span>
-                    <span className="text-gold-600">+ Add</span>
-                  </button>
-                ))}
-              </div>
-            )}
+            <div className="relative">
+              <input
+                type="text" value={search} onChange={(e) => setSearch(e.target.value)}
+                onFocus={() => search.trim().length >= 2 && setShowHits(true)}
+                placeholder="Search perfumes you own... (e.g. Aventus, Sauvage)"
+                className="w-full rounded-full border border-stone-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-gold-500 dark:border-ink-700 dark:bg-ink-800"
+              />
+              {showHits && hits.length > 0 && (
+                <div className="absolute inset-x-0 top-full z-30 mt-2 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
+                  {hits.map((p) => (
+                    <button
+                      key={p.id} onClick={() => { toggle(p); setSearch(''); setHits([]); setShowHits(false); }}
+                      className="flex w-full items-center justify-between px-4 py-2.5 text-left hover:bg-cream-100 dark:hover:bg-white/5"
+                    >
+                      <span>
+                        <span className="font-medium">{p.name}</span>
+                        <span className="ml-2 text-sm text-stone-500">{p.house}</span>
+                      </span>
+                      <span className="text-gold-600">+ Add</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+              {showHits && search.trim().length >= 2 && hits.length === 0 && (
+                <p className="mt-2 text-sm text-stone-400">No matches — try a different spelling.</p>
+              )}
+            </div>
           </Card>
 
-          {/* Owned list */}
-          {ownedPerfumes.length > 0 && (
+          {owned.length > 0 && (
             <Card className="mb-6 p-6">
               <h3 className="mb-3 font-display text-lg font-semibold">
-                Your collection ({ownedPerfumes.length})
+                Your collection ({owned.length})
               </h3>
               <div className="flex flex-wrap gap-2">
-                {ownedPerfumes.map((p) => (
+                {owned.map((p) => (
                   <button
-                    key={p.id} onClick={() => toggle(p.id)}
+                    key={p.id} onClick={() => toggle(p)}
                     className="rounded-full bg-stone-900 px-4 py-1.5 text-sm font-medium text-white hover:bg-red-600 dark:bg-white dark:text-stone-900"
                     title="Click to remove"
                   >
@@ -138,16 +124,17 @@ export default function CollectionPage() {
                   </button>
                 ))}
               </div>
-              <Button onClick={() => setShowResults(true)} className="mt-6" disabled={!mlReady}>
-                {mlReady ? '🤖 Analyze my collection' : 'Loading AI...'}
+              <Button onClick={analyze} className="mt-6" disabled={analyzing}>
+                {analyzing ? 'Analyzing…' : '🔍 Analyze my collection'}
               </Button>
+              {error && <p className="mt-3 text-sm font-semibold text-red-600">{error}</p>}
             </Card>
           )}
 
-          {ownedPerfumes.length === 0 && (
+          {owned.length === 0 && (
             <Card className="p-8 text-center">
-              <p className="text-4xl mb-3">🪹</p>
-              <p className="text-stone-500">Search above to add perfumes you own, and our AI will find your missing pieces.</p>
+              <p className="mb-3 text-4xl">🪹</p>
+              <p className="text-stone-500">Search above to add perfumes you own, and we&apos;ll find your missing pieces.</p>
             </Card>
           )}
         </>
@@ -163,32 +150,46 @@ export default function CollectionPage() {
               <p className="text-sm text-stone-500">Perfumes owned</p>
             </Card>
             <Card className="p-5 text-center">
-              <p className="text-3xl font-bold text-gold-600">{recommendations.length}</p>
-              <p className="text-sm text-stone-500">AI recommendations</p>
+              <p className="text-3xl font-bold text-gold-600">{recos.length}</p>
+              <p className="text-sm text-stone-500">Recommendations</p>
             </Card>
             <Card className="p-5 text-center">
               <p className="text-3xl">🎯</p>
-              <p className="text-sm text-stone-500">Gaps identified</p>
+              <p className="mt-1 text-sm text-stone-500">
+                {gaps.length > 0 ? `Light on: ${gaps.join(', ')}` : 'Gaps identified'}
+              </p>
             </Card>
           </div>
 
-          <h3 className="mb-4 font-display text-xl font-semibold">Recommended to complete your wardrobe</h3>
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {recommendations.map(({ p, score, reason }) => (
-              <div key={p.slug}>
-                <div className="relative">
-                  <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-violet-600/90 px-2 py-0.5 text-[11px] font-bold text-white backdrop-blur">
-                    {score}%
-                  </span>
-                  <PerfumeCard perfume={p as any} />
-                </div>
-                <p className="mt-1 px-1 text-xs text-violet-600 dark:text-violet-300">✨ {reason}</p>
+          {recos.length === 0 ? (
+            <Card className="p-8 text-center">
+              <p className="font-display text-xl font-bold">A well-rounded wardrobe!</p>
+              <p className="mt-2 text-sm text-stone-500">Your collection already covers every scent family — nothing missing.</p>
+            </Card>
+          ) : (
+            <>
+              <h3 className="mb-4 font-display text-xl font-semibold">Recommended to complete your wardrobe</h3>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {recos.map((r) => (
+                  <Link key={r.id} href={`/perfume/${r.slug}`}>
+                    <Card className="flex h-full items-center gap-4 p-4 transition hover:shadow-card">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-600/15 font-display text-sm font-bold text-violet-700 dark:text-violet-300">
+                        {r.score}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block truncate font-bold">{r.name}</span>
+                        <span className="block truncate text-xs text-stone-400">{r.house}</span>
+                        <span className="mt-1 block text-xs text-violet-600 dark:text-violet-300">✨ {r.reason}</span>
+                      </span>
+                    </Card>
+                  </Link>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          )}
 
           <Card className="mt-8 p-6">
-            <h3 className="mb-2 font-display text-lg font-semibold">💡 AI Wardrobe Tips</h3>
+            <h3 className="mb-2 font-display text-lg font-semibold">💡 Wardrobe Tips</h3>
             <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-300">
               <li>• A complete wardrobe has: 1 fresh daily, 1 warm evening, 1 formal office, 1 bold statement</li>
               <li>• Rotate seasonally — citrus shines in summer, amber/oud in winter</li>

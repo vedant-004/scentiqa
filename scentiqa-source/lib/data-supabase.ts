@@ -3,7 +3,7 @@
 import { getSupabaseServer } from './supabase';
 import type {
   Article, Award, AwardCategory, AwardNominee, ClimateScore, DupeEntry, ForumCategory, ForumTopic,
-  Giveaway, House, NoteInfo, Perfume, PerfumeFull, PriceDrop,
+  Giveaway, House, Member, NoteInfo, Perfume, PerfumeFull, PriceDrop,
   PriceEntry, Review, Seller,
 } from './types';
 import type { HouseFull } from './data-demo';
@@ -153,10 +153,56 @@ export async function getHouse(slug: string): Promise<HouseFull | null> {
   return { ...mapHouse(h), perfumes: (ps ?? []).map(mapPerfume) };
 }
 
+/** Sanitize a user search query for PostgREST ilike/or filters. */
+function cleanSearchQuery(q: string): string {
+  return q.trim().replace(/[%_\\(),"]/g, '').slice(0, 60);
+}
+
 export async function searchPerfumes(query: string, limit = 8): Promise<Perfume[]> {
   const c = sb(); if (!c) return [];
-  const { data } = await c.from('perfumes').select('*, houses(slug, name)').ilike('name', `%${query}%`).limit(limit);
-  return (data ?? []).map(mapPerfume);
+  const q = cleanSearchQuery(query);
+  if (q.length === 0) return [];
+  const sel = '*, houses(slug, name)';
+  const seen = new Map<string, Record<string, unknown>>();
+  const add = (rows: Record<string, unknown>[] | null) => {
+    for (const r of rows ?? []) {
+      const id = r.id as string;
+      if (id && !seen.has(id)) seen.set(id, r);
+    }
+  };
+  type Row = Record<string, unknown>;
+  // Pass 1: exact name match (case-insensitive) — instant.
+  add(((await c.from('perfumes').select(sel).ilike('name', q).limit(limit)).data ?? []) as Row[]);
+  // Pass 2: name starts with query — the most useful prefix matches.
+  if (seen.size < limit) {
+    add(((await c.from('perfumes').select(sel).ilike('name', `${q}%`).limit(limit)).data ?? []) as Row[]);
+  }
+  // Pass 3: name contains query — served by the trigram GIN index.
+  if (seen.size < limit) {
+    add(((await c.from('perfumes').select(sel).ilike('name', `%${q}%`).limit(limit * 2)).data ?? []) as Row[]);
+  }
+  // Pass 4: house name contains query (e.g. "lattafa", "creed").
+  if (seen.size < limit) {
+    const { data } = await c.from('perfumes').select(sel).or(`houses.name.ilike.%${q}%`).limit(limit);
+    add((data ?? []) as Row[]);
+  }
+  const rows = [...seen.values()];
+  const ql = q.toLowerCase();
+  const rankOf = (r: Row): number => {
+    const name = String(r.name ?? '').toLowerCase();
+    const house = String((r.houses as { name?: string } | null)?.name ?? '').toLowerCase();
+    if (name === ql) return 0;
+    if (name.startsWith(ql)) return 1;
+    if (name.includes(ql)) return 2;
+    if (house.includes(ql)) return 3;
+    return 4;
+  };
+  rows.sort((a, b) => {
+    const dr = rankOf(a) - rankOf(b);
+    if (dr !== 0) return dr;
+    return (Number(b.rating_count ?? 0) || 0) - (Number(a.rating_count ?? 0) || 0);
+  });
+  return rows.slice(0, limit).map(mapPerfume);
 }
 
 export async function getDupesForPerfume(originalSlug: string): Promise<DupeEntry[]> {
@@ -281,25 +327,67 @@ export async function getArticle(slug: string): Promise<Article | null> {
   return list.find((a) => a.slug === slug) ?? null;
 }
 
+function embeddedName(rel: { name: string } | Array<{ name: string }> | null | undefined): string {
+  if (!rel) return '';
+  return Array.isArray(rel) ? (rel[0]?.name ?? '') : rel.name;
+}
+function embeddedUsername(rel: { username: string } | Array<{ username: string }> | null | undefined): string {
+  if (!rel) return 'member';
+  return Array.isArray(rel) ? (rel[0]?.username ?? 'member') : rel.username;
+}
+
 export async function getForumCategories(): Promise<ForumCategory[]> {
   const c = sb(); if (!c) return [];
-  const { data: cats } = await c.from('forum_categories').select('*').order('sort_order');
-  const out: ForumCategory[] = [];
-  for (const cat of cats ?? []) {
-    const { data: topics } = await c.from('forum_topics').select('*, users(username)').eq('category_id', cat.id).order('last_post_at', { ascending: false }).limit(10);
-    out.push({
-      id: cat.id, slug: cat.slug, name: cat.name, description: cat.description ?? '',
-      topics: (topics ?? []).map((t: Record<string, unknown>) => ({
-        id: t.id as string, title: t.title as string,
-        author: (t.users as Record<string, string>)?.username ?? 'member', posts: [],
-      })),
-    });
+  // Three bulk queries — no N+1. Counts are computed in code.
+  const [{ data: cats }, { data: topics }, { data: posts }] = await Promise.all([
+    c.from('forum_categories').select('*').order('sort_order'),
+    c.from('forum_topics').select('id, category_id, title, users(username)'),
+    c.from('forum_posts').select('id, topic_id'),
+  ]);
+  const postsByTopic = new Map<string, number>();
+  for (const p of (posts ?? []) as Array<{ id: string; topic_id: string }>) {
+    postsByTopic.set(p.topic_id, (postsByTopic.get(p.topic_id) ?? 0) + 1);
   }
-  return out;
+  const topicsByCat = new Map<string, ForumTopic[]>();
+  for (const t of (topics ?? []) as Array<{ id: string; category_id: string; title: string; users: unknown }>) {
+    const list = topicsByCat.get(t.category_id) ?? [];
+    list.push({
+      id: t.id, title: t.title,
+      author: embeddedUsername(t.users as { username: string } | Array<{ username: string }> | null), posts: [],
+      postCount: postsByTopic.get(t.id) ?? 0,
+    });
+    topicsByCat.set(t.category_id, list);
+  }
+  return ((cats ?? []) as Array<{ id: string; slug: string; name: string; description: string | null }>).map((cat) => ({
+    id: cat.id, slug: cat.slug, name: cat.name, description: cat.description ?? '',
+    topics: topicsByCat.get(cat.id) ?? [],
+  }));
 }
 export async function getForumCategory(slug: string): Promise<ForumCategory | null> {
-  const cats = await getForumCategories();
-  return cats.find((c) => c.slug === slug) ?? null;
+  const c = sb(); if (!c) return null;
+  const { data: cat } = await c.from('forum_categories').select('*').eq('slug', slug).maybeSingle();
+  if (!cat) return null;
+  const row = cat as { id: string; slug: string; name: string; description: string | null };
+  const { data: topics } = await c.from('forum_topics')
+    .select('id, title, users(username)').eq('category_id', row.id)
+    .order('last_post_at', { ascending: false });
+  const topicRows = (topics ?? []) as Array<{ id: string; title: string; users: unknown }>;
+  const topicIds = topicRows.map((t) => t.id);
+  let postRows: Array<{ topic_id: string }> = [];
+  if (topicIds.length > 0) {
+    const { data } = await c.from('forum_posts').select('topic_id').in('topic_id', topicIds);
+    postRows = (data ?? []) as Array<{ topic_id: string }>;
+  }
+  const counts = new Map<string, number>();
+  for (const p of postRows) counts.set(p.topic_id, (counts.get(p.topic_id) ?? 0) + 1);
+  return {
+    id: row.id, slug: row.slug, name: row.name, description: row.description ?? '',
+    topics: topicRows.map((t) => ({
+      id: t.id, title: t.title,
+      author: embeddedUsername(t.users as { username: string } | Array<{ username: string }> | null), posts: [],
+      postCount: counts.get(t.id) ?? 0,
+    })),
+  };
 }
 export async function getForumTopic(id: string): Promise<{ topic: ForumTopic; category: ForumCategory } | null> {
   const c = sb(); if (!c) return null;
@@ -399,8 +487,73 @@ export async function getGiveaways(): Promise<Giveaway[]> {
   }));
 }
 
-export async function getMember(): Promise<null> { return null; }
-export async function getReviewsByMember(): Promise<Array<Review & { perfume: Perfume }>> { return []; }
+export async function getMember(username: string): Promise<(Member & { wardrobePerfumes: Record<keyof Member['wardrobe'], Perfume[]> }) | null> {
+  const c = sb(); if (!c) return null;
+  const { data: u } = await c.from('users')
+    .select('id, username, level, bio, signature_fragrance, favorite_fragrances, location_city')
+    .ilike('username', username).limit(1).maybeSingle();
+  if (!u) return null;
+  const r = u as Record<string, unknown>;
+  const { data: items } = await c.from('wardrobe_items').select('shelf, perfume_id').eq('user_id', r.id as string);
+  const byShelf: Record<string, string[]> = { have: [], want: [], had: [], test: [] };
+  for (const it of (items ?? []) as Array<{ shelf: string; perfume_id: string }>) {
+    if (byShelf[it.shelf]) byShelf[it.shelf].push(it.perfume_id);
+  }
+  const allIds = [...new Set(Object.values(byShelf).flat())];
+  const perfMap = new Map<string, Perfume>();
+  if (allIds.length > 0) {
+    const { data: ps } = await c.from('perfumes').select('*, houses(slug, name)').in('id', allIds);
+    for (const p of ((ps ?? []) as Record<string, unknown>[]).map(mapPerfume)) perfMap.set(p.id, p);
+  }
+  const pick = (ids: string[]) => ids.map((id) => perfMap.get(id)).filter((p): p is Perfume => !!p);
+  const favsRaw = r.favorite_fragrances;
+  const favs = Array.isArray(favsRaw) ? (favsRaw as unknown[]).filter((x): x is string => typeof x === 'string') : [];
+  return {
+    id: r.id as string,
+    username: r.username as string,
+    city: (r.location_city as string) ?? '',
+    bio: (r.bio as string) ?? '',
+    level: (r.level as string) ?? 'Explorer',
+    sig: (r.signature_fragrance as string) ?? '',
+    favs,
+    wardrobe: { have: byShelf.have, want: byShelf.want, had: byShelf.had, test: byShelf.test },
+    wardrobePerfumes: { have: pick(byShelf.have), want: pick(byShelf.want), had: pick(byShelf.had), test: pick(byShelf.test) },
+  };
+}
+export async function getReviewsByMember(username: string): Promise<Array<Review & { perfume: Perfume }>> {
+  const c = sb(); if (!c) return [];
+  const { data: u } = await c.from('users').select('id').ilike('username', username).limit(1).maybeSingle();
+  if (!u) return [];
+  const uid = (u as Record<string, unknown>).id as string;
+  const { data: rs } = await c.from('reviews')
+    .select('id, perfume_id, rating, title, body, verified_purchase, helpful_votes, created_at')
+    .eq('user_id', uid).order('created_at', { ascending: false }).limit(20);
+  const rows = (rs ?? []) as Record<string, unknown>[];
+  const perfIds = [...new Set(rows.map((r) => r.perfume_id as string).filter(Boolean))];
+  const perfMap = new Map<string, Perfume>();
+  if (perfIds.length > 0) {
+    const { data: ps } = await c.from('perfumes').select('*, houses(slug, name)').in('id', perfIds);
+    for (const p of ((ps ?? []) as Record<string, unknown>[]).map(mapPerfume)) perfMap.set(p.id, p);
+  }
+  return rows
+    .map((r) => {
+      const perfume = perfMap.get(r.perfume_id as string);
+      if (!perfume) return null;
+      return {
+        id: r.id as string,
+        perfumeSlug: perfume.slug,
+        username,
+        rating: Number(r.rating ?? 0),
+        title: String(r.title ?? ''),
+        body: String(r.body ?? ''),
+        verifiedPurchase: Boolean(r.verified_purchase),
+        helpfulVotes: Number(r.helpful_votes ?? 0),
+        createdAt: String(r.created_at ?? ''),
+        perfume,
+      };
+    })
+    .filter((r): r is Review & { perfume: Perfume } => r !== null);
+}
 export async function getNotes(): Promise<NoteInfo[]> {
   const c = sb(); if (!c) return [];
   const { data } = await c.from('notes').select('*').order('name');

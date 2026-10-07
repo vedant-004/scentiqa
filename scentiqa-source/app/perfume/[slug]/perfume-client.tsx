@@ -330,7 +330,17 @@ export function ClimateSection({ slug, perfumeId, perfumeName }: { slug: string;
     } finally { setBusy(false); }
   };
 
-  if (!data) return null;
+  if (!data) {
+    return (
+      <div className="flex items-center gap-4">
+        <div className="h-20 w-20 shrink-0 animate-pulse rounded-2xl bg-stone-200 dark:bg-ink-700" />
+        <div className="min-w-0 flex-1 space-y-2">
+          <div className="h-5 w-40 animate-pulse rounded bg-stone-200 dark:bg-ink-700" />
+          <div className="h-3 w-56 animate-pulse rounded bg-stone-200 dark:bg-ink-700" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>

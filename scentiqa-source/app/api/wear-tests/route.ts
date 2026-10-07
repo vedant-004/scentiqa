@@ -40,7 +40,7 @@ export async function POST(req: Request) {
   });
   if (error) return NextResponse.json({ error: error.message }, { status: 400 });
 
-  // Recompute aggregates (service-role, fire and forget)
-  recomputeClimateStats(perfume_id).catch(() => {});
+  // Recompute aggregates before responding so the client's refetch sees fresh stats.
+  try { await recomputeClimateStats(perfume_id); } catch { /* non-fatal */ }
   return NextResponse.json({ ok: true });
 }

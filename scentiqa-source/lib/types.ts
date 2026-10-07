@@ -99,7 +99,7 @@ export interface Article {
 }
 
 export interface ForumPost { id: string; username: string; body: string }
-export interface ForumTopic { id: string; title: string; author: string; posts: ForumPost[] }
+export interface ForumTopic { id: string; title: string; author: string; posts: ForumPost[]; postCount?: number }
 export interface ForumCategory { id: string; slug: string; name: string; description: string; topics: ForumTopic[] }
 
 export interface AwardNominee {

@@ -21,7 +21,7 @@ export default async function ForumPage() {
       <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">Talk dupes, sellers, layering and Indian perfumery with fellow enthusiasts.</p>
       <div className="grid gap-4 md:grid-cols-2">
         {cats.map((c) => {
-          const postCount = c.topics.reduce((n, t) => n + t.posts.length, 0);
+          const postCount = c.topics.reduce((n, t) => n + (t.postCount ?? t.posts.length), 0);
           return (
             <Link key={c.slug} href={`/forum/${c.slug}`}>
               <Card hover className="flex h-full items-start gap-4 p-6">

@@ -20,7 +20,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             <Card hover className="flex items-center justify-between gap-4 p-5">
               <div className="min-w-0">
                 <h2 className="truncate font-display text-lg font-semibold tracking-tight">{t.title}</h2>
-                <p className="mt-0.5 text-sm text-stone-500 dark:text-stone-400">by @{t.author} · {t.posts.length} posts</p>
+                <p className="mt-0.5 text-sm text-stone-500 dark:text-stone-400">by @{t.author} · {t.postCount ?? t.posts.length} posts</p>
               </div>
               <span className="shrink-0 text-stone-300 dark:text-stone-600">→</span>
             </Card>

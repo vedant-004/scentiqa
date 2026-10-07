@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Which perfumes survive Indian summer? Community-tested heat, humidity and sweat performance, ranked.',
 };
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 interface Row {
   perfume_id: string; test_count: number; avg_hours: number | null;
