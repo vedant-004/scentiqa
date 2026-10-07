@@ -359,8 +359,8 @@ export function HouseCard({ house }: { house: House }) {
 function BrandClaimNote({ text }: { text: string }) {
   const urlMatch = text.match(/https?:\/\/\S+/);
   let body = urlMatch ? text.slice(0, urlMatch.index).replace(/\s*Source:\s*$/, '') : text;
-  // Strip leading "Brand-stated inspiration:" if present in DB text to avoid duplication with the label below
-  body = body.replace(/^Brand-stated inspiration:\s*/i, '').trim();
+  // Strip a leading "Brand('s) stated inspiration:" if present in DB text to avoid duplication with the label below
+  body = body.replace(/^Brand'?s?[-\s]stated inspiration:\s*/i, '').trim();
   return (
     <p className="mt-2 text-xs leading-relaxed text-stone-500 dark:text-stone-400">
       <span className="font-semibold text-stone-600 dark:text-stone-300">Brand's stated inspiration:</span> {body}

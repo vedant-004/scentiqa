@@ -77,11 +77,19 @@ async function handleRecommend(req: Request) {
   for (const h of housesRes.data ?? []) houseMap.set(h.id, { slug: h.slug, name: h.name });
 
   const all: any[] = [];
-  for (let from = 0; ; from += PAGE) {
-    const { data: page, error: pageErr } = await sb
-      .from('perfumes')
-      .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, accords, lowest_price_inr, rating_avg, rating_count')
-      .range(from, from + PAGE - 1);
+  // 9 sequential page fetches were ~10s on the main USP — fetch all pages in parallel.
+  const pagePromises: Promise<{ data: any[] | null; error: unknown }>[] = [];
+  for (let from = 0; from < 9000; from += PAGE) {
+    pagePromises.push(
+      Promise.resolve(
+        sb.from('perfumes')
+          .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, accords, lowest_price_inr, rating_avg, rating_count')
+          .range(from, from + PAGE - 1),
+      ).then((r) => ({ data: r.data as any[] | null, error: r.error as unknown })),
+    );
+  }
+  for (const pp of pagePromises) {
+    const { data: page, error: pageErr } = await pp;
     if (pageErr) {
       return NextResponse.json({ error: 'Failed to load catalog' }, { status: 500 });
     }
@@ -97,6 +105,23 @@ async function handleRecommend(req: Request) {
   const strList = (v: unknown): string[] =>
     Array.isArray(v) ? v.map((x) => String(x ?? '').trim()).filter(Boolean) : [];
 
+  // Accords keep their {name, strength} shape — String() would turn them into
+  // "[object Object]" and zero out the accord-vector component for the whole catalog.
+  const accordList = (v: unknown): (string | { name: string; strength: number | null })[] => {
+    if (!Array.isArray(v)) return [];
+    const out: (string | { name: string; strength: number | null })[] = [];
+    for (const x of v) {
+      if (typeof x === 'string') { if (x.trim()) out.push(x.trim()); continue; }
+      if (x && typeof x === 'object') {
+        const r = x as Record<string, unknown>;
+        if (typeof r.name === 'string' && r.name.trim()) {
+          out.push({ name: r.name, strength: typeof r.strength === 'number' ? r.strength : null });
+        }
+      }
+    }
+    return out;
+  };
+
   const rows: PerfumeRow[] = data.map((p: any) => {
     const h = houseMap.get(p.house_id);
     return {
@@ -105,7 +130,7 @@ async function handleRecommend(req: Request) {
       gender: p.gender ?? '', concentration: p.concentration ?? '',
       description: p.description ?? '', bottleImage: p.bottle_image_url ?? null,
       topNotes: strList(p.top_notes), heartNotes: strList(p.heart_notes), baseNotes: strList(p.base_notes),
-      accords: strList(p.accords),
+      accords: accordList(p.accords),
       lowestPriceInr: p.lowest_price_inr ?? null,
       ratingAvg: Number(p.rating_avg ?? 0), ratingCount: Number(p.rating_count ?? 0),
     };

@@ -1,6 +1,7 @@
 // Scentiqa data adapter — single entry point for all data access.
 // Demo mode (default): reads from data/seed.json.
 // Supabase mode: when NEXT_PUBLIC_SUPABASE_URL + keys are set, queries Supabase.
+import { cache } from 'react';
 import * as demo from './data-demo';
 import * as live from './data-supabase';
 import { isSupabaseConfigured } from './supabase';
@@ -19,7 +20,8 @@ export const getAllPerfumeSlugs = select(demo.getAllPerfumeSlugs, live.getAllPer
 export const getAllHouseSlugs = select(demo.getAllHouseSlugs, live.getAllHouseSlugs);
 export const getAllHouses = select(demo.getAllHouses, live.getAllHouses);
 export const getAllArticleSlugs = select(demo.getAllArticleSlugs, live.getAllArticleSlugs);
-export const getHouse = select(demo.getHouse, live.getHouse);
+export const getHouse = cache(select(demo.getHouse, live.getHouse));
+export const getHouseSummary = select(demo.getHouse, live.getHouseSummary);
 export const searchPerfumes = select(demo.searchPerfumes, live.searchPerfumes);
 export const getDupesForPerfume = select(demo.getDupesForPerfume, live.getDupesForPerfume);
 export const getTrending = select(demo.getTrending, live.getTrending);

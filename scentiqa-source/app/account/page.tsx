@@ -53,7 +53,7 @@ export default async function AccountPage() {
       .select('shelf, created_at, perfumes(id, slug, name, bottle_image_url, rating_avg, lowest_price_inr, accords, houses(name))')
       .eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
     sb.from('community_votes')
-      .select('vote_type, vote_value, created_at, perfumes(id, slug, name, bottle_image_url, houses(name))')
+      .select('vote_type, vote_value, created_at, perfumes(id, slug, name, bottle_image_url, accords, houses(name))')
       .eq('user_id', uid).order('created_at', { ascending: false }).limit(300),
     sb.from('reviews')
       .select('id, rating, title, body, created_at, helpful_votes, perfumes(slug, name)')

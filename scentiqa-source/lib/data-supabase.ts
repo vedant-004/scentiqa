@@ -153,6 +153,13 @@ export async function getHouse(slug: string): Promise<HouseFull | null> {
   return { ...mapHouse(h), perfumes: (ps ?? []).map(mapPerfume) };
 }
 
+/** Lightweight house info for cards — no perfume pull. */
+export async function getHouseSummary(slug: string): Promise<House | null> {
+  const c = sb(); if (!c) return null;
+  const { data: h } = await c.from('houses').select('*').eq('slug', slug).single();
+  return h ? mapHouse(h) : null;
+}
+
 /** Sanitize a user search query for PostgREST ilike/or filters. */
 function cleanSearchQuery(q: string): string {
   return q.trim().replace(/[%_\\(),"]/g, '').slice(0, 60);

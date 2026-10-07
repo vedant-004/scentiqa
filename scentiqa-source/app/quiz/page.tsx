@@ -1,34 +1,16 @@
 // AI Scent Quiz — "Find your signature scent in 5 questions"
-// Uses ML accord vectors + note matching to recommend perfumes.
+// Scored server-side against live accord + note data (full catalog).
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { cn, inr } from '@/lib/utils';
 import { Button, Card, SectionHeading, Skeleton } from '@/components';
 import { PerfumeCard } from '@/components/domain';
-import { loadML, isMLReady, accordMatchScore, noteMatchScore, predictPerfume } from '@/lib/ml/engine';
 
-interface P {
-  id: string; slug: string; name: string; house: string; gender: string;
-  lowestPriceInr: number | null; concentration?: string;
+interface Hit {
+  id: string; slug: string; name: string; house: string; match: number; reason: string;
+  ratingAvg: number; lowestPriceInr: number | null; isDupe: boolean; bottleImage: string | null;
 }
-
-// Map quiz answers to accord targets
-const VIBE_ACCORDS: Record<string, Record<string, number>> = {
-  fresh: { Citrus: 80, Fresh: 85, Aquatic: 60, Green: 40 },
-  cozy: { Ambery: 75, Sweet: 70, 'Warm Spicy': 60, Woody: 50 },
-  bold: { Woody: 80, Leathery: 70, Tobacco: 65, Smoky: 60, Ambery: 55 },
-  floral: { Floral: 85, Sweet: 40, Musky: 50, Citrus: 30 },
-};
-
-const NOTE_QUIZ_MAP: Record<string, string[]> = {
-  citrus: ['Bergamot', 'Lemon', 'Mandarin Orange', 'Grapefruit'],
-  woody: ['Sandalwood', 'Cedar', 'Vetiver', 'Oud'],
-  sweet: ['Vanilla', 'Tonka Bean', 'Amber'],
-  floral: ['Rose', 'Jasmine', 'Lavender'],
-  spicy: ['Cardamom', 'Pink Pepper', 'Cinnamon'],
-  aquatic: ['Sea Notes', 'Calone', 'Bergamot'],
-};
 
 const QUESTIONS = [
   {
@@ -74,7 +56,7 @@ const QUESTIONS = [
   },
   {
     id: 'budget',
-    q: 'What\'s your budget?',
+    q: "What's your budget?",
     options: [
       { v: '1000', label: 'Under ₹1,000', desc: 'Affordable gems' },
       { v: '2000', label: '₹1,000 – ₹2,000', desc: 'Mid-range quality' },
@@ -85,88 +67,74 @@ const QUESTIONS = [
 ];
 
 export default function QuizPage() {
-  const [perfumes, setPerfumes] = useState<P[]>([]);
-  const [mlReady, setMlReady] = useState(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
+  const [results, setResults] = useState<Hit[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  useEffect(() => {
-    fetch('/api/perfumes').then((r) => r.json()).then((j) => setPerfumes(j.perfumes ?? [])).catch(() => {});
-    loadML().then(() => setMlReady(true)).catch(() => {});
-  }, []);
-
-  const answer = (qid: string, v: string) => {
-    setAnswers((a) => ({ ...a, [qid]: v }));
+  const answer = async (qid: string, v: string) => {
+    const next = { ...answers, [qid]: v };
+    setAnswers(next);
     if (step < QUESTIONS.length - 1) {
       setStep(step + 1);
     } else {
       setShowResults(true);
+      setLoading(true);
+      setError('');
+      try {
+        const r = await fetch('/api/quiz/recommend', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(next),
+        });
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error ?? 'Failed');
+        setResults(j.results ?? []);
+      } catch {
+        setError('Could not generate recommendations. Check your connection and try again.');
+      }
+      setLoading(false);
     }
   };
-
-  const results = useMemo(() => {
-    if (!showResults || !mlReady || !isMLReady()) return [];
-
-    const vibeAccords = VIBE_ACCORDS[answers.vibe] || {};
-    const lovedNotes = NOTE_QUIZ_MAP[answers.notes] || [];
-    const maxPrice = answers.budget === 'any' ? Infinity : Number(answers.budget);
-    const wantStrong = answers.projection === 'strong';
-    const wantIntimate = answers.projection === 'intimate';
-
-    // Occasion adjustments
-    const occasionBoost: Record<string, number> = {};
-    if (answers.occasion === 'evening') { occasionBoost['Ambery'] = 20; occasionBoost['Woody'] = 15; }
-    if (answers.occasion === 'office') { occasionBoost['Fresh'] = 15; occasionBoost['Citrus'] = 10; }
-    if (answers.occasion === 'daily') { occasionBoost['Fresh'] = 10; occasionBoost['Citrus'] = 10; }
-
-    const targetAccords = { ...vibeAccords };
-    for (const [k, v] of Object.entries(occasionBoost)) {
-      targetAccords[k] = Math.min(100, (targetAccords[k] || 50) + v);
-    }
-
-    return perfumes
-      .filter((p) => (p.lowestPriceInr ?? Infinity) <= maxPrice)
-      .map((p) => {
-        const accord = accordMatchScore(targetAccords, p.id);
-        const note = noteMatchScore(lovedNotes, [], p.id);
-        const pred = predictPerfume(p.id, { concentration: p.concentration });
-
-        // Projection preference scoring
-        let projScore = 50;
-        if (pred) {
-          if (wantStrong) projScore = (pred.sillage.score / 5) * 100;
-          else if (wantIntimate) projScore = (1 - pred.sillage.score / 5) * 100 + 30;
-          else projScore = 100 - Math.abs(pred.sillage.score - 3) * 25;
-        }
-
-        // Combined: 50% accord, 30% notes, 20% projection
-        const final = Math.round(accord.score * 0.5 + note.score * 0.3 + projScore * 0.2);
-        return { p, score: final, accord, note, pred };
-      })
-      .filter((x) => x.score > 20)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 12);
-  }, [showResults, mlReady, perfumes, answers]);
 
   const reset = () => {
     setStep(0);
     setAnswers({});
     setShowResults(false);
+    setResults([]);
+    setError('');
   };
+
+  const toCard = (h: Hit) => ({
+    slug: h.slug, name: h.name, house: h.house,
+    ratingAvg: h.ratingAvg, lowestPriceInr: h.lowestPriceInr,
+    isDupe: h.isDupe, bottleImage: h.bottleImage,
+  });
 
   if (showResults) {
     return (
       <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
         <SectionHeading kicker="AI Scent Quiz" title="Your matches" />
         <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
-          Based on your answers, our AI analyzed {perfumes.length.toLocaleString()} perfumes.
-          Here are your top scent matches.
+          Based on your answers, we analyzed the full catalog against your scent profile.
+          Here are your top matches.
         </p>
         <Button variant="ghost" size="sm" onClick={reset} className="mb-6">← Retake quiz</Button>
 
-        {results.length === 0 ? (
-          <p className="text-stone-500">Loading AI recommendations...</p>
+        {loading ? (
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">{[1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-64" />)}</div>
+        ) : error ? (
+          <Card className="p-8 text-center">
+            <p className="text-sm text-stone-500">{error}</p>
+            <Button size="sm" className="mt-4" onClick={reset}>Retake quiz</Button>
+          </Card>
+        ) : results.length === 0 ? (
+          <Card className="p-8 text-center">
+            <p className="text-sm text-stone-500">No matches for these answers — try a wider budget or a different vibe.</p>
+            <Button size="sm" className="mt-4" onClick={reset}>Retake quiz</Button>
+          </Card>
         ) : (
           <>
             {/* Top pick spotlight */}
@@ -178,32 +146,27 @@ export default function QuizPage() {
                   </p>
                   <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
                     <div className="flex-1">
-                      <Link href={`/perfume/${results[0].p.slug}`} className="hover:underline">
-                        <h2 className="font-display text-3xl font-bold">{results[0].p.name}</h2>
+                      <Link href={`/perfume/${results[0].slug}`} className="hover:underline">
+                        <h2 className="font-display text-3xl font-bold">{results[0].name}</h2>
                       </Link>
-                      <p className="mt-1 text-stone-500">{results[0].p.house}</p>
+                      <p className="mt-1 text-stone-500">{results[0].house}</p>
                       <div className="mt-3 flex items-center gap-3">
                         <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-sm font-bold text-emerald-600 dark:text-emerald-300">
-                          {results[0].score}% match
+                          {results[0].match}% match
                         </span>
-                        {results[0].p.lowestPriceInr && (
-                          <span className="text-lg font-bold">{inr(results[0].p.lowestPriceInr)}</span>
+                        {results[0].lowestPriceInr && (
+                          <span className="text-lg font-bold">{inr(results[0].lowestPriceInr)}</span>
                         )}
                       </div>
                       <p className="mt-3 max-w-lg text-sm text-stone-600 dark:text-stone-300">
-                        {results[0].accord.explanation.length > 0 && (
-                          <>Strong in {results[0].accord.explanation.join(', ')}. </>
-                        )}
-                        {results[0].pred && (
-                          <>{results[0].pred.longevity.label} longevity · {results[0].pred.sillage.label} sillage.</>
-                        )}
+                        {results[0].reason}
                       </p>
-                      <Link href={`/perfume/${results[0].p.slug}`}>
+                      <Link href={`/perfume/${results[0].slug}`}>
                         <Button className="mt-4">View perfume →</Button>
                       </Link>
                     </div>
                     <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-gold-600 text-4xl font-bold text-white">
-                      {results[0].score}%
+                      {results[0].match}%
                     </div>
                   </div>
                 </div>
@@ -212,12 +175,12 @@ export default function QuizPage() {
 
             <h3 className="mb-4 font-display text-xl font-semibold">More matches for you</h3>
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-              {results.slice(1).map(({ p, score }) => (
-                <div key={p.slug} className="relative">
+              {results.slice(1).map((h) => (
+                <div key={h.slug} className="relative">
                   <span className="absolute right-2.5 top-2.5 z-10 rounded-full bg-stone-900/85 px-2 py-0.5 text-[11px] font-bold text-white backdrop-blur dark:bg-white/90 dark:text-stone-900">
-                    {score}%
+                    {h.match}%
                   </span>
-                  <PerfumeCard perfume={p as any} />
+                  <PerfumeCard perfume={toCard(h)} />
                 </div>
               ))}
             </div>
@@ -234,7 +197,7 @@ export default function QuizPage() {
     <div className="mx-auto max-w-3xl px-4 pt-8 sm:px-6">
       <SectionHeading kicker="AI Scent Quiz" title="Find your signature scent" />
       <p className="mb-8 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
-        Answer 5 quick questions. Our AI — trained on 24,000+ perfumes — will find your perfect match.
+        Answer 5 quick questions. We&rsquo;ll match you against every perfume in the catalog.
       </p>
 
       {/* Progress */}
@@ -271,10 +234,6 @@ export default function QuizPage() {
         <Button variant="ghost" size="sm" onClick={() => setStep(step - 1)} className="mt-6">
           ← Back
         </Button>
-      )}
-
-      {perfumes.length === 0 && (
-        <div className="mt-8"><Skeleton className="h-32" /></div>
       )}
     </div>
   );

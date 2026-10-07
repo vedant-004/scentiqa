@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getAllHouseSlugs, getHouse } from '@/lib/data';
+import { getAllHouseSlugs, getHouse, getHouseSummary } from '@/lib/data';
 import { HOUSE_TYPE_LABEL } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, SectionHeading } from '@/components/ui';
@@ -103,8 +103,7 @@ export default async function HousePage({ params }: { params: Promise<{ slug: st
 }
 
 async function HouseLink({ slug }: { slug: string }) {
-  const { getHouse: gh } = await import('@/lib/data');
-  const h = await gh(slug);
+  const h = await getHouseSummary(slug);
   if (!h) return null;
   return <HouseCard house={h} />;
 }

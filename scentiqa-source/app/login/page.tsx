@@ -34,7 +34,7 @@ export default function LoginPage() {
     try {
       const supabase = getSupabaseBrowser();
       if (!supabase) { setError('Sign-in failed.'); return; }
-      const { error: err } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin } });
+      const { error: err } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: `${window.location.origin}/auth/callback` } });
       if (err) setError(err.message);
       else setSent(true);
     } catch (err) {
