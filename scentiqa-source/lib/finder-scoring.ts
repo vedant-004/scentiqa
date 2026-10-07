@@ -82,6 +82,16 @@ const ACCORD_ALIASES: Record<string, string> = {
   leathery: 'leather',
 };
 
+/** Precomputed normalized accord name -> index map (avoids re-normalizing 84 names per lookup in hot loops). */
+function buildAccordIndexMap(accords: unknown[]): Map<string, number> {
+  const m = new Map<string, number>();
+  accords.forEach((a, i) => {
+    const nl = norm(a);
+    if (nl && !m.has(nl)) m.set(nl, i);
+  });
+  return m;
+}
+
 function accordIndex(accords: unknown[], name: unknown): number {
   const nl = norm(name);
   if (!nl) return -1;
@@ -90,6 +100,20 @@ function accordIndex(accords: unknown[], name: unknown): number {
     idx = accords.findIndex((a) => norm(a) === ACCORD_ALIASES[nl]);
   }
   return idx;
+}
+
+/** Fast lookup using a precomputed map. */
+function accordIndexFast(map: Map<string, number>, name: unknown): number {
+  const nl = norm(name);
+  if (!nl) return -1;
+  const idx = map.get(nl);
+  if (idx !== undefined) return idx;
+  const alias = ACCORD_ALIASES[nl];
+  if (alias) {
+    const ai = map.get(alias);
+    if (ai !== undefined) return ai;
+  }
+  return -1;
 }
 
 function norm(s: unknown): string {
@@ -238,6 +262,7 @@ export async function scorePerfumes(
   opts?: { relaxBudget?: boolean; relaxConcentration?: boolean }
 ): Promise<ScoredPerfume[]> {
   const ml = await loadMLData();
+  const accordMap = buildAccordIndexMap(ml.accords);
   const loved = a.lovedNotes.map(norm).filter(Boolean);
   const hated = a.hatedNotes.map(norm).filter(Boolean);
 
@@ -250,7 +275,7 @@ export async function scorePerfumes(
       for (const [key, accs] of Object.entries(ml.noteAccords)) {
         if (key.includes(n) || n.includes(key)) {
           for (const [acc, w] of accs) {
-            const idx = accordIndex(ml.accords, acc);
+            const idx = accordIndexFast(accordMap, acc);
             if (idx >= 0) target[idx] += w;
           }
           break;
@@ -259,7 +284,7 @@ export async function scorePerfumes(
       continue;
     }
     for (const [acc, w] of entries) {
-      const idx = accordIndex(ml.accords, acc);
+      const idx = accordIndexFast(accordMap, acc);
       if (idx >= 0) target[idx] += w;
     }
   }
@@ -267,7 +292,7 @@ export async function scorePerfumes(
     const boosts = OCCASION_ACCORDS[occ];
     if (!boosts) continue;
     for (const [acc, v] of Object.entries(boosts)) {
-      const idx = accordIndex(ml.accords, acc);
+      const idx = accordIndexFast(accordMap, acc);
       if (idx >= 0) target[idx] += v / 100;
     }
   }
@@ -338,7 +363,7 @@ export async function scorePerfumes(
         const acName = typeof ac === 'string' ? ac : ac?.name;
         const acStrength = typeof ac === 'string' ? 50 : (ac?.strength || 50);
         if (!acName) continue;
-        const idx = accordIndex(ml.accords, acName);
+        const idx = accordIndexFast(accordMap, acName);
         if (idx >= 0) vec[idx] = acStrength / 100;
       }
     }
