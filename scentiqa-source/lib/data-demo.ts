@@ -226,6 +226,18 @@ export async function getAwardYears(): Promise<number[]> {
 }
 export async function getGiveaways(): Promise<Giveaway[]> { return seed.giveaways; }
 
+export async function getTopMembers(limit = 12): Promise<Array<{ username: string; reviewCount: number; level: string }>> {
+  const counts = new Map<string, number>();
+  for (const r of seed.reviews) counts.set(r.username, (counts.get(r.username) ?? 0) + 1);
+  return [...counts.entries()]
+    .map(([username, reviewCount]) => {
+      const m = seed.users.find((u) => u.username === username);
+      return { username, reviewCount, level: m?.level ?? 'Explorer' };
+    })
+    .sort((a, b) => b.reviewCount - a.reviewCount)
+    .slice(0, limit);
+}
+
 export async function getMember(username: string): Promise<(Member & { wardrobePerfumes: Record<keyof Member['wardrobe'], Perfume[]> }) | null> {
   const m = seed.users.find((u) => u.username === username);
   if (!m) return null;

@@ -290,7 +290,7 @@ export function MobileBottomNav() {
 export function Footer({ stats }: { stats: { perfumes: number; houses: number; reviews: number; members: number } }) {
   const cols: Array<{ h: string; links: Array<[string, string]> }> = [
     { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['Scent Battles', '/battles'], ['Heat Lab', '/climate'], ['Blind-Buy Guide', '/blindbuy'], ['Wear Diary', '/diary'], ['All houses', '/houses'], ['Compare', '/compare'], ['Notes encyclopedia', '/notes'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Hidden Gems', '/hidden-gems'], ['AI Scent Finder', '/finder']] },
-    { h: 'Community', links: [['Forum', '/forum'], ['Awards 2026', '/awards/2026'], ['Giveaways', '/giveaways'], ['News', '/news'], ['Member spotlight', '/member/arjun_sniffs']] },
+    { h: 'Community', links: [['Forum', '/forum'], ['Awards 2026', '/awards/2026'], ['Giveaways', '/giveaways'], ['News', '/news'], ['Member spotlight', '/members']] },
     { h: 'Trust', links: [['Our methodology', '/methodology'], ['Climate protocol', '/climate-protocol'], ['Trust charter', '/trust-charter'], ['Verified sellers', '/sellers'], ['Spot fakes', '/fake-guide'], ['About', '/about']] },
     { h: 'Company', links: [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy'], ['Log in', '/login']] },
   ];

@@ -41,6 +41,7 @@ export const getAwardYears = select(demo.getAwardYears, live.getAwardYears);
 export const getGiveaways = select(demo.getGiveaways, live.getGiveaways);
 export const getMember = select(demo.getMember, live.getMember);
 export const getReviewsByMember = select(demo.getReviewsByMember, live.getReviewsByMember);
+export const getTopMembers = select(demo.getTopMembers, live.getTopMembers);
 export const getNotes = select(demo.getNotes, live.getNotes);
 export const getSimilarPerfumes = select(demo.getSimilarPerfumes, live.getSimilarPerfumes);
 export const findByNotes = select(demo.findByNotes, live.findByNotes);

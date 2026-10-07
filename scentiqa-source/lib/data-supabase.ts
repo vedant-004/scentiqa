@@ -487,6 +487,21 @@ export async function getGiveaways(): Promise<Giveaway[]> {
   }));
 }
 
+/** Top contributing members by review count (real data only). */
+export async function getTopMembers(limit = 12): Promise<Array<{ username: string; reviewCount: number; level: string }>> {
+  const c = sb(); if (!c) return [];
+  const { data: rs } = await c.from('reviews').select('user_id');
+  const counts = new Map<string, number>();
+  for (const r of (rs ?? []) as Array<{ user_id: string }>) {
+    counts.set(r.user_id, (counts.get(r.user_id) ?? 0) + 1);
+  }
+  if (counts.size === 0) return [];
+  const { data: us } = await c.from('users').select('id, username, level').in('id', [...counts.keys()]);
+  return ((us ?? []) as Array<{ id: string; username: string; level: string | null }>)
+    .map((u) => ({ username: u.username, reviewCount: counts.get(u.id) ?? 0, level: u.level ?? 'Explorer' }))
+    .sort((a, b) => b.reviewCount - a.reviewCount)
+    .slice(0, limit);
+}
 export async function getMember(username: string): Promise<(Member & { wardrobePerfumes: Record<keyof Member['wardrobe'], Perfume[]> }) | null> {
   const c = sb(); if (!c) return null;
   const { data: u } = await c.from('users')
