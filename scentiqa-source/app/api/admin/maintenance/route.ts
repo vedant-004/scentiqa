@@ -4,15 +4,26 @@ import { getSupabaseServer } from '@/lib/supabase';
 
 /**
  * Kill-switch state endpoint. Admin only.
- * GET  -> { enabled: boolean }
- * POST -> { enabled } in body sets the switch; returns the new state.
+ * Modes: live | maintenance | ghost
+ * GET  -> { mode }
+ * POST -> { mode } in body sets the switch; accepts legacy { enabled: boolean }.
+ * Returns the stored mode (DB truth, not the request).
  */
-async function readState(): Promise<boolean> {
+const MODES = ['live', 'maintenance', 'ghost'] as const;
+type Mode = (typeof MODES)[number];
+
+function normalizeMode(v: unknown): Mode {
+  const o = v as { mode?: unknown; enabled?: unknown } | null;
+  if (o && o.mode === 'ghost') return 'ghost';
+  if (o && (o.mode === 'maintenance' || o.enabled === true)) return 'maintenance';
+  return 'live';
+}
+
+async function readMode(): Promise<Mode> {
   const c = getSupabaseServer(true);
-  if (!c) return false;
+  if (!c) return 'live';
   const { data } = await c.from('site_settings').select('value').eq('key', 'maintenance_mode').maybeSingle();
-  const v = (data as { value?: { enabled?: boolean } } | null)?.value;
-  return v?.enabled === true;
+  return normalizeMode((data as { value?: unknown } | null)?.value);
 }
 
 export async function GET() {
@@ -21,7 +32,7 @@ export async function GET() {
   } catch {
     return NextResponse.json({ error: 'Not authorized' }, { status: 403 });
   }
-  return NextResponse.json({ enabled: await readState() });
+  return NextResponse.json({ mode: await readMode() });
 }
 
 export async function POST(req: Request) {
@@ -30,12 +41,16 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: 'Not authorized' }, { status: 403 });
   }
-  let enabled: boolean;
+  let mode: Mode;
   try {
     const body = await req.json();
-    if (typeof body?.enabled !== 'boolean')
-      return NextResponse.json({ error: 'Body must be { enabled: boolean }' }, { status: 400 });
-    enabled = body.enabled;
+    if (typeof body?.mode === 'string' && (MODES as readonly string[]).includes(body.mode)) {
+      mode = body.mode;
+    } else if (typeof body?.enabled === 'boolean') {
+      mode = body.enabled ? 'maintenance' : 'live'; // legacy shape
+    } else {
+      return NextResponse.json({ error: 'Body must be { mode: "live" | "maintenance" | "ghost" }' }, { status: 400 });
+    }
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
@@ -44,9 +59,8 @@ export async function POST(req: Request) {
   if (!c) return NextResponse.json({ error: 'Database not configured' }, { status: 500 });
   const { error } = await c
     .from('site_settings')
-    .upsert({ key: 'maintenance_mode', value: { enabled } }, { onConflict: 'key' });
+    .upsert({ key: 'maintenance_mode', value: { mode } }, { onConflict: 'key' });
   if (error) return NextResponse.json({ error: 'Could not save site status' }, { status: 500 });
 
-  // Read back what was actually stored — the UI shows the DB truth, not the request.
-  return NextResponse.json({ enabled: await readState() });
+  return NextResponse.json({ mode: await readMode() });
 }

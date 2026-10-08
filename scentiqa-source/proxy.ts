@@ -4,11 +4,15 @@ import type { NextRequest } from 'next/server';
 /**
  * Scentiqa kill switch.
  *
- * When the `maintenance_mode` site setting is enabled, every public page is
- * replaced with the /maintenance page. The switch is FAIL-OPEN by design:
- * any error, missing env var, or bad DB response keeps the site LIVE.
- * Only an explicit `enabled: true` in the database takes the site down,
- * and only a deliberate toggle in /admin can write that value.
+ * site_settings.maintenance_mode.value.mode controls the public site:
+ *   live         normal site
+ *   maintenance  every public page shows the /maintenance page
+ *   ghost        every public page returns a blank 503 (looks dead)
+ *
+ * The switch is FAIL-OPEN by design: any error, missing env var, or bad DB
+ * response keeps the site LIVE. Only an explicit mode in the database changes
+ * anything, and only a deliberate toggle in /admin can write that value.
+ * Legacy { enabled: true } rows are treated as maintenance.
  *
  * Paths that must ALWAYS stay reachable (the way back to the switch):
  *   /admin        the kill switch itself
@@ -19,6 +23,16 @@ import type { NextRequest } from 'next/server';
 const ALWAYS_OPEN = ['/admin', '/api', '/login', '/auth', '/maintenance', '/_next'];
 
 const STATIC_EXT = /\.(ico|png|jpg|jpeg|gif|svg|webp|avif|js|css|woff2?|ttf|map|json|xml|txt|webmanifest)$/i;
+
+type SiteMode = 'live' | 'maintenance' | 'ghost';
+
+/** Normalize the DB value. Unknown shapes and legacy { enabled: false } mean live. */
+function normalizeMode(v: unknown): SiteMode {
+  const o = v as { mode?: unknown; enabled?: unknown } | null;
+  if (o && o.mode === 'ghost') return 'ghost';
+  if (o && (o.mode === 'maintenance' || o.enabled === true)) return 'maintenance';
+  return 'live';
+}
 
 export async function proxy(req: NextRequest) {
   const path = req.nextUrl.pathname;
@@ -33,8 +47,13 @@ export async function proxy(req: NextRequest) {
       headers: { apikey: key, Authorization: `Bearer ${key}` },
     });
     if (!res.ok) return NextResponse.next(); // fail open
-    const rows = (await res.json()) as Array<{ value?: { enabled?: boolean } }>;
-    if (rows?.[0]?.value?.enabled === true) {
+    const rows = (await res.json()) as Array<{ value?: unknown }>;
+    const mode = normalizeMode(rows?.[0]?.value);
+    if (mode === 'ghost') {
+      // Blank 503: the site looks dead. Retry-After tells Google to come back later.
+      return new NextResponse(null, { status: 503, headers: { 'Retry-After': '3600' } });
+    }
+    if (mode === 'maintenance') {
       const dest = req.nextUrl.clone();
       dest.pathname = '/maintenance';
       dest.search = '';

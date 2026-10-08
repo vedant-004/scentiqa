@@ -31,17 +31,20 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (!admin) redirect('/login?next=/admin');
 
   const setting = await getSiteSetting('maintenance_mode').catch(() => null);
-  const offline = (setting as { enabled?: boolean } | null)?.enabled === true;
+  const sv = (setting ?? {}) as { mode?: string; enabled?: boolean };
+  const siteMode = sv.mode === 'ghost' ? 'ghost' : sv.mode === 'maintenance' || sv.enabled === true ? 'maintenance' : 'live';
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-      {offline && (
+      {siteMode !== 'live' && (
         <div className="mb-6 rounded-2xl border-2 border-red-600 bg-red-50 px-5 py-4 dark:border-red-500 dark:bg-red-950/40" role="alert">
           <p className="text-base font-bold text-red-800 dark:text-red-200">
-            The public site is currently OFFLINE. Visitors see a maintenance page.
+            {siteMode === 'ghost'
+              ? 'The public site is in GHOST mode: visitors get a blank error page.'
+              : 'The public site is showing a maintenance page.'}
           </p>
           <p className="mt-1 text-sm text-red-700 dark:text-red-300">
-            Use the “Bring site live” button in the header below to restore it.
+            Use the mode buttons in the header below to bring it back live.
           </p>
         </div>
       )}
