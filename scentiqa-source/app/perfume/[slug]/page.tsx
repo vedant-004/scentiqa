@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllPerfumeSlugs, getPerfume } from '@/lib/data';
+import { getTopPerfumeSlugs, getPerfume } from '@/lib/data';
 import { CONC_LABEL, HOUSE_TYPE_LABEL, inr } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, Card, EmptyState, SectionHeading } from '@/components/ui';
@@ -19,7 +19,10 @@ export const revalidate = 3600;
 import { AIPredictions } from './ai-predictions';
 
 export async function generateStaticParams() {
-  const slugs = await getAllPerfumeSlugs();
+  // Pre-render the 1,200 most-rated perfumes at build time; the rest of the
+  // catalog renders on demand and is cached (ISR, revalidate = 3600).
+  // Pre-rendering all 8,598 exceeds Vercel's 45-min build limit.
+  const slugs = await getTopPerfumeSlugs(1200);
   return slugs.map((slug) => ({ slug }));
 }
 

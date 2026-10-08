@@ -144,6 +144,14 @@ async function getAllSlugs(table: string, onlyPublished: boolean): Promise<strin
 export async function getAllPerfumeSlugs(): Promise<string[]> {
   return getAllSlugs('perfumes', false);
 }
+/** Top N perfume slugs by rating count — for build-time static pre-rendering.
+ *  The full catalog is still reachable on demand via ISR (dynamicParams). */
+export async function getTopPerfumeSlugs(limit: number): Promise<string[]> {
+  const c = sb(); if (!c) return [];
+  const { data } = await c.from('perfumes').select('slug')
+    .order('rating_count', { ascending: false }).limit(limit);
+  return ((data ?? []) as Array<{ slug: string }>).map((r) => r.slug);
+}
 export async function getAllHouseSlugs(): Promise<string[]> {
   return getAllSlugs('houses', false);
 }

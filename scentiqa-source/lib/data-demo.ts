@@ -88,6 +88,9 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
 export async function getAllPerfumeSlugs(): Promise<string[]> {
   return seed.perfumes.map((p) => p.slug);
 }
+export async function getTopPerfumeSlugs(limit: number): Promise<string[]> {
+  return seed.perfumes.slice(0, limit).map((p) => p.slug);
+}
 export async function getAllHouseSlugs(): Promise<string[]> {
   return seed.houses.map((h) => h.slug);
 }
