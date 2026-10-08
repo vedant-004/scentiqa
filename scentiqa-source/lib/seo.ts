@@ -52,17 +52,24 @@ export interface DupeGuideInfo { slug: string; name: string; house: string; dupe
 /** Originals with at least 2 verified dupes, most-duped first. */
 export async function getDupeGuideOriginals(): Promise<DupeGuideInfo[]> {
   const c = sb(); if (!c) return [];
-  const { data: rels } = await c.from('dupe_relationships').select('original_perfume_id');
+  const { data: rels, error: relErr } = await c.from('dupe_relationships').select('original_perfume_id');
+  if (relErr || !rels) return [];
   const counts = new Map<string, number>();
-  for (const r of (rels ?? []) as Array<{ original_perfume_id: string }>) {
+  for (const r of rels as Array<{ original_perfume_id: string }>) {
     const id = r.original_perfume_id;
     counts.set(id, (counts.get(id) ?? 0) + 1);
   }
   const ids = [...counts.entries()].filter(([, n]) => n >= 2).map(([id]) => id);
   if (ids.length === 0) return [];
-  const { data: perfs } = await c.from('perfumes').select(`id, ${PERFUME_COLS}`).in('id', ids);
+  // Chunk the IN query to stay well under URL length limits.
   type PerfRow = RawRow & { id: string };
-  return ((perfs ?? []) as PerfRow[])
+  const perfs: PerfRow[] = [];
+  for (let i = 0; i < ids.length; i += 50) {
+    const { data, error } = await c.from('perfumes').select(`id, ${PERFUME_COLS}`).in('id', ids.slice(i, i + 50));
+    if (error || !data) return [];
+    perfs.push(...(data as PerfRow[]));
+  }
+  return perfs
     .map((p) => ({
       slug: p.slug, name: p.name, house: p.houses?.name ?? '',
       dupeCount: counts.get(p.id) ?? 0,
