@@ -7,6 +7,7 @@ import { AuthProvider } from "@/components/auth";
 import { Footer, Header, MobileBottomNav } from "@/components/layout";
 import { getStats, getBanner } from "@/lib/data";
 import { SITE_URL } from "@/lib/site-url";
+import { PwaRegister } from "./pwa-register";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: "swap" });
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
   title: { default: "Scentiqa — India's Perfume Encyclopedia & Dupe Finder", template: "%s | Scentiqa" },
   description: "Discover perfumes in India: honest reviews, lab-tested dupe similarity scores, INR prices from verified sellers, and climate testing for Indian heat.",
   openGraph: { type: "website", siteName: "Scentiqa", locale: "en_IN" },
+  themeColor: "#b45309",
+  icons: { apple: "/icons/apple-touch-icon.png" },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Scentiqa" },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,6 +34,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="flex min-h-dvh flex-col floral-bg">
+        <PwaRegister />
         <ToastProvider>
           <AuthProvider>
             {banner.enabled && banner.text && (
