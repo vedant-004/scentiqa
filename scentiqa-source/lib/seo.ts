@@ -61,10 +61,11 @@ export async function getDupeGuideOriginals(): Promise<DupeGuideInfo[]> {
   const ids = [...counts.entries()].filter(([, n]) => n >= 2).map(([id]) => id);
   if (ids.length === 0) return [];
   const { data: perfs } = await c.from('perfumes').select(`id, ${PERFUME_COLS}`).in('id', ids);
-  return ((perfs ?? []) as RawRow[] & Array<{ id: string }>)
+  type PerfRow = RawRow & { id: string };
+  return ((perfs ?? []) as PerfRow[])
     .map((p) => ({
       slug: p.slug, name: p.name, house: p.houses?.name ?? '',
-      dupeCount: counts.get((p as unknown as { id: string }).id) ?? 0,
+      dupeCount: counts.get(p.id) ?? 0,
     }))
     .sort((a, b) => b.dupeCount - a.dupeCount || a.name.localeCompare(b.name));
 }
