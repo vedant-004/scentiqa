@@ -4,6 +4,7 @@ import { getAwards, getAwardYears } from '@/lib/data';
 import type { AwardNominee } from '@/lib/types';
 import { Card, SectionHeading, Badge } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
+import { ShareButtons } from '@/components/domain';
 import { NomineeImg, nomineeHref } from '../../components';
 
 export const revalidate = 3600;
@@ -49,15 +50,18 @@ export default async function AwardCategoryPage({ params }: { params: Promise<{ 
         { label: c.name },
       ]} />
 
-      <div className="mb-8 flex items-start gap-4">
-        <span className="text-5xl">{c.icon}</span>
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-600 dark:text-gold-400">
-            {c.section === 'indian' ? 'Scentiqa India Awards' : 'Global Awards'} · {y}
-          </p>
-          <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">{c.name}</h1>
-          {c.description && <p className="mt-2 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">{c.description}</p>}
+      <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
+        <div className="flex items-start gap-4">
+          <span className="text-5xl">{c.icon}</span>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-600 dark:text-gold-400">
+              {c.section === 'indian' ? 'Scentiqa India Awards' : 'Global Awards'} · {y}
+            </p>
+            <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">{c.name}</h1>
+            {c.description && <p className="mt-2 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">{c.description}</p>}
+          </div>
         </div>
+        <ShareButtons title={`${c.name} — Scentiqa Awards ${y}`} path={`/awards/${y}/${category}`} />
       </div>
 
       {c.winner && (

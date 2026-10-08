@@ -490,6 +490,10 @@ export function ShareButtons({ title, path }: { title: string; path: string }) {
         className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#25D366]/15 text-[#128C4B] transition-all hover:scale-105 hover:bg-[#25D366]/25 dark:text-[#4ce080]">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.6-.8-3-1.2-4.9-4.2-5.1-4.4-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.3.2.5.2.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.6z" /></svg>
       </a>
+      <a href={`https://x.com/intent/tweet?text=${text}&url=${url}`} target="_blank" rel="noopener" aria-label="Share on X"
+        className="flex h-10 w-10 items-center justify-center rounded-xl bg-stone-900/10 text-stone-800 transition-all hover:scale-105 hover:bg-stone-900/20 dark:bg-white/10 dark:text-stone-100 dark:hover:bg-white/20">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.5 22H3.4l7.3-8.3L1.5 2h6.4l4.4 5.9L18.9 2zm-1.1 17.8h1.7L7.1 3.9H5.3l12.5 15.9z" /></svg>
+      </a>
       <a href={`https://t.me/share/url?url=${url}&text=${text}`} target="_blank" rel="noopener" aria-label="Share on Telegram"
         className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/15 text-sky-600 transition-all hover:scale-105 hover:bg-sky-500/25 dark:text-sky-400">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6L2.7 12.1c-.8.3-.8 1.4.1 1.6l4.7 1.5 1.8 5.6c.3.8 1.3.9 1.8.2l2.6-3.1 4.9 3.6c.6.5 1.6.1 1.8-.7l2.5-14.1c.2-1-.8-1.7-1-1.1zM8.5 13.1l9.7-6.6c.2-.2.5.1.3.3l-8 7.3-.3 3-1.7-3.9z" /></svg>
@@ -498,6 +502,120 @@ export function ShareButtons({ title, path }: { title: string; path: string }) {
         {copied ? '✓ Copied!' : 'Share'}
       </button>
     </div>
+  );
+}
+
+/* ---------- NewsletterSignup ---------- */
+export function NewsletterSignup({ source, compact = false }: { source: 'footer' | 'homepage'; compact?: boolean }) {
+  const [email, setEmail] = useState('');
+  const [state, setState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
+  const [msg, setMsg] = useState('');
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (state === 'sending' || state === 'done') return;
+    setState('sending'); setMsg('');
+    try {
+      const r = await fetch('/api/newsletter', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source }),
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error ?? 'Something went wrong');
+      setState('done');
+      setMsg(j.already ? 'You are already on the list.' : 'You are on the list. Welcome aboard.');
+    } catch (err) {
+      setState('error');
+      setMsg(err instanceof Error ? err.message : 'Something went wrong');
+    }
+  };
+
+  return (
+    <div className={compact ? '' : 'relative overflow-hidden rounded-3xl border border-gold-600/25 bg-gradient-to-br from-gold-600/10 via-transparent to-transparent p-6 sm:p-10'}>
+      {!compact && <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold-500/15 blur-3xl" aria-hidden="true" />}
+      <div className={compact ? '' : 'relative mx-auto max-w-xl text-center'}>
+        {!compact && <p className="text-2xl">💌</p>}
+        <h3 className={`font-display font-bold tracking-tight ${compact ? 'text-lg' : 'mt-2 text-2xl sm:text-3xl'}`}>
+          {compact ? 'Get the weekly scent drop' : 'The Sunday Scent Drop'}
+        </h3>
+        <p className={`text-stone-500 dark:text-stone-400 ${compact ? 'mt-1 text-sm' : 'mx-auto mt-3 max-w-md text-[15px] leading-relaxed'}`}>
+          {compact
+            ? 'One email a week: new dupes, price drops, awards. No spam, unsubscribe anytime.'
+            : 'One email every Sunday — the best new dupes, price drops and community finds. No spam, unsubscribe anytime.'}
+        </p>
+        {state === 'done' ? (
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-4 py-2 text-sm font-bold text-emerald-700 dark:text-emerald-300">
+            ✓ {msg}
+          </p>
+        ) : (
+          <form onSubmit={submit} className={`flex gap-2 ${compact ? 'mt-3' : 'mx-auto mt-6 max-w-md'}`}>
+            <input
+              type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com" disabled={state === 'sending'}
+              className="min-w-0 flex-1 rounded-xl border border-stone-300/80 bg-white/90 px-4 py-2.5 text-[15px] outline-none focus:border-gold-600 disabled:opacity-60 dark:border-ink-700 dark:bg-ink-800/80"
+            />
+            <Button type="submit" disabled={state === 'sending'} size={compact ? 'sm' : undefined}>
+              {state === 'sending' ? 'Joining…' : 'Join free'}
+            </Button>
+          </form>
+        )}
+        {state === 'error' && <p className="mt-2 text-sm font-semibold text-red-600 dark:text-red-400">{msg}</p>}
+        {state !== 'done' && (
+          <p className="mt-2 text-[11px] text-stone-400">We only send the newsletter. Your email stays with us.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- ReviewPrompt ---------- */
+// Gentle nudge to review a perfume, shown at most once per 24h site-wide
+// (localStorage timestamp). Never auto-creates anything.
+const REVIEW_PROMPT_KEY = 'scentiqa-review-prompt';
+const REVIEW_PROMPT_COOLDOWN_MS = 24 * 3600 * 1000;
+
+export function ReviewPrompt({ context, perfumeName, perfumeSlug }: {
+  context: 'quiz' | 'diary';
+  perfumeName: string;
+  perfumeSlug: string;
+}) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    let last = 0;
+    try { last = Number(localStorage.getItem(REVIEW_PROMPT_KEY) || 0); } catch { /* noop */ }
+    if (Date.now() - last > REVIEW_PROMPT_COOLDOWN_MS) {
+      try { localStorage.setItem(REVIEW_PROMPT_KEY, String(Date.now())); } catch { /* noop */ }
+      setVisible(true);
+    }
+  }, []);
+
+  if (!visible) return null;
+
+  const copy = context === 'quiz'
+    ? { title: 'Tried any of these?', body: 'Your review helps the next person pick with confidence — especially for Indian weather.' }
+    : { title: `Wearing ${perfumeName} today?`, body: 'Drop a quick review while the scent is fresh. It takes less than a minute.' };
+
+  return (
+    <Card className="relative mt-8 overflow-hidden border-gold-600/30 p-6">
+      <button
+        onClick={() => setVisible(false)}
+        aria-label="Dismiss"
+        className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-stone-900/5 hover:text-stone-700 dark:hover:bg-white/10 dark:hover:text-stone-200"
+      >
+        ✕
+      </button>
+      <div className="flex flex-col gap-4 pr-8 sm:flex-row sm:items-center">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gold-600/10 text-2xl">✍️</span>
+        <div className="min-w-0 flex-1">
+          <h3 className="font-display text-lg font-bold">{copy.title}</h3>
+          <p className="mt-1 text-sm leading-relaxed text-stone-500 dark:text-stone-400">{copy.body}</p>
+        </div>
+        <Link href={`/perfume/${perfumeSlug}`} className="shrink-0">
+          <Button size="sm">Review {perfumeName.length > 22 ? perfumeName.slice(0, 22) + '…' : perfumeName}</Button>
+        </Link>
+      </div>
+    </Card>
   );
 }
 

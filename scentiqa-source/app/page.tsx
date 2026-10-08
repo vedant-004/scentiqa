@@ -7,7 +7,7 @@ import { inr } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Button, Card, SectionHeading } from '@/components/ui';
 import { JsonLd, organizationJsonLd, websiteJsonLd } from '@/components/seo';
-import { AccordStack, BottleVisual, NotePyramid, PerfumeCard, ProductImage, ScoreBadge, SearchBar, StarRating } from '@/components';
+import { AccordStack, BottleVisual, NotePyramid, PerfumeCard, ProductImage, ScoreBadge, SearchBar, StarRating, NewsletterSignup } from '@/components';
 import type { Perfume } from '@/lib/types';
 
 export const metadata = { title: 'Scentiqa — India\u2019s Perfume Encyclopedia & Dupe Finder' };
@@ -244,6 +244,11 @@ export default async function Home() {
               </Card>
             ))}
           </div>
+        </section>
+
+        {/* ============ NEWSLETTER ============ */}
+        <section>
+          <NewsletterSignup source="homepage" />
         </section>
 
         {/* ============ TRUST BAND ============ */}

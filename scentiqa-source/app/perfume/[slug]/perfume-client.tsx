@@ -78,7 +78,8 @@ export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perf
   const [body, setBody] = useState('');
   const [verified, setVerified] = useState(false);
   const [busy, setBusy] = useState(false);
-  const valid = rating > 0 && body.trim().length >= 10;
+  const wordCount = body.trim().split(/\s+/).filter(Boolean).length;
+  const valid = rating > 0 && wordCount >= 10;
   const submit = async () => {
     if (!valid) return;
     setBusy(true);
@@ -97,9 +98,9 @@ export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perf
           <div><p className="mb-2 text-sm font-semibold">Your rating</p><StarInput value={rating} onChange={setRating} /></div>
           <div><p className="mb-2 text-sm font-semibold">Headline <span className="font-normal text-stone-400">(optional)</span></p>
             <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Sum it up in a line" maxLength={80} /></div>
-          <div><p className="mb-2 text-sm font-semibold">Your review <span className="font-normal text-stone-400">(min 10 characters)</span></p>
+          <div><p className="mb-2 text-sm font-semibold">Your review <span className="font-normal text-stone-400">(min 10 words)</span></p>
             <Textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="How does it perform in Indian weather? How long does it last on you?" maxLength={2000} />
-            <p className={cn('mt-1 text-right text-xs', body.trim().length >= 10 ? 'text-emerald-600' : 'text-stone-400')}>{body.trim().length}/10 min</p></div>
+            <p className={cn('mt-1 text-right text-xs', wordCount >= 10 ? 'text-emerald-600' : 'text-stone-400')}>{wordCount}/10 words min</p></div>
           <label className="flex cursor-pointer items-center gap-2.5 text-sm">
             <input type="checkbox" checked={verified} onChange={(e) => setVerified(e.target.checked)} className="h-4 w-4 accent-amber-600" />
             I bought this in India <span className="text-stone-400">(verified purchase badge)</span>

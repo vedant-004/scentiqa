@@ -123,15 +123,29 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
   return { ...perfume, houseInfo, climate, dupes, originalOf: [], prices, reviews, similar: [] };
 }
 
-export async function getAllPerfumeSlugs(): Promise<string[]> {
+/** Paginated slug fetch: PostgREST caps a single select at 1000 rows. */
+async function getAllSlugs(table: string, onlyPublished: boolean): Promise<string[]> {
   const c = sb(); if (!c) return [];
-  const { data } = await c.from('perfumes').select('slug');
-  return (data ?? []).map((r: { slug: string }) => r.slug);
+  const slugs: string[] = [];
+  let offset = 0;
+  for (;;) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let q: any = c.from(table).select('slug').range(offset, offset + 999);
+    if (onlyPublished) q = q.eq('is_published', true);
+    const { data } = await q;
+    const rows = (data ?? []) as Array<{ slug: string }>;
+    if (!rows.length) break;
+    for (const r of rows) slugs.push(r.slug);
+    offset += 1000;
+    if (rows.length < 1000) break;
+  }
+  return slugs;
+}
+export async function getAllPerfumeSlugs(): Promise<string[]> {
+  return getAllSlugs('perfumes', false);
 }
 export async function getAllHouseSlugs(): Promise<string[]> {
-  const c = sb(); if (!c) return [];
-  const { data } = await c.from('houses').select('slug');
-  return (data ?? []).map((r: { slug: string }) => r.slug);
+  return getAllSlugs('houses', false);
 }
 /** All houses, alphabetically, for the /houses directory. */
 export async function getAllHouses(): Promise<House[]> {
@@ -140,9 +154,7 @@ export async function getAllHouses(): Promise<House[]> {
   return (data ?? []).map((r) => mapHouse(r as Record<string, unknown>));
 }
 export async function getAllArticleSlugs(): Promise<string[]> {
-  const c = sb(); if (!c) return [];
-  const { data } = await c.from('articles').select('slug').eq('is_published', true);
-  return (data ?? []).map((r: { slug: string }) => r.slug);
+  return getAllSlugs('articles', true);
 }
 
 export async function getHouse(slug: string): Promise<HouseFull | null> {

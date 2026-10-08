@@ -17,7 +17,7 @@ export async function GET() {
     for (let from = 0; ; from += PAGE) {
       const { data: page, error: pageErr } = await sb
         .from('perfumes')
-        .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, houses(slug, name)')
+        .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, accords, top_notes, heart_notes, base_notes, houses(slug, name)')
         .range(from, from + PAGE - 1);
       if (pageErr) throw new Error('query failed');
       if (!page || page.length === 0) break;
@@ -51,7 +51,7 @@ export async function GET() {
         ratingCount: 0,
         lowestPriceInr: lowPrice.get(p.id) ?? null,
         isDupe: (p.description || '').startsWith('Dupe of'),
-        accords: [],
+        accords: p.accords ?? [],
         topNotes: p.top_notes ?? [],
         heartNotes: p.heart_notes ?? [],
         baseNotes: p.base_notes ?? [],

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { cn, inr } from '@/lib/utils';
 import { Button, Card, SectionHeading, Skeleton } from '@/components';
-import { PerfumeCard } from '@/components/domain';
+import { PerfumeCard, ReviewPrompt } from '@/components/domain';
 
 interface Hit {
   id: string; slug: string; name: string; house: string; match: number; reason: string;
@@ -184,6 +184,10 @@ export default function QuizPage() {
                 </div>
               ))}
             </div>
+
+            {results[0] && (
+              <ReviewPrompt context="quiz" perfumeName={results[0].name} perfumeSlug={results[0].slug} />
+            )}
           </>
         )}
       </div>

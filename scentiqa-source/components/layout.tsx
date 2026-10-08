@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { useToast } from './ui';
-import { ThemeToggle } from './domain';
+import { ThemeToggle, NewsletterSignup } from './domain';
 import { useAuth } from './auth';
 import type { Perfume } from '@/lib/types';
 
@@ -297,6 +297,9 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
   return (
     <footer className="scentiqa-site-footer mt-20 border-t border-stone-200/70 bg-white/60 dark:border-ink-700/50 dark:bg-ink-900/40">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+        <div className="mb-10 grid gap-6 rounded-2xl border border-stone-200/70 bg-cream-100/60 p-6 md:grid-cols-[1fr_auto] md:items-center dark:border-ink-700/50 dark:bg-white/[0.03]">
+          <NewsletterSignup source="footer" compact />
+        </div>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {cols.map((c) => (
             <div key={c.h}>

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Button, Card, SectionHeading, Skeleton } from '@/components';
+import { ReviewPrompt } from '@/components/domain';
 import { useAuth } from '@/components/auth';
 
 interface LogEntry {
@@ -25,6 +26,7 @@ export default function DiaryPage() {
   const [q, setQ] = useState('');
   const [hits, setHits] = useState<SearchHit[]>([]);
   const [showHits, setShowHits] = useState(false);
+  const [lastLogged, setLastLogged] = useState<{ name: string; slug: string } | null>(null);
 
   const refresh = useCallback(async () => {
     const [h, s] = await Promise.all([
@@ -50,16 +52,17 @@ export default function DiaryPage() {
     return () => clearTimeout(t);
   }, [q]);
 
-  const logScent = async (perfume_id: string, name: string) => {
+  const logScent = async (hit: SearchHit) => {
     setBusy(true); setMsg('');
     try {
       const r = await fetch('/api/diary/log', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ perfume_id }),
+        body: JSON.stringify({ perfume_id: hit.id }),
       });
       const j = await r.json();
       if (!r.ok) throw new Error(j.error ?? 'Failed to log');
-      setMsg(`Logged — you're wearing ${name} today.`);
+      setMsg(`Logged — you're wearing ${hit.name} today.`);
+      setLastLogged({ name: hit.name, slug: hit.slug });
       setQ(''); setHits([]); setShowHits(false);
       await refresh();
     } catch (e) {
@@ -122,7 +125,7 @@ export default function DiaryPage() {
         {showHits && hits.length > 0 && (
           <div className="absolute inset-x-0 top-full z-30 mt-2 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lift dark:border-ink-700 dark:bg-ink-900">
             {hits.map((h) => (
-              <button key={h.id} disabled={busy} onClick={() => logScent(h.id, h.name)}
+              <button key={h.id} disabled={busy} onClick={() => logScent(h)}
                 className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-cream-100 disabled:opacity-60 dark:hover:bg-white/5">
                 <span><span className="block text-sm font-semibold">{h.name}</span>
                 <span className="block text-xs text-stone-400">{h.house}</span></span>
@@ -133,6 +136,9 @@ export default function DiaryPage() {
         )}
       </div>
       {msg && <p className="mt-3 text-sm font-semibold text-emerald-700 dark:text-emerald-300">{msg}</p>}
+      {lastLogged && (
+        <ReviewPrompt context="diary" perfumeName={lastLogged.name} perfumeSlug={lastLogged.slug} />
+      )}
 
       {/* History by month */}
       <div className="mt-10 space-y-8">

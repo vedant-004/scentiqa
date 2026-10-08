@@ -285,7 +285,7 @@ SELECT DISTINCT ON (p.perfume_id)
   p.checked_at
 FROM prices p
 JOIN sellers s ON s.id = p.seller_id
-WHERE p.in_stock AND s.verified
+WHERE p.in_stock AND s.verified AND p.price_inr IS NOT NULL
 ORDER BY p.perfume_id, p.price_inr ASC;
 
 -- ---------------- Similarity function ----------------

@@ -25,6 +25,8 @@ export async function requireAccount(): Promise<{ sb: NonNullable<ReturnType<typ
 export async function postReview(perfumeId: string, rating: number, title: string, body: string): Promise<ActionResult> {
   const a = await requireAccount();
   if ('demo' in a) return { ok: false, demo: true };
+  const words = body.trim().split(/\s+/).filter(Boolean).length;
+  if (!(rating > 0) || words < 10) return { ok: false, error: 'Please write at least 10 words and pick a star rating.' };
   const { error } = await a.sb.from('reviews').insert({ user_id: a.userId, perfume_id: perfumeId, rating, title, body });
   return error ? { ok: false, error: error.message } : { ok: true };
 }
