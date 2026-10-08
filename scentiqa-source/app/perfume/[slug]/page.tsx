@@ -7,7 +7,7 @@ import { Badge, Card, EmptyState, SectionHeading } from '@/components/ui';
 import { JsonLd } from '@/components/seo';
 import {
   AccordStack, BottleVisual, Breadcrumbs, DupeCard, MeterBar, NotePyramid, ProductImage,
-  PerfumeCard, PriceTable, ScoreBadge, ShareButtons, StarRating,
+  PerfumeCard, PriceTable, RetailerSearchLinks, ScoreBadge, ShareButtons, StarRating,
 } from '@/components';
 import {
   MeterVote, PriceAlertButton, ReportPriceButton, ReviewModal, SentimentVote,
@@ -190,6 +190,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               action={<PriceAlertButton perfumeId={p.id} currentPrice={p.lowestPriceInr} />} />
             <div className="mb-4"><BlindBuyBadge slug={slug} /></div>
             <PriceTable prices={p.prices} />
+            <RetailerSearchLinks perfumeName={p.name} houseName={p.houseInfo.name} />
             <ReportPriceButton perfumeId={p.id} />
           </section>
 
