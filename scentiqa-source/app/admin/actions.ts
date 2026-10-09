@@ -344,3 +344,51 @@ export async function deleteArticle(id: string) {
   revalidatePath('/admin/articles');
   revalidatePath('/news');
 }
+
+/* ---------------- perfume requests ---------------- */
+export async function setRequestStatus(id: string, status: string) {
+  await requireAdmin();
+  if (!['open', 'added', 'declined'].includes(status)) throw new Error('Bad status');
+  await db().from('perfume_requests').update({ status }).eq('id', id);
+  revalidatePath('/requests');
+  revalidatePath('/admin/requests');
+}
+export async function deleteRequest(id: string) {
+  await requireAdmin();
+  await db().from('perfume_requests').delete().eq('id', id);
+  revalidatePath('/requests');
+  revalidatePath('/admin/requests');
+}
+
+/* ---------------- sniff stores ---------------- */
+export async function createSniffStore(fd: FormData) {
+  await requireAdmin();
+  const row = {
+    name: str(fd, 'name'), city: str(fd, 'city'), area: str(fd, 'area'),
+    address: str(fd, 'address'), store_type: str(fd, 'store_type') || 'niche',
+    brands_text: str(fd, 'brands_text'), samples_info: str(fd, 'samples_info'),
+    website: str(fd, 'website'), verified: fd.get('verified') === 'on',
+  };
+  if (!row.name || !row.city) throw new Error('Name and city are required');
+  await db().from('sniff_stores').insert(row);
+  revalidatePath('/sniff');
+  revalidatePath('/admin/sniff');
+}
+export async function updateSniffStore(id: string, fd: FormData) {
+  await requireAdmin();
+  const row = {
+    name: str(fd, 'name'), city: str(fd, 'city'), area: str(fd, 'area'),
+    address: str(fd, 'address'), store_type: str(fd, 'store_type') || 'niche',
+    brands_text: str(fd, 'brands_text'), samples_info: str(fd, 'samples_info'),
+    website: str(fd, 'website'), verified: fd.get('verified') === 'on',
+  };
+  await db().from('sniff_stores').update(row).eq('id', id);
+  revalidatePath('/sniff');
+  revalidatePath('/admin/sniff');
+}
+export async function deleteSniffStore(id: string) {
+  await requireAdmin();
+  await db().from('sniff_stores').delete().eq('id', id);
+  revalidatePath('/sniff');
+  revalidatePath('/admin/sniff');
+}

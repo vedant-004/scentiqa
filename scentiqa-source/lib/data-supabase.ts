@@ -36,6 +36,7 @@ function mapPerfume(r: Record<string, unknown>): Perfume {
     concentration: r.concentration as string, description: (r.description as string) ?? '',
     bottleImage: (r.bottle_image_url as string) ?? null,
     ratingAvg: Number(r.rating_avg ?? 0), ratingCount: Number(r.rating_count ?? 0),
+    memberRatingAvg: Number(r.member_rating_avg ?? 0), memberRatingCount: Number(r.member_rating_count ?? 0),
     lowestPriceInr: (r.lowest_price_inr as number) ?? null,
     accords: normalizeAccords(r.accords),
     topNotes: (r.top_notes as string[]) ?? [], heartNotes: (r.heart_notes as string[]) ?? [],
@@ -627,4 +628,36 @@ export async function getPerfumesBySlugs(slugs: string[]): Promise<Perfume[]> {
   const c = sb(); if (!c) return [];
   const { data } = await c.from('perfumes').select('*, houses(slug, name)').in('slug', slugs);
   return (data ?? []).map(mapPerfume);
+}
+
+/* ---------- Perfume requests (community voting) ---------- */
+export interface PerfumeRequest {
+  id: string; perfume_name: string; house_name: string; reason: string;
+  status: string; requester_name: string; vote_count: number;
+  team_created: boolean; created_at: string;
+}
+export async function getPerfumeRequests(status = 'open'): Promise<PerfumeRequest[]> {
+  const c = sb(); if (!c) return [];
+  const { data } = await c.from('perfume_requests').select('*')
+    .eq('status', status).order('vote_count', { ascending: false }).order('created_at', { ascending: false }).limit(100);
+  return (data ?? []) as PerfumeRequest[];
+}
+
+/* ---------- Sniff stores (city directory) ---------- */
+export interface SniffStore {
+  id: string; name: string; city: string; area: string; address: string;
+  store_type: string; brands_text: string; samples_info: string; website: string;
+  verified: boolean;
+}
+export async function getSniffStores(city?: string): Promise<SniffStore[]> {
+  const c = sb(); if (!c) return [];
+  let q = c.from('sniff_stores').select('*').order('city').order('name');
+  if (city) q = q.eq('city', city);
+  const { data } = await q.limit(200);
+  return (data ?? []) as SniffStore[];
+}
+export async function getSniffCities(): Promise<string[]> {
+  const c = sb(); if (!c) return [];
+  const { data } = await c.from('sniff_stores').select('city').order('city');
+  return [...new Set((data ?? []).map((r: { city: string }) => r.city))];
 }

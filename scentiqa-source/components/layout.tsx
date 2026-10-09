@@ -149,6 +149,8 @@ const NAV = [
   { href: '/sellers', label: 'Sellers' },
   { href: '/news', label: 'News' },
   { href: '/forum', label: 'Community' },
+  { href: '/requests', label: 'Requests' },
+  { href: '/sniff', label: 'Sniff Guide' },
   { href: '/awards/2026', label: 'Awards' },
   { href: '/about', label: 'About' },
 ];

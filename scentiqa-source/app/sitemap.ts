@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
   const staticRoutes = [
     '', '/find-alternative', '/compare', '/finder', '/notes', '/accords', '/search/notes', '/search/accords',
-    '/forum', '/news', '/giveaways', '/awards',
+    '/forum', '/news', '/giveaways', '/awards', '/requests', '/sniff',
     '/best-perfumes', '/dupes', '/vs',
     '/methodology', '/climate-protocol', '/trust-charter', '/fake-guide',
     '/about', '/contact', '/terms', '/privacy',

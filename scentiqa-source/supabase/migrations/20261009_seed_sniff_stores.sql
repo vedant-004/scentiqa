@@ -1,0 +1,38 @@
+-- Seed data for sniff_stores (city directory).
+-- All stores verified via web research 2026-10-09 (see workspace/research_notes/india-perfume-retail-city-directory-20261009-1721/report.md).
+
+INSERT INTO sniff_stores (name, city, area, store_type, brands_text, samples_info, website, verified) VALUES
+('Scentido', 'Delhi NCR', 'Khan Market', 'niche', 'India''s first niche perfumery (2017). Creed, Roja Parfums, Ormonde Jayne, Clive Christian, Electimuss.', 'Sampling encouraged in-store.', 'https://scentido.com', true),
+('Scentido', 'Delhi NCR', 'Select City Walk, Saket', 'niche', 'Niche boutique. Creed, Roja Parfums, Gritti, Ormonde Jayne.', 'Sampling encouraged in-store.', 'https://scentido.com', true),
+('Maison des Parfums', 'Delhi NCR', 'Ambience Mall, Vasant Kunj', 'niche', '30+ niche houses: Amouage, Xerjoff, Parfums de Marly, Kilian, Memo, Nasomatto, Nishane. Only authorized India retailer for these brands.', 'Bespoke in-store service; discovery sets sold online.', 'https://mdpindia.com', true),
+('Parcos', 'Delhi NCR', 'DLF Promenade, Vasant Kunj', 'designer', 'India''s largest fragrance chain (2004). 50+ designer and luxury brands: Dior, Gucci, Armani, Prada, Cartier.', 'Testers available at counter.', '', true),
+('Sephora', 'Delhi NCR', 'DLF Promenade, Vasant Kunj', 'designer', 'Prestige designer fragrances: Tom Ford, YSL, Dior, Givenchy.', 'Beauty Studio trials.', '', true),
+('Nykaa Luxe', 'Delhi NCR', 'Ambience Mall, Vasant Kunj', 'designer', 'Chanel, YSL, Lancome shop-in-shops. Fragrance Finder consultation tool.', 'Fragrance Finder consultation.', '', true),
+('Gulabsingh Johrimal', 'Delhi NCR', 'Chandni Chowk', 'attar', 'Heritage Old-Delhi attar house. Classic attars and agarbattis.', 'Smell before you buy.', 'http://www.gulabsinghjohrimal.com', true),
+('Khari Baoli Attar Cluster', 'Delhi NCR', 'Khari Baoli, Old Delhi', 'attar', 'Dozens of attar shops. Attars and essential oils from budget prices upward.', 'Shopkeepers happy to let you smell everything.', '', true),
+('Scentido', 'Mumbai', 'Phoenix Palladium, Lower Parel', 'niche', 'Flagship niche boutique. Roja, Gritti, Ormonde Jayne, Berdoues, Creed, Electimuss.', 'Complimentary sampling pre-purchase.', 'https://scentido.com', true),
+('Maison des Parfums', 'Mumbai', 'Jio World Drive, BKC', 'niche', 'Niche flagship: Amouage, Xerjoff, Kilian, Nasomatto, Nishane, Orto Parisi.', 'Bespoke in-store service.', 'https://mdpindia.com', true),
+('Le Mill', 'Mumbai', 'Colaba', 'niche', 'Fashion boutique carrying the Maison Des Parfums niche collection.', 'Discover niche scents while shopping fashion.', 'https://lemillindia.com', true),
+('Crawford Market Attar Cluster', 'Mumbai', 'Bhandari Street', 'attar', 'Fiza Perfume Wholesale (900+ scents), SKL Perfumes, Hindustan Aromatics. Affordable attars and oud oils.', 'Wholesale pricing; smell before you buy.', '', true),
+('Parcos', 'Mumbai', 'Infiniti Mall, Malad', 'designer', 'Designer and luxury breadth: Dior, Gucci, Armani and more.', 'Testers available at counter.', '', true),
+('Sephora', 'Mumbai', 'R City, Ghatkopar', 'designer', 'Prestige designer fragrance plus trial studio.', 'Beauty Studio trials.', '', true),
+('Maison des Parfums', 'Bengaluru', 'UB City, Vittal Mallya Road', 'niche', 'Two boutiques (UB City + Phoenix Mall of Asia). The only dedicated niche retailer in the city — 30+ houses.', 'Bespoke in-store service.', 'https://mdpindia.com', true),
+('Parcos Luxe', 'Bengaluru', 'The Collection, UB City', 'designer', 'Parcos luxury-format store. High-end exclusive designer range.', 'Testers available.', '', true),
+('Al Amal Perfumes', 'Bengaluru', 'Kammanahalli', 'multi', 'Authorized Ahmed Al Maghribi + Lattafa outlet. Original Arab perfumes at reasonable prices.', 'Smell before you buy.', '', true),
+('Jo Malone London', 'Hyderabad', 'GVK One Mall, Banjara Hills', 'designer', 'Full Jo Malone boutique. Fragrance combining consultations.', 'Combining consultations in-store.', '', true),
+('AdilQadri', 'Hyderabad', 'Banjara Hills', 'multi', 'Indian Arabic-style brand store. Affordable oud and attar-style perfumes.', 'Smell before you buy.', 'https://www.adilqadri.com', true),
+('Yusuf Bhai', 'Chennai', 'Nungambakkam', 'multi', 'Kerala-origin blender: custom blends and luxury scent recreations from ~Rs.1,650/50ml. Chennai''s best indie sniff-before-you-buy.', 'Single-note exploration and custom blending in-store.', '', true),
+('Parcos', 'Chennai', 'Anna Nagar', 'designer', 'Designer staples across price points.', 'Testers available at counter.', '', true),
+('Parcos', 'Pune', 'Phoenix Marketcity, Viman Nagar', 'designer', 'Designer and luxury anchor for the city.', 'Testers available at counter.', '', true),
+('Oud Arabia', 'Pune', 'Phoenix Marketcity', 'attar', 'Arabic luxury house retailing oud, mukhallat and bakhoor-style perfumes.', 'Smell before you buy.', '', true),
+('Scentido', 'Kolkata', 'Quest Mall', 'niche', 'Niche boutique — Creed, Roja, Gritti in eastern India.', 'Sampling encouraged in-store.', 'https://scentido.com', true),
+('Parcos', 'Kolkata', 'Quest Mall', 'designer', 'Designer anchor.', 'Testers available at counter.', '', true),
+('Scentido', 'Ahmedabad', 'Palladium Mall, Thaltej', 'niche', 'Niche boutique in Gujarat''s luxury mall.', 'Sampling encouraged in-store.', 'https://scentido.com', true),
+('Maison des Parfums', 'Ahmedabad', 'Palladium Mall', 'niche', '30+ niche houses. Palladium is Ahmedabad''s niche-fragrance hub.', 'Bespoke in-store service.', 'https://mdpindia.com', true),
+('Bara Bazaar Attar Market', 'Kannauj', 'Bara Bazaar', 'attar', 'The attar pilgrimage. Historic houses: Ramnarain Perfumers, Devi Prasad Shyam Lal. Rose, jasmine, khus, mitti attars.', 'Shopkeepers happy to let you smell everything. Best Oct-Mar.', '', true),
+('Scentos', 'Online (pan-India)', '', 'multi', 'Try-before-you-buy decants: Chanel, Gucci, Dior, Creed Aventus, Tom Ford, Kilian, Initio. 10/20/30/50ml options.', 'The affordable way to sample luxury.', 'https://scentos.in', true),
+('The Scent Stories', 'Online (pan-India)', '', 'multi', 'Samples-only model: 200+ brand-packaged factory-sealed samples, discovery sets of 5-8.', 'Discovery sets; free shipping over Rs.1,500.', 'https://thescentstories.com', true),
+('Snap Perfumes', 'Online (pan-India)', '', 'multi', '474-product decant and sample catalog: niche, designer and Arabic.', 'Decants and samples pan-India.', 'https://www.snapperfumes.in', true),
+('Sillage Perfumes', 'Online (pan-India)', '', 'multi', 'Luxury decants and niche. 800+ reviews; 2ml tester vials included.', 'Tester vials with orders.', 'https://sillageperfumes.in', true),
+('Valley Decants', 'Online (pan-India)', '', 'multi', 'Niche and designer decants from unopened bottles.', 'WhatsApp experts to guide sampling.', 'https://valleydecants.com', true)
+ON CONFLICT DO NOTHING;

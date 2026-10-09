@@ -225,6 +225,14 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
           <section>
             <SectionHeading kicker="Reviews" title={`Member reviews (${p.reviews.length})`}
               action={<ReviewModal perfume={p} />} />
+            {(p.memberRatingCount ?? 0) > 0 && (
+              <div className="mb-4 flex items-center gap-2">
+                <StarRating value={p.memberRatingAvg ?? 0} count={p.memberRatingCount} size={15} />
+                <span className="text-xs text-stone-500 dark:text-stone-400" title="Average of written reviews by Scentiqa members on this page.">
+                  Scentiqa member rating
+                </span>
+              </div>
+            )}
             {p.reviews.length === 0 ? (
               <EmptyState icon="✍️" title="No reviews yet" body="Be the first to review this fragrance for the Indian community." action={<ReviewModal perfume={p} triggerLabel="Write the first review" />} />
             ) : (

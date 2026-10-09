@@ -343,3 +343,6 @@ export async function getStats(): Promise<{ perfumes: number; houses: number; re
 export async function getPerfumesBySlugs(slugs: string[]): Promise<Perfume[]> {
   return slugs.map((s) => perfBySlug.get(s)).filter((p): p is Perfume => !!p);
 }
+export async function getPerfumeRequests(): Promise<never[]> { return []; }
+export async function getSniffStores(): Promise<never[]> { return []; }
+export async function getSniffCities(): Promise<never[]> { return []; }

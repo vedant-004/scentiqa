@@ -51,4 +51,7 @@ export const findByNotes = select(demo.findByNotes, live.findByNotes);
 export const findByAccords = select(demo.findByAccords, live.findByAccords);
 export const finderRecommendations = select(demo.finderRecommendations, live.finderRecommendations);
 export const getStats = select(demo.getStats, live.getStats);
+export const getPerfumeRequests = select(demo.getPerfumeRequests, live.getPerfumeRequests);
+export const getSniffStores = select(demo.getSniffStores, live.getSniffStores);
+export const getSniffCities = select(demo.getSniffCities, live.getSniffCities);
 export const getPerfumesBySlugs = select(demo.getPerfumesBySlugs, live.getPerfumesBySlugs);
