@@ -239,7 +239,11 @@ export async function getDupesForPerfume(originalSlug: string): Promise<DupeEntr
 
 export async function getTrending(): Promise<Perfume[]> {
   const c = sb(); if (!c) return [];
-  const { data } = await c.from('perfumes').select('*, houses(slug, name)').order('view_count', { ascending: false }).limit(12);
+  // Only perfumes with real ratings — never show empty 0.0-star cards.
+  // Most-voted first is the honest "most popular" signal available.
+  const { data } = await c.from('perfumes').select('*, houses(slug, name)')
+    .gt('rating_count', 0)
+    .order('rating_count', { ascending: false }).limit(12);
   return (data ?? []).map(mapPerfume);
 }
 export async function getLatestLaunches(): Promise<Perfume[]> {
@@ -611,12 +615,13 @@ export async function finderRecommendations(): Promise<Array<Perfume & { reason:
 export async function getStats(): Promise<{ perfumes: number; houses: number; reviews: number; dupesTested: number; members: number }> {
   const c = sb();
   if (!c) return { perfumes: 0, houses: 0, reviews: 0, dupesTested: 0, members: 0 };
-  const [p, h, r] = await Promise.all([
+  const [p, h, r, m] = await Promise.all([
     c.from('perfumes').select('id', { count: 'exact', head: true }),
     c.from('houses').select('id', { count: 'exact', head: true }),
     c.from('reviews').select('id', { count: 'exact', head: true }),
+    c.from('users').select('id', { count: 'exact', head: true }),
   ]);
-  return { perfumes: p.count ?? 0, houses: h.count ?? 0, reviews: r.count ?? 0, dupesTested: 0, members: 0 };
+  return { perfumes: p.count ?? 0, houses: h.count ?? 0, reviews: r.count ?? 0, dupesTested: 0, members: m.count ?? 0 };
 }
 export async function getPerfumesBySlugs(slugs: string[]): Promise<Perfume[]> {
   const c = sb(); if (!c) return [];

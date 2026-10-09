@@ -228,12 +228,13 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
 
 /* ---------- Fragrantica-style stats strip ---------- */
 function StatsStrip({ stats }: { stats: { perfumes: number; houses: number; reviews: number; members: number } }) {
+  // Never display a "0" stat — a zero count reads as a dead site.
   const items = [
     { label: 'Perfumes', value: stats.perfumes, dot: 'bg-amber-400' },
     { label: 'Houses', value: stats.houses, dot: 'bg-gold-500' },
     { label: 'Reviews', value: stats.reviews, dot: 'bg-sky-400' },
     { label: 'Members', value: stats.members, dot: 'bg-emerald-400' },
-  ];
+  ].filter((s) => s.value > 0);
   return (
     <div className="border-t border-stone-200/50 bg-stone-900/[0.02] dark:border-ink-700/40 dark:bg-black/30">
       <div className="mx-auto flex max-w-7xl items-center gap-4 overflow-x-auto px-4 py-1.5 text-[11px] font-medium text-stone-500 sm:gap-5 sm:px-6 dark:text-stone-400">
@@ -318,7 +319,7 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
             [stats.reviews, 'community reviews'],
             [stats.members, 'members'],
             [stats.houses, 'houses tracked'],
-          ].map(([v, l]) => (
+          ].filter(([v]) => Number(v) > 0).map(([v, l]) => (
             <div key={l as string} className="text-center">
               <p className="font-display text-2xl font-bold text-stone-900 dark:text-white">{Number(v).toLocaleString('en-IN')}</p>
               <p className="text-xs font-medium text-stone-500 dark:text-stone-400">{l}</p>

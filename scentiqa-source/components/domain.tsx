@@ -322,7 +322,9 @@ export function PerfumeCard({ perfume, rank }: { perfume: CardPerfume; rank?: nu
         <div className="flex flex-1 flex-col p-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-gold-600 dark:text-gold-400">{perfume.house}</p>
           <h3 className="mt-1 font-display text-[17px] font-semibold leading-snug tracking-tight group-hover:text-gold-700 dark:group-hover:text-gold-300">{perfume.name}</h3>
-          <div className="mt-2"><StarRating value={perfume.ratingAvg} size={13} /></div>
+          {perfume.ratingAvg > 0 && (
+            <div className="mt-2"><StarRating value={perfume.ratingAvg} size={13} /></div>
+          )}
           <div className="mt-auto flex items-center justify-between pt-3">
             <span className="text-[15px] font-bold text-stone-900 dark:text-white">{best ? `₹${best.toLocaleString('en-IN')}` : '—'}</span>
             <span className="text-xs font-semibold text-stone-400">View →</span>

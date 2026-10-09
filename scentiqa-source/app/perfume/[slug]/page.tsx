@@ -96,6 +96,11 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               {p.launchYear ? <><span>{p.launchYear}</span><span aria-hidden="true">·</span></> : null}<span>{CONC_LABEL[p.concentration] ?? p.concentration}</span>
             </div>
             <div className="mt-3 flex justify-center"><StarRating value={p.ratingAvg} count={p.ratingCount} size={18} /></div>
+            {p.ratingCount > 0 && (
+              <p className="mt-1 text-center text-xs text-stone-500 dark:text-stone-400" title="Aggregated rating imported from global fragrance-community data. Scentiqa member reviews are listed separately below.">
+                Global fragrance-community rating
+              </p>
+            )}
           </div>
           <div className="mt-8 grid items-start gap-8 lg:grid-cols-[300px_1fr]">
             <div className="flex items-center justify-center rounded-2xl bg-gradient-to-br from-cream-100 to-gold-300/25 py-8 dark:from-ink-800 dark:to-gold-700/10">
