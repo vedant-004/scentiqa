@@ -1,1 +1,2002 @@
-{}
+{
+ "musk": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg/500px-Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
+  "confidence": "medium"
+ },
+ "bergamot": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Citrus_bergamia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-184.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_bergamia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-184.jpg",
+  "confidence": "high"
+ },
+ "sandalwood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Sandalwood_harvest.jpg/500px-Sandalwood_harvest.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sandalwood_harvest.jpg",
+  "confidence": "high"
+ },
+ "amber": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Amber_Bernstein_many_stones.jpg/500px-Amber_Bernstein_many_stones.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Amber_Bernstein_many_stones.jpg",
+  "confidence": "medium"
+ },
+ "jasmine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Jasminum_officinale_-_Bot._Mag._31%2C_1787.jpg/500px-Jasminum_officinale_-_Bot._Mag._31%2C_1787.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AJasminum_officinale_-_Bot._Mag._31%2C_1787.jpg",
+  "confidence": "high"
+ },
+ "patchouli": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Pogostemon_cablin_001.jpg/500px-Pogostemon_cablin_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pogostemon_cablin_001.jpg",
+  "confidence": "high"
+ },
+ "vanilla": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vanilla_planifolia_1.jpg/500px-Vanilla_planifolia_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_planifolia_1.jpg",
+  "confidence": "high"
+ },
+ "rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg/500px-Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "confidence": "high"
+ },
+ "cedar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Cedrus_libani_foliage_PAN.JPG/500px-Cedrus_libani_foliage_PAN.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Cedrus_libani_foliage_PAN.JPG",
+  "confidence": "high"
+ },
+ "mandarin-orange": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mandarin_Oranges_%28Citrus_Reticulata%29.jpg/500px-Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "confidence": "high"
+ },
+ "vetiver": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Vetiveria_zizanoides_dsc07810.jpg/500px-Vetiveria_zizanoides_dsc07810.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vetiveria_zizanoides_dsc07810.jpg",
+  "confidence": "high"
+ },
+ "tonka-bean": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tonka_Beans.jpg/500px-Tonka_Beans.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tonka_Beans.jpg",
+  "confidence": "high"
+ },
+ "lemon": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Lemon_tree_with_fruit_and_flowers.jpg/500px-Lemon_tree_with_fruit_and_flowers.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lemon_tree_with_fruit_and_flowers.jpg",
+  "confidence": "high"
+ },
+ "lavender": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Single_lavender_flower02.jpg/500px-Single_lavender_flower02.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Single_lavender_flower02.jpg",
+  "confidence": "high"
+ },
+ "orange-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Orange_Blossom.JPG/500px-Orange_Blossom.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Orange_Blossom.JPG",
+  "confidence": "high"
+ },
+ "lily-of-the-valley": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Beech%2C_ferns_and_lily_of_the_valley_in_Gullmarsskogen_1.jpg/500px-Beech%2C_ferns_and_lily_of_the_valley_in_Gullmarsskogen_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Beech%2C_ferns_and_lily_of_the_valley_in_Gullmarsskogen_1.jpg",
+  "confidence": "high"
+ },
+ "pink-pepper": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Pink_Peppercorns_%28Schinus_terebinthifolius%29.JPG/500px-Pink_Peppercorns_%28Schinus_terebinthifolius%29.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Pink_Peppercorns_%28Schinus_terebinthifolius%29.JPG",
+  "confidence": "high"
+ },
+ "cardamom": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg",
+  "confidence": "high"
+ },
+ "violet": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Viola_reichenbachiana_001.jpg/500px-Viola_reichenbachiana_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Viola_reichenbachiana_001.jpg",
+  "confidence": "high"
+ },
+ "iris": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Iris_ensata_Thunb.jpg/500px-Iris_ensata_Thunb.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Iris_ensata_Thunb.jpg",
+  "confidence": "high"
+ },
+ "grapefruit": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Citrus_paradisi_%28Grapefruit%2C_pink%29_white_bg.jpg/500px-Citrus_paradisi_%28Grapefruit%2C_pink%29_white_bg.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_paradisi_%28Grapefruit%2C_pink%29_white_bg.jpg",
+  "confidence": "high"
+ },
+ "ylang-ylang": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/02442jfYlang-ylang_Cananga_odorata_Bulacanfvf_03.jpg/500px-02442jfYlang-ylang_Cananga_odorata_Bulacanfvf_03.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:02442jfYlang-ylang_Cananga_odorata_Bulacanfvf_03.jpg",
+  "confidence": "high"
+ },
+ "leather": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Black_worn_leather_jacket_detail_1.jpg/500px-Black_worn_leather_jacket_detail_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Black_worn_leather_jacket_detail_1.jpg",
+  "confidence": "medium"
+ },
+ "geranium": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Geranium_February_2008-1.jpg/500px-Geranium_February_2008-1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Geranium_February_2008-1.jpg",
+  "confidence": "high"
+ },
+ "oakmoss": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Oakmoss_at_Myrstigen_3.jpg/500px-Oakmoss_at_Myrstigen_3.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Oakmoss_at_Myrstigen_3.jpg",
+  "confidence": "high"
+ },
+ "peach": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Ripe_peach.jpg/500px-Ripe_peach.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ARipe_peach.jpg",
+  "confidence": "high"
+ },
+ "freesia": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Freesia_February_2013-1.jpg/500px-Freesia_February_2013-1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Freesia_February_2013-1.jpg",
+  "confidence": "high"
+ },
+ "white-musk": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg/500px-Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
+  "confidence": "medium"
+ },
+ "benzoin": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Styrax_benzoin_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-133.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Styrax_benzoin_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-133.jpg",
+  "confidence": "high"
+ },
+ "cinnamon": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cinnamomum_verum1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_verum1.jpg",
+  "confidence": "high"
+ },
+ "orange": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Orange-Fruit-Pieces.jpg/500px-Orange-Fruit-Pieces.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Orange-Fruit-Pieces.jpg",
+  "confidence": "high"
+ },
+ "black-currant": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Blackcurrant_in_basket_2021_G1.jpg/500px-Blackcurrant_in_basket_2021_G1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Blackcurrant_in_basket_2021_G1.jpg",
+  "confidence": "high"
+ },
+ "neroli": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Neroli.png/500px-Neroli.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Neroli.png",
+  "confidence": "high"
+ },
+ "peony": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Japanese_peony_pivoine_JdP.jpg/500px-Japanese_peony_pivoine_JdP.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Japanese_peony_pivoine_JdP.jpg",
+  "confidence": "high"
+ },
+ "nutmeg": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Nutmeg_on_Tree.jpg/500px-Nutmeg_on_Tree.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Nutmeg_on_Tree.jpg",
+  "confidence": "high"
+ },
+ "ginger": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Ginger_Plant_vs.jpg/500px-Ginger_Plant_vs.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ginger_Plant_vs.jpg",
+  "confidence": "high"
+ },
+ "pear": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Bufford%27s_fruit_cards%2C_no._779-1_%28pear%29_-_Bufford._LCCN2013646760.jpg/500px-Bufford%27s_fruit_cards%2C_no._779-1_%28pear%29_-_Bufford._LCCN2013646760.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bufford%27s_fruit_cards%2C_no._779-1_%28pear%29_-_Bufford._LCCN2013646760.jpg",
+  "confidence": "high"
+ },
+ "tuberose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Polianthes_tuberosa_clean.jpg/500px-Polianthes_tuberosa_clean.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Polianthes_tuberosa_clean.jpg",
+  "confidence": "high"
+ },
+ "agarwood-(oud)": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/HK_Aquilaria_sinensis.JPG/500px-HK_Aquilaria_sinensis.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:HK_Aquilaria_sinensis.JPG",
+  "confidence": "high"
+ },
+ "incense": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Incense_sticks_of_bamboo._%285621950183%29.jpg/500px-Incense_sticks_of_bamboo._%285621950183%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Incense_sticks_of_bamboo._%285621950183%29.jpg",
+  "confidence": "medium"
+ },
+ "saffron": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Iran_saffron_threads.jpg/500px-Iran_saffron_threads.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Iran_saffron_threads.jpg",
+  "confidence": "high"
+ },
+ "labdanum": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Cistus_ladanifer_f.JPG/500px-Cistus_ladanifer_f.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ACistus_ladanifer_f.JPG",
+  "confidence": "high"
+ },
+ "raspberry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Raspberries_%28Rubus_Idaeus%29.jpg/500px-Raspberries_%28Rubus_Idaeus%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Raspberries_%28Rubus_Idaeus%29.jpg",
+  "confidence": "medium"
+ },
+ "woody-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Dry_wood_texture.jpg/500px-Dry_wood_texture.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dry_wood_texture.jpg",
+  "confidence": "medium"
+ },
+ "magnolia": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Magnolia_%C3%97_soulangeana_blossom.jpg/500px-Magnolia_%C3%97_soulangeana_blossom.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Magnolia_%C3%97_soulangeana_blossom.jpg",
+  "confidence": "high"
+ },
+ "heliotrope": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Starr-110307-2310-Heliotropium_arborescens-flowers-Kula_Botanical_Garden-Maui_%2824449945013%29.jpg/500px-Starr-110307-2310-Heliotropium_arborescens-flowers-Kula_Botanical_Garden-Maui_%2824449945013%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-110307-2310-Heliotropium_arborescens-flowers-Kula_Botanical_Garden-Maui_%2824449945013%29.jpg",
+  "confidence": "high"
+ },
+ "ambergris": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Ambergris.jpg/500px-Ambergris.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ambergris.jpg",
+  "confidence": "medium"
+ },
+ "pepper": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Piper_nigrum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-107.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3APiper_nigrum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-107.jpg",
+  "confidence": "high"
+ },
+ "apple": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/500px-Red_Apple.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
+  "confidence": "medium"
+ },
+ "gardenia": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Gardenia_jasminoides_Blanco1.154.png/500px-Gardenia_jasminoides_Blanco1.154.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Gardenia_jasminoides_Blanco1.154.png",
+  "confidence": "high"
+ },
+ "mint": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Mint_plant_01.jpg/500px-Mint_plant_01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mint_plant_01.jpg",
+  "confidence": "high"
+ },
+ "coriander": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg",
+  "confidence": "high"
+ },
+ "green-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Green_Leaves%2C_October_2011.JPG/500px-Green_Leaves%2C_October_2011.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Green_Leaves%2C_October_2011.JPG",
+  "confidence": "medium"
+ },
+ "virginia-cedar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Juniperus_virginiana_near_Oxford%2C_Ohio.jpg/500px-Juniperus_virginiana_near_Oxford%2C_Ohio.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Juniperus_virginiana_near_Oxford%2C_Ohio.jpg",
+  "confidence": "high"
+ },
+ "black-pepper": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Black_Pepper_%28Piper_nigrum%29_fruits.jpg/500px-Black_Pepper_%28Piper_nigrum%29_fruits.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Black_Pepper_%28Piper_nigrum%29_fruits.jpg",
+  "confidence": "high"
+ },
+ "citruses": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Citrus_fruits.jpg/500px-Citrus_fruits.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_fruits.jpg",
+  "confidence": "medium"
+ },
+ "plum": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Plums_at_a_fruit_stand.jpg/500px-Plums_at_a_fruit_stand.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Plums_at_a_fruit_stand.jpg",
+  "confidence": "high"
+ },
+ "woodsy-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Spruce_forest_at_Holma.jpg/500px-Spruce_forest_at_Holma.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Spruce_forest_at_Holma.jpg",
+  "confidence": "medium"
+ },
+ "guaiac-wood": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Guaiacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-069.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Guaiacum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-069.jpg",
+  "confidence": "high"
+ },
+ "violet-leaf": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Wild_Violet_leaves_%2815853057688%29.jpg/500px-Wild_Violet_leaves_%2815853057688%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wild_Violet_leaves_%2815853057688%29.jpg",
+  "confidence": "high"
+ },
+ "pineapple": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Pineapple_fruit_2.jpg/500px-Pineapple_fruit_2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pineapple_fruit_2.jpg",
+  "confidence": "high"
+ },
+ "sage": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Salvia_officinalis0.jpg/500px-Salvia_officinalis0.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Salvia_officinalis0.jpg",
+  "confidence": "high"
+ },
+ "carnation": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Carnation%2C_Dianthus_caryophyllus%2C_Kingswood.jpg/500px-Carnation%2C_Dianthus_caryophyllus%2C_Kingswood.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Carnation%2C_Dianthus_caryophyllus%2C_Kingswood.jpg",
+  "confidence": "high"
+ },
+ "moss": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Dead_Trunk_with_Moss_in_Fall%C3%A4tsche.jpg/500px-Dead_Trunk_with_Moss_in_Fall%C3%A4tsche.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dead_Trunk_with_Moss_in_Fall%C3%A4tsche.jpg",
+  "confidence": "high"
+ },
+ "lime": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/The_acid_lime_fruit_in_Hawaii_%281923%29_%2816148180074%29.jpg/500px-The_acid_lime_fruit_in_Hawaii_%281923%29_%2816148180074%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:The_acid_lime_fruit_in_Hawaii_%281923%29_%2816148180074%29.jpg",
+  "confidence": "high"
+ },
+ "orchid": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Orchidaceae_flowers.jpg/500px-Orchidaceae_flowers.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Orchidaceae_flowers.jpg",
+  "confidence": "high"
+ },
+ "vanille": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vanilla_planifolia_1.jpg/500px-Vanilla_planifolia_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_planifolia_1.jpg",
+  "confidence": "high"
+ },
+ "jasmine-sambac": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Jasmine_%28Jasminum_sambac%29.jpg/500px-Jasmine_%28Jasminum_sambac%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Jasmine_%28Jasminum_sambac%29.jpg",
+  "confidence": "high"
+ },
+ "aldehydes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Aldehyde_general_structure.svg/500px-Aldehyde_general_structure.svg.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Aldehyde_general_structure.svg",
+  "confidence": "medium"
+ },
+ "basil": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Basil_%28Ocimum_basilicum%29.jpg/500px-Basil_%28Ocimum_basilicum%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Basil_%28Ocimum_basilicum%29.jpg",
+  "confidence": "high"
+ },
+ "lily": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Lily_Lilium_%27Citronella%27_Flower.jpg/500px-Lily_Lilium_%27Citronella%27_Flower.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lily_Lilium_%27Citronella%27_Flower.jpg",
+  "confidence": "high"
+ },
+ "caramel": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Caramel-2.jpg/500px-Caramel-2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Caramel-2.jpg",
+  "confidence": "high"
+ },
+ "tobacco": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cuba_-_fully_grown_tobacco_plant.jpg/500px-Cuba_-_fully_grown_tobacco_plant.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cuba_-_fully_grown_tobacco_plant.jpg",
+  "confidence": "high"
+ },
+ "cashmere-wood": {
+  "image": null,
+  "page": null,
+  "confidence": "none"
+ },
+ "tangerine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/TangerineFruit.jpg/500px-TangerineFruit.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:TangerineFruit.jpg",
+  "confidence": "high"
+ },
+ "rosemary": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/00/Rosmarinus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-258.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-258.jpg",
+  "confidence": "high"
+ },
+ "osmanthus": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Osmanthus_fragrans_%28orange_flowers%29.jpg/500px-Osmanthus_fragrans_%28orange_flowers%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AOsmanthus_fragrans_%28orange_flowers%29.jpg",
+  "confidence": "high"
+ },
+ "galbanum": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Ferula_gummosa_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-205.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AFerula_gummosa_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-205.jpg",
+  "confidence": "high"
+ },
+ "honey": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Honey_comb.jpg/500px-Honey_comb.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Honey_comb.jpg",
+  "confidence": "high"
+ },
+ "orris-root": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Iris_germanica_001.jpg/500px-Iris_germanica_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Iris_germanica_001.jpg",
+  "confidence": "medium"
+ },
+ "petitgrain": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Citrus_aurantium_leaves.JPG/500px-Citrus_aurantium_leaves.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ACitrus_aurantium_leaves.JPG",
+  "confidence": "high"
+ },
+ "olibanum": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Olibanum_resin.jpg/500px-Olibanum_resin.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Olibanum_resin.jpg",
+  "confidence": "high"
+ },
+ "coconut": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Immature_coconut_fruit.jpg/500px-Immature_coconut_fruit.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Immature_coconut_fruit.jpg",
+  "confidence": "high"
+ },
+ "clary-sage": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Salvia_sclarea3.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Salvia_sclarea3.jpg",
+  "confidence": "high"
+ },
+ "cloves": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Cloves.JPG/500px-Cloves.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Cloves.JPG",
+  "confidence": "high"
+ },
+ "cypress": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Cupressus_sempervirens%2C_Saint-R%C3%A9my-de-Provence_cf01.jpg/500px-Cupressus_sempervirens%2C_Saint-R%C3%A9my-de-Provence_cf01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ACupressus_sempervirens%2C_Saint-R%C3%A9my-de-Provence_cf01.jpg",
+  "confidence": "high"
+ },
+ "cassis": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Blackcurrant_in_basket_2021_G1.jpg/500px-Blackcurrant_in_basket_2021_G1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Blackcurrant_in_basket_2021_G1.jpg",
+  "confidence": "high"
+ },
+ "amalfi-lemon": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Amalfi_-_limoni_e_peperoncini_-_%22lemons_and_red_dried_peppers%22.jpg/500px-Amalfi_-_limoni_e_peperoncini_-_%22lemons_and_red_dried_peppers%22.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Amalfi_-_limoni_e_peperoncini_-_%22lemons_and_red_dried_peppers%22.jpg",
+  "confidence": "high"
+ },
+ "litchi": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Lychee_fruits_and_seed.jpg/500px-Lychee_fruits_and_seed.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lychee_fruits_and_seed.jpg",
+  "confidence": "high"
+ },
+ "ambroxan": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Ambrox.svg/500px-Ambrox.svg.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Ambrox.svg",
+  "confidence": "high"
+ },
+ "mimosa": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Acacia_dealbata_Garden_060407w.jpg/500px-Acacia_dealbata_Garden_060407w.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AAcacia_dealbata_Garden_060407w.jpg",
+  "confidence": "high"
+ },
+ "cashmeran": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Cashmeran.svg/500px-Cashmeran.svg.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Cashmeran.svg",
+  "confidence": "high"
+ },
+ "bulgarian-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Damask_Rose_%28IMO_6922729%29_at_Eemshaven.jpg/500px-Damask_Rose_%28IMO_6922729%29_at_Eemshaven.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Damask_Rose_%28IMO_6922729%29_at_Eemshaven.jpg",
+  "confidence": "high"
+ },
+ "almond": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Almonds_1.jpg/500px-Almonds_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Almonds_1.jpg",
+  "confidence": "high"
+ },
+ "artemisia": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/2020_year._Herbarium._Artemisia_vulgaris._img-002.jpg/500px-2020_year._Herbarium._Artemisia_vulgaris._img-002.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3A2020_year._Herbarium._Artemisia_vulgaris._img-002.jpg",
+  "confidence": "high"
+ },
+ "lotus": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Indian_lotus_flowers.jpg/500px-Indian_lotus_flowers.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Indian_lotus_flowers.jpg",
+  "confidence": "high"
+ },
+ "apricot": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Apricot_fruit_%2824197741881%29.jpg/500px-Apricot_fruit_%2824197741881%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Apricot_fruit_%2824197741881%29.jpg",
+  "confidence": "high"
+ },
+ "cyclamen": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Cyclamen_persicum_Mill_08DEC06.jpg/500px-Cyclamen_persicum_Mill_08DEC06.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cyclamen_persicum_Mill_08DEC06.jpg",
+  "confidence": "high"
+ },
+ "praline": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Pralines_Chocolate_Tasting_Club.jpg/500px-Pralines_Chocolate_Tasting_Club.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pralines_Chocolate_Tasting_Club.jpg",
+  "confidence": "high"
+ },
+ "spices": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Spices_of_Sa%C3%BAde_flea_market%2C_S%C3%A3o_Paulo%2C_Brazil.jpg/500px-Spices_of_Sa%C3%BAde_flea_market%2C_S%C3%A3o_Paulo%2C_Brazil.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Spices_of_Sa%C3%BAde_flea_market%2C_S%C3%A3o_Paulo%2C_Brazil.jpg",
+  "confidence": "medium"
+ },
+ "sea-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/500px-Ocean_beach_at_low_tide_against_the_sun.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ocean_beach_at_low_tide_against_the_sun.jpg",
+  "confidence": "medium"
+ },
+ "floral-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Halictus_bee_on_flower-2.jpg/500px-Halictus_bee_on_flower-2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Halictus_bee_on_flower-2.jpg",
+  "confidence": "medium"
+ },
+ "bitter-orange": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Unripe_bitter_orange_fruit_-_%CE%9A%CE%B9%CF%84%CF%81%CE%AD%CE%B1_%CE%B7_%CE%BD%CE%B5%CF%81%CE%B1%CE%BD%CF%84%CE%B6%CE%AD%CE%B1.jpg/500px-Unripe_bitter_orange_fruit_-_%CE%9A%CE%B9%CF%84%CF%81%CE%AD%CE%B1_%CE%B7_%CE%BD%CE%B5%CF%81%CE%B1%CE%BD%CF%84%CE%B6%CE%AD%CE%B1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Unripe_bitter_orange_fruit_-_%CE%9A%CE%B9%CF%84%CF%81%CE%AD%CE%B1_%CE%B7_%CE%BD%CE%B5%CF%81%CE%B1%CE%BD%CF%84%CE%B6%CE%AD%CE%B1.jpg",
+  "confidence": "high"
+ },
+ "orris": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Iris_germanica_001.jpg/500px-Iris_germanica_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Iris_germanica_001.jpg",
+  "confidence": "medium"
+ },
+ "myrrh": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Myrrh.JPG/500px-Myrrh.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Myrrh.JPG",
+  "confidence": "high"
+ },
+ "coffee": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/500px-Roasted_coffee_beans.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans.jpg",
+  "confidence": "high"
+ },
+ "red-berries": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Tree_with_red_berries_%28165458861%29.jpg/500px-Tree_with_red_berries_%28165458861%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tree_with_red_berries_%28165458861%29.jpg",
+  "confidence": "medium"
+ },
+ "ambrette-(musk-mallow)": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Abelmoschus_moschatus_Blanco2.245.png/500px-Abelmoschus_moschatus_Blanco2.245.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Abelmoschus_moschatus_Blanco2.245.png",
+  "confidence": "high"
+ },
+ "melon": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Cucumis_melo_var._reticulatus_%28photo_by_Scott_Bauer%29.jpg/500px-Cucumis_melo_var._reticulatus_%28photo_by_Scott_Bauer%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cucumis%20melo%20var.%20reticulatus%20%28photo%20by%20Scott%20Bauer%29.jpg",
+  "confidence": "high"
+ },
+ "juniper": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Juniperus_communis_in_Yyteri_2.jpg/500px-Juniperus_communis_in_Yyteri_2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AJuniperus_communis_in_Yyteri_2.jpg",
+  "confidence": "high"
+ },
+ "honeysuckle": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/European_honeysuckle_800.jpg/500px-European_honeysuckle_800.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:European_honeysuckle_800.jpg",
+  "confidence": "high"
+ },
+ "turkish-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg/500px-Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "confidence": "high"
+ },
+ "juniper-berries": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Juniper_berries_1776.jpg/500px-Juniper_berries_1776.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Juniper_berries_1776.jpg",
+  "confidence": "high"
+ },
+ "water-lily": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Daubeny%27s_water_lily_at_BBG_%2850824%29.jpg/500px-Daubeny%27s_water_lily_at_BBG_%2850824%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Daubeny%27s_water_lily_at_BBG_%2850824%29.jpg",
+  "confidence": "high"
+ },
+ "suede": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/A_Derby_of_suede_leather_with_brogues.jpg/500px-A_Derby_of_suede_leather_with_brogues.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:A_Derby_of_suede_leather_with_brogues.jpg",
+  "confidence": "medium"
+ },
+ "african-orange-flower": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Orange_Blossom.JPG/500px-Orange_Blossom.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Orange_Blossom.JPG",
+  "confidence": "high"
+ },
+ "tea": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Tea_in_different_grade_of_fermentation.jpg/500px-Tea_in_different_grade_of_fermentation.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tea_in_different_grade_of_fermentation.jpg",
+  "confidence": "high"
+ },
+ "narcissus": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Narcissus_pseudonarcissus_MHNT.BOT.2009.13.31.jpg/500px-Narcissus_pseudonarcissus_MHNT.BOT.2009.13.31.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ANarcissus_pseudonarcissus_MHNT.BOT.2009.13.31.jpg",
+  "confidence": "high"
+ },
+ "damask-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Damask_Rose_%28IMO_6922729%29_at_Eemshaven.jpg/500px-Damask_Rose_%28IMO_6922729%29_at_Eemshaven.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Damask_Rose_%28IMO_6922729%29_at_Eemshaven.jpg",
+  "confidence": "high"
+ },
+ "green-apple": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Green_apple_svln4821.jpg/500px-Green_apple_svln4821.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Green_apple_svln4821.jpg",
+  "confidence": "high"
+ },
+ "rum": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Stroh_Inl%C3%A4nder_Rum_80_bottle_rear.jpg/500px-Stroh_Inl%C3%A4nder_Rum_80_bottle_rear.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Stroh_Inl%C3%A4nder_Rum_80_bottle_rear.jpg",
+  "confidence": "high"
+ },
+ "white-flowers": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/White_flowers_b.jpg/500px-White_flowers_b.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:White_flowers_b.jpg",
+  "confidence": "medium"
+ },
+ "fruity-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Citrus_fruits.jpg/500px-Citrus_fruits.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_fruits.jpg",
+  "confidence": "medium"
+ },
+ "styrax": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Styrax_benzoin_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-133.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Styrax_benzoin_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-133.jpg",
+  "confidence": "high"
+ },
+ "red-apple": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/500px-Red_Apple.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
+  "confidence": "high"
+ },
+ "frangipani": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Plumeria_%28Frangipani%29_flowers.jpg/500px-Plumeria_%28Frangipani%29_flowers.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3APlumeria_%28Frangipani%29_flowers.jpg",
+  "confidence": "high"
+ },
+ "passionfruit": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Passionfruit_and_cross_section.jpg/500px-Passionfruit_and_cross_section.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Passionfruit_and_cross_section.jpg",
+  "confidence": "high"
+ },
+ "amberwood": {
+  "image": null,
+  "page": null,
+  "confidence": "none"
+ },
+ "cypriol-oil-or-nagarmotha": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/CyperusScariosus_6259.JPG/500px-CyperusScariosus_6259.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:CyperusScariosus_6259.JPG",
+  "confidence": "high"
+ },
+ "elemi": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Elemi_%28Canarium_luzonicum%29_essential_oil_in_clear_glass_vial.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Elemi_%28Canarium_luzonicum%29_essential_oil_in_clear_glass_vial.png",
+  "confidence": "high"
+ },
+ "blackberry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Blackberry_in_fruit_salad_macro.jpg/500px-Blackberry_in_fruit_salad_macro.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Blackberry_in_fruit_salad_macro.jpg",
+  "confidence": "high"
+ },
+ "madagascar-vanilla": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vanilla_planifolia_1.jpg/500px-Vanilla_planifolia_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_planifolia_1.jpg",
+  "confidence": "high"
+ },
+ "lilac": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Stockholm-lilac.jpg/500px-Stockholm-lilac.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Stockholm-lilac.jpg",
+  "confidence": "high"
+ },
+ "thyme": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Thymus_vulgaris_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-271.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Thymus_vulgaris_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-271.jpg",
+  "confidence": "high"
+ },
+ "clove": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Cloves.JPG/500px-Cloves.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Cloves.JPG",
+  "confidence": "high"
+ },
+ "anise": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Apiaceae_Pimpinella_anisum.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Apiaceae_Pimpinella_anisum.jpg",
+  "confidence": "high"
+ },
+ "oak-moss": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Oakmoss_at_Myrstigen_3.jpg/500px-Oakmoss_at_Myrstigen_3.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Oakmoss_at_Myrstigen_3.jpg",
+  "confidence": "high"
+ },
+ "fig": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Fig_%28Ficus_carica%29_fruit_halved.jpg/500px-Fig_%28Ficus_carica%29_fruit_halved.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Fig_%28Ficus_carica%29_fruit_halved.jpg",
+  "confidence": "high"
+ },
+ "rhubarb": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/CSA-Rhubarb.jpg/500px-CSA-Rhubarb.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:CSA-Rhubarb.jpg",
+  "confidence": "high"
+ },
+ "birch": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Birchwood_Slavnoe_2012_G1.jpg/500px-Birchwood_Slavnoe_2012_G1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Birchwood_Slavnoe_2012_G1.jpg",
+  "confidence": "medium"
+ },
+ "cacao": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Theobroma_cacao_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-136.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ATheobroma_cacao_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-136.jpg",
+  "confidence": "high"
+ },
+ "hyacinth": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Hyacinth_-_Anglesey_Abbey.jpg/500px-Hyacinth_-_Anglesey_Abbey.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyacinth_-_Anglesey_Abbey.jpg",
+  "confidence": "high"
+ },
+ "star-anise": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Star_aniseed.jpg/500px-Star_aniseed.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Star_aniseed.jpg",
+  "confidence": "high"
+ },
+ "yuzu": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Yuzufruit.jpg/500px-Yuzufruit.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Yuzufruit.jpg",
+  "confidence": "high"
+ },
+ "water-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/500px-Ocean_beach_at_low_tide_against_the_sun.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ocean_beach_at_low_tide_against_the_sun.jpg",
+  "confidence": "medium"
+ },
+ "blood-orange": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Immature_Moro_blood_orange_fruit_-_7_months_from_flowering.jpg/500px-Immature_Moro_blood_orange_fruit_-_7_months_from_flowering.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Immature_Moro_blood_orange_fruit_-_7_months_from_flowering.jpg",
+  "confidence": "high"
+ },
+ "haitian-vetiver": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Vetiveria_zizanoides_dsc07810.jpg/500px-Vetiveria_zizanoides_dsc07810.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vetiveria_zizanoides_dsc07810.jpg",
+  "confidence": "high"
+ },
+ "mango": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Mango_fruit_Nam_Dok_Mai.jpg/500px-Mango_fruit_Nam_Dok_Mai.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mango_fruit_Nam_Dok_Mai.jpg",
+  "confidence": "high"
+ },
+ "civet": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/African_civet.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:African_civet.jpg",
+  "confidence": "high"
+ },
+ "brazilian-rosewood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Dalbergia_nigra_Blatt.jpg/500px-Dalbergia_nigra_Blatt.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dalbergia_nigra_Blatt.jpg",
+  "confidence": "high"
+ },
+ "caraway": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Pink_Caraway_Carum_carvi_H5255_VI08_C.jpg/500px-Pink_Caraway_Carum_carvi_H5255_VI08_C.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pink_Caraway_Carum_carvi_H5255_VI08_C.jpg",
+  "confidence": "high"
+ },
+ "green-leaves": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Green_Leaves%2C_October_2011.JPG/500px-Green_Leaves%2C_October_2011.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Green_Leaves%2C_October_2011.JPG",
+  "confidence": "medium"
+ },
+ "strawberry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Strawberry_fruit_sliced.jpg/500px-Strawberry_fruit_sliced.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Strawberry_fruit_sliced.jpg",
+  "confidence": "high"
+ },
+ "tiare-flower": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Gardenia_taitensis.jpg/500px-Gardenia_taitensis.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Gardenia_taitensis.jpg",
+  "confidence": "high"
+ },
+ "calabrian-bergamot": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Citrus_bergamia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-184.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_bergamia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-184.jpg",
+  "confidence": "high"
+ },
+ "cherry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Cherry_Stella444.jpg/500px-Cherry_Stella444.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cherry_Stella444.jpg",
+  "confidence": "medium"
+ },
+ "opoponax": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Opoponax1.JPG/500px-Opoponax1.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Opoponax1.JPG",
+  "confidence": "high"
+ },
+ "green-tea": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Green_tea_-_%E7%B7%91%E8%8C%B6_-_Flickr_-_Kanko.jpg/500px-Green_tea_-_%E7%B7%91%E8%8C%B6_-_Flickr_-_Kanko.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Green_tea_-_%E7%B7%91%E8%8C%B6_-_Flickr_-_Kanko.jpg",
+  "confidence": "high"
+ },
+ "spicy-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Spices_of_Sa%C3%BAde_flea_market%2C_S%C3%A3o_Paulo%2C_Brazil.jpg/500px-Spices_of_Sa%C3%BAde_flea_market%2C_S%C3%A3o_Paulo%2C_Brazil.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Spices_of_Sa%C3%BAde_flea_market%2C_S%C3%A3o_Paulo%2C_Brazil.jpg",
+  "confidence": "medium"
+ },
+ "palisander-rosewood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Dalbergia_sissoo_Bra24.png/500px-Dalbergia_sissoo_Bra24.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Dalbergia_sissoo_Bra24.png",
+  "confidence": "high"
+ },
+ "cumin": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Cuminum_cyminum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-198.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cuminum_cyminum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-198.jpg",
+  "confidence": "high"
+ },
+ "angelica": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Angelica_archangelica_2_RF.jpg/500px-Angelica_archangelica_2_RF.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Angelica_archangelica_2_RF.jpg",
+  "confidence": "high"
+ },
+ "watermelon": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Citrullus_lanatus_03.JPG/500px-Citrullus_lanatus_03.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ACitrullus_lanatus_03.JPG",
+  "confidence": "high"
+ },
+ "licorice": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Licorice_at_a_stand_on_Str%C3%B6mkajen%2C_Stockholm.jpg/500px-Licorice_at_a_stand_on_Str%C3%B6mkajen%2C_Stockholm.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Licorice_at_a_stand_on_Str%C3%B6mkajen%2C_Stockholm.jpg",
+  "confidence": "high"
+ },
+ "watery-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Singapore_Drinking-water-station-in-The-Gardens-01.jpg/500px-Singapore_Drinking-water-station-in-The-Gardens-01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Singapore_Drinking-water-station-in-The-Gardens-01.jpg",
+  "confidence": "medium"
+ },
+ "sicilian-lemon": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Photo_Sicilian_lemons_1940_-_Touring_Club_Italiano_1.2478.jpg/500px-Photo_Sicilian_lemons_1940_-_Touring_Club_Italiano_1.2478.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Photo_Sicilian_lemons_1940_-_Touring_Club_Italiano_1.2478.jpg",
+  "confidence": "high"
+ },
+ "pomegranate": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Pomegranate_%28fruit%29.jpg/500px-Pomegranate_%28fruit%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pomegranate_%28fruit%29.jpg",
+  "confidence": "high"
+ },
+ "milk": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Milk-bottle.jpg/500px-Milk-bottle.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Milk-bottle.jpg",
+  "confidence": "high"
+ },
+ "sugar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Sugar_2xmacro.jpg/500px-Sugar_2xmacro.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sugar_2xmacro.jpg",
+  "confidence": "high"
+ },
+ "tolu-balsam": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Myroxylon_balsamum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-140.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AMyroxylon_balsamum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-140.jpg",
+  "confidence": "high"
+ },
+ "castoreum": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Bever_-_Eurasian_beaver_-_Castor_fiber_2.jpg/500px-Bever_-_Eurasian_beaver_-_Castor_fiber_2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bever_-_Eurasian_beaver_-_Castor_fiber_2.jpg",
+  "confidence": "medium"
+ },
+ "pink-grapefruit": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Citrus_paradisi_%28Grapefruit%2C_pink%29.jpg/500px-Citrus_paradisi_%28Grapefruit%2C_pink%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_paradisi_%28Grapefruit%2C_pink%29.jpg",
+  "confidence": "high"
+ },
+ "egyptian-jasmine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Chinese_jasmine_in_spring_bloom.JPG/500px-Chinese_jasmine_in_spring_bloom.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Chinese_jasmine_in_spring_bloom.JPG",
+  "confidence": "high"
+ },
+ "white-woods": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fylling_i_heltre_norsk_bj%C3%B8rk_i_skapd%C3%B8r_-_birch_wood_structure_Norwegian_birch.JPG/500px-Fylling_i_heltre_norsk_bj%C3%B8rk_i_skapd%C3%B8r_-_birch_wood_structure_Norwegian_birch.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AFylling_i_heltre_norsk_bj%C3%B8rk_i_skapd%C3%B8r_-_birch_wood_structure_Norwegian_birch.JPG",
+  "confidence": "medium"
+ },
+ "bourbon-vanilla": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vanilla_planifolia_1.jpg/500px-Vanilla_planifolia_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_planifolia_1.jpg",
+  "confidence": "high"
+ },
+ "tarragon": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Artemisia_dracunculus_-_001x.jpg/500px-Artemisia_dracunculus_-_001x.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Artemisia_dracunculus_-_001x.jpg",
+  "confidence": "high"
+ },
+ "sandalwood-2": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Sandalwood_harvest.jpg/500px-Sandalwood_harvest.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sandalwood_harvest.jpg",
+  "confidence": "high"
+ },
+ "myrrh-2": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Myrrh.JPG/500px-Myrrh.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Myrrh.JPG",
+  "confidence": "high"
+ },
+ "may-rose": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Rosa_centifolia_foliacea_17.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rosa_centifolia_foliacea_17.jpg",
+  "confidence": "high"
+ },
+ "white-amber": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Amber_Bernstein_many_stones.jpg/500px-Amber_Bernstein_many_stones.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Amber_Bernstein_many_stones.jpg",
+  "confidence": "medium"
+ },
+ "peru-balsam": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Myroxylon_Pereirae%2C_Klotzsch._Wellcome_M0002671.jpg/500px-Myroxylon_Pereirae%2C_Klotzsch._Wellcome_M0002671.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AMyroxylon_Pereirae%2C_Klotzsch._Wellcome_M0002671.jpg",
+  "confidence": "high"
+ },
+ "red-currant": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Redcurrant_in_basket_2018_G1.jpg/500px-Redcurrant_in_basket_2018_G1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Redcurrant_in_basket_2018_G1.jpg",
+  "confidence": "high"
+ },
+ "powdery-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Boldoot_talcum_powder%2C_foto.JPG/500px-Boldoot_talcum_powder%2C_foto.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Boldoot_talcum_powder%2C_foto.JPG",
+  "confidence": "medium"
+ },
+ "atlas-cedar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Atlas_cedar._Cedrus_atlantica._Pyramidal_to_flat._%2837085640963%29.jpg/500px-Atlas_cedar._Cedrus_atlantica._Pyramidal_to_flat._%2837085640963%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Atlas_cedar._Cedrus_atlantica._Pyramidal_to_flat._%2837085640963%29.jpg",
+  "confidence": "high"
+ },
+ "clementine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Citrus_Clementina_-_panoramio.jpg/500px-Citrus_Clementina_-_panoramio.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_Clementina_-_panoramio.jpg",
+  "confidence": "high"
+ },
+ "immortelle": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Helichrysum_italicum_%28immortelle%29.JPG/500px-Helichrysum_italicum_%28immortelle%29.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Helichrysum_italicum_%28immortelle%29.JPG",
+  "confidence": "high"
+ },
+ "citron": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Citron_Fruit_%28_Narthanga%29.jpg/500px-Citron_Fruit_%28_Narthanga%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citron_Fruit_%28_Narthanga%29.jpg",
+  "confidence": "high"
+ },
+ "chamomile": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Chamomile%40original_size.jpg/500px-Chamomile%40original_size.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Chamomile%40original_size.jpg",
+  "confidence": "high"
+ },
+ "mate": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Yerba_Mate_beverage.jpg/500px-Yerba_Mate_beverage.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Yerba_Mate_beverage.jpg",
+  "confidence": "high"
+ },
+ "papyrus": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Cyperus_papyrus6.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cyperus_papyrus6.jpg",
+  "confidence": "high"
+ },
+ "french-labdanum": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Cistus_ladanifer_f.JPG/500px-Cistus_ladanifer_f.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ACistus_ladanifer_f.JPG",
+  "confidence": "high"
+ },
+ "coumarin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Coumarin_acsv.svg/500px-Coumarin_acsv.svg.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Coumarin_acsv.svg",
+  "confidence": "high"
+ },
+ "fig-leaf": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Ficus_carica_leaf_01_by_Line1.jpg/500px-Ficus_carica_leaf_01_by_Line1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AFicus_carica_leaf_01_by_Line1.jpg",
+  "confidence": "high"
+ },
+ "hazelnut": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Hazelnuts.jpg/500px-Hazelnuts.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hazelnuts.jpg",
+  "confidence": "high"
+ },
+ "lemon-verbena": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Aloysia_citrodora_-_leaf.JPG/500px-Aloysia_citrodora_-_leaf.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Aloysia_citrodora_-_leaf.JPG",
+  "confidence": "high"
+ },
+ "oak": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Oak_tree_in_Prospect_Park_%2803833%29.jpg/500px-Oak_tree_in_Prospect_Park_%2803833%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Oak_tree_in_Prospect_Park_%2803833%29.jpg",
+  "confidence": "high"
+ },
+ "bamboo": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Bamboo_La_Menteuse.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bamboo_La_Menteuse.jpg",
+  "confidence": "high"
+ },
+ "nectarine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Nectarine_Fruit_Development.jpg/500px-Nectarine_Fruit_Development.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Nectarine_Fruit_Development.jpg",
+  "confidence": "high"
+ },
+ "pomelo": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Pomelo_fruit_selling%2C_Kerala.jpg/500px-Pomelo_fruit_selling%2C_Kerala.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pomelo_fruit_selling%2C_Kerala.jpg",
+  "confidence": "high"
+ },
+ "salt": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Piles_of_Salt_Salar_de_Uyuni_Bolivia_Luca_Galuzzi_2006_a.jpg/500px-Piles_of_Salt_Salar_de_Uyuni_Bolivia_Luca_Galuzzi_2006_a.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Piles_of_Salt_Salar_de_Uyuni_Bolivia_Luca_Galuzzi_2006_a.jpg",
+  "confidence": "medium"
+ },
+ "balsam-fir": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Abies_balsamea_%28Balsam_Fir%29_%2831874293521%29.jpg/500px-Abies_balsamea_%28Balsam_Fir%29_%2831874293521%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Abies_balsamea_%28Balsam_Fir%29_%2831874293521%29.jpg",
+  "confidence": "high"
+ },
+ "vetyver": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Vetiveria_zizanoides_dsc07810.jpg/500px-Vetiveria_zizanoides_dsc07810.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vetiveria_zizanoides_dsc07810.jpg",
+  "confidence": "high"
+ },
+ "green-mandarin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Unripe_mandarin.jpg/500px-Unripe_mandarin.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AUnripe_mandarin.jpg",
+  "confidence": "high"
+ },
+ "sweet-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Candy_6577.jpg/500px-Candy_6577.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Candy_6577.jpg",
+  "confidence": "medium"
+ },
+ "sea-water": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/500px-Ocean_beach_at_low_tide_against_the_sun.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ocean_beach_at_low_tide_against_the_sun.jpg",
+  "confidence": "medium"
+ },
+ "cherry-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Mt_Hiei_with_Cherry_Blossom.JPG/500px-Mt_Hiei_with_Cherry_Blossom.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Mt_Hiei_with_Cherry_Blossom.JPG",
+  "confidence": "high"
+ },
+ "white-pepper": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/White_Pepper_%28Piper_nigrum%29.jpg/500px-White_Pepper_%28Piper_nigrum%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:White_Pepper_%28Piper_nigrum%29.jpg",
+  "confidence": "high"
+ },
+ "red-fruits": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Tree_with_red_berries_%28165458861%29.jpg/500px-Tree_with_red_berries_%28165458861%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tree_with_red_berries_%28165458861%29.jpg",
+  "confidence": "medium"
+ },
+ "ozonic-notes": {
+  "image": null,
+  "page": null,
+  "confidence": "none"
+ },
+ "violet-leaves": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Wild_Violet_leaves_%2815853057688%29.jpg/500px-Wild_Violet_leaves_%2815853057688%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wild_Violet_leaves_%2815853057688%29.jpg",
+  "confidence": "high"
+ },
+ "black-tea": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Black-tea.jpg/500px-Black-tea.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Black-tea.jpg",
+  "confidence": "high"
+ },
+ "hibiscus": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Hibiscus_rhodanthus.jpg/500px-Hibiscus_rhodanthus.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hibiscus_rhodanthus.jpg",
+  "confidence": "high"
+ },
+ "cassia": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Cinnamomum_cassia_003.jpg/500px-Cinnamomum_cassia_003.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_cassia_003.jpg",
+  "confidence": "high"
+ },
+ "teak-wood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Teak_wood_-cross_section.jpg/500px-Teak_wood_-cross_section.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Teak_wood_-cross_section.jpg",
+  "confidence": "high"
+ },
+ "italian-lemon": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Lemon.jpg/500px-Lemon.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lemon.jpg",
+  "confidence": "high"
+ },
+ "vanilla-2": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vanilla_planifolia_1.jpg/500px-Vanilla_planifolia_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_planifolia_1.jpg",
+  "confidence": "high"
+ },
+ "sichuan-pepper": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Sichuan_pepper%2C_including_husks%2C_seeds_and_stems.jpg/500px-Sichuan_pepper%2C_including_husks%2C_seeds_and_stems.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sichuan_pepper%2C_including_husks%2C_seeds_and_stems.jpg",
+  "confidence": "high"
+ },
+ "davana": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Artemisia_pallens-1-xavier_cottage-yercaud-salem-India.jpg/500px-Artemisia_pallens-1-xavier_cottage-yercaud-salem-India.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Artemisia_pallens-1-xavier_cottage-yercaud-salem-India.jpg",
+  "confidence": "high"
+ },
+ "wormwood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Artemisia_absinthium_P1210748.jpg/500px-Artemisia_absinthium_P1210748.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Artemisia_absinthium_P1210748.jpg",
+  "confidence": "high"
+ },
+ "dark-chocolate": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Green_and_Black%27s_dark_chocolate_bar_2.jpg/500px-Green_and_Black%27s_dark_chocolate_bar_2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Green_and_Black%27s_dark_chocolate_bar_2.jpg",
+  "confidence": "high"
+ },
+ "marigold": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/French_marigold_garden_2009_G1.jpg/500px-French_marigold_garden_2009_G1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:French_marigold_garden_2009_G1.jpg",
+  "confidence": "high"
+ },
+ "driftwood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Driftwood_in_Istfjorden.JPG/500px-Driftwood_in_Istfjorden.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Driftwood_in_Istfjorden.JPG",
+  "confidence": "medium"
+ },
+ "peach-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/PrunusPersica4.jpg/500px-PrunusPersica4.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:PrunusPersica4.jpg",
+  "confidence": "high"
+ },
+ "resins": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Resin_with_insect_%28aka%29.jpg/500px-Resin_with_insect_%28aka%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Resin_with_insect_%28aka%29.jpg",
+  "confidence": "medium"
+ },
+ "hedione": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Hedione.svg/500px-Hedione.svg.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Hedione.svg",
+  "confidence": "high"
+ },
+ "sicilian-bergamot": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Citrus_bergamia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-184.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_bergamia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-184.jpg",
+  "confidence": "high"
+ },
+ "eucalyptus": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Eucalyptus_flowers2.jpg/500px-Eucalyptus_flowers2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Eucalyptus_flowers2.jpg",
+  "confidence": "high"
+ },
+ "indonesian-patchouli-leaf": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Pogostemon_cablin_001.jpg/500px-Pogostemon_cablin_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pogostemon_cablin_001.jpg",
+  "confidence": "high"
+ },
+ "chocolate": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/07/Chocolate_at_2005_AEE_Friday_2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Chocolate_at_2005_AEE_Friday_2.jpg",
+  "confidence": "high"
+ },
+ "ivy": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Ivy_Hedera_Red_Brick_Wall_2892px.jpg/500px-Ivy_Hedera_Red_Brick_Wall_2892px.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ivy_Hedera_Red_Brick_Wall_2892px.jpg",
+  "confidence": "high"
+ },
+ "precious-woods": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Dry_wood_texture.jpg/500px-Dry_wood_texture.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dry_wood_texture.jpg",
+  "confidence": "medium"
+ },
+ "amyris": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Amyris_elemifera_kz03.jpg/500px-Amyris_elemifera_kz03.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AAmyris_elemifera_kz03.jpg",
+  "confidence": "high"
+ },
+ "bay-leaf": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Bay_Leaves.JPG/500px-Bay_Leaves.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Bay_Leaves.JPG",
+  "confidence": "high"
+ },
+ "elemi-resin": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Elemi_%28Canarium_luzonicum%29_essential_oil_in_clear_glass_vial.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Elemi_%28Canarium_luzonicum%29_essential_oil_in_clear_glass_vial.png",
+  "confidence": "high"
+ },
+ "tagetes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Tagetes_tenuifolia_3_%28aka%29.jpg/500px-Tagetes_tenuifolia_3_%28aka%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tagetes_tenuifolia_3_%28aka%29.jpg",
+  "confidence": "high"
+ },
+ "white-peach": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/White_peach_and_cross_section_edit.jpg/500px-White_peach_and_cross_section_edit.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:White_peach_and_cross_section_edit.jpg",
+  "confidence": "high"
+ },
+ "whipped-cream": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Pudding_With_Raspberries_and_Whipped_Cream.jpg/500px-Pudding_With_Raspberries_and_Whipped_Cream.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pudding_With_Raspberries_and_Whipped_Cream.jpg",
+  "confidence": "high"
+ },
+ "guava": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Guava_fruit.jpg/500px-Guava_fruit.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Guava_fruit.jpg",
+  "confidence": "high"
+ },
+ "grass": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/GREEN_MEADOW%2C_ODESSA_SOUTHERN_NEW_CASTLE_COUNTY.JPG/500px-GREEN_MEADOW%2C_ODESSA_SOUTHERN_NEW_CASTLE_COUNTY.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AGREEN_MEADOW%2C_ODESSA_SOUTHERN_NEW_CASTLE_COUNTY.JPG",
+  "confidence": "high"
+ },
+ "pimento": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/AllspiceSeeds.jpg/500px-AllspiceSeeds.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:AllspiceSeeds.jpg",
+  "confidence": "high"
+ },
+ "fruits": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Citrus_fruits.jpg/500px-Citrus_fruits.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_fruits.jpg",
+  "confidence": "medium"
+ },
+ "white-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/White_Rugosa_roses_in_bloom_Moncton_NB.jpg/500px-White_Rugosa_roses_in_bloom_Moncton_NB.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AWhite_Rugosa_roses_in_bloom_Moncton_NB.jpg",
+  "confidence": "high"
+ },
+ "pine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Pinus_pinaster.jpg/500px-Pinus_pinaster.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3APinus_pinaster.jpg",
+  "confidence": "high"
+ },
+ "pine-tree": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Pinus_pinaster.jpg/500px-Pinus_pinaster.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3APinus_pinaster.jpg",
+  "confidence": "high"
+ },
+ "hawthorn": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Crataegus_monogyna_-_Common_hawthorn.jpg/500px-Crataegus_monogyna_-_Common_hawthorn.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_-_Common_hawthorn.jpg",
+  "confidence": "high"
+ },
+ "granny-smith-apple": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Granny_Smith_Apple_02.JPG/500px-Granny_Smith_Apple_02.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Granny_Smith_Apple_02.JPG",
+  "confidence": "high"
+ },
+ "blueberry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Vaccinium_corymbosum_Beeren.jpg/500px-Vaccinium_corymbosum_Beeren.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AVaccinium_corymbosum_Beeren.jpg",
+  "confidence": "high"
+ },
+ "white-cedar-extract": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Thuja_occidentalis_-_cone_1_%28aka%29.jpg/500px-Thuja_occidentalis_-_cone_1_%28aka%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Thuja_occidentalis_-_cone_1_%28aka%29.jpg",
+  "confidence": "high"
+ },
+ "beeswax": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Melting_beeswax.jpg/500px-Melting_beeswax.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Melting_beeswax.jpg",
+  "confidence": "high"
+ },
+ "fir": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Fir%2C_Abies%2C_Young_tree%2C_Teberda_Valley%2C_Karachay-Cherkessia.jpg/500px-Fir%2C_Abies%2C_Young_tree%2C_Teberda_Valley%2C_Karachay-Cherkessia.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Fir%2C_Abies%2C_Young_tree%2C_Teberda_Valley%2C_Karachay-Cherkessia.jpg",
+  "confidence": "medium"
+ },
+ "vanilla-orchid": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Starr-130312-2167-Vanilla_planifolia-flower-Pali_o_Waipio_Huelo-Maui_%2824580055063%29.jpg/500px-Starr-130312-2167-Vanilla_planifolia-flower-Pali_o_Waipio_Huelo-Maui_%2824580055063%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AStarr-130312-2167-Vanilla_planifolia-flower-Pali_o_Waipio_Huelo-Maui_%2824580055063%29.jpg",
+  "confidence": "high"
+ },
+ "hyacinth-2": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Hyacinth_-_Anglesey_Abbey.jpg/500px-Hyacinth_-_Anglesey_Abbey.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyacinth_-_Anglesey_Abbey.jpg",
+  "confidence": "high"
+ },
+ "mahogany": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Mahogany_wood_and_2_close_lookalikes%2C_Kew_Gardens.jpg/500px-Mahogany_wood_and_2_close_lookalikes%2C_Kew_Gardens.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mahogany_wood_and_2_close_lookalikes%2C_Kew_Gardens.jpg",
+  "confidence": "high"
+ },
+ "australian-sandalwood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Western_Australian_sandalwood_%28Santalum_spicatum%29.jpg/500px-Western_Australian_sandalwood_%28Santalum_spicatum%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Western_Australian_sandalwood_%28Santalum_spicatum%29.jpg",
+  "confidence": "high"
+ },
+ "herbal-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Garden_of_herbs.jpg/500px-Garden_of_herbs.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Garden_of_herbs.jpg",
+  "confidence": "medium"
+ },
+ "solar-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg/500px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+  "confidence": "medium"
+ },
+ "dried-fruits": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/DriedfruitS.jpg/500px-DriedfruitS.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:DriedfruitS.jpg",
+  "confidence": "medium"
+ },
+ "carrot-seeds": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Carrot_seeds_in_Uzbekistan.JPG/500px-Carrot_seeds_in_Uzbekistan.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Carrot_seeds_in_Uzbekistan.JPG",
+  "confidence": "high"
+ },
+ "sweet-orange": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Ambersweet_oranges.jpg/500px-Ambersweet_oranges.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ambersweet_oranges.jpg",
+  "confidence": "high"
+ },
+ "kumquat": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Kumquat_fruit.jpg/500px-Kumquat_fruit.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kumquat_fruit.jpg",
+  "confidence": "high"
+ },
+ "sea-salt": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Dead_Sea_salt_formation_%28Aerial_view%2C_2007%29.jpg/500px-Dead_Sea_salt_formation_%28Aerial_view%2C_2007%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dead_Sea_salt_formation_%28Aerial_view%2C_2007%29.jpg",
+  "confidence": "medium"
+ },
+ "smoke": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Cigarette_smoke_blown_thru_a_handkerchief.jpg/500px-Cigarette_smoke_blown_thru_a_handkerchief.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cigarette_smoke_blown_thru_a_handkerchief.jpg",
+  "confidence": "medium"
+ },
+ "cognac": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Hennessy_cognac_bottle_with_drinking_glass.JPG/500px-Hennessy_cognac_bottle_with_drinking_glass.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Hennessy_cognac_bottle_with_drinking_glass.JPG",
+  "confidence": "high"
+ },
+ "italian-mandarin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mandarin_Oranges_%28Citrus_Reticulata%29.jpg/500px-Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "confidence": "high"
+ },
+ "apple-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Malus_domestica_%27Stark%27s_Earliest%27._Locatie_De_Kruidhof_02.JPG/500px-Malus_domestica_%27Stark%27s_Earliest%27._Locatie_De_Kruidhof_02.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Malus_domestica_%27Stark%27s_Earliest%27._Locatie_De_Kruidhof_02.JPG",
+  "confidence": "high"
+ },
+ "cacao-pod": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Theobroma_cacao_%28young_cacao_pods_-_Haiti%29.jpg/500px-Theobroma_cacao_%28young_cacao_pods_-_Haiti%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Theobroma_cacao_%28young_cacao_pods_-_Haiti%29.jpg",
+  "confidence": "high"
+ },
+ "bitter-almond": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Almonds_1.jpg/500px-Almonds_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Almonds_1.jpg",
+  "confidence": "high"
+ },
+ "coconut-milk": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Coconut_milk_from_can01.JPG/500px-Coconut_milk_from_can01.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Coconut_milk_from_can01.JPG",
+  "confidence": "high"
+ },
+ "marshmallow": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Marshmallows.JPG/500px-Marshmallows.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Marshmallows.JPG",
+  "confidence": "high"
+ },
+ "kiwi": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/%28kiwifruit_or_Chinese_gooseberry%29_is_the_edible_berry_of_a_woody_vine_in_the_genus_Actinidia.JPG/500px-%28kiwifruit_or_Chinese_gooseberry%29_is_the_edible_berry_of_a_woody_vine_in_the_genus_Actinidia.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3A%28kiwifruit_or_Chinese_gooseberry%29_is_the_edible_berry_of_a_woody_vine_in_the_genus_Actinidia.JPG",
+  "confidence": "high"
+ },
+ "rose-petals": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Rose_Petals.jpeg/500px-Rose_Petals.jpeg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rose_Petals.jpeg",
+  "confidence": "high"
+ },
+ "cotton-candy": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Cotton_candy_%CE%9C%CE%B1%CE%BB%CE%BB%CE%AF_%CF%84%CE%B7%CF%82_%CE%B3%CF%81%CE%B9%CE%AC%CF%82.JPG/500px-Cotton_candy_%CE%9C%CE%B1%CE%BB%CE%BB%CE%AF_%CF%84%CE%B7%CF%82_%CE%B3%CF%81%CE%B9%CE%AC%CF%82.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Cotton_candy_%CE%9C%CE%B1%CE%BB%CE%BB%CE%AF_%CF%84%CE%B7%CF%82_%CE%B3%CF%81%CE%B9%CE%AC%CF%82.JPG",
+  "confidence": "high"
+ },
+ "cedarwood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Cedarwood%2C_Woolton.png/500px-Cedarwood%2C_Woolton.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Cedarwood%2C_Woolton.png",
+  "confidence": "high"
+ },
+ "myrtle": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Illustration_Myrtus_communis0.jpg/500px-Illustration_Myrtus_communis0.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Myrtus_communis0.jpg",
+  "confidence": "high"
+ },
+ "flowers": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Halictus_bee_on_flower-2.jpg/500px-Halictus_bee_on_flower-2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Halictus_bee_on_flower-2.jpg",
+  "confidence": "medium"
+ },
+ "vanilla-absolute": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vanilla_planifolia_1.jpg/500px-Vanilla_planifolia_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_planifolia_1.jpg",
+  "confidence": "high"
+ },
+ "passion-flower": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Passion_Flower_Passiflora_Flower_3008px.jpg/500px-Passion_Flower_Passiflora_Flower_3008px.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Passion_Flower_Passiflora_Flower_3008px.jpg",
+  "confidence": "high"
+ },
+ "gurjan-balsam": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Dipterocarpus_retusus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-054.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dipterocarpus_retusus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-054.jpg",
+  "confidence": "high"
+ },
+ "hay": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Field_of_hay_bales_-_omeo.jpg/500px-Field_of_hay_bales_-_omeo.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Field_of_hay_bales_-_omeo.jpg",
+  "confidence": "medium"
+ },
+ "indian-jasmine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Chinese_jasmine_in_spring_bloom.JPG/500px-Chinese_jasmine_in_spring_bloom.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Chinese_jasmine_in_spring_bloom.JPG",
+  "confidence": "high"
+ },
+ "big-strawberry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Strawberry-1.jpg/500px-Strawberry-1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Strawberry-1.jpg",
+  "confidence": "high"
+ },
+ "tobacco-leaf": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/The_manufacture_of_tobacco_with_leaves_being_sorted%2C_dried%2C_Wellcome_L0017403.jpg/500px-The_manufacture_of_tobacco_with_leaves_being_sorted%2C_dried%2C_Wellcome_L0017403.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:The_manufacture_of_tobacco_with_leaves_being_sorted%2C_dried%2C_Wellcome_L0017403.jpg",
+  "confidence": "high"
+ },
+ "siam-benzoin": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Styrax_benzoin_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-133.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Styrax_benzoin_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-133.jpg",
+  "confidence": "high"
+ },
+ "rose-de-mai": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Rosa_centifolia_foliacea_17.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rosa_centifolia_foliacea_17.jpg",
+  "confidence": "high"
+ },
+ "wild-berries": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Alaska_wild_berries.jpg/500px-Alaska_wild_berries.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Alaska_wild_berries.jpg",
+  "confidence": "medium"
+ },
+ "white-honey": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Honey_comb.jpg/500px-Honey_comb.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AHoney_comb.jpg",
+  "confidence": "high"
+ },
+ "cranberry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Vaccinium_macrocarpon_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v14.jpg/500px-Vaccinium_macrocarpon_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v14.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AVaccinium_macrocarpon_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v14.jpg",
+  "confidence": "high"
+ },
+ "lily-of-the-valley-2": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Beech%2C_ferns_and_lily_of_the_valley_in_Gullmarsskogen_1.jpg/500px-Beech%2C_ferns_and_lily_of_the_valley_in_Gullmarsskogen_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Beech%2C_ferns_and_lily_of_the_valley_in_Gullmarsskogen_1.jpg",
+  "confidence": "high"
+ },
+ "virginian-cedar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Juniperus_virginiana_near_Oxford%2C_Ohio.jpg/500px-Juniperus_virginiana_near_Oxford%2C_Ohio.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AJuniperus_virginiana_near_Oxford%2C_Ohio.jpg",
+  "confidence": "high"
+ },
+ "quince": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/Quince-Fruit_13885-480x360_%284792554478%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Quince-Fruit_13885-480x360_%284792554478%29.jpg",
+  "confidence": "high"
+ },
+ "pink-peony": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Pink_Peony_Closeup_%2818340757456%29.jpg/500px-Pink_Peony_Closeup_%2818340757456%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pink_Peony_Closeup_%2818340757456%29.jpg",
+  "confidence": "high"
+ },
+ "white-wood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Dry_wood_texture.jpg/500px-Dry_wood_texture.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dry_wood_texture.jpg",
+  "confidence": "medium"
+ },
+ "seaweed": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Kelp_300.jpg/500px-Kelp_300.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kelp_300.jpg",
+  "confidence": "medium"
+ },
+ "sweet-pea": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Flower%2C_Sweet_pea_-_Flickr_-_nekonomania.jpg/500px-Flower%2C_Sweet_pea_-_Flickr_-_nekonomania.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower%2C_Sweet_pea_-_Flickr_-_nekonomania.jpg",
+  "confidence": "high"
+ },
+ "white-tea": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Meepitiya-White_tea-Silver_Tips.jpg/500px-Meepitiya-White_tea-Silver_Tips.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Meepitiya-White_tea-Silver_Tips.jpg",
+  "confidence": "high"
+ },
+ "almond-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/WLANL_-_MicheleLovesArt_-_Van_Gogh_Museum_-_Almond_Blossom_1890.jpg/500px-WLANL_-_MicheleLovesArt_-_Van_Gogh_Museum_-_Almond_Blossom_1890.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:WLANL_-_MicheleLovesArt_-_Van_Gogh_Museum_-_Almond_Blossom_1890.jpg",
+  "confidence": "high"
+ },
+ "iso-e-super": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Iso_E_Super_structure.svg/500px-Iso_E_Super_structure.svg.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Iso_E_Super_structure.svg",
+  "confidence": "high"
+ },
+ "sour-cherry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Prunus_cerasus_LC0133.jpg/500px-Prunus_cerasus_LC0133.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Prunus_cerasus_LC0133.jpg",
+  "confidence": "high"
+ },
+ "whiskey": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Gerald_Scalise%2C_Whiskey_Bottle%2C_c._1941%2C_NGA_23111.jpg/500px-Gerald_Scalise%2C_Whiskey_Bottle%2C_c._1941%2C_NGA_23111.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Gerald_Scalise%2C_Whiskey_Bottle%2C_c._1941%2C_NGA_23111.jpg",
+  "confidence": "high"
+ },
+ "champaca": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Michelia_champaca_Blanco1.191-cropped.jpg/500px-Michelia_champaca_Blanco1.191-cropped.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Michelia_champaca_Blanco1.191-cropped.jpg",
+  "confidence": "high"
+ },
+ "champagne": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Champagne_flute_and_bottle.jpg/500px-Champagne_flute_and_bottle.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Champagne_flute_and_bottle.jpg",
+  "confidence": "high"
+ },
+ "resin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Drop_of_Pine_resin.jpg/500px-Drop_of_Pine_resin.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Drop_of_Pine_resin.jpg",
+  "confidence": "medium"
+ },
+ "taif-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Rosa_%C3%97_damascena_%28Latin_for_damascene_rose%29%2C_more_commonly_known_as_the_Damask_rose%2C_or_sometimes_as_the_Iranian_Rose%2C_Bulgarian_rose%2C_Taif_rose%2C.jpg/500px-Rosa_%C3%97_damascena_%28Latin_for_damascene_rose%29%2C_more_commonly_known_as_the_Damask_rose%2C_or_sometimes_as_the_Iranian_Rose%2C_Bulgarian_rose%2C_Taif_rose%2C.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rosa_%C3%97_damascena_%28Latin_for_damascene_rose%29%2C_more_commonly_known_as_the_Damask_rose%2C_or_sometimes_as_the_Iranian_Rose%2C_Bulgarian_rose%2C_Taif_rose%2C.jpg",
+  "confidence": "high"
+ },
+ "brown-sugar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Brown_sugar_crystals.JPG/500px-Brown_sugar_crystals.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Brown_sugar_crystals.JPG",
+  "confidence": "high"
+ },
+ "tincture-of-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg/500px-Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "confidence": "high"
+ },
+ "lime-(linden)-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tilia_cordata_flowers_001.jpg/500px-Tilia_cordata_flowers_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tilia_cordata_flowers_001.jpg",
+  "confidence": "high"
+ },
+ "rice": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/White%2C_Brown%2C_Red_%26_Wild_rice.jpg/500px-White%2C_Brown%2C_Red_%26_Wild_rice.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:White%2C_Brown%2C_Red_%26_Wild_rice.jpg",
+  "confidence": "high"
+ },
+ "cucumber": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Cucumis_sativus_0001.JPG/500px-Cucumis_sativus_0001.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ACucumis_sativus_0001.JPG",
+  "confidence": "high"
+ },
+ "mastic-or-lentisque": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Pistacia_lentiscus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-110.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pistacia_lentiscus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-110.jpg",
+  "confidence": "high"
+ },
+ "oud": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/HK_Aquilaria_sinensis.JPG/500px-HK_Aquilaria_sinensis.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:HK_Aquilaria_sinensis.JPG",
+  "confidence": "high"
+ },
+ "moroccan-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg/500px-Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "confidence": "high"
+ },
+ "akigalawood": {
+  "image": null,
+  "page": null,
+  "confidence": "none"
+ },
+ "carambola-(star-fruit)": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Carambola_fruit_2.jpg/500px-Carambola_fruit_2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Carambola_fruit_2.jpg",
+  "confidence": "high"
+ },
+ "cotton-flower": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Cotton_Flower_Chinawal_1.jpg/500px-Cotton_Flower_Chinawal_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cotton_Flower_Chinawal_1.jpg",
+  "confidence": "high"
+ },
+ "toffee": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Thorntonstoffee.jpg/500px-Thorntonstoffee.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Thorntonstoffee.jpg",
+  "confidence": "high"
+ },
+ "guatemalan-cardamom": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg",
+  "confidence": "high"
+ },
+ "cannabis": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Cannabis_sativa_Koehler_drawing.jpg/500px-Cannabis_sativa_Koehler_drawing.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cannabis_sativa_Koehler_drawing.jpg",
+  "confidence": "high"
+ },
+ "pistachio": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Pistacia_vera_Kerman.jpg/500px-Pistacia_vera_Kerman.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pistacia_vera_Kerman.jpg",
+  "confidence": "high"
+ },
+ "sicilian-mandarin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mandarin_Oranges_%28Citrus_Reticulata%29.jpg/500px-Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "confidence": "high"
+ },
+ "grapes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Close_up_grapes.jpg/500px-Close_up_grapes.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Close_up_grapes.jpg",
+  "confidence": "medium"
+ },
+ "indian-oud": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/HK_Aquilaria_sinensis.JPG/500px-HK_Aquilaria_sinensis.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:HK_Aquilaria_sinensis.JPG",
+  "confidence": "high"
+ },
+ "wisteria": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wisteria_fl.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wisteria_fl.jpg",
+  "confidence": "high"
+ },
+ "wild-strawberry": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Fragaria_vesca_5048.JPG/500px-Fragaria_vesca_5048.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Fragaria_vesca_5048.JPG",
+  "confidence": "high"
+ },
+ "tomato-leaf": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Starr_080501-4344_Solanum_lycopersicum_var._lycopersicum.jpg/500px-Starr_080501-4344_Solanum_lycopersicum_var._lycopersicum.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AStarr_080501-4344_Solanum_lycopersicum_var._lycopersicum.jpg",
+  "confidence": "high"
+ },
+ "grasse-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg/500px-Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Comestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg",
+  "confidence": "medium"
+ },
+ "mineral-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Kernite_-_USGS_Mineral_Specimens_692.jpg/500px-Kernite_-_USGS_Mineral_Specimens_692.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kernite_-_USGS_Mineral_Specimens_692.jpg",
+  "confidence": "medium"
+ },
+ "tahitian-vanilla": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vanilla_planifolia_1.jpg/500px-Vanilla_planifolia_1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_planifolia_1.jpg",
+  "confidence": "high"
+ },
+ "iris-flower": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Siberian_Iris_Iris_sibirica_Flower_2500px.jpg/500px-Siberian_Iris_Iris_sibirica_Flower_2500px.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Siberian_Iris_Iris_sibirica_Flower_2500px.jpg",
+  "confidence": "high"
+ },
+ "dates": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Medjool-Date.jpg/500px-Medjool-Date.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AMedjool-Date.jpg",
+  "confidence": "high"
+ },
+ "papaya": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Unripe_papaya_fruit.JPG/500px-Unripe_papaya_fruit.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Unripe_papaya_fruit.JPG",
+  "confidence": "high"
+ },
+ "fern": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Four_fern_fronds%2C_one_of_a_hart%27s_tongue_fern_%28Asplenium_spe_Wellcome_V0043925.jpg/500px-Four_fern_fronds%2C_one_of_a_hart%27s_tongue_fern_%28Asplenium_spe_Wellcome_V0043925.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AFour_fern_fronds%2C_one_of_a_hart%27s_tongue_fern_%28Asplenium_spe_Wellcome_V0043925.jpg",
+  "confidence": "high"
+ },
+ "tonka": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tonka_Beans.jpg/500px-Tonka_Beans.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tonka_Beans.jpg",
+  "confidence": "high"
+ },
+ "chestnut": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Castanea_sativa_MHNT.BOT.2006.0.1272.JPG/500px-Castanea_sativa_MHNT.BOT.2006.0.1272.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_MHNT.BOT.2006.0.1272.JPG",
+  "confidence": "high"
+ },
+ "rose-oil": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/RoseEssentialOil.png/500px-RoseEssentialOil.png",
+  "page": "https://commons.wikimedia.org/wiki/File:RoseEssentialOil.png",
+  "confidence": "high"
+ },
+ "frankincense": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Frankincense.JPG/500px-Frankincense.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Frankincense.JPG",
+  "confidence": "high"
+ },
+ "lemon-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Citrus_x_limon_flowers.jpg/500px-Citrus_x_limon_flowers.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ACitrus_x_limon_flowers.jpg",
+  "confidence": "high"
+ },
+ "white-lily": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/EB1911_-_Lily_-_Madonna_or_White_Lily_%28Lilium_candidum%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:EB1911_-_Lily_-_Madonna_or_White_Lily_%28Lilium_candidum%29.jpg",
+  "confidence": "high"
+ },
+ "cambodian-oud": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/HK_Aquilaria_sinensis.JPG/500px-HK_Aquilaria_sinensis.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:HK_Aquilaria_sinensis.JPG",
+  "confidence": "high"
+ },
+ "rose-water": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Rose_water_fan.jpg/500px-Rose_water_fan.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rose_water_fan.jpg",
+  "confidence": "high"
+ },
+ "black-amber": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Amber_Bernstein_many_stones.jpg/500px-Amber_Bernstein_many_stones.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Amber_Bernstein_many_stones.jpg",
+  "confidence": "medium"
+ },
+ "peppermint": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Mentha_%C3%97_piperita_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-095.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mentha_%C3%97_piperita_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-095.jpg",
+  "confidence": "high"
+ },
+ "sand": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Mesquite_Sand_Dunes_in_Death_Valley.jpg/500px-Mesquite_Sand_Dunes_in_Death_Valley.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mesquite_Sand_Dunes_in_Death_Valley.jpg",
+  "confidence": "medium"
+ },
+ "animal-notes": {
+  "image": null,
+  "page": null,
+  "confidence": "none"
+ },
+ "ginger-flower": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Heliconia_-_torch_ginger.jpg/500px-Heliconia_-_torch_ginger.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Heliconia_-_torch_ginger.jpg",
+  "confidence": "high"
+ },
+ "sorbet": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Jordgubb_sorbet.jpg/500px-Jordgubb_sorbet.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Jordgubb_sorbet.jpg",
+  "confidence": "high"
+ },
+ "absinthe": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Absinthe-glass.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Absinthe-glass.jpg",
+  "confidence": "high"
+ },
+ "white-chocolate": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Ghirardelli_White_Chocolate_Bar_%2829825861976%29.jpg/500px-Ghirardelli_White_Chocolate_Bar_%2829825861976%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AGhirardelli_White_Chocolate_Bar_%2829825861976%29.jpg",
+  "confidence": "high"
+ },
+ "sugar-cane": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cut_sugarcane.jpg/500px-Cut_sugarcane.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cut_sugarcane.jpg",
+  "confidence": "high"
+ },
+ "lemongrass": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Tanglad_%28lemongrass%2C_Cymbopogon_citratus%29_-_Philippines.jpg/500px-Tanglad_%28lemongrass%2C_Cymbopogon_citratus%29_-_Philippines.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tanglad_%28lemongrass%2C_Cymbopogon_citratus%29_-_Philippines.jpg",
+  "confidence": "high"
+ },
+ "crystal-amber": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Amber_Bernstein_many_stones.jpg/500px-Amber_Bernstein_many_stones.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Amber_Bernstein_many_stones.jpg",
+  "confidence": "medium"
+ },
+ "verbena": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Illustration_Verbena_officinalis0.jpg/500px-Illustration_Verbena_officinalis0.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Verbena_officinalis0.jpg",
+  "confidence": "high"
+ },
+ "civetta": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/African_civet.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:African_civet.jpg",
+  "confidence": "high"
+ },
+ "patchouli-leaf": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Pogostemon_cablin_001.jpg/500px-Pogostemon_cablin_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pogostemon_cablin_001.jpg",
+  "confidence": "high"
+ },
+ "bourbon-geranium": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Geranium_February_2008-1.jpg/500px-Geranium_February_2008-1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Geranium_February_2008-1.jpg",
+  "confidence": "high"
+ },
+ "fennel": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Fennel_-_Foeniculum_vulgare_%2828872863408%29.jpg/500px-Fennel_-_Foeniculum_vulgare_%2828872863408%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Fennel_-_Foeniculum_vulgare_%2828872863408%29.jpg",
+  "confidence": "high"
+ },
+ "rhubarb-2": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/CSA-Rhubarb.jpg/500px-CSA-Rhubarb.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:CSA-Rhubarb.jpg",
+  "confidence": "high"
+ },
+ "black-vanilla-husk": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Vanilla_pods_in_a_test_tube.jpg/500px-Vanilla_pods_in_a_test_tube.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_pods_in_a_test_tube.jpg",
+  "confidence": "high"
+ },
+ "gin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Gin_bottle_2.JPG/500px-Gin_bottle_2.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Gin_bottle_2.JPG",
+  "confidence": "high"
+ },
+ "tunisian-neroli": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Neroli.png/500px-Neroli.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Neroli.png",
+  "confidence": "high"
+ },
+ "laotian-oud": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/HK_Aquilaria_sinensis.JPG/500px-HK_Aquilaria_sinensis.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:HK_Aquilaria_sinensis.JPG",
+  "confidence": "high"
+ },
+ "fir-resin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Resin_drop_-_Grand_Fir_-_Flickr_-_S._Rae.jpg/500px-Resin_drop_-_Grand_Fir_-_Flickr_-_S._Rae.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Resin_drop_-_Grand_Fir_-_Flickr_-_S._Rae.jpg",
+  "confidence": "high"
+ },
+ "lemon-zest": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Revani_with_lemon_zest.jpg/500px-Revani_with_lemon_zest.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3ARevani_with_lemon_zest.jpg",
+  "confidence": "medium"
+ },
+ "brazilian-orange": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Ambersweet_oranges.jpg/500px-Ambersweet_oranges.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ambersweet_oranges.jpg",
+  "confidence": "high"
+ },
+ "coconut-nectar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Organic_coconut_sap_sugar_sprinkles_Tupi_South_Cotabato1.jpg/500px-Organic_coconut_sap_sugar_sprinkles_Tupi_South_Cotabato1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Organic_coconut_sap_sugar_sprinkles_Tupi_South_Cotabato1.jpg",
+  "confidence": "medium"
+ },
+ "calone": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Calone_V1.svg/500px-Calone_V1.svg.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Calone_V1.svg",
+  "confidence": "high"
+ },
+ "ylang-ylang-2": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/02442jfYlang-ylang_Cananga_odorata_Bulacanfvf_03.jpg/500px-02442jfYlang-ylang_Cananga_odorata_Bulacanfvf_03.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:02442jfYlang-ylang_Cananga_odorata_Bulacanfvf_03.jpg",
+  "confidence": "high"
+ },
+ "red-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Red_rose_with_black_background.jpg/500px-Red_rose_with_black_background.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Red_rose_with_black_background.jpg",
+  "confidence": "high"
+ },
+ "broom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Cytisus_scoparius_001.jpg/500px-Cytisus_scoparius_001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cytisus_scoparius_001.jpg",
+  "confidence": "high"
+ },
+ "pear-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Pear_blossom_%28Pyrus%29_01.JPG/500px-Pear_blossom_%28Pyrus%29_01.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Pear_blossom_%28Pyrus%29_01.JPG",
+  "confidence": "high"
+ },
+ "palo-santo": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Bursera_graveolens.jpg/500px-Bursera_graveolens.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bursera_graveolens.jpg",
+  "confidence": "high"
+ },
+ "vanilla-bean": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Vanilla_6beans.JPG/500px-Vanilla_6beans.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_6beans.JPG",
+  "confidence": "high"
+ },
+ "java-vetiver-oil": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Vetiveria_zizanoides_dsc07810.jpg/500px-Vetiveria_zizanoides_dsc07810.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vetiveria_zizanoides_dsc07810.jpg",
+  "confidence": "high"
+ },
+ "tuscan-iris": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Iris_pallida_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-079.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Iris_pallida_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-079.jpg",
+  "confidence": "high"
+ },
+ "indian-tuberose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Polianthes_tuberosa_clean.jpg/500px-Polianthes_tuberosa_clean.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Polianthes_tuberosa_clean.jpg",
+  "confidence": "high"
+ },
+ "metallic-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Brushed_metal.jpg/500px-Brushed_metal.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Brushed_metal.jpg",
+  "confidence": "medium"
+ },
+ "water-jasmine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Chinese_jasmine_in_spring_bloom.JPG/500px-Chinese_jasmine_in_spring_bloom.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Chinese_jasmine_in_spring_bloom.JPG",
+  "confidence": "high"
+ },
+ "paprika": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Paprika-spice.jpg/500px-Paprika-spice.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Paprika-spice.jpg",
+  "confidence": "high"
+ },
+ "texas-cedar": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Juniperus_ashei_pollencones.jpg/500px-Juniperus_ashei_pollencones.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AJuniperus_ashei_pollencones.jpg",
+  "confidence": "high"
+ },
+ "wild-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Hunds-Rose_Rosa_canina_Nationalpark_Donau-Auen_Lobau_Mai_2016_03.jpg/500px-Hunds-Rose_Rosa_canina_Nationalpark_Donau-Auen_Lobau_Mai_2016_03.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AHunds-Rose_Rosa_canina_Nationalpark_Donau-Auen_Lobau_Mai_2016_03.jpg",
+  "confidence": "high"
+ },
+ "green-accord": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Green_Leaves%2C_October_2011.JPG/500px-Green_Leaves%2C_October_2011.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Green_Leaves%2C_October_2011.JPG",
+  "confidence": "medium"
+ },
+ "tobacco-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Tobacco_flowers_poland1.jpg/500px-Tobacco_flowers_poland1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tobacco_flowers_poland1.jpg",
+  "confidence": "high"
+ },
+ "rose-hip": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Rose_hips_in_autumn.jpg/500px-Rose_hips_in_autumn.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rose_hips_in_autumn.jpg",
+  "confidence": "high"
+ },
+ "clover": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Trifolium_repens_%28inflorescense%29_Edit.jpg/500px-Trifolium_repens_%28inflorescense%29_Edit.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Trifolium_repens_%28inflorescense%29_Edit.jpg",
+  "confidence": "high"
+ },
+ "yellow-mandarin": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mandarin_Oranges_%28Citrus_Reticulata%29.jpg/500px-Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_%28Citrus_Reticulata%29.jpg",
+  "confidence": "high"
+ },
+ "carrot": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Carrots_of_many_colors.jpg/500px-Carrots_of_many_colors.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg",
+  "confidence": "high"
+ },
+ "earthy-notes": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Child_hand_are_holding_black_garden_soil_in_closeup.jpg/500px-Child_hand_are_holding_black_garden_soil_in_closeup.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Child_hand_are_holding_black_garden_soil_in_closeup.jpg",
+  "confidence": "medium"
+ },
+ "banana": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Banana_fruit_%28musa%29.jpg/500px-Banana_fruit_%28musa%29.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Banana_fruit_%28musa%29.jpg",
+  "confidence": "high"
+ },
+ "vanilla-flower": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Vanilla_Flower.jpg/500px-Vanilla_Flower.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vanilla_Flower.jpg",
+  "confidence": "high"
+ },
+ "exotic-woods": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Dry_wood_texture.jpg/500px-Dry_wood_texture.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dry_wood_texture.jpg",
+  "confidence": "medium"
+ },
+ "pine-needles": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Pine_needles_abstract.jpg/500px-Pine_needles_abstract.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pine_needles_abstract.jpg",
+  "confidence": "high"
+ },
+ "hinoki-wood": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chamaecyparis_obtusa5.jpg/500px-Chamaecyparis_obtusa5.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:File%3AChamaecyparis_obtusa5.jpg",
+  "confidence": "high"
+ },
+ "exotic-fruits": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Fruits_tropicales_en_pays_Bassa.png/500px-Fruits_tropicales_en_pays_Bassa.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Fruits_tropicales_en_pays_Bassa.png",
+  "confidence": "medium"
+ },
+ "natural-musk": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg/500px-Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
+  "confidence": "medium"
+ },
+ "cedar-needles": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Cedar_needle_branchlet%2C_one.jpg/500px-Cedar_needle_branchlet%2C_one.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cedar_needle_branchlet%2C_one.jpg",
+  "confidence": "high"
+ },
+ "tropical-fruits": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Fruits_tropicales_en_pays_Bassa.png/500px-Fruits_tropicales_en_pays_Bassa.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Fruits_tropicales_en_pays_Bassa.png",
+  "confidence": "medium"
+ },
+ "olive-tree": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Lun_olive_tree_1600_years.jpg/500px-Lun_olive_tree_1600_years.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Lun_olive_tree_1600_years.jpg",
+  "confidence": "high"
+ },
+ "black-rose": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Black_Rose.jpg/500px-Black_Rose.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Black_Rose.jpg",
+  "confidence": "high"
+ },
+ "tunisian-orange-blossom": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Orange_Blossom.JPG/500px-Orange_Blossom.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Orange_Blossom.JPG",
+  "confidence": "high"
+ },
+ "cardamom-2": {
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg",
+  "confidence": "high"
+ },
+ "night-blooming-jasmine": {
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Cestrum_nocturnum_Blanco1.151.png/500px-Cestrum_nocturnum_Blanco1.151.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Cestrum_nocturnum_Blanco1.151.png",
+  "confidence": "high"
+ }
+}
