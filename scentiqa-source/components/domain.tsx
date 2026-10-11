@@ -196,36 +196,54 @@ export function AccordPyramid({ accords }: { accords: Accord[] }) {
         {scored.map((s, i) => {
           const bg = accordColor(s.name);
           const fg = accordTextColor(s.name);
-          const width = Math.max(18, Math.round((s.score / max) * 100));
+          const widthPct = Math.max(18, Math.round((s.score / max) * 100));
+          // On narrow bars the name would truncate ("P.", "G") — render it
+          // outside the bar instead, keeping the pyramid shape intact.
+          const nameInside = widthPct >= 42;
           return (
             <Link
               key={`${s.name}-${i}`}
-              href={`/search/accords?wanted=${encodeURIComponent(s.name + ':60')}`}
-              title={`${s.name} — ${s.score}/100 — find perfumes with this accord`}
-              className="group relative block overflow-hidden rounded-xl transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]"
+              href={`/accords/${accordSlug(s.name)}`}
+              title={`${s.name} — ${s.score}/100 — see all perfumes with this accord`}
+              className="group flex items-center gap-2"
             >
-              <div
-                className="flex h-10 items-center justify-between gap-2 rounded-xl px-4 shadow-sm transition-[width] duration-1000 ease-out"
-                style={{
-                  background: bg,
-                  width: mounted ? `${width}%` : '12%',
-                  transitionDelay: `${i * 90}ms`,
-                }}
-              >
-                <span className="truncate text-sm font-bold capitalize tracking-wide" style={{ color: fg }}>
-                  {s.name}
+              <span className="relative block overflow-hidden rounded-xl transition-transform duration-200 group-hover:scale-[1.01]"
+                style={{ width: mounted ? `${widthPct}%` : '12%' }}>
+                <span
+                  className="flex h-10 items-center rounded-xl px-4 shadow-sm transition-[width] duration-1000 ease-out"
+                  style={{
+                    background: bg,
+                    width: '100%',
+                    transitionDelay: `${i * 90}ms`,
+                  }}
+                >
+                  {nameInside && (
+                    <>
+                      <span className="truncate text-sm font-bold capitalize tracking-wide" style={{ color: fg }}>
+                        {s.name}
+                      </span>
+                      <span className="ml-auto shrink-0 pl-2 text-xs font-black tabular-nums opacity-90" style={{ color: fg }}>
+                        {s.score}
+                      </span>
+                    </>
+                  )}
                 </span>
-                <span className="shrink-0 text-xs font-black tabular-nums opacity-90" style={{ color: fg }}>
-                  {s.score}
+                <span className="pointer-events-none absolute inset-0 rounded-xl bg-white/0 transition group-hover:bg-white/15" aria-hidden="true" />
+              </span>
+              {!nameInside && (
+                <span className="flex shrink-0 items-center gap-2">
+                  <span className="text-sm font-bold capitalize text-stone-700 dark:text-stone-200">{s.name}</span>
+                  <span className="rounded-full px-2 py-0.5 text-xs font-black tabular-nums text-white" style={{ background: bg }}>
+                    {s.score}
+                  </span>
                 </span>
-              </div>
-              <span className="pointer-events-none absolute inset-0 rounded-xl bg-white/0 transition group-hover:bg-white/15" aria-hidden="true" />
+              )}
             </Link>
           );
         })}
       </div>
       <p className="mt-3 text-xs text-stone-500 dark:text-stone-400">
-        Main accords by verified intensity — tap any bar to find similar perfumes.
+        Main accords by verified intensity — tap any bar to see all perfumes with that accord.
       </p>
     </div>
   );

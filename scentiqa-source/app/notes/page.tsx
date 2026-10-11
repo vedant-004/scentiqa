@@ -11,6 +11,14 @@ export const metadata = {
 };
 export const revalidate = 3600;
 
+// Note images (Wikimedia Commons) for the encyclopedia cards.
+let noteImages: Record<string, string | null> = {};
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const m = require('@/lib/note-images.json') as Record<string, { image: string | null }>;
+  for (const [k, v] of Object.entries(m)) noteImages[k] = v?.image ?? null;
+} catch { /* images not gathered yet — monogram placeholders render instead */ }
+
 const CAT_LABEL: Record<string, string> = {
   citrus: 'Citrus', floral: 'Floral', white_floral: 'White floral', woody: 'Woody',
   oriental: 'Oriental', gourmand: 'Gourmand', green: 'Green', chypre: 'Chypre',
@@ -38,7 +46,7 @@ export default async function NotesIndex() {
       {notes.length === 0 ? (
         <Card className="p-8 text-center text-sm text-stone-500">Note data is still loading.</Card>
       ) : (
-        <NotesIndexClient notes={notes} catLabel={CAT_LABEL} />
+        <NotesIndexClient notes={notes} catLabel={CAT_LABEL} images={noteImages} />
       )}
       <p className="mt-6 text-center text-xs text-stone-400">
         Counts reflect the live Scentiqa catalog. <Link href="/search/notes" className="font-bold text-gold-700 hover:underline dark:text-gold-300">Try the AI note search →</Link>
