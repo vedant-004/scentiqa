@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
-import { useToast } from './ui';
 import { ThemeToggle, NewsletterSignup } from './domain';
 import { useAuth } from './auth';
+import { NotificationBell } from './notifications';
 import type { Perfume } from '@/lib/types';
 
 export const isDemoMode = !isSupabaseConfigured();
@@ -190,7 +190,6 @@ function MobileMenu() {
 }
 
 export function Header({ stats }: { stats?: { perfumes: number; houses: number; reviews: number; members: number } }) {
-  const { toast } = useToast();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 8);
@@ -217,10 +216,7 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
         <div className="ml-auto flex shrink-0 items-center gap-1">
           <MobileMenu />
           <ThemeToggle />
-          <button onClick={() => toast('Connect Supabase to enable accounts & notifications', 'info')} aria-label="Notifications"
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M10.3 21a2 2 0 0 0 3.4 0" /></svg>
-          </button>
+          <NotificationBell />
           <AuthButton />
         </div>
       </div>
