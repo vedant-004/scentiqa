@@ -241,32 +241,85 @@ export function AccordBars({ accords, compact = false }: { accords: Accord[]; co
 }
 
 /* ---------- NotePyramid ---------- */
-export function NotePyramid({ top, heart, base }: { top: string[]; heart: string[]; base: string[] }) {
-  const [tab, setTab] = useState<'top' | 'heart' | 'base'>('top');
-  const rows = { top, heart, base };
-  const labels = { top: 'Top notes', heart: 'Heart notes', base: 'Base notes' };
+/* ---------- NotePyramid — Fragrantica-style visual pyramid with note images ----------
+ * All three tiers visible at once. The first note of each tier (most prominent)
+ * renders larger. Images come from the note-images map (Wikimedia Commons);
+ * notes without an image get an elegant monogram fallback — never a broken img. */
+export function NotePyramid({ top, heart, base, images }: {
+  top: string[]; heart: string[]; base: string[];
+  images?: Record<string, string | null>;
+}) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    const t = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(t);
+  }, []);
+
+  const tiers = [
+    { key: 'top', label: 'Top notes', notes: top },
+    { key: 'heart', label: 'Heart notes', notes: heart },
+    { key: 'base', label: 'Base notes', notes: base },
+  ].filter((t) => t.notes.length > 0);
+
+  if (tiers.length === 0) {
+    return <p className="py-6 text-center text-sm text-stone-500 dark:text-stone-400">No note data yet.</p>;
+  }
+
   return (
-    <div>
-      <div className="mb-3 inline-flex rounded-xl bg-stone-900/5 p-1 dark:bg-white/10">
-        {(Object.keys(rows) as Array<keyof typeof rows>).map((k) => (
-          <button key={k} onClick={() => setTab(k)}
-            className={cn('rounded-lg px-3.5 py-1.5 text-[13px] font-semibold transition-all duration-200',
-              tab === k ? 'bg-white text-stone-900 shadow-card dark:bg-ink-800 dark:text-white' : 'text-stone-500 hover:text-stone-800 dark:text-stone-400')}>
-            {labels[k]}
-          </button>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-2" key={tab}>
-        {rows[tab].map((n, i) => {
-          const slug = noteSlug(n);
-          const cls = 'animate-[fade-up_0.3s_ease] rounded-full border border-stone-200 bg-cream-100 px-3.5 py-1.5 text-sm font-medium text-stone-700 transition hover:border-gold-400 hover:text-gold-700 dark:border-ink-700 dark:bg-ink-800 dark:text-stone-200 dark:hover:text-gold-300';
-          return slug ? (
-            <Link key={n} href={`/notes/${slug}`} className={cls} style={{ animationDelay: `${i * 0.04}s` }}>{n}</Link>
-          ) : (
-            <span key={n} className={cls} style={{ animationDelay: `${i * 0.04}s` }}>{n}</span>
-          );
-        })}
-      </div>
+    <div className="space-y-6">
+      {tiers.map((tier) => (
+        <div key={tier.key}>
+          <h4 className="mb-3 text-center text-[11px] font-black uppercase tracking-[0.22em] text-stone-400 dark:text-stone-500">
+            {tier.label}
+          </h4>
+          <div className="flex flex-wrap items-end justify-center gap-3 sm:gap-4">
+            {tier.notes.map((n, i) => {
+              const slug = noteSlug(n);
+              const img = slug && images ? images[slug] : null;
+              const prominent = i === 0;
+              const size = prominent ? 'h-24 w-24 sm:h-28 sm:w-28' : 'h-16 w-16 sm:h-20 sm:w-20';
+              const inner = (
+                <>
+                  {img ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={img}
+                      alt={n}
+                      loading="lazy"
+                      className={cn(size, 'rounded-2xl object-cover shadow-card ring-1 ring-stone-900/10 transition-transform duration-300 group-hover:scale-105 dark:ring-white/10')}
+                    />
+                  ) : (
+                    <span
+                      className={cn(size, 'flex items-center justify-center rounded-2xl bg-gradient-to-br from-gold-200 via-amber-100 to-stone-200 text-2xl font-black text-stone-500 shadow-card ring-1 ring-stone-900/10 transition-transform duration-300 group-hover:scale-105 dark:from-gold-700/40 dark:via-ink-700 dark:to-ink-800 dark:text-gold-300', prominent && 'text-3xl')}
+                      aria-hidden="true"
+                    >
+                      {n.charAt(0).toUpperCase()}
+                    </span>
+                  )}
+                  <span className={cn('mt-1.5 block max-w-[7rem] truncate text-center font-medium text-stone-600 dark:text-stone-300', prominent ? 'text-[13px] font-bold' : 'text-xs')}>
+                    {n}
+                  </span>
+                  {prominent && (
+                    <span className="mt-0.5 block text-center text-[10px] font-black uppercase tracking-wider text-gold-600 dark:text-gold-400">
+                      Star note
+                    </span>
+                  )}
+                </>
+              );
+              const anim = mounted ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0';
+              const wrap = `group flex flex-col items-center transition-all duration-500 ${anim}`;
+              const style = { transitionDelay: `${i * 70}ms` };
+              return slug ? (
+                <Link key={`${tier.key}-${n}`} href={`/notes/${slug}`} className={wrap} style={style} title={`${n} — explore this note`}>
+                  {inner}
+                </Link>
+              ) : (
+                <span key={`${tier.key}-${n}`} className={wrap} style={style}>{inner}</span>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

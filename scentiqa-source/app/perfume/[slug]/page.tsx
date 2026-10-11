@@ -18,6 +18,15 @@ import {
 export const revalidate = 3600;
 import { AIPredictions } from './ai-predictions';
 
+// Note images (Wikimedia Commons). Absent file or missing entries fall back
+// to elegant monogram placeholders inside NotePyramid — never broken images.
+let noteImages: Record<string, string | null> = {};
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const m = require('@/lib/note-images.json') as Record<string, { image: string | null }>;
+  for (const [k, v] of Object.entries(m)) noteImages[k] = v?.image ?? null;
+} catch { /* images not gathered yet — placeholders render instead */ }
+
 export async function generateStaticParams() {
   // Pre-render the 1,200 most-rated perfumes at build time; the rest of the
   // catalog renders on demand and is cached (ISR, revalidate = 3600).
@@ -126,7 +135,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
           {/* ===== 2. ACCORDS + NOTES ===== */}
           <section>
             <SectionHeading kicker="Composition" title="What it smells like" />
-            <Card className="p-6"><h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-stone-400">Notes</h3><NotePyramid top={p.topNotes} heart={p.heartNotes} base={p.baseNotes} /></Card>
+            <Card className="p-6"><h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-stone-400">Notes</h3><NotePyramid top={p.topNotes} heart={p.heartNotes} base={p.baseNotes} images={noteImages} /></Card>
             <p className="mt-4 text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">{p.description}</p>
             {p.scentStory && (
               <Card className="relative mt-6 overflow-hidden p-6 sm:p-8">
