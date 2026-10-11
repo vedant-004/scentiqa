@@ -487,7 +487,11 @@ export function PerfumeCard({ perfume, rank }: { perfume: CardPerfume; rank?: nu
             <div className="mt-2"><StarRating value={perfume.ratingAvg} size={13} /></div>
           )}
           <div className="mt-auto flex items-center justify-between pt-3">
-            <span className="text-[15px] font-bold text-stone-900 dark:text-white">{best ? `₹${best.toLocaleString('en-IN')}` : '—'}</span>
+            {best ? (
+              <span className="text-[15px] font-bold text-stone-900 dark:text-white">₹{best.toLocaleString('en-IN')}</span>
+            ) : (
+              <span />
+            )}
             <span className="text-xs font-semibold text-stone-400">View →</span>
           </div>
         </div>
