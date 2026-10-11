@@ -510,6 +510,48 @@ function AuthButton() {
   );
 }
 
+/* ---------- Header search: icon button opening a full search overlay ---------- */
+function HeaderSearch() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  // Close overlay on navigation
+  useEffect(() => { setOpen(false); }, [pathname]);
+  // Close on Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
+  // Lock body scroll while open
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [open]);
+  return (
+    <>
+      <button onClick={() => setOpen(true)} aria-label="Search"
+        className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" strokeLinecap="round" /></svg>
+      </button>
+      {open && typeof document !== 'undefined' && createPortal(
+        <div className="fixed inset-0 z-[100]" role="dialog" aria-modal="true" aria-label="Search">
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
+          <div className="absolute inset-x-0 top-0 mx-auto max-w-2xl px-4 pt-20 sm:pt-24">
+            <div className="overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-ink-900">
+              <SearchBar autoFocus big onPick={() => setOpen(false)} />
+            </div>
+            <p className="mt-3 text-center text-xs text-white/70">Press <kbd className="rounded bg-white/20 px-1.5 py-0.5 font-mono">Esc</kbd> to close</p>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
+  );
+}
+
 /* ---------- Mobile nav: simple link to the dedicated menu page ---------- */
 function MobileMenu() {
   return (
@@ -547,6 +589,7 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
           <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-cream-50 to-transparent dark:from-ink-950" aria-hidden="true" />
         </div>
         <div className="ml-auto flex shrink-0 items-center gap-1">
+          <HeaderSearch />
           <MobileMenu />
           <ThemeToggle />
           <NotificationBell />
