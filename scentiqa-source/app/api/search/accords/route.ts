@@ -25,10 +25,12 @@ export async function GET(req: Request) {
   const gender = sp.get('gender') ?? 'any';
   const limit = Math.min(Math.max(Number(sp.get('limit') ?? '24') || 24, 1), 48);
 
+  // Wider pool: top-rated first for relevance, but large enough to catch
+  // niche accord matches that live outside the head of the catalog.
   const { data: pool } = await sb.from('perfumes')
     .select('id, slug, name, gender, lowest_price_inr, rating_avg, rating_count, accords, bottle_image_url, description, houses(name)')
     .order('rating_count', { ascending: false })
-    .limit(1500);
+    .limit(4000);
 
   const out: Array<{ id: string; slug: string; name: string; house: string; match: number; explanation: string[]; ratingAvg: number; lowestPriceInr: number | null; isDupe: boolean; bottleImage: string | null }> = [];
 

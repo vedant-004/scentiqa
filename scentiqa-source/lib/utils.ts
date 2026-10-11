@@ -22,29 +22,77 @@ export function slugifyName(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-const ACCORD_HUE: Record<string, [number, number]> = {
-  citrus: [42, 96], fresh: [190, 70], aquatic: [200, 80], green: [140, 55],
-  floral: [315, 70], 'white floral': [300, 60], fruity: [15, 85], sweet: [30, 90],
-  gourmand: [28, 80], 'warm spicy': [12, 85], spicy: [5, 80], oriental: [35, 75],
-  woody: [25, 45], smoky: [20, 20], musky: [270, 25], musk: [270, 25],
-  amber: [38, 90], ambery: [38, 90], powdery: [290, 40], leathery: [18, 50],
-  leather: [18, 50], resinous: [30, 60], earthy: [90, 35], natural: [100, 40],
-  creamy: [40, 60], almond: [35, 55], tobacco: [22, 55], vanilla: [42, 85],
-  incense: [25, 40], aromatic: [160, 50], chypre: [120, 40], fougere: [150, 45],
+// Punchy, Fragrantica-grade accord colors: vivid solid hues, high saturation.
+// Each accord maps to [background hex, text hex] — text is chosen for contrast.
+const ACCORD_COLORS: Record<string, [string, string]> = {
+  sweet: ['#ef4444', '#ffffff'],
+  honey: ['#f59e0b', '#ffffff'],
+  vanilla: ['#fde68a', '#713f12'],
+  tobacco: ['#8d6e63', '#ffffff'],
+  lavender: ['#8b7bd8', '#ffffff'],
+  citrus: ['#d4e157', '#3f4a00'],
+  aromatic: ['#2dd4bf', '#083f39'],
+  floral: ['#ec4899', '#ffffff'],
+  'white floral': ['#f9a8d4', '#6b2144'],
+  powdery: ['#b0a89f', '#ffffff'],
+  'warm spicy': ['#b45309', '#ffffff'],
+  spicy: ['#dc2626', '#ffffff'],
+  fruity: ['#fb7185', '#ffffff'],
+  gourmand: ['#d97706', '#ffffff'],
+  woody: ['#a16207', '#ffffff'],
+  smoky: ['#57534e', '#ffffff'],
+  musky: ['#a78bfa', '#3b2a6e'],
+  musk: ['#a78bfa', '#3b2a6e'],
+  amber: ['#f59e0b', '#5c3300'],
+  ambery: ['#f59e0b', '#5c3300'],
+  leathery: ['#7c2d12', '#ffffff'],
+  leather: ['#7c2d12', '#ffffff'],
+  fresh: ['#22d3ee', '#0c4a5e'],
+  aquatic: ['#0ea5e9', '#ffffff'],
+  green: ['#4ade80', '#14532d'],
+  oriental: ['#c2410c', '#ffffff'],
+  resinous: ['#92400e', '#ffffff'],
+  earthy: ['#65a30d', '#ffffff'],
+  natural: ['#84cc16', '#2a3a00'],
+  creamy: ['#fde9c8', '#7c4a12'],
+  almond: ['#e7c07a', '#5c3a10'],
+  incense: ['#78716c', '#ffffff'],
+  chypre: ['#16a34a', '#ffffff'],
+  fougere: ['#0d9488', '#ffffff'],
+  balsamic: ['#b45309', '#ffffff'],
+  lactonic: ['#fef3c7', '#7c5a10'],
+  mineral: ['#94a3b8', '#1e293b'],
+  salty: ['#7dd3fc', '#0c4a6e'],
+  animalic: ['#a16207', '#ffffff'],
+  aldehydic: ['#e0f2fe', '#0c4a6e'],
+  ozonic: ['#67e8f9', '#0c4a5e'],
+  camphor: ['#99f6e4', '#134e4a'],
+  herbal: ['#4ade80', '#14532d'],
+  rose: ['#f43f5e', '#ffffff'],
+  oud: ['#78350f', '#ffffff'],
 };
 
-export function accordColor(name: string | null | undefined, dark = false): string {
-  if (!name || typeof name !== 'string') return `hsl(36 60% ${dark ? 62 : 42}% / 0.9)`;
-  const key = Object.keys(ACCORD_HUE).find((k) => name.toLowerCase().includes(k));
-  const [h, s] = key ? ACCORD_HUE[key] : [36, 60];
-  return `hsl(${h} ${s}% ${dark ? 62 : 42}% / 0.9)`;
+function accordColorEntry(name: string | null | undefined): [string, string] {
+  if (!name || typeof name !== 'string') return ['#d6a94f', '#ffffff'];
+  const nl = name.toLowerCase();
+  const key = Object.keys(ACCORD_COLORS).find((k) => nl.includes(k));
+  return key ? ACCORD_COLORS[key] : ['#d6a94f', '#ffffff'];
 }
 
+/** Vivid solid background color for an accord. */
+export function accordColor(name: string | null | undefined, dark = false): string {
+  return accordColorEntry(name)[0];
+}
+
+/** Contrasting text color for use on top of accordColor(). */
+export function accordTextColor(name: string | null | undefined): string {
+  return accordColorEntry(name)[1];
+}
+
+/** Soft tinted background for an accord (badges, chips). */
 export function accordBg(name: string | null | undefined, dark = false): string {
-  if (!name || typeof name !== 'string') return `hsl(36 60% ${dark ? 30 : 88}% / 0.55)`;
-  const key = Object.keys(ACCORD_HUE).find((k) => name.toLowerCase().includes(k));
-  const [h, s] = key ? ACCORD_HUE[key] : [36, 60];
-  return `hsl(${h} ${s}% ${dark ? 30 : 88}% / 0.55)`;
+  const [bg] = accordColorEntry(name);
+  return bg + (dark ? '33' : '26'); // hex alpha: ~20% / ~15%
 }
 
 export function scoreTone(score: number | null): 'great' | 'good' | 'ok' | 'low' | 'none' {

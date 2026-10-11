@@ -1,7 +1,8 @@
 // /search/accords — accord profile finder, scored against live accord data.
 'use client';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { inr } from '@/lib/utils';
+import { useEffect, useMemo, useRef, useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { accordColor, inr } from '@/lib/utils';
 import { Button, Card, EmptyState, SectionHeading, Select, Skeleton } from '@/components';
 import { PerfumeCard } from '@/components/domain';
 
@@ -10,10 +11,30 @@ interface Hit { id: string; slug: string; name: string; house: string; match: nu
 const ACCORDS = ['Ambery', 'Woody', 'Citrus', 'Fresh', 'Floral', 'Sweet', 'Gourmand', 'Smoky', 'Musky', 'Warm Spicy', 'Tobacco', 'Aquatic', 'Green', 'Leathery'];
 
 export default function AccordsPage() {
+  return (
+    <Suspense fallback={<div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6"><Skeleton className="h-96" /></div>}>
+      <AccordsFinder />
+    </Suspense>
+  );
+}
+
+function AccordsFinder() {
+  const searchParams = useSearchParams();
   const [hits, setHits] = useState<Hit[]>([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
-  const [wanted, setWanted] = useState<Record<string, number>>({ Ambery: 70, Woody: 60 });
+  const [wanted, setWanted] = useState<Record<string, number>>(() => {
+    // Pre-fill from ?wanted=Sweet:70,Woody:60 (e.g. from a perfume's accord pyramid).
+    const init: Record<string, number> = {};
+    const raw = searchParams.get('wanted');
+    if (raw) {
+      for (const pair of raw.split(',')) {
+        const [name, v] = pair.split(':').map((s) => s.trim());
+        if (name) init[name] = Math.max(0, Math.min(100, Number(v) || 60));
+      }
+    }
+    return Object.keys(init).length > 0 ? init : { Ambery: 70, Woody: 60 };
+  });
   const [maxPrice, setMaxPrice] = useState(10000);
   const [gender, setGender] = useState('any');
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);

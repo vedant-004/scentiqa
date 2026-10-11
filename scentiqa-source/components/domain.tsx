@@ -2,7 +2,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { accordColor, cn, HOUSE_TYPE_LABEL, inr, scoreClasses, scoreTone } from '@/lib/utils';
+import { accordColor, accordTextColor, cn, HOUSE_TYPE_LABEL, inr, scoreClasses, scoreTone } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, Button, Card } from './ui';
 import { noteSlug } from '@/lib/note-slugs';
@@ -152,6 +152,67 @@ export function AccordStack({ accords }: { accords: Accord[] }) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4"><path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </Link>
       </div>
+    </div>
+  );
+}
+
+/* ---------- AccordPyramid — Fragrantica-style animated accord bars ----------
+ * Bar widths use the verified strength score stored per accord (0-100);
+ * when a score is absent we derive it from prominence rank. Nothing invented. */
+export function AccordPyramid({ accords }: { accords: Accord[] }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    const t = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(t);
+  }, []);
+  const list = accords.filter((a) => a && a.name).slice(0, 10);
+  if (list.length === 0) {
+    return <p className="py-6 text-center text-sm text-stone-500 dark:text-stone-400">No accord data yet — be the first to suggest accords for this perfume.</p>;
+  }
+  const scored = list.map((a, i) => ({
+    name: a.name,
+    score: typeof a.strength === 'number'
+      ? Math.max(5, Math.min(100, Math.round(a.strength)))
+      : Math.round(100 * (list.length - i) / list.length),
+  }));
+  const max = Math.max(...scored.map((s) => s.score), 1);
+  return (
+    <div>
+      <div className="flex flex-col gap-2" role="img" aria-label={`Main accords: ${scored.map((s) => `${s.name} ${s.score}`).join(', ')}`}>
+        {scored.map((s, i) => {
+          const bg = accordColor(s.name);
+          const fg = accordTextColor(s.name);
+          const width = Math.max(18, Math.round((s.score / max) * 100));
+          return (
+            <Link
+              key={`${s.name}-${i}`}
+              href={`/search/accords?wanted=${encodeURIComponent(s.name + ':60')}`}
+              title={`${s.name} — ${s.score}/100 — find perfumes with this accord`}
+              className="group relative block overflow-hidden rounded-xl transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]"
+            >
+              <div
+                className="flex h-10 items-center justify-between gap-2 rounded-xl px-4 shadow-sm transition-[width] duration-1000 ease-out"
+                style={{
+                  background: bg,
+                  width: mounted ? `${width}%` : '12%',
+                  transitionDelay: `${i * 90}ms`,
+                }}
+              >
+                <span className="truncate text-sm font-bold capitalize tracking-wide" style={{ color: fg }}>
+                  {s.name}
+                </span>
+                <span className="shrink-0 text-xs font-black tabular-nums opacity-90" style={{ color: fg }}>
+                  {s.score}
+                </span>
+              </div>
+              <span className="pointer-events-none absolute inset-0 rounded-xl bg-white/0 transition group-hover:bg-white/15" aria-hidden="true" />
+            </Link>
+          );
+        })}
+      </div>
+      <p className="mt-3 text-xs text-stone-500 dark:text-stone-400">
+        Main accords by verified intensity — tap any bar to find similar perfumes.
+      </p>
     </div>
   );
 }

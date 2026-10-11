@@ -34,8 +34,10 @@ export function accordProminence(accords: AccordEntry[], wanted: string): number
 }
 
 /**
- * Weighted coverage of the requested profile: how much of what was asked for
- * the perfume's pyramid delivers. Returns 0-100 and the driving accords.
+ * Similarity-based accord profile matching (Fragrantica-style).
+ * Each wanted accord contributes graded credit based on how close the
+ * perfume's prominence is to the requested intensity — no hard cutoffs,
+ * so near-misses still rank instead of vanishing.
  */
 export function scoreAccordProfile(
   accords: AccordEntry[],
@@ -45,15 +47,20 @@ export function scoreAccordProfile(
   const total = wanted.reduce((s, w) => s + w.min / 100, 0);
   if (total <= 0) return { score: 0, explanation: [] };
   let covered = 0;
-  const explanation: string[] = [];
+  const scored: Array<{ name: string; credit: number }> = [];
   for (const w of wanted) {
     const prom = accordProminence(accords, w.name);
-    if (prom !== null && prom >= w.min) {
-      covered += (w.min / 100) * (prom / 100);
-      explanation.push(w.name);
-    }
+    if (prom === null) continue;
+    // Graded similarity: full credit at or above target, smooth falloff below.
+    // A perfume at 75 when you asked for 80 still earns ~94% of that accord's credit.
+    const ratio = prom / Math.max(w.min, 1);
+    const closeness = ratio >= 1 ? 1 : Math.pow(Math.max(0, ratio), 1.5);
+    const credit = (w.min / 100) * closeness * (0.6 + 0.4 * (prom / 100));
+    covered += credit;
+    if (closeness > 0.35) scored.push({ name: w.name, credit });
   }
-  return { score: Math.round(100 * (covered / total)), explanation: explanation.slice(0, 3) };
+  scored.sort((a, b) => b.credit - a.credit);
+  return { score: Math.round(100 * (covered / total)), explanation: scored.slice(0, 3).map((s) => s.name) };
 }
 
 export function tieredNotes(r: { top_notes: unknown; heart_notes: unknown; base_notes: unknown }): Array<{ name: string; weight: number }> {

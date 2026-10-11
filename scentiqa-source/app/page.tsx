@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import {
-  getArticles, getDupeOfWeek, getHeroContent, getLatestLaunches, getLatestReviews,
+  getArticles, getDupeOfWeek, getGiveaways, getHeroContent, getLatestLaunches, getLatestReviews,
   getPerfumeOfTheDay, getPriceDrops, getStats, getTrending,
 } from '@/lib/data';
 import { inr } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Button, Card, SectionHeading } from '@/components/ui';
+import { GiveawayBanner } from '@/components/giveaway-banner';
 import { JsonLd, organizationJsonLd, websiteJsonLd } from '@/components/seo';
 import { AccordStack, BottleVisual, NotePyramid, PerfumeCard, ProductImage, ScoreBadge, SearchBar, StarRating, NewsletterSignup } from '@/components';
 import type { Perfume } from '@/lib/types';
@@ -26,9 +27,9 @@ function Rail({ children }: { children: React.ReactNode }) {
 
 export default async function Home() {
   const demo = !isSupabaseConfigured();
-  const [trending, latest, drops, dupeWeek, potd, articles, reviews, stats, hero] = await Promise.all([
+  const [trending, latest, drops, dupeWeek, potd, articles, reviews, stats, hero, giveaways] = await Promise.all([
     getTrending(), getLatestLaunches(), getPriceDrops(), getDupeOfWeek(), getPerfumeOfTheDay(),
-    getArticles(3), getLatestReviews(3), getStats(), getHeroContent(),
+    getArticles(3), getLatestReviews(3), getStats(), getHeroContent(), getGiveaways(),
   ]);
 
   const savePct = dupeWeek && dupeWeek.original.lowestPriceInr && dupeWeek.dupe.lowestPrice?.priceInr
@@ -75,6 +76,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <GiveawayBanner giveaways={giveaways} />
 
       <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6">
         {/* ============ TRENDING ============ */}

@@ -6,7 +6,7 @@ import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, Card, EmptyState, SectionHeading } from '@/components/ui';
 import { JsonLd } from '@/components/seo';
 import {
-  AccordStack, BottleVisual, Breadcrumbs, DupeCard, MeterBar, NotePyramid, ProductImage,
+  AccordPyramid, BottleVisual, Breadcrumbs, DupeCard, MeterBar, NotePyramid, ProductImage,
   PerfumeCard, PriceTable, RetailerSearchLinks, ScoreBadge, ShareButtons, StarRating,
 } from '@/components';
 import {
@@ -108,7 +108,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="min-w-0">
               <h2 className="mb-3 text-center text-sm font-bold uppercase tracking-[0.18em] text-stone-400 sm:text-left">Main accords</h2>
-              <AccordStack accords={p.accords} />
+              <AccordPyramid accords={p.accords} />
             </div>
           </div>
           <div className="mt-8 flex flex-col items-center gap-4 border-t border-stone-200/70 pt-6 dark:border-ink-700/50">

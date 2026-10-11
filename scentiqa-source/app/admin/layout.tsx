@@ -23,6 +23,7 @@ const NAV = [
   { href: '/admin/awards', label: 'Awards', icon: '🏆' },
   { href: '/admin/requests', label: 'Requests', icon: '☝' },
   { href: '/admin/sniff', label: 'Sniff Guide', icon: '📍' },
+  { href: '/admin/giveaways', label: 'Giveaways', icon: '🎁' },
   { href: '/admin/settings', label: 'Settings', icon: '⚙' },
   { href: '/admin/export', label: 'Export', icon: '⤓' },
 ];

@@ -24,31 +24,91 @@ function SignInToVote({ label }: { label: string }) {
   );
 }
 
-/* ---------- Love / Like / Dislike ---------- */
+/* ---------- Love / Like / Dislike — real community counts, Fragrantica-style pills ---------- */
 export function SentimentVote({ perfumeId }: { perfumeId: string }) {
   const { toast } = useToast();
   const { user, loading } = useAuth();
   const [val, setVal] = useState<'love' | 'like' | 'dislike' | null>(null);
-  const [counts] = useState({ love: 1240, like: 860, dislike: 95 });
+  const [counts, setCounts] = useState({ love: 0, like: 0, dislike: 0 });
+
+  useEffect(() => {
+    (async () => {
+      const sb = getSupabaseBrowser();
+      if (!sb) return;
+      try {
+        const { data } = await sb.from('community_votes')
+          .select('vote_value')
+          .eq('perfume_id', perfumeId)
+          .eq('vote_type', 'love_like_dislike');
+        if (data) {
+          const c = { love: 0, like: 0, dislike: 0 };
+          for (const row of data) {
+            const v = String(row.vote_value);
+            if (v === 'love') c.love++;
+            else if (v === 'like') c.like++;
+            else if (v === 'dislike') c.dislike++;
+          }
+          setCounts(c);
+        }
+        const { data: { user: u } } = await sb.auth.getUser();
+        if (u) {
+          const { data: mv } = await sb.from('community_votes')
+            .select('vote_value')
+            .eq('user_id', u.id)
+            .eq('perfume_id', perfumeId)
+            .eq('vote_type', 'love_like_dislike')
+            .maybeSingle();
+          const v = mv ? String((mv as { vote_value: unknown }).vote_value) : null;
+          if (v === 'love' || v === 'like' || v === 'dislike') setVal(v);
+        }
+      } catch { /* show zeros on read failure — never fake counts */ }
+    })();
+  }, [perfumeId]);
+
   const vote = async (v: 'love' | 'like' | 'dislike') => {
     setVal(v);
+    setCounts((c) => ({ ...c, [v]: c[v] + 1 }));
     const r = await castVote(perfumeId, 'love_like_dislike', v);
-    if (r.demo) demoToast(toast); else if (r.ok) toast('Vote recorded'); else toast(r.error ?? 'Could not record vote', 'err');
+    if (r.demo) { demoToast(toast); setCounts((c) => ({ ...c, [v]: Math.max(0, c[v] - 1) })); }
+    else if (r.ok) toast('Vote recorded');
+    else { toast(r.error ?? 'Could not record vote', 'err'); setCounts((c) => ({ ...c, [v]: Math.max(0, c[v] - 1) })); }
   };
-  const opts = [['love', '❤️ Love', counts.love], ['like', '👍 Like', counts.like], ['dislike', '👎 Dislike', counts.dislike]] as const;
+
+  const opts = [
+    { v: 'love' as const, emoji: '❤️', label: 'Love', activeClass: 'border-rose-500 bg-rose-500/15 text-rose-700 dark:text-rose-300' },
+    { v: 'like' as const, emoji: '👍', label: 'Like', activeClass: 'border-amber-500 bg-amber-500/15 text-amber-700 dark:text-amber-300' },
+    { v: 'dislike' as const, emoji: '👎', label: 'Dislike', activeClass: 'border-stone-500 bg-stone-500/15 text-stone-700 dark:text-stone-300' },
+  ];
   if (!loading && !user) return <SignInToVote label="vote" />;
   return (
-    <div className="flex flex-wrap gap-2">
-      {opts.map(([v, label, c]) => (
-        <Chip key={v} active={val === v} onClick={() => vote(v)} aria-pressed={val === v}>
-          {label} <span className="text-xs opacity-70">{(c + (val === v ? 1 : 0)).toLocaleString('en-IN')}</span>
-        </Chip>
-      ))}
+    <div className="flex flex-wrap gap-2.5" role="group" aria-label="Love, like or dislike this perfume">
+      {opts.map(({ v, emoji, label, activeClass }) => {
+        const isActive = val === v;
+        return (
+          <button
+            key={v}
+            onClick={() => vote(v)}
+            aria-pressed={isActive}
+            className={cn(
+              'flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-[15px] font-bold transition-all duration-200 active:scale-95',
+              isActive
+                ? activeClass + ' shadow-card scale-105'
+                : 'border-stone-200 bg-white/60 text-stone-700 hover:border-gold-400 hover:shadow-card dark:border-ink-700 dark:bg-white/[0.03] dark:text-stone-200',
+            )}
+          >
+            <span className={cn('text-lg transition-transform duration-200', isActive && 'scale-125')}>{emoji}</span>
+            {label}
+            <span className={cn('text-sm font-semibold tabular-nums', isActive ? 'opacity-100' : 'opacity-60')}>
+              {counts[v].toLocaleString('en-IN')}
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }
 
-/* ---------- Wardrobe shelf buttons ---------- */
+/* ---------- Wardrobe shelf buttons — matching pill style ---------- */
 export function WardrobeButtons({ perfumeId, name }: { perfumeId: string; name: string }) {
   const { toast } = useToast();
   const { user, loading } = useAuth();
@@ -61,10 +121,26 @@ export function WardrobeButtons({ perfumeId, name }: { perfumeId: string; name: 
   const shelves = [['have', 'Have it'], ['want', 'Want it'], ['had', 'Had it'], ['test', 'Want to test']] as const;
   if (!loading && !user) return <SignInToVote label="save to your wardrobe" />;
   return (
-    <div className="flex flex-wrap gap-2">
-      {shelves.map(([s, label]) => (
-        <Chip key={s} active={shelf === s} onClick={() => add(s)}>{shelf === s ? '✓ ' : '+ '}{label}</Chip>
-      ))}
+    <div className="flex flex-wrap gap-2.5" role="group" aria-label="Save to your wardrobe">
+      {shelves.map(([s, label]) => {
+        const isActive = shelf === s;
+        return (
+          <button
+            key={s}
+            onClick={() => add(s)}
+            aria-pressed={isActive}
+            className={cn(
+              'flex items-center gap-1.5 rounded-full border-2 px-5 py-2.5 text-[15px] font-bold transition-all duration-200 active:scale-95',
+              isActive
+                ? 'border-gold-500 bg-gold-500/15 text-gold-700 shadow-card scale-105 dark:text-gold-300'
+                : 'border-stone-200 bg-white/60 text-stone-700 hover:border-gold-400 hover:shadow-card dark:border-ink-700 dark:bg-white/[0.03] dark:text-stone-200',
+            )}
+          >
+            <span className={cn('text-lg font-black transition-transform duration-200', isActive && 'scale-125')}>{isActive ? '✓' : '+'}</span>
+            {label}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -204,12 +280,24 @@ export function ReportPriceButton({ perfumeId }: { perfumeId: string }) {
 }
 
 /* ---------- Community meter voting (live distribution from community_votes) ---------- */
+/* ---------- Vote option labels per meter type (Fragrantica-style) ---------- */
+const METER_OPTIONS: Record<string, string[]> = {
+  longevity: ['Very weak', 'Weak', 'Moderate', 'Long lasting', 'Eternal'],
+  sillage: ['Intimate', 'Soft', 'Moderate', 'Strong', 'Enormous'],
+  value: ['Way overpriced', 'Overpriced', 'OK', 'Good value', 'Great value'],
+  season: ['Avoid in heat', 'Poor', 'Okay', 'Good', 'Heat-proof'],
+};
+
+const METER_BAR_COLORS = ['#f87171', '#fb923c', '#facc15', '#4ade80', '#2dd4bf'];
+
 export function MeterVote({ label, perfumeId, voteType }: { label: string; perfumeId: string; voteType: string }) {
   const { toast } = useToast();
   const { user, loading } = useAuth();
   const [mine, setMine] = useState<number | null>(null);
-  const [dist, setDist] = useState<number[]>([8, 14, 26, 32, 20]);
+  const [counts, setCounts] = useState<number[]>([0, 0, 0, 0, 0]);
   const [total, setTotal] = useState(0);
+  const [mounted, setMounted] = useState(false);
+  const options = METER_OPTIONS[voteType] ?? ['1', '2', '3', '4', '5'];
 
   const load = async () => {
     const sb = getSupabaseBrowser();
@@ -220,13 +308,13 @@ export function MeterVote({ label, perfumeId, voteType }: { label: string; perfu
         .eq('perfume_id', perfumeId)
         .eq('vote_type', voteType);
       if (!error && data && data.length > 0) {
-        const counts = [0, 0, 0, 0, 0];
+        const c = [0, 0, 0, 0, 0];
         for (const row of data) {
           const v = parseInt(String(row.vote_value), 10);
-          if (v >= 1 && v <= 5) counts[v - 1]++;
+          if (v >= 1 && v <= 5) c[v - 1]++;
         }
         setTotal(data.length);
-        setDist(counts.map((c) => Math.round((c / data.length) * 100)));
+        setCounts(c);
       }
       const { data: { user: u } } = await sb.auth.getUser();
       if (u) {
@@ -241,10 +329,14 @@ export function MeterVote({ label, perfumeId, voteType }: { label: string; perfu
           if (v >= 1 && v <= 5) setMine(v);
         }
       }
-    } catch { /* keep placeholder distribution on read failure */ }
+    } catch { /* keep empty on read failure */ }
   };
 
   useEffect(() => { load(); }, [perfumeId, voteType]);
+  useEffect(() => {
+    const t = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(t);
+  }, []);
 
   const vote = async (v: number) => {
     setMine(v);
@@ -254,20 +346,59 @@ export function MeterVote({ label, perfumeId, voteType }: { label: string; perfu
     else toast(r.error ?? 'Could not record vote', 'err');
   };
   if (!loading && !user) return <SignInToVote label={`rate ${label.toLowerCase()}`} />;
+  const max = Math.max(...counts, 1);
   return (
     <div>
-      <p className="mb-2 text-sm font-semibold">{label} <span className="font-normal text-stone-400">— tap to vote{total > 0 ? ` · ${total} vote${total === 1 ? '' : 's'}` : ''}</span></p>
-      <div className="flex items-end gap-1.5">
-        {dist.map((d, i) => (
-          <button key={i} onClick={() => vote(i + 1)} aria-label={`${label} ${i + 1} out of 5`}
-            className={cn('group flex flex-1 flex-col items-center gap-1 rounded-lg py-1 transition-colors', mine === i + 1 ? 'bg-gold-600/15' : 'hover:bg-stone-900/5 dark:hover:bg-white/5')}>
-            <span className="text-[11px] font-bold text-stone-500">{d}%</span>
-            <span className={cn('w-full rounded-t-md transition-all', mine === i + 1 ? 'bg-gold-500' : 'bg-stone-300 group-hover:bg-gold-400 dark:bg-ink-700')}
-              style={{ height: `${Math.max(8, d * 1.6)}px` }} />
-            <span className="text-[10px] font-semibold text-stone-400">{i + 1}</span>
-          </button>
-        ))}
+      <p className="mb-3 text-sm font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+        {label}
+        {total > 0 && <span className="ml-2 font-semibold normal-case tracking-normal text-stone-400">· {total} vote{total === 1 ? '' : 's'}</span>}
+      </p>
+      <div className="flex flex-col gap-2">
+        {options.map((opt, i) => {
+          const c = counts[i] ?? 0;
+          const pct = total > 0 ? Math.round((c / total) * 100) : 0;
+          const width = Math.max(4, Math.round((c / max) * 100));
+          const isMine = mine === i + 1;
+          return (
+            <button
+              key={opt}
+              onClick={() => vote(i + 1)}
+              aria-label={`${label}: vote ${opt}`}
+              className={cn(
+                'group flex items-center gap-3 rounded-xl px-3 py-2 text-left transition-all duration-200',
+                isMine
+                  ? 'bg-gold-500/15 ring-2 ring-gold-500/60'
+                  : 'hover:bg-stone-900/5 active:scale-[0.99] dark:hover:bg-white/5',
+              )}
+            >
+              <span className={cn('w-28 shrink-0 text-[13px] font-semibold', isMine ? 'text-gold-700 dark:text-gold-300' : 'text-stone-600 dark:text-stone-300')}>
+                {opt}
+              </span>
+              <span className="relative h-3.5 flex-1 overflow-hidden rounded-full bg-stone-200/70 dark:bg-ink-700/70">
+                <span
+                  className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-1000 ease-out"
+                  style={{
+                    width: mounted ? `${width}%` : '0%',
+                    background: METER_BAR_COLORS[i],
+                    transitionDelay: `${i * 80}ms`,
+                  }}
+                />
+              </span>
+              <span className="w-12 shrink-0 text-right text-xs font-bold tabular-nums text-stone-500 dark:text-stone-400">
+                {c > 0 ? c.toLocaleString('en-IN') : '—'}
+              </span>
+              {isMine && (
+                <span className="shrink-0 rounded-full bg-gold-500 px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-white">
+                  You
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
+      {total === 0 && (
+        <p className="mt-2 text-xs text-stone-400 dark:text-stone-500">No votes yet — tap an option to be the first.</p>
+      )}
     </div>
   );
 }

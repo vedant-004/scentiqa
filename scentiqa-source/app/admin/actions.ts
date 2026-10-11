@@ -69,8 +69,18 @@ export async function updatePerfume(id: string, fd: FormData) {
     is_discontinued: fd.get('is_discontinued') === 'on',
   }).eq('id', id);
   if (error) throw new Error(error.message);
+  // Revalidate the public perfume page too — otherwise admin edits stay
+  // invisible on the live site until the ISR window expires.
+  const { data: row } = await c.from('perfumes').select('slug').eq('id', id).single();
+  const slug = (row as { slug?: string } | null)?.slug;
   revalidatePath('/admin/perfumes');
   revalidatePath('/admin/health');
+  if (slug) {
+    revalidatePath(`/perfume/${slug}`);
+    revalidatePath('/');
+  } else {
+    revalidatePath('/perfume/[slug]', 'page');
+  }
 }
 
 export async function createPerfume(fd: FormData) {
@@ -391,4 +401,66 @@ export async function deleteSniffStore(id: string) {
   await db().from('sniff_stores').delete().eq('id', id);
   revalidatePath('/sniff');
   revalidatePath('/admin/sniff');
+}
+
+/* ---------- Giveaways ---------- */
+export async function createGiveaway(fd: FormData) {
+  await requireAdmin();
+  const slug = str(fd, 'slug').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  const row = {
+    slug,
+    title: str(fd, 'title'),
+    description: str(fd, 'description'),
+    prize: str(fd, 'prize'),
+    starts_at: str(fd, 'starts_at') || new Date().toISOString(),
+    ends_at: str(fd, 'ends_at') || new Date(Date.now() + 14 * 864e5).toISOString(),
+    is_active: fd.get('is_active') === 'on',
+  };
+  if (!slug || !row.title) throw new Error('Slug and title are required');
+  const { error } = await db().from('giveaways').insert(row);
+  if (error) throw new Error(error.message);
+  revalidatePath('/giveaways');
+  revalidatePath('/');
+  revalidatePath('/admin/giveaways');
+}
+export async function updateGiveaway(slug: string, fd: FormData) {
+  await requireAdmin();
+  const row = {
+    title: str(fd, 'title'),
+    description: str(fd, 'description'),
+    prize: str(fd, 'prize'),
+    starts_at: str(fd, 'starts_at') || new Date().toISOString(),
+    ends_at: str(fd, 'ends_at') || new Date(Date.now() + 14 * 864e5).toISOString(),
+    is_active: fd.get('is_active') === 'on',
+    winner_user_id: str(fd, 'winner_user_id') || null,
+  };
+  const { error } = await db().from('giveaways').update(row).eq('slug', slug);
+  if (error) throw new Error(error.message);
+  revalidatePath('/giveaways');
+  revalidatePath('/');
+  revalidatePath('/admin/giveaways');
+}
+export async function toggleGiveaway(slug: string, active: boolean) {
+  await requireAdmin();
+  await db().from('giveaways').update({ is_active: active }).eq('slug', slug);
+  revalidatePath('/giveaways');
+  revalidatePath('/');
+  revalidatePath('/admin/giveaways');
+}
+export async function announceGiveawayWinner(slug: string, winnerUserId: string) {
+  await requireAdmin();
+  const { error } = await db().from('giveaways')
+    .update({ winner_user_id: winnerUserId || null, is_active: false })
+    .eq('slug', slug);
+  if (error) throw new Error(error.message);
+  revalidatePath('/giveaways');
+  revalidatePath('/');
+  revalidatePath('/admin/giveaways');
+}
+export async function deleteGiveaway(slug: string) {
+  await requireAdmin();
+  await db().from('giveaways').delete().eq('slug', slug);
+  revalidatePath('/giveaways');
+  revalidatePath('/');
+  revalidatePath('/admin/giveaways');
 }

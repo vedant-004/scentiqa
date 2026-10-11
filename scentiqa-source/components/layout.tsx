@@ -178,15 +178,104 @@ function AuthButton() {
 }
 
 /* ---------- Mobile nav drawer ---------- */
+const DRAWER_SECTIONS: { href: string; label: string; desc: string }[] = [
+  { href: '/finder', label: '✨ AI Scent Finder', desc: 'Answer 10 questions, get your ranked scent matches' },
+  { href: '/find-alternative', label: 'Find a Dupe', desc: 'Find a cheaper alternative to any perfume' },
+  { href: '/battles', label: 'Scent Battles', desc: 'Weekly head-to-head fragrance tournaments' },
+  { href: '/climate', label: 'Heat Lab', desc: 'Which perfumes survive Indian summer?' },
+  { href: '/blindbuy', label: 'Blind-Buy Guide', desc: 'Safest blind buys under ₹2,000' },
+  { href: '/diary', label: 'Wear Diary', desc: 'Log your scent of the day, build a streak' },
+  { href: '/houses', label: 'Houses', desc: 'Browse all perfume houses' },
+  { href: '/requests', label: 'Request a Perfume', desc: 'Vote for the perfumes you want in our catalog' },
+  { href: '/sniff', label: 'Sniff Guide', desc: 'Where to smell perfumes in your city' },
+  { href: '/notes', label: 'Notes', desc: 'Explore the notes encyclopedia' },
+  { href: '/accords', label: 'Accords', desc: 'Discover accord profiles' },
+  { href: '/sellers', label: 'Sellers', desc: 'Verified Indian sellers' },
+  { href: '/news', label: 'News', desc: 'Latest from the fragrance world' },
+  { href: '/forum', label: 'Community', desc: 'Join the conversation' },
+  { href: '/awards/2026', label: 'Awards', desc: "Scentiqa Readers' Choice Awards 2026" },
+  { href: '/about', label: 'About', desc: 'Our methodology and story' },
+  { href: '/contact', label: 'Contact', desc: 'Get in touch' },
+];
+
 function MobileMenu() {
-  // Simple link to a dedicated menu page — no overlay, no portal,
-  // no z-index issues. Bulletproof on mobile.
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close on route change and on Escape.
+  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [open ]);
+
   return (
     <div className="lg:hidden">
-      <Link href="/menu" aria-label="Menu"
-        className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
-      </Link>
+      <button
+        onClick={() => setOpen((o) => !o)}
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+        className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white"
+      >
+        {open ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" /></svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
+        )}
+      </button>
+
+      {/* Backdrop */}
+      <div
+        aria-hidden="true"
+        onClick={() => setOpen(false)}
+        className={cn(
+          'fixed inset-0 z-[70] bg-black/50 backdrop-blur-sm transition-opacity duration-300',
+          open ? 'opacity-100' : 'pointer-events-none opacity-0',
+        )}
+      />
+      {/* Drawer panel */}
+      <div
+        role="dialog"
+        aria-label="Site menu"
+        className={cn(
+          'fixed inset-y-0 left-0 z-[71] flex w-[86vw] max-w-sm flex-col bg-cream-50 shadow-2xl transition-transform duration-300 ease-out dark:bg-ink-950',
+          open ? 'translate-x-0' : '-translate-x-full',
+        )}
+      >
+        <div className="flex items-center justify-between border-b border-stone-200/70 px-5 py-4 dark:border-ink-700/50">
+          <span className="font-display text-lg font-bold text-stone-900 dark:text-white">Menu</span>
+          <button
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            className="flex h-9 w-9 items-center justify-center rounded-xl text-stone-500 transition hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-400 dark:hover:bg-white/10 dark:hover:text-white"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" /></svg>
+          </button>
+        </div>
+        <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Site sections">
+          {DRAWER_SECTIONS.map((s, i) => (
+            <Link
+              key={s.href}
+              href={s.href}
+              onClick={() => setOpen(false)}
+              style={{ transitionDelay: open ? `${Math.min(i * 25, 300)}ms` : '0ms' }}
+              className={cn(
+                'mb-1 block rounded-xl px-4 py-3 transition-all duration-300 hover:bg-gold-500/10',
+                open ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0',
+              )}
+            >
+              <span className="block text-[15px] font-bold text-stone-900 dark:text-white">{s.label}</span>
+              <span className="mt-0.5 block text-xs text-stone-500 dark:text-stone-400">{s.desc}</span>
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 }
