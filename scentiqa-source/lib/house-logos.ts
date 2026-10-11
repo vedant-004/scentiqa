@@ -1,5 +1,5 @@
-// Brand logo mapping for major houses. Uses Clearbit Logo API (free, reliable).
-// Key: lowercase house name. Value: domain for logo lookup.
+// Brand logo mapping for major houses. Uses Google's favicon service (reliable,
+// free, no API key). Key: lowercase house name. Value: domain for logo lookup.
 // Houses not listed fall back to the elegant monogram.
 export const HOUSE_LOGOS: Record<string, string> = {
   'dior': 'dior.com',
@@ -88,5 +88,5 @@ export const HOUSE_LOGOS: Record<string, string> = {
 export function houseLogoUrl(name: string): string | null {
   const domain = HOUSE_LOGOS[name.toLowerCase().trim()];
   if (!domain) return null;
-  return `https://logo.clearbit.com/${domain}?size=128`;
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
 }

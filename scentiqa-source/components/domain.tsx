@@ -499,17 +499,19 @@ export function PerfumeCard({ perfume, rank }: { perfume: CardPerfume; rank?: nu
 /* ---------- HouseCard ---------- */
 export function HouseCard({ house }: { house: House }) {
   const logo = houseLogoUrl(house.name);
+  const [logoFailed, setLogoFailed] = useState(false);
+  const showLogo = logo && !logoFailed;
   return (
     <Link href={`/house/${house.slug}`} className="group block h-full">
       <Card hover className="flex h-full items-center gap-4 p-5">
-        {logo ? (
+        {showLogo ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={logo}
             alt={`${house.name} logo`}
             loading="lazy"
             className="h-14 w-14 shrink-0 rounded-2xl bg-white object-contain p-1.5 shadow-card ring-1 ring-stone-900/10 dark:bg-white dark:ring-white/10"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            onError={() => setLogoFailed(true)}
           />
         ) : (
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 font-display text-xl font-bold text-white shadow-card">
