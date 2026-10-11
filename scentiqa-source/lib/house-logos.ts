@@ -218,7 +218,64 @@ export const HOUSE_LOGOS: Record<string, string> = {
   'zighrana': 'zighrana.com',
 };
 
+/* High-quality local logos (downloaded, hosted locally for speed and reliability). */
+export const LOCAL_LOGOS: Record<string, string> = {
+  'abdul samad al qurashi': '/images/logos/abdul-samad-al-qurashi.webp',
+  'afnan': '/images/logos/afnan.png',
+  'ahmed al maghribi': '/images/logos/ahmed-al-maghribi.png',
+  'al haramain': '/images/logos/al-haramain.svg',
+  'al majed for oud': '/images/logos/al-majed-for-oud.png',
+  'al wataniah': '/images/logos/al-wataniah.png',
+  'amouage': '/images/logos/amouage.png',
+  'arabian aroma': '/images/logos/arabian-aroma.png',
+  'arabian oud': '/images/logos/arabian-oud.png',
+  'armaf': '/images/logos/armaf.png',
+  'attar collection': '/images/logos/attar-collection.png',
+  'carolina herrera': '/images/logos/carolina-herrera.svg',
+  'celestial perfume': '/images/logos/celestial-perfume.jpg',
+  'chanel': '/images/logos/chanel.svg',
+  'creed': '/images/logos/creed.svg',
+  'dar al teeb': '/images/logos/dar-al-teeb.png',
+  'dior': '/images/logos/dior.svg',
+  'dupify': '/images/logos/dupify.png',
+  'fragrance world': '/images/logos/fragrance-world.png',
+  'giorgio armani': '/images/logos/giorgio-armani.svg',
+  'gissah': '/images/logos/gissah.svg',
+  'givenchy': '/images/logos/givenchy.png',
+  'gucci': '/images/logos/gucci.svg',
+  'guerlain': '/images/logos/guerlain.png',
+  'hermes': '/images/logos/hermes.png',
+  'house of em5': '/images/logos/house-of-em5.png',
+  'khadlaj': '/images/logos/khadlaj.png',
+  'lancome': '/images/logos/lancome.svg',
+  'lattafa': '/images/logos/lattafa.png',
+  'maison alhambra': '/images/logos/maison-alhambra.png',
+  'maison francis kurkdjian': '/images/logos/maison-francis-kurkdjian.png',
+  'menworks': '/images/logos/menworks.webp',
+  'my perfume secrets': '/images/logos/my-perfume-secrets.svg',
+  'no name perfume': '/images/logos/no-name-perfume.png',
+  'orientica': '/images/logos/orientica.png',
+  'oudh al anfar': '/images/logos/oudh-al-anfar.png',
+  'paco rabanne': '/images/logos/paco-rabanne.svg',
+  'parfums de marly': '/images/logos/parfums-de-marly.png',
+  'paris corner': '/images/logos/paris-corner.png',
+  'prada': '/images/logos/prada.png',
+  'rasasi': '/images/logos/rasasi.png',
+  'raydan': '/images/logos/raydan.png',
+  'swiss arabian': '/images/logos/swiss-arabian.jpg',
+  'taif al emarat': '/images/logos/taif-al-emarat.png',
+  'tom ford': '/images/logos/tom-ford.svg',
+  'valentino': '/images/logos/valentino.svg',
+  'versace': '/images/logos/versace.svg',
+  'xerjoff': '/images/logos/xerjoff.png',
+  'xlnc perfumery': '/images/logos/xlnc-perfumery.png',
+  'yves saint laurent / ysl': '/images/logos/yves-saint-laurent-ysl.svg',
+};
+
 export function houseLogoUrl(name: string): string | null {
+  // Check local high-quality logos first
+  const local = LOCAL_LOGOS[name.toLowerCase().trim()];
+  if (local) return local;
   const domain = HOUSE_LOGOS[name.toLowerCase().trim()];
   if (!domain) return null;
   return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
