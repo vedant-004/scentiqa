@@ -1,8 +1,8 @@
 {
  "musk": {
-  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg/500px-Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Otsuki_Gentaku-ranentekihou-kan03-fol19b-muskdeer.jpg",
-  "confidence": "medium"
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Musk_deer_in_Edinburgh_Zoo.jpg/500px-Musk_deer_in_Edinburgh_Zoo.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Musk_deer_in_Edinburgh_Zoo.jpg",
+  "confidence": "high"
  },
  "bergamot": {
   "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Citrus_bergamia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-184.jpg",
@@ -135,9 +135,9 @@
   "confidence": "high"
  },
  "white-musk": {
-  "image": null,
-  "page": null,
-  "confidence": "none"
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Musk_deer_in_Edinburgh_Zoo.jpg/500px-Musk_deer_in_Edinburgh_Zoo.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Musk_deer_in_Edinburgh_Zoo.jpg",
+  "confidence": "high"
  },
  "benzoin": {
   "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Styrax_benzoin_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-133.jpg",
