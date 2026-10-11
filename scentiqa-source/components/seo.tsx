@@ -23,7 +23,7 @@ export function websiteJsonLd() {
     url: 'https://scentiqa.in',
     potentialAction: {
       '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: 'https://scentiqa.in/find-alternative?q={search_term_string}' },
+      target: { '@type': 'EntryPoint', urlTemplate: 'https://scentiqa.vercel.app/search?q={search_term_string}' },
       'query-input': 'required name=search_term_string',
     },
   };

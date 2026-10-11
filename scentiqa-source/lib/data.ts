@@ -24,6 +24,7 @@ export const getAllArticleSlugs = select(demo.getAllArticleSlugs, live.getAllArt
 export const getHouse = cache(select(demo.getHouse, live.getHouse));
 export const getHouseSummary = select(demo.getHouse, live.getHouseSummary);
 export const searchPerfumes = select(demo.searchPerfumes, live.searchPerfumes);
+export const searchPerfumesDetailed = select(demo.searchPerfumesDetailed, live.searchPerfumesDetailed);
 export const getDupesForPerfume = select(demo.getDupesForPerfume, live.getDupesForPerfume);
 export const getTrending = select(demo.getTrending, live.getTrending);
 export const getLatestLaunches = select(demo.getLatestLaunches, live.getLatestLaunches);

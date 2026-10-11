@@ -75,7 +75,8 @@ function FinderInner() {
         <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600 dark:text-gold-400">Scentiqa dupe lab</p>
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">Find a cheaper alternative</h1>
         <p className="mt-3 text-[15px] text-stone-500 dark:text-stone-400">Pick any luxury perfume — we&rsquo;ll show its Indian alternatives, ranked by our lab-tested similarity scores.</p>
-        <div className="mt-6"><SearchBar big onPick={(slug, name) => load(slug, name)} /></div>
+        {/* key remounts the bar when ?q= changes, so the prefill always applies */}
+        <div className="mt-6"><SearchBar key={sp.get('q') ?? 'none'} big initialQuery={sp.get('q') ?? undefined} onPick={(slug, name) => load(slug, name)} /></div>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           {POPULAR.map((s) => (
             <button key={s} onClick={() => load(s, s.replace(/-/g, ' '))}

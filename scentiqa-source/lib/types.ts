@@ -27,6 +27,10 @@ export interface Perfume {
   topNotes: string[]; heartNotes: string[]; baseNotes: string[];
   inspiredBy: string | null; claimedAccuracy: string | null; isDupe: boolean;
   needsVerification?: boolean;
+  /** How this row matched a search query — set by searchPerfumes only. */
+  matchedField?: 'name' | 'house' | 'note' | 'fuzzy';
+  /** Count of dupes linked to this perfume as an original — set by searchPerfumes only. */
+  dupeCount?: number;
   /** Evocative "what it smells like" scent story, written in the house voice. */
   scentStory: string | null;
   /** Whether the fragrance is approachable for beginners. */

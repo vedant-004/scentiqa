@@ -192,51 +192,226 @@ function cleanSearchQuery(q: string): string {
   return q.trim().replace(/[%_\\(),"]/g, '').slice(0, 60);
 }
 
-export async function searchPerfumes(query: string, limit = 8): Promise<Perfume[]> {
-  const c = sb(); if (!c) return [];
+/** Levenshtein edit distance — names are short, plain DP is plenty fast. */
+function editDistance(a: string, b: string): number {
+  if (a === b) return 0;
+  const la = a.length, lb = b.length;
+  if (la === 0) return lb;
+  if (lb === 0) return la;
+  let prev = new Array<number>(lb + 1);
+  let cur = new Array<number>(lb + 1);
+  for (let j = 0; j <= lb; j++) prev[j] = j;
+  for (let i = 1; i <= la; i++) {
+    cur[0] = i;
+    const ca = a.charCodeAt(i - 1);
+    for (let j = 1; j <= lb; j++) {
+      const cost = ca === b.charCodeAt(j - 1) ? 0 : 1;
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+    }
+    const tmp = prev; prev = cur; cur = tmp;
+  }
+  return prev[lb];
+}
+
+/**
+ * Normalize a perfume name for near-duplicate comparison: lowercase, strip the
+ * house's tokens (so "Creed Aventus" and "Aventus" compare equal), drop
+ * punctuation, collapse whitespace.
+ */
+function normalizeName(name: string, house = ''): string {
+  const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+  const houseTokens = new Set(clean(house).split(' ').filter((t) => t.length > 2));
+  return clean(name).split(' ').filter((t) => t.length > 0 && !houseTokens.has(t)).join(' ');
+}
+
+/** Marketplace spam patterns — applied in JS after fetch, so no index changes needed. */
+function isSpamName(name: string): boolean {
+  if (!name || !name.trim()) return true;
+  if (/inspired[\s-]*by/i.test(name)) return true; // "X inspired by Y" / "inspired-Y"
+  if (/\b[A-Z][a-z]*\*/.test(name)) return true;    // obfuscated brands like "Crd*"
+  const letters = name.replace(/[^A-Za-z]/g, '');
+  return letters.length > 8 && letters === letters.toUpperCase(); // ALL CAPS rows
+}
+
+/** Data-richness score for near-duplicate dedup: image + description outweigh ratings. */
+function richness(r: Record<string, unknown>): number {
+  return (Number(r.rating_count ?? 0) || 0)
+    + (r.bottle_image_url ? 1_000_000 : 0)
+    + (typeof r.description === 'string' && r.description.trim() ? 500_000 : 0);
+}
+
+type SearchRow = Record<string, unknown>;
+type MatchedField = 'name' | 'house' | 'note' | 'fuzzy';
+
+export interface SearchResult {
+  results: Perfume[];
+  /** High-confidence spelling correction, e.g. "aventis" -> "Aventus". Null when not confident. */
+  didYouMean: string | null;
+}
+
+export async function searchPerfumesDetailed(query: string, limit = 8): Promise<SearchResult> {
+  const c = sb(); if (!c) return { results: [], didYouMean: null };
   const q = cleanSearchQuery(query);
-  if (q.length === 0) return [];
+  if (q.length === 0) return { results: [], didYouMean: null };
   const sel = '*, houses(slug, name)';
-  const seen = new Map<string, Record<string, unknown>>();
-  const add = (rows: Record<string, unknown>[] | null) => {
+  const seen = new Map<string, SearchRow>();
+  const fieldOf = new Map<string, MatchedField>();
+  let noteMatches = 0;
+  const add = (rows: SearchRow[] | null, field: MatchedField) => {
     for (const r of rows ?? []) {
       const id = r.id as string;
-      if (id && !seen.has(id)) seen.set(id, r);
+      if (!id || seen.has(id)) continue;
+      if (isSpamName(String(r.name ?? ''))) continue;
+      if (field === 'note') {
+        if (noteMatches >= 3) continue; // note hits must not drown name matches
+        noteMatches++;
+      }
+      seen.set(id, r);
+      fieldOf.set(id, field);
     }
   };
   type Row = Record<string, unknown>;
   // Pass 1: exact name match (case-insensitive) — instant.
-  add(((await c.from('perfumes').select(sel).ilike('name', q).limit(limit)).data ?? []) as Row[]);
+  add(((await c.from('perfumes').select(sel).ilike('name', q).limit(limit)).data ?? []) as Row[], 'name');
   // Pass 2: name starts with query — the most useful prefix matches.
   if (seen.size < limit) {
-    add(((await c.from('perfumes').select(sel).ilike('name', `${q}%`).limit(limit)).data ?? []) as Row[]);
+    add(((await c.from('perfumes').select(sel).ilike('name', `${q}%`).limit(limit)).data ?? []) as Row[], 'name');
   }
   // Pass 3: name contains query — served by the trigram GIN index.
   if (seen.size < limit) {
-    add(((await c.from('perfumes').select(sel).ilike('name', `%${q}%`).limit(limit * 2)).data ?? []) as Row[]);
+    add(((await c.from('perfumes').select(sel).ilike('name', `%${q}%`).limit(limit * 2)).data ?? []) as Row[], 'name');
   }
   // Pass 4: house name contains query (e.g. "lattafa", "creed").
   if (seen.size < limit) {
     const { data } = await c.from('perfumes').select(sel).or(`houses.name.ilike.%${q}%`).limit(limit);
-    add((data ?? []) as Row[]);
+    add((data ?? []) as Row[], 'house');
   }
-  const rows = [...seen.values()];
+  // Passes 5 (typo tolerance) and 6 (note search) are independent — run together.
+  const extra: Promise<void>[] = [];
+  const fuzzyHits: Array<{ r: SearchRow; score: number }> = [];
+  if (seen.size < limit) {
+    // Pass 5: pg_trgm similarity() isn't callable through the JS client without an
+    // RPC, so do it JS-side: pull a 2-letter-prefix candidate pool, then rerank by
+    // token-level edit distance. "aventis" -> "Aventus".
+    extra.push((async () => {
+      const ql = q.toLowerCase();
+      const qTokens = ql.split(/\s+/).filter(Boolean);
+      if (!qTokens.length) return;
+      const prefixes = new Set<string>();
+      prefixes.add(qTokens[0].slice(0, 2));
+      prefixes.add([...qTokens].sort((a, b) => b.length - a.length)[0].slice(0, 2));
+      const pool: SearchRow[] = [];
+      const pooled = new Set<string>();
+      for (const prefix of prefixes) {
+        if (!/^[a-z0-9]{2}$/.test(prefix)) continue;
+        const { data } = await c.from('perfumes').select(sel).ilike('name', `${prefix}%`).limit(120);
+        for (const r of (data ?? []) as Row[]) {
+          const id = r.id as string;
+          if (!id || seen.has(id) || pooled.has(id)) continue;
+          if (isSpamName(String(r.name ?? ''))) continue;
+          pooled.add(id);
+          pool.push(r);
+        }
+      }
+      const sim = (a: string, b: string) =>
+        a === b ? 1 : 1 - editDistance(a, b) / Math.max(a.length, b.length);
+      const scored = pool.map((r) => {
+        const nTokens = String(r.name ?? '').toLowerCase()
+          .replace(/[^a-z0-9]+/g, ' ').split(' ').filter(Boolean);
+        // Every query token must resemble some name token (worst-token score).
+        let worst = 1;
+        for (const qt of qTokens) {
+          let best = 0;
+          for (const nt of nTokens) best = Math.max(best, sim(qt, nt));
+          worst = Math.min(worst, best);
+        }
+        return { r, score: worst };
+      }).filter((x) => x.score >= 0.55)
+        .sort((a, b) => b.score - a.score);
+      for (const x of scored) fuzzyHits.push(x);
+      add(scored.map((x) => x.r), 'fuzzy');
+    })());
+  }
+  if (seen.size < limit) {
+    // Pass 6: query matches a note name (e.g. "oud") — include perfumes carrying
+    // that note. Note columns are jsonb, so match with the contains operator.
+    extra.push((async () => {
+      const { data: noteRows, error } = await c.from('notes').select('name').ilike('name', `%${q}%`).limit(3);
+      if (error || !noteRows?.length) return;
+      const names = (noteRows as Array<{ name: string }>)
+        .map((n) => String(n.name ?? ''))
+        .filter((n) => n && !/["\\]/.test(n));
+      if (!names.length) return;
+      const perNote = await Promise.all(names.map(async (n) => {
+        const filt = ['top_notes', 'heart_notes', 'base_notes']
+          .map((col) => `${col}.cs.${JSON.stringify([n])}`).join(',');
+        const { data, error: e2 } = await c.from('perfumes').select(sel).or(filt).limit(limit);
+        if (e2) { console.warn('[search] note pass failed for note', n, e2.message); return []; }
+        return (data ?? []) as Row[];
+      }));
+      add(perNote.flat(), 'note');
+    })());
+  }
+  await Promise.all(extra);
+  // "Did you mean?": only when there were NO direct name/house matches at all and
+  // the fuzzy winner is genuinely close (>= 0.8). Never guess when nothing is close.
+  let didYouMean: string | null = null;
+  const directHits = [...fieldOf.values()].filter((f) => f === 'name' || f === 'house').length;
+  if (directHits === 0 && fuzzyHits.length > 0) {
+    const winner = [...fuzzyHits].sort((a, b) => b.score - a.score)[0];
+    if (winner.score >= 0.8) {
+      const name = String(winner.r.name ?? '').trim();
+      if (name) didYouMean = name;
+    }
+  }
+  // Near-duplicate dedup: same normalized name + house -> keep the richest record.
+  const best = new Map<string, SearchRow>();
+  for (const r of seen.values()) {
+    const house = (r.houses as { name?: string; slug?: string } | null) ?? {};
+    const key = `${normalizeName(String(r.name ?? ''), String(house.name ?? ''))}|${String(house.slug ?? '')}`;
+    const cur = best.get(key);
+    if (!cur || richness(r) > richness(cur)) best.set(key, r);
+  }
+  const rows = [...best.values()];
   const ql = q.toLowerCase();
-  const rankOf = (r: Row): number => {
+  const rankOf = (r: SearchRow): number => {
     const name = String(r.name ?? '').toLowerCase();
     const house = String((r.houses as { name?: string } | null)?.name ?? '').toLowerCase();
     if (name === ql) return 0;
     if (name.startsWith(ql)) return 1;
     if (name.includes(ql)) return 2;
     if (house.includes(ql)) return 3;
-    return 4;
+    return fieldOf.get(r.id as string) === 'note' ? 5 : 4; // fuzzy = 4
   };
   rows.sort((a, b) => {
     const dr = rankOf(a) - rankOf(b);
     if (dr !== 0) return dr;
     return (Number(b.rating_count ?? 0) || 0) - (Number(a.rating_count ?? 0) || 0);
   });
-  return rows.slice(0, limit).map(mapPerfume);
+  const top = rows.slice(0, limit);
+  // One batched dupe count — never N+1.
+  const counts = new Map<string, number>();
+  const ids = top.map((r) => r.id as string).filter(Boolean);
+  if (ids.length) {
+    const { data } = await c.from('dupe_relationships').select('original_perfume_id').in('original_perfume_id', ids);
+    for (const d of (data ?? []) as Array<{ original_perfume_id: string }>) {
+      counts.set(d.original_perfume_id, (counts.get(d.original_perfume_id) ?? 0) + 1);
+    }
+  }
+  return {
+    results: top.map((r) => {
+      const p = mapPerfume(r);
+      p.matchedField = fieldOf.get(r.id as string) ?? 'name';
+      p.dupeCount = counts.get(r.id as string) ?? 0;
+      return p;
+    }),
+    didYouMean,
+  };
+}
+
+/** Original signature — kept for existing callers (header search, find-alternative, diary, collection). */
+export async function searchPerfumes(query: string, limit = 8): Promise<Perfume[]> {
+  return (await searchPerfumesDetailed(query, limit)).results;
 }
 
 export async function getDupesForPerfume(originalSlug: string): Promise<DupeEntry[]> {

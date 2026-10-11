@@ -109,9 +109,22 @@ export async function getHouse(slug: string): Promise<HouseFull | null> {
   return { ...h, perfumes: seed.perfumes.filter((p) => p.houseSlug === slug) };
 }
 
+export interface SearchResult {
+  results: Perfume[];
+  didYouMean: string | null;
+}
+
+export async function searchPerfumesDetailed(query: string, limit = 8): Promise<SearchResult> {
+  return { results: await searchPerfumes(query, limit), didYouMean: null };
+}
+
 export async function searchPerfumes(query: string, limit = 8): Promise<Perfume[]> {
   const q = query.trim().toLowerCase();
   if (!q) return [];
+  const dupeCounts = new Map<string, number>();
+  for (const r of seed.dupeRelationships) {
+    dupeCounts.set(r.originalSlug, (dupeCounts.get(r.originalSlug) ?? 0) + 1);
+  }
   const scored = seed.perfumes.map((p) => {
     const name = p.name.toLowerCase();
     const house = p.house.toLowerCase();
@@ -128,7 +141,11 @@ export async function searchPerfumes(query: string, limit = 8): Promise<Perfume[
     return { p, s };
   }).filter((x) => x.s > 0);
   scored.sort((a, b) => b.s - a.s || b.p.ratingCount - a.p.ratingCount);
-  return scored.slice(0, limit).map((x) => x.p);
+  return scored.slice(0, limit).map((x) => ({
+    ...x.p,
+    matchedField: (x.s >= 60 ? 'name' : x.s === 40 ? 'house' : 'fuzzy') as Perfume['matchedField'],
+    dupeCount: dupeCounts.get(x.p.slug) ?? 0,
+  }));
 }
 
 export async function getDupesForPerfume(originalSlug: string): Promise<DupeEntry[]> {
