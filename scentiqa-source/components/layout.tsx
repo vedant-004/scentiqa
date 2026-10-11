@@ -259,16 +259,12 @@ function MobileMenu() {
           </button>
         </div>
         <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Site sections">
-          {DRAWER_SECTIONS.map((s, i) => (
+          {DRAWER_SECTIONS.map((s) => (
             <Link
               key={s.href}
               href={s.href}
               onClick={() => setOpen(false)}
-              style={{ transitionDelay: open ? `${Math.min(i * 25, 300)}ms` : '0ms' }}
-              className={cn(
-                'mb-1 block rounded-xl px-4 py-3 transition-all duration-300 hover:bg-gold-500/10',
-                open ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0',
-              )}
+              className="mb-1 block rounded-xl px-4 py-3 transition-colors hover:bg-gold-500/10"
             >
               <span className="block text-[15px] font-bold text-stone-900 dark:text-white">{s.label}</span>
               <span className="mt-0.5 block text-xs text-stone-500 dark:text-stone-400">{s.desc}</span>
