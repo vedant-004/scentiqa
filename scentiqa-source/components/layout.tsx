@@ -210,8 +210,7 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
             </Link>
           ))}
         </nav>
-        <div className="ml-auto hidden w-72 shrink-0 md:block xl:w-96"><SearchBar /></div>
-        <div className="ml-auto flex shrink-0 items-center gap-1 md:ml-0">
+        <div className="ml-auto flex shrink-0 items-center gap-1">
           <MobileMenu />
           <ThemeToggle />
           <button onClick={() => toast('Connect Supabase to enable accounts & notifications', 'info')} aria-label="Notifications"
