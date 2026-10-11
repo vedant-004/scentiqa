@@ -86,12 +86,18 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
   const { data: p } = await c.from('perfumes').select('*, houses(slug, name)').eq('slug', slug).single();
   if (!p) return null;
   const perfume = mapPerfume(p);
-  const houseInfo = mapHouse((await c.from('houses').select('*').eq('id', p.house_id).single()).data ?? {});
-  const { data: rels } = await c.from('dupe_relationships')
-    .select('*, dupe:dupe_perfume_id(*, houses(slug, name))')
-    .eq('original_perfume_id', p.id);
+  // OPTIMIZED: Run independent queries in parallel instead of sequentially
+  const [houseRes, relsRes, pricesRes, climRes, revsRes] = await Promise.all([
+    c.from('houses').select('*').eq('id', p.house_id).single(),
+    c.from('dupe_relationships').select('*, dupe:dupe_perfume_id(*, houses(slug, name))').eq('original_perfume_id', p.id),
+    c.from('prices').select('*, sellers(*)').eq('perfume_id', p.id),
+    c.from('climate_scores').select('*').eq('perfume_id', p.id).single(),
+    c.from('reviews').select('*, users(username)').eq('perfume_id', p.id).order('helpful_votes', { ascending: false }).limit(20),
+  ]);
+  const houseInfo = mapHouse(houseRes.data ?? {});
+  const { data: rels } = relsRes;
   const dupes = (rels ?? []).map(mapDupe).sort((a, b) => (b.similarityScore ?? -1) - (a.similarityScore ?? -1));
-  const { data: pricesR } = await c.from('prices').select('*, sellers(*)').eq('perfume_id', p.id);
+  const { data: pricesR } = pricesRes;
   const prices: PriceEntry[] = (pricesR ?? []).filter((pr: Record<string, unknown>) => pr.sellers).map((pr: Record<string, unknown>) => ({
     id: pr.id as string, perfumeSlug: slug, sellerSlug: (pr.sellers as Record<string, string>).slug,
     priceInr: (pr.price_inr as number) ?? null, mrpInr: (pr.mrp_inr as number) ?? null,
@@ -106,7 +112,7 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
       verified: !!((pr.sellers as Record<string, unknown>).verified),
     },
   })).sort((a, b) => (a.priceInr ?? Number.MAX_SAFE_INTEGER) - (b.priceInr ?? Number.MAX_SAFE_INTEGER));
-  const { data: clim } = await c.from('climate_scores').select('*').eq('perfume_id', p.id).single();
+  const { data: clim } = climRes;
   const climate: ClimateScore | null = clim ? {
     id: clim.id, perfumeSlug: slug, heatLongevity: clim.heat_longevity,
     humiditySillage: clim.humidity_sillage, summerRating: clim.summer_rating,
@@ -114,7 +120,7 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
     testTempC: clim.test_temp_c, testHumidityPct: clim.test_humidity_pct,
     sprays: clim.sprays_used, testerCount: clim.tester_count, notes: clim.notes ?? '',
   } : null;
-  const { data: revs } = await c.from('reviews').select('*, users(username)').eq('perfume_id', p.id).order('helpful_votes', { ascending: false }).limit(20);
+  const { data: revs } = revsRes;
   const reviews: Review[] = (revs ?? []).map((r: Record<string, unknown>) => ({
     id: r.id as string, perfumeSlug: slug, username: (r.users as Record<string, string>)?.username ?? 'member',
     rating: r.rating as number, title: (r.title as string) ?? '', body: (r.body as string) ?? '',
@@ -268,22 +274,22 @@ export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   }
   // Candidate pool: rows with a photo and description. Accords/notes completeness
   // is verified in code because empty arrays can't be filtered reliably in PostgREST.
-  // Paginated to cover the full 8k+ catalog (Supabase caps at 1000 rows/request).
-  const PAGE = 1000;
-  const rows: Record<string, unknown>[] = [];
-  for (let from = 0; ; from += PAGE) {
-    const { data: page } = await c.from('perfumes')
-      .select('slug, accords, top_notes, heart_notes, base_notes')
-      .not('bottle_image_url', 'is', null)
-      .not('description', 'is', null)
-      .neq('description', '')
-      .order('slug', { ascending: true })
-      .range(from, from + PAGE - 1);
-    if (!page || page.length === 0) break;
-    rows.push(...(page as Record<string, unknown>[]));
-    if (page.length < PAGE) break;
-  }
-  const pool = rows.filter((r: Record<string, unknown>) => {
+  // OPTIMIZED: Instead of fetching all 8k+ perfumes, use a day-based offset to fetch
+  // a small batch and pick the first eligible one. This reduces 9 queries to 1-2.
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((now.getTime() - start.getTime()) / 86400000);
+  // Use dayOfYear to compute a stable starting offset (spread across the catalog)
+  const BATCH = 200;
+  const offset = (dayOfYear * 37) % 8000; // 37 is prime for good distribution
+  const { data: batch } = await c.from('perfumes')
+    .select('slug, accords, top_notes, heart_notes, base_notes')
+    .not('bottle_image_url', 'is', null)
+    .not('description', 'is', null)
+    .neq('description', '')
+    .order('slug', { ascending: true })
+    .range(offset, offset + BATCH - 1);
+  const pool = (batch ?? []).filter((r: Record<string, unknown>) => {
     const accords = (r.accords as unknown[]) ?? [];
     const notes = [
       ...((r.top_notes as string[]) ?? []),
@@ -293,9 +299,6 @@ export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
     return accords.length > 0 && notes.length > 0;
   });
   if (!pool.length) return null;
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 0);
-  const dayOfYear = Math.floor((now.getTime() - start.getTime()) / 86400000);
   const pick = pool[dayOfYear % pool.length] as { slug: string };
   const { data: full } = await c.from('perfumes').select('*, houses(slug, name)').eq('slug', pick.slug).single();
   return full ? mapPerfume(full as Record<string, unknown>) : null;
