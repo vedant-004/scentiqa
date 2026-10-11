@@ -203,15 +203,15 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6">
         <Wordmark />
         <DemoPill />
-        <nav className="ml-2 hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="ml-2 hidden min-w-0 flex-1 items-center gap-1 overflow-x-auto lg:flex" aria-label="Primary" style={{ scrollbarWidth: 'none' }}>
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
               {n.label}
             </Link>
           ))}
         </nav>
-        <div className="ml-auto hidden w-72 md:block xl:w-96"><SearchBar /></div>
-        <div className="ml-auto flex items-center gap-1 md:ml-0">
+        <div className="ml-auto hidden w-72 shrink-0 md:block xl:w-96"><SearchBar /></div>
+        <div className="ml-auto flex shrink-0 items-center gap-1 md:ml-0">
           <MobileMenu />
           <ThemeToggle />
           <button onClick={() => toast('Connect Supabase to enable accounts & notifications', 'info')} aria-label="Notifications"
