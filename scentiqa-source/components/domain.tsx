@@ -9,6 +9,16 @@ import { Badge, Button, Card } from './ui';
 import { noteSlug } from '@/lib/note-slugs';
 import type { Accord, DupeEntry, House, PriceEntry } from '@/lib/types';
 
+/** Default note images (Wikimedia Commons). Loaded once; used when the `images`
+ *  prop is not passed (e.g. homepage Perfume of the Day). Missing entries fall
+ *  back to elegant monogram placeholders — never broken images. */
+let defaultNoteImages: Record<string, string | null> = {};
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const m = require('@/lib/note-images.json') as Record<string, { image: string | null }>;
+  for (const [k, v] of Object.entries(m)) defaultNoteImages[k] = v?.image ?? null;
+} catch { /* images not gathered yet — placeholders render instead */ }
+
 /** Resolve a note name to an image key: canonical slug first, then simple slugify fallback. */
 function noteImageKey(name: string, images?: Record<string, string | null>): string | null {
   if (!images) return null;
@@ -282,6 +292,9 @@ export function NotePyramid({ top, heart, base, images }: {
   top: string[]; heart: string[]; base: string[];
   images?: Record<string, string | null>;
 }) {
+  // Use passed images, or fall back to the built-in default map so every
+  // usage (homepage, perfume pages, etc.) shows note images automatically.
+  const imgMap = images ?? defaultNoteImages;
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     const t = requestAnimationFrame(() => setMounted(true));
@@ -308,8 +321,8 @@ export function NotePyramid({ top, heart, base, images }: {
           <div className="flex flex-wrap items-end justify-center gap-3 sm:gap-4">
             {tier.notes.map((n, i) => {
               const slug = noteSlug(n);
-              const imgKey = noteImageKey(n, images);
-              const img = imgKey ? images![imgKey] : null;
+              const imgKey = noteImageKey(n, imgMap);
+              const img = imgKey ? imgMap[imgKey] : null;
               const prominent = i === 0;
               const size = prominent ? 'h-24 w-24 sm:h-28 sm:w-28' : 'h-16 w-16 sm:h-20 sm:w-20';
               const inner = (
