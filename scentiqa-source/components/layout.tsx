@@ -230,34 +230,24 @@ function MobileMenu() {
         )}
       </button>
 
-      {/* Backdrop */}
+      {/* Backdrop — below header so the hamburger stays tappable */}
       <div
         aria-hidden="true"
         onClick={() => setOpen(false)}
         className={cn(
-          'fixed inset-0 z-[70] bg-black/50 backdrop-blur-sm transition-opacity duration-300',
+          'fixed inset-x-0 top-16 bottom-0 z-[70] bg-black/50 backdrop-blur-sm transition-opacity duration-300',
           open ? 'opacity-100' : 'pointer-events-none opacity-0',
         )}
       />
-      {/* Drawer panel */}
+      {/* Drawer panel — slides under the header (header stays tappable) */}
       <div
         role="dialog"
         aria-label="Site menu"
         className={cn(
-          'fixed inset-y-0 left-0 z-[71] flex w-[86vw] max-w-sm flex-col bg-cream-50 shadow-2xl transition-transform duration-300 ease-out dark:bg-ink-950',
+          'fixed left-0 top-16 bottom-0 z-[71] flex w-[86vw] max-w-sm flex-col bg-cream-50 shadow-2xl transition-transform duration-300 ease-out dark:bg-ink-950',
           open ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="flex items-center justify-between border-b border-stone-200/70 px-5 py-4 dark:border-ink-700/50">
-          <span className="font-display text-lg font-bold text-stone-900 dark:text-white">Menu</span>
-          <button
-            onClick={() => setOpen(false)}
-            aria-label="Close menu"
-            className="flex h-9 w-9 items-center justify-center rounded-xl text-stone-500 transition hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-400 dark:hover:bg-white/10 dark:hover:text-white"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" /></svg>
-          </button>
-        </div>
         <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Site sections">
           {DRAWER_SECTIONS.map((s) => (
             <Link
@@ -285,7 +275,7 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
     return () => window.removeEventListener('scroll', on);
   }, []);
   return (
-    <header className={cn('sticky top-0 z-[60] border-b transition-all duration-300',
+    <header className={cn('sticky top-0 z-[80] border-b transition-all duration-300',
       scrolled ? 'border-stone-200/70 bg-cream-50/85 shadow-card backdrop-blur-xl dark:border-ink-700/50 dark:bg-ink-950/85' : 'border-transparent bg-cream-50/60 backdrop-blur dark:bg-ink-950/60')}>
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6">
         <Wordmark />
