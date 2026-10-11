@@ -8,6 +8,18 @@ import { Badge, Button, Card } from './ui';
 import { noteSlug } from '@/lib/note-slugs';
 import type { Accord, DupeEntry, House, PriceEntry } from '@/lib/types';
 
+/** Resolve a note name to an image key: canonical slug first, then simple slugify fallback. */
+function noteImageKey(name: string, images?: Record<string, string | null>): string | null {
+  if (!images) return null;
+  const slug = noteSlug(name);
+  if (slug && images[slug]) return slug;
+  // Fallback: simple slugify for generic notes ("Fruity" -> "fruity-notes")
+  const simple = name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
+  if (images[simple]) return simple;
+  if (images[`${simple}-notes`]) return `${simple}-notes`;
+  return null;
+}
+
 const accordSlug = (name: string) => name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
 /* ---------- ScoreBadge: counts up when scrolled into view ---------- */
@@ -275,7 +287,8 @@ export function NotePyramid({ top, heart, base, images }: {
           <div className="flex flex-wrap items-end justify-center gap-3 sm:gap-4">
             {tier.notes.map((n, i) => {
               const slug = noteSlug(n);
-              const img = slug && images ? images[slug] : null;
+              const imgKey = noteImageKey(n, images);
+              const img = imgKey ? images![imgKey] : null;
               const prominent = i === 0;
               const size = prominent ? 'h-24 w-24 sm:h-28 sm:w-28' : 'h-16 w-16 sm:h-20 sm:w-20';
               const inner = (
