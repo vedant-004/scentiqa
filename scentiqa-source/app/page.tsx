@@ -8,7 +8,7 @@ import { isSupabaseConfigured } from '@/lib/supabase';
 import { Button, Card, SectionHeading } from '@/components/ui';
 import { GiveawayBanner } from '@/components/giveaway-banner';
 import { JsonLd, organizationJsonLd, websiteJsonLd } from '@/components/seo';
-import { AccordStack, BottleVisual, NotePyramid, PerfumeCard, ProductImage, ScoreBadge, SearchBar, StarRating, NewsletterSignup } from '@/components';
+import { AccordPyramid, BottleVisual, NotePyramid, PerfumeCard, ProductImage, ScoreBadge, SearchBar, StarRating, NewsletterSignup } from '@/components';
 import type { Perfume } from '@/lib/types';
 
 export const metadata = { title: 'Scentiqa — India\u2019s Perfume Encyclopedia & Dupe Finder' };
@@ -114,7 +114,7 @@ export default async function Home() {
                   {potd.accords.length > 0 && (
                     <div className="mt-6">
                       <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-stone-500">Main accords</p>
-                      <AccordStack accords={potd.accords.slice(0, 5)} />
+                      <AccordPyramid accords={potd.accords.slice(0, 5)} />
                     </div>
                   )}
                   {(potd.topNotes.length > 0 || potd.heartNotes.length > 0 || potd.baseNotes.length > 0) && (
