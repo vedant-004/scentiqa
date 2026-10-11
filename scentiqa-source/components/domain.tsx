@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { accordColor, accordTextColor, cn, HOUSE_TYPE_LABEL, inr, scoreClasses, scoreTone } from '@/lib/utils';
+import { houseLogoUrl } from '@/lib/house-logos';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, Button, Card } from './ui';
 import { noteSlug } from '@/lib/note-slugs';
@@ -484,12 +485,24 @@ export function PerfumeCard({ perfume, rank }: { perfume: CardPerfume; rank?: nu
 
 /* ---------- HouseCard ---------- */
 export function HouseCard({ house }: { house: House }) {
+  const logo = houseLogoUrl(house.name);
   return (
     <Link href={`/house/${house.slug}`} className="group block h-full">
       <Card hover className="flex h-full items-center gap-4 p-5">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 font-display text-xl font-bold text-white shadow-card">
-          {house.name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('')}
-        </div>
+        {logo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={logo}
+            alt={`${house.name} logo`}
+            loading="lazy"
+            className="h-14 w-14 shrink-0 rounded-2xl bg-white object-contain p-1.5 shadow-card ring-1 ring-stone-900/10 dark:bg-white dark:ring-white/10"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        ) : (
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 font-display text-xl font-bold text-white shadow-card">
+            {house.name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('')}
+          </div>
+        )}
         <div className="min-w-0">
           <h3 className="truncate font-display text-lg font-semibold tracking-tight group-hover:text-gold-700 dark:group-hover:text-gold-300">{house.name}</h3>
           <p className="mt-0.5 flex items-center gap-2 text-[13px] text-stone-500 dark:text-stone-400">
