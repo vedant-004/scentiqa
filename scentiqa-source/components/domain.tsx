@@ -181,12 +181,14 @@ export function AccordPyramid({ accords }: { accords: Accord[] }) {
   if (list.length === 0) {
     return <p className="py-6 text-center text-sm text-stone-500 dark:text-stone-400">No accord data yet — be the first to suggest accords for this perfume.</p>;
   }
-  const scored = list.map((a, i) => ({
-    name: a.name,
-    score: typeof a.strength === 'number'
-      ? Math.max(5, Math.min(100, Math.round(a.strength)))
-      : Math.round(100 * (list.length - i) / list.length),
-  }));
+  const scored = list
+    .map((a, i) => ({
+      name: a.name,
+      score: typeof a.strength === 'number'
+        ? Math.max(5, Math.min(100, Math.round(a.strength)))
+        : Math.round(100 * (list.length - i) / list.length),
+    }))
+    .sort((a, b) => b.score - a.score);
   const max = Math.max(...scored.map((s) => s.score), 1);
   return (
     <div>
