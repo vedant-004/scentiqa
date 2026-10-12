@@ -32,6 +32,16 @@ const nextConfig: NextConfig = {
         source: '/sitemap.xml',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=3600' }],
       },
+      // Perfume pages: static content, cache at edge for a day
+      {
+        source: '/perfume/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=86400' }],
+      },
+      // House pages: static content, cache at edge for a day
+      {
+        source: '/house/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=86400' }],
+      },
     ];
   },
 };

@@ -28,10 +28,9 @@ try {
 } catch { /* images not gathered yet — placeholders render instead */ }
 
 export async function generateStaticParams() {
-  // Pre-render the 1,200 most-rated perfumes at build time; the rest of the
+  // Pre-render the 5,000 most-rated perfumes at build time; the rest of the
   // catalog renders on demand and is cached (ISR, revalidate = 3600).
-  // Pre-rendering all 8,598 exceeds Vercel's 45-min build limit.
-  const slugs = await getTopPerfumeSlugs(1200);
+  const slugs = await getTopPerfumeSlugs(5000);
   return slugs.map((slug) => ({ slug }));
 }
 
