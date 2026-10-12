@@ -552,14 +552,59 @@ function HeaderSearch() {
   );
 }
 
-/* ---------- Mobile nav: simple link to the dedicated menu page ---------- */
+/* ---------- Mobile nav: hamburger toggling a full overlay menu ---------- */
 function MobileMenu() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  // Close overlay on navigation
+  useEffect(() => { setOpen(false); }, [pathname]);
+  // Close on Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
+  // Lock body scroll while open
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [open]);
   return (
     <div className="lg:hidden">
-      <Link href="/menu" aria-label="Menu"
+      <button onClick={() => setOpen((v) => !v)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open}
         className="flex h-10 w-10 items-center justify-center rounded-xl text-stone-600 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
-      </Link>
+        {open ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" /></svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
+        )}
+      </button>
+      {open && typeof document !== 'undefined' && createPortal(
+        <div className="fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
+          <div className="absolute inset-y-0 left-0 flex w-[85%] max-w-sm flex-col bg-white shadow-2xl dark:bg-ink-900">
+            <div className="flex items-center justify-between border-b border-stone-200/70 px-5 py-4 dark:border-ink-700/50">
+              <span className="font-display text-lg font-bold text-stone-900 dark:text-white">Menu</span>
+              <button onClick={() => setOpen(false)} aria-label="Close menu"
+                className="flex h-9 w-9 items-center justify-center rounded-xl text-stone-500 transition-all hover:bg-stone-900/5 hover:text-stone-900 active:scale-90 dark:text-stone-400 dark:hover:bg-white/10 dark:hover:text-white">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9"><path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" /></svg>
+              </button>
+            </div>
+            <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
+              {NAV.map((n) => (
+                <Link key={n.href} href={n.href} onClick={() => setOpen(false)}
+                  className="block rounded-xl px-4 py-3 text-[15px] font-semibold text-stone-700 transition-colors hover:bg-stone-900/5 hover:text-stone-900 active:bg-stone-900/10 dark:text-stone-200 dark:hover:bg-white/10 dark:hover:text-white">
+                  {n.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
