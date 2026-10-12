@@ -30,7 +30,7 @@ export async function GET(req: Request) {
   const { data: pool } = await sb.from('perfumes')
     .select('id, slug, name, gender, lowest_price_inr, rating_avg, rating_count, accords, bottle_image_url, description, houses(name)')
     .order('rating_count', { ascending: false })
-    .limit(4000);
+    .limit(15000);
 
   const out: Array<{ id: string; slug: string; name: string; house: string; match: number; explanation: string[]; ratingAvg: number; lowestPriceInr: number | null; isDupe: boolean; bottleImage: string | null }> = [];
 

@@ -79,7 +79,7 @@ async function handleRecommend(req: Request) {
   const all: any[] = [];
   // 9 sequential page fetches were ~10s on the main USP — fetch all pages in parallel.
   const pagePromises: Promise<{ data: any[] | null; error: unknown }>[] = [];
-  for (let from = 0; from < 9000; from += PAGE) {
+  for (let from = 0; from < 20000; from += PAGE) {
     pagePromises.push(
       Promise.resolve(
         sb.from('perfumes')

@@ -456,7 +456,9 @@ export async function getPerfumeOfTheDay(): Promise<Perfume | null> {
   const dayOfYear = Math.floor((now.getTime() - start.getTime()) / 86400000);
   // Use dayOfYear to compute a stable starting offset (spread across the catalog)
   const BATCH = 200;
-  const offset = (dayOfYear * 37) % 8000; // 37 is prime for good distribution
+  const { count: totalCount } = await c.from('perfumes').select('id', { count: 'exact', head: true });
+  const catalogSize = totalCount ?? 8000;
+  const offset = (dayOfYear * 37) % catalogSize; // 37 is prime for good distribution
   const { data: batch } = await c.from('perfumes')
     .select('slug, accords, top_notes, heart_notes, base_notes')
     .not('bottle_image_url', 'is', null)
