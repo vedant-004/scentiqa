@@ -31,6 +31,22 @@ export async function postReview(perfumeId: string, rating: number, title: strin
   return error ? { ok: false, error: error.message } : { ok: true };
 }
 
+export async function updateReview(reviewId: string, rating: number, title: string, body: string): Promise<ActionResult> {
+  const a = await requireAccount();
+  if ('demo' in a) return { ok: false, demo: true };
+  const words = body.trim().split(/\s+/).filter(Boolean).length;
+  if (!(rating > 0) || words < 10) return { ok: false, error: 'Please write at least 10 words and pick a star rating.' };
+  const { error } = await a.sb.from('reviews').update({ rating, title, body }).eq('id', reviewId).eq('user_id', a.userId);
+  return error ? { ok: false, error: error.message } : { ok: true };
+}
+
+export async function deleteReview(reviewId: string): Promise<ActionResult> {
+  const a = await requireAccount();
+  if ('demo' in a) return { ok: false, demo: true };
+  const { error } = await a.sb.from('reviews').delete().eq('id', reviewId).eq('user_id', a.userId);
+  return error ? { ok: false, error: error.message } : { ok: true };
+}
+
 export async function castVote(perfumeId: string, voteType: string, voteValue: string): Promise<ActionResult> {
   const a = await requireAccount();
   if ('demo' in a) return { ok: false, demo: true };
@@ -38,6 +54,14 @@ export async function castVote(perfumeId: string, voteType: string, voteValue: s
     { user_id: a.userId, perfume_id: perfumeId, vote_type: voteType, vote_value: voteValue },
     { onConflict: 'user_id,perfume_id,vote_type' },
   );
+  return error ? { ok: false, error: error.message } : { ok: true };
+}
+
+export async function setWardrobeVisibility(visibility: 'private' | 'public'): Promise<ActionResult> {
+  const a = await requireAccount();
+  if ('demo' in a) return { ok: false, demo: true };
+  if (visibility !== 'private' && visibility !== 'public') return { ok: false, error: 'Invalid visibility.' };
+  const { error } = await a.sb.from('users').update({ wardrobe_visibility: visibility }).eq('id', a.userId);
   return error ? { ok: false, error: error.message } : { ok: true };
 }
 

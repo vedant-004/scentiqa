@@ -3,12 +3,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { cn, inr } from '@/lib/utils';
-import { Button, Chip, Dialog, DialogTitle, Input, Textarea, useToast } from '@/components/ui';
+import { Button, Card, Chip, Dialog, DialogTitle, EmptyState, Input, Textarea, useToast } from '@/components/ui';
 import { useAuth } from '@/components/auth';
-import { StarInput } from '@/components';
-import { castVote, createPriceAlert, postReview, reportPriceError, setWardrobe, suggestDupe } from '@/lib/actions';
+import { StarInput, StarRating } from '@/components';
+import { castVote, createPriceAlert, postReview, updateReview, deleteReview, removeWardrobe, reportPriceError, setWardrobe, suggestDupe } from '@/lib/actions';
 import { getSupabaseBrowser } from '@/lib/supabase';
-import type { Perfume } from '@/lib/types';
+import type { Perfume, Review } from '@/lib/types';
 
 function demoToast(toast: (t: string, tone?: 'ok' | 'err' | 'info') => void) {
   toast('Connect Supabase to enable accounts — this is demo mode', 'info');
@@ -112,32 +112,68 @@ export function SentimentVote({ perfumeId }: { perfumeId: string }) {
 export function WardrobeButtons({ perfumeId, name }: { perfumeId: string; name: string }) {
   const { toast } = useToast();
   const { user, loading } = useAuth();
-  const [shelf, setShelf] = useState<string | null>(null);
-  const add = async (s: string) => {
-    setShelf(s);
-    const r = await setWardrobe(perfumeId, s);
-    if (r.demo) { demoToast(toast); setShelf(null); } else if (r.ok) toast(`“${name}” added to “${s}” shelf`);
+  const [shelves, setShelves] = useState<string[]>([]);
+  const [busy, setBusy] = useState<string | null>(null);
+
+  // Load the user's saved shelves for this perfume so buttons reflect saved state.
+  useEffect(() => {
+    if (loading || !user) { setShelves([]); return; }
+    const sb = getSupabaseBrowser();
+    if (!sb) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const { data } = await sb.from('wardrobe_items').select('shelf').eq('user_id', user.id).eq('perfume_id', perfumeId);
+        if (!cancelled && data) setShelves((data as Array<{ shelf: string }>).map((r) => r.shelf));
+      } catch { /* ignore */ }
+    })();
+    return () => { cancelled = true; };
+  }, [user, loading, perfumeId]);
+
+  const toggle = async (s: string) => {
+    if (busy) return;
+    setBusy(s);
+    if (shelves.includes(s)) {
+      const r = await removeWardrobe(perfumeId, s);
+      setBusy(null);
+      if (r.demo) { demoToast(toast); return; }
+      if (r.ok) {
+        setShelves((prev) => prev.filter((x) => x !== s));
+        toast(`“${name}” removed from your wardrobe`);
+      } else toast(r.error ?? 'Could not update wardrobe', 'err');
+    } else {
+      const r = await setWardrobe(perfumeId, s);
+      setBusy(null);
+      if (r.demo) { demoToast(toast); return; }
+      if (r.ok) {
+        setShelves((prev) => [...prev, s]);
+        toast(`“${name}” added to “${s}” shelf`);
+      } else toast(r.error ?? 'Could not update wardrobe', 'err');
+    }
   };
-  const shelves = [['have', 'Have it'], ['want', 'Want it'], ['had', 'Had it'], ['test', 'Want to test']] as const;
+
+  const shelfDefs = [['have', 'Have it'], ['want', 'Want it'], ['had', 'Had it'], ['test', 'Want to test']] as const;
   if (!loading && !user) return <SignInToVote label="save to your wardrobe" />;
   return (
     <div className="flex flex-wrap gap-2.5" role="group" aria-label="Save to your wardrobe">
-      {shelves.map(([s, label]) => {
-        const isActive = shelf === s;
+      {shelfDefs.map(([s, label]) => {
+        const isActive = shelves.includes(s);
+        const isBusy = busy === s;
         return (
           <button
             key={s}
-            onClick={() => add(s)}
+            onClick={() => toggle(s)}
+            disabled={isBusy}
             aria-pressed={isActive}
             className={cn(
-              'flex items-center gap-1.5 rounded-full border-2 px-5 py-2.5 text-[15px] font-bold transition-all duration-200 active:scale-95',
+              'flex items-center gap-1.5 rounded-full border-2 px-5 py-2.5 text-[15px] font-bold transition-all duration-200 active:scale-95 disabled:opacity-60',
               isActive
                 ? 'border-gold-500 bg-gold-500/15 text-gold-700 shadow-card scale-105 dark:text-gold-300'
                 : 'border-stone-200 bg-white/60 text-stone-700 hover:border-gold-400 hover:shadow-card dark:border-ink-700 dark:bg-white/[0.03] dark:text-stone-200',
             )}
           >
             <span className={cn('text-lg font-black transition-transform duration-200', isActive && 'scale-125')}>{isActive ? '✓' : '+'}</span>
-            {label}
+            {isActive ? `In: ${label}` : label}
           </button>
         );
       })}
@@ -146,31 +182,46 @@ export function WardrobeButtons({ perfumeId, name }: { perfumeId: string; name: 
 }
 
 /* ---------- Review modal ---------- */
-export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perfume: Perfume; triggerLabel?: string }) {
+export function ReviewModal({ perfume, triggerLabel = 'Write a review', editReview, onSaved }: {
+  perfume: Perfume; triggerLabel?: string; editReview?: Review | null; onSaved?: () => void;
+}) {
   const { toast } = useToast();
   const { user, loading: authLoading } = useAuth();
   const [open, setOpen] = useState(false);
-  const [rating, setRating] = useState(0);
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [rating, setRating] = useState(editReview?.rating ?? 0);
+  const [title, setTitle] = useState(editReview?.title ?? '');
+  const [body, setBody] = useState(editReview?.body ?? '');
   const [verified, setVerified] = useState(false);
   const [busy, setBusy] = useState(false);
+  // Reset form when editReview changes
+  useEffect(() => {
+    if (editReview) { setRating(editReview.rating); setTitle(editReview.title); setBody(editReview.body); setOpen(true); }
+  }, [editReview]);
   const wordCount = body.trim().split(/\s+/).filter(Boolean).length;
-  const valid = rating > 0 && wordCount >= 10;
+  const titleCount = title.length;
+  const valid = rating > 0 && wordCount >= 10 && titleCount <= 80 && body.length <= 2000;
+  const showErrors = open && !authLoading && !!user;
   const submit = async () => {
     if (!valid) return;
     setBusy(true);
-    const r = await postReview(perfume.id, rating, title.trim() || `${rating}-star review`, body.trim());
+    const r = editReview
+      ? await updateReview(editReview.id, rating, title.trim() || `${rating}-star review`, body.trim())
+      : await postReview(perfume.id, rating, title.trim() || `${rating}-star review`, body.trim());
     setBusy(false);
     if (r.demo) { demoToast(toast); return; }
-    if (r.ok) { toast('Review posted — thank you!'); setOpen(false); setRating(0); setTitle(''); setBody(''); }
-    else toast(r.error ?? 'Could not post review', 'err');
+    if (r.ok) {
+      toast(editReview ? 'Review updated.' : 'Review posted — thank you!');
+      setOpen(false);
+      if (!editReview) { setRating(0); setTitle(''); setBody(''); }
+      onSaved?.();
+    }
+    else toast(r.error ?? 'Could not save review', 'err');
   };
   return (
     <>
       <Button onClick={() => setOpen(true)}>{triggerLabel}</Button>
       <Dialog open={open} onClose={() => setOpen(false)} labelledBy="review-title">
-        <DialogTitle id="review-title">Review {perfume.name}</DialogTitle>
+        <DialogTitle id="review-title">{editReview ? 'Edit your review' : `Review ${perfume.name}`}</DialogTitle>
         {authLoading ? (
           <p className="py-8 text-center text-sm text-stone-500">Checking sign-in…</p>
         ) : !user ? (
@@ -180,21 +231,125 @@ export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perf
           </div>
         ) : (
         <div className="space-y-4">
-          <div><p className="mb-2 text-sm font-semibold">Your rating</p><StarInput value={rating} onChange={setRating} /></div>
-          <div><p className="mb-2 text-sm font-semibold">Headline <span className="font-normal text-stone-400">(optional)</span></p>
-            <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Sum it up in a line" maxLength={80} /></div>
-          <div><p className="mb-2 text-sm font-semibold">Your review <span className="font-normal text-stone-400">(min 10 words)</span></p>
-            <Textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="How does it perform in Indian weather? How long does it last on you?" maxLength={2000} />
-            <p className={cn('mt-1 text-right text-xs', wordCount >= 10 ? 'text-emerald-600' : 'text-stone-400')}>{wordCount}/10 words min</p></div>
+          <div>
+            <p className="mb-2 text-sm font-semibold" id="review-rating-label">Your rating</p>
+            <StarInput value={rating} onChange={setRating} />
+            {showErrors && rating === 0 && <p className="mt-1 text-xs text-red-600" role="alert">Pick a star rating.</p>}
+          </div>
+          <div>
+            <label htmlFor="review-headline" className="mb-2 block text-sm font-semibold">Headline <span className="font-normal text-stone-400">(optional)</span></label>
+            <Input id="review-headline" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Sum it up in a line" maxLength={80} aria-describedby="review-headline-count" />
+            <p id="review-headline-count" className="mt-1 text-right text-xs text-stone-400">{titleCount}/80</p>
+          </div>
+          <div>
+            <label htmlFor="review-body" className="mb-2 block text-sm font-semibold">Your review <span className="font-normal text-stone-400">(min 10 words)</span></label>
+            <Textarea id="review-body" value={body} onChange={(e) => setBody(e.target.value)} placeholder="How does it perform in Indian weather? How long does it last on you?" maxLength={2000} aria-describedby="review-body-count" aria-invalid={wordCount < 10} />
+            <p id="review-body-count" className={cn('mt-1 text-right text-xs', wordCount >= 10 ? 'text-emerald-600' : 'text-stone-400')}>{wordCount}/10 words min · {body.length}/2000</p>
+            {showErrors && wordCount < 10 && <p className="mt-1 text-xs text-red-600" role="alert">Tell us a bit more (at least 10 words).</p>}
+          </div>
+          {!editReview && (
           <label className="flex cursor-pointer items-center gap-2.5 text-sm">
             <input type="checkbox" checked={verified} onChange={(e) => setVerified(e.target.checked)} className="h-4 w-4 accent-amber-600" />
             I bought this in India <span className="text-stone-400">(verified purchase badge)</span>
           </label>
-          <Button onClick={submit} disabled={!valid || busy} className="w-full">{busy ? 'Posting…' : 'Post review'}</Button>
+          )}
+          <Button onClick={submit} disabled={!valid || busy} className="w-full" aria-disabled={!valid || busy}>
+            {busy ? 'Saving…' : editReview ? 'Save changes' : 'Post review'}
+          </Button>
+          {showErrors && !valid && (
+            <p className="text-center text-xs text-stone-500">
+              {!rating ? 'Pick a star rating. ' : ''}{wordCount < 10 ? 'Write at least 10 words.' : ''}
+            </p>
+          )}
         </div>
         )}
       </Dialog>
     </>
+  );
+}
+
+/* ---------- Review list with edit/delete ---------- */
+export function ReviewList({ perfume, initialReviews }: { perfume: Perfume; initialReviews: Review[] }) {
+  const { toast } = useToast();
+  const { user } = useAuth();
+  const [reviews, setReviews] = useState<Review[]>(initialReviews);
+  const [editing, setEditing] = useState<Review | null>(null);
+  const [deleting, setDeleting] = useState<Review | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  // Sort: own review first, then newest
+  const sorted = [...reviews].sort((a, b) => {
+    const aOwn = user && a.userId === user.id ? 0 : 1;
+    const bOwn = user && b.userId === user.id ? 0 : 1;
+    if (aOwn !== bOwn) return aOwn - bOwn;
+    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  });
+
+  const handleDelete = async () => {
+    if (!deleting) return;
+    setBusy(true);
+    const r = await deleteReview(deleting.id);
+    setBusy(false);
+    setDeleting(null);
+    if (r.ok) {
+      setReviews((rs) => rs.filter((x) => x.id !== deleting.id));
+      toast('Review deleted.');
+    } else {
+      toast(r.error ?? 'Could not delete review', 'err');
+    }
+  };
+
+  if (reviews.length === 0) {
+    return (
+      <EmptyState icon="✍️" title="No reviews yet" body="Be the first to review this fragrance for the Indian community."
+        action={<ReviewModal perfume={perfume} triggerLabel="Write the first review" onSaved={() => window.location.reload()} />} />
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      {sorted.map((r) => {
+        const isOwn = user && r.userId === user.id;
+        return (
+          <Card key={r.id} className="p-5">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <StarRating value={r.rating} size={14} />
+                {isOwn && <span className="rounded-full bg-gold-600/15 px-2.5 py-0.5 text-[10px] font-bold uppercase text-gold-700 dark:text-gold-300">Your review</span>}
+              </div>
+              {r.verifiedPurchase && <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-bold uppercase text-emerald-600 dark:text-emerald-400">✓ Verified purchase</span>}
+            </div>
+            <h3 className="mt-2 font-display text-lg font-semibold">{r.title}</h3>
+            <p className="mt-1.5 text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">{r.body}</p>
+            <div className="mt-3 flex items-center justify-between text-[13px]">
+              <Link href={`/member/${r.username}`} className="font-semibold text-gold-700 hover:underline dark:text-gold-300">@{r.username}</Link>
+              <div className="flex items-center gap-3">
+                <span className="text-stone-400">Helpful ({r.helpfulVotes})</span>
+                {isOwn && (
+                  <>
+                    <button onClick={() => setEditing(r)} className="font-semibold text-stone-500 hover:text-gold-700 dark:text-stone-400 dark:hover:text-gold-300">Edit</button>
+                    <button onClick={() => setDeleting(r)} className="font-semibold text-stone-500 hover:text-red-600 dark:text-stone-400 dark:hover:text-red-400">Delete</button>
+                  </>
+                )}
+              </div>
+            </div>
+          </Card>
+        );
+      })}
+      {/* Edit modal */}
+      {editing && (
+        <ReviewModal perfume={perfume} editReview={editing} onSaved={() => { setEditing(null); window.location.reload(); }} />
+      )}
+      {/* Delete confirm */}
+      <Dialog open={!!deleting} onClose={() => setDeleting(null)} labelledBy="delete-review-title">
+        <DialogTitle id="delete-review-title">Delete this review?</DialogTitle>
+        <p className="text-sm text-stone-600 dark:text-stone-300">This can&rsquo;t be undone.</p>
+        <div className="mt-6 flex gap-3">
+          <Button variant="outline" onClick={() => setDeleting(null)} className="flex-1">Cancel</Button>
+          <Button onClick={handleDelete} disabled={busy} className="flex-1 bg-red-600 hover:bg-red-700">{busy ? 'Deleting…' : 'Delete'}</Button>
+        </div>
+      </Dialog>
+    </div>
   );
 }
 

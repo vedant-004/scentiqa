@@ -657,20 +657,20 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
 
 /* ---------- Fragrantica-style stats strip ---------- */
 function StatsStrip({ stats }: { stats: { perfumes: number; houses: number; reviews: number; members: number } }) {
-  // Never display a "0" stat — a zero count reads as a dead site.
+  // Labels always render; unavailable counts show "—" (never a bare number without a label).
   const items = [
     { label: 'Perfumes', value: stats.perfumes, dot: 'bg-amber-400' },
     { label: 'Houses', value: stats.houses, dot: 'bg-gold-500' },
     { label: 'Reviews', value: stats.reviews, dot: 'bg-sky-400' },
     { label: 'Members', value: stats.members, dot: 'bg-emerald-400' },
-  ].filter((s) => s.value > 0);
+  ];
   return (
     <div className="border-t border-stone-200/50 bg-stone-900/[0.02] dark:border-ink-700/40 dark:bg-black/30">
       <div className="mx-auto flex max-w-7xl items-center gap-4 overflow-x-auto px-4 py-1.5 text-[11px] font-medium text-stone-500 sm:gap-5 sm:px-6 dark:text-stone-400">
         {items.map((s) => (
           <span key={s.label} className="flex shrink-0 items-center gap-1.5">
             <span className={cn('h-2 w-2 rounded-full', s.dot)} aria-hidden="true" />
-            {s.label}: <strong className="font-bold text-stone-700 dark:text-stone-100">{s.value.toLocaleString('en-IN')}</strong>
+            {s.label}: <strong className="font-bold text-stone-700 dark:text-stone-100">{s.value > 0 ? s.value.toLocaleString('en-IN') : '—'}</strong>
           </span>
         ))}
         <span className="ml-auto hidden shrink-0 items-center gap-1.5 sm:flex">
@@ -709,7 +709,7 @@ export function MobileBottomNav() {
           </span>
           AI Finder
         </Link>
-        {item('/member/arjun_sniffs', 'Wardrobe', 'M4 7h16M4 7v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2', pathname.startsWith('/member'))}
+        {item('/wardrobe', 'Wardrobe', 'M4 7h16M4 7v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2', pathname.startsWith('/wardrobe'))}
         {item(user ? '/account' : '/login', user ? 'Account' : 'Profile', 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 8a7 7 0 0 1 14 0', pathname.startsWith('/account') || (!user && pathname.startsWith('/login')))}
       </div>
     </nav>
@@ -748,9 +748,9 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
             [stats.reviews, 'community reviews'],
             [stats.members, 'members'],
             [stats.houses, 'houses tracked'],
-          ].filter(([v]) => Number(v) > 0).map(([v, l]) => (
+          ].map(([v, l]) => (
             <div key={l as string} className="text-center">
-              <p className="font-display text-2xl font-bold text-stone-900 dark:text-white">{Number(v).toLocaleString('en-IN')}</p>
+              <p className="font-display text-2xl font-bold text-stone-900 dark:text-white">{Number(v) > 0 ? Number(v).toLocaleString('en-IN') : '—'}</p>
               <p className="text-xs font-medium text-stone-500 dark:text-stone-400">{l}</p>
             </div>
           ))}
