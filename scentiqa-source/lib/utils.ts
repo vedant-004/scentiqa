@@ -1,5 +1,5 @@
 export function inr(n: number | null | undefined): string {
-  if (n === null || n === undefined) return '—';
+  if (n === null || n === undefined || !Number.isFinite(n)) return '—';
   return '₹' + n.toLocaleString('en-IN');
 }
 

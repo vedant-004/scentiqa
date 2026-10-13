@@ -55,9 +55,8 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
   const p = await getPerfume(slug);
   if (!p) notFound();
 
-  const bestDupePrice = p.dupes.length
-    ? Math.min(...p.dupes.map((d) => d.lowestPrice?.priceInr ?? Infinity).filter(Number.isFinite))
-    : null;
+  const dupePrices = p.dupes.map((d) => d.lowestPrice?.priceInr ?? Infinity).filter(Number.isFinite);
+  const bestDupePrice = dupePrices.length ? Math.min(...dupePrices) : null;
   const labDupes = p.dupes.filter((d) => d.testedBy === 'lab');
   const communityDupes = p.dupes.filter((d) => d.testedBy !== 'lab');
 
@@ -287,7 +286,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             {bestDupePrice !== null && p.lowestPriceInr && (
               <div className="mt-4 rounded-xl bg-emerald-500/10 p-3.5 text-sm">
                 <p className="font-bold text-emerald-600 dark:text-emerald-400">💰 Dupe route saves {inr(p.lowestPriceInr - bestDupePrice)}</p>
-                <p className="mt-0.5 text-xs text-stone-500">Best lab-tested alternative from {inr(bestDupePrice)}</p>
+                <p className="mt-0.5 text-xs text-stone-500">Best alternative from {inr(bestDupePrice)}</p>
               </div>
             )}
           </Card>
