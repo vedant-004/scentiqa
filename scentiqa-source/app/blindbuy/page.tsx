@@ -4,7 +4,7 @@ import { Card, SectionHeading } from '@/components';
 import { computeBlindBuyScores } from '@/lib/blindbuy';
 
 export const metadata = {
-  title: 'Safest Blind Buys Under ₹2,000 | Scentiqa',
+  title: 'Safest Blind Buys Under ₹2,000',
   description: 'Ranked blind-buy safety scores for affordable Indian fragrances — buy without smelling, with confidence.',
 };
 

@@ -7,7 +7,7 @@ import { Breadcrumbs, Card, SectionHeading } from '@/components';
 export const revalidate = 86400;
 
 export const metadata = {
-  title: 'Designer Perfume Dupe Guides in India — Scentiqa',
+  title: 'Designer Perfume Dupe Guides in India',
   description: 'Every Scentiqa dupe guide: community-suggested affordable alternatives to expensive designer and niche perfumes, with estimated similarity scores and INR prices for India.',
   alternates: { canonical: `${SITE_URL}/dupes` },
 };

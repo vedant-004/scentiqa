@@ -13,7 +13,7 @@ import { PerfumeCard } from '@/components/domain';
 export const revalidate = 86400;
 
 export const metadata = {
-  title: 'Best Perfumes in India 2026: Monsoon, Office & Budget Picks — Scentiqa',
+  title: 'Best Perfumes in India 2026: Monsoon, Office & Budget Picks',
   description: 'Data-driven best perfume lists for India: top monsoon performers, best perfumes under ₹1,000, office scents for Indian weather and longest-lasting in heat. Real prices, ratings and climate scores.',
   alternates: { canonical: `${SITE_URL}/best-perfumes` },
 };

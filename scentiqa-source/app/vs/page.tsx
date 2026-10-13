@@ -8,7 +8,7 @@ import { Breadcrumbs, Card, SectionHeading } from '@/components';
 export const revalidate = 86400;
 
 export const metadata = {
-  title: 'Perfume Comparisons: Head-to-Head in India — Scentiqa',
+  title: 'Perfume Comparisons: Head-to-Head in India',
   description: 'Side-by-side perfume comparisons with INR prices, ratings, accords and Indian-heat performance. Aventus vs Club de Nuit, Sauvage vs Bleu de Chanel and more.',
   alternates: { canonical: `${SITE_URL}/vs` },
 };

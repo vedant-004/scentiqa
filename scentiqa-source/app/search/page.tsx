@@ -23,13 +23,13 @@ export async function generateMetadata({
   const query = (q ?? '').trim();
   if (!query) {
     return {
-      title: 'Search perfumes | Scentiqa',
+      title: 'Search perfumes',
       description:
         'Search thousands of perfumes by name, house or note — with ratings, verified INR prices and Indian dupe alternatives.',
     };
   }
   return {
-    title: `Search: ${query} | Scentiqa`,
+    title: `Search: ${query}`,
     description: `Perfume search results for "${query}" — ratings, verified INR prices and Indian dupe alternatives on Scentiqa.`,
   };
 }

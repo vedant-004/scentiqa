@@ -22,12 +22,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ 'designer-slug': string }> }) {
   const { 'designer-slug': slug } = await params;
   const p = await getPerfume(slug);
-  if (!p || p.dupes.length < 2) return { title: 'Perfume dupe guides in India — Scentiqa' };
+  if (!p || p.dupes.length < 2) return { title: 'Perfume dupe guides in India' };
   const cheapest = p.dupes.map((d) => d.dupe.lowestPriceInr).filter((v): v is number => v !== null);
   const from = cheapest.length > 0 ? ` from ${inr(Math.min(...cheapest))}` : '';
   const url = `${SITE_URL}/dupes/${slug}`;
   return {
-    title: `Best ${p.name} Dupes in India (${p.dupes.length} Alternatives${from}) — Scentiqa`,
+    title: `Best ${p.name} Dupes in India (${p.dupes.length} Alternatives${from})`,
     description: `${p.name} by ${p.houseInfo.name} too pricey? Compare ${p.dupes.length} community-suggested dupes and alternatives available in India, with estimated similarity scores and INR prices.`,
     alternates: { canonical: url },
     openGraph: { title: `Best ${p.name} Dupes in India — Scentiqa`, url, type: 'article' },

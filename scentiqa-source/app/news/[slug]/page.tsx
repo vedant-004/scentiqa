@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a = await getArticle(slug);
   if (!a) return { title: 'Article not found' };
   return {
-    title: `${a.title} | Scentiqa`,
+    title: a.title,
     description: a.excerpt ?? a.body.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160),
   };
 }

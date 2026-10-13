@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components';
 export const revalidate = 3600;
 
 export const metadata = {
-  title: 'Top members | Scentiqa',
+  title: 'Top members',
   description: 'The most active reviewers in the Scentiqa community.',
 };
 

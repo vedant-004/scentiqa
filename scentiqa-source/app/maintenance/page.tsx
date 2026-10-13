@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Temporarily offline — Scentiqa',
+  title: 'Temporarily offline',
   description: 'Scentiqa is taking a short break and will be back soon.',
   robots: { index: false, follow: false },
 };

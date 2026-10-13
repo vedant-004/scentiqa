@@ -18,12 +18,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ comparison: string }> }) {
   const { comparison } = await params;
   const pair = parseVsParam(comparison);
-  if (!pair) return { title: 'Perfume comparisons — Scentiqa' };
+  if (!pair) return { title: 'Perfume comparisons' };
   const [a, b] = await Promise.all([getPerfume(pair.a), getPerfume(pair.b)]);
-  if (!a || !b) return { title: 'Perfume comparison — Scentiqa' };
+  if (!a || !b) return { title: 'Perfume comparison' };
   const url = `${SITE_URL}/vs/${comparison}`;
   return {
-    title: `${a.name} vs ${b.name}: Which Should You Buy in India? — Scentiqa`,
+    title: `${a.name} vs ${b.name}: Which Should You Buy in India?`,
     description: `Side-by-side: ${a.name} by ${a.house} vs ${b.name} by ${b.house}. Compare INR prices, community ratings, accords, notes and Indian-heat performance before you buy.`,
     alternates: { canonical: url },
     openGraph: { title: `${a.name} vs ${b.name} — Scentiqa`, url, type: 'article' },

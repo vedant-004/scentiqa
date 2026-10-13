@@ -4,7 +4,7 @@ import { Card, SectionHeading } from '@/components';
 import { heatVerdict } from '@/lib/climate';
 
 export const metadata = {
-  title: 'India Heat Performance Lab | Scentiqa',
+  title: 'India Heat Performance Lab',
   description: 'Which perfumes survive Indian summer? Community-tested heat, humidity and sweat performance, ranked.',
 };
 
