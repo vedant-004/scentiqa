@@ -76,7 +76,7 @@
  },
  {
   "slug": "lily-of-the-valley",
-  "name": "Lily-of-the-valley",
+  "name": "Lily Of The Valley",
   "category": "white_floral"
  },
  {
@@ -106,7 +106,7 @@
  },
  {
   "slug": "ylang-ylang",
-  "name": "Ylang-ylang",
+  "name": "Ylang Ylang",
   "category": "white_floral"
  },
  {
@@ -120,8 +120,8 @@
   "category": "floral"
  },
  {
-  "slug": "oakmoss",
-  "name": "Oakmoss",
+  "slug": "oak-moss",
+  "name": "Oak Moss",
   "category": "earthy"
  },
  {
@@ -680,11 +680,6 @@
   "category": "spicy"
  },
  {
-  "slug": "oak-moss",
-  "name": "Oak Moss",
-  "category": "earthy"
- },
- {
   "slug": "fig",
   "name": "Fig",
   "category": "fruity"
@@ -880,16 +875,6 @@
   "category": "herbal"
  },
  {
-  "slug": "sandalwood",
-  "name": "Sandalwood",
-  "category": "woody"
- },
- {
-  "slug": "myrrh",
-  "name": "Myrrh",
-  "category": "oriental"
- },
- {
   "slug": "may-rose",
   "name": "May Rose",
   "category": "floral"
@@ -1075,11 +1060,6 @@
   "category": "citrus"
  },
  {
-  "slug": "vanilla",
-  "name": "Vanilla",
-  "category": "gourmand"
- },
- {
   "slug": "sichuan-pepper",
   "name": "Sichuan Pepper",
   "category": "spicy"
@@ -1252,11 +1232,6 @@
  {
   "slug": "vanilla-orchid",
   "name": "Vanilla Orchid",
-  "category": "floral"
- },
- {
-  "slug": "hyacinth",
-  "name": "Hyacinth",
   "category": "floral"
  },
  {
@@ -1433,11 +1408,6 @@
   "slug": "cranberry",
   "name": "Cranberry",
   "category": "fruity"
- },
- {
-  "slug": "lily-of-the-valley",
-  "name": "Lily Of The Valley",
-  "category": "white_floral"
  },
  {
   "slug": "virginian-cedar",
@@ -1775,11 +1745,6 @@
   "category": "herbal"
  },
  {
-  "slug": "rhubarb",
-  "name": "Rhubarb",
-  "category": "green"
- },
- {
   "slug": "black-vanilla-husk",
   "name": "Black Vanilla Husk",
   "category": "gourmand"
@@ -1823,11 +1788,6 @@
   "slug": "calone",
   "name": "Calone",
   "category": "aquatic"
- },
- {
-  "slug": "ylang-ylang",
-  "name": "Ylang Ylang",
-  "category": "white_floral"
  },
  {
   "slug": "red-rose",
@@ -1988,11 +1948,6 @@
   "slug": "tunisian-orange-blossom",
   "name": "Tunisian Orange Blossom",
   "category": "white_floral"
- },
- {
-  "slug": "cardamom",
-  "name": "Cardamom",
-  "category": "spicy"
  },
  {
   "slug": "night-blooming-jasmine",

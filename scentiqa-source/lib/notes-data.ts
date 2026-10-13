@@ -14,6 +14,52 @@ export interface NoteIndexEntry {
 
 const norm = (s: string) => s.toLowerCase().trim();
 
+/**
+ * Canonical note aliases: variant spellings that refer to the same note.
+ * Key = normalized variant, value = canonical normalized key.
+ * Prevents duplicate note pages (Vanilla/Vanille, Oakmoss/Oak Moss, ...).
+ */
+const NOTE_ALIASES: Record<string, string> = {
+  'vanille': 'vanilla',
+  'oak moss': 'oakmoss',
+  'ylang ylang': 'ylang-ylang',
+  'lily of the valley': 'lily-of-the-valley',
+  'tonka bean': 'tonka',
+  'tonka beans': 'tonka',
+  'cashmeran': 'cashmere wood',
+  'cashmere woods': 'cashmere wood',
+  'agarwood (oud)': 'oud',
+  'agarwood': 'oud',
+  'oudh': 'oud',
+  'cedarwood': 'cedar',
+  'virginian cedar': 'cedar',
+  'virginia cedar': 'cedar',
+  'may rose': 'rose de mai',
+  'rose de mai': 'rose de mai',
+  'vetyver': 'vetiver',
+  'civet': 'civet',
+  'civetta': 'civet',
+  'cloves': 'clove',
+  'anis': 'anise',
+  'anisic': 'anise',
+  'woody notes': 'woody',
+  'woodsy notes': 'woody',
+  'floral notes': 'floral',
+  'fruity notes': 'fruity',
+  'fruits': 'fruity',
+  'spicy notes': 'spicy',
+  'spices': 'spicy',
+  'water notes': 'aquatic',
+  'watery notes': 'aquatic',
+  'sea water': 'sea notes',
+  'musk musk': 'musk',
+};
+
+const canonNoteKey = (raw: string): string => {
+  const k = norm(raw);
+  return NOTE_ALIASES[k] ?? k;
+};
+
 export interface NoteIndexData {
   index: Map<string, NoteIndexEntry>;
   /** perfume id -> set of normalized note keys used anywhere in its pyramid */
@@ -48,7 +94,7 @@ export const getNoteIndex = cache(async (): Promise<NoteIndexData> => {
       const push = (notes: unknown, bucket: keyof NoteIndexEntry) => {
         for (const n of (notes as string[]) ?? []) {
           const raw = String(n).trim();
-          const k = norm(raw);
+          const k = canonNoteKey(raw);
           if (!k) continue;
           if (!data.displayNames.has(k)) data.displayNames.set(k, raw);
           entry(k)[bucket].push(ref);

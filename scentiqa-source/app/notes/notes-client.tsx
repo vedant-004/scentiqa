@@ -26,7 +26,7 @@ export function NotesIndexClient({ notes, catLabel, images }: { notes: Note[]; c
         />
         <div className="flex flex-wrap gap-1.5">
           {cats.map((c) => (
-            <button key={c} onClick={() => setCat(c)}
+            <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c}
               className={`rounded-full px-3 py-1.5 text-xs font-bold transition ${cat === c ? 'bg-stone-900 text-white dark:bg-white dark:text-stone-900' : 'bg-stone-100 text-stone-500 hover:bg-stone-200 dark:bg-white/[0.06] dark:text-stone-400'}`}>
               {c === 'all' ? 'All' : (catLabel[c] ?? c)}
             </button>
