@@ -171,6 +171,12 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
     return () => { if (timer.current) clearTimeout(timer.current); abortRef.current?.abort(); };
   }, [q]);
 
+  // Prefetch the top suggestions so tapping one navigates instantly instead
+  // of waiting on a cold ISR render + Supabase round trips.
+  useEffect(() => {
+    for (const p of results.slice(0, 3)) router.prefetch(`/perfume/${p.slug}`);
+  }, [results, router]);
+
   // Position the portal menu under the input; re-position on scroll/resize.
   useEffect(() => {
     if (!showPanel) { setMenuPos(null); return; }
@@ -224,14 +230,17 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
   };
 
   const pick = (slug: string, name: string) => {
-    if (onPick) { onPick(slug, name); setQ(''); setOpen(false); return; }
     try {
       const r = [name, ...recent.filter((x) => x !== name)].slice(0, 5);
       localStorage.setItem(recentKey, JSON.stringify(r));
       setRecent(r);
     } catch { /* noop */ }
-    // Don't call setOpen(false) here — it can unmount the button before
-    // the tap registers on mobile. The pathname effect below closes it.
+    // onPick closes the wrapping overlay (e.g. header search on mobile).
+    // Navigation must still happen — previously this branch returned early
+    // and the tap appeared to do nothing.
+    if (onPick) onPick(slug, name);
+    // Don't call the inner setOpen(false) here — it can unmount the button
+    // before the tap registers on mobile. The pathname effect closes the menu.
     setQ('');
     router.push(`/perfume/${slug}`);
   };

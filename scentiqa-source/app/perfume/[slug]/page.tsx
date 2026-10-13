@@ -14,8 +14,9 @@ import {
   StickyCTA, SuggestDupe, WardrobeButtons, ClimateSection, BlindBuyBadge,
 } from './perfume-client';
 
-// Revalidate hourly so new catalog data (notes, accords, prices) appears without a redeploy.
-export const revalidate = 3600;
+// Revalidate daily so new catalog data (notes, accords, prices) appears without
+// a redeploy, while keeping ISR write volume low.
+export const revalidate = 86400;
 import { AIPredictions } from './ai-predictions';
 
 // Note images (Wikimedia Commons). Absent file or missing entries fall back
