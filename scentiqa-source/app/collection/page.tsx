@@ -69,7 +69,7 @@ export default function CollectionPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
-      <SectionHeading kicker="Wardrobe analysis" title="Complete your collection" />
+      <SectionHeading kicker="Wardrobe analysis" title="Complete your collection" level={1} />
       <p className="mb-8 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
         Tell us what you own. We map your wardrobe&apos;s scent families from real accord data
         and find the missing pieces — complementary fragrances for every occasion.

@@ -577,8 +577,10 @@ export function DupeCard({ entry, originalName }: { entry: DupeEntry; originalNa
           <span className="text-lg font-bold">{lowestPrice ? inr(lowestPrice.priceInr) : '—'}</span>
           {lowestPrice && <span className="text-xs text-stone-400">at {lowestPrice.seller?.name}</span>}
           <span className="mx-1 hidden h-4 w-px bg-stone-200 dark:bg-ink-700 sm:block" />
-          <Link href={`/compare?ids=${entry.originalSlug},${dupe.slug}`}><Button size="sm" variant="outline">Compare</Button></Link>
-          <Link href={`/perfume/${dupe.slug}`}><Button size="sm" variant="ghost">Details →</Button></Link>
+          <Link href={`/compare?ids=${entry.originalSlug},${dupe.slug}`}
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-stone-300 bg-transparent px-3 text-[13px] font-semibold tracking-tight text-stone-800 transition-all duration-200 select-none hover:border-gold-600 hover:text-gold-700 active:scale-[0.98] dark:border-ink-700 dark:text-stone-200 dark:hover:border-gold-400 dark:hover:text-gold-300">Compare</Link>
+          <Link href={`/perfume/${dupe.slug}`}
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg px-3 text-[13px] font-semibold tracking-tight text-stone-600 transition-all duration-200 select-none hover:bg-stone-900/5 hover:text-stone-900 active:scale-[0.98] dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">Details →</Link>
         </div>
       </div>
     </Card>
@@ -626,7 +628,7 @@ export function PriceTable({ prices }: { prices: PriceEntry[] }) {
           </div>
           {pr.url ? (
             <a href={pr.url} target="_blank" rel="noopener noreferrer"
-              className="inline-flex h-8 items-center justify-center gap-2 rounded-lg bg-gold-600 px-3 text-[13px] font-semibold tracking-tight text-white shadow-sm transition-all duration-200 select-none hover:bg-gold-700 hover:shadow-lift active:scale-[0.98] dark:bg-gold-500 dark:text-ink-950 dark:hover:bg-gold-400">
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-gold-600 px-3 text-[13px] font-semibold tracking-tight text-stone-950 shadow-sm transition-all duration-200 select-none hover:bg-gold-700 hover:shadow-lift active:scale-[0.98] dark:bg-gold-500 dark:text-ink-950 dark:hover:bg-gold-400">
               {pr.inStock ? 'Buy' : 'View'}
             </a>
           ) : (
@@ -691,10 +693,15 @@ export function NewsletterSignup({ source, compact = false }: { source: 'footer'
   const [email, setEmail] = useState('');
   const [state, setState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
   const [msg, setMsg] = useState('');
+  const [touched, setTouched] = useState(false);
+  const inputId = `newsletter-email-${source}`;
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  const showInlineError = touched && email.trim().length > 0 && !emailValid;
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (state === 'sending' || state === 'done') return;
+    setTouched(true);
+    if (!emailValid || state === 'sending' || state === 'done') return;
     setState('sending'); setMsg('');
     try {
       const r = await fetch('/api/newsletter', {
@@ -729,12 +736,25 @@ export function NewsletterSignup({ source, compact = false }: { source: 'footer'
             ✓ {msg}
           </p>
         ) : (
-          <form onSubmit={submit} className={`flex gap-2 ${compact ? 'mt-3' : 'mx-auto mt-6 max-w-md'}`}>
-            <input
-              type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com" disabled={state === 'sending'}
-              className="min-w-0 flex-1 rounded-xl border border-stone-300/80 bg-white/90 px-4 py-2.5 text-[15px] outline-none focus:border-gold-600 disabled:opacity-60 dark:border-ink-700 dark:bg-ink-800/80"
-            />
+          <form onSubmit={submit} className={`flex gap-2 ${compact ? 'mt-3' : 'mx-auto mt-6 max-w-md'}`} noValidate>
+            <div className="min-w-0 flex-1">
+              <label htmlFor={inputId} className="mb-1 block text-left text-xs font-semibold text-stone-500 dark:text-stone-400">Email address</label>
+              <input
+                id={inputId} type="email" value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onBlur={() => setTouched(true)}
+                placeholder="you@example.com" disabled={state === 'sending'}
+                maxLength={254}
+                aria-invalid={showInlineError}
+                aria-describedby={showInlineError ? `${inputId}-error` : undefined}
+                className="min-w-0 w-full flex-1 rounded-xl border border-stone-300/80 bg-white/90 px-4 py-2.5 text-[15px] outline-none focus:border-gold-600 disabled:opacity-60 dark:border-ink-700 dark:bg-ink-800/80"
+              />
+              {showInlineError && (
+                <p id={`${inputId}-error`} role="alert" className="mt-1 text-left text-xs font-semibold text-red-600 dark:text-red-400">
+                  Enter a valid email, e.g. you@example.com.
+                </p>
+              )}
+            </div>
             <Button type="submit" disabled={state === 'sending'} size={compact ? 'sm' : undefined}>
               {state === 'sending' ? 'Joining…' : 'Join free'}
             </Button>
@@ -813,7 +833,11 @@ export function CountdownTimer({ endsAt }: { endsAt: string }) {
     </div>
   );
   if (diff === 0) return <p className="text-sm font-semibold text-stone-500">Ended</p>;
-  return <div className="flex gap-2">{cell(d, 'days')}{cell(h, 'hrs')}{cell(m, 'min')}{cell(s, 'sec')}</div>;
+  return (
+    <div className="flex gap-2" role="timer" aria-label={`Time remaining: ${d} days, ${h} hours, ${m} minutes, ${s} seconds`}>
+      {cell(d, 'days')}{cell(h, 'hrs')}{cell(m, 'min')}{cell(s, 'sec')}
+    </div>
+  );
 }
 
 /* ---------- ThemeToggle ---------- */

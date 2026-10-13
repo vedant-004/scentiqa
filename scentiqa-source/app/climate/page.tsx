@@ -34,7 +34,7 @@ export default async function ClimatePage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <SectionHeading kicker="Climate Performance Lab" title="Will it survive Indian summer?" />
+      <SectionHeading kicker="Climate Performance Lab" title="Will it survive Indian summer?" level={1} />
       <p className="mt-3 max-w-2xl text-sm text-stone-500 dark:text-stone-400">
         Real wear tests from Indian users — temperature, humidity, hours lasted, sweat survival.
         No Western site can collect this data. Log your own tests from any perfume page.

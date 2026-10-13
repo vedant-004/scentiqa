@@ -69,7 +69,7 @@ export default function BattlesPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <SectionHeading kicker="Scent Battles" title="Head-to-head tournaments" />
+      <SectionHeading kicker="Scent Battles" title="Head-to-head tournaments" level={1} />
       {voteError && (
         <div className="mb-4 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700 dark:border-red-900 dark:bg-red-950/40 dark:text-red-300">
           {voteError}

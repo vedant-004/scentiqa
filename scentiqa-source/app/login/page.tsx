@@ -65,7 +65,7 @@ export default function LoginPage() {
   return (
     <div className="mx-auto max-w-md px-4 pt-10 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Sign in' }]} />
-      <SectionHeading kicker="Members" title="Sign in" />
+      <SectionHeading kicker="Members" title="Sign in" level={1} />
       <Card className="p-6 sm:p-8">
         {sent ? (
           <div className="text-center">

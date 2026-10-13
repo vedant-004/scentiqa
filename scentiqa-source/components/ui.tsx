@@ -10,7 +10,7 @@ export function Button({
   variant = 'primary', size = 'md', className, ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: BtnVariant; size?: BtnSize }) {
   const v: Record<BtnVariant, string> = {
-    primary: 'bg-gold-600 text-white shadow-sm hover:bg-gold-700 hover:shadow-lift active:scale-[0.98] dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-ink-950',
+    primary: 'bg-gold-600 text-stone-950 shadow-sm hover:bg-gold-700 hover:shadow-lift active:scale-[0.98] dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-ink-950',
     secondary: 'bg-stone-900 text-white hover:bg-stone-700 active:scale-[0.98] dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white',
     ghost: 'text-stone-600 hover:bg-stone-900/5 hover:text-stone-900 active:scale-[0.98] dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white',
     outline: 'border border-stone-300 bg-transparent text-stone-800 hover:border-gold-600 hover:text-gold-700 active:scale-[0.98] dark:border-ink-700 dark:text-stone-200 dark:hover:border-gold-400 dark:hover:text-gold-300',
@@ -139,12 +139,13 @@ export function Skeleton({ className }: { className?: string }) {
 }
 
 /* ---------- Section heading ---------- */
-export function SectionHeading({ kicker, title, action, className }: { kicker?: string; title: string; action?: ReactNode; className?: string }) {
+export function SectionHeading({ kicker, title, action, className, level = 2 }: { kicker?: string; title: string; action?: ReactNode; className?: string; level?: 1 | 2 }) {
+  const Tag = level === 1 ? 'h1' : 'h2';
   return (
     <div className={cn('mb-5 flex items-end justify-between gap-4', className)}>
       <div>
         {kicker && <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-gold-600 dark:text-gold-400">{kicker}</p>}
-        <h2 className="font-display text-2xl font-semibold tracking-tight text-stone-900 dark:text-white sm:text-[28px]">{title}</h2>
+        <Tag className="font-display text-2xl font-semibold tracking-tight text-stone-900 dark:text-white sm:text-[28px]">{title}</Tag>
       </div>
       {action}
     </div>

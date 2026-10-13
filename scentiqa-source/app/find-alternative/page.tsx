@@ -154,8 +154,10 @@ function FinderInner() {
                       <div className="flex items-center gap-3 sm:flex-col sm:items-end">
                         <p className="text-lg font-bold">{d.lowestPrice ? inr(d.lowestPrice.priceInr) : '—'}</p>
                         <div className="flex gap-2">
-                          <Link href={`/compare?ids=${d.originalSlug},${d.dupeSlug}`}><Button size="sm" variant="outline">Compare</Button></Link>
-                          <Link href={`/perfume/${d.dupeSlug}`}><Button size="sm">View</Button></Link>
+                          <Link href={`/compare?ids=${d.originalSlug},${d.dupeSlug}`}
+                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-stone-300 bg-transparent px-3 text-[13px] font-semibold tracking-tight text-stone-800 transition-all duration-200 select-none hover:border-gold-600 hover:text-gold-700 active:scale-[0.98] dark:border-ink-700 dark:text-stone-200 dark:hover:border-gold-400 dark:hover:text-gold-300">Compare</Link>
+                          <Link href={`/perfume/${d.dupeSlug}`}
+                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-gold-600 px-3 text-[13px] font-semibold tracking-tight text-stone-950 shadow-sm transition-all duration-200 select-none hover:bg-gold-700 active:scale-[0.98] dark:bg-gold-500 dark:text-ink-950 dark:hover:bg-gold-400">View</Link>
                         </div>
                       </div>
                     </Card>

@@ -39,6 +39,7 @@ export default async function NotesIndex() {
       <SectionHeading
         kicker="Encyclopedia"
         title="Fragrance notes, decoded"
+        level={1}
       />
       <p className="mb-6 -mt-3 max-w-2xl text-sm text-stone-500 dark:text-stone-400">
         Every note in the Scentiqa catalog — what it smells like, and which perfumes wear it best. Tap any note for its full story.
