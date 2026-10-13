@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getArticles, getArticle } from '@/lib/data';
+import { sanitizeArticleHtml, looksLikeHtml, plainTextToHtml } from '@/lib/article-html';
 import { Card, EmptyState } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
 
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!a) return { title: 'Article not found' };
   return {
     title: `${a.title} | Scentiqa`,
-    description: a.excerpt ?? a.body.slice(0, 160),
+    description: a.excerpt ?? a.body.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160),
   };
 }
 
@@ -23,16 +24,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const [a, all] = await Promise.all([getArticle(slug), getArticles()]);
   if (!a) return <div className="mx-auto max-w-3xl px-4 pt-6"><EmptyState icon="📰" title="Article not found" body="This article doesn't exist." /></div>;
   const related = all.filter((x) => x.slug !== a.slug).slice(0, 2);
-  const readMinutes = Math.max(1, Math.round(a.body.split(/\s+/).length / 200));
+  const readMinutes = Math.max(1, Math.round(a.body.replace(/<[^>]*>/g, ' ').split(/\s+/).length / 200));
+  // Article bodies may be stored as HTML (from the CMS) or plain text.
+  // HTML is sanitized and rendered once — never double-escaped.
+  const bodyHtml = looksLikeHtml(a.body) ? sanitizeArticleHtml(a.body) : plainTextToHtml(a.body);
   return (
     <div className="mx-auto max-w-3xl px-4 pt-6 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'News', href: '/news' }, { label: a.title }]} />
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600 dark:text-gold-400">{a.category}</p>
       <h1 className="mt-2 font-display text-4xl font-bold tracking-tight sm:text-5xl">{a.title}</h1>
       <p className="mt-3 text-sm text-stone-500">By {a.author} · {readMinutes} min read · {a.date}</p>
-      <div className="prose-scentiqa mt-8">
-        {a.body.split('\n\n').map((para, i) => <p key={i}>{para}</p>)}
-      </div>
+      <div className="prose-scentiqa mt-8" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {related.length > 0 && (
         <div className="mt-12 border-t border-stone-200/70 pt-8 dark:border-ink-700/50">
           <h2 className="mb-4 font-display text-2xl font-semibold">Keep reading</h2>
