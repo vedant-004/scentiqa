@@ -60,6 +60,49 @@ export const findByNotes = select(demo.findByNotes, live.findByNotes);
 export const findByAccords = select(demo.findByAccords, live.findByAccords);
 export const finderRecommendations = select(demo.finderRecommendations, live.finderRecommendations);
 export const getStats = select(demo.getStats, live.getStats);
+
+/* ------------------------------------------------------------------ */
+/* Single source of truth for site-wide stats.                          */
+/* Every surface (header strip, footer, homepage, search, finder) must  */
+/* read from getSiteStats() — no component computes its own count.     */
+/* 60-second in-memory cache; on failure returns zeros and callers      */
+/* render "—" with labels intact (never a bare number without a label). */
+/* ------------------------------------------------------------------ */
+export interface SiteStats {
+  perfumes: number;
+  houses: number;
+  reviews: number;
+  members: number;
+}
+
+const STATS_TTL_MS = 60_000;
+let statsCache: { at: number; value: SiteStats } | null = null;
+
+export async function getSiteStats(): Promise<SiteStats> {
+  const now = Date.now();
+  if (statsCache && now - statsCache.at < STATS_TTL_MS) {
+    return statsCache.value;
+  }
+  try {
+    const s = await getStats();
+    const value: SiteStats = {
+      perfumes: Number(s.perfumes) || 0,
+      houses: Number(s.houses) || 0,
+      reviews: Number(s.reviews) || 0,
+      members: Number(s.members) || 0,
+    };
+    statsCache = { at: now, value };
+    return value;
+  } catch {
+    // Fail closed: zeros. Callers render "—" with labels intact.
+    return { perfumes: 0, houses: 0, reviews: 0, members: 0 };
+  }
+}
+
+/** Format a stat value: number, or "—" when unavailable (0 from a failed fetch). */
+export function fmtStat(n: number): string {
+  return n > 0 ? n.toLocaleString('en-IN') : '—';
+}
 export const getPerfumeRequests = select(demo.getPerfumeRequests, live.getPerfumeRequests);
 export const getSniffStores = select(demo.getSniffStores, live.getSniffStores);
 export const getSniffCities = select(demo.getSniffCities, live.getSniffCities);

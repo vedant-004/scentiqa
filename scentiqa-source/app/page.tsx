@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {
   getArticles, getDupeOfWeek, getGiveaways, getHeroContent, getLatestLaunches, getLatestReviews,
-  getPerfumeOfTheDay, getPriceDrops, getStats, getTrending,
+  getPerfumeOfTheDay, getPriceDrops, getSiteStats, getTrending, fmtStat,
 } from '@/lib/data';
 import { inr } from '@/lib/utils';
 import { isSupabaseConfigured } from '@/lib/supabase';
@@ -29,7 +29,7 @@ export default async function Home() {
   const demo = !isSupabaseConfigured();
   const [trending, latest, drops, dupeWeek, potd, articles, reviews, stats, hero, giveaways] = await Promise.all([
     getTrending(), getLatestLaunches(), getPriceDrops(), getDupeOfWeek(), getPerfumeOfTheDay(),
-    getArticles(3), getLatestReviews(3), getStats(), getHeroContent(), getGiveaways(),
+    getArticles(3), getLatestReviews(3), getSiteStats(), getHeroContent(), getGiveaways(),
   ]);
 
   const savePct = dupeWeek && dupeWeek.original.lowestPriceInr && dupeWeek.dupe.lowestPrice?.priceInr
@@ -277,7 +277,7 @@ export default async function Home() {
         </section>
 
         <p className="pb-4 text-center text-sm text-stone-400">
-          {stats.perfumes.toLocaleString('en-IN')} perfumes · {stats.houses} houses{stats.reviews > 0 ? ` · ${stats.reviews.toLocaleString('en-IN')} reviews` : ''}{stats.members > 0 ? ` · ${stats.members.toLocaleString('en-IN')} members` : ''}
+          {fmtStat(stats.perfumes)} perfumes · {fmtStat(stats.houses)} houses · {fmtStat(stats.reviews)} reviews · {fmtStat(stats.members)} members
         </p>
       </div>
     </div>

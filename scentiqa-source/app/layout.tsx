@@ -5,7 +5,7 @@ import "./globals.css";
 import { ToastProvider } from "@/components/ui";
 import { AuthProvider } from "@/components/auth";
 import { Footer, Header, MobileBottomNav } from "@/components/layout";
-import { getStats, getBanner } from "@/lib/data";
+import { getSiteStats, getBanner } from "@/lib/data";
 import { SITE_URL } from "@/lib/site-url";
 import { PwaRegister } from "./pwa-register";
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const stats = await getStats().catch(() => ({ perfumes: 0, houses: 0, reviews: 0, members: 0 }));
+  const stats = await getSiteStats();
   const banner = await getBanner().catch(() => ({ text: '', link: '', enabled: false }));
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
@@ -34,6 +34,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="flex min-h-dvh flex-col floral-bg">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-stone-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to main content</a>
         <PwaRegister />
         <ToastProvider>
           <AuthProvider>
@@ -51,7 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               </div>
             )}
             <Header stats={stats} />
-            <main className="flex-1 pb-20 md:pb-0">{children}</main>
+            <main id="main-content" className="flex-1 pb-20 md:pb-0">{children}</main>
             <Footer stats={stats} />
             <MobileBottomNav />
           </AuthProvider>

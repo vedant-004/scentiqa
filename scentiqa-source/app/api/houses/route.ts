@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server';
 import { getSupabaseServer } from '@/lib/supabase';
+import { getSiteStats } from '@/lib/data';
 
 // Lightweight houses list for the Finder (and anywhere a house picker is needed).
 // Returns just the 199 houses with counts — a few KB instead of the full perfume catalog.
+// totalPerfumes comes from the single site-stats source (60s cached).
 export const revalidate = 3600;
 
 export async function GET() {
@@ -29,11 +31,8 @@ export async function GET() {
       if (!data || data.length < pageSize) break;
       page += 1;
     }
-    const { count: totalPerfumes, error: countError } = await sb
-      .from('perfumes')
-      .select('id', { count: 'exact', head: true });
-    if (countError) throw countError;
-    return NextResponse.json({ houses, totalPerfumes: totalPerfumes ?? 0 });
+    const { perfumes: totalPerfumes } = await getSiteStats();
+    return NextResponse.json({ houses, totalPerfumes });
   } catch (e) {
     console.error('GET /api/houses failed', e);
     return NextResponse.json({ houses: [], totalPerfumes: 0 }, { status: 200 });
