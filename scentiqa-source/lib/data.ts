@@ -9,6 +9,14 @@ import { isSupabaseConfigured } from './supabase';
 export { isSupabaseConfigured as isSupabaseMode };
 export type { HouseFull } from './data-demo';
 
+/**
+ * LAB DATA STATUS — set to true ONLY when real, dated blind-panel lab test
+ * records back the similarity scores shown on the site. While false, every
+ * lab/score claim across the site must use honest "estimated / community
+ * signal" copy (see P0-1 trust reconciliation, Oct 2026).
+ */
+export const LAB_DATA_LIVE = false;
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function select<T extends (...args: any[]) => Promise<any>>(demoFn: T, liveFn: T): T {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

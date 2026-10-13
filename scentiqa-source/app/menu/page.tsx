@@ -21,7 +21,7 @@ const SECTIONS: { href: string; label: string; desc: string }[] = [
   { href: '/forum', label: 'Community', desc: 'Join the conversation' },
   { href: '/requests', label: 'Request a Perfume', desc: 'Vote for the perfumes you want in our catalog' },
   { href: '/sniff', label: 'Sniff Guide', desc: 'Where to smell perfumes in your city' },
-  { href: '/awards/2026', label: 'Awards', desc: "Scentiqa Readers' Choice Awards 2026" },
+  { href: '/awards/2026', label: 'Awards', desc: "Scentiqa Team's Picks 2026" },
   { href: '/about', label: 'About', desc: 'Our methodology and story' },
   { href: '/contact', label: 'Contact', desc: 'Get in touch' },
 ];

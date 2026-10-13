@@ -74,7 +74,7 @@ function FinderInner() {
       <div className="mx-auto max-w-2xl text-center">
         <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600 dark:text-gold-400">Scentiqa dupe lab</p>
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">Find a cheaper alternative</h1>
-        <p className="mt-3 text-[15px] text-stone-500 dark:text-stone-400">Pick any luxury perfume — we&rsquo;ll show its Indian alternatives, ranked by our lab-tested similarity scores.</p>
+        <p className="mt-3 text-[15px] text-stone-500 dark:text-stone-400">Pick any luxury perfume — we&rsquo;ll show its Indian alternatives, ranked by estimated similarity scores.</p>
         {/* key remounts the bar when ?q= changes, so the prefill always applies */}
         <div className="mt-6"><SearchBar key={sp.get('q') ?? 'none'} big initialQuery={sp.get('q') ?? undefined} onPick={(slug, name) => load(slug, name)} /></div>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
@@ -169,11 +169,11 @@ function FinderInner() {
 
       {!searched && (
         <div className="mx-auto mt-14 max-w-3xl">
-          <SectionHeading kicker="How it works" title="Lab-tested, not marketing" />
+          <SectionHeading kicker="How it works" title="Estimated honestly, not marketing" />
           <div className="grid gap-4 sm:grid-cols-3">
             {[
               ['1', 'Pick a perfume', 'Search any designer or niche fragrance.'],
-              ['2', 'We rank the dupes', 'Indian alternatives sorted by blind-panel lab scores.'],
+              ['2', 'We rank the dupes', 'Indian alternatives sorted by estimated similarity scores.'],
               ['3', 'Buy verified', 'INR prices only from vetted Indian sellers.'],
             ].map(([n, t, b]) => (
               <Card key={n} className="p-5">

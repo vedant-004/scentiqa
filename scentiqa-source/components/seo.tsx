@@ -11,7 +11,7 @@ export function organizationJsonLd() {
     '@type': 'Organization',
     name: 'Scentiqa',
     url: 'https://scentiqa.in',
-    slogan: 'Independent dupe lab, verified INR prices and climate-tested reviews for India.',
+    slogan: 'Independent dupe finder, INR prices and heat-performance predictions for India.',
   };
 }
 

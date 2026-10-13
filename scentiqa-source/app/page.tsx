@@ -59,8 +59,8 @@ export default async function Home() {
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-stone-600 dark:text-stone-300">
               {hero.subheadline ? hero.subheadline : (
-                <>Lab-tested dupe similarity scores, INR prices from verified Indian sellers,
-                and performance ratings for Indian heat — not marketing claims.</>
+                <>Dupe similarity estimates, INR prices from Indian sellers,
+                and heat-performance predictions for Indian weather — honest signals, not marketing claims.</>
               )}
             </p>
             <div className="mx-auto mt-8 max-w-xl"><SearchBar big autoFocus={false} /></div>
@@ -258,8 +258,8 @@ export default async function Home() {
         <section>
           <Card className="grid gap-6 p-6 sm:p-10 md:grid-cols-3">
             {[
-              ['🧪', 'Independently lab-tested', 'Similarity scores come from blind panel tests — never from brand marketing claims.'],
-              ['🌡️', 'Tested for Indian climate', 'Every score is measured in real Indian heat and humidity, not a European lab.'],
+              ['🧪', 'Honest similarity estimates', 'Similarity scores are estimates from note overlap and community signals — not lab-tested yet. Real blind-panel tests are on our roadmap.'],
+              ['🌡️', 'Built for Indian climate', 'Heat performance is predicted from accord data for Indian weather — community wear-tests coming soon.'],
               ['🛡️', 'Verified sellers only', 'Prices come from vetted Indian sellers. No grey-market listings, ever.'],
             ].map(([icon, t, b]) => (
               <div key={t} className="flex gap-4">
@@ -271,7 +271,7 @@ export default async function Home() {
               <Link href="/methodology"><Button variant="outline" size="sm">Our methodology</Button></Link>
               <Link href="/trust-charter"><Button variant="outline" size="sm">Trust charter</Button></Link>
               <Link href="/fake-guide"><Button variant="outline" size="sm">Spot fakes guide</Button></Link>
-              {demo && <span className="inline-flex items-center text-xs text-stone-400">Scores shown on this demo build are illustrative samples, not completed lab tests.</span>}
+              <span className="inline-flex items-center text-xs text-stone-400">Similarity scores are estimates, not completed lab tests. See our methodology for what each score means.</span>
             </div>
           </Card>
         </section>

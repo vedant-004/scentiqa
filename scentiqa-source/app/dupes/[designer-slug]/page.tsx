@@ -1,5 +1,5 @@
 // /dupes/[designer-slug] — "Best {original} dupes in India".
-// Static pages generated for every original with >= 2 verified dupes.
+// Static pages generated for every original with >= 2 mapped dupes.
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPerfume } from '@/lib/data-supabase';
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ 'designer
   const url = `${SITE_URL}/dupes/${slug}`;
   return {
     title: `Best ${p.name} Dupes in India (${p.dupes.length} Alternatives${from}) — Scentiqa`,
-    description: `${p.name} by ${p.houseInfo.name} too pricey? Compare ${p.dupes.length} verified dupes and alternatives available in India, with similarity scores, tester verdicts and INR prices.`,
+    description: `${p.name} by ${p.houseInfo.name} too pricey? Compare ${p.dupes.length} community-suggested dupes and alternatives available in India, with estimated similarity scores and INR prices.`,
     alternates: { canonical: url },
     openGraph: { title: `Best ${p.name} Dupes in India — Scentiqa`, url, type: 'article' },
   };
@@ -59,9 +59,9 @@ export default async function DupeGuidePage({ params }: { params: Promise<{ 'des
       </h1>
       <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">
         {p.name} by <Link href={`/house/${p.houseInfo.slug}`} className="font-semibold text-gold-700 hover:underline dark:text-gold-300">{p.houseInfo.name}</Link> is
-        loved across India, but it doesn&apos;t come cheap. Below are {p.dupes.length} verified alternatives you can
-        actually buy here — ranked by similarity, with honest tester verdicts and live INR prices
-        {minPrice !== null && <> starting at <strong>{inr(minPrice)}</strong></>}.
+        loved across India, but it doesn&apos;t come cheap. Below are {p.dupes.length} community-suggested alternatives you can
+        actually buy here — ranked by estimated similarity, with INR prices
+        {minPrice !== null && <> starting at <strong>{inr(minPrice)}</strong></>}. Similarity scores are estimates until our lab tests are complete — see <Link href="/methodology" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">how we test</Link>.
       </p>
 
       {/* The original */}
@@ -90,10 +90,10 @@ export default async function DupeGuidePage({ params }: { params: Promise<{ 'des
       </section>
 
       {/* The dupes */}
-      <section aria-label="Verified dupes" className="mt-10">
+      <section aria-label="Dupe alternatives" className="mt-10">
         <SectionHeading
           kicker={`${p.dupes.length} alternatives`}
-          title="Verified dupes, ranked by similarity"
+          title="Community-suggested alternatives, ranked by estimated similarity"
           action={labTested > 0 ? <Badge>{labTested} lab-tested</Badge> : undefined}
         />
         <div className="grid gap-4">
@@ -108,10 +108,8 @@ export default async function DupeGuidePage({ params }: { params: Promise<{ 'des
         <Card className="p-5">
           <h2 className="font-display text-lg font-bold">How Scentiqa verifies dupes</h2>
           <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-300">
-            Every alternative above comes from our dupe database. Entries marked with a lab score were
-            side-by-side tested by the Scentiqa team; the rest are community-suggested and clearly labeled
-            while testing is pending. We never invent similarity numbers — if a score isn&apos;t shown,
-            it hasn&apos;t been measured yet.
+            Every alternative above comes from our dupe database. No blind-panel lab tests have been completed yet, so every similarity score on this page is an estimate based on note overlap and community signals — not a measured result. Entries are community-suggested and clearly labeled while testing is pending. We never invent measured numbers — if a score isn&apos;t shown,
+            it hasn&apos;t been estimated yet. Read our <Link href="/methodology" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">testing methodology</Link> for what each label means.
           </p>
           <p className="mt-3 text-sm">
             <Link href="/dupes" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">Browse all dupe guides →</Link>

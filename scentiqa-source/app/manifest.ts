@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Scentiqa — Indian Perfume Finder',
     short_name: 'Scentiqa',
-    description: 'Blind-panel dupe lab, verified INR prices and climate-tested reviews for India.',
+    description: 'Honest dupe similarity estimates, INR prices and heat-performance predictions for India.',
     start_url: '/',
     scope: '/',
     display: 'standalone',

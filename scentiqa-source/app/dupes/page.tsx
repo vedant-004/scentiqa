@@ -8,7 +8,7 @@ export const revalidate = 86400;
 
 export const metadata = {
   title: 'Designer Perfume Dupe Guides in India — Scentiqa',
-  description: 'Every Scentiqa dupe guide: verified affordable alternatives to expensive designer and niche perfumes, with similarity scores and INR prices for India.',
+  description: 'Every Scentiqa dupe guide: community-suggested affordable alternatives to expensive designer and niche perfumes, with estimated similarity scores and INR prices for India.',
   alternates: { canonical: `${SITE_URL}/dupes` },
 };
 
@@ -19,8 +19,8 @@ export default async function DupesIndexPage() {
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Dupe Guides' }]} />
       <SectionHeading kicker="Smell expensive for less" title="Designer dupe guides" />
       <p className="mb-8 max-w-2xl text-[15px] text-stone-600 dark:text-stone-300">
-        Every guide below lists verified dupes for one designer or niche original — ranked by similarity,
-        with tester verdicts and prices you can actually pay in India.
+        Every guide below lists community-suggested dupes for one designer or niche original — ranked by estimated similarity,
+        with prices you can actually pay in India. Scores are estimates until our lab tests are complete.
       </p>
       {guides.length === 0 ? (
         <p className="text-stone-500">Dupe guides are being prepared. Check back soon.</p>
@@ -33,7 +33,7 @@ export default async function DupesIndexPage() {
                 <h2 className="mt-1 font-display text-xl font-semibold tracking-tight group-hover:text-gold-700 dark:group-hover:text-gold-300">
                   Best {g.name} dupes in India
                 </h2>
-                <p className="mt-2 text-sm text-stone-500">{g.dupeCount} verified alternatives</p>
+                <p className="mt-2 text-sm text-stone-500">{g.dupeCount} community-suggested alternatives</p>
                 <span className="mt-auto pt-3 text-sm font-semibold text-stone-400">View guide →</span>
               </Card>
             </Link>

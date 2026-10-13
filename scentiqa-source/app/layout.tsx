@@ -18,7 +18,7 @@ const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('scentiqa-theme
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: "Scentiqa — India's Perfume Encyclopedia & Dupe Finder", template: "%s | Scentiqa" },
-  description: "Discover perfumes in India: honest reviews, lab-tested dupe similarity scores, INR prices from verified sellers, and climate testing for Indian heat.",
+  description: "Discover perfumes in India: honest reviews, estimated dupe similarity scores, INR prices from Indian sellers, and heat-performance predictions for Indian weather.",
   openGraph: { type: "website", siteName: "Scentiqa", locale: "en_IN" },
   themeColor: "#b45309",
   icons: { apple: "/icons/apple-touch-icon.png" },

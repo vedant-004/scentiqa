@@ -197,7 +197,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               </div>
             )}
             <p className="mt-4 rounded-xl bg-cream-100/70 p-4 text-xs leading-relaxed text-stone-500 dark:bg-white/[0.03] dark:text-stone-400">
-              <strong className="text-stone-700 dark:text-stone-200">Independence note:</strong> “House claims X%” is the brand&rsquo;s own marketing. “Scentiqa lab” is our blind-panel measurement. Dupes are listed under their own names; “inspired by” lines are editorial, not affiliation. <Link href="/methodology" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">Methodology →</Link>
+              <strong className="text-stone-700 dark:text-stone-200">Independence note:</strong> “House claims X%” is the brand&rsquo;s own marketing. “Scentiqa lab” scores are currently <em>estimates</em> from note overlap and community signals — no blind-panel tests completed yet. Dupes are listed under their own names; “inspired by” lines are editorial, not affiliation. <Link href="/methodology" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">Methodology →</Link>
             </p>
           </section>
 

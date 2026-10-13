@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!h) return { title: 'Not found' };
   return {
     title: `${h.name} Perfumes & Dupes in India`,
-    description: `${h.name} — ${h.perfumeCount} fragrances. ${h.avgSimilarity ? `Average lab similarity ${h.avgSimilarity}%.` : ''} Prices in INR from verified sellers.`,
+    description: `${h.name} — ${h.perfumeCount} fragrances. ${h.avgSimilarity ? `Average estimated similarity ${h.avgSimilarity}%.` : ''} Prices in INR from Indian sellers.`,
   };
 }
 

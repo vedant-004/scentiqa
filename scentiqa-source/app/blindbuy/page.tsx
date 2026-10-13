@@ -59,6 +59,9 @@ export default async function BlindBuyPage() {
         India is a blind-buy market — few niche stores outside metros. These scores combine dupe availability,
         price risk, community consensus and scent familiarity into one 0–100 safety number.
       </p>
+      <p className="mt-2 max-w-2xl text-xs text-stone-400 dark:text-stone-500">
+        Rating counts shown are imported from global fragrance-community data, not Scentiqa member ratings yet.
+      </p>
 
       {ranked.length === 0 ? (
         <Card className="mt-8 p-8 text-center">

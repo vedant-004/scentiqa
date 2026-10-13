@@ -18,6 +18,9 @@ export function MethodologyPage() {
   return (
     <DocPage title="How we test similarity" kicker="Dupe lab methodology">
       <p>Scentiqa measures how close an inspired fragrance smells to the original — independently, and in the open. Here&rsquo;s exactly how.</p>
+      <div className="rounded-xl border border-amber-300/60 bg-amber-50 p-4 text-sm leading-relaxed text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-200">
+        <strong>Current status: no panel tests completed yet.</strong> The process below is our published methodology — the standard every score must meet before we call it lab-tested. Until then, every similarity score on Scentiqa is an <strong>estimate</strong> based on note overlap and community signals, clearly labelled as such wherever it appears.
+      </div>
       <h2>1. Blind triangle testing</h2>
       <p>A panel of 12–20 trained testers smells the original and two samples — one being the candidate dupe — blind. Each tester rates similarity on a 0–100 scale across opening, drydown, projection and overall impression.</p>
       <h2>2. Scored, not guessed</h2>
@@ -28,8 +31,8 @@ export function MethodologyPage() {
       <p>Every lab-tested fragrance also gets a climate panel: wear at 35°C+ and high humidity, with longevity and sillage recorded by the same testers. See the <Link href="/climate-protocol">climate protocol</Link> for the full setup.</p>
       <h2>5. What we don&rsquo;t do</h2>
       <p>We don&rsquo;t take payment from houses for scores, rankings or inclusion. Lab purchases are made anonymously at retail. If a result can&rsquo;t be reproduced, we re-test or retract it.</p>
-      <h2>A note on demo data</h2>
-      <p>This website is currently running in demo mode: the similarity scores, tester counts and prices shown are illustrative samples so you can explore the product. They are not genuine Scentiqa lab findings — yet. Connect a live data source and every “sample” label disappears, replaced by real, dated test records.</p>
+      <h2>A note on current data</h2>
+      <p>Every similarity score, tester count and price shown on Scentiqa today is an illustrative estimate so you can explore the product — not a genuine Scentiqa lab finding yet. When real panel tests are completed, each score will carry its test date and panel size, and this notice will be updated.</p>
     </DocPage>
   );
 }
