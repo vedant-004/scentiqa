@@ -19,7 +19,12 @@ export function timeAgo(iso: string): string {
 }
 
 export function slugifyName(s: string): string {
-  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  return s
+    .normalize('NFD') // decompose accented chars (è → e + combining grave)
+    .replace(/[\u0300-\u036f]/g, '') // strip diacritic marks (è → e, ô → o)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 // Punchy, Fragrantica-grade accord colors: vivid solid hues, high saturation.
