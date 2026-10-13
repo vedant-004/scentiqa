@@ -69,6 +69,9 @@ async function handleRecommend(req: Request) {
   // Fetch the FULL catalog (paginated) — the finder must score every scent, not just the first N.
   // Houses are fetched separately (199 rows) to avoid a costly join on 8k+ rows.
   // NOTE: Supabase/PostgREST caps at 1000 rows per request, so PAGE must be <= 1000.
+  // Deterministic fetch order: without an explicit order, PostgREST row order is
+  // unspecified and can shift between identical requests — that made ranking
+  // non-deterministic on re-runs with the same answers (ties fell differently).
   const PAGE = 1000;
   const [housesRes] = await Promise.all([
     sb.from('houses').select('id, slug, name'),
@@ -84,6 +87,7 @@ async function handleRecommend(req: Request) {
       Promise.resolve(
         sb.from('perfumes')
           .select('id, slug, name, house_id, gender, concentration, description, bottle_image_url, top_notes, heart_notes, base_notes, accords, lowest_price_inr, rating_avg, rating_count')
+          .order('id', { ascending: true })
           .range(from, from + PAGE - 1),
       ).then((r) => ({ data: r.data as any[] | null, error: r.error as unknown })),
     );
@@ -149,8 +153,20 @@ async function handleRecommend(req: Request) {
     }
   }
 
+  // Belt-and-braces: the multi-wave catalog build can hold the same perfume under
+  // two rows — never rank the same slug twice. Keep the better-scoring row.
+  const seenSlugs = new Set<string>();
+  scored = scored.filter((s) => {
+    if (seenSlugs.has(s.slug)) return false;
+    seenSlugs.add(s.slug);
+    return true;
+  });
+
   const top = scored.slice(0, 15);
-  const wildcard = await pickWildcard(scored, a);
+  // Never show the same perfume twice: the wildcard pool starts at rank 8,
+  // which overlaps the ranked list — exclude every displayed result id.
+  const shownIds = new Set(top.map((s) => s.id));
+  const wildcard = await pickWildcard(scored, a, shownIds);
   const tensions = detectTensions(a);
 
   return NextResponse.json({

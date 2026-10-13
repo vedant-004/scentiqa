@@ -51,6 +51,10 @@ interface Answers {
 
 type Phase = 'entry' | 'wizard' | 'loading' | 'reveal' | 'results';
 
+// sessionStorage key: answers + results survive the browser Back button from a
+// perfume detail page (the page remounts and React state is gone). Cleared on Retake.
+const FINDER_STORAGE_KEY = 'scentiqa-finder-results-v1';
+
 /* ---------------- constants ---------------- */
 
 const OCCASIONS = [
@@ -728,6 +732,20 @@ export default function FinderPage() {
         setAnswers(a);
         runFinder(a);
       }
+    } else if (typeof window !== 'undefined') {
+      // browser Back from a perfume detail page remounts /finder — restore the
+      // last result set so the user's journey is not lost.
+      try {
+        const raw = sessionStorage.getItem(FINDER_STORAGE_KEY);
+        if (raw) {
+          const saved = JSON.parse(raw);
+          if (saved && saved.answers?.lovedNotes?.length >= 3 && saved.out?.results?.length > 0) {
+            setAnswers({ ...DEFAULTS, ...saved.answers });
+            setOut(saved.out);
+            setPhase('results');
+          }
+        }
+      } catch { /* corrupted storage — start fresh */ }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -781,6 +799,7 @@ export default function FinderPage() {
       }
       if (!r.ok) throw new Error(j?.error || 'Something went wrong');
       setOut(j);
+      try { sessionStorage.setItem(FINDER_STORAGE_KEY, JSON.stringify({ answers: a, out: j })); } catch { /* noop */ }
       // dramatic reveal beat before results
       setPhase('reveal');
       setTimeout(() => {
@@ -798,6 +817,7 @@ export default function FinderPage() {
     setStep(0);
     setOut(null);
     setPhase('entry');
+    try { sessionStorage.removeItem(FINDER_STORAGE_KEY); } catch { /* noop */ }
     if (typeof window !== 'undefined') window.location.hash = '';
   };
 

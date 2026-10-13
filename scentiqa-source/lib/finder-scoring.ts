@@ -447,21 +447,26 @@ export async function scorePerfumes(
     });
   }
 
-  results.sort((x, y) => y.score - x.score || y.ratingCount - x.ratingCount);
+  // Deterministic final tiebreak: scores are integers and ties are common
+  // (many perfumes share ratingCount 0), so slug decides — identical answers
+  // always produce identical rankings.
+  results.sort((x, y) => y.score - x.score || y.ratingCount - x.ratingCount || x.slug.localeCompare(y.slug));
   return results;
 }
 
-/** Pick a wildcard: decent note overlap but a DIFFERENT character from the top picks. */
+/** Pick a wildcard: decent note overlap but a DIFFERENT character from the top picks.
+ *  excludeIds are the perfumes already shown in the ranked list — the wildcard must
+ *  never duplicate one of them. */
 export async function pickWildcard(
   scored: ScoredPerfume[],
-  a: FinderAnswers
+  a: FinderAnswers,
+  excludeIds: Set<string> = new Set()
 ): Promise<{ pick: ScoredPerfume; explanation: string } | null> {
   if (scored.length < 8) return null;
   const ml = await loadMLData();
-  const topIds = new Set(scored.slice(0, 3).map((s) => s.id));
 
-  // candidate pool: rank 8-40, score >= 45, different character
-  const pool = scored.slice(7, 40).filter((s) => s.score >= 40 && !topIds.has(s.id));
+  // candidate pool: rank 8-40, score >= 45, different character, not already shown
+  const pool = scored.slice(7, 40).filter((s) => s.score >= 40 && !excludeIds.has(s.id));
   if (pool.length === 0) return null;
 
   // target vector of top-3 average
