@@ -7,7 +7,10 @@ import type { ResponseCookie } from 'next/dist/compiled/@edge-runtime/cookies';
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const code = url.searchParams.get('code');
-  const next = url.searchParams.get('next') ?? '/';
+  // Validate ?next=: must be a same-origin relative path (no //, no scheme, no backslash).
+  // Rejects open-redirect attempts like ?next=https://evil.com.
+  const rawNext = url.searchParams.get('next') ?? '/';
+  const next = /^\/[^\s\\]*$/.test(rawNext) && !rawNext.startsWith('//') ? rawNext : '/';
   const cookieStore = await cookies();
 
   if (code && process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {

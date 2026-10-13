@@ -148,6 +148,7 @@ export function WardrobeButtons({ perfumeId, name }: { perfumeId: string; name: 
 /* ---------- Review modal ---------- */
 export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perfume: Perfume; triggerLabel?: string }) {
   const { toast } = useToast();
+  const { user, loading: authLoading } = useAuth();
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [title, setTitle] = useState('');
@@ -170,6 +171,14 @@ export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perf
       <Button onClick={() => setOpen(true)}>{triggerLabel}</Button>
       <Dialog open={open} onClose={() => setOpen(false)} labelledBy="review-title">
         <DialogTitle id="review-title">Review {perfume.name}</DialogTitle>
+        {authLoading ? (
+          <p className="py-8 text-center text-sm text-stone-500">Checking sign-in…</p>
+        ) : !user ? (
+          <div className="space-y-4 py-4 text-center">
+            <p className="text-sm text-stone-600 dark:text-stone-300">Sign in to write a review and help other perfume lovers.</p>
+            <Link href={`/login?next=/perfume/${perfume.slug}`}><Button className="w-full">Sign in to review</Button></Link>
+          </div>
+        ) : (
         <div className="space-y-4">
           <div><p className="mb-2 text-sm font-semibold">Your rating</p><StarInput value={rating} onChange={setRating} /></div>
           <div><p className="mb-2 text-sm font-semibold">Headline <span className="font-normal text-stone-400">(optional)</span></p>
@@ -183,6 +192,7 @@ export function ReviewModal({ perfume, triggerLabel = 'Write a review' }: { perf
           </label>
           <Button onClick={submit} disabled={!valid || busy} className="w-full">{busy ? 'Posting…' : 'Post review'}</Button>
         </div>
+        )}
       </Dialog>
     </>
   );
