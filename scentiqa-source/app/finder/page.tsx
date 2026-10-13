@@ -547,31 +547,18 @@ function EntryScreen({ onStart, catalogCount }: { onStart: () => void; catalogCo
 
 /* ---------------- reveal / analyzing screen ---------------- */
 
-function RevealScreen({ dna, catalogCount }: { dna: DnaParams; catalogCount: number | null }) {
-  const [count, setCount] = useState(0);
+function RevealScreen({ dna }: { dna: DnaParams }) {
   const [line, setLine] = useState(0);
-  const target = catalogCount ?? 0;
-  const targetLabel = target > 0 ? target.toLocaleString('en-IN') : null;
   const lines = [
     'Reading your scent DNA…',
-    targetLabel ? `Comparing ${targetLabel} perfumes…` : 'Comparing the catalog…',
+    'Scoring your matches…',
     'Scoring notes, accords & performance…',
     'Checking live Indian prices…',
     'Finding your archetype…',
   ];
   useEffect(() => {
-    const t0 = performance.now();
-    const dur = 2600;
-    let raf = 0;
-    const tick = (t: number) => {
-      const p = Math.min(1, (t - t0) / dur);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setCount(target > 0 ? Math.round(eased * target) : 0);
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
     const li = setInterval(() => setLine((v) => (v + 1) % lines.length), 900);
-    return () => { cancelAnimationFrame(raf); clearInterval(li); };
+    return () => { clearInterval(li); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -580,18 +567,14 @@ function RevealScreen({ dna, catalogCount }: { dna: DnaParams; catalogCount: num
       <div className="reveal-flourish">
         <ScentDnaOrb dna={{ ...dna, glow: 1, particles: Math.max(dna.particles, 26) }} size={168} />
       </div>
-        <p className="tick-glow mt-6 font-display text-5xl font-extrabold tabular-nums tracking-tight">
-          {target > 0 ? count.toLocaleString('en-IN') : '···'}
-        </p>
-      <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.22em] text-stone-400">
-        perfumes analyzed
+      <p className="tick-glow mt-6 font-display text-2xl font-extrabold tracking-tight">
+        Scoring your matches…
       </p>
       <p className="mt-5 min-h-[24px] text-[15px] font-medium text-violet-600 dark:text-violet-300">
         {lines[line]}
       </p>
       <div className="mt-6 h-1.5 w-56 overflow-hidden rounded-full bg-stone-200 dark:bg-ink-700">
-        <div className="progress-shimmer h-full rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-gold-500"
-          style={{ width: `${target > 0 ? Math.min(100, (count / target) * 100) : 0}%` }} />
+        <div className="progress-shimmer h-full w-full rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-gold-500" />
       </div>
     </div>
   );
@@ -833,7 +816,7 @@ export default function FinderPage() {
 
   /* ---------- results phase ---------- */
   if (phase === 'results' && out) {
-    return <ResultsView out={out} answers={answers} reset={reset} topRef={topRef} />;
+    return <ResultsView out={out} answers={answers} reset={reset} topRef={topRef} catalogCount={catalogCount} />;
   }
 
   /* ---------- loading phase ---------- */
@@ -846,7 +829,7 @@ export default function FinderPage() {
           <span className="absolute inset-0 flex items-center justify-center text-3xl">🌸</span>
         </div>
         <h2 className="font-display text-2xl font-extrabold">Consulting the AI…</h2>
-        <LoadingLine catalogCount={catalogCount} />
+        <LoadingLine />
       </div>
     );
   }
@@ -856,7 +839,7 @@ export default function FinderPage() {
     return (
       <div ref={topRef}>
         <FinderStyles />
-        <RevealScreen dna={resultDna} catalogCount={catalogCount} />
+        <RevealScreen dna={resultDna} />
       </div>
     );
   }
@@ -1077,11 +1060,29 @@ export default function FinderPage() {
 
 /* ---------------- results view ---------------- */
 
-function ResultsView({ out, answers, reset, topRef }: {
+function ResultsView({ out, answers, reset, topRef, catalogCount }: {
   out: ApiOut; answers: Answers; reset: () => void;
   topRef: React.RefObject<HTMLDivElement | null>;
+  catalogCount: number | null;
 }) {
-  const [top, ...rest] = out.results;
+  // Client-side safety net: dedupe by slug, then by canonical name+house key.
+  // Each perfume appears exactly once in the rendered results.
+  const deduped = useMemo(() => {
+    const seen = new Set<string>();
+    const canon = (r: Result) => {
+      const n = r.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '');
+      const h = (r.houseSlug || r.house).toLowerCase().replace(/[^a-z0-9]+/g, '');
+      return `${h}|${n}`;
+    };
+    return out.results.filter((r) => {
+      const ck = `c:${canon(r)}`;
+      if (seen.has(r.slug) || seen.has(ck)) return false;
+      seen.add(r.slug);
+      seen.add(ck);
+      return true;
+    });
+  }, [out.results]);
+  const [top, ...rest] = deduped;
   const [expanded, setExpanded] = useState<string | null>(top?.id ?? null);
   const [copied, setCopied] = useState(false);
   const arch = useMemo(() => archetypeFromAnswers(answers), [answers]);
@@ -1207,8 +1208,8 @@ function ResultsView({ out, answers, reset, topRef }: {
                     <Card hover className="flex items-center gap-3 p-4">
                       <ScoreRing score={r.score} size={52} />
                       <div className="min-w-0">
-                        <p className="truncate font-display text-[15px] font-bold">{r.name}</p>
-                        <p className="truncate text-xs text-stone-500">{r.house}</p>
+                        <p className="truncate font-display text-[15px] font-bold" title={r.name}>{r.name}</p>
+                        <p className="truncate text-xs text-stone-500" title={r.house}>{r.house}</p>
                         {r.lowestPriceInr ? (
                           <p className="mt-0.5 text-[13px] font-extrabold">{inr(r.lowestPriceInr)}</p>
                         ) : null}
@@ -1233,10 +1234,10 @@ function ResultsView({ out, answers, reset, topRef }: {
                       </span>
                       <ScoreRing score={r.score} size={56} />
                       <div className="min-w-0 flex-1">
-                        <Link href={`/perfume/${r.slug}`} className="block truncate font-display text-[17px] font-bold hover:underline">
+                        <Link href={`/perfume/${r.slug}`} className="block truncate font-display text-[17px] font-bold hover:underline" title={r.name}>
                           {r.name}
                         </Link>
-                        <p className="truncate text-[13px] text-stone-500">{r.house}</p>
+                        <p className="truncate text-[13px] text-stone-500" title={r.house}>{r.house}</p>
                         <div className="mt-1.5 flex flex-wrap gap-1">
                           {r.reasons.slice(0, 2).map((reason, j) => (
                             <span key={j} className="rounded-full bg-stone-100 px-2 py-0.5 text-[11px] font-medium text-stone-600 dark:bg-ink-800 dark:text-stone-300">
@@ -1332,7 +1333,7 @@ function ResultsView({ out, answers, reset, topRef }: {
 
           <div className="text-center">
             <p className="text-xs text-stone-400">
-              Ranked from {out.totalScored.toLocaleString()} perfumes · scores update as the catalog grows
+              Ranked from {catalogCount !== null ? catalogCount.toLocaleString('en-IN') : out.totalScored.toLocaleString('en-IN')} perfumes · scores update as the catalog grows
             </p>
           </div>
         </>
@@ -1396,11 +1397,11 @@ function ProfileRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-function LoadingLine({ catalogCount }: { catalogCount: number | null }) {
+function LoadingLine() {
   const [i, setI] = useState(0);
   const lines = [
     'Reading your note preferences…',
-    catalogCount !== null ? `Comparing ${catalogCount.toLocaleString('en-IN')} perfumes…` : 'Comparing the catalog…',
+    'Scoring your matches…',
     'Checking Indian prices…',
     'Scoring longevity & projection…',
     'Ranking your perfect matches…',

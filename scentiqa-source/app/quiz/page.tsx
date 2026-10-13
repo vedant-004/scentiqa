@@ -71,6 +71,7 @@ export default function QuizPage() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState<Hit[]>([]);
+  const [budgetLabel, setBudgetLabel] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -92,6 +93,7 @@ export default function QuizPage() {
         const j = await r.json();
         if (!r.ok) throw new Error(j.error ?? 'Failed');
         setResults(j.results ?? []);
+        setBudgetLabel(j.budgetLabel ?? '');
       } catch {
         setError('Could not generate recommendations. Check your connection and try again.');
       }
@@ -104,6 +106,7 @@ export default function QuizPage() {
     setAnswers({});
     setShowResults(false);
     setResults([]);
+    setBudgetLabel('');
     setError('');
   };
 
@@ -116,7 +119,7 @@ export default function QuizPage() {
   if (showResults) {
     return (
       <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
-        <SectionHeading kicker="AI Scent Quiz" title="Your matches" />
+        <SectionHeading kicker="AI Scent Quiz" title="Your matches" level={1} />
         <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
           Based on your answers, we analyzed the full catalog against your scent profile.
           Here are your top matches.
@@ -132,8 +135,17 @@ export default function QuizPage() {
           </Card>
         ) : results.length === 0 ? (
           <Card className="p-8 text-center">
-            <p className="text-sm text-stone-500">No matches for these answers — try a wider budget or a different vibe.</p>
-            <Button size="sm" className="mt-4" onClick={reset}>Retake quiz</Button>
+            <p className="text-4xl">🔍</p>
+            <h2 className="mt-3 font-display text-xl font-bold">No matches in {budgetLabel || 'this budget'} with those answers</h2>
+            <p className="mx-auto mt-2 max-w-sm text-sm text-stone-500">
+              Nothing in the catalog fits your vibe, notes, and budget together right now.
+            </p>
+            <div className="mt-4 flex justify-center gap-3">
+              <Button size="sm" onClick={() => { setStep(4); setShowResults(false); setResults([]); }}>
+                Widen the budget
+              </Button>
+              <Button size="sm" variant="outline" onClick={reset}>Retake quiz</Button>
+            </div>
           </Card>
         ) : (
           <>
@@ -210,7 +222,14 @@ export default function QuizPage() {
           <span className="font-medium">Question {step + 1} of {QUESTIONS.length}</span>
           <span className="text-stone-400">{Math.round(progress)}%</span>
         </div>
-        <div className="h-2 overflow-hidden rounded-full bg-stone-200 dark:bg-ink-700">
+        <div
+          role="progressbar"
+          aria-valuenow={step + 1}
+          aria-valuemin={1}
+          aria-valuemax={QUESTIONS.length}
+          aria-label={`Question ${step + 1} of ${QUESTIONS.length}`}
+          className="h-2 overflow-hidden rounded-full bg-stone-200 dark:bg-ink-700"
+        >
           <div className="h-full rounded-full bg-gradient-to-r from-violet-600 to-gold-500 transition-all duration-500" style={{ width: `${progress}%` }} />
         </div>
       </div>

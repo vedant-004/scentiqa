@@ -6,6 +6,8 @@ import { normalizeAccords, scoreAccordProfile, tieredNotes, scoreNoteSet, scoreP
 // from LIVE accord + note data (full catalog, no client download, no stale ML vectors).
 // Body: { vibe, occasion, projection, notes, budget }
 // Combined: 50% accord profile, 30% loved notes, 20% projection preference.
+// Budget is a HARD filter: every recommendation's price must fall inside the
+// selected range. Perfumes with no price are excluded (can't verify range).
 
 const VIBE_ACCORDS: Record<string, Record<string, number>> = {
   fresh: { Citrus: 80, Fresh: 85, Aquatic: 60, Green: 40 },
@@ -23,6 +25,14 @@ const NOTE_QUIZ_MAP: Record<string, string[]> = {
   aquatic: ['sea notes', 'calone', 'bergamot'],
 };
 
+// Budget ranges: [min, max] in INR. 'any' = no filter.
+const BUDGET_RANGES: Record<string, { min: number; max: number; label: string }> = {
+  '1000': { min: 0, max: 1000, label: 'under ₹1,000' },
+  '2000': { min: 1000, max: 2000, label: '₹1,000–₹2,000' },
+  '5000': { min: 2000, max: 5000, label: '₹2,000–₹5,000' },
+  'any': { min: 0, max: Infinity, label: 'any budget' },
+};
+
 export async function POST(req: Request) {
   const sb = getSupabaseServer();
   if (!sb) return NextResponse.json({ error: 'Not configured' }, { status: 500 });
@@ -31,7 +41,7 @@ export async function POST(req: Request) {
 
   const vibe = VIBE_ACCORDS[body.vibe] ?? {};
   const lovedNotes = NOTE_QUIZ_MAP[body.notes] ?? [];
-  const maxPrice = body.budget === 'any' || !body.budget ? Infinity : Number(body.budget);
+  const budgetRange = BUDGET_RANGES[body.budget] ?? BUDGET_RANGES['any'];
   const projection = (['intimate', 'moderate', 'strong'] as const).includes(body.projection as never)
     ? (body.projection as 'intimate' | 'moderate' | 'strong') : 'moderate';
 
@@ -52,7 +62,9 @@ export async function POST(req: Request) {
   const out: Array<{ id: string; slug: string; name: string; house: string; match: number; reason: string; ratingAvg: number; lowestPriceInr: number | null; isDupe: boolean; bottleImage: string | null }> = [];
 
   for (const r of (pool ?? []) as Array<{ id: string; slug: string; name: string; gender: string; concentration: string | null; lowest_price_inr: number | null; rating_avg: number | null; rating_count: number | null; accords: unknown; top_notes: unknown; heart_notes: unknown; base_notes: unknown; bottle_image_url: string | null; description: string | null; houses: { name: string } | Array<{ name: string }> | null }>) {
-    if ((r.lowest_price_inr ?? Infinity) > maxPrice) continue;
+    // HARD budget filter: price must exist AND fall inside [min, max].
+    const price = r.lowest_price_inr;
+    if (price === null || price === undefined || price < budgetRange.min || price > budgetRange.max) continue;
     const accords = normalizeAccords(r.accords);
     const { score: accordScore, explanation } = scoreAccordProfile(accords, targetAccords);
     const { score: noteScore, matched } = scoreNoteSet(tieredNotes(r), lovedNotes);
@@ -74,5 +86,9 @@ export async function POST(req: Request) {
     });
   }
   out.sort((a, b) => b.match - a.match);
-  return NextResponse.json({ results: out.slice(0, 12), catalogSize: (pool ?? []).length });
+  return NextResponse.json({
+    results: out.slice(0, 12),
+    catalogSize: (pool ?? []).length,
+    budgetLabel: budgetRange.label,
+  });
 }

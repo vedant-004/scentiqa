@@ -154,11 +154,22 @@ async function handleRecommend(req: Request) {
   }
 
   // Belt-and-braces: the multi-wave catalog build can hold the same perfume under
-  // two rows — never rank the same slug twice. Keep the better-scoring row.
+  // two rows — never rank the same perfume twice. Dedupe by slug first, then by
+  // canonical name+house key (catches same perfume under different slugs, e.g.
+  // "Mercedes-Benz Intense" vs "Intense"). Keep the better-scoring row.
   const seenSlugs = new Set<string>();
+  const seenCanonical = new Set<string>();
+  const canonKey = (s: { name: string; houseSlug: string; house: string }) => {
+    const normName = s.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '');
+    const normHouse = (s.houseSlug || s.house).toLowerCase().replace(/[^a-z0-9]+/g, '');
+    return `${normHouse}|${normName}`;
+  };
   scored = scored.filter((s) => {
     if (seenSlugs.has(s.slug)) return false;
+    const ck = canonKey(s);
+    if (seenCanonical.has(ck)) return false;
     seenSlugs.add(s.slug);
+    seenCanonical.add(ck);
     return true;
   });
 
