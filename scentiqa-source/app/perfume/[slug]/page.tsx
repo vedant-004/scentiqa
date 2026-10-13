@@ -10,7 +10,7 @@ import {
   PerfumeCard, PriceTable, RetailerSearchLinks, ScoreBadge, ShareButtons, StarRating,
 } from '@/components';
 import {
-  MeterVote, PriceAlertButton, ReportPriceButton, ReviewModal, SentimentVote,
+  MeterVote, PriceAlertButton, ReportPriceButton, ReviewList, ReviewModal, SentimentVote,
   StickyCTA, SuggestDupe, WardrobeButtons, ClimateSection, BlindBuyBadge,
 } from './perfume-client';
 
@@ -244,22 +244,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             {p.reviews.length === 0 ? (
               <EmptyState icon="✍️" title="No reviews yet" body="Be the first to review this fragrance for the Indian community." action={<ReviewModal perfume={p} triggerLabel="Write the first review" />} />
             ) : (
-              <div className="space-y-4">
-                {p.reviews.map((r) => (
-                  <Card key={r.id} className="p-5">
-                    <div className="flex items-center justify-between gap-3">
-                      <StarRating value={r.rating} size={14} />
-                      {r.verifiedPurchase && <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-bold uppercase text-emerald-600 dark:text-emerald-400">✓ Verified purchase</span>}
-                    </div>
-                    <h3 className="mt-2 font-display text-lg font-semibold">{r.title}</h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">{r.body}</p>
-                    <div className="mt-3 flex items-center justify-between text-[13px]">
-                      <Link href={`/member/${r.username}`} className="font-semibold text-gold-700 hover:underline dark:text-gold-300">@{r.username}</Link>
-                      <span className="text-stone-400">Helpful ({r.helpfulVotes})</span>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+              <ReviewList perfume={p} initialReviews={p.reviews} />
             )}
           </section>
 

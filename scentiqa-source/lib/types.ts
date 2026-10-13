@@ -94,7 +94,7 @@ export interface Member {
 }
 
 export interface Review {
-  id: string; perfumeSlug: string; username: string; rating: number;
+  id: string; perfumeSlug: string; username: string; userId: string; rating: number;
   title: string; body: string; verifiedPurchase: boolean;
   helpfulVotes: number; createdAt: string;
 }

@@ -123,6 +123,7 @@ export async function getPerfume(slug: string): Promise<PerfumeFull | null> {
   const { data: revs } = revsRes;
   const reviews: Review[] = (revs ?? []).map((r: Record<string, unknown>) => ({
     id: r.id as string, perfumeSlug: slug, username: (r.users as Record<string, string>)?.username ?? 'member',
+    userId: r.user_id as string,
     rating: r.rating as number, title: (r.title as string) ?? '', body: (r.body as string) ?? '',
     verifiedPurchase: !!r.verified_purchase, helpfulVotes: Number(r.helpful_votes ?? 0),
     createdAt: r.created_at as string,
@@ -516,6 +517,7 @@ export async function getLatestReviews(limit = 6): Promise<Array<Review & { perf
   return (data ?? []).map((r: Record<string, unknown>) => ({
     id: r.id as string, perfumeSlug: (r.perfumes as Record<string, string>).slug,
     username: (r.users as Record<string, string>)?.username ?? 'member',
+    userId: r.user_id as string,
     rating: r.rating as number, title: (r.title as string) ?? '', body: (r.body as string) ?? '',
     verifiedPurchase: !!r.verified_purchase, helpfulVotes: Number(r.helpful_votes ?? 0),
     createdAt: r.created_at as string, perfume: mapPerfume(r.perfumes as Record<string, unknown>),
