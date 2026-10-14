@@ -18,6 +18,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      { source: '/trust', destination: '/trust-charter', permanent: true },
       { source: '/house/attar-kannauj', destination: '/house/attarkannauj', permanent: true },
       { source: '/house/attarkannauj-kanyakubj', destination: '/house/attarkannauj', permanent: true },
       { source: '/house/bella-vita-luxury', destination: '/house/bella-vita', permanent: true },

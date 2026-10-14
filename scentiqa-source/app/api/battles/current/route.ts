@@ -13,6 +13,11 @@ export async function GET() {
     .single();
   if (!battle) return NextResponse.json({ battle: null });
 
+  // If the battle is past its end date, don't present it as current
+  if (battle.ends_at && new Date(battle.ends_at) < new Date() && battle.status === 'active') {
+    return NextResponse.json({ battle: null, message: 'No active battle' });
+  }
+
   const { data: entries } = await sb.from('battle_entries')
     .select('seed, perfumes(id, slug, name, bottle_image_url, houses(name))')
     .eq('battle_id', battle.id)

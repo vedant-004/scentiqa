@@ -725,11 +725,18 @@ export function MobileBottomNav() {
 
 /* ---------- Footer ---------- */
 export function Footer({ stats }: { stats: { perfumes: number; houses: number; reviews: number; members: number } }) {
+  const { user } = useAuth();
+  const companyLinks: Array<[string, string]> = [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy']];
+  if (!user) {
+    companyLinks.push(['Log in', '/login']);
+  } else {
+    companyLinks.push(['My account', '/account']);
+  }
   const cols: Array<{ h: string; links: Array<[string, string]> }> = [
     { h: 'Discover', links: [['Find a dupe', '/find-alternative'], ['Scent Battles', '/battles'], ['Heat Lab', '/climate'], ['Blind-Buy Guide', '/blindbuy'], ['Wear Diary', '/diary'], ['All houses', '/houses'], ['Compare', '/compare'], ['Notes encyclopedia', '/notes'], ['Notes library', '/search/notes'], ['Accord finder', '/search/accords'], ['AI Scent Quiz', '/quiz'], ['Complete Collection', '/collection'], ['Hidden Gems', '/hidden-gems'], ['AI Scent Finder', '/finder']] },
     { h: 'Community', links: [['Forum', '/forum'], ['Awards 2026', '/awards/2026'], ['Giveaways', '/giveaways'], ['News', '/news'], ['Member spotlight', '/members']] },
     { h: 'Trust', links: [['Our methodology', '/methodology'], ['Climate protocol', '/climate-protocol'], ['Trust charter', '/trust-charter'], ['Verified sellers', '/sellers'], ['Spot fakes', '/fake-guide'], ['About', '/about']] },
-    { h: 'Company', links: [['Contact', '/contact'], ['Terms', '/terms'], ['Privacy', '/privacy'], ['Log in', '/login']] },
+    { h: 'Company', links: companyLinks },
   ];
   return (
     <footer className="scentiqa-site-footer mt-20 border-t border-stone-200/70 bg-white/60 dark:border-ink-700/50 dark:bg-ink-900/40">

@@ -2,7 +2,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { getSupabaseBrowser, isSupabaseConfigured } from '@/lib/supabase';
 import { useAuth } from '@/components/auth';
 import { Button, Card, Input, SectionHeading } from '@/components';
@@ -11,13 +11,32 @@ import { Breadcrumbs } from '@/components';
 export default function LoginPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const next = searchParams.get('next');
+  // Only allow relative paths to prevent open redirects
+  const safeNext = next && next.startsWith('/') && !next.startsWith('//') ? next : '/account';
   useEffect(() => {
-    if (!loading && user) router.replace('/account');
-  }, [user, loading, router]);
+    if (!loading && user) router.replace(safeNext);
+  }, [user, loading, router, safeNext]);
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
+  const [emailError, setEmailError] = useState('');
   const configured = isSupabaseConfigured();
+
+  const validateEmail = (value: string): boolean => {
+    if (!value.trim()) {
+      setEmailError('Please enter your email address.');
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value.trim())) {
+      setEmailError('Please enter a valid email address.');
+      return false;
+    }
+    setEmailError('');
+    return true;
+  };
 
   if (!loading && user) {
     return (
@@ -30,6 +49,7 @@ export default function LoginPage() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    if (!validateEmail(email)) return;
     if (!configured) { setError('Supabase is not connected in this demo. See the README to enable sign-in.'); return; }
     try {
       const supabase = getSupabaseBrowser();
@@ -96,10 +116,21 @@ export default function LoginPage() {
               <p className="text-sm text-stone-500 dark:text-stone-400">Password-free sign-in — we&rsquo;ll email you a magic link.</p>
               <div>
                 <label htmlFor="email" className="mb-1.5 block text-sm font-semibold">Email</label>
-                <Input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" />
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); if (emailError) validateEmail(e.target.value); }}
+                  onBlur={() => { if (email) validateEmail(email); }}
+                  placeholder="you@example.com"
+                  aria-invalid={!!emailError}
+                  aria-describedby={emailError ? "email-error" : undefined}
+                />
+                {emailError && <p id="email-error" role="alert" className="mt-1.5 text-sm text-red-600 dark:text-red-400">{emailError}</p>}
               </div>
               {error && <p className="rounded-xl bg-red-500/10 p-3 text-sm text-red-600 dark:text-red-400">{error}</p>}
-              <Button type="submit" className="w-full" size="lg">Send magic link</Button>
+              <Button type="submit" className="w-full" size="lg" disabled={!!emailError && email.length > 0}>Send magic link</Button>
               {!configured && (
                 <p className="rounded-xl bg-gold-600/10 p-3 text-xs leading-relaxed text-stone-500 dark:text-stone-400">
                   🔒 Demo mode is read-only. Connect Supabase (see README) to enable sign-in, reviews, wardrobes and price alerts.
