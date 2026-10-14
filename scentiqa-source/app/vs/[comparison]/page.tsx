@@ -87,8 +87,8 @@ export default async function VsPage({ params }: { params: Promise<{ comparison:
     { label: 'Top notes', render: (p) => <span className="text-sm text-stone-600 dark:text-stone-300">{p.topNotes.join(', ') || '—'}</span> },
     { label: 'Heart notes', render: (p) => <span className="text-sm text-stone-600 dark:text-stone-300">{p.heartNotes.join(', ') || '—'}</span> },
     { label: 'Base notes', render: (p) => <span className="text-sm text-stone-600 dark:text-stone-300">{p.baseNotes.join(', ') || '—'}</span> },
-    { label: 'Heat longevity', render: (p) => (p.climate ? <MeterBar label="" value={p.climate.heatLongevity} /> : '—') },
-    { label: 'Summer rating', render: (p) => (p.climate ? <MeterBar label="" value={p.climate.summerRating} /> : '—') },
+    { label: 'Heat longevity', render: (p) => (typeof p.climate?.heatLongevity === 'number' ? <MeterBar label="" value={p.climate.heatLongevity} /> : '—') },
+    { label: 'Summer rating', render: (p) => (typeof p.climate?.summerRating === 'number' ? <MeterBar label="" value={p.climate.summerRating} /> : '—') },
   ];
 
   return (
