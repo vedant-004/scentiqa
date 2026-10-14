@@ -1,6 +1,6 @@
 // /login — Supabase auth. Demo mode explains the read-only state.
 'use client';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { getSupabaseBrowser, isSupabaseConfigured } from '@/lib/supabase';
@@ -8,7 +8,7 @@ import { useAuth } from '@/components/auth';
 import { Button, Card, Input, SectionHeading } from '@/components';
 import { Breadcrumbs } from '@/components';
 
-export default function LoginPage() {
+function LoginForm() {
   const { user, loading } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -144,5 +144,13 @@ export default function LoginPage() {
         By signing in you agree to our <Link href="/terms" className="underline">terms</Link> and <Link href="/privacy" className="underline">privacy policy</Link>.
       </p>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="mx-auto max-w-md px-4 pt-16 text-center"><p className="text-stone-500">Loading…</p></div>}>
+      <LoginForm />
+    </Suspense>
   );
 }
