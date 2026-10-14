@@ -342,13 +342,12 @@ export async function searchPerfumesDetailed(query: string, limit = 8): Promise<
       add(scored.map((x) => x.r), 'fuzzy');
     })());
   }
-  if (true) {
-    // Pass 6: query matches a note name (e.g. "vanilla", "oud") — include perfumes
-    // carrying that note. Always runs (not just when under limit) so note queries
-    // return note matches even when name matches exist. Capped at 3 via the add()
-    // function so note hits don't drown name matches. Note columns are jsonb, so
-    // match with the contains operator.
-    extra.push((async () => {
+  // Pass 6: query matches a note name (e.g. "vanilla", "oud") — include perfumes
+  // carrying that note. Always runs (not just when under limit) so note queries
+  // return note matches even when name matches exist. Capped at 3 via the add()
+  // function so note hits don't drown name matches. Note columns are jsonb, so
+  // match with the contains operator.
+  extra.push((async () => {
       const { data: noteRows, error } = await c.from('notes').select('name').ilike('name', `%${q}%`).limit(3);
       if (error || !noteRows?.length) return;
       const names = (noteRows as Array<{ name: string }>)
