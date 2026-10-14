@@ -21,6 +21,13 @@ export function RequestsClient({ initial }: { initial: Req[] }) {
   const [house, setHouse] = useState('');
   const [reason, setReason] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [touched, setTouched] = useState(false);
+  const nameValid = name.trim().length > 0;
+  const reasonWords = reason.trim().split(/\s+/).filter(Boolean).length;
+  const reasonValid = reasonWords >= 5;
+  const formValid = nameValid && reasonValid;
+  const showNameError = touched && !nameValid;
+  const showReasonError = touched && reason.trim().length > 0 && !reasonValid;
 
   const reload = async () => {
     try {
@@ -45,15 +52,20 @@ export function RequestsClient({ initial }: { initial: Req[] }) {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user) { window.location.href = '/login?next=/requests'; return; }
+    setTouched(true);
+    if (!formValid) {
+      setError(!nameValid ? 'Please enter a perfume name.' : 'Tell us why in at least 5 words.');
+      return;
+    }
     setSubmitting(true); setError(''); setOkMsg('');
     try {
       const r = await fetch('/api/requests', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ perfume_name: name, house_name: house, reason }),
+        body: JSON.stringify({ perfume_name: name.trim(), house_name: house.trim(), reason: reason.trim() }),
       });
       const j = await r.json();
       if (!r.ok) throw new Error(j.error ?? 'Submit failed');
-      setName(''); setHouse(''); setReason('');
+      setName(''); setHouse(''); setReason(''); setTouched(false);
       setOkMsg('Request submitted — it now needs upvotes to climb the board.');
       await reload();
     } catch (e) { setError(e instanceof Error ? e.message : 'Submit failed'); }
@@ -106,13 +118,38 @@ export function RequestsClient({ initial }: { initial: Req[] }) {
             <Link href="/login?next=/requests" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">Sign in</Link> to submit a request and upvote.
           </p>
         ) : (
-          <form onSubmit={submit} className="mt-4 space-y-3">
+          <form onSubmit={submit} className="mt-4 space-y-3" noValidate>
             <div className="grid gap-3 sm:grid-cols-2">
-              <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Perfume name *" maxLength={120} required />
-              <Input value={house} onChange={(e) => setHouse(e.target.value)} placeholder="House / brand" maxLength={120} />
+              <div>
+                <label htmlFor="req-name" className="mb-1.5 block text-sm font-semibold">Perfume name <span className="text-red-600">*</span></label>
+                <Input id="req-name" value={name} onChange={(e) => setName(e.target.value)} onBlur={() => setTouched(true)}
+                  placeholder="e.g. Aventus" maxLength={120} aria-invalid={showNameError}
+                  aria-describedby={showNameError ? 'req-name-error req-name-count' : 'req-name-count'} />
+                <div className="mt-1 flex items-center justify-between">
+                  {showNameError
+                    ? <p id="req-name-error" role="alert" className="text-xs font-medium text-red-600 dark:text-red-400">Please enter a perfume name.</p>
+                    : <span />}
+                  <p id="req-name-count" className="text-xs text-stone-400">{name.length}/120</p>
+                </div>
+              </div>
+              <div>
+                <label htmlFor="req-house" className="mb-1.5 block text-sm font-semibold">House / brand <span className="font-normal text-stone-400">(optional)</span></label>
+                <Input id="req-house" value={house} onChange={(e) => setHouse(e.target.value)} placeholder="e.g. Creed" maxLength={120} />
+              </div>
             </div>
-            <Textarea value={reason} onChange={(e) => setReason(e.target.value)} placeholder="Why should we add it? (at least 5 words)" rows={3} maxLength={500} required />
-            <Button type="submit" disabled={submitting}>{submitting ? 'Submitting…' : 'Submit request'}</Button>
+            <div>
+              <label htmlFor="req-reason" className="mb-1.5 block text-sm font-semibold">Why should we add it? <span className="font-normal text-stone-400">(at least 5 words)</span></label>
+              <Textarea id="req-reason" value={reason} onChange={(e) => setReason(e.target.value)} onBlur={() => setTouched(true)}
+                placeholder="Tell us what makes it worth adding…" rows={3} maxLength={500}
+                aria-invalid={showReasonError} aria-describedby="req-reason-count" />
+              <div className="mt-1 flex items-center justify-between">
+                {showReasonError
+                  ? <p role="alert" className="text-xs font-medium text-red-600 dark:text-red-400">Tell us why in at least 5 words.</p>
+                  : <span />}
+                <p id="req-reason-count" className="text-xs text-stone-400">{reason.length}/500 · {reasonWords}/5 words min</p>
+              </div>
+            </div>
+            <Button type="submit" disabled={submitting || (touched && !formValid)}>{submitting ? 'Submitting…' : 'Submit request'}</Button>
           </form>
         )}
       </Card>

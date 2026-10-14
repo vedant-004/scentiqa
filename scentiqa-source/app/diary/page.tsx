@@ -2,7 +2,7 @@
 'use client';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Button, Card, SectionHeading, Skeleton } from '@/components';
+import { Button, Card, Dialog, DialogTitle, Input, SectionHeading, Skeleton, Textarea, useToast } from '@/components';
 import { ReviewPrompt } from '@/components/domain';
 import { useAuth } from '@/components/auth';
 
@@ -19,6 +19,7 @@ function houseName(h: { name: string } | { name: string }[] | null): string {
 
 export default function DiaryPage() {
   const { user, loading } = useAuth();
+  const { toast } = useToast();
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [streak, setStreak] = useState<number | null>(null);
   const [busy, setBusy] = useState(false);
@@ -27,6 +28,12 @@ export default function DiaryPage() {
   const [hits, setHits] = useState<SearchHit[]>([]);
   const [showHits, setShowHits] = useState(false);
   const [lastLogged, setLastLogged] = useState<{ name: string; slug: string } | null>(null);
+  // Edit/delete state
+  const [editing, setEditing] = useState<LogEntry | null>(null);
+  const [editNotes, setEditNotes] = useState('');
+  const [editDate, setEditDate] = useState('');
+  const [deleting, setDeleting] = useState<LogEntry | null>(null);
+  const [entryBusy, setEntryBusy] = useState(false);
 
   const refresh = useCallback(async () => {
     const [h, s] = await Promise.all([
@@ -80,6 +87,49 @@ export default function DiaryPage() {
     }
     return [...m.entries()].sort((a, b) => b[0].localeCompare(a[0]));
   }, [logs]);
+
+  const openEdit = (entry: LogEntry) => {
+    setEditing(entry);
+    setEditNotes(entry.notes ?? '');
+    setEditDate(entry.worn_on);
+  };
+
+  const saveEdit = async () => {
+    if (!editing) return;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(editDate)) {
+      toast('Enter a valid date (YYYY-MM-DD).', 'err');
+      return;
+    }
+    setEntryBusy(true);
+    try {
+      const r = await fetch(`/api/diary/entry/${editing.id}`, {
+        method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ notes: editNotes, worn_on: editDate }),
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error ?? 'Failed to update');
+      toast('Entry updated.');
+      setEditing(null);
+      await refresh();
+    } catch (e) {
+      toast(e instanceof Error ? e.message : 'Failed to update', 'err');
+    } finally { setEntryBusy(false); }
+  };
+
+  const confirmDelete = async () => {
+    if (!deleting) return;
+    setEntryBusy(true);
+    try {
+      const r = await fetch(`/api/diary/entry/${deleting.id}`, { method: 'DELETE' });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error ?? 'Failed to delete');
+      toast('Entry deleted.');
+      setDeleting(null);
+      await refresh();
+    } catch (e) {
+      toast(e instanceof Error ? e.message : 'Failed to delete', 'err');
+    } finally { setEntryBusy(false); }
+  };
 
   const todayKey = new Date().toISOString().slice(0, 10);
   const loggedToday = logs.some((l) => l.worn_on === todayKey);
@@ -153,20 +203,73 @@ export default function DiaryPage() {
             </h2>
             <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {entries.map((l) => (
-                <Link key={l.id} href={`/perfume/${l.perfumes.slug}`}>
-                  <Card className="p-3 transition hover:shadow-card">
+                <Card key={l.id} className="p-3">
+                  <Link href={`/perfume/${l.perfumes.slug}`} className="block transition hover:opacity-80">
                     <p className="text-xs font-bold text-stone-400">
                       {new Date(l.worn_on + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
                     </p>
                     <p className="mt-1 truncate text-sm font-bold">{l.perfumes.name}</p>
                     <p className="truncate text-xs text-stone-400">{houseName(l.perfumes.houses)}</p>
-                  </Card>
-                </Link>
+                    {l.notes && <p className="mt-1 line-clamp-2 text-xs text-stone-500 dark:text-stone-400">{l.notes}</p>}
+                  </Link>
+                  <div className="mt-2 flex gap-2 border-t border-stone-100 pt-2 dark:border-white/10">
+                    <button onClick={() => openEdit(l)}
+                      className="text-xs font-semibold text-stone-500 hover:text-gold-700 dark:text-stone-400 dark:hover:text-gold-300">
+                      Edit
+                    </button>
+                    <button onClick={() => setDeleting(l)}
+                      className="text-xs font-semibold text-stone-500 hover:text-red-600 dark:text-stone-400 dark:hover:text-red-400">
+                      Delete
+                    </button>
+                  </div>
+                </Card>
               ))}
             </div>
           </section>
         ))}
       </div>
+
+      {/* Edit dialog */}
+      <Dialog open={!!editing} onClose={() => setEditing(null)} labelledBy="diary-edit-title">
+        <DialogTitle id="diary-edit-title">Edit wear log</DialogTitle>
+        {editing && (
+          <div className="space-y-4">
+            <p className="text-sm font-semibold text-stone-700 dark:text-stone-200">
+              {editing.perfumes.name} <span className="font-normal text-stone-400">· {houseName(editing.perfumes.houses)}</span>
+            </p>
+            <div>
+              <label htmlFor="diary-edit-date" className="mb-2 block text-sm font-semibold">Date worn</label>
+              <Input id="diary-edit-date" type="date" value={editDate} onChange={(e) => setEditDate(e.target.value)} max={new Date().toISOString().slice(0, 10)} />
+            </div>
+            <div>
+              <label htmlFor="diary-edit-notes" className="mb-2 block text-sm font-semibold">Notes <span className="font-normal text-stone-400">(optional)</span></label>
+              <Textarea id="diary-edit-notes" value={editNotes} onChange={(e) => setEditNotes(e.target.value)}
+                placeholder="How did it wear today?" rows={3} maxLength={500} />
+              <p className="mt-1 text-right text-xs text-stone-400">{editNotes.length}/500</p>
+            </div>
+            <div className="flex gap-3">
+              <Button variant="outline" onClick={() => setEditing(null)} className="flex-1">Cancel</Button>
+              <Button onClick={saveEdit} disabled={entryBusy} className="flex-1">{entryBusy ? 'Saving…' : 'Save changes'}</Button>
+            </div>
+          </div>
+        )}
+      </Dialog>
+
+      {/* Delete confirm */}
+      <Dialog open={!!deleting} onClose={() => setDeleting(null)} labelledBy="diary-delete-title">
+        <DialogTitle id="diary-delete-title">Delete this entry?</DialogTitle>
+        {deleting && (
+          <>
+            <p className="text-sm text-stone-600 dark:text-stone-300">
+              Remove your {new Date(deleting.worn_on + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })} log of <strong>{deleting.perfumes.name}</strong>? Your streak will be recalculated.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <Button variant="outline" onClick={() => setDeleting(null)} className="flex-1">Cancel</Button>
+              <Button onClick={confirmDelete} disabled={entryBusy} className="flex-1 bg-red-600 hover:bg-red-700">{entryBusy ? 'Deleting…' : 'Delete'}</Button>
+            </div>
+          </>
+        )}
+      </Dialog>
     </div>
   );
 }

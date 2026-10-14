@@ -359,25 +359,42 @@ export function PriceAlertButton({ perfumeId, currentPrice }: { perfumeId: strin
   const [open, setOpen] = useState(false);
   const [target, setTarget] = useState('');
   const [busy, setBusy] = useState(false);
+  const [touched, setTouched] = useState(false);
+  // Valid only when the typed value is a finite positive number. Never transform silently.
+  const parsed = target.trim() === '' ? NaN : Number(target);
+  const valid = Number.isFinite(parsed) && parsed > 0;
+  const showError = touched && target.trim() !== '' && !valid;
   const save = async () => {
-    const v = Number(target);
-    if (!v || v <= 0) return;
+    setTouched(true);
+    if (!valid) return;
     setBusy(true);
-    const r = await createPriceAlert(perfumeId, v);
+    const r = await createPriceAlert(perfumeId, parsed);
     setBusy(false);
     if (r.demo) { demoToast(toast); return; }
-    if (r.ok) { toast(`Alert set — we\u2019ll email you under ${inr(v)}`); setOpen(false); setTarget(''); }
+    if (r.ok) { toast(`Alert set — we\u2019ll email you under ${inr(parsed)}`); setOpen(false); setTarget(''); setTouched(false); }
     else toast(r.error ?? 'Could not set alert', 'err');
   };
   return (
     <>
-      <Button variant="outline" size="sm" onClick={() => setOpen(true)}>🔔 Price alert</Button>
+      <Button variant="outline" size="sm" onClick={() => { setOpen(true); setTouched(false); }}>🔔 Price alert</Button>
       <Dialog open={open} onClose={() => setOpen(false)} labelledBy="alert-title">
         <DialogTitle id="alert-title">Price alert</DialogTitle>
         <p className="mb-3 text-sm text-stone-500">Current best: <strong>{inr(currentPrice)}</strong>. We&rsquo;ll notify you when it drops below your target.</p>
-        <div className="flex gap-2">
-          <Input type="number" value={target} onChange={(e) => setTarget(e.target.value)} placeholder="Target price in ₹" min={1} />
-          <Button onClick={save} disabled={busy || !Number(target)}>Set</Button>
+        <div>
+          <label htmlFor="alert-target" className="mb-2 block text-sm font-semibold">Target price (₹)</label>
+          <div className="flex gap-2">
+            <Input id="alert-target" type="number" value={target}
+              onChange={(e) => { setTarget(e.target.value); setTouched(true); }}
+              onBlur={() => setTouched(true)}
+              placeholder="Target price in ₹" min={1} aria-invalid={showError}
+              aria-describedby={showError ? 'alert-target-error' : undefined} />
+            <Button onClick={save} disabled={busy || !valid} aria-disabled={busy || !valid}>Set</Button>
+          </div>
+          {showError && (
+            <p id="alert-target-error" role="alert" className="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+              Enter a valid target price (a number greater than ₹0).
+            </p>
+          )}
         </div>
       </Dialog>
     </>
