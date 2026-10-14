@@ -10,7 +10,8 @@ import { searchPerfumesDetailed } from '@/lib/data';
 import { Breadcrumbs, Button, SectionHeading, Skeleton } from '@/components';
 import SearchResults from './search-results';
 
-const RESULT_LIMIT = 48;
+const RESULT_LIMIT = 200;
+const PAGE_SIZE = 48;
 
 type SearchParams = { q?: string };
 
@@ -88,7 +89,7 @@ function SearchForm({ query }: { query: string }) {
 
 async function ResultsFor({ query }: { query: string }) {
   const { results, didYouMean } = await searchPerfumesDetailed(query, RESULT_LIMIT);
-  return <SearchResults results={results} query={query} didYouMean={didYouMean} />;
+  return <SearchResults results={results} query={query} didYouMean={didYouMean} pageSize={PAGE_SIZE} totalFetched={results.length} />;
 }
 
 function ResultsSkeleton() {

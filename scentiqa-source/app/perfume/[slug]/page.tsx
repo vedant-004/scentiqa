@@ -2,11 +2,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTopPerfumeSlugs, getPerfume } from '@/lib/data';
 import { CONC_LABEL, HOUSE_TYPE_LABEL, inr } from '@/lib/utils';
-import { isSupabaseConfigured } from '@/lib/supabase';
 import { Badge, Card, EmptyState, SectionHeading } from '@/components/ui';
 import { JsonLd } from '@/components/seo';
 import {
-  AccordPyramid, BottleVisual, Breadcrumbs, DupeCard, MeterBar, NotePyramid, ProductImage,
+  AccordPyramid, BottleVisual, Breadcrumbs, DupeCard, NotePyramid, ProductImage,
   PerfumeCard, PriceTable, RetailerSearchLinks, ScoreBadge, ShareButtons, StarRating,
 } from '@/components';
 import {
@@ -81,7 +80,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
       <JsonLd data={productJsonLd} />
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Houses', href: `/house/${p.houseInfo.slug}` }, { label: p.houseInfo.name, href: `/house/${p.houseInfo.slug}` }, { label: p.name }]} />
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Houses', href: '/houses' }, { label: p.houseInfo.name, href: `/house/${p.houseInfo.slug}` }, { label: p.name }]} />
 
       {/* ===== 1. HEADER — Fragrantica-style product hero ===== */}
       <section className="relative overflow-hidden rounded-3xl border border-stone-200/70 bg-white dark:border-ink-700/50 dark:bg-ink-900">
@@ -155,28 +154,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
           {/* ===== 2b. AI PREDICTIONS ===== */}
           <AIPredictions perfumeId={p.id} concentration={p.concentration} />
 
-          {/* ===== 3. CLIMATE PANEL ===== */}
-          {p.climate && (
-            <section>
-              <SectionHeading kicker="Scentiqa climate lab" title="Performance in Indian weather"
-                action={<Link href="/climate-protocol" className="text-sm font-semibold text-gold-700 hover:underline dark:text-gold-300">How we test →</Link>} />
-              <Card className="p-6 sm:p-8">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <MeterBar label="Longevity in heat" value={p.climate.heatLongevity} hint="How long it lasts at 35°C+" />
-                  <MeterBar label="Sillage in humidity" value={p.climate.humiditySillage} hint="Projection when humidity is high" />
-                  <MeterBar label="Summer rating" value={p.climate.summerRating} />
-                  <MeterBar label="Monsoon rating" value={p.climate.monsoonRating} />
-                  <MeterBar label="Winter rating" value={p.climate.winterRating} />
-                </div>
-                <p className="mt-5 border-t border-stone-200/70 pt-4 text-xs leading-relaxed text-stone-400 dark:border-ink-700/50">
-                  Tested at {p.climate.testTempC}°C / {p.climate.testHumidityPct}% humidity · {p.climate.sprays} sprays · {p.climate.testerCount} testers. {p.climate.notes}
-                  {!isSupabaseConfigured() && <span className="font-semibold"> Sample data shown in this demo build.</span>}
-                </p>
-              </Card>
-            </section>
-          )}
-
-          {/* ===== 4. INDIAN ALTERNATIVES ===== */}
+          {/* ===== 3. INDIAN ALTERNATIVES ===== */}
           <section id="alternatives" className="scroll-mt-24">
             <SectionHeading kicker="Dupe lab" title={`Indian alternatives (${p.dupes.length})`}
               action={<SuggestDupe perfumeId={p.id} perfumeName={p.name} />} />
@@ -210,7 +188,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             <ReportPriceButton perfumeId={p.id} />
           </section>
 
-          {/* ===== 5b. CLIMATE PERFORMANCE LAB ===== */}
+          {/* ===== 5. CLIMATE PERFORMANCE LAB (single heat model) ===== */}
           <section>
             <SectionHeading kicker="Climate Performance Lab" title="India Heat Performance" />
             <Card className="p-5">

@@ -18,7 +18,7 @@ export default async function GiveawaysPage() {
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Giveaways' }]} />
       <SectionHeading kicker="Community" title="Giveaways" />
       <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
-        Real bottles, real winners — drawn live in our community. Sign in to enter.
+        Real bottles, real winners — drawn live in our community.
       </p>
 
       {live.length === 0 && ended.length === 0 && (
@@ -40,7 +40,7 @@ export default async function GiveawaysPage() {
                 <div className="dark mt-4">
                   <CountdownTimer endsAt={g.ends} />
                 </div>
-                <p className="mt-3 text-xs text-stone-400">{g.entries.toLocaleString('en-IN')} entries so far</p>
+                <p className="mt-3 text-xs text-stone-400">{g.entries.toLocaleString('en-IN')} {g.entries === 1 ? 'entry' : 'entries'} so far</p>
                 <div className="mt-5">
                   <EnterButton slug={g.slug} />
                 </div>

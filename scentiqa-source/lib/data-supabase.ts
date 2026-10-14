@@ -190,7 +190,14 @@ export async function getHouseSummary(slug: string): Promise<House | null> {
 
 /** Sanitize a user search query for PostgREST ilike/or filters. */
 function cleanSearchQuery(q: string): string {
-  return q.trim().replace(/[%_\\(),"]/g, '').slice(0, 60);
+  // Fold accents (Chloé -> Chloe) so accent-insensitive matching works.
+  // The fuzzy pass also folds name tokens, catching DB entries with accents.
+  return q.trim().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[%_\\(),"]/g, '').slice(0, 60);
+}
+
+/** Fold accents for comparison: "Chloé" -> "Chloe", "Hermès" -> "Hermes". */
+function foldAccents(s: string): string {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
 /** Levenshtein edit distance — names are short, plain DP is plenty fast. */
@@ -317,9 +324,11 @@ export async function searchPerfumesDetailed(query: string, limit = 8): Promise<
       const sim = (a: string, b: string) =>
         a === b ? 1 : 1 - editDistance(a, b) / Math.max(a.length, b.length);
       const scored = pool.map((r) => {
-        const nTokens = String(r.name ?? '').toLowerCase()
+        const nTokens = foldAccents(String(r.name ?? '').toLowerCase())
           .replace(/[^a-z0-9]+/g, ' ').split(' ').filter(Boolean);
         // Every query token must resemble some name token (worst-token score).
+        // Query is already accent-folded by cleanSearchQuery; folding name tokens
+        // here makes "chloe" match "Chloé" in the DB.
         let worst = 1;
         for (const qt of qTokens) {
           let best = 0;
@@ -333,9 +342,12 @@ export async function searchPerfumesDetailed(query: string, limit = 8): Promise<
       add(scored.map((x) => x.r), 'fuzzy');
     })());
   }
-  if (seen.size < limit) {
-    // Pass 6: query matches a note name (e.g. "oud") — include perfumes carrying
-    // that note. Note columns are jsonb, so match with the contains operator.
+  if (true) {
+    // Pass 6: query matches a note name (e.g. "vanilla", "oud") — include perfumes
+    // carrying that note. Always runs (not just when under limit) so note queries
+    // return note matches even when name matches exist. Capped at 3 via the add()
+    // function so note hits don't drown name matches. Note columns are jsonb, so
+    // match with the contains operator.
     extra.push((async () => {
       const { data: noteRows, error } = await c.from('notes').select('name').ilike('name', `%${q}%`).limit(3);
       if (error || !noteRows?.length) return;

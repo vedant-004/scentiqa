@@ -63,16 +63,23 @@ export default function SearchResults({
   results,
   query,
   didYouMean,
+  pageSize = 48,
+  totalFetched,
 }: {
   results: Perfume[];
   query: string;
   /** Optional backend-provided spelling suggestion; falls back to the static map. */
   didYouMean?: string | null;
+  /** How many results to show initially / per "Load more" click. */
+  pageSize?: number;
+  /** Total results fetched from backend (may be capped). */
+  totalFetched?: number;
 }) {
   const [house, setHouse] = useState('all');
   const [gender, setGender] = useState('all');
   const [conc, setConc] = useState('all');
   const [sort, setSort] = useState<SortKey>('relevance');
+  const [visibleCount, setVisibleCount] = useState(pageSize);
 
   const houses = useMemo(
     () => [...new Set(results.map((r) => r.house).filter(Boolean))].sort((a, b) => a.localeCompare(b)),
@@ -96,8 +103,14 @@ export default function SearchResults({
     setGender('all');
     setConc('all');
     setSort('relevance');
+    setVisibleCount(pageSize);
   };
   const hasFilters = house !== 'all' || gender !== 'all' || conc !== 'all';
+
+  // Pagination: show visibleCount of the filtered/sorted list.
+  const visible = shown.slice(0, visibleCount);
+  const hasMore = visibleCount < shown.length;
+  const total = totalFetched ?? results.length;
 
   // One did-you-mean line max, only when nothing matched.
   const suggestion = results.length === 0 ? didYouMean?.trim() || suggestCorrection(query) || null : null;
@@ -110,7 +123,7 @@ export default function SearchResults({
       <h1 className="mb-5 font-display text-3xl font-bold tracking-tight text-stone-900 dark:text-white sm:text-4xl">
         Results for &ldquo;{query}&rdquo;
         <span className="ml-3 text-lg font-semibold text-stone-500 dark:text-stone-400">
-          &mdash; {results.length} {results.length === 1 ? 'perfume' : 'perfumes'}
+          &mdash; {total} {total === 1 ? 'perfume' : 'perfumes'}
         </span>
       </h1>
 
@@ -180,7 +193,7 @@ export default function SearchResults({
           </div>
 
           <p className="mb-4 text-sm text-stone-500 dark:text-stone-400" role="status">
-            {shown.length} {shown.length === 1 ? 'perfume' : 'perfumes'} shown
+            Showing {visible.length} of {shown.length} {shown.length === 1 ? 'perfume' : 'perfumes'}
             {hasFilters && (
               <button
                 type="button"
@@ -204,21 +217,35 @@ export default function SearchResults({
               }
             />
           ) : (
-            <div className="grid gap-5 pb-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {shown.map((p) => {
-                const tag = matchedFieldLabel(p);
-                return (
-                  <div key={p.id} className="relative">
-                    {tag && (
-                      <span className="absolute left-3 top-3 z-10 rounded-full bg-ink-950/80 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur dark:bg-white/90 dark:text-ink-950">
-                        {tag}
-                      </span>
-                    )}
-                    <PerfumeCard perfume={p} />
-                  </div>
-                );
-              })}
-            </div>
+            <>
+              <div className="grid gap-5 pb-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {visible.map((p) => {
+                  const tag = matchedFieldLabel(p);
+                  return (
+                    <div key={p.id} className="relative">
+                      {tag && (
+                        <span className="absolute left-3 top-3 z-10 rounded-full bg-ink-950/80 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur dark:bg-white/90 dark:text-ink-950">
+                          {tag}
+                        </span>
+                      )}
+                      <PerfumeCard perfume={p} />
+                    </div>
+                  );
+                })}
+              </div>
+              {hasMore && (
+                <div className="flex justify-center pb-16">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={() => setVisibleCount((c) => c + pageSize)}
+                  >
+                    Load more ({shown.length - visible.length} remaining)
+                  </Button>
+                </div>
+              )}
+              {!hasMore && <div className="pb-16" />}
+            </>
           )}
         </>
       )}

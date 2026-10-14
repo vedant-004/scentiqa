@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components';
 import { Button, Card, SectionHeading } from '@/components';
 import { PerfumeCard, StarRating } from '@/components';
 import { inr } from '@/lib/utils';
-import { SignOutButton, RemoveWardrobeButton, RemoveAlertButton } from './account-client';
+import { SignOutButton, RemoveWardrobeButton, RemoveAlertButton, SettingsSection, ExportDataButton, DeleteAccountSection } from './account-client';
 
 export const metadata = { title: 'My account' };
 
@@ -48,7 +48,7 @@ export default async function AccountPage() {
   await sb.rpc('ensure_public_user');
   const uid = user.id;
 
-  const [wardrobeR, votesR, reviewsR, alertsR, diaryR] = await Promise.all([
+  const [wardrobeR, votesR, reviewsR, alertsR, diaryR, profileR] = await Promise.all([
     sb.from('wardrobe_items')
       .select('shelf, created_at, perfumes(id, slug, name, bottle_image_url, rating_avg, lowest_price_inr, accords, houses(name))')
       .eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
@@ -64,7 +64,12 @@ export default async function AccountPage() {
     sb.from('wear_logs')
       .select('worn_on')
       .eq('user_id', uid).order('worn_on', { ascending: false }).limit(400),
+    sb.from('users')
+      .select('username, bio, location_city')
+      .eq('id', uid).maybeSingle(),
   ]);
+
+  const profile = (profileR.data ?? {}) as { username?: string; bio?: string; location_city?: string };
 
   const wardrobe = ((wardrobeR.data ?? []) as unknown as Array<{ shelf: string; perfumes: JoinedPerfume | JoinedPerfume[] | null }>)
     .map((w) => ({ shelf: w.shelf, perfumes: one(w.perfumes) }));
@@ -286,6 +291,39 @@ export default async function AccountPage() {
             })}
           </div>
         )}
+      </section>
+
+      {/* Settings */}
+      <section className="mt-10">
+        <SectionHeading kicker="Account" title="Profile settings" />
+        <Card className="p-6 sm:p-8">
+          <SettingsSection
+            initialUsername={profile.username ?? ''}
+            initialBio={profile.bio ?? ''}
+            initialLocation={profile.location_city ?? ''}
+          />
+          {profile.username && (
+            <p className="mt-4 text-sm text-stone-500 dark:text-stone-400">
+              Public profile: <Link href={`/member/${profile.username}`} className="font-semibold text-gold-700 hover:underline dark:text-gold-300">/member/{profile.username}</Link>
+            </p>
+          )}
+        </Card>
+      </section>
+
+      {/* Data export */}
+      <section className="mt-10">
+        <SectionHeading kicker="Privacy" title="Export my data" />
+        <Card className="p-6 sm:p-8">
+          <ExportDataButton />
+        </Card>
+      </section>
+
+      {/* Delete account */}
+      <section className="mt-10">
+        <SectionHeading kicker="Danger zone" title="Delete account" />
+        <Card className="p-6 sm:p-8">
+          <DeleteAccountSection />
+        </Card>
       </section>
     </div>
   );

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getForumCategory } from '@/lib/data';
 import { Card, EmptyState, SectionHeading } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
+import { NewTopicButton } from '../forum-client';
 
 export const revalidate = 3600;
 
@@ -12,7 +13,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   return (
     <div className="mx-auto max-w-4xl px-4 pt-6 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Forum', href: '/forum' }, { label: cat.name }]} />
-      <SectionHeading kicker={`${cat.topics.length} topics`} title={cat.name} />
+      <div className="flex items-start justify-between gap-4">
+        <SectionHeading kicker={`${cat.topics.length} topics`} title={cat.name} />
+        <div className="shrink-0 pt-1"><NewTopicButton categoryId={cat.id} categorySlug={slug} /></div>
+      </div>
       <p className="mb-6 text-[15px] text-stone-500 dark:text-stone-400">{cat.description}</p>
       <div className="space-y-3">
         {cat.topics.map((t) => (

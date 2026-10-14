@@ -209,26 +209,20 @@ export function predictPerfume(
 ): AIPrediction | null {
   if (!model) return null;
 
-  const match = matches?.[perfumeId];
+  // RULE: predictions use ONLY this perfume's own published note pyramid.
+  // Never substitute notes from a "similar" perfume — that invents data.
+  // If the pyramid is missing, return null (UI hides the panel).
   const notes = model.notes[perfumeId];
   const hasNotes = notes && (notes.t.length + notes.h.length + notes.b.length > 0);
-  const hasMatch = match && (match.t.length + match.m.length + match.e.length > 0);
-
-  let top: string[] = [], heart: string[] = [], base: string[] = [];
-  let confidence: 'high' | 'medium' | 'low' = 'low';
-  let source = '';
-
-  if (hasNotes) {
-    top = notes.t; heart = notes.h; base = notes.b;
-    confidence = 'high';
-    source = 'Based on the published note pyramid';
-  } else if (hasMatch) {
-    top = match.t; heart = match.m; base = match.e;
-    confidence = 'medium';
-    source = 'AI-matched to a highly similar fragrance in our 24k perfume database';
-  } else {
-    return null; // Not enough data
+  if (!hasNotes || !notes) {
+    return null;
   }
+
+  const top: string[] = notes.t;
+  const heart: string[] = notes.h;
+  const base: string[] = notes.b;
+  const confidence: 'high' | 'medium' | 'low' = 'high';
+  const source = 'Based on the published note pyramid';
 
   // Longevity: weighted average of base note volatility + concentration boost
   const concBoost = CONCENTRATION_BOOST[(perfumeMeta?.concentration || 'edp').toLowerCase()] ?? 0.5;
@@ -286,7 +280,7 @@ export function predictPerfume(
   // Overall AI score: combination of longevity, sillage, note richness
   const noteRichness = Math.min(1, (top.length + heart.length + base.length) / 12);
   const overallScore = Math.round(
-    (longevity / 5) * 35 + (sillage / 5) * 25 + noteRichness * 25 + (confidence === 'high' ? 15 : confidence === 'medium' ? 10 : 5)
+    (longevity / 5) * 35 + (sillage / 5) * 25 + noteRichness * 25 + 15
   );
 
   return {

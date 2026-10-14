@@ -225,7 +225,9 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
   const goToSearch = (term: string) => {
     const t = term.trim();
     if (!t) return;
-    setOpen(false);
+    // Don't call setOpen(false) here — it can unmount the button before the
+    // tap registers (especially on mobile). The pathname effect closes the menu.
+    setQ('');
     router.push(`/search?q=${encodeURIComponent(t)}`);
   };
 
@@ -236,9 +238,14 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
       setRecent(r);
     } catch { /* noop */ }
     // onPick closes the wrapping overlay (e.g. header search on mobile).
-    // Navigation must still happen — previously this branch returned early
-    // and the tap appeared to do nothing.
-    if (onPick) onPick(slug, name);
+    // When onPick is provided (e.g. Compare page), the caller handles the
+    // selection — do NOT navigate to the perfume page.
+    if (onPick) {
+      onPick(slug, name);
+      setQ('');
+      setOpen(false);
+      return;
+    }
     // Don't call the inner setOpen(false) here — it can unmount the button
     // before the tap registers on mobile. The pathname effect closes the menu.
     setQ('');
