@@ -768,11 +768,6 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
             © 2026 Scentiqa. Independent reviews — never sponsored placements.
             {isDemoMode && <span className="mt-1 block">Demo build: scores, prices and community content shown are illustrative samples.</span>}
           </p>
-          <div className="flex gap-2">
-            {['X', 'IG', 'YT'].map((s) => (
-              <span key={s} className="flex h-9 w-9 items-center justify-center rounded-xl bg-stone-900/5 text-xs font-bold text-stone-500 dark:bg-white/10 dark:text-stone-300">{s}</span>
-            ))}
-          </div>
         </div>
       </div>
       <div className="h-16 md:hidden" />

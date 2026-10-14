@@ -66,7 +66,7 @@ export function ScoreBadge({ score, size = 'md', label }: { score: number | null
   const dims = { sm: 'h-11 w-11 text-sm', md: 'h-16 w-16 text-xl', lg: 'h-24 w-24 text-3xl' }[size];
   if (score === null) {
     return (
-      <div className="flex flex-col items-center gap-1">
+      <div className="flex flex-col items-center gap-1" title={tooltip}>
         <div ref={ref} className={cn('flex items-center justify-center rounded-full border-2 border-dashed border-stone-300 text-stone-400 dark:border-ink-700', dims)}>
           <span className="text-lg">?</span>
         </div>
@@ -75,7 +75,7 @@ export function ScoreBadge({ score, size = 'md', label }: { score: number | null
     );
   }
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col items-center gap-1" title={tooltip}>
       <div ref={ref} className={cn('flex items-center justify-center rounded-full font-display font-bold text-white shadow-card', dims, scoreClasses(scoreTone(score)))}>
         {val}
       </div>

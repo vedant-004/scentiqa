@@ -3,11 +3,12 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/auth';
-import { Button, Input, Textarea } from '@/components';
+import { Button, Input, Textarea, useToast } from '@/components';
 import { removeWardrobe, removePriceAlert, updateProfile, exportUserData, deleteAccount } from '@/lib/actions';
 
 export function SignOutButton() {
   const { signOut } = useAuth();
+  const { toast } = useToast();
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   return (
@@ -18,6 +19,7 @@ export function SignOutButton() {
         setBusy(true);
         try {
           await signOut();
+          toast('Signed out. See you soon!');
         } finally {
           router.push('/');
           router.refresh();
