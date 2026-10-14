@@ -77,7 +77,7 @@ export function buildBlindBuyScore(p: BlindBuyInputs, dupeCount: number, dupeFlo
   for (const a of accords) {
     const s = a.strength || 50;
     totalWeight += s;
-    const nl = a.name.toLowerCase();
+    const nl = (a.name || '').toLowerCase();
     const familiar = [...FAMILIAR_ACCORDS].some((f) => nl.includes(f));
     if (familiar) famWeight += s;
   }
