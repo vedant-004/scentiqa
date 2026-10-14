@@ -363,7 +363,6 @@ export async function searchPerfumesDetailed(query: string, limit = 8): Promise<
       }));
       add(perNote.flat(), 'note');
     })());
-  }
   await Promise.all(extra);
   // "Did you mean?": only when there were NO direct name/house matches at all and
   // the fuzzy winner is genuinely close (>= 0.8). Never guess when nothing is close.
