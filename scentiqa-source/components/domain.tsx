@@ -38,6 +38,12 @@ export function ScoreBadge({ score, size = 'md', label }: { score: number | null
   const ref = useRef<HTMLDivElement>(null);
   const [val, setVal] = useState(0);
   const [seen, setSeen] = useState(false);
+  // Tooltip explaining what the score means
+  const tooltip = label?.toLowerCase().includes('lab match')
+    ? 'Estimated similarity to the original fragrance, based on community reports. Not lab-tested.'
+    : label?.toLowerCase().includes('avg')
+    ? 'Average estimated similarity across this house\u2019s tested dupes.'
+    : 'Scentiqa score out of 100. Higher means a closer match or stronger community rating.';
   useEffect(() => {
     const el = ref.current;
     if (!el || score === null) return;

@@ -28,9 +28,11 @@ const TYPE_COLOR: Record<string, string> = {
 
 export default async function SniffPage({ searchParams }: { searchParams: Promise<{ city?: string }> }) {
   const { city } = await searchParams;
-  const [cities, stores] = await Promise.all([getSniffCities(), getSniffStores(city)]);
-  const activeCity = city && cities.includes(city) ? city : undefined;
-  const shown = activeCity ? stores.filter((s) => s.city === activeCity) : stores;
+  const cities = await getSniffCities();
+  // Case-insensitive city matching: ?city=mumbai works same as ?city=Mumbai
+  const activeCity = city ? cities.find((c) => c.toLowerCase() === city.toLowerCase()) : undefined;
+  const stores = await getSniffStores(activeCity);
+  const shown = stores;
 
   return (
     <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
@@ -73,6 +75,9 @@ export default async function SniffPage({ searchParams }: { searchParams: Promis
             <p className="mt-0.5 text-sm font-medium text-stone-500 dark:text-stone-400">
               {s.area ? `${s.area}, ` : ''}{s.city}
             </p>
+            {s.address && (
+              <p className="mt-1 text-[13px] text-stone-500 dark:text-stone-400">{s.address}</p>
+            )}
             {s.brands_text && <p className="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-300">{s.brands_text}</p>}
             {s.samples_info && (
               <p className="mt-2 text-[13px] text-stone-500 dark:text-stone-400">

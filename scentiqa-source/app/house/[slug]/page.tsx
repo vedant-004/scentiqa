@@ -74,7 +74,7 @@ export default async function HousePage({ params }: { params: Promise<{ slug: st
         </div>
         <div className="relative mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            [h.perfumeCount, 'fragrances'],
+            [h.perfumeCount, h.perfumeCount === 1 ? 'fragrance' : 'fragrances'],
             [`${h.earliestYear}–${h.latestYear}`, 'catalog range'],
             [`${h.trustRating}/5`, 'trust rating'],
             [h.foundedYear, 'founded'],
