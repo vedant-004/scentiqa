@@ -159,6 +159,11 @@ export async function getDupesForPerfume(originalSlug: string): Promise<DupeEntr
 export async function getTrending(): Promise<Perfume[]> {
   return seed.trending.map((s) => perfBySlug.get(s)!).filter(Boolean);
 }
+export async function getPerfumesPage(page: number, perPage = 48): Promise<{ perfumes: Perfume[]; total: number }> {
+  const all = [...perfBySlug.values()];
+  const from = (page - 1) * perPage;
+  return { perfumes: all.slice(from, from + perPage), total: all.length };
+}
 export async function getLatestLaunches(): Promise<Perfume[]> {
   return seed.latest.map((s) => perfBySlug.get(s)!).filter(Boolean);
 }

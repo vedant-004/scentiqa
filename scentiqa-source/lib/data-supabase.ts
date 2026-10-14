@@ -439,6 +439,15 @@ export async function getTrending(): Promise<Perfume[]> {
     .order('rating_count', { ascending: false }).limit(12);
   return (data ?? []).map(mapPerfume);
 }
+export async function getPerfumesPage(page: number, perPage = 48): Promise<{ perfumes: Perfume[]; total: number }> {
+  const c = sb(); if (!c) return { perfumes: [], total: 0 };
+  const from = (page - 1) * perPage;
+  const { data, count } = await c.from('perfumes')
+    .select('*, houses(slug, name)', { count: 'exact' })
+    .order('name', { ascending: true })
+    .range(from, from + perPage - 1);
+  return { perfumes: (data ?? []).map(mapPerfume), total: count ?? 0 };
+}
 export async function getLatestLaunches(): Promise<Perfume[]> {
   const c = sb(); if (!c) return [];
   const { data } = await c.from('perfumes').select('*, houses(slug, name)').order('launch_year', { ascending: false }).limit(8);
