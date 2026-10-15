@@ -1,4 +1,4 @@
--- Scentiqa standout features — F1/F2/F3/F4 data tables
+-- Scentarchy standout features — F1/F2/F3/F4 data tables
 -- Created: 2026-10-05
 -- Tables: wear_logs (F4 diary), wear_tests (F1 climate lab),
 --         battles/battle_entries/battle_matchups/battle_votes (F3 scent battles)

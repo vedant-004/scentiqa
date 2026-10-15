@@ -1,4 +1,4 @@
--- Missing user feature tables for Scentiqa
+-- Missing user feature tables for Scentarchy
 -- Run in Supabase SQL editor (project rnpwligyinhxuzscrfos)
 -- Created: 2026-10-05 during comprehensive audit
 

@@ -1,4 +1,4 @@
--- Scentiqa notification system: broadcast notifications + per-user read tracking.
+-- Scentarchy notification system: broadcast notifications + per-user read tracking.
 -- Run in the Supabase SQL editor.
 
 -- ============ Notifications ============

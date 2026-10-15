@@ -1,4 +1,4 @@
--- Scentiqa community features: perfume requests (with voting) + city sniff directory.
+-- Scentarchy community features: perfume requests (with voting) + city sniff directory.
 -- Run in the Supabase SQL editor.
 
 -- ============ Perfume requests ============

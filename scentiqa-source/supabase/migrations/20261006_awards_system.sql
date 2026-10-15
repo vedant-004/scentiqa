@@ -1,4 +1,4 @@
--- Scentiqa Awards system: proper categories (Fragrantica-style + Indian twist),
+-- Scentarchy Awards system: proper categories (Fragrantica-style + Indian twist),
 -- manual winners, admin-managed nominees.
 -- Run in the Supabase SQL editor. Safe to re-run (all inserts guarded).
 
