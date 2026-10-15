@@ -23,13 +23,13 @@ export default function CollectionPage() {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('scentiqa-collection');
+      const saved = localStorage.getItem('scentarchy-collection');
       if (saved) setOwned(JSON.parse(saved));
     } catch { /* noop */ }
   }, []);
 
   useEffect(() => {
-    try { localStorage.setItem('scentiqa-collection', JSON.stringify(owned)); } catch { /* noop */ }
+    try { localStorage.setItem('scentarchy-collection', JSON.stringify(owned)); } catch { /* noop */ }
   }, [owned]);
 
   // Server-side search — no full-catalog download.

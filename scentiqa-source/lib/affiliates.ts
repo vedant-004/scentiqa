@@ -1,12 +1,12 @@
 /**
- * Central affiliate configuration for Scentiqa buy links.
+ * Central affiliate configuration for Scentarchy buy links.
  *
  * The site owner plugs real affiliate IDs in here (or via the env vars below)
  * and every perfume page's retailer links pick them up automatically.
  * No code changes needed when IDs arrive.
  *
  * Env vars (set in Vercel; all optional):
- *   NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG  e.g. scentiqa-21
+ *   NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG  e.g. scentarchy-21
  *   NEXT_PUBLIC_NYKAA_AFFILIATE_PARAM  e.g. the full network tracking param value
  *   NEXT_PUBLIC_FLIPKART_AFFILIATE_ID  e.g. your Flipkart affiliate id
  *

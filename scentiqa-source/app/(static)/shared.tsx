@@ -9,7 +9,7 @@ function DocPage({ title, kicker, children }: { title: string; kicker: string; c
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: title }]} />
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600 dark:text-gold-400">{kicker}</p>
       <h1 className="mt-2 font-display text-4xl font-bold tracking-tight">{title}</h1>
-      <div className="prose-scentiqa mt-8">{children}</div>
+      <div className="prose-scentarchy mt-8">{children}</div>
     </div>
   );
 }
@@ -17,9 +17,9 @@ function DocPage({ title, kicker, children }: { title: string; kicker: string; c
 export function MethodologyPage() {
   return (
     <DocPage title="How we test similarity" kicker="Dupe lab methodology">
-      <p>Scentiqa measures how close an inspired fragrance smells to the original — independently, and in the open. Here&rsquo;s exactly how.</p>
+      <p>Scentarchy measures how close an inspired fragrance smells to the original — independently, and in the open. Here&rsquo;s exactly how.</p>
       <div className="rounded-xl border border-amber-300/60 bg-amber-50 p-4 text-sm leading-relaxed text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-200">
-        <strong>Current status: no panel tests completed yet.</strong> The process below is our published methodology — the standard every score must meet before we call it lab-tested. Until then, every similarity score on Scentiqa is an <strong>estimate</strong> based on note overlap and community signals, clearly labelled as such wherever it appears.
+        <strong>Current status: no panel tests completed yet.</strong> The process below is our published methodology — the standard every score must meet before we call it lab-tested. Until then, every similarity score on Scentarchy is an <strong>estimate</strong> based on note overlap and community signals, clearly labelled as such wherever it appears.
       </div>
       <h2>1. Blind triangle testing</h2>
       <p>A panel of 12–20 trained testers smells the original and two samples — one being the candidate dupe — blind. Each tester rates similarity on a 0–100 scale across opening, drydown, projection and overall impression.</p>
@@ -32,14 +32,14 @@ export function MethodologyPage() {
       <h2>5. What we don&rsquo;t do</h2>
       <p>We don&rsquo;t take payment from houses for scores, rankings or inclusion. Lab purchases are made anonymously at retail. If a result can&rsquo;t be reproduced, we re-test or retract it.</p>
       <h2>A note on current data</h2>
-      <p>Every similarity score, tester count and price shown on Scentiqa today is an illustrative estimate so you can explore the product — not a genuine Scentiqa lab finding yet. When real panel tests are completed, each score will carry its test date and panel size, and this notice will be updated.</p>
+      <p>Every similarity score, tester count and price shown on Scentarchy today is an illustrative estimate so you can explore the product — not a genuine Scentarchy lab finding yet. When real panel tests are completed, each score will carry its test date and panel size, and this notice will be updated.</p>
     </DocPage>
   );
 }
 
 export function ClimatePage() {
   return (
-    <DocPage title="Climate testing protocol" kicker="Scentiqa climate lab">
+    <DocPage title="Climate testing protocol" kicker="Scentarchy climate lab">
       <p>Perfume behaves differently in Indian weather. A fragrance that lasts 8 hours in Paris may vanish in 3 in Chennai. So we test here, in the heat.</p>
       <h2>Test conditions</h2>
       <p>Panels run at 35°C and 70% relative humidity, matching a typical North Indian summer day. Each tester applies a fixed number of sprays to forearm and reports at set intervals.</p>
@@ -54,7 +54,7 @@ export function ClimatePage() {
 export function TrustPage() {
   return (
     <DocPage title="Trust charter" kicker="Our promises">
-      <p>Scentiqa exists because perfume buying in India has a trust problem: fakes, inflated claims, and marketing dressed up as science. Our charter is the line we won&rsquo;t cross.</p>
+      <p>Scentarchy exists because perfume buying in India has a trust problem: fakes, inflated claims, and marketing dressed up as science. Our charter is the line we won&rsquo;t cross.</p>
       <h2>Independence</h2>
       <p>Scores are never for sale. Houses can&rsquo;t pay for testing, ranking, or placement. Affiliate links are labeled; editorial is never written for a commission.</p>
       <h2>Honesty about data</h2>
@@ -78,15 +78,15 @@ export function FakeGuidePage() {
       <h2>The bottle tells</h2>
       <p>Blurry printing, misaligned caps, weak magnets, and chemical-smelling first sprays are classic tells. Batch codes should match the box and be verifiable on check sites.</p>
       <h2>When in doubt</h2>
-      <p>Stick to sellers on Scentiqa&rsquo;s verified list, and report suspicious listings — we investigate and delist.</p>
+      <p>Stick to sellers on Scentarchy&rsquo;s verified list, and report suspicious listings — we investigate and delist.</p>
     </DocPage>
   );
 }
 
 export function AboutPage() {
   return (
-    <DocPage title="About Scentiqa" kicker="Our story">
-      <p>Scentiqa is India&rsquo;s independent perfume encyclopedia and dupe lab. We started with a simple frustration: the world&rsquo;s best fragrance databases ignore Indian weather, Indian sellers, and the incredible Indian houses making world-class alternatives at honest prices.</p>
+    <DocPage title="About Scentarchy" kicker="Our story">
+      <p>Scentarchy is India&rsquo;s independent perfume encyclopedia and dupe lab. We started with a simple frustration: the world&rsquo;s best fragrance databases ignore Indian weather, Indian sellers, and the incredible Indian houses making world-class alternatives at honest prices.</p>
       <p>So we built the database we wanted — every perfume rated for Indian heat, every dupe compared openly, every price in rupees from sellers we&rsquo;ve actually verified.</p>
       <h2>What we do</h2>
       <p><strong>The encyclopedia.</strong> Thousands of perfumes — designer, niche, Middle Eastern, and Indian — with notes, accords, and honest descriptions, all in one place.</p>
@@ -162,13 +162,13 @@ export function ContactPage({ settings }: { settings?: ContactSettings }) {
 export function TermsPage() {
   return (
     <DocPage title="Terms of use" kicker="Legal">
-      <p>By using Scentiqa you agree to the following.</p>
+      <p>By using Scentarchy you agree to the following.</p>
       <h2>Content</h2>
       <p>Reviews and forum posts are the opinions of their authors. Similarity scores reflect our panel&rsquo;s findings, not guarantees. Prices are indicative and change; confirm with the seller before purchase.</p>
       <h2>Accounts</h2>
       <p>You&rsquo;re responsible for activity under your account. Don&rsquo;t post spam, abuse, or fake reviews — we may remove content or suspend accounts that harm the community.</p>
       <h2>Liability</h2>
-      <p>Scentiqa is an informational service. We&rsquo;re not a party to your purchases; disputes with sellers are between you and them.</p>
+      <p>Scentarchy is an informational service. We&rsquo;re not a party to your purchases; disputes with sellers are between you and them.</p>
     </DocPage>
   );
 }
@@ -176,13 +176,13 @@ export function TermsPage() {
 export function PrivacyPage() {
   return (
     <DocPage title="Privacy policy" kicker="Legal">
-      <p>We collect the minimum needed to run Scentiqa.</p>
+      <p>We collect the minimum needed to run Scentarchy.</p>
       <h2>What we store</h2>
       <p>Your account email, your reviews/votes/wardrobe, and anonymous usage analytics. We never sell your data.</p>
       <h2>Cookies</h2>
       <p>We use essential cookies for sign-in and theme preference, and optional analytics cookies you can decline.</p>
       <h2>Your rights</h2>
-      <p>Export or delete your data anytime from account settings, or email privacy@scentiqa.in.</p>
+      <p>Export or delete your data anytime from account settings, or email privacy@scentarchy.com.</p>
     </DocPage>
   );
 }

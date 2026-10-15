@@ -1,4 +1,4 @@
-// /find-alternative — Scentiqa's signature dupe-finder tool.
+// /find-alternative — Scentarchy's signature dupe-finder tool.
 'use client';
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -72,7 +72,7 @@ function FinderInner() {
   return (
     <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600 dark:text-gold-400">Scentiqa dupe lab</p>
+        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600 dark:text-gold-400">Scentarchy dupe lab</p>
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">Find a cheaper alternative</h1>
         <p className="mt-3 text-[15px] text-stone-500 dark:text-stone-400">Pick any luxury perfume — we&rsquo;ll show its Indian alternatives, ranked by estimated similarity scores.</p>
         {/* key remounts the bar when ?q= changes, so the prefill always applies */}
@@ -148,7 +148,7 @@ function FinderInner() {
                         <Link href={`/perfume/${d.dupeSlug}`} className="font-display text-xl font-semibold tracking-tight hover:text-gold-700 dark:hover:text-gold-300">{d.dupe.name}</Link>
                         <p className="mt-1 line-clamp-2 text-sm text-stone-500 dark:text-stone-400">{d.verdict}</p>
                         {d.claimedAccuracy && d.testedBy === 'lab' && (
-                          <p className="mt-2 text-xs"><span className="text-stone-400">House claims {d.claimedAccuracy} · </span><span className="font-bold text-gold-700 dark:text-gold-300">Scentiqa lab{demo ? ' (sample)' : ''}: {d.similarityScore}%</span></p>
+                          <p className="mt-2 text-xs"><span className="text-stone-400">House claims {d.claimedAccuracy} · </span><span className="font-bold text-gold-700 dark:text-gold-300">Scentarchy lab{demo ? ' (sample)' : ''}: {d.similarityScore}%</span></p>
                         )}
                       </div>
                       <div className="flex items-center gap-3 sm:flex-col sm:items-end">

@@ -13,16 +13,16 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "sw
 const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: "swap" });
 
 // Applies saved/OS theme BEFORE first paint — no white flash in dark mode.
-const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('scentiqa-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`;
+const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('scentarchy-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Scentiqa — India's Perfume Encyclopedia & Dupe Finder", template: "%s | Scentiqa" },
+  title: { default: "Scentarchy — India's Perfume Encyclopedia & Dupe Finder", template: "%s | Scentarchy" },
   description: "Discover perfumes in India: honest reviews, estimated dupe similarity scores, INR prices from Indian sellers, and heat-performance predictions for Indian weather.",
-  openGraph: { type: "website", siteName: "Scentiqa", locale: "en_IN" },
+  openGraph: { type: "website", siteName: "Scentarchy", locale: "en_IN" },
   themeColor: "#b45309",
   icons: { apple: "/icons/apple-touch-icon.png" },
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Scentiqa" },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Scentarchy" },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,4 +1,4 @@
-// /notes — the Scentiqa note encyclopedia index.
+// /notes — the Scentarchy note encyclopedia index.
 import Link from 'next/link';
 import { getNoteIndex, getNoteMetas } from '@/lib/notes-data';
 import { Breadcrumbs } from '@/components';
@@ -7,7 +7,7 @@ import { NotesIndexClient } from './notes-client';
 
 export const metadata = {
   title: 'Fragrance Notes Encyclopedia',
-  description: 'Explore 400 fragrance notes — what each smells like, and every Scentiqa perfume that features it.',
+  description: 'Explore 400 fragrance notes — what each smells like, and every Scentarchy perfume that features it.',
 };
 export const revalidate = 3600;
 
@@ -42,7 +42,7 @@ export default async function NotesIndex() {
         level={1}
       />
       <p className="mb-6 -mt-3 max-w-2xl text-sm text-stone-500 dark:text-stone-400">
-        Every note in the Scentiqa catalog — what it smells like, and which perfumes wear it best. Tap any note for its full story.
+        Every note in the Scentarchy catalog — what it smells like, and which perfumes wear it best. Tap any note for its full story.
       </p>
       {notes.length === 0 ? (
         <Card className="p-8 text-center text-sm text-stone-500">Note data is still loading.</Card>
@@ -50,7 +50,7 @@ export default async function NotesIndex() {
         <NotesIndexClient notes={notes} catLabel={CAT_LABEL} images={noteImages} />
       )}
       <p className="mt-6 text-center text-xs text-stone-400">
-        Counts reflect the live Scentiqa catalog. <Link href="/search/notes" className="font-bold text-gold-700 hover:underline dark:text-gold-300">Try the AI note search →</Link>
+        Counts reflect the live Scentarchy catalog. <Link href="/search/notes" className="font-bold text-gold-700 hover:underline dark:text-gold-300">Try the AI note search →</Link>
       </p>
     </div>
   );

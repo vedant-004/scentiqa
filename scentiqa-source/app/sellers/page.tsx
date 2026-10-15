@@ -4,7 +4,7 @@ import { Button, Card, SectionHeading } from '@/components';
 
 export const metadata = {
   title: 'Verified Sellers',
-  description: 'Authentic perfume sellers in India, verified by the Scentiqa team.',
+  description: 'Authentic perfume sellers in India, verified by the Scentarchy team.',
 };
 
 export const revalidate = 3600;
@@ -49,7 +49,7 @@ export default async function SellersPage() {
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Verified Sellers' }]} />
       <SectionHeading kicker="Buy with confidence" title="Verified sellers" />
       <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">
-        Sellers marked <strong>verified</strong> have been checked by the Scentiqa team.
+        Sellers marked <strong>verified</strong> have been checked by the Scentarchy team.
         Always re-verify prices on the seller&rsquo;s site before buying.
       </p>
 
@@ -64,7 +64,7 @@ export default async function SellersPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   {s.verified ? (
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
-                      <span aria-hidden="true">✓</span> Verified by Scentiqa
+                      <span aria-hidden="true">✓</span> Verified by Scentarchy
                     </span>
                   ) : (
                     <span className="rounded-full bg-stone-900/5 px-3 py-1 text-xs font-semibold text-stone-500 dark:bg-white/10 dark:text-stone-300">

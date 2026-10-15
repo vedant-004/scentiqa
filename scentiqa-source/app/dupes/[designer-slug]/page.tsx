@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ 'designer
     title: `Best ${p.name} Dupes in India (${p.dupes.length} Alternatives${from})`,
     description: `${p.name} by ${p.houseInfo.name} too pricey? Compare ${p.dupes.length} community-suggested dupes and alternatives available in India, with estimated similarity scores and INR prices.`,
     alternates: { canonical: url },
-    openGraph: { title: `Best ${p.name} Dupes in India — Scentiqa`, url, type: 'article' },
+    openGraph: { title: `Best ${p.name} Dupes in India — Scentarchy`, url, type: 'article' },
   };
 }
 
@@ -106,7 +106,7 @@ export default async function DupeGuidePage({ params }: { params: Promise<{ 'des
       {/* Honesty note */}
       <section aria-label="How dupes are verified" className="mt-10">
         <Card className="p-5">
-          <h2 className="font-display text-lg font-bold">How Scentiqa verifies dupes</h2>
+          <h2 className="font-display text-lg font-bold">How Scentarchy verifies dupes</h2>
           <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-300">
             Every alternative above comes from our dupe database. No blind-panel lab tests have been completed yet, so every similarity score on this page is an estimate based on note overlap and community signals — not a measured result. Entries are community-suggested and clearly labeled while testing is pending. We never invent measured numbers — if a score isn&apos;t shown,
             it hasn&apos;t been estimated yet. Read our <Link href="/methodology" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">testing methodology</Link> for what each label means.

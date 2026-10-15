@@ -190,7 +190,7 @@ function CompareInner() {
                 <div>
                   <h3 className="font-display text-xl font-semibold">Lab verdict</h3>
                   <p className="mt-1 max-w-2xl text-sm leading-relaxed text-stone-600 dark:text-stone-300">{rel.verdict}</p>
-                  {rel.claimedAccuracy && <p className="mt-2 text-xs text-stone-400">House claims {rel.claimedAccuracy} · Scentiqa lab{!isSupabaseConfigured() ? ' (sample)' : ''} measured {rel.similarityScore}%</p>}
+                  {rel.claimedAccuracy && <p className="mt-2 text-xs text-stone-400">House claims {rel.claimedAccuracy} · Scentarchy lab{!isSupabaseConfigured() ? ' (sample)' : ''} measured {rel.similarityScore}%</p>}
                 </div>
               </Card>
             ) : (

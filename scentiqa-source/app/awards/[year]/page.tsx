@@ -20,8 +20,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ year: string }> }) {
   const { year } = await params;
   return {
-    title: `Scentiqa Awards ${year}`,
-    description: `Scentiqa Awards ${year}: the best fragrances in the world and India — niche, designer, attars, monsoon beasts and desi clone heroes.`,
+    title: `Scentarchy Awards ${year}`,
+    description: `Scentarchy Awards ${year}: the best fragrances in the world and India — niche, designer, attars, monsoon beasts and desi clone heroes.`,
   };
 }
 
@@ -39,10 +39,10 @@ export default async function AwardsYearPage({ params }: { params: Promise<{ yea
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Awards', href: '/awards' }, { label: String(y) }]} />
-      <SectionHeading kicker="Scentiqa's choice" title={`Scentiqa Awards ${y}`} />
+      <SectionHeading kicker="Scentarchy's choice" title={`Scentarchy Awards ${y}`} />
       <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
         Our team's annual picks — global legends and Indian heroes, from niche icons to
-        monsoon beasts and budget kings. Winners are Scentiqa team selections, not sponsored placements.
+        monsoon beasts and budget kings. Winners are Scentarchy team selections, not sponsored placements.
       </p>
 
       <div className="mb-8 flex flex-wrap gap-2">
@@ -58,7 +58,7 @@ export default async function AwardsYearPage({ params }: { params: Promise<{ yea
 
       {ultimate?.winner && <UltimateBanner category={ultimate} winner={ultimate.winner} />}
 
-      <SectionHeading kicker="Desi honours" title="Scentiqa India Awards" />
+      <SectionHeading kicker="Desi honours" title="Scentarchy India Awards" />
       <div className="mb-10 grid gap-6 md:grid-cols-2">
         {indian.map((c) => <CategoryCard key={c.id} category={c} year={y} />)}
       </div>
@@ -85,7 +85,7 @@ function UltimateBanner({ category, winner }: { category: AwardCategory; winner:
           {winner.houseName && <p className="mt-2 text-lg text-stone-200">by {winner.houseName}</p>}
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold-500/20 px-6 py-2.5 ring-1 ring-gold-400/40">
             <span className="text-2xl">⭐</span>
-            <span className="font-bold text-gold-200">Scentiqa's Choice {category.year}</span>
+            <span className="font-bold text-gold-200">Scentarchy's Choice {category.year}</span>
           </div>
           <div className="mt-6">
             <Link href={href} className="inline-block rounded-full bg-gold-600 px-8 py-3 font-bold text-white transition-colors hover:bg-gold-700">

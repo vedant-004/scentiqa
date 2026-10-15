@@ -319,7 +319,7 @@ export async function createArticle(fd: FormData) {
     category: ARTICLE_CATEGORIES.includes(cat) ? cat : 'news',
     excerpt: str(fd, 'excerpt'),
     body: str(fd, 'body'),
-    author_name: str(fd, 'author_name') || 'Scentiqa Editorial',
+    author_name: str(fd, 'author_name') || 'Scentarchy Editorial',
     is_published: fd.get('is_published') === 'on',
     published_at: str(fd, 'published_at') || new Date().toISOString(),
   });
@@ -338,7 +338,7 @@ export async function updateArticle(id: string, fd: FormData) {
     category: ARTICLE_CATEGORIES.includes(cat) ? cat : 'news',
     excerpt: str(fd, 'excerpt'),
     body: str(fd, 'body'),
-    author_name: str(fd, 'author_name') || 'Scentiqa Editorial',
+    author_name: str(fd, 'author_name') || 'Scentarchy Editorial',
     is_published: fd.get('is_published') === 'on',
     published_at: str(fd, 'published_at') || new Date().toISOString(),
   }).eq('id', id);

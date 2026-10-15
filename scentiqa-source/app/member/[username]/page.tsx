@@ -6,7 +6,7 @@ import { Breadcrumbs, PerfumeCard, StarRating } from '@/components';
 
 export async function generateMetadata({ params }: { params: Promise<{ username: string }> }) {
   const { username } = await params;
-  return { title: `@${username} — Scentiqa member` };
+  return { title: `@${username} — Scentarchy member` };
 }
 
 export default async function MemberPage({ params }: { params: Promise<{ username: string }> }) {

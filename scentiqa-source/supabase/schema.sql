@@ -1,5 +1,5 @@
 -- ============================================================
--- Scentiqa database schema (PostgreSQL / Supabase)
+-- Scentarchy database schema (PostgreSQL / Supabase)
 -- Run BEFORE supabase/seed.sql.
 -- Designed for demo seed data; apply in the Supabase SQL editor
 -- or with `psql` before inserting seed rows.
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS articles (
   category    text NOT NULL DEFAULT 'news',
   excerpt     text NOT NULL DEFAULT '',
   body        text NOT NULL DEFAULT '',
-  author_name text NOT NULL DEFAULT 'Scentiqa Editorial',
+  author_name text NOT NULL DEFAULT 'Scentarchy Editorial',
   published_at timestamptz NOT NULL DEFAULT now(),
   is_published boolean NOT NULL DEFAULT true
 );

@@ -54,7 +54,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       )}
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-700 dark:text-gold-300">Scentiqa control room</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-700 dark:text-gold-300">Scentarchy control room</p>
           <h1 className="font-display text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100">Admin</h1>
         </div>
         <div className="flex items-center gap-3">

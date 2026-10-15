@@ -1,8 +1,8 @@
-# Scentiqa
+# Scentarchy
 
 An India-focused perfume discovery platform: blind-panel dupe similarity testing, verified INR prices from legitimate Indian sellers, and climate-tested reviews for Indian heat and humidity.
 
-**Live demo:** `https://scentiqa.in` (demo build — see “Demo vs live” below)
+**Live demo:** `https://scentarchy.in` (demo build — see “Demo vs live” below)
 
 ## Quick start
 
@@ -84,11 +84,11 @@ scripts/generate-seed.mjs # deterministic seed generator
 
 ## Data & trust policy (important)
 
-Demo-mode similarity scores, tester counts, climate figures, prices, reviews, forum posts, and giveaway winners are **illustrative samples** — they are labeled as such in the UI (“Lab match · sample”, “Demo data” pill, footer notice). Genuine Scentiqa lab findings are only published after a real blind panel; the data model keeps `similarity_score` nullable and separates:
+Demo-mode similarity scores, tester counts, climate figures, prices, reviews, forum posts, and giveaway winners are **illustrative samples** — they are labeled as such in the UI (“Lab match · sample”, “Demo data” pill, footer notice). Genuine Scentarchy lab findings are only published after a real blind panel; the data model keeps `similarity_score` nullable and separates:
 
 - **Brand-claimed similarity** (`claimed_accuracy_text`) — the house’s own marketing, never presented as our finding.
 - **Community suggestions** (`tested_by = 'community'`) — user votes, shown as pending lab testing.
-- **Scentiqa lab results** (`tested_by = 'lab'` + score) — only genuine blind-panel records in live mode.
+- **Scentarchy lab results** (`tested_by = 'lab'` + score) — only genuine blind-panel records in live mode.
 
 Do not remove sample labels or present synthetic data as genuine findings. See `/methodology` and `/trust-charter` on the site.
 
@@ -124,7 +124,7 @@ Every item below is currently sample/placeholder data (the 286 real catalog reco
 - All lab similarity scores, tester counts, test dates, and climate test conditions.
 - All 16 reviews, 3 member profiles, and forum threads/posts.
 - All 5 news articles, awards votes, and giveaway details/winners.
-- Placeholder contact emails in `/contact` (e.g. `hello@scentiqa.in` — not a real inbox).
+- Placeholder contact emails in `/contact` (e.g. `hello@scentarchy.in` — not a real inbox).
 - `/terms` and `/privacy` are drafts, not legal advice — have counsel review.
 - PWA icon: `app/icon.svg` is a placeholder; add a 512×512 PNG for install quality.
 

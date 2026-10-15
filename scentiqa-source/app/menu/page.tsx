@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Menu',
-  description: 'Browse all sections of Scentiqa.',
+  description: 'Browse all sections of Scentarchy.',
 };
 
 const SECTIONS: { href: string; label: string; desc: string }[] = [
@@ -21,7 +21,7 @@ const SECTIONS: { href: string; label: string; desc: string }[] = [
   { href: '/forum', label: 'Community', desc: 'Join the conversation' },
   { href: '/requests', label: 'Request a Perfume', desc: 'Vote for the perfumes you want in our catalog' },
   { href: '/sniff', label: 'Sniff Guide', desc: 'Where to smell perfumes in your city' },
-  { href: '/awards/2026', label: 'Awards', desc: "Scentiqa Team's Picks 2026" },
+  { href: '/awards/2026', label: 'Awards', desc: "Scentarchy Team's Picks 2026" },
   { href: '/about', label: 'About', desc: 'Our methodology and story' },
   { href: '/contact', label: 'Contact', desc: 'Get in touch' },
 ];
@@ -33,7 +33,7 @@ export default function MenuPage() {
         Menu
       </h1>
       <p className="mt-2 text-sm text-stone-500 dark:text-stone-400">
-        Browse every section of Scentiqa.
+        Browse every section of Scentarchy.
       </p>
       <nav className="mt-6 space-y-2" aria-label="Site menu">
         {SECTIONS.map((s) => (

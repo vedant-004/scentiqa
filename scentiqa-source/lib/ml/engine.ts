@@ -1,4 +1,4 @@
-// Scentiqa ML Engine — client-side inference for accord matching, note search,
+// Scentarchy ML Engine — client-side inference for accord matching, note search,
 // and AI predictions. Trained on 24k Fragrantica perfumes.
 
 export interface MLModel {

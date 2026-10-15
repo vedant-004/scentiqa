@@ -3,7 +3,7 @@ import { getArticles } from '@/lib/data';
 import { Card, SectionHeading } from '@/components/ui';
 import { Breadcrumbs } from '@/components';
 
-export const metadata = { title: 'News & Editorial', description: 'Perfume news, guides and features from the Scentiqa editors.' };
+export const metadata = { title: 'News & Editorial', description: 'Perfume news, guides and features from the Scentarchy editors.' };
 
 const readMins = (body: string) => Math.max(1, Math.round(body.split(/\s+/).length / 200));
 

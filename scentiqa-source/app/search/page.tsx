@@ -31,7 +31,7 @@ export async function generateMetadata({
   }
   return {
     title: `Search: ${query}`,
-    description: `Perfume search results for "${query}" — ratings, verified INR prices and Indian dupe alternatives on Scentiqa.`,
+    description: `Perfume search results for "${query}" — ratings, verified INR prices and Indian dupe alternatives on Scentarchy.`,
   };
 }
 
@@ -127,7 +127,7 @@ const POPULAR_IDEAS = ['Aventus', 'Sauvage', 'Baccarat Rouge 540', 'Khamrah', 'T
 function NoQueryPrompt() {
   return (
     <div className="pb-16">
-      <SectionHeading kicker="Search" title="Search Scentiqa" />
+      <SectionHeading kicker="Search" title="Search Scentarchy" />
       <p className="mb-4 max-w-xl text-[15px] text-stone-500 dark:text-stone-400">
         Type a perfume, house or note in the box above — we search across the 8,000+ perfumes in the
         catalog and show ratings, real INR prices and dupe alternatives.

@@ -104,7 +104,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="mt-3 flex justify-center"><StarRating value={p.ratingAvg} count={p.ratingCount} size={18} /></div>
             {p.ratingCount > 0 && (
-              <p className="mt-1 text-center text-xs text-stone-500 dark:text-stone-400" title="Aggregated rating imported from global fragrance-community data. Scentiqa member reviews are listed separately below.">
+              <p className="mt-1 text-center text-xs text-stone-500 dark:text-stone-400" title="Aggregated rating imported from global fragrance-community data. Scentarchy member reviews are listed separately below.">
                 Global fragrance-community rating
               </p>
             )}
@@ -122,7 +122,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             <SentimentVote perfumeId={p.id} />
             <div className="flex flex-wrap items-center justify-center gap-2">
               <WardrobeButtons perfumeId={p.id} name={p.name} />
-              <ShareButtons title={`${p.name} by ${p.houseInfo.name} — Scentiqa`} path={`/perfume/${p.slug}`} />
+              <ShareButtons title={`${p.name} by ${p.houseInfo.name} — Scentarchy`} path={`/perfume/${p.slug}`} />
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               </div>
             )}
             <p className="mt-4 rounded-xl bg-cream-100/70 p-4 text-xs leading-relaxed text-stone-500 dark:bg-white/[0.03] dark:text-stone-400">
-              <strong className="text-stone-700 dark:text-stone-200">Independence note:</strong> “House claims X%” is the brand&rsquo;s own marketing. “Scentiqa lab” scores are currently <em>estimates</em> from note overlap and community signals — no blind-panel tests completed yet. Dupes are listed under their own names; “inspired by” lines are editorial, not affiliation. <Link href="/methodology" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">Methodology →</Link>
+              <strong className="text-stone-700 dark:text-stone-200">Independence note:</strong> “House claims X%” is the brand&rsquo;s own marketing. “Scentarchy lab” scores are currently <em>estimates</em> from note overlap and community signals — no blind-panel tests completed yet. Dupes are listed under their own names; “inspired by” lines are editorial, not affiliation. <Link href="/methodology" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">Methodology →</Link>
             </p>
           </section>
 
@@ -214,8 +214,8 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
             {(p.memberRatingCount ?? 0) > 0 && (
               <div className="mb-4 flex items-center gap-2">
                 <StarRating value={p.memberRatingAvg ?? 0} count={p.memberRatingCount} size={15} />
-                <span className="text-xs text-stone-500 dark:text-stone-400" title="Average of written reviews by Scentiqa members on this page.">
-                  Scentiqa member rating
+                <span className="text-xs text-stone-500 dark:text-stone-400" title="Average of written reviews by Scentarchy members on this page.">
+                  Scentarchy member rating
                 </span>
               </div>
             )}

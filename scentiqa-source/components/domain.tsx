@@ -1,4 +1,4 @@
-// Scentiqa signature components — ScoreBadge, meters, cards, tables.
+// Scentarchy signature components — ScoreBadge, meters, cards, tables.
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -43,7 +43,7 @@ export function ScoreBadge({ score, size = 'md', label }: { score: number | null
     ? 'Estimated similarity to the original fragrance, based on community reports. Not lab-tested.'
     : label?.toLowerCase().includes('avg')
     ? 'Average estimated similarity across this house\u2019s tested dupes.'
-    : 'Scentiqa score out of 100. Higher means a closer match or stronger community rating.';
+    : 'Scentarchy score out of 100. Higher means a closer match or stronger community rating.';
   useEffect(() => {
     const el = ref.current;
     if (!el || score === null) return;
@@ -575,7 +575,7 @@ export function DupeCard({ entry, originalName }: { entry: DupeEntry; originalNa
         {claimedAccuracy && lab && (
           <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
             <span className="rounded-full bg-stone-900/5 px-2.5 py-1 font-medium text-stone-500 dark:bg-white/10 dark:text-stone-300">House claims {claimedAccuracy}</span>
-            <span className={cn('rounded-full px-2.5 py-1 font-bold text-white', scoreClasses(scoreTone(similarityScore)))}>Scentiqa lab{demo ? ' (sample)' : ''}: {similarityScore}%</span>
+            <span className={cn('rounded-full px-2.5 py-1 font-bold text-white', scoreClasses(scoreTone(similarityScore)))}>Scentarchy lab{demo ? ' (sample)' : ''}: {similarityScore}%</span>
           </div>
         )}
         {claimedAccuracy && !lab && <BrandClaimNote text={claimedAccuracy} />}
@@ -643,7 +643,7 @@ export function PriceTable({ prices }: { prices: PriceEntry[] }) {
         </div>
       ))}
       <p className="border-t border-stone-200/70 bg-cream-100/50 px-4 py-2.5 text-[11px] text-stone-400 dark:border-ink-700/50 dark:bg-white/[0.02]">
-        Prices marked with a source note were recorded during research (Sep–Oct 2026). Cached or older prices are flagged — always re-verify on the seller&rsquo;s site before buying. Scentiqa has not independently vetted unverified sellers.
+        Prices marked with a source note were recorded during research (Sep–Oct 2026). Cached or older prices are flagged — always re-verify on the seller&rsquo;s site before buying. Scentarchy has not independently vetted unverified sellers.
       </p>
     </div>
   );
@@ -778,7 +778,7 @@ export function NewsletterSignup({ source, compact = false }: { source: 'footer'
 /* ---------- ReviewPrompt ---------- */
 // Gentle nudge to review a perfume, shown at most once per 24h site-wide
 // (localStorage timestamp). Never auto-creates anything.
-const REVIEW_PROMPT_KEY = 'scentiqa-review-prompt';
+const REVIEW_PROMPT_KEY = 'scentarchy-review-prompt';
 const REVIEW_PROMPT_COOLDOWN_MS = 24 * 3600 * 1000;
 
 export function ReviewPrompt({ context, perfumeName, perfumeSlug }: {
@@ -852,7 +852,7 @@ export function ThemeToggle() {
     typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light');
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
-    try { localStorage.setItem('scentiqa-theme', theme); } catch { /* noop */ }
+    try { localStorage.setItem('scentarchy-theme', theme); } catch { /* noop */ }
   }, [theme]);
   return (
     <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

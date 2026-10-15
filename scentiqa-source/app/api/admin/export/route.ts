@@ -36,14 +36,14 @@ export async function GET(request: Request) {
     return new NextResponse(csv, {
       headers: {
         'Content-Type': 'text/csv',
-        'Content-Disposition': `attachment; filename="scentiqa-${table}-${stamp}.csv"`,
+        'Content-Disposition': `attachment; filename="scentarchy-${table}-${stamp}.csv"`,
       },
     });
   }
   return new NextResponse(JSON.stringify(rows, null, 1), {
     headers: {
       'Content-Type': 'application/json',
-      'Content-Disposition': `attachment; filename="scentiqa-${table}-${stamp}.json"`,
+      'Content-Disposition': `attachment; filename="scentarchy-${table}-${stamp}.json"`,
     },
   });
 }

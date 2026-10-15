@@ -1,4 +1,4 @@
-// Contact form: saves the message to the Scentiqa inbox (/admin/contact) via /api/contact.
+// Contact form: saves the message to the Scentarchy inbox (/admin/contact) via /api/contact.
 'use client';
 import { useState } from 'react';
 import { Button, Card, Input } from '@/components';

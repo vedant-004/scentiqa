@@ -1,4 +1,4 @@
-// Scentiqa data adapter — single entry point for all data access.
+// Scentarchy data adapter — single entry point for all data access.
 // Demo mode (default): reads from data/seed.json.
 // Supabase mode: when NEXT_PUBLIC_SUPABASE_URL + keys are set, queries Supabase.
 import { cache } from 'react';

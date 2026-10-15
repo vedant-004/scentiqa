@@ -34,7 +34,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600 dark:text-gold-400">{a.category}</p>
       <h1 className="mt-2 font-display text-4xl font-bold tracking-tight sm:text-5xl">{a.title}</h1>
       <p className="mt-3 text-sm text-stone-500">By {a.author} · {readMinutes} min read · {a.date}</p>
-      <div className="prose-scentiqa mt-8" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      <div className="prose-scentarchy mt-8" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {related.length > 0 && (
         <div className="mt-12 border-t border-stone-200/70 pt-8 dark:border-ink-700/50">
           <h2 className="mb-4 font-display text-2xl font-semibold">Keep reading</h2>

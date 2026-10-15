@@ -1,4 +1,4 @@
-// AI Scent Finder — Scentiqa's flagship. A cinematic 10-step scent profiling
+// AI Scent Finder — Scentarchy's flagship. A cinematic 10-step scent profiling
 // wizard: entry ritual → living Scent DNA orb → archetype reveal →
 // precision-ranked, explainable recommendations.
 // Mobile-first, premium feel. Respects prefers-reduced-motion.
@@ -53,7 +53,7 @@ type Phase = 'entry' | 'wizard' | 'loading' | 'reveal' | 'results';
 
 // sessionStorage key: answers + results survive the browser Back button from a
 // perfume detail page (the page remounts and React state is gone). Cleared on Retake.
-const FINDER_STORAGE_KEY = 'scentiqa-finder-results-v1';
+const FINDER_STORAGE_KEY = 'scentarchy-finder-results-v1';
 
 /* ---------------- constants ---------------- */
 
@@ -503,7 +503,7 @@ function EntryScreen({ onStart, catalogCount }: { onStart: () => void; catalogCo
 
       <div className="fade-up relative" style={{ animationDelay: '.1s' }}>
         <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-violet-300">
-          ✨ Scentiqa AI
+          ✨ Scentarchy AI
         </p>
         <h1 className="font-display text-[42px] font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl">
           Discover Your<br />
@@ -1098,7 +1098,7 @@ function ResultsView({ out, answers, reset, topRef, catalogCount }: {
       `Find your scent personality → ${url}`;
     try {
       if (navigator.share) {
-        await navigator.share({ title: 'My Scent Personality — Scentiqa', text, url });
+        await navigator.share({ title: 'My Scent Personality — Scentarchy', text, url });
       } else {
         await navigator.clipboard.writeText(text);
         setCopied(true);
@@ -1320,7 +1320,7 @@ function ResultsView({ out, answers, reset, topRef, catalogCount }: {
                 )}
               </div>
               <p className="mt-4 text-center text-[11px] uppercase tracking-[0.2em] text-white/40">
-                scentiqa · india's perfume encyclopedia
+                scentarchy · india's perfume encyclopedia
               </p>
             </div>
             <div className="flex gap-2 p-4">

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build 84-dim accord vectors for Scentiqa perfumes missing them in ml-model-compact.json.
+Build 84-dim accord vectors for Scentarchy perfumes missing them in ml-model-compact.json.
 
 Method (documented for consistency):
 - Accord ordering: exact 84-accord list from ml-model-compact.json['accords'].

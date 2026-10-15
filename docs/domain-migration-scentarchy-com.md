@@ -1,4 +1,4 @@
-# scentiqa.in Domain Migration Checklist
+# scentarchy.com Domain Migration Checklist
 
 **Status:** Domain NOT yet purchased. Everything below is ready to execute the day Vedant buys it.
 
@@ -13,11 +13,11 @@
 
 ### 1. Buy the domain
 - Registrar: any (Namecheap, Cloudflare, GoDaddy). Prefer Cloudflare for free DNS + proxy.
-- Buy `scentiqa.in` (and optionally `www.scentiqa.in`).
+- Buy `scentarchy.com` (and optionally `www.scentarchy.com`).
 
 ### 2. Add domain to Vercel
-- Vercel dashboard → scentiqa project → Settings → Domains → Add `scentiqa.in`
-- Also add `www.scentiqa.in`, set `scentiqa.in` as primary (redirect www → apex).
+- Vercel dashboard → scentiqa project (project slug stays as-is) → Settings → Domains → Add `scentarchy.com`
+- Also add `www.scentarchy.com`, set `scentarchy.com` as primary (redirect www → apex).
 - Vercel will show the DNS records to add.
 
 ### 3. Configure DNS
@@ -27,20 +27,20 @@
 
 ### 4. Set the env var (this flips all URLs)
 - Vercel → Settings → Environment Variables → add:
-  - `NEXT_PUBLIC_SITE_URL` = `https://scentiqa.in`
+  - `NEXT_PUBLIC_SITE_URL` = `https://scentarchy.com`
 - Redeploy (or it picks up on next push). This single change flips:
   - Canonical URLs, Open Graph URLs, sitemap.xml, robots.txt
 
 ### 5. Supabase Auth redirect URLs
 - Supabase dashboard → Authentication → URL Configuration:
-  - Site URL: `https://scentiqa.in`
-  - Redirect URLs: add `https://scentiqa.in/auth/callback`
+  - Site URL: `https://scentarchy.com`
+  - Redirect URLs: add `https://scentarchy.com/auth/callback`
   - Keep the vercel.app URLs during transition, remove after.
 
 ### 6. Google OAuth
 - Google Cloud Console → Credentials → OAuth client:
-  - Authorized JavaScript origins: add `https://scentiqa.in`
-  - Authorized redirect URIs: add `https://scentiqa.in/auth/callback`
+  - Authorized JavaScript origins: add `https://scentarchy.com`
+  - Authorized redirect URIs: add `https://scentarchy.com/auth/callback`
 - Supabase → Authentication → Providers → Google: no change needed (uses same client).
 
 ### 7. Redirects (preserve SEO juice)
@@ -49,8 +49,8 @@
   async redirects() {
     return [{
       source: '/:path*',
-      has: [{ type: 'host', value: 'scentiqa.vercel.app' }],
-      destination: 'https://scentiqa.in/:path*',
+      has: [{ type: 'host', value: 'scentarchy.com' }],
+      destination: 'https://scentarchy.com/:path*',
       permanent: true,
     }];
   }
@@ -58,15 +58,15 @@
 - This gives 301s from every old URL to the new domain.
 
 ### 8. Google Search Console
-- Add `scentiqa.in` as a property (Domain property recommended).
-- Submit `https://scentiqa.in/sitemap.xml`.
-- Use "Change of address" tool: old property (vercel.app) → new (scentiqa.in).
+- Add `scentarchy.com` as a property (Domain property recommended).
+- Submit `https://scentarchy.com/sitemap.xml`.
+- Use "Change of address" tool: old property (vercel.app) → new (scentarchy.com).
 
 ### 9. Post-migration verification
-- [ ] `https://scentiqa.in` loads, `www` redirects to apex
-- [ ] `https://scentiqa.in/sitemap.xml` shows scentiqa.in URLs
+- [ ] `https://scentarchy.com` loads, `www` redirects to apex
+- [ ] `https://scentarchy.com/sitemap.xml` shows scentarchy.com URLs
 - [ ] Google login works on the new domain
-- [ ] Old `scentiqa.vercel.app/perfume/x` 301-redirects to `scentiqa.in/perfume/x`
+- [ ] Old `scentarchy.com/perfume/x` 301-redirects to `scentarchy.com/perfume/x`
 - [ ] No mixed-content warnings
 - [ ] After 2 weeks: remove vercel.app from Supabase redirect URLs
 

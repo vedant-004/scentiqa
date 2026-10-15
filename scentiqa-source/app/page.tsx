@@ -11,7 +11,7 @@ import { JsonLd, organizationJsonLd, websiteJsonLd } from '@/components/seo';
 import { AccordPyramid, BottleVisual, NotePyramid, PerfumeCard, ProductImage, ScoreBadge, SearchBar, StarRating, NewsletterSignup } from '@/components';
 import type { Perfume } from '@/lib/types';
 
-export const metadata = { title: 'Scentiqa — India\u2019s Perfume Encyclopedia & Dupe Finder' };
+export const metadata = { title: 'Scentarchy — India\u2019s Perfume Encyclopedia & Dupe Finder' };
 
 // Revalidate hourly so catalog stats (perfume/house counts) stay fresh
 // after data imports; "Perfume of the Day" still rotates daily via its own logic.

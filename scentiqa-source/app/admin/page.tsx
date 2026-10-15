@@ -10,7 +10,7 @@ async function count(table: string, filter = '') {
   return n ?? 0;
 }
 
-export const metadata = { title: 'Admin dashboard', description: 'Scentiqa control room.' };
+export const metadata = { title: 'Admin dashboard', description: 'Scentarchy control room.' };
 
 export default async function AdminDashboard() {
   const c = getSupabaseServer(true);

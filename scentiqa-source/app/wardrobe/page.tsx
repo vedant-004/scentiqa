@@ -7,7 +7,7 @@ import { RemoveWardrobeButton, VisibilityControl } from './wardrobe-client';
 
 export const metadata = {
   title: 'My wardrobe',
-  description: 'Your personal perfume collection on Scentiqa.',
+  description: 'Your personal perfume collection on Scentarchy.',
 };
 
 function one<T>(v: T | T[] | null | undefined): T | null {

@@ -64,7 +64,7 @@ export function AIPredictions({ perfumeId, concentration }: { perfumeId: string;
             {pred.overallScore}
           </div>
           <div>
-            <h3 className="font-display text-lg font-bold">Scentiqa AI Score</h3>
+            <h3 className="font-display text-lg font-bold">Scentarchy AI Score</h3>
             <p className="text-sm text-stone-500 dark:text-stone-400">
               Composite rating from longevity, projection, and composition richness — learned from 24,000+ fragrances.
             </p>

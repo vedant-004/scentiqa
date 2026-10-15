@@ -3,7 +3,7 @@ import { Card, SectionHeading } from '@/components/ui';
 import { Breadcrumbs, CountdownTimer } from '@/components';
 import { EnterButton } from './enter-button';
 
-export const metadata = { title: 'Giveaways', description: 'Win real perfume bottles and discovery sets from Scentiqa.' };
+export const metadata = { title: 'Giveaways', description: 'Win real perfume bottles and discovery sets from Scentarchy.' };
 
 export const revalidate = 300;
 

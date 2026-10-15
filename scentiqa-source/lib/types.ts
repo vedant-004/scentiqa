@@ -1,4 +1,4 @@
-// Scentiqa shared types — mirrors supabase/schema.sql
+// Scentarchy shared types — mirrors supabase/schema.sql
 
 export type HouseType = 'designer' | 'niche' | 'indian_clone' | 'middle_eastern' | 'attar_maker' | 'artisan' | 'mass';
 export type Gender = 'men' | 'women' | 'unisex';
@@ -21,7 +21,7 @@ export interface Perfume {
   id: string; slug: string; name: string; houseSlug: string; house: string;
   gender: Gender; launchYear: number | null; concentration: string; description: string;
   bottleImage: string | null; ratingAvg: number; ratingCount: number;
-  /** Scentiqa member ratings (from the reviews table). ratingAvg/ratingCount are the imported global aggregates. */
+  /** Scentarchy member ratings (from the reviews table). ratingAvg/ratingCount are the imported global aggregates. */
   memberRatingAvg?: number; memberRatingCount?: number;
   lowestPriceInr: number | null; accords: Accord[];
   topNotes: string[]; heartNotes: string[]; baseNotes: string[];

@@ -4,7 +4,7 @@ import { Breadcrumbs, PerfumeCard } from '@/components';
 
 export const metadata = {
   title: 'Browse all perfumes',
-  description: 'Browse the complete Scentiqa perfume catalog — every fragrance indexed with INR prices, ratings and dupe information.',
+  description: 'Browse the complete Scentarchy perfume catalog — every fragrance indexed with INR prices, ratings and dupe information.',
 };
 
 export const revalidate = 86400;

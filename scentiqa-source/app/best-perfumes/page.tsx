@@ -107,7 +107,7 @@ export default async function BestPerfumesPage() {
         Best perfumes in India
       </h1>
       <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-stone-600 dark:text-stone-300">
-        No sponsored placements, no invented rankings. Every list below is computed from Scentiqa&apos;s live
+        No sponsored placements, no invented rankings. Every list below is computed from Scentarchy&apos;s live
         catalog — community climate wear-tests, verified INR prices and member ratings.
       </p>
 
@@ -139,7 +139,7 @@ export default async function BestPerfumesPage() {
         <Card className="p-5">
           <h2 className="font-display text-lg font-bold">How these lists are built</h2>
           <div className="mt-2 space-y-2 text-sm leading-relaxed text-stone-600 dark:text-stone-300">
-            <p><Badge>Monsoon / Office / Heat</Badge> Ranked by climate wear-test scores from Scentiqa members testing in real Indian weather.</p>
+            <p><Badge>Monsoon / Office / Heat</Badge> Ranked by climate wear-test scores from Scentarchy members testing in real Indian weather.</p>
             <p><Badge>Under ₹1,000</Badge> Ranked by review count among perfumes with a verified Indian price below ₹1,000.</p>
             <p>Lists refresh daily as new tests, prices and reviews land. <Link href="/climate-protocol" className="font-semibold text-gold-700 hover:underline dark:text-gold-300">Read the climate protocol →</Link></p>
           </div>

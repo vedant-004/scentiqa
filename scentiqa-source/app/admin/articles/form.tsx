@@ -22,7 +22,7 @@ export function ArticleForm({ initial, action, submitLabel }: {
           </select>
         </Field>
         <Field label="Author">
-          <input name="author_name" defaultValue={g('author_name', 'Scentiqa Editorial')} className={inputCls} />
+          <input name="author_name" defaultValue={g('author_name', 'Scentarchy Editorial')} className={inputCls} />
         </Field>
         <Field label="Published at" hint="Leave empty for now">
           <input name="published_at" type="datetime-local" defaultValue={pub} className={inputCls} />

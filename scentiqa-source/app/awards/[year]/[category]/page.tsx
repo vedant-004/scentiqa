@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ year: str
   const cats = await getAwards(Number(year));
   const c = cats.find((x) => x.slug === category);
   return {
-    title: c ? `${c.name} — Scentiqa Awards ${year}` : `Scentiqa Awards ${year}`,
-    description: c?.description ?? `Scentiqa Awards ${year} category nominees and winner.`,
+    title: c ? `${c.name} — Scentarchy Awards ${year}` : `Scentarchy Awards ${year}`,
+    description: c?.description ?? `Scentarchy Awards ${year} category nominees and winner.`,
   };
 }
 
@@ -55,19 +55,19 @@ export default async function AwardCategoryPage({ params }: { params: Promise<{ 
           <span className="text-5xl">{c.icon}</span>
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-600 dark:text-gold-400">
-              {c.section === 'indian' ? 'Scentiqa India Awards' : 'Global Awards'} · {y}
+              {c.section === 'indian' ? 'Scentarchy India Awards' : 'Global Awards'} · {y}
             </p>
             <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">{c.name}</h1>
             {c.description && <p className="mt-2 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">{c.description}</p>}
           </div>
         </div>
-        <ShareButtons title={`${c.name} — Scentiqa Awards ${y}`} path={`/awards/${y}/${category}`} />
+        <ShareButtons title={`${c.name} — Scentarchy Awards ${y}`} path={`/awards/${y}/${category}`} />
       </div>
 
       {c.winner && (
         <Card className="mb-8 overflow-hidden border-gold-500/50 p-0">
           <div className="bg-gradient-to-r from-gold-600/20 via-gold-500/10 to-transparent p-6 sm:p-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold-700 dark:text-gold-300">👑 Winner · Scentiqa's Choice</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold-700 dark:text-gold-300">👑 Winner · Scentarchy's Choice</p>
             <Link href={nomineeHref(c.winner)} className="group mt-3 flex items-center gap-5">
               <NomineeImg nominee={c.winner} boxClass="h-24 w-24 shrink-0 rounded-2xl bg-white/70 dark:bg-white/10" textClass="text-2xl" />
               <div className="min-w-0">
@@ -87,7 +87,7 @@ export default async function AwardCategoryPage({ params }: { params: Promise<{ 
           <p className="mt-3 font-display text-xl font-semibold">Nominees for this category are being finalized</p>
           <p className="mt-2 text-sm text-stone-500">Check back soon — or explore the other {y} categories.</p>
           <Link href={`/awards/${y}`} className="mt-4 inline-block text-sm font-semibold text-gold-700 hover:underline dark:text-gold-300">
-            ← Back to Scentiqa Awards {y}
+            ← Back to Scentarchy Awards {y}
           </Link>
         </Card>
       )}
@@ -98,7 +98,7 @@ export default async function AwardCategoryPage({ params }: { params: Promise<{ 
 
       <div className="mt-10">
         <Link href={`/awards/${y}`} className="text-sm font-semibold text-gold-700 hover:underline dark:text-gold-300">
-          ← Back to Scentiqa Awards {y}
+          ← Back to Scentarchy Awards {y}
         </Link>
       </div>
     </div>

@@ -551,7 +551,7 @@ export async function getArticles(limit?: number): Promise<Article[]> {
   return (data ?? []).map((a: Record<string, unknown>) => ({
     id: a.id as string, slug: a.slug as string, title: a.title as string,
     category: a.category as string, excerpt: (a.excerpt as string) ?? '',
-    body: (a.body as string) ?? '', author: (a.author_name as string) ?? 'Scentiqa',
+    body: (a.body as string) ?? '', author: (a.author_name as string) ?? 'Scentarchy',
     date: a.published_at ? new Date(a.published_at as string).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '',
   }));
 }

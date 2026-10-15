@@ -105,7 +105,7 @@ function LoginForm() {
               Continue with Google
             </Button>
             <p className="px-1 text-center text-xs leading-relaxed text-stone-400">
-              Google will ask you to confirm that Scentiqa can see your email address and basic profile.
+              Google will ask you to confirm that Scentarchy can see your email address and basic profile.
             </p>
             <div className="flex items-center gap-3 text-xs text-stone-400">
               <span className="h-px flex-1 bg-stone-200 dark:bg-ink-700" />

@@ -5,7 +5,7 @@ import { RequestsClient } from './requests-client';
 
 export const metadata = {
   title: 'Request a Perfume',
-  description: 'Vote for the perfumes you want in the Scentiqa catalog. The most requested get researched and added first.',
+  description: 'Vote for the perfumes you want in the Scentarchy catalog. The most requested get researched and added first.',
 };
 
 export const revalidate = 120;

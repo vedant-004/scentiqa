@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components';
 
 export const metadata = {
   title: 'All Perfume Houses',
-  description: 'Browse all perfume houses on Scentiqa — Indian clone brands, designer houses, niche perfumeries.',
+  description: 'Browse all perfume houses on Scentarchy — Indian clone brands, designer houses, niche perfumeries.',
 };
 
 export default async function HousesPage() {

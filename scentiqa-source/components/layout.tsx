@@ -24,13 +24,13 @@ export function DemoPill() {
 
 export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="wordmark flex items-center gap-2.5" aria-label="Scentiqa home">
+    <Link href="/" className="wordmark flex items-center gap-2.5" aria-label="Scentarchy home">
       <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-gold-400 via-gold-600 to-gold-700 text-white shadow-card">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2v4M14 2v4M10 2h4" strokeLinecap="round" /><rect x="9" y="6" width="6" height="3" rx="0.5" /><path d="M7 10h10l1 9.2a1.8 1.8 0 0 1-1.8 1.8H7.8A1.8 1.8 0 0 1 6 19.2L7 10z" strokeLinejoin="round" /><path d="M7.5 14h9" strokeLinecap="round" opacity="0.6" /></svg>
       </span>
       {!compact && (
         <span className="font-display text-[22px] font-bold tracking-tight text-stone-900 dark:text-white">
-          Scentiqa
+          Scentarchy
         </span>
       )}
     </Link>
@@ -101,7 +101,7 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
   const [focused, setFocused] = useState(false);
   const { user } = useAuth();
   // Namespace recent searches by signed-in user so shared devices don't leak history.
-  const recentKey = `scentiqa-recent:${user?.id ?? 'anon'}`;
+  const recentKey = `scentarchy-recent:${user?.id ?? 'anon'}`;
   const [recent, setRecent] = useState<string[]>([]);
   const [didYouMean, setDidYouMean] = useState<string | null>(null);
   const [trending, setTrending] = useState<string[]>([]);
@@ -276,7 +276,7 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
   const menu = showPanel && menuPos && typeof document !== 'undefined' ? createPortal(
     <div
       ref={menuRef}
-      id="scentiqa-search-list"
+      id="scentarchy-search-list"
       role="listbox"
       aria-label="Search suggestions"
       className="z-[100] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl dark:border-ink-600 dark:bg-ink-900"
@@ -381,7 +381,7 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
                   key={p.slug}
                   type="button"
                   role="option"
-                  id={`scentiqa-search-opt-${i}`}
+                  id={`scentarchy-search-opt-${i}`}
                   aria-selected={hi === i}
                   onClick={() => pick(p.slug, p.name)}
                   onMouseEnter={() => setHi(i)}
@@ -467,8 +467,8 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
           onFocus={() => { setFocused(true); setOpen(true); if (!q.trim()) loadTrending(); }}
           onBlur={() => setFocused(false)}
           autoFocus={autoFocus} placeholder="Search perfumes, houses, dupes…"
-          aria-label="Search perfumes" role="combobox" aria-expanded={open} aria-controls="scentiqa-search-list"
-          aria-activedescendant={hi >= 0 ? `scentiqa-search-opt-${hi}` : undefined}
+          aria-label="Search perfumes" role="combobox" aria-expanded={open} aria-controls="scentarchy-search-list"
+          aria-activedescendant={hi >= 0 ? `scentarchy-search-opt-${hi}` : undefined}
           autoComplete="off"
           className={cn('w-full bg-transparent outline-none placeholder:text-stone-400 dark:placeholder:text-stone-500', big ? 'text-lg' : 'text-[15px]')} />
         {loading && (
@@ -705,7 +705,7 @@ export function MobileBottomNav() {
     </Link>
   );
   return (
-    <nav aria-label="Mobile" className="scentiqa-site-mobile-nav fixed inset-x-0 bottom-0 z-[60] border-t border-stone-200/80 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl dark:border-ink-700/60 dark:bg-ink-950/95 md:hidden">
+    <nav aria-label="Mobile" className="scentarchy-site-mobile-nav fixed inset-x-0 bottom-0 z-[60] border-t border-stone-200/80 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl dark:border-ink-700/60 dark:bg-ink-950/95 md:hidden">
       <div className="flex items-end justify-around px-2 pb-2 pt-1.5">
         {item('/', 'Home', 'M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5', pathname === '/')}
         {item('/news', 'Discover', 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm10 17-3.5-3.5', pathname.startsWith('/news') || pathname.startsWith('/search'))}
@@ -739,7 +739,7 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
     { h: 'Company', links: companyLinks },
   ];
   return (
-    <footer className="scentiqa-site-footer mt-20 border-t border-stone-200/70 bg-white/60 dark:border-ink-700/50 dark:bg-ink-900/40">
+    <footer className="scentarchy-site-footer mt-20 border-t border-stone-200/70 bg-white/60 dark:border-ink-700/50 dark:bg-ink-900/40">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <div className="mb-10 grid gap-6 rounded-2xl border border-stone-200/70 bg-cream-100/60 p-6 md:grid-cols-[1fr_auto] md:items-center dark:border-ink-700/50 dark:bg-white/[0.03]">
           <NewsletterSignup source="footer" compact />
@@ -772,7 +772,7 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-stone-200/60 pt-6 sm:flex-row dark:border-ink-700/40">
           <Wordmark compact />
           <p className="text-center text-xs text-stone-400">
-            © 2026 Scentiqa. Independent reviews — never sponsored placements.
+            © 2026 Scentarchy. Independent reviews — never sponsored placements.
             {isDemoMode && <span className="mt-1 block">Demo build: scores, prices and community content shown are illustrative samples.</span>}
           </p>
         </div>

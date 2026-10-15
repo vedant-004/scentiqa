@@ -7,7 +7,7 @@ export const revalidate = 3600;
 
 export const metadata = {
   title: 'Top members',
-  description: 'The most active reviewers in the Scentiqa community.',
+  description: 'The most active reviewers in the Scentarchy community.',
 };
 
 export default async function MembersPage() {
@@ -17,7 +17,7 @@ export default async function MembersPage() {
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Community' }]} />
       <SectionHeading kicker="Community" title="Member spotlight" />
       <p className="mb-6 max-w-2xl text-[15px] text-stone-500 dark:text-stone-400">
-        The noses behind Scentiqa&apos;s most helpful reviews — ranked by real contributions.
+        The noses behind Scentarchy&apos;s most helpful reviews — ranked by real contributions.
       </p>
       {members.length === 0 ? (
         <EmptyState icon="👥" title="No members yet" body="Be the first — write a review on any perfume page." />

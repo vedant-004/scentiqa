@@ -4,7 +4,7 @@ import HousesExplorer from './houses-explorer';
 
 export const metadata = {
   title: 'All perfume houses',
-  description: 'Browse every perfume house on Scentiqa — Indian clone houses, designers, niche, attar makers and more, with INR prices from verified sellers.',
+  description: 'Browse every perfume house on Scentarchy — Indian clone houses, designers, niche, attar makers and more, with INR prices from verified sellers.',
 };
 
 export const revalidate = 86400; // refresh counts daily

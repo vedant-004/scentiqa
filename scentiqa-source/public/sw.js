@@ -1,11 +1,11 @@
-/* Scentiqa service worker — offline support for the PWA.
+/* Scentarchy service worker — offline support for the PWA.
  * Strategy:
  * - Versioned static assets (/_next/static, /icons, fonts): cache-first
  * - Images: stale-while-revalidate (bounded)
  * - Page navigations: network-first, cache fallback, offline fallback page
  * - /api/* and /admin/*: never cached (always network)
  */
-const VERSION = 'scentiqa-v1';
+const VERSION = 'scentarchy-v1';
 const STATIC_CACHE = `${VERSION}-static`;
 const PAGES_CACHE = `${VERSION}-pages`;
 const IMAGES_CACHE = `${VERSION}-images`;
@@ -13,12 +13,12 @@ const MAX_IMAGE_ENTRIES = 120;
 
 const OFFLINE_HTML = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Offline · Scentiqa</title>
+<title>Offline · Scentarchy</title>
 <style>body{font-family:Georgia,serif;background:#faf7f2;color:#44403c;display:flex;min-height:100vh;margin:0;align-items:center;justify-content:center;text-align:center;padding:24px}
 .card{max-width:340px}.mark{font-size:44px}.h{font-size:22px;font-weight:bold;margin:12px 0 8px}.p{font-size:14px;line-height:1.6}
 a{display:inline-block;margin-top:16px;padding:10px 22px;border-radius:12px;background:#b45309;color:#fff;text-decoration:none;font-weight:bold;font-size:14px}</style>
 </head><body><div class="card"><div class="mark">📵</div><div class="h">You're offline</div>
-<p class="p">Scentiqa needs a connection to fetch the latest perfumes, prices and reviews. Check your network and try again.</p>
+<p class="p">Scentarchy needs a connection to fetch the latest perfumes, prices and reviews. Check your network and try again.</p>
 <a href="/">Retry</a></div></body></html>`;
 
 self.addEventListener('install', (event) => {
@@ -31,7 +31,7 @@ self.addEventListener('activate', (event) => {
     (async () => {
       const keys = await caches.keys();
       await Promise.all(
-        keys.filter((k) => k.startsWith('scentiqa-') && !k.startsWith(VERSION)).map((k) => caches.delete(k)),
+        keys.filter((k) => k.startsWith('scentarchy-') && !k.startsWith(VERSION)).map((k) => caches.delete(k)),
       );
       await self.clients.claim();
     })(),

@@ -453,7 +453,7 @@ export function ReportPriceButton({ perfumeId }: { perfumeId: string }) {
         <DialogTitle id="report-title">Report a price error</DialogTitle>
         <div className="space-y-3">
           <Textarea value={detail} onChange={(e) => setDetail(e.target.value)} placeholder="What is wrong? e.g. “₹2,450 listed but the seller shows ₹2,899” or “seller link looks like a counterfeit store”" />
-          <p className="text-xs text-stone-400">Reports go to the Scentiqa moderation queue. Verified prices are re-checked within 48 hours.</p>
+          <p className="text-xs text-stone-400">Reports go to the Scentarchy moderation queue. Verified prices are re-checked within 48 hours.</p>
           <Button onClick={submit} disabled={busy || !detail.trim()} className="w-full">{busy ? 'Sending…' : 'Send report'}</Button>
         </div>
       </Dialog>

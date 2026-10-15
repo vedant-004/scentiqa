@@ -1,7 +1,7 @@
 import { ContactPage, type ContactSettings } from '../shared';
 import { getSiteSetting } from '@/lib/data-supabase';
 
-export const metadata = { title: 'Contact us', description: 'Get in touch with the Scentiqa team.' };
+export const metadata = { title: 'Contact us', description: 'Get in touch with the Scentarchy team.' };
 
 export default async function Page() {
   const s = await getSiteSetting('contact');

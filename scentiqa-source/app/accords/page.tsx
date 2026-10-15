@@ -1,4 +1,4 @@
-// /accords — the Scentiqa accord encyclopedia index.
+// /accords — the Scentarchy accord encyclopedia index.
 import Link from 'next/link';
 import { getAccordIndex, accordSlug } from '@/lib/accords-data';
 import { Breadcrumbs } from '@/components';

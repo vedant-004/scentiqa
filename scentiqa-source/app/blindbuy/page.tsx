@@ -60,7 +60,7 @@ export default async function BlindBuyPage() {
         price risk, community consensus and scent familiarity into one 0–100 safety number.
       </p>
       <p className="mt-2 max-w-2xl text-xs text-stone-400 dark:text-stone-500">
-        Rating counts shown are imported from global fragrance-community data, not Scentiqa member ratings yet.
+        Rating counts shown are imported from global fragrance-community data, not Scentarchy member ratings yet.
       </p>
 
       {ranked.length === 0 ? (

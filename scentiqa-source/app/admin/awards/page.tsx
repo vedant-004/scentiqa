@@ -25,7 +25,7 @@ export default async function AdminAwards({ searchParams }: { searchParams: Prom
           </Link>
         }
       >
-        Scentiqa Awards
+        Scentarchy Awards
       </SectionTitle>
 
       <div className="mb-6 flex flex-wrap gap-2">
@@ -45,7 +45,7 @@ export default async function AdminAwards({ searchParams }: { searchParams: Prom
 
       {indian.length > 0 && (
         <>
-          <h2 className="mb-3 mt-2 font-display text-lg font-bold">🇮🇳 Scentiqa India Awards</h2>
+          <h2 className="mb-3 mt-2 font-display text-lg font-bold">🇮🇳 Scentarchy India Awards</h2>
           <div className="mb-8 space-y-4">
             {indian.map((c) => <CategoryManager key={c.id} category={c} />)}
           </div>

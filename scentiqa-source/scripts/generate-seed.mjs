@@ -1,4 +1,4 @@
-// Scentiqa seed generator — single source of truth for demo data.
+// Scentarchy seed generator — single source of truth for demo data.
 // Outputs: data/seed.json and supabase/seed.sql in the project root.
 // Usage: node scripts/generate-seed.mjs [projectRoot]
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
@@ -67,8 +67,8 @@ const houses = [
 
   // REAL Indian clone houses (researched Sept 2026)
   { slug: 'house-of-em5', name: 'House of EM5', country: 'India', region: 'Mumbai, Maharashtra', type: 'indian_clone', site: 'https://www.flipkart.com', founded: 2019, trust: 4, desc: 'Mumbai-based clone house selling on Flipkart and Amazon. Famous for 1:1-style EDPs around \u20B9499 for 50ml — BR 540, Cool Water and Hawas interpretations are bestsellers.' },
-  { slug: 'my-perfume-secrets', name: 'My Perfume Secrets', country: 'India', region: 'Mumbai, Maharashtra', type: 'indian_clone', site: 'https://myperfumesecrets.com', founded: 2021, trust: 4, desc: 'Mumbai niche-clone house (myperfumesecrets.com) bottling extrait de parfum at 25%+ oil concentration, 8ml from \u20B9190. Publishes its own \u201Caccuracy %\u201D claims per scent — Scentiqa lab-tests those claims independently.' },
-  { slug: 'dupify', name: 'Dupify', country: 'India', region: null, type: 'indian_clone', site: 'https://dupify.in', founded: 2023, trust: 3, desc: 'Budget clone label (dupify.in) pricing \u20B9249\u2013\u20B9649 and claiming 93\u201396% similarity to originals. Scentiqa\u2019s lab scores below are our independent measurements, not the house\u2019s claims.' },
+  { slug: 'my-perfume-secrets', name: 'My Perfume Secrets', country: 'India', region: 'Mumbai, Maharashtra', type: 'indian_clone', site: 'https://myperfumesecrets.com', founded: 2021, trust: 4, desc: 'Mumbai niche-clone house (myperfumesecrets.com) bottling extrait de parfum at 25%+ oil concentration, 8ml from \u20B9190. Publishes its own \u201Caccuracy %\u201D claims per scent — Scentarchy lab-tests those claims independently.' },
+  { slug: 'dupify', name: 'Dupify', country: 'India', region: null, type: 'indian_clone', site: 'https://dupify.in', founded: 2023, trust: 3, desc: 'Budget clone label (dupify.in) pricing \u20B9249\u2013\u20B9649 and claiming 93\u201396% similarity to originals. Scentarchy\u2019s lab scores below are our independent measurements, not the house\u2019s claims.' },
   { slug: 'rzler', name: 'RZLER', country: 'India', region: null, type: 'indian_clone', site: null, founded: 2023, trust: 3, desc: 'Indian dupe house with a premium-minimal identity; covers Naxos, Ombre Nomade and Hawas territory.' },
   { slug: 'arabian-aroma', name: 'Arabian Aroma', country: 'India', region: 'Kanpur, Uttar Pradesh', type: 'indian_clone', site: null, founded: 2020, trust: 4, desc: 'Kanpur house that reportedly sold ~500,000 bottles in 2024. Sells 50ml at \u20B9600\u2013700 and has moved into original creations like Seduction, now its bestseller.' },
   { slug: 'eau-de-zidaan', name: 'Eau de Zidaan', country: 'India', region: 'Mumbai, Maharashtra', type: 'indian_clone', site: null, founded: 2023, trust: 3, desc: 'Mumbai artisan house founded by perfumer Zaid; reportedly 20,000+ bottles sold since launch. Details to be verified.', verify: true },
@@ -742,7 +742,7 @@ for (const [hs, nm] of refOriginals) {
   addPerfume({
     name: nm, houseSlug: hs, gender: 'unisex', year: 0, conc: 'edp',
     top: [], heart: [], base: [], accords: [], ratingAvg: 0, ratingCount: 0,
-    desc: `Reference entry for ${nm} by ${house.name} — included only because a researched Indian house explicitly names it as an inspiration. Scentiqa has not independently catalogued this original; details to be verified.`,
+    desc: `Reference entry for ${nm} by ${house.name} — included only because a researched Indian house explicitly names it as an inspiration. Scentarchy has not independently catalogued this original; details to be verified.`,
     real: true, verify: true,
   });
 }
@@ -783,7 +783,7 @@ const inr = (n) => `₹${Number(n).toLocaleString('en-IN')}`;
 function realDesc(p, houseName, prov, obsDate) {
   const bits = [`${p.name} by ${houseName}.`];
   if (p.inspiredBy) bits.push(`The brand states it is inspired by ${p.inspiredBy}.`);
-  if (p.claimedAccuracy) bits.push(`The brand claims "${p.claimedAccuracy}" — a brand claim, not a Scentiqa test result.`);
+  if (p.claimedAccuracy) bits.push(`The brand claims "${p.claimedAccuracy}" — a brand claim, not a Scentarchy test result.`);
   if (isGiftSet(p.name)) bits.push('This is a gift/discovery set, not a single fragrance.');
   if (p.priceInr != null && p.sizeMl != null) bits.push(`Listed on the official store at ${inr(p.priceInr)} for ${p.sizeMl}ml — price ${realProvLabel[prov]} ${obsDate}.`);
   else if (p.priceInr != null) bits.push(`Listed on the official store at ${inr(p.priceInr)} — bottle size was not stated on the page; price ${realProvLabel[prov]} ${obsDate}.`);
@@ -845,7 +845,7 @@ for (const p of perfumes) {
       similarityScore: null, testedBy: 'community',
       openingMatch: null, drydownMatch: null, longevityMatch: null, sillageMatch: null,
       claimedAccuracy: p.claimedAccuracy,
-      verdict: `Brand-stated inspiration: ${p.house} lists this as inspired by ${t}. Scentiqa has not independently tested this pairing, so there is no similarity score.${p.claimedAccuracy ? ` The brand's own "${p.claimedAccuracy}" claim is marketing, not a test result.` : ''}`,
+      verdict: `Brand-stated inspiration: ${p.house} lists this as inspired by ${t}. Scentarchy has not independently tested this pairing, so there is no similarity score.${p.claimedAccuracy ? ` The brand's own "${p.claimedAccuracy}" claim is marketing, not a test result.` : ''}`,
       testDate: p.observedAt || '2026-09-30', testerCount: 0,
     });
   }
@@ -891,36 +891,36 @@ const articles = [
     slug: 'lab-tested-5-aventus-dupes-honest-ranking',
     title: 'We lab-tested 5 Aventus dupes — here is the honest ranking',
     category: 'review', excerpt: 'Five Indian alternatives to Creed Aventus, one blind panel, zero sponsorship. The winner surprised us.',
-    author: 'Scentiqa Lab', date: '2026-09-20',
-    body: `<p>Creed Aventus costs roughly \u20B924,500 in India. Every Indian clone house has an answer to it — but which answers are honest? Our five-person panel wore each dupe for a full day in 38\u00B0C Delhi heat, blind, and scored opening, drydown, longevity and sillage separately.</p><p><strong>1. EM5\u2019s interpretation (\u20B9499)</strong> — our lab score: the highest of the batch. The smoky pineapple opening is strikingly close; only the drydown\u2019s depth gives it away. Best value in the test by a mile.</p><p><strong>2. Armaf Club de Nuit Intense Man (\u20B92,200)</strong> — the legend. Harsher opening than the rest, but the drydown is the closest thing to Aventus under \u20B93,000. Let it macerate two weeks.</p><p><strong>3. Dupify\u2019s Aventus (\u20B9599)</strong> — pleasant and fruity, but the birch smoke that defines Aventus is muted. A good scent; a less convincing clone.</p><p><strong>4. Purenso\u2019s Aventus oil (\u20B9245)</strong> — remember this is an oil, not a spray. Intimate, long-lasting on skin, but it never projects like the original.</p><p><strong>5. Celestial\u2019s Aventus Noir (\u20B9749)</strong> — community-suggested; our lab has not completed full testing yet. Early impressions are positive but unverified.</p><p>The takeaway: you can get 80%+ of the Aventus experience for under \u20B91,000 in India today. That is exactly why Scentiqa exists.</p>`,
+    author: 'Scentarchy Lab', date: '2026-09-20',
+    body: `<p>Creed Aventus costs roughly \u20B924,500 in India. Every Indian clone house has an answer to it — but which answers are honest? Our five-person panel wore each dupe for a full day in 38\u00B0C Delhi heat, blind, and scored opening, drydown, longevity and sillage separately.</p><p><strong>1. EM5\u2019s interpretation (\u20B9499)</strong> — our lab score: the highest of the batch. The smoky pineapple opening is strikingly close; only the drydown\u2019s depth gives it away. Best value in the test by a mile.</p><p><strong>2. Armaf Club de Nuit Intense Man (\u20B92,200)</strong> — the legend. Harsher opening than the rest, but the drydown is the closest thing to Aventus under \u20B93,000. Let it macerate two weeks.</p><p><strong>3. Dupify\u2019s Aventus (\u20B9599)</strong> — pleasant and fruity, but the birch smoke that defines Aventus is muted. A good scent; a less convincing clone.</p><p><strong>4. Purenso\u2019s Aventus oil (\u20B9245)</strong> — remember this is an oil, not a spray. Intimate, long-lasting on skin, but it never projects like the original.</p><p><strong>5. Celestial\u2019s Aventus Noir (\u20B9749)</strong> — community-suggested; our lab has not completed full testing yet. Early impressions are positive but unverified.</p><p>The takeaway: you can get 80%+ of the Aventus experience for under \u20B91,000 in India today. That is exactly why Scentarchy exists.</p>`,
   },
   {
     slug: 'house-of-em5-499-phenomenon',
     title: 'House of EM5: decoding the \u20B9499 phenomenon',
     category: 'column', excerpt: 'How a Mumbai clone house became India\u2019s gateway drug to niche perfumery.',
-    author: 'Scentiqa Editorial', date: '2026-09-12',
+    author: 'Scentarchy Editorial', date: '2026-09-12',
     body: `<p>Walk into any Indian fragrance community and ask where beginners should start. The answer, overwhelmingly, is three letters: EM5.</p><p>House of EM5\u2019s playbook is disarmingly simple — take the world\u2019s most-cloned scents (Baccarat Rouge 540, Cool Water, Hawas), bottle competent interpretations as 50ml EDPs, and sell them on Flipkart and Amazon for around \u20B9499. No mystique, no attar-shop theatrics.</p><p>Our lab testing puts their BR540 interpretation among the strongest value scores we have measured. The Hawas-inspired Ocean Breeze is arguably the best \u20B9499 fresh scent in the country for Indian summers.</p><p>Are they identical to the originals? No — and our claimed-vs-lab panels show exactly where the gaps are. But EM5 has done something the luxury houses never bothered to: make great-smelling perfumery accessible to a college student in Indore. That deserves respect.</p>`,
   },
   {
     slug: 'spot-fake-creed-aventus-india',
     title: 'How to spot a fake Creed Aventus in India (2026 guide)',
     category: 'guide', excerpt: 'Grey-market Aventus floods Indian marketplaces. Here is how to protect yourself.',
-    author: 'Scentiqa Trust Team', date: '2026-09-05',
+    author: 'Scentarchy Trust Team', date: '2026-09-05',
     body: `<p>Aventus is the most counterfeited niche perfume in India. If a deal looks too good — \u20B98,000 for a 100ml \u201Csealed\u201D bottle — it is fake. Full stop.</p><p><strong>Checklist:</strong></p><p>1. <strong>Batch code:</strong> etched on the back of the bottle, matching the box. No sticker-only codes.<br/>2. <strong>Atomizer:</strong> genuine Creed atomizers are precise and quiet; fakes sputter.<br/>3. <strong>Juice color:</strong> Aventus varies by batch, but neon or murky juice is a red flag.<br/>4. <strong>Seller:</strong> buy only from sellers on our verified list. Marketplace listings with stock photos and no GST invoice are the danger zone.</p><p>When in doubt, post photos in our <a href="/forum/fakes-help-desk">Fakes Help Desk</a> — the community authenticates dozens of bottles a week.</p><p>And remember: a great Indian dupe at \u20B9499 beats a fake \u201CAventus\u201D at \u20B98,000 every single time.</p>`,
   },
   {
     slug: 'arabian-aroma-seduction-bestseller',
     title: 'Arabian Aroma\u2019s original \u201CSeduction\u201D overtakes its dupes',
     category: 'launch', excerpt: 'The Kanpur house\u2019s original creation is now its bestseller — a sign of India\u2019s maturing clone market.',
-    author: 'Scentiqa Newsroom', date: '2026-08-28',
-    body: `<p>Something interesting is happening in Kanpur. Arabian Aroma — the house that reportedly moved ~500,000 bottles in 2024 largely on inspired fragrances — says its original creation, Seduction, is now its bestselling scent.</p><p>It is a milestone worth noting. India\u2019s clone houses began as pure alternatives to Western luxury; now the best of them are developing original identities. Seduction\u2019s fruity-woody profile has earned a 4.5 community rating on Scentiqa, higher than most of the house\u2019s inspired line.</p><p>The arc of every mature dupe market — from the Middle East to now India — bends from imitation to creation. We will be watching.</p>`,
+    author: 'Scentarchy Newsroom', date: '2026-08-28',
+    body: `<p>Something interesting is happening in Kanpur. Arabian Aroma — the house that reportedly moved ~500,000 bottles in 2024 largely on inspired fragrances — says its original creation, Seduction, is now its bestselling scent.</p><p>It is a milestone worth noting. India\u2019s clone houses began as pure alternatives to Western luxury; now the best of them are developing original identities. Seduction\u2019s fruity-woody profile has earned a 4.5 community rating on Scentarchy, higher than most of the house\u2019s inspired line.</p><p>The arc of every mature dupe market — from the Middle East to now India — bends from imitation to creation. We will be watching.</p>`,
   },
   {
     slug: 'readers-choice-awards-2026-voting-opens',
-    title: 'Scentiqa Readers\u2019 Choice Awards 2026 — voting is open',
+    title: 'Scentarchy Readers\u2019 Choice Awards 2026 — voting is open',
     category: 'awards', excerpt: 'Best Dupe House, Best Summer Beast, Best Attar, Best Value Buy. Your vote decides.',
-    author: 'Scentiqa Editorial', date: '2026-09-25',
-    body: `<p>Voting is now open for the first Scentiqa Readers\u2019 Choice Awards, celebrating the scents and houses India actually wears.</p><p><strong>Categories:</strong> Best Dupe House of 2026, Best Summer Beast, Best Attar, and Best Value Buy under \u20B91,000.</p><p>One vote per member per category. Voting closes 31 October 2026, and winners are announced in the first week of November. <a href="/awards/2026">Cast your vote here</a>.</p>`,
+    author: 'Scentarchy Editorial', date: '2026-09-25',
+    body: `<p>Voting is now open for the first Scentarchy Readers\u2019 Choice Awards, celebrating the scents and houses India actually wears.</p><p><strong>Categories:</strong> Best Dupe House of 2026, Best Summer Beast, Best Attar, and Best Value Buy under \u20B91,000.</p><p>One vote per member per category. Voting closes 31 October 2026, and winners are announced in the first week of November. <a href="/awards/2026">Cast your vote here</a>.</p>`,
   },
 ];
 
@@ -1023,7 +1023,7 @@ for (const h of houses) {
 
 // ---------- SEED OBJECT ----------
 const seed = {
-  meta: { generated: '2026-10-02', site: 'Scentiqa', version: 3, note: 'Demo data plus real catalog records researched 2026-09-30 (20 sites) and 2026-10-02 (6 sites, flagged real:true). TO-VERIFY items flagged needsVerification. Price provenance: live = observed live, mixed/indexed/stale = needs re-verification, demo = synthetic sample.', realProducts: perfumes.filter((p) => p.real && p.priceProvenance).length, realRelationships: dupeRels.filter((r) => r.testDate).length, realPrices: prices.filter((pr) => pr.provenance !== 'demo').length },
+  meta: { generated: '2026-10-02', site: 'Scentarchy', version: 3, note: 'Demo data plus real catalog records researched 2026-09-30 (20 sites) and 2026-10-02 (6 sites, flagged real:true). TO-VERIFY items flagged needsVerification. Price provenance: live = observed live, mixed/indexed/stale = needs re-verification, demo = synthetic sample.', realProducts: perfumes.filter((p) => p.real && p.priceProvenance).length, realRelationships: dupeRels.filter((r) => r.testDate).length, realPrices: prices.filter((pr) => pr.provenance !== 'demo').length },
   houses: houses.map(h => ({
     id: h.id, slug: h.slug, name: h.name, country: h.country, region: h.region, city: null,
     mainActivity: realActivityMap[h.type] || (h.type === 'indian_clone' ? 'Inspired fragrances & originals' : 'Designer / niche perfumery'),
@@ -1061,7 +1061,7 @@ console.log(`seed.json: ${seed.perfumes.length} perfumes, ${seed.houses.length} 
 
 // ---------- WRITE seed.sql ----------
 const L = [];
-L.push('-- Scentiqa seed data (generated by scripts/generate-seed.mjs — do not edit by hand)');
+L.push('-- Scentarchy seed data (generated by scripts/generate-seed.mjs — do not edit by hand)');
 L.push('-- Run AFTER supabase/schema.sql');
 L.push('BEGIN;');
 for (const h of seed.houses) {

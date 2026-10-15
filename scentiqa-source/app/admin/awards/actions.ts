@@ -1,5 +1,5 @@
 'use server';
-// Admin mutations for the Scentiqa Awards: categories, nominees, winners.
+// Admin mutations for the Scentarchy Awards: categories, nominees, winners.
 import { revalidatePath } from 'next/cache';
 import { getSupabaseServer } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/admin';

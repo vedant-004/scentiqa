@@ -1,6 +1,6 @@
 {
  "observedAt": "2026-10-02 (6 new sites); 2026-09-30 (original 20 sites)",
- "note": "Raw research provenance for the Scentiqa seed enrichment (Sept 2026). All facts transcribed from fetched public page text by research agents on 2026-09-30; nothing invented. priceProvenance: 'live' = prices read from live page fetches on 2026-09-30; 'mixed' = some live, some from search-indexed crawls of the site's own pages; 'search-indexed' = prices from search-indexed crawls of the site's own pages — re-verify before treating as current. importMode 'manual' = handled by explicit generator edits (not auto-imported); 'skip' = not imported (B2B lead or unreachable).",
+ "note": "Raw research provenance for the Scentarchy seed enrichment (Sept 2026). All facts transcribed from fetched public page text by research agents on 2026-09-30; nothing invented. priceProvenance: 'live' = prices read from live page fetches on 2026-09-30; 'mixed' = some live, some from search-indexed crawls of the site's own pages; 'search-indexed' = prices from search-indexed crawls of the site's own pages — re-verify before treating as current. importMode 'manual' = handled by explicit generator edits (not auto-imported); 'skip' = not imported (B2B lead or unreachable).",
  "sites": [
   {
    "site": "https://www.bombayperfumery.com",

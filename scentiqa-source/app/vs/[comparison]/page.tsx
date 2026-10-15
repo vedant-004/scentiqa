@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ compariso
     title: `${a.name} vs ${b.name}: Which Should You Buy in India?`,
     description: `Side-by-side: ${a.name} by ${a.house} vs ${b.name} by ${b.house}. Compare INR prices, community ratings, accords, notes and Indian-heat performance before you buy.`,
     alternates: { canonical: url },
-    openGraph: { title: `${a.name} vs ${b.name} — Scentiqa`, url, type: 'article' },
+    openGraph: { title: `${a.name} vs ${b.name} — Scentarchy`, url, type: 'article' },
   };
 }
 
@@ -59,7 +59,7 @@ function verdictFor(a: PerfumeFull, b: PerfumeFull): string[] {
   }
   const rel = a.dupes.find((d) => d.dupeSlug === b.slug) ?? b.dupes.find((d) => d.dupeSlug === a.slug);
   if (rel?.similarityScore) {
-    bits.push(`Scentiqa lab similarity between the two: ${rel.similarityScore}%.`);
+    bits.push(`Scentarchy lab similarity between the two: ${rel.similarityScore}%.`);
   }
   return bits;
 }
