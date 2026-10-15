@@ -1,5 +1,6 @@
 import { getSupabaseServer } from '@/lib/supabase';
 import { requireAdminPage } from '@/lib/admin';
+import { getUnpushedIds } from '@/lib/notification-push';
 import { SectionTitle, EmptyState } from '../components';
 import { NotificationComposer, NotificationDeleteButton, NotificationPushToggle } from './notification-client';
 import { TYPE_META } from '@/components/notifications';
@@ -31,13 +32,10 @@ async function loadNotifications(): Promise<{ notes: AdminNote[]; error: string 
       .limit(100);
     if (error) return { notes: [], error: `Could not load notifications: ${error.message}` };
 
-    // Pushed state lives in the optional is_pushed column (migration
-    // 20261015_notification_unpush.sql). Missing column = all pushed.
-    let pushedById: Record<string, boolean> = {};
-    try {
-      const { data: pushed } = await c.from('notifications').select('id, is_pushed');
-      for (const p of pushed ?? []) pushedById[String(p.id)] = (p as { is_pushed?: boolean }).is_pushed ?? true;
-    } catch { /* not migrated yet */ }
+    // Pushed state lives in site_settings (no migration needed).
+    const pushedById: Record<string, boolean> = {};
+    const unpushed = await getUnpushedIds();
+    for (const n of data ?? []) pushedById[String((n as { id: unknown }).id)] = !unpushed.has(String((n as { id: unknown }).id));
 
     const notes: AdminNote[] = await Promise.all((data ?? []).map(async (n) => {
       let readCount = 0;

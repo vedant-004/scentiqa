@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/admin';
 import { getSupabaseServer } from '@/lib/supabase';
+import { getUnpushedIds, setUnpushed } from '@/lib/notification-push';
 
 const TYPES = ['announcement', 'new_perfume', 'giveaway', 'award', 'battle', 'article', 'system'] as const;
 
@@ -17,13 +18,7 @@ export async function GET() {
     .limit(100);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-  // Pushed state: the is_pushed column may not exist until migration
-  // 20261015_notification_unpush.sql is run — treat missing as pushed.
-  let pushedById: Record<string, boolean> = {};
-  try {
-    const { data: pushed } = await c.from('notifications').select('id, is_pushed');
-    for (const p of pushed ?? []) pushedById[String(p.id)] = (p as { is_pushed?: boolean }).is_pushed ?? true;
-  } catch { /* column not migrated yet — everything counts as pushed */ }
+  const unpushed = await getUnpushedIds();
 
   // Read counts per notification (cheap enough at admin scale). One bad
   // row must never fail the whole listing.
@@ -33,7 +28,7 @@ export async function GET() {
       const { count } = await c.from('notification_reads').select('notification_id', { count: 'exact', head: true }).eq('notification_id', n.id);
       readCount = count ?? 0;
     } catch { /* keep 0 */ }
-    return { ...n, readCount, is_pushed: pushedById[String(n.id)] ?? true };
+    return { ...n, readCount, is_pushed: !unpushed.has(String(n.id)) };
   }));
   return NextResponse.json({ notifications: withCounts });
 }
@@ -71,8 +66,6 @@ export async function POST(req: Request) {
 // Body: { id, is_pushed }. Admin only.
 export async function PUT(req: Request) {
   try { await requireAdmin(); } catch { return NextResponse.json({ error: 'Not authorized' }, { status: 403 }); }
-  const c = getSupabaseServer(true);
-  if (!c) return NextResponse.json({ error: 'Database not configured' }, { status: 500 });
 
   let body: { id?: string; is_pushed?: boolean };
   try { body = await req.json(); } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }); }
@@ -80,14 +73,10 @@ export async function PUT(req: Request) {
   if (!id) return NextResponse.json({ error: 'Body must be { id, is_pushed }' }, { status: 400 });
   if (typeof body.is_pushed !== 'boolean') return NextResponse.json({ error: 'is_pushed must be true or false' }, { status: 400 });
 
-  const { error } = await c.from('notifications').update({ is_pushed: body.is_pushed }).eq('id', id);
-  if (error) {
-    const needsMigration = /is_pushed/i.test(error.message);
-    return NextResponse.json({
-      error: needsMigration
-        ? 'The unpush column is not in the database yet — run supabase/migrations/20261015_notification_unpush.sql in the Supabase SQL editor, then try again.'
-        : error.message,
-    }, { status: 500 });
+  try {
+    await setUnpushed(id, !body.is_pushed);
+  } catch (e) {
+    return NextResponse.json({ error: e instanceof Error ? e.message : 'Failed to update' }, { status: 500 });
   }
   return NextResponse.json({ ok: true, is_pushed: body.is_pushed });
 }

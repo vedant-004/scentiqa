@@ -69,8 +69,7 @@ export function PickFinder({ profiles, endpoint, storageKey, selectLabel, showLo
               selected === p.id
                 ? 'border-[#F01348] bg-[#F01348]/10 shadow-card dark:border-[#F01348]'
                 : 'border-stone-200 bg-white hover:border-stone-300 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20')}>
-            <span className="text-2xl" aria-hidden="true">{p.icon}</span>
-            <span className="mt-2 block text-sm font-bold text-stone-900 dark:text-white">{p.label}</span>
+            <span className="block text-sm font-bold text-stone-900 dark:text-white">{p.label}</span>
           </button>
         ))}
       </div>

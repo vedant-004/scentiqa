@@ -1,15 +1,28 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/components/auth';
 import { Button } from '@/components/ui';
 
 export function EnterButton({ slug }: { slug: string }) {
   const { user, loading } = useAuth();
-  const [state, setState] = useState<'idle' | 'busy' | 'entered' | 'error'>('idle');
+  const [state, setState] = useState<'idle' | 'checking' | 'busy' | 'entered' | 'error'>('idle');
   const [error, setError] = useState('');
 
-  if (loading) return <Button size="sm" disabled>Loading…</Button>;
+  // On mount, ask the server whether this member already entered —
+  // a refresh must not show "Enter giveaway" to someone who's in.
+  useEffect(() => {
+    if (loading || !user) return;
+    let cancelled = false;
+    setState('checking');
+    fetch(`/api/giveaways/${slug}/enter`, { cache: 'no-store' })
+      .then((r) => r.json())
+      .then((j) => { if (!cancelled) setState(j.entered ? 'entered' : 'idle'); })
+      .catch(() => { if (!cancelled) setState('idle'); });
+    return () => { cancelled = true; };
+  }, [loading, user, slug]);
+
+  if (loading || state === 'checking') return <Button size="sm" disabled>Loading…</Button>;
   if (!user) {
     return (
       <Link href={`/login?next=/giveaways`}

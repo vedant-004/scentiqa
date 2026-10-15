@@ -38,3 +38,17 @@ export async function POST(_req: Request, { params }: { params: Promise<{ slug: 
 
   return NextResponse.json({ ok: true });
 }
+
+// GET /api/giveaways/[slug]/enter — has the signed-in user already entered?
+export async function GET(_req: Request, { params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const sb = await getAuthedServerClient();
+  if (!sb) return NextResponse.json({ entered: false });
+  const { data: { user } } = await sb.auth.getUser();
+  if (!user) return NextResponse.json({ entered: false });
+  const admin = getSupabaseServer(true);
+  if (!admin) return NextResponse.json({ entered: false });
+  const { data } = await admin.from('giveaway_entries')
+    .select('id').eq('giveaway_slug', slug).eq('user_id', user.id).maybeSingle();
+  return NextResponse.json({ entered: !!data });
+}
