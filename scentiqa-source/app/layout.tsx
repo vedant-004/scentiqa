@@ -19,8 +19,16 @@ const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('scentarchy-the
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: "Scentarchy — India's Perfume Encyclopedia & Dupe Finder", template: "%s | Scentarchy" },
-  description: "Discover perfumes in India: honest reviews, estimated dupe similarity scores, INR prices from Indian sellers, and heat-performance predictions for Indian weather.",
-  openGraph: { type: "website", siteName: "Scentarchy", locale: "en_IN" },
+  description: "Discover perfumes in India: honest reviews, dupe matches, INR prices from Indian sellers, and heat-performance scores for Indian weather.",
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    type: "website",
+    siteName: "Scentarchy",
+    locale: "en_IN",
+    url: SITE_URL,
+    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630, alt: "Scentarchy — India's Perfume Encyclopedia" }],
+  },
+  twitter: { card: "summary_large_image", site: "@scentarchy", title: "Scentarchy — India's Perfume Encyclopedia & Dupe Finder", description: "Discover perfumes in India: honest reviews, dupe matches, INR prices from Indian sellers, and heat-performance scores for Indian weather." },
   themeColor: "#F01348",
   icons: { apple: "/icons/apple-touch-icon.png" },
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Scentarchy" },

@@ -9,9 +9,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getAllPerfumeSlugs(), getAllHouseSlugs(), getAllArticleSlugs(), getAwardYears(),
   ]);
   const staticRoutes = [
-    '', '/find-alternative', '/compare', '/finder', '/notes', '/accords', '/search/notes', '/search/accords',
+    '', '/find-alternative', '/compare', '/finder', '/quiz', '/notes', '/accords', '/search/notes', '/search/accords',
     '/forum', '/news', '/giveaways', '/awards', '/requests', '/sniff',
-    '/best-perfumes', '/dupes', '/vs',
+    '/best-perfumes', '/dupes', '/vs', '/perfumes',
+    '/weather', '/occasions', '/battles', '/climate', '/blindbuy',
     '/methodology', '/climate-protocol', '/trust-charter', '/fake-guide',
     '/about', '/contact', '/terms', '/privacy',
   ];
@@ -37,14 +38,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       awardEntries.push({ url: `${BASE}/awards/${year}/${c.slug}`, changeFrequency: 'weekly' as const, priority: 0.7 });
     }
   }
+  const now = new Date();
+  // Discovery hubs get higher priority than individual product pages.
+  const hubRoutes = new Set(['', '/finder', '/quiz', '/weather', '/occasions', '/battles', '/climate', '/blindbuy', '/perfumes', '/dupes', '/vs', '/best-perfumes']);
+  // Filter out corrupt slugs (data import artifacts like time values).
+  const cleanPerfumes = perfumes.filter((s) => !/^\d{1,2}:\d{2}(:\d{2})?$/.test(s));
   return [
-    ...staticRoutes.map((r) => ({ url: `${BASE}${r || '/'}`, changeFrequency: 'weekly' as const, priority: r === '' ? 1 : 0.7 })),
-    ...awardEntries,
-    ...dupeUrls.map((u) => ({ url: `${BASE}${u}`, changeFrequency: 'weekly' as const, priority: 0.8 })),
-    ...vsUrls.map((u) => ({ url: `${BASE}${u}`, changeFrequency: 'weekly' as const, priority: 0.8 })),
-    ...noteSlugs.map((s) => ({ url: `${BASE}/notes/${s}`, changeFrequency: 'monthly' as const, priority: 0.6 })),
-    ...perfumes.map((s) => ({ url: `${BASE}/perfume/${s}`, changeFrequency: 'weekly' as const, priority: 0.9 })),
-    ...houses.map((s) => ({ url: `${BASE}/house/${s}`, changeFrequency: 'monthly' as const, priority: 0.8 })),
-    ...articles.map((s) => ({ url: `${BASE}/news/${s}`, changeFrequency: 'monthly' as const, priority: 0.6 })),
+    ...staticRoutes.map((r) => ({
+      url: `${BASE}${r || '/'}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: r === '' ? 1 : hubRoutes.has(r) ? 0.8 : 0.5,
+    })),
+    ...awardEntries.map((e) => ({ ...e, lastModified: now })),
+    ...dupeUrls.map((u) => ({ url: `${BASE}${u}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.8 })),
+    ...vsUrls.map((u) => ({ url: `${BASE}${u}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.8 })),
+    ...noteSlugs.map((s) => ({ url: `${BASE}/notes/${s}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.5 })),
+    ...cleanPerfumes.map((s) => ({ url: `${BASE}/perfume/${s}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.6 })),
+    ...houses.map((s) => ({ url: `${BASE}/house/${s}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 })),
+    ...articles.map((s) => ({ url: `${BASE}/news/${s}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.6 })),
   ];
 }

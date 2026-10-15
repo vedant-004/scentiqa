@@ -15,9 +15,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const h = await getHouse(slug);
   if (!h) return { title: 'Not found' };
+  const { SITE_URL } = await import('@/lib/site-url');
   return {
     title: `${h.name} Perfumes & Dupes in India`,
-    description: `${h.name} — ${h.perfumeCount} fragrances. ${h.avgSimilarity ? `Average estimated similarity ${h.avgSimilarity}%.` : ''} Prices in INR from Indian sellers.`,
+    description: `${h.name} - ${h.perfumeCount} fragrances. ${h.avgSimilarity ? `Average estimated similarity ${h.avgSimilarity}%.` : ''} Prices in INR from Indian sellers.`,
+    alternates: { canonical: `${SITE_URL}/house/${slug}` },
+    openGraph: {
+      title: `${h.name} Perfumes & Dupes in India | Scentarchy`,
+      description: `${h.name} - ${h.perfumeCount} fragrances with INR prices from Indian sellers.`,
+      url: `${SITE_URL}/house/${slug}`,
+    },
   };
 }
 
@@ -40,8 +47,29 @@ export default async function HousePage({ params }: { params: Promise<{ slug: st
   const dupes = h.perfumes.filter((p) => p.isDupe);
   const originals = h.perfumes.filter((p) => !p.isDupe);
 
+  const { SITE_URL } = await import('@/lib/site-url');
+  const { JsonLd } = await import('@/components/seo');
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${h.name} Perfumes`,
+    description: `${h.name} - ${h.perfumeCount} fragrances with INR prices from Indian sellers.`,
+    url: `${SITE_URL}/house/${slug}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: h.perfumes.length,
+      itemListElement: h.perfumes.slice(0, 20).map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE_URL}/perfume/${p.slug}`,
+        name: p.name,
+      })),
+    },
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+      <JsonLd data={collectionJsonLd} />
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Houses', href: '/houses' }, { label: h.name }]} />
 
       {/* Header */}
