@@ -83,6 +83,69 @@ function GiveawayCard({ g }: { g: Record<string, string | number | boolean | nul
           <GiveawayForm existing={g} />
         </div>
       </details>
+      <details className="mt-3">
+        <summary className="cursor-pointer text-sm font-semibold text-stone-500 hover:text-stone-800 dark:hover:text-stone-200">
+          Entrants ({Number(g.entry_count ?? 0)}) — view emails
+        </summary>
+        <div className="mt-3">
+          <GiveawayEntrants slug={slug} />
+        </div>
+      </details>
     </div>
   );
+}
+
+/* Entrant list with emails, resolved via the Supabase admin API.
+   One bad lookup must never break the admin page. */
+async function GiveawayEntrants({ slug }: { slug: string }) {
+  try {
+    const c = getSupabaseServer(true);
+    if (!c) return <p className="text-sm text-stone-400">Database not configured.</p>;
+    const { data: entries, error } = await c
+      .from('giveaway_entries')
+      .select('user_id, created_at')
+      .eq('giveaway_slug', slug)
+      .order('created_at', { ascending: false })
+      .limit(500);
+    if (error) return <p className="text-sm text-red-600 dark:text-red-400">Could not load entrants: {error.message}</p>;
+    if (!entries || entries.length === 0) return <p className="text-sm text-stone-400">No entries yet.</p>;
+
+    const emailById: Record<string, string> = {};
+    try {
+      for (let page = 1; page <= 20; page++) {
+        const { data } = await c.auth.admin.listUsers({ page, perPage: 100 });
+        for (const u of data.users) emailById[u.id] = u.email ?? '(no email)';
+        if (data.users.length < 100) break;
+      }
+    } catch { /* fall back to user ids */ }
+
+    return (
+      <div className="overflow-x-auto rounded-xl border border-stone-200 dark:border-white/10">
+        <table className="w-full text-left text-sm">
+          <thead>
+            <tr className="border-b border-stone-200 bg-stone-50 dark:border-white/10 dark:bg-white/[0.03]">
+              <th className="px-3 py-2 font-bold text-stone-500">#</th>
+              <th className="px-3 py-2 font-bold text-stone-500">Email</th>
+              <th className="px-3 py-2 font-bold text-stone-500">Entered</th>
+            </tr>
+          </thead>
+          <tbody>
+            {entries.map((e, i) => (
+              <tr key={String(e.user_id)} className="border-b border-stone-100 last:border-0 dark:border-white/5">
+                <td className="px-3 py-2 text-stone-400">{i + 1}</td>
+                <td className="px-3 py-2 font-medium text-stone-800 dark:text-stone-100">
+                  {emailById[String(e.user_id)] ?? <span className="text-stone-400">{String(e.user_id)}</span>}
+                </td>
+                <td className="px-3 py-2 text-stone-500">
+                  {e.created_at ? new Date(String(e.created_at)).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) : '—'}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  } catch (e) {
+    return <p className="text-sm text-red-600 dark:text-red-400">Could not load entrants.</p>;
+  }
 }

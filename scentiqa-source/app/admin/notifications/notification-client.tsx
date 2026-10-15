@@ -95,6 +95,38 @@ export function NotificationComposer() {
   );
 }
 
+export function NotificationPushToggle({ id, isPushed }: { id: string; isPushed: boolean }) {
+  const router = useRouter();
+  const [busy, setBusy] = useState(false);
+  const toggle = async () => {
+    const action = isPushed ? 'unpush' : 're-push';
+    if (!window.confirm(`${isPushed ? 'Unpush' : 'Re-push'} this notification? ${isPushed ? 'Members will no longer see it.' : 'Members will see it again.'}`)) return;
+    setBusy(true);
+    try {
+      const r = await fetch('/api/admin/notifications', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, is_pushed: !isPushed }),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error ?? `Failed to ${action}`);
+      router.refresh();
+    } catch (e) {
+      alert(e instanceof Error ? e.message : `Failed to ${action}`);
+      setBusy(false);
+    }
+  };
+  return (
+    <button onClick={toggle} disabled={busy}
+      className={cn('rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors disabled:opacity-50',
+        isPushed
+          ? 'border-amber-500/30 text-amber-600 hover:bg-amber-500/10 dark:text-amber-400'
+          : 'border-emerald-500/30 text-emerald-600 hover:bg-emerald-500/10 dark:text-emerald-400')}>
+      {busy ? 'Working…' : isPushed ? 'Unpush' : 'Re-push'}
+    </button>
+  );
+}
+
 export function NotificationDeleteButton({ id }: { id: string }) {
   const router = useRouter();
   const [deleting, setDeleting] = useState(false);
