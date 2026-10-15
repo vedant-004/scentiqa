@@ -40,6 +40,6 @@ if __name__ == "__main__":
     pipeline.get_queue = get_queue  # patch the queue fetcher
     batch = int(sys.argv[1]) if len(sys.argv) > 1 else 150
     offset = int(sys.argv[2]) if len(sys.argv) > 2 else 0
-    run([FlipkartRetailer(), SephoraRetailer()],
+    run([SephoraRetailer(), FlipkartRetailer()],
         batch=batch, start_offset=offset,
         state_file="priority_state.json")

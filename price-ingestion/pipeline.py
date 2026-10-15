@@ -210,6 +210,8 @@ def run(retailers: list[Retailer], batch: int = 100, start_offset: int = 0,
             state["done"] = state.get("done", 0) + 1
             if state["done"] % 10 == 0:
                 print(f"progress: {state['done']} perfumes, {state['hits']} price rows")
+                with open(state_file, "w") as f:
+                    json.dump(state, f)
         offset += batch
         state["offset"] = offset
         with open(state_file, "w") as f:

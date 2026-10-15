@@ -17,7 +17,7 @@ sys.path.insert(0, '.')
 from pipeline import Retailer, PriceHit, fetch, parse_inr, parse_size_ml, UA, REQ_HEADERS
 
 SELLER_FLIPKART = "seller_flipkart"
-SELLER_SEPHORA = "seller_sephora_in"
+SELLER_SEPHORA = "seller_sephora-india"
 
 
 def _fk_blob(html: str):
@@ -107,15 +107,31 @@ class SephoraRetailer(Retailer):
         if not html:
             return []
         hits: list[PriceHit] = []
-        # card anchors: find <a href="/product/..."> preceding each title block
-        pat = re.compile(
-            r'<a[^>]*href="(/product/[^"]+)"[^>]*>.*?'
+        # Find each card's title block first (cheap), then look backwards for
+        # its link. Avoids catastrophic backtracking on large pages.
+        # Find each card's title block first (cheap), then look for the price
+        # within a bounded window after it. Never let .*? span the document.
+        title_pat = re.compile(
             r'<div class="ukt-title ellipse-2-line"[^>]*>\s*(.*?)\s*</div>\s*'
-            r'<h5 class="ukt-sub-title ellipse-2-line"[^>]*>\s*(.*?)\s*</h5>.*?'
-            r'<span class="main-price"[^>]*>\s*₹([\d,]+)\s*</span>',
+            r'<h5 class="ukt-sub-title ellipse-2-line"[^>]*>\s*(.*?)\s*</h5>',
             re.S)
-        for m in pat.finditer(html):
-            purl, brand, title, price_s = m.groups()
+        price_pat = re.compile(
+            r'<span class="main-price"[^>]*>\s*₹([\d,]+)\s*</span>')
+        for m in title_pat.finditer(html):
+            brand, title = m.groups()
+            window = html[m.end():m.end() + 3000]
+            pm = price_pat.search(window)
+            if not pm:
+                continue
+            price_s = pm.group(1)
+            # nearest /product/ link before this card (within 3000 chars)
+            back = html[max(0, m.start() - 3000):m.start()]
+            lm = None
+            for lm_cand in re.finditer(r'<a[^>]*href="(/product/[^"]+)"', back):
+                lm = lm_cand
+            if not lm:
+                continue
+            purl = lm.group(1)
             price = parse_inr('₹' + price_s)
            
             if price is None:
