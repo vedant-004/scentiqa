@@ -716,7 +716,8 @@ export async function getGiveaways(): Promise<Giveaway[]> {
     desc: (g.description as string) ?? '', prize: (g.prize as string) ?? '',
     perfumeSlug: ((g.perfume_id as string) ?? '').replace(/^perf_/, ''),
     starts: g.starts_at as string, ends: g.ends_at as string,
-    winner: null, active: !!g.is_active, entries: Number(g.entry_count ?? 0),
+    winner: null, active: !!g.is_active,
+    entries: g.display_entry_count != null ? Number(g.display_entry_count) : Number(g.entry_count ?? 0),
   }));
 }
 

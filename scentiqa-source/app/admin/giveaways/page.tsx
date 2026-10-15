@@ -57,6 +57,8 @@ export default async function AdminGiveaways() {
 
 function GiveawayCard({ g }: { g: Record<string, string | number | boolean | null> }) {
   const slug = String(g.slug);
+  const realCount = Number(g.entry_count ?? 0);
+  const displayCount = g.display_entry_count != null ? Number(g.display_entry_count) : null;
   return (
     <div className="rounded-2xl border border-stone-200 bg-white p-4 dark:border-white/10 dark:bg-white/[0.03]">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -71,9 +73,11 @@ function GiveawayCard({ g }: { g: Record<string, string | number | boolean | nul
           {g.description && <p className="mt-1 text-sm text-stone-600 dark:text-stone-300">{String(g.description)}</p>}
           <p className="mt-1 text-xs text-stone-400">
             {new Date(String(g.starts_at)).toLocaleDateString('en-IN')} → {new Date(String(g.ends_at)).toLocaleDateString('en-IN')}
-            {' · '}{Number(g.entry_count ?? 0)} entries
+            {' · '}<strong className="text-stone-700 dark:text-stone-200">{realCount} real entries</strong>
+            {displayCount != null && <span className="ml-1 text-gold-700 dark:text-gold-300">(showing {displayCount} to users)</span>}
             {g.winner_user_id && <span className="ml-1 font-bold text-gold-600">· Winner announced</span>}
           </p>
+          <DisplayCountForm slug={slug} current={displayCount} />
         </div>
         <GiveawayActions slug={slug} active={!!g.is_active} hasWinner={!!g.winner_user_id} />
       </div>
@@ -92,6 +96,57 @@ function GiveawayCard({ g }: { g: Record<string, string | number | boolean | nul
         </div>
       </details>
     </div>
+  );
+}
+
+function DisplayCountForm({ slug, current }: { slug: string; current: number | null }) {
+  return (
+    <form
+      action={async (fd: FormData) => {
+        'use server';
+        const { getSupabaseServer } = await import('@/lib/supabase');
+        const { requireAdmin } = await import('@/lib/admin');
+        await requireAdmin();
+        const c = getSupabaseServer(true)!;
+        const v = fd.get('display_count');
+        const num = v ? Number(v) : null;
+        await c.from('giveaways').update({
+          display_entry_count: num && num > 0 ? num : null,
+        }).eq('slug', slug);
+      }}
+      className="mt-2 flex items-center gap-2"
+    >
+      <label className="text-xs font-semibold text-stone-500">
+        Show to users:
+        <input
+          name="display_count"
+          type="number"
+          min="0"
+          defaultValue={current ?? ''}
+          placeholder="Real count"
+          className="ml-2 w-24 rounded-lg border border-stone-200 bg-white px-2 py-1 text-xs dark:border-white/10 dark:bg-ink-900"
+        />
+      </label>
+      <button type="submit" className="rounded-lg bg-gold-700 px-3 py-1 text-xs font-bold text-white hover:brightness-110">
+        Set
+      </button>
+      {current != null && (
+        <button
+          type="submit"
+          formAction={async () => {
+            'use server';
+            const { getSupabaseServer } = await import('@/lib/supabase');
+            const { requireAdmin } = await import('@/lib/admin');
+            await requireAdmin();
+            const c = getSupabaseServer(true)!;
+            await c.from('giveaways').update({ display_entry_count: null }).eq('slug', slug);
+          }}
+          className="text-xs font-semibold text-stone-400 hover:text-stone-600"
+        >
+          Clear
+        </button>
+      )}
+    </form>
   );
 }
 

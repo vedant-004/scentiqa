@@ -240,3 +240,16 @@ progress: 270 perfumes, 0 price rows
   ~ Luxury Gift Set For Him (4x20ml) @ Sephora India: 2 hits, none scored >= 0.8
     WRITE FAIL perf_luxury-gift-set-for-him-4x20ml/seller_flipkart: Expecting value: line 1 column 1 (char 0)
   ~ So Scandal @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_tagher/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Stronger With You @ Flipkart: 4 hits, none scored >= 0.8
+  ~ Symphony @ Flipkart: 1 hits, none scored >= 0.8
+progress: 280 perfumes, 0 price rows
+    WRITE FAIL perf_purple-oud/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_oud-maracuja-2/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Eclaire @ Flipkart: 4 hits, none scored >= 0.8
+  ~ Carlos Santana for Men @ Sephora India: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_dff60356288d/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_vanilla-2/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Qamar Al Sama Edp 100Ml @ Flipkart: 3 hits, none scored >= 0.8
+    WRITE FAIL perf_shanaya/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_rose/seller_flipkart: Expecting value: line 1 column 1 (char 0)
