@@ -718,6 +718,7 @@ export async function getGiveaways(): Promise<Giveaway[]> {
     starts: g.starts_at as string, ends: g.ends_at as string,
     winner: null, active: !!g.is_active,
     entries: g.display_entry_count != null ? Number(g.display_entry_count) : Number(g.entry_count ?? 0),
+    winnerName: (g.winner_name as string) ?? null,
   }));
 }
 

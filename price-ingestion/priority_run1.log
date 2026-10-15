@@ -253,3 +253,46 @@ progress: 280 perfumes, 0 price rows
   ~ Qamar Al Sama Edp 100Ml @ Flipkart: 3 hits, none scored >= 0.8
     WRITE FAIL perf_shanaya/seller_flipkart: Expecting value: line 1 column 1 (char 0)
     WRITE FAIL perf_rose/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 290 perfumes, 0 price rows
+  ~ Futura La Femme @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_flora-2/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Kunouz Al Hub Edp 100Ml @ Sephora India: 1 hits, none scored >= 0.8
+  ~ Kunouz Al Hub Edp 100Ml @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_musk-rijali/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_honey-oud/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_cool-water-2/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_cool-water-2/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 300 perfumes, 0 price rows
+    WRITE FAIL perf_good-girl/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_good-girl/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_ombre-leather-2/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_ombre-leather-2/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ The Most Wanted @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_eminence/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_bff386570498/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_bff386570498/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Y Elixir @ Sephora India: 12 hits, none scored >= 0.8
+    WRITE FAIL perf_ad3b57823eb5/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Y Eau de Toilette @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Dubai Delicacy Edp 100Ml @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_cool-water-3/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 310 perfumes, 0 price rows
+  ~ Jasmine @ Flipkart: 3 hits, none scored >= 0.8
+    WRITE FAIL perf_purple-oud-2/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_kesar-chandan/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_mitti/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_imperial/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ MUSE SECRET OF GOOD GIRL @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Whispers Edp 75Ml @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_carbon/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 320 perfumes, 0 price rows
+  ~ Choco Musk Pistachio @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_mousufdaisy/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_eclipse/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Gucci Flora Gorgeous Magnolia Inspired P @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Whitewater @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Gucci Guilty Absolute Women Inspired Per @ Sephora India: 12 hits, none scored >= 0.8
+  ~ Gucci Guilty Absolute Women Inspired Per @ Flipkart: 8 hits, none scored >= 0.8
+  ~ Gucci Intense Oud for Men Inspired Perfu @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Gucci Intense Oud for Men Inspired Perfu @ Flipkart: 5 hits, none scored >= 0.8
+progress: 330 perfumes, 0 price rows

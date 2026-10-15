@@ -95,7 +95,67 @@ function GiveawayCard({ g }: { g: Record<string, string | number | boolean | nul
           <GiveawayEntrants slug={slug} />
         </div>
       </details>
+      <details className="mt-3">
+        <summary className="cursor-pointer text-sm font-semibold text-stone-500 hover:text-stone-800 dark:hover:text-stone-200">
+          🏆 Announce winner {g.winner_name ? `— ${String(g.winner_name)}` : '(not announced)'}
+        </summary>
+        <div className="mt-3">
+          <WinnerForm slug={slug} currentName={g.winner_name != null ? String(g.winner_name) : ''} currentEmail={g.winner_email != null ? String(g.winner_email) : ''} />
+        </div>
+      </details>
     </div>
+  );
+}
+
+function WinnerForm({ slug, currentName, currentEmail }: { slug: string; currentName: string; currentEmail: string }) {
+  return (
+    <form
+      action={async (fd: FormData) => {
+        'use server';
+        const { getSupabaseServer } = await import('@/lib/supabase');
+        const { requireAdmin } = await import('@/lib/admin');
+        await requireAdmin();
+        const c = getSupabaseServer(true)!;
+        const name = String(fd.get('winner_name') || '').trim().slice(0, 100) || null;
+        const email = String(fd.get('winner_email') || '').trim().slice(0, 200) || null;
+        await c.from('giveaways').update({
+          winner_name: name,
+          winner_email: email,
+          winner_announced_at: name ? new Date().toISOString() : null,
+        }).eq('slug', slug);
+      }}
+      className="grid gap-3 rounded-xl border border-gold-500/30 bg-gold-500/5 p-4"
+    >
+      <p className="text-xs text-stone-500">
+        The winner's <strong>name</strong> will be shown publicly on the giveaway page.
+        The <strong>email</strong> stays private — only you see it here, so you can contact them for shipping address and phone number.
+      </p>
+      <label className="block text-sm font-semibold">Winner name (public)
+        <input name="winner_name" defaultValue={currentName} placeholder="e.g. Priya Sharma" maxLength={100}
+          className="mt-1 w-full rounded-xl border border-stone-200 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-ink-900" />
+      </label>
+      <label className="block text-sm font-semibold">Winner email (private — only you see this)
+        <input name="winner_email" type="email" defaultValue={currentEmail} placeholder="winner@example.com" maxLength={200}
+          className="mt-1 w-full rounded-xl border border-stone-200 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-ink-900" />
+      </label>
+      <div className="flex gap-2">
+        <button type="submit" className="rounded-xl bg-gold-600 px-4 py-2 text-sm font-bold text-white hover:brightness-110">
+          {currentName ? 'Update winner' : 'Announce winner'}
+        </button>
+        {currentName && (
+          <button type="submit" formAction={async () => {
+            'use server';
+            const { getSupabaseServer } = await import('@/lib/supabase');
+            const { requireAdmin } = await import('@/lib/admin');
+            await requireAdmin();
+            const c = getSupabaseServer(true)!;
+            await c.from('giveaways').update({ winner_name: null, winner_email: null, winner_announced_at: null }).eq('slug', slug);
+          }} className="rounded-xl border border-stone-300 px-4 py-2 text-sm font-semibold text-stone-500 hover:text-stone-700">
+            Clear winner
+          </button>
+        )}
+      </div>
+    </form>
   );
 }
 

@@ -55,7 +55,14 @@ export default async function GiveawaysPage() {
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-stone-400">Ended</p>
           <h2 className="mt-1 font-display text-xl font-bold">{g.title}</h2>
           {g.prize && <p className="mt-2 text-sm text-stone-500 dark:text-stone-400">Prize: {g.prize}</p>}
-          <p className="mt-1 text-xs text-stone-400">{g.entries.toLocaleString('en-IN')} {g.entries === 1 ? 'entry' : 'entries'} · Winners announced in the forum.</p>
+          {g.winnerName ? (
+            <p className="mt-3 rounded-xl bg-gold-500/10 border border-gold-500/30 px-4 py-3 text-sm">
+              <span className="text-lg">🏆</span> <strong className="text-gold-700 dark:text-gold-300">Winner: {g.winnerName}</strong>
+              <span className="block mt-1 text-xs text-stone-500">Congratulations! We'll be in touch via email about shipping.</span>
+            </p>
+          ) : (
+            <p className="mt-1 text-xs text-stone-400">{g.entries.toLocaleString('en-IN')} {g.entries === 1 ? 'entry' : 'entries'} · Winner to be announced.</p>
+          )}
         </Card>
       ))}
     </div>

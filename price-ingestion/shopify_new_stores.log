@@ -46,3 +46,42 @@
 
 === seller_perfumenetwork (https://perfumenetwork.in) ===
   13052 perfumes in scope
+  1705 store products
+  3 new price rows to insert
+
+=== seller_fragstalk (https://fragstalk.in) ===
+  13052 perfumes in scope
+  5998 store products
+  241 new price rows to insert
+  !! batch insert failed: 409 {"code":"23503","details":"Key (seller_id)=(seller_fragstalk) is not present in table \"sellers\".","hint":null,"message":"insert or update on table \"prices\" violates foreign key constraint \"prices
+  !! batch insert failed: 409 {"code":"23503","details":"Key (seller_id)=(seller_fragstalk) is not present in table \"sellers\".","hint":null,"message":"insert or update on table \"prices\" violates foreign key constraint \"prices
+
+=== seller_naseem (https://www.naseemperfume.in) ===
+  29 perfumes in scope
+  342 store products
+  25 new price rows to insert
+  !! batch insert failed: 409 {"code":"23503","details":"Key (seller_id)=(seller_naseem) is not present in table \"sellers\".","hint":null,"message":"insert or update on table \"prices\" violates foreign key constraint \"prices_se
+
+=== seller_vokka (https://vokka.in) ===
+  0 perfumes in scope
+  35 store products
+  0 new price rows to insert
+
+=== seller_brandmall (https://www.brandmall.in) ===
+  13052 perfumes in scope
+  707 store products
+  7 new price rows to insert
+  !! batch insert failed: 409 {"code":"23503","details":"Key (seller_id)=(seller_brandmall) is not present in table \"sellers\".","hint":null,"message":"insert or update on table \"prices\" violates foreign key constraint \"prices
+
+=== seller_sugandhi (https://sugandhi.in) ===
+  0 perfumes in scope
+  59 store products
+  0 new price rows to insert
+
+=== seller_kenaz (https://www.kenazperfumes.com) ===
+  0 perfumes in scope
+  46 store products
+  0 new price rows to insert
+
+DONE: 26 new price rows
+Unmatched titles logged for review: 11513

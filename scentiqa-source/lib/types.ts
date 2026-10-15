@@ -128,7 +128,7 @@ export interface Award { id: string; year: number; category: string; type: 'hous
 export interface Giveaway {
   id: string; slug: string; title: string; desc: string; prize: string;
   perfumeSlug: string; starts: string; ends: string; winner: string | null;
-  active: boolean; entries: number;
+  active: boolean; entries: number; winnerName: string | null;
 }
 
 export interface NoteInfo { id: string; slug: string; name: string; category: string; odorProfile: string }
