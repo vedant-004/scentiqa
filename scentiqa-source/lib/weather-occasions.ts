@@ -7,6 +7,7 @@ export interface AffinityProfile {
   id: string;
   label: string;
   icon: string;
+  image: string;
   blurb: string;
   /** accord keyword (lowercase substring) -> fit weight 0-100 */
   affinity: Record<string, number>;
@@ -74,7 +75,8 @@ export function estimateLongevity(accords: Array<{ name: string; strength: numbe
 
 export const WEATHER_TYPES: AffinityProfile[] = [
   {
-    id: 'hot-humid', label: 'Hot & Humid', icon: '🌡️',
+    id: 'hot-humid', label: 'Hot & Humid', icon: '',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80',
     blurb: 'Delhi/Mumbai summer, coastal heat. Light, fresh scents that cut through humidity without turning cloying.',
     affinity: {
       citrus: 95, aquatic: 95, ozonic: 92, fresh: 90, green: 85, marine: 88,
@@ -85,7 +87,8 @@ export const WEATHER_TYPES: AffinityProfile[] = [
     },
   },
   {
-    id: 'hot-dry', label: 'Hot & Dry', icon: '☀️',
+    id: 'hot-dry', label: 'Hot & Dry', icon: '',
+    image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&q=80',
     blurb: 'Desert heat, low humidity. Bright citrus-aromatics that project cleanly in dry air.',
     affinity: {
       citrus: 95, aromatic: 90, 'fresh spicy': 88, fresh: 88, green: 82,
@@ -96,7 +99,8 @@ export const WEATHER_TYPES: AffinityProfile[] = [
     },
   },
   {
-    id: 'monsoon', label: 'Monsoon / Rainy', icon: '🌧️',
+    id: 'monsoon', label: 'Monsoon / Rainy', icon: '',
+    image: 'https://images.unsplash.com/photo-1428592953211-077101b2021b?w=400&q=80',
     blurb: 'Wet earth and petrichor season. Green, earthy and fresh scents that bloom in the rain.',
     affinity: {
       green: 95, fresh: 90, aquatic: 88, ozonic: 85, herbal: 85, citrus: 80,
@@ -108,7 +112,8 @@ export const WEATHER_TYPES: AffinityProfile[] = [
     },
   },
   {
-    id: 'pleasant', label: 'Cool & Pleasant', icon: '🍂',
+    id: 'pleasant', label: 'Cool & Pleasant', icon: '',
+    image: 'https://images.unsplash.com/photo-1507371341162-763b5e419408?w=400&q=80',
     blurb: 'Winter mornings, hill stations, breezy evenings. The most versatile weather — almost everything works.',
     affinity: {
       floral: 88, fruity: 85, musky: 85, citrus: 82, fresh: 82, aromatic: 82,
@@ -119,7 +124,8 @@ export const WEATHER_TYPES: AffinityProfile[] = [
     },
   },
   {
-    id: 'cold', label: 'Cold Winter', icon: '❄️',
+    id: 'cold', label: 'Cold Winter', icon: '',
+    image: 'https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=400&q=80',
     blurb: 'North-Indian December–January. Rich, warm scents with the density to project through cold air.',
     affinity: {
       amber: 95, vanilla: 93, oud: 92, tobacco: 90, leather: 90,
@@ -136,7 +142,8 @@ export const WEATHER_TYPES: AffinityProfile[] = [
 
 export const OCCASIONS: AffinityProfile[] = [
   {
-    id: 'gym', label: 'Gym / Workout', icon: '💪',
+    id: 'gym', label: 'Gym / Workout', icon: '',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80',
     blurb: 'Fresh and clean, never loud. Scents that survive sweat without choking the room.',
     affinity: {
       fresh: 95, citrus: 93, aquatic: 92, ozonic: 90, green: 85, marine: 88,
@@ -148,7 +155,8 @@ export const OCCASIONS: AffinityProfile[] = [
     },
   },
   {
-    id: 'office', label: 'Office / Work', icon: '💼',
+    id: 'office', label: 'Office / Work', icon: '',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80',
     blurb: 'Polished and inoffensive. Clean scents colleagues notice pleasantly, never complain about.',
     affinity: {
       musky: 90, citrus: 88, fresh: 85, aromatic: 88, floral: 80, powdery: 82,
@@ -160,7 +168,8 @@ export const OCCASIONS: AffinityProfile[] = [
     },
   },
   {
-    id: 'coffee-date', label: 'Coffee Date', icon: '☕',
+    id: 'coffee-date', label: 'Coffee Date', icon: '',
+    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80',
     blurb: 'Warm, approachable, a little sweet. Inviting at arm\u2019s length, not across the café.',
     affinity: {
       vanilla: 92, musky: 90, sweet: 88, floral: 82, rose: 85, fruity: 82,
@@ -172,7 +181,8 @@ export const OCCASIONS: AffinityProfile[] = [
     },
   },
   {
-    id: 'dinner-date', label: 'Dinner Date', icon: '🌹',
+    id: 'dinner-date', label: 'Dinner Date', icon: '',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80',
     blurb: 'Magnetic and intimate. Dark warmth that draws someone closer as the evening cools.',
     affinity: {
       oud: 92, amber: 92, leather: 88, tobacco: 88, 'warm spicy': 88,
@@ -183,7 +193,8 @@ export const OCCASIONS: AffinityProfile[] = [
     },
   },
   {
-    id: 'party', label: 'Party / Night Out', icon: '🎉',
+    id: 'party', label: 'Party / Night Out', icon: '',
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&q=80',
     blurb: 'Loud and long-lasting. Sweet, bold scents built to project over music and crowds.',
     affinity: {
       sweet: 93, fruity: 90, vanilla: 90, amber: 88, gourmand: 92,
@@ -194,7 +205,8 @@ export const OCCASIONS: AffinityProfile[] = [
     },
   },
   {
-    id: 'wedding', label: 'Wedding / Festive', icon: '✨',
+    id: 'wedding', label: 'Wedding / Festive', icon: '',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80',
     blurb: 'Rich and celebratory. Opulent florals, ouds and ambers worthy of the occasion.',
     affinity: {
       floral: 92, oud: 90, amber: 92, rose: 92, 'warm spicy': 88,
@@ -205,7 +217,8 @@ export const OCCASIONS: AffinityProfile[] = [
     },
   },
   {
-    id: 'daily', label: 'Everyday Casual', icon: '👟',
+    id: 'daily', label: 'Everyday Casual', icon: '',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&q=80',
     blurb: 'Easy, versatile, no-thought-needed. The jeans-and-t-shirt of fragrances.',
     affinity: {
       fresh: 90, citrus: 90, musky: 88, fruity: 85, aromatic: 85, floral: 82,
@@ -216,7 +229,8 @@ export const OCCASIONS: AffinityProfile[] = [
     },
   },
   {
-    id: 'formal', label: 'Formal Event', icon: '🤵',
+    id: 'formal', label: 'Formal Event', icon: '',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80',
     blurb: 'Refined and restrained. Quietly expensive-smelling, never trying too hard.',
     affinity: {
       woody: 90, aromatic: 90, musky: 88, powdery: 88, citrus: 85,

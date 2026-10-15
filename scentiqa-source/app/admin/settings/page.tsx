@@ -79,6 +79,58 @@ export default async function AdminSettings() {
           <div><AdminButton>Save banner</AdminButton></div>
         </form>
       </section>
+
+      {/* ============ Homepage stats display ============ */}
+      <section>
+        <SectionTitle>Homepage stats (display overrides)</SectionTitle>
+        <div className="rounded-2xl border border-stone-200/70 bg-white/60 p-6 dark:border-white/10 dark:bg-white/[0.03]">
+          <p className="mb-4 text-sm text-stone-500">
+            Set custom numbers to show on the homepage. Leave empty to show real counts.
+            You always see the real numbers here for reference.
+          </p>
+          <StatsDisplayForm />
+        </div>
+      </section>
     </div>
+  );
+}
+
+async function StatsDisplayForm() {
+  const c = getSupabaseServer(true);
+  const { data: real } = await c!.from('perfumes').select('id', { count: 'exact', head: true });
+  // Get current overrides
+  const keys = ['stats_display_perfumes', 'stats_display_houses', 'stats_display_reviews', 'stats_display_members'];
+  const { data: overrides } = await c!.from('site_settings').select('key, value').in('key', keys);
+  const ov: Record<string, string> = {};
+  for (const r of overrides ?? []) {
+    ov[(r as { key: string }).key] = String((r as { value: unknown }).value ?? '');
+  }
+  const save = updateSiteSetting.bind(null, 'stats_display_bulk');
+  return (
+    <form action={async (fd: FormData) => {
+      'use server';
+      const c2 = getSupabaseServer(true)!;
+      for (const k of keys) {
+        const v = fd.get(k);
+        const num = v ? Number(v) : null;
+        if (num && num > 0) {
+          await c2.from('site_settings').upsert({ key: k, value: num }, { onConflict: 'key' });
+        } else {
+          await c2.from('site_settings').delete().eq('key', k);
+        }
+      }
+    }} className="grid gap-4 sm:grid-cols-2">
+      {[
+        ['stats_display_perfumes', 'Perfumes'],
+        ['stats_display_houses', 'Houses'],
+        ['stats_display_reviews', 'Reviews'],
+        ['stats_display_members', 'Members'],
+      ].map(([key, label]) => (
+        <Field key={key} label={`Display ${label}`} hint={`Current override: ${ov[key] || '(showing real count)'}`}>
+          <input name={key} type="number" min="0" defaultValue={ov[key] || ''} className={inputCls} placeholder="Leave empty for real count" />
+        </Field>
+      ))}
+      <div className="sm:col-span-2"><AdminButton>Save display stats</AdminButton></div>
+    </form>
   );
 }

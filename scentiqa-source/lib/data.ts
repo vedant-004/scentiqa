@@ -4,7 +4,7 @@
 import { cache } from 'react';
 import * as demo from './data-demo';
 import * as live from './data-supabase';
-import { isSupabaseConfigured } from './supabase';
+import { isSupabaseConfigured, getSupabaseServer } from './supabase';
 
 export { isSupabaseConfigured as isSupabaseMode };
 export type { HouseFull } from './data-demo';
@@ -92,6 +92,24 @@ export async function getSiteStats(): Promise<SiteStats> {
       reviews: Number(s.reviews) || 0,
       members: Number(s.members) || 0,
     };
+    // Check for admin display overrides in site_settings.
+    // If set, these override the real values for public display.
+    try {
+      const c = getSupabaseServer(true);
+      if (c) {
+        const { data } = await c.from('site_settings').select('key, value')
+          .in('key', ['stats_display_perfumes', 'stats_display_houses', 'stats_display_reviews', 'stats_display_members']);
+        for (const row of data ?? []) {
+          const v = Number((row as { value?: unknown }).value);
+          if (!Number.isNaN(v) && v > 0) {
+            const k = (row as { key: string }).key.replace('stats_display_', '');
+            if (k === 'perfumes' || k === 'houses' || k === 'reviews' || k === 'members') {
+              (value as unknown as Record<string, number>)[k] = v;
+            }
+          }
+        }
+      }
+    } catch { /* use real values if overrides fail */ }
     statsCache = { at: now, value };
     return value;
   } catch {

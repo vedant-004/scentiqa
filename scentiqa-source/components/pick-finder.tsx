@@ -65,11 +65,20 @@ export function PickFinder({ profiles, endpoint, storageKey, selectLabel, showLo
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {profiles.map((p) => (
           <button key={p.id} onClick={() => { setSelected(p.id); setErr(null); }}
-            className={cn('rounded-2xl border p-4 text-left transition-all',
+            className={cn('overflow-hidden rounded-2xl border text-left transition-all',
               selected === p.id
-                ? 'border-[#F01348] bg-[#F01348]/10 shadow-card dark:border-[#F01348]'
-                : 'border-stone-200 bg-white hover:border-stone-300 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20')}>
-            <span className="block text-sm font-bold text-stone-900 dark:text-white">{p.label}</span>
+                ? 'border-[#F01348] shadow-card dark:border-[#F01348]'
+                : 'border-stone-200 hover:border-stone-300 dark:border-white/10 dark:hover:border-white/20')}>
+            <div className="relative h-24 w-full overflow-hidden bg-stone-100 dark:bg-white/5">
+              {p.image ? (
+                <img src={p.image} alt={p.label} loading="lazy"
+                  className="h-full w-full object-cover" />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#F01348]/20 to-amber-500/20" />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <span className="absolute bottom-2 left-3 right-3 block text-sm font-bold text-white drop-shadow">{p.label}</span>
+            </div>
           </button>
         ))}
       </div>

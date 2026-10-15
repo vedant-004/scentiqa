@@ -1,5 +1,242 @@
-  ~ Bleu de Chanel Eau de Parfum Chanel @ Flipkart: 10 hits, none scored >= 0.8
-  ~ Bleu de Chanel Parfum @ Flipkart: 1 hits, none scored >= 0.8
-  ~ Versace Man Eau Fraiche Versace @ Sephora India: 10 hits, none scored >= 0.8
-  ~ Versace Man Eau Fraiche Versace @ Flipkart: 3 hits, none scored >= 0.8
-  ~ Stronger With You Intensely @ Sephora India: 1 hits, none scored >= 0.8
+  ~ Bleu de Chanel Eau de Parfum Chanel @ Sephora India: 4 hits, none scored >= 0.8
+  ~ Bleu de Chanel Eau de Parfum Chanel @ Flipkart: 11 hits, none scored >= 0.8
+  ~ Bleu de Chanel Parfum @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Versace Man Eau Fraiche Versace @ Flipkart: 2 hits, none scored >= 0.8
+  ~ The One for Men Dolce&Gabbana @ Flipkart: 3 hits, none scored >= 0.8
+  ~ Allure Homme Sport Chanel @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Allure Homme Sport Chanel @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_9pm/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 20 perfumes, 0 price rows
+  ~ Allure Homme Sport Eau Extreme Chanel @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Allure Homme Sport Eau Extreme Chanel @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_w_eros-flame-versace/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Eros Flame Versace @ Flipkart: 1 hits, none scored >= 0.8
+progress: 30 perfumes, 0 price rows
+    WRITE FAIL perf_w_gucci-rush-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Midnight Poison Dior @ Sephora India: 7 hits, none scored >= 0.8
+    WRITE FAIL perf_w_gucci-guilty-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-guilty-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Sauvage Eau de Parfum Dior @ Flipkart: 10 hits, none scored >= 0.8
+    WRITE FAIL perf_layton/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_le-male-le-parfum/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Red Tobacco Mancera @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Chanel No 5 Eau de Parfum Chanel @ Sephora India: 10 hits, none scored >= 0.8
+  ~ Chanel No 5 Eau de Parfum Chanel @ Flipkart: 9 hits, none scored >= 0.8
+progress: 40 perfumes, 0 price rows
+  ~ Allure Homme Sport Eau Extreme @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Allure Homme Sport Eau Extreme @ Flipkart: 3 hits, none scored >= 0.8
+  ~ Allure Eau de Parfum Chanel @ Sephora India: 4 hits, none scored >= 0.8
+    WRITE FAIL perf_w_allure-eau-de-parfum-chanel/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Poison Girl Dior @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_w_gucci-bloom-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-bloom-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Light Blue Eau Intense Pour Homme Dolce& @ Flipkart: 3 hits, none scored >= 0.8
+  ~ Blue Jeans Versace @ Sephora India: 5 hits, none scored >= 0.8
+  ~ Blue Jeans Versace @ Flipkart: 5 hits, none scored >= 0.8
+    WRITE FAIL perf_bad-boy/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_bad-boy/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_interlude-man/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 50 perfumes, 0 price rows
+    WRITE FAIL perf_w_silver-mountain-water-creed/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Miss Dior Chérie @ Sephora India: 12 hits, none scored >= 0.8
+    WRITE FAIL perf_w_interlude-man-amouage/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Miss Dior (2012) @ Sephora India: 12 hits, none scored >= 0.8
+    WRITE FAIL perf_oud-for-greatness/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 60 perfumes, 0 price rows
+    WRITE FAIL perf_w_9pm-afnan/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_dolce-gabbana-pour-femme-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_dolce-gabbana-pour-femme-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Pegasus @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Light Blue pour Homme Dolce&Gabbana @ Flipkart: 4 hits, none scored >= 0.8
+progress: 70 perfumes, 0 price rows
+    WRITE FAIL perf_w_yellow-diamond-versace/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Chanel No 19 Eau de Parfum Chanel @ Sephora India: 4 hits, none scored >= 0.8
+  ~ Chanel No 19 Eau de Parfum Chanel @ Flipkart: 9 hits, none scored >= 0.8
+  ~ Wanted by Night Azzaro @ Sephora India: 6 hits, none scored >= 0.8
+  ~ Wanted by Night Azzaro @ Flipkart: 6 hits, none scored >= 0.8
+    WRITE FAIL perf_w_chanel-no-5-l-eau-chanel/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_black-bvlgari/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+progress: 80 perfumes, 0 price rows
+  ~ Instant Crush Mancera @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Coco Mademoiselle Eau de Toilette Chanel @ Sephora India: 7 hits, none scored >= 0.8
+  ~ Coco Mademoiselle Eau de Toilette Chanel @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_w_gucci-eau-de-parfum-ii-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-eau-de-parfum-ii-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Millésime Impérial Creed @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Chanel No 5 Eau de Toilette Chanel @ Sephora India: 7 hits, none scored >= 0.8
+    WRITE FAIL perf_w_gucci-guilty-absolute-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Gucci Guilty Absolute Gucci @ Flipkart: 2 hits, none scored >= 0.8
+progress: 90 perfumes, 0 price rows
+  ~ Chance Eau de Parfum Chanel @ Sephora India: 9 hits, none scored >= 0.8
+    WRITE FAIL perf_w_chance-eau-de-parfum-chanel/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Eau Sauvage Dior @ Flipkart: 3 hits, none scored >= 0.8
+    WRITE FAIL perf_w_flora-by-gucci-eau-de-toilette-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_flora-by-gucci-eau-de-toilette-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-pour-homme-ii-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-pour-homme-ii-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_miss-dior-cherie-eau-de-parfum-dior/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Miss Dior Cherie Eau de Parfum Dior @ Flipkart: 5 hits, none scored >= 0.8
+progress: 100 perfumes, 0 price rows
+  ~ Omnia Coral Bvlgari @ Sephora India: 6 hits, none scored >= 0.8
+    WRITE FAIL perf_w_dolce-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_versace-pour-femme-dylan-blue-versace/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Versace Pour Femme Dylan Blue Versace @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_ombre-nomade/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Coco Mademoiselle Intense Chanel @ Sephora India: 1 hits, none scored >= 0.8
+  ~ Dior Addict Eau de Parfum (2014) Dior @ Flipkart: 8 hits, none scored >= 0.8
+    WRITE FAIL perf_w_dolce-gabbana-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_dolce-gabbana-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 110 perfumes, 0 price rows
+  ~ Royal Oud Creed @ Flipkart: 4 hits, none scored >= 0.8
+    WRITE FAIL perf_w_light-blue-eau-intense-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_light-blue-eau-intense-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_flora-by-gucci-gorgeous-gardenia-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 120 perfumes, 0 price rows
+    WRITE FAIL perf_w_eros-pour-femme-versace/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Sicily Dolce&Gabbana @ Sephora India: 12 hits, none scored >= 0.8
+  ~ Sicily Dolce&Gabbana @ Flipkart: 8 hits, none scored >= 0.8
+    WRITE FAIL perf_w_rose-the-one-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_rose-the-one-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-by-gucci-eau-de-parfum-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-by-gucci-eau-de-parfum-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_fahrenheit-le-parfum-dior/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Miss Dior Eau de Parfum (2021) Dior @ Flipkart: 4 hits, none scored >= 0.8
+progress: 130 perfumes, 0 price rows
+    WRITE FAIL perf_w_dior-addict-2-dior/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_dolce-gabbana-pour-homme-2012-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_dolce-gabbana-pour-homme-2012-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_bright-crystal-absolu-versace/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Chanel No 5 Eau Premiere (2015) Chanel @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Flora Gorgeous Gardenia Gucci @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_w_hypnotic-poison-eau-sensuelle-dior/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Hypnotic Poison Eau Sensuelle Dior @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_w_hypnotic-poison-eau-de-parfum-dior/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Hypnotic Poison Eau de Parfum Dior @ Flipkart: 12 hits, none scored >= 0.8
+  ~ Aqva Pour Homme Marine Bvlgari @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Aqva Pour Homme Marine Bvlgari @ Flipkart: 1 hits, none scored >= 0.8
+progress: 140 perfumes, 0 price rows
+  ~ Cristalle Eau de Toilette Chanel @ Sephora India: 6 hits, none scored >= 0.8
+  ~ Cristalle Eau de Toilette Chanel @ Flipkart: 5 hits, none scored >= 0.8
+  ~ Interlude Woman Amouage @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_w_flora-by-gucci-eau-de-parfum-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_flora-by-gucci-eau-de-parfum-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-rush-2-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Sauvage Parfum Dior @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_w_chance-eau-vive-chanel/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Bvlgari Pour Femme Bvlgari @ Sephora India: 1 hits, none scored >= 0.8
+  ~ Bvlgari Pour Femme Bvlgari @ Flipkart: 3 hits, none scored >= 0.8
+    WRITE FAIL perf_w_guilty-pour-homme-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_guilty-pour-homme-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 150 perfumes, 0 price rows
+    WRITE FAIL perf_w_gucci-pour-homme-2003-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-pour-homme-2003-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Les Creations de Monsieur Dior Forever a @ Sephora India: 9 hits, none scored >= 0.8
+    WRITE FAIL perf_w_miss-dior-le-parfum-dior/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Miss Dior Le Parfum Dior @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Dolce&Gabbana Pour Femme Intense Dolce&G @ Sephora India: 12 hits, none scored >= 0.8
+  ~ Dolce&Gabbana Pour Femme Intense Dolce&G @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_w_dolce-gabbana-pour-homme-1994-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_dolce-gabbana-pour-homme-1994-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Coco Mademoiselle Parfum Chanel @ Flipkart: 2 hits, none scored >= 0.8
+progress: 160 perfumes, 0 price rows
+  ~ Allure Homme Edition Blanche Eau de Parf @ Sephora India: 1 hits, none scored >= 0.8
+  ~ Allure Homme Edition Blanche Eau de Parf @ Flipkart: 5 hits, none scored >= 0.8
+  ~ Miss Dior Eau de Parfum (2017) Dior @ Flipkart: 12 hits, none scored >= 0.8
+  ~ Chance Eau Tendre Eau de Parfum Chanel @ Sephora India: 10 hits, none scored >= 0.8
+    WRITE FAIL perf_w_chance-eau-tendre-eau-de-parfum-chanel/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Epic Man Amouage @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Dior Homme Sport Dior @ Flipkart: 1 hits, none scored >= 0.8
+progress: 170 perfumes, 0 price rows
+    WRITE FAIL perf_w_omnia-bvlgari/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Tendre Poison Dior @ Sephora India: 7 hits, none scored >= 0.8
+  ~ Dior Addict Eau de Parfum Dior @ Flipkart: 9 hits, none scored >= 0.8
+progress: 180 perfumes, 0 price rows
+    WRITE FAIL perf_w_dolce-gabbana-pour-homme-intenso-dolce-gabban/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Light Blue Forever pour Homme Dolce&Gabb @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Coromandel Eau de Parfum Chanel @ Sephora India: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_w_coromandel-eau-de-parfum-chanel/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_k-by-dolce-gabbana-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_k-by-dolce-gabbana-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-guilty-absolute-pour-femme-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-guilty-absolute-pour-femme-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Miss Dior Rose N'Roses Dior @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_w_versace-pour-femme-versace/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_versace-pour-femme-versace/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 190 perfumes, 0 price rows
+  ~ Rose Essentielle Bvlgari @ Sephora India: 4 hits, none scored >= 0.8
+    WRITE FAIL perf_w_gucci-by-gucci-pour-homme-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-by-gucci-pour-homme-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_miss-dior-cherie-l-eau-dior/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+progress: 200 perfumes, 0 price rows
+    WRITE FAIL perf_w_versace-pour-femme-dylan-turquoise-versace/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Versace Pour Femme Dylan Turquoise Versa @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Dior Homme Eau for Men Dior @ Sephora India: 12 hits, none scored >= 0.8
+  ~ Dior Homme Eau for Men Dior @ Flipkart: 8 hits, none scored >= 0.8
+    WRITE FAIL perf_w_gucci-guilty-intense-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Gucci Guilty Intense Gucci @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_w_the-one-desire-dolce-gabbana/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_the-one-desire-dolce-gabbana/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-eau-de-parfum-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_gucci-eau-de-parfum-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 210 perfumes, 0 price rows
+    WRITE FAIL perf_w_crystal-noir-eau-de-toilette-versace/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_crystal-noir-eau-de-toilette-versace/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_envy-for-men-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_w_envy-for-men-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Marj Edp @ Flipkart: 4 hits, none scored >= 0.8
+    WRITE FAIL perf_zighrana-kewra-attar/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_zighrana-khus-attar/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_zighrana-kesar-attar/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_zighrana-rose-attar/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_zighrana-jasmine-attar/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Oudh Mukhallat Attar @ Flipkart: 4 hits, none scored >= 0.8
+progress: 220 perfumes, 0 price rows
+  ~ Kannauj Eau de Parfum @ Sephora India: 10 hits, none scored >= 0.8
+    WRITE FAIL perf_zighrana-kannauj-eau-de-parfum/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Bharat Eau de Parfum @ Sephora India: 6 hits, none scored >= 0.8
+  ~ Bharat Eau de Parfum @ Flipkart: 14 hits, none scored >= 0.8
+  ~ Vikas Khanna Eau de Parfum @ Sephora India: 7 hits, none scored >= 0.8
+  ~ Vikas Khanna Eau de Parfum @ Flipkart: 11 hits, none scored >= 0.8
+  ~ Hawas Diva @ Flipkart: 6 hits, none scored >= 0.8
+  ~ Valentino Born in Roma Donna Yellow Drea @ Sephora India: 3 hits, none scored >= 0.8
+    WRITE FAIL perf_2ff387407780/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Boss The Scent Le Parfum for Him @ Flipkart: 9 hits, none scored >= 0.8
+progress: 230 perfumes, 0 price rows
+    WRITE FAIL perf_a0dec092a45e/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Boss The Scent Le Parfum for Her @ Flipkart: 5 hits, none scored >= 0.8
+  ~ Valentino Born in Roma Uomo Yellow Dream @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Girlfriend @ Flipkart: 4 hits, none scored >= 0.8
+  ~ H By Hamidi Edp 100Ml @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Hawas Private Dulce @ Flipkart: 4 hits, none scored >= 0.8
+progress: 240 perfumes, 0 price rows
+  ~ Dave Aqua Water - DG Inspired perfume @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_ags-cool/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Tag Him Prestige @ Flipkart: 8 hits, none scored >= 0.8
+  ~ Valentino Born in Roma Donna Green Strav @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Valentino Born in Roma Uomo Green Strava @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Opus Femme @ Flipkart: 2 hits, none scored >= 0.8
+progress: 250 perfumes, 0 price rows
+  ~ Octet Oud Admire Edp 100Ml @ Flipkart: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_hamidi-sukoom-hamidi/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Hawas for Her @ Flipkart: 3 hits, none scored >= 0.8
+    WRITE FAIL perf_tm-fragrance-oud-woods-solid-perfume/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_6e5aad6faae7/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_2aad2edcb96f/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Valentino Born in Roma Uomo Intense @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_f620848b4df1/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Valentino Born in Roma Extradose Uomo @ Sephora India: 5 hits, none scored >= 0.8
+progress: 260 perfumes, 0 price rows
+    WRITE FAIL perf_362147a31402/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_ultra-male/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_orange-blossom/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Valentino Born in Roma Uomo Rockstud Noi @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Valentino Born in Roma Donna Purple Mela @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Valentino Born in Roma Uomo Purple Melan @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Valentino Born in Roma The Gold Donna @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Valentino Born in Roma The Gold Donna @ Flipkart: 1 hits, none scored >= 0.8
+progress: 270 perfumes, 0 price rows
+  ~ First Rain @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Wild Stone Prive Saffron and Oud @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Luxury Gift Set For Him (4x20ml) @ Sephora India: 2 hits, none scored >= 0.8
+    WRITE FAIL perf_luxury-gift-set-for-him-4x20ml/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ So Scandal @ Flipkart: 1 hits, none scored >= 0.8

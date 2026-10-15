@@ -35,6 +35,12 @@ STORES = {
     "seller_scentkart": ("https://scentkart.com", None),
     "seller_perfumeaddiction": ("https://perfumeaddiction.com", None),
     "seller_perfumenetwork": ("https://perfumenetwork.in", None),
+    "seller_fragstalk": ("https://fragstalk.in", None),
+    "seller_naseem": ("https://www.naseemperfume.in", ["Naseem"]),
+    "seller_vokka": ("https://vokka.in", ["Vokka"]),
+    "seller_brandmall": ("https://www.brandmall.in", None),
+    "seller_sugandhi": ("https://sugandhi.in", ["Sugandhi"]),
+    "seller_kenaz": ("https://www.kenazperfumes.com", ["Kenaz"]),
 }
 
 
