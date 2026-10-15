@@ -296,3 +296,12 @@ progress: 320 perfumes, 0 price rows
   ~ Gucci Intense Oud for Men Inspired Perfu @ Sephora India: 3 hits, none scored >= 0.8
   ~ Gucci Intense Oud for Men Inspired Perfu @ Flipkart: 5 hits, none scored >= 0.8
 progress: 330 perfumes, 0 price rows
+  ~ DUN BLUE DESIRE | Premium Designer Perfu @ Flipkart: 7 hits, none scored >= 0.8
+    WRITE FAIL perf_perfumesteal-guilty-pour-homme-by-gucci/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_perfumesteal-guilty-pour-homme-by-gucci/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ NEESH Tsunara Extrait De Parfum 100ml @ Sephora India: 1 hits, none scored >= 0.8
+  ~ NEESH Tsunara Extrait De Parfum 100ml @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_pear-freesia/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Bella Vita CEO Man EDP 100ml @ Flipkart: 1 hits, none scored >= 0.8
+progress: 340 perfumes, 0 price rows
+  ~ GSB Imagination EDP @ Flipkart: 10 hits, none scored >= 0.8

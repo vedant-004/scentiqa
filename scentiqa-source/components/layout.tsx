@@ -399,6 +399,7 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
                   role="option"
                   id={`scentarchy-search-opt-${i}`}
                   aria-selected={hi === i}
+                  onMouseDown={(e) => e.preventDefault()}
                   onClick={() => pick(p.slug, p.name)}
                   onMouseEnter={() => setHi(i)}
                   className={cn(
