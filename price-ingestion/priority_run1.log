@@ -305,3 +305,135 @@ progress: 330 perfumes, 0 price rows
   ~ Bella Vita CEO Man EDP 100ml @ Flipkart: 1 hits, none scored >= 0.8
 progress: 340 perfumes, 0 price rows
   ~ GSB Imagination EDP @ Flipkart: 10 hits, none scored >= 0.8
+    WRITE FAIL perf_fiery/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Madawi Gold @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Club de Nuit Woman @ Flipkart: 7 hits, none scored >= 0.8
+  ~ Raghba Wood Intense @ Flipkart: 5 hits, none scored >= 0.8
+  ~ Uomo Supreme - Inspired Perfume @ Flipkart: 3 hits, none scored >= 0.8
+progress: 350 perfumes, 0 price rows
+  ~ L'eau Blu @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Blue Oud @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Alathaayar - Solid Perfume @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Pure Sport @ Flipkart: 4 hits, none scored >= 0.8
+  ~ Flora Gorgeous Magnolia @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Envy Rose Gold Edp 100Ml @ Flipkart: 7 hits, none scored >= 0.8
+  ~ Envy Gold Edp 100Ml @ Flipkart: 2 hits, none scored >= 0.8
+progress: 360 perfumes, 0 price rows
+  ~ Luxury Gift Set For Her (4x20ml) @ Sephora India: 4 hits, none scored >= 0.8
+  ~ Luxury Gift Set For Her (4x20ml) @ Flipkart: 7 hits, none scored >= 0.8
+  ~ Alya Edp 100Ml @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Coach Dreams Sunset @ Sephora India: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_rose-2/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Wafa @ Flipkart: 10 hits, none scored >= 0.8
+  ~ Hunter Killer Man @ Flipkart: 2 hits, none scored >= 0.8
+progress: 370 perfumes, 0 price rows
+  ~ Safwaan L Autre Oud @ Flipkart: 4 hits, none scored >= 0.8
+  ~ Tafakhar @ Flipkart: 10 hits, none scored >= 0.8
+  ~ GSB Daisy EDP @ Sephora India: 2 hits, none scored >= 0.8
+  ~ GSB Daisy EDP @ Flipkart: 9 hits, none scored >= 0.8
+    WRITE FAIL perf_ada3749e9296/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Nobles @ Flipkart: 5 hits, none scored >= 0.8
+  ~ Bntly Intense Men - Inspired perfume @ Sephora India: 2 hits, none scored >= 0.8
+  ~ Bntly Intense Men - Inspired perfume @ Flipkart: 3 hits, none scored >= 0.8
+  ~ Oud Al Sayad @ Flipkart: 3 hits, none scored >= 0.8
+progress: 380 perfumes, 0 price rows
+  ~ Desert Sultan Sapphire @ Flipkart: 7 hits, none scored >= 0.8
+  ~ Mushrif @ Flipkart: 10 hits, none scored >= 0.8
+    WRITE FAIL perf_barez/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_secretman/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+  ~ Habeebat Qalbi @ Flipkart: 7 hits, none scored >= 0.8
+  ~ Tabassum Silk Rose Edp 50Ml @ Flipkart: 1 hits, none scored >= 0.8
+progress: 390 perfumes, 0 price rows
+  ~ Ahubbak Love In Paris @ Flipkart: 2 hits, none scored >= 0.8
+  ~ GSB Vanilla EDP @ Flipkart: 8 hits, none scored >= 0.8
+  ~ Al Batal @ Flipkart: 10 hits, none scored >= 0.8
+  ~ Marina Deep & Dark @ Flipkart: 1 hits, none scored >= 0.8
+progress: 400 perfumes, 0 price rows
+    WRITE FAIL perf_toy2pearl/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ Born in Roma Pink PP @ Sephora India: 3 hits, none scored >= 0.8
+  ~ Born in Roma Pink PP @ Flipkart: 2 hits, none scored >= 0.8
+  ~ Tarteel Gold @ Flipkart: 6 hits, none scored >= 0.8
+    WRITE FAIL perf_meethaq/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_mousuframadi/seller_flipkart: Expecting value: line 1 column 1 (char 0)
+progress: 410 perfumes, 0 price rows
+  ~ Burberry Her London Dream @ Sephora India: 10 hits, none scored >= 0.8
+  ~ Burberry Her London Dream @ Flipkart: 1 hits, none scored >= 0.8
+  ~ Prada Amber Pour Homme Intense @ Sephora India: 1 hits, none scored >= 0.8
+  ~ Rasa & Black - WH Inspired perfume @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_designer_goldea/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+  ~ CH Women @ Sephora India: 12 hits, none scored >= 0.8
+  ~ CH Women @ Flipkart: 2 hits, none scored >= 0.8
+  ~ CORE SECRET OF YI MEN @ Flipkart: 1 hits, none scored >= 0.8
+    WRITE FAIL perf_designer_ch-men/seller_sephora-india: Expecting value: line 1 column 1 (char 0)
+    WRITE FAIL perf_designer_ch-men/seller_flipkart: HTTPSConnectionPool(host='rnpwligyinhxuzscrfos.supabase.co', port=443): Max retries exceeded with url: /rest/v1/prices (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 777, in urlopen
+    self._prepare_proxy(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1058, in _prepare_proxy
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x730f851e4a40>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+urllib3.exceptions.ProxyError: ('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x730f851e4a40>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 517, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='rnpwligyinhxuzscrfos.supabase.co', port=443): Max retries exceeded with url: /rest/v1/prices?select=seller_id&perfume_id=eq.perf_ruh-gulab (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x730f851e4a40>: Failed to establish a new connection: [Errno 111] Connection refused')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hatch/workspace/scentiqa-repo/price-ingestion/priority_run.py", line 43, in <module>
+    run([SephoraRetailer(), FlipkartRetailer()],
+  File "/home/hatch/workspace/scentiqa-repo/price-ingestion/pipeline.py", line 183, in run
+    have = existing_seller_hits(pid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/scentiqa-repo/price-ingestion/pipeline.py", line 125, in existing_seller_hits
+    rows = sb_get("prices", f"select=seller_id&perfume_id=eq.{perfume_id}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/scentiqa-repo/price-ingestion/pipeline.py", line 95, in sb_get
+    r = requests.get(f"{REST}/{path}?{params}", headers={
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 513, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='rnpwligyinhxuzscrfos.supabase.co', port=443): Max retries exceeded with url: /rest/v1/prices?select=seller_id&perfume_id=eq.perf_ruh-gulab (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x730f851e4a40>: Failed to establish a new connection: [Errno 111] Connection refused')))

@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { TYPE_META } from '@/components/notifications';
-import type { NotificationType } from '@/components/notifications';
+import { TYPE_META } from '@/lib/notification-types';
+import type { NotificationType } from '@/lib/notification-types';
 import { cn } from '@/lib/utils';
 
 const inputCls = 'w-full rounded-xl border border-stone-200 bg-white px-3 py-2 text-sm text-stone-900 dark:border-white/10 dark:bg-ink-900 dark:text-white';

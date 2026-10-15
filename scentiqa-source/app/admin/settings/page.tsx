@@ -97,7 +97,19 @@ export default async function AdminSettings() {
 
 async function StatsDisplayForm() {
   const c = getSupabaseServer(true);
-  const { data: real } = await c!.from('perfumes').select('id', { count: 'exact', head: true });
+  // Get real counts for reference
+  const [{ count: realPerfumes }, { count: realHouses }, { count: realReviews }, { count: realMembers }] = await Promise.all([
+    c!.from('perfumes').select('id', { count: 'exact', head: true }),
+    c!.from('houses').select('id', { count: 'exact', head: true }),
+    c!.from('reviews').select('id', { count: 'exact', head: true }),
+    c!.from('profiles').select('id', { count: 'exact', head: true }),
+  ]);
+  const realCounts: Record<string, number | null> = {
+    stats_display_perfumes: realPerfumes,
+    stats_display_houses: realHouses,
+    stats_display_reviews: realReviews,
+    stats_display_members: realMembers,
+  };
   // Get current overrides
   const keys = ['stats_display_perfumes', 'stats_display_houses', 'stats_display_reviews', 'stats_display_members'];
   const { data: overrides } = await c!.from('site_settings').select('key, value').in('key', keys);
@@ -125,11 +137,17 @@ async function StatsDisplayForm() {
         ['stats_display_houses', 'Houses'],
         ['stats_display_reviews', 'Reviews'],
         ['stats_display_members', 'Members'],
-      ].map(([key, label]) => (
-        <Field key={key} label={`Display ${label}`} hint={`Current override: ${ov[key] || '(showing real count)'}`}>
-          <input name={key} type="number" min="0" defaultValue={ov[key] || ''} className={inputCls} placeholder="Leave empty for real count" />
-        </Field>
-      ))}
+      ].map(([key, label]) => {
+        const real = realCounts[key];
+        const hint = real !== null && real !== undefined
+          ? `Real count: ${real.toLocaleString('en-IN')}${ov[key] ? ` · Override: ${ov[key]}` : ' · Showing real count'}`
+          : `Current override: ${ov[key] || '(showing real count)'}`;
+        return (
+          <Field key={key} label={`Display ${label}`} hint={hint}>
+            <input name={key} type="number" min="0" defaultValue={ov[key] || ''} className={inputCls} placeholder="Leave empty for real count" />
+          </Field>
+        );
+      })}
       <div className="sm:col-span-2"><AdminButton>Save display stats</AdminButton></div>
     </form>
   );

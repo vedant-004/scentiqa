@@ -3,8 +3,8 @@ import { requireAdminPage } from '@/lib/admin';
 import { getUnpushedIds } from '@/lib/notification-push';
 import { SectionTitle, EmptyState } from '../components';
 import { NotificationComposer, NotificationDeleteButton, NotificationPushToggle } from './notification-client';
-import { TYPE_META } from '@/components/notifications';
-import type { NotificationType } from '@/components/notifications';
+import { TYPE_META } from '@/lib/notification-types';
+import type { NotificationType } from '@/lib/notification-types';
 import { cn } from '@/lib/utils';
 
 export const metadata = { title: 'Notifications · Admin' };

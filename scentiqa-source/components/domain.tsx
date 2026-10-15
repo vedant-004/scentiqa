@@ -608,16 +608,39 @@ const priceProvNote = (prov: string, checkedAt?: string | null): string => {
 export function PriceTable({ prices }: { prices: PriceEntry[] }) {
   if (!prices.length) return <p className="text-sm text-stone-500">No prices listed yet.</p>;
   const inStock = prices.filter((p) => p.inStock && p.priceInr && p.priceInr > 0);
-  const avg = inStock.length >= 2
-    ? Math.round(inStock.reduce((s, p) => s + (p.priceInr as number), 0) / inStock.length)
-    : null;
+  // Group in-stock prices by bottle size so averages are not misleading
+  // when different sizes are mixed together.
+  const bySize = new Map<number | null, typeof inStock>();
+  for (const p of inStock) {
+    const key = p.sizeMl ?? null;
+    const arr = bySize.get(key) ?? [];
+    arr.push(p);
+    bySize.set(key, arr);
+  }
+  const sizeAvgs: { sizeMl: number | null; count: number; avg: number }[] = [];
+  for (const [sizeMl, arr] of bySize) {
+    if (arr.length >= 2) {
+      sizeAvgs.push({
+        sizeMl,
+        count: arr.length,
+        avg: Math.round(arr.reduce((s, p) => s + (p.priceInr as number), 0) / arr.length),
+      });
+    }
+  }
+  // Sort: sized groups first (ascending ml), then the unknown-size group.
+  sizeAvgs.sort((a, b) => (a.sizeMl ?? 99999) - (b.sizeMl ?? 99999));
   return (
     <div className="overflow-hidden rounded-2xl border border-stone-200/80 dark:border-ink-700/60">
-      {avg !== null && (
-        <p className="border-b border-stone-200/70 bg-cream-100/50 px-4 py-2.5 text-xs text-stone-500 dark:border-ink-700/50 dark:bg-white/[0.02] dark:text-stone-400">
-          Average across {inStock.length} sellers: <strong className="text-stone-800 dark:text-stone-100">{inr(avg)}</strong>
-          {' · '}prices vary by seller and size — the table below lists each one.
-        </p>
+      {sizeAvgs.length > 0 && (
+        <div className="border-b border-stone-200/70 bg-cream-100/50 px-4 py-2.5 text-xs text-stone-500 dark:border-ink-700/50 dark:bg-white/[0.02] dark:text-stone-400">
+          {sizeAvgs.map((g, i) => (
+            <span key={g.sizeMl ?? 'unknown'}>
+              {i > 0 && ' · '}
+              Avg {g.sizeMl ? `${g.sizeMl}ml` : 'size unconfirmed'} across {g.count} sellers:{' '}
+              <strong className="text-stone-800 dark:text-stone-100">{inr(g.avg)}</strong>
+            </span>
+          ))}
+        </div>
       )}
       {prices.map((pr, i) => (
         <div key={pr.id} className={cn('flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-cream-100/60 dark:hover:bg-white/5', i !== 0 && 'border-t border-stone-200/70 dark:border-ink-700/50')}>
