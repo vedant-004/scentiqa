@@ -83,6 +83,14 @@ export default async function NoteDetail({ params }: { params: Promise<{ slug: s
     { label: 'Base notes', blurb: 'the lasting trail', items: entry.base },
   ];
 
+  // Editorial intro for SEO (written by content team, stored in lib/note-intros.json)
+  let editorialIntro: string | null = null;
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const intros = require('@/lib/note-intros.json') as Record<string, string>;
+    editorialIntro = intros[slug] ?? null;
+  } catch { /* intros not available */ }
+
   return (
     <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Notes', href: '/notes' }, { label: displayName }]} />
@@ -92,6 +100,12 @@ export default async function NoteDetail({ params }: { params: Promise<{ slug: s
         <Card className="mb-6 border-l-4 border-l-gold-500 p-6">
           <p className="font-display text-lg italic leading-relaxed text-stone-700 dark:text-stone-200">“{description}”</p>
         </Card>
+      )}
+
+      {editorialIntro && (
+        <div className="mb-6 max-w-3xl">
+          <p className="leading-relaxed text-stone-600 dark:text-stone-300">{editorialIntro}</p>
+        </div>
       )}
 
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">

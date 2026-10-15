@@ -21,7 +21,7 @@ export default function BlogIndex() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Journal' }]} />
-      <SectionHeading title="Scentarchy Journal" subtitle="Guides, comparisons and honest advice for Indian fragrance lovers" />
+      <SectionHeading title="Scentarchy Journal" kicker="Guides, comparisons and honest advice for Indian fragrance lovers" />
       <div className="mt-8 space-y-6">
         {posts.map((p) => (
           <Link key={p.slug} href={`/blog/${p.slug}`} className="block">
