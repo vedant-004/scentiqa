@@ -43,10 +43,10 @@ The fix is not to spray more. It is to wear the right kind of scent.
 The original 1988 marine freshie and still the benchmark. Sea water, mint, coriander and lavender over a musky-amber base. It was practically designed for hot weather, and it remains one of the most widely available designer fragrances in India at a reasonable price. Expect solid 5–6 hour wear in summer.
 
 **2. Giorgio Armani Acqua di Gio**
-Bergamot, neroli and marine notes over white musk. The most complimented summer fragrance of the last three decades for a reason — it smells clean, expensive and effortless. Performance in heat is moderate rather than beastly, but its inoffensive freshness makes it a safe daily choice.
+Bergamot, neroli and marine notes over white musk. The most complimented summer fragrance of the last three decades — clean, expensive-feeling and effortless.
 
 **3. Bvlgari Aqva Pour Homme Marine**
-A step more interesting than the average aquatic: seaweed, grapefruit and rosemary with a mineral, almost salty character. Distinctive without being weird. Good for men who find standard aquatics boring.
+Seaweed, grapefruit and rosemary with a mineral, almost salty character. Distinctive without being weird — for men who find standard aquatics boring.
 
 ### Citrus Heroes
 
@@ -54,18 +54,18 @@ A step more interesting than the average aquatic: seaweed, grapefruit and rosema
 Grapefruit and juniper over musk and amberwood. The Eau Intense flanker fixed the original's weak longevity and is now one of the most reliable citrus performers in heat. Unmistakably summery.
 
 **5. Versace Pour Homme**
-Mediterranean lemon, neroli and hyacinth with a clean musky drydown. Bright, professional and very easy to wear. A strong office-safe summer option.
+Mediterranean lemon, neroli and hyacinth with a clean musky drydown. Bright, professional and very easy to wear — a strong office-safe summer option.
 
 **6. Issey Miyake L'Eau d'Issey Pour Homme**
-Yuzu — Japanese citrus — is the star here, supported by nutmeg, cinnamon and woods. Unusual, instantly recognisable, and excellent in humidity. The yuzu note cuts through moist air better than most citruses.
+Yuzu (Japanese citrus) with nutmeg and woods. Unusual, instantly recognisable, and excellent in humidity — yuzu cuts through moist air better than most citruses.
 
 ### Green and Crisp
 
 **7. Calvin Klein CK One**
-Green tea, bergamot, cardamom and musk. A 90s classic that still works because its formula is genuinely well suited to heat: green, transparent, never heavy. Unisex and affordable.
+Green tea, bergamot, cardamom and musk. A 90s classic that still works in heat: green, transparent, never heavy. Unisex and affordable.
 
 **8. Nautica Voyage**
-Green apple, mimosa and watery notes over musk and amber. Frequently recommended as a budget summer fragrance, and the recommendation is deserved — it smells far more expensive than it is and handles heat gracefully.
+Green apple, mimosa and watery notes over musk and amber. Frequently recommended as a budget summer fragrance — it smells far more expensive than it is and handles heat gracefully.
 
 ### Modern Fresh
 

@@ -65,7 +65,7 @@ This is where beginners get hurt, so let us be direct.
 
 **Oud perfumes (Western style)** range from affordable to luxury. Here you are paying for the composition, not the raw oud content.
 
-The golden rule: price is the most reliable authenticity signal. Real oud cannot be cheap. Anyone selling it cheap is selling something else.
+Remember: real oud cannot be cheap. Anyone selling "pure oud" cheap is selling something else.
 
 ## How to Buy Oud in India Without Getting Scammed
 
@@ -77,7 +77,7 @@ The golden rule: price is the most reliable authenticity signal. Real oud cannot
 
 **Be sceptical of superlatives.** "100% pure wild Hindi oud, best quality, cheapest price" is a contradiction. Sellers who are honest about their oil being cultivated, or a blend, are more trustworthy than sellers who claim everything is the finest wild grade.
 
-**Understand the grades game.** Sellers love grading systems — "Grade A," "Super," "Royal." These grades are not standardised. One seller's "Super" is another's ordinary. Judge by smell, not by label.
+**Understand the grades game.** Sellers love grading systems — "Grade A," "Super," "Royal." These grades are not standardised. Judge by smell, not by label.
 
 **Avoid these red flags:** prices far below market, refusal to provide small samples, no physical address or verifiable business history, and pressure tactics ("last piece," "special price only today").
 
@@ -85,7 +85,7 @@ The golden rule: price is the most reliable authenticity signal. Real oud cannot
 
 A practical note since you have come this far: oud oil is potent. One small swipe — traditionally applied with the small glass stick (dipstick) that comes in the bottle — behind each ear or on the wrists is enough. It projects for hours and lasts on clothes for days.
 
-Oud also layers beautifully. A touch of Hindi oud under a fresh citrus fragrance creates a personal signature that is entirely your own. Experiment once you are comfortable with the material solo.
+Oud also layers beautifully. A touch of Hindi oud under a fresh citrus fragrance creates a personal signature entirely your own.
 
 ## The Bottom Line
 

@@ -207,3 +207,15 @@ body[data-finder-phase="loading"] .scentarchy-site-mobile-nav,
 body[data-finder-phase="reveal"] .scentarchy-site-mobile-nav {
   display: none !important;
 }
+
+/* ============ BLOG ARTICLE STYLES ============ */
+.prose-blog h2 { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; letter-spacing: -0.01em; }
+.prose-blog h3 { font-size: 1.2rem; font-weight: 700; margin: 1.5rem 0 0.75rem; }
+.prose-blog p { margin: 1rem 0; line-height: 1.75; color: #57534e; }
+.dark .prose-blog p { color: #a8a29e; }
+.prose-blog ul { margin: 1rem 0; padding-left: 1.5rem; list-style: disc; }
+.prose-blog li { margin: 0.5rem 0; line-height: 1.7; color: #57534e; }
+.dark .prose-blog li { color: #a8a29e; }
+.prose-blog strong { font-weight: 700; color: #1c1917; }
+.dark .prose-blog strong { color: #f5f5f4; }
+.prose-blog a { color: #b45309; text-decoration: underline; text-underline-offset: 2px; }

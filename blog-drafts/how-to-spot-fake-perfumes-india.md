@@ -43,7 +43,7 @@ Counterfeiters have become good at copying boxes, but the details still betray t
 
 **Cellophane wrapping.** Genuine wrapping is typically tight and neatly folded. Loose, wrinkled cellophane is suspicious — though some genuine products have imperfect wrapping, so treat this as one signal among many.
 
-**The box interior.** Open it. Genuine brands finish the inside of the box properly. Rough cardboard, glue stains, or a missing insert tray suggest a fake.
+**The box interior.** Genuine brands finish the inside properly. Rough cardboard, glue stains, or a missing insert tray suggest a fake.
 
 ## 4. The Batch Code Does Not Check Out
 
@@ -63,7 +63,7 @@ If you have ever handled the genuine product, fakes often reveal themselves by t
 
 **The sprayer.** This is one of the hardest parts to fake well. A genuine sprayer delivers a fine, even mist. Fakes often squirt, dribble, or produce an uneven spray. If your "designer perfume" sprays like a cleaning product, be suspicious.
 
-**The tube.** Look at the dip tube inside the bottle. In genuine products it is usually cut to the right length and sits properly. An overly long tube curling at the bottom of the bottle is a common fake tell.
+**The tube.** Look at the dip tube inside the bottle. An overly long tube curling at the bottom is a common fake tell.
 
 ## 6. The Scent Itself Is Wrong
 
@@ -71,7 +71,7 @@ Ultimately, you are buying a smell. Trust your nose — especially if you know t
 
 **The opening is harsh or alcoholic.** Fakes often have an overwhelming alcohol blast that genuine perfumes do not, because counterfeiters use cheaper alcohol and less careful blending.
 
-**It smells "flat."** Genuine perfumes have dimensionality — top notes that sparkle, a heart that blooms, a base that lingers. Fakes often smell one-dimensional: a single sweet or fresh blast that fades quickly into nothing.
+**It smells "flat."** Genuine perfumes have dimensionality — top notes that sparkle, a heart that blooms, a base that lingers. Fakes often smell one-dimensional and fade quickly into nothing.
 
 **Longevity is far off.** If the genuine fragrance is known for 6–8 hour wear and yours disappears in 90 minutes, that is significant evidence. (Allow some margin — skin chemistry varies — but a dramatic shortfall is telling.)
 
@@ -87,7 +87,7 @@ Pay attention to how the transaction feels:
 
 **Vague sourcing.** "Imported," "original," and "100% genuine" are claims, not evidence. Ask where they source from. Legitimate grey-market sellers can usually explain their supply chain. Evasive answers are informative.
 
-**Pressure tactics.** "Last piece at this price," "offer ends tonight," countdown timers on dubious websites — these are designed to stop you thinking. Genuine sellers do not need to rush you.
+**Pressure tactics.** "Last piece at this price," "offer ends tonight," countdown timers on dubious websites — designed to stop you thinking. Genuine sellers do not need to rush you.
 
 ## What to Do If You Already Bought a Fake
 
@@ -101,6 +101,6 @@ Pay attention to how the transaction feels:
 
 ## The Bottom Line
 
-Spotting fakes is a skill, and like any skill it improves with experience. Start by buying your first bottles of any fragrance from unquestionably legitimate sources, so your nose knows the real thing. Once you have that reference point, you will be much harder to fool.
+Spotting fakes is a skill that improves with experience. Start by buying your first bottles from unquestionably legitimate sources, so your nose knows the real thing.
 
 And remember the simplest rule in the Indian market: buy the seller before you buy the perfume. A trustworthy seller with slightly higher prices beats a suspicious bargain every time.

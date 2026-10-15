@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
   const staticRoutes = [
     '', '/find-alternative', '/compare', '/finder', '/quiz', '/notes', '/accords', '/search/notes', '/search/accords',
-    '/forum', '/news', '/giveaways', '/awards', '/requests', '/sniff',
+    '/forum', '/news', '/blog', '/giveaways', '/awards', '/requests', '/sniff',
     '/best-perfumes', '/dupes', '/vs', '/perfumes',
     '/weather', '/occasions', '/battles', '/climate', '/blindbuy',
     '/methodology', '/climate-protocol', '/trust-charter', '/fake-guide',
@@ -29,16 +29,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const { VS_COMPARISONS, vsParam } = await import('@/lib/vs-comparisons');
     vsUrls = VS_COMPARISONS.map((p) => `/vs/${vsParam(p)}`);
   } catch { /* vs list unavailable at build time */ }
-  // Awards year + category pages (slugs come from the DB, same source as generateStaticParams).
+  const now = new Date();
+  // Blog posts
+  const { getAllBlogPosts } = await import('@/lib/blog');
+  const blogPosts = getAllBlogPosts();
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: p.date ? new Date(p.date) : now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
   const awardEntries: MetadataRoute.Sitemap = [];
   for (const year of years) {
-    awardEntries.push({ url: `${BASE}/awards/${year}`, changeFrequency: 'weekly' as const, priority: 0.7 });
+    awardEntries.push({ url: `${BASE}/awards/${year}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7 });
     const cats = await getAwards(year);
     for (const c of cats) {
-      awardEntries.push({ url: `${BASE}/awards/${year}/${c.slug}`, changeFrequency: 'weekly' as const, priority: 0.7 });
+      awardEntries.push({ url: `${BASE}/awards/${year}/${c.slug}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7 });
     }
   }
-  const now = new Date();
   // Discovery hubs get higher priority than individual product pages.
   const hubRoutes = new Set(['', '/finder', '/quiz', '/weather', '/occasions', '/battles', '/climate', '/blindbuy', '/perfumes', '/dupes', '/vs', '/best-perfumes']);
   // Filter out corrupt slugs (data import artifacts like time values).
@@ -50,7 +58,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
       priority: r === '' ? 1 : hubRoutes.has(r) ? 0.8 : 0.5,
     })),
-    ...awardEntries.map((e) => ({ ...e, lastModified: now })),
+    ...awardEntries,
+    ...blogEntries,
     ...dupeUrls.map((u) => ({ url: `${BASE}${u}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.8 })),
     ...vsUrls.map((u) => ({ url: `${BASE}${u}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.8 })),
     ...noteSlugs.map((s) => ({ url: `${BASE}/notes/${s}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.5 })),
