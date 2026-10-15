@@ -607,8 +607,18 @@ const priceProvNote = (prov: string, checkedAt?: string | null): string => {
 };
 export function PriceTable({ prices }: { prices: PriceEntry[] }) {
   if (!prices.length) return <p className="text-sm text-stone-500">No prices listed yet.</p>;
+  const inStock = prices.filter((p) => p.inStock && p.priceInr && p.priceInr > 0);
+  const avg = inStock.length >= 2
+    ? Math.round(inStock.reduce((s, p) => s + (p.priceInr as number), 0) / inStock.length)
+    : null;
   return (
     <div className="overflow-hidden rounded-2xl border border-stone-200/80 dark:border-ink-700/60">
+      {avg !== null && (
+        <p className="border-b border-stone-200/70 bg-cream-100/50 px-4 py-2.5 text-xs text-stone-500 dark:border-ink-700/50 dark:bg-white/[0.02] dark:text-stone-400">
+          Average across {inStock.length} sellers: <strong className="text-stone-800 dark:text-stone-100">{inr(avg)}</strong>
+          {' · '}prices vary by seller and size — the table below lists each one.
+        </p>
+      )}
       {prices.map((pr, i) => (
         <div key={pr.id} className={cn('flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-cream-100/60 dark:hover:bg-white/5', i !== 0 && 'border-t border-stone-200/70 dark:border-ink-700/50')}>
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-900/5 font-display text-sm font-bold text-stone-600 dark:bg-white/10 dark:text-stone-300">
