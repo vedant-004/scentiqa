@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scentarchy Wordmark Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Cormorant+Garamond:wght@500;600;700&family=Marcellus&family=Jost:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0c0a09; color: #e7e5e4; padding: 40px 20px; }
+  h1.page { text-align: center; font-size: 22px; margin-bottom: 8px; font-weight: 600; }
+  p.sub { text-align: center; color: #a8a29e; font-size: 14px; margin-bottom: 36px; }
+  .grid { display: grid; gap: 24px; max-width: 860px; margin: 0 auto; }
+  .opt { border: 1px solid #292524; border-radius: 20px; overflow: hidden; background: #1c1917; }
+  .opt-head { padding: 14px 20px; border-bottom: 1px solid #292524; display: flex; justify-content: space-between; align-items: center; }
+  .opt-head b { font-size: 15px; }
+  .opt-head span { font-size: 12px; color: #a8a29e; }
+  .stage { padding: 44px 24px; display: flex; align-items: center; justify-content: center; background: #0c0a09; }
+  .stage.light { background: #faf7f2; }
+  .note { padding: 12px 20px; font-size: 13px; color: #a8a29e; border-top: 1px solid #292524; line-height: 1.6; }
+
+  /* Option 1: Regal Serif */
+  .o1 { display: flex; align-items: center; gap: 14px; }
+  .o1 .icon { width: 46px; height: 46px; border-radius: 14px; background: linear-gradient(135deg, #d4a017, #8a5a00); display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 26px; box-shadow: 0 4px 18px rgba(212,160,23,.35); }
+  .o1 .word { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 34px; letter-spacing: .01em; background: linear-gradient(120deg, #f5d67b, #b8860b 60%, #f5d67b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .o1 .tag { font-size: 9px; letter-spacing: .42em; color: #a8a29e; margin-top: 2px; font-weight: 500; }
+
+  /* Option 2: Monogram Crest */
+  .o2 { display: flex; align-items: center; gap: 16px; }
+  .o2 .crest { width: 52px; height: 52px; border-radius: 50%; border: 2px solid #c9a227; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus', serif; font-size: 26px; color: #e8c547; background: radial-gradient(circle at 35% 30%, #2a2118, #12100c); box-shadow: 0 0 0 3px #12100c, 0 0 0 4px #c9a22733; }
+  .o2 .word { font-family: 'Marcellus', serif; font-size: 24px; letter-spacing: .28em; color: #f5f5f4; text-transform: uppercase; }
+  .o2 .tag { font-size: 9px; letter-spacing: .34em; color: #c9a227; margin-top: 4px; }
+
+  /* Option 3: Modern Luxe */
+  .o3 { display: flex; align-items: center; gap: 14px; }
+  .o3 .bar { width: 3px; height: 40px; background: linear-gradient(#e8c547, #8a5a00); border-radius: 2px; }
+  .o3 .word { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 30px; letter-spacing: .34em; color: #fafaf9; text-transform: uppercase; }
+  .o3 .word b { font-weight: 600; }
+
+  /* Option 4: Art Deco */
+  .o4 { text-align: center; }
+  .o4 .deco { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 8px; }
+  .o4 .deco::before, .o4 .deco::after { content: ''; height: 1px; width: 64px; background: linear-gradient(90deg, transparent, #c9a227); }
+  .o4 .deco::after { background: linear-gradient(90deg, #c9a227, transparent); }
+  .o4 .deco span { color: #c9a227; font-size: 12px; letter-spacing: .5em; }
+  .o4 .word { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 40px; letter-spacing: .12em; color: #f5eeda; text-transform: uppercase; }
+  .o4 .tag { font-size: 10px; letter-spacing: .4em; color: #a8a29e; margin-top: 6px; }
+</style>
+</head>
+<body>
+  <h1 class="page">Scentarchy — Wordmark Options</h1>
+  <p class="sub">Pick one. Reply with the option number and I'll apply it site-wide (header, footer, PWA, emails).</p>
+  <div class="grid">
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 1 — Regal Serif</b><span>Gold gradient Playfair, elevated current style</span></div>
+      <div class="stage"><div class="o1">
+        <div class="icon">S</div>
+        <div><div class="word">Scentarchy</div><div class="tag">FRAGRANCE ENCYCLOPEDIA</div></div>
+      </div></div>
+      <div class="note">Keeps the current layout (icon + name) but makes it richer: metallic gold gradient text, larger serif, encyclopedia tagline. Closest to what you have, just more premium.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 2 — Monogram Crest</b><span>Emblem badge, heritage house feel</span></div>
+      <div class="stage"><div class="o2">
+        <div class="crest">S</div>
+        <div><div class="word">Scentarchy</div><div class="tag">EST. 2026 · INDIA</div></div>
+      </div></div>
+      <div class="note">Circular gold crest with S monogram — feels like a heritage perfume house seal. The letterspaced caps give it that encyclopedia authority.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 3 — Modern Luxe</b><span>Minimal, wide-spaced, fashion-house clean</span></div>
+      <div class="stage"><div class="o3">
+        <div class="bar"></div>
+        <div class="word">Scent<b>archy</b></div>
+      </div></div>
+      <div class="note">Ultra-clean wide letterspacing, thin + bold mix. Very "luxury brand" — think minimalist perfume ads. No icon needed.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 4 — Art Deco</b><span>Classic perfumery, 1920s glamour</span></div>
+      <div class="stage"><div class="o4">
+        <div class="deco"><span>◆ ◆ ◆</span></div>
+        <div class="word">Scentarchy</div>
+        <div class="tag">THE INDIAN FRAGRANCE ARCHIVE</div>
+      </div></div>
+      <div class="note">Deco dividers + Cormorant serif caps. Most "encyclopedia/archive" feeling of the four — like a classic perfumery ledger.</div>
+    </div>
+
+  </div>
+  <p class="sub" style="margin-top:32px">Fonts shown use Google Fonts CDN for preview; the live site will use next/font (same families, no extra requests).</p>
+</body>
+</html>

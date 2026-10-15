@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/components/ui";
 import { AuthProvider } from "@/components/auth";
@@ -11,6 +11,7 @@ import { PwaRegister } from "./pwa-register";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: "swap" });
+const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["latin"], weight: ["500", "600", "700"], display: "swap" });
 
 // Applies saved/OS theme BEFORE first paint — no white flash in dark mode.
 const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('scentarchy-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`;
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   title: { default: "Scentarchy — India's Perfume Encyclopedia & Dupe Finder", template: "%s | Scentarchy" },
   description: "Discover perfumes in India: honest reviews, estimated dupe similarity scores, INR prices from Indian sellers, and heat-performance predictions for Indian weather.",
   openGraph: { type: "website", siteName: "Scentarchy", locale: "en_IN" },
-  themeColor: "#b45309",
+  themeColor: "#F01348",
   icons: { apple: "/icons/apple-touch-icon.png" },
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Scentarchy" },
 };
@@ -29,7 +30,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const stats = await getSiteStats();
   const banner = await getBanner().catch(() => ({ text: '', link: '', enabled: false }));
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>

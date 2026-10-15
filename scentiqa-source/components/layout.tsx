@@ -24,16 +24,32 @@ export function DemoPill() {
 
 export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="wordmark flex items-center gap-2.5" aria-label="Scentarchy home">
-      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-gold-400 via-gold-600 to-gold-700 text-white shadow-card">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2v4M14 2v4M10 2h4" strokeLinecap="round" /><rect x="9" y="6" width="6" height="3" rx="0.5" /><path d="M7 10h10l1 9.2a1.8 1.8 0 0 1-1.8 1.8H7.8A1.8 1.8 0 0 1 6 19.2L7 10z" strokeLinejoin="round" /><path d="M7.5 14h9" strokeLinecap="round" opacity="0.6" /></svg>
+    <Link href="/" className="wordmark flex items-center gap-2" aria-label="Scentarchy home">
+      <span aria-hidden="true" className="text-[12px] leading-none text-[#a87b14] dark:text-[#e3b93c]">◆</span>
+      <span className={`wordmark-deco font-bold leading-none tracking-[0.12em] ${compact ? "text-[19px]" : "text-[23px]"}`}>
+        SCENTARCHY
       </span>
-      {!compact && (
-        <span className="font-display text-[22px] font-bold tracking-tight text-stone-900 dark:text-white">
-          Scentarchy
-        </span>
-      )}
     </Link>
+  );
+}
+
+/* Full Petal Deco lockup: pink divider lines, gold diamonds, gradient
+   name and encyclopedia tagline. Used in the footer. */
+export function DecoWordmark() {
+  return (
+    <div className="flex flex-col items-center" role="img" aria-label="Scentarchy — The Indian Fragrance Archive">
+      <div className="mb-3 flex items-center gap-3" aria-hidden="true">
+        <span className="h-px w-14 bg-gradient-to-r from-transparent to-[#F01348]" />
+        <span className="text-[10px] tracking-[0.5em] text-[#a87b14] dark:text-[#e3b93c]">◆◆◆</span>
+        <span className="h-px w-14 bg-gradient-to-l from-transparent to-[#F01348]" />
+      </div>
+      <p className="wordmark-deco text-[32px] font-bold leading-none tracking-[0.14em] sm:text-[36px]">
+        SCENTARCHY
+      </p>
+      <p className="mt-2.5 text-[10px] font-medium tracking-[0.42em] text-stone-500 dark:text-stone-400">
+        THE INDIAN FRAGRANCE ARCHIVE
+      </p>
+    </div>
   );
 }
 
@@ -769,9 +785,9 @@ export function Footer({ stats }: { stats: { perfumes: number; houses: number; r
             </div>
           ))}
         </div>
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-stone-200/60 pt-6 sm:flex-row dark:border-ink-700/40">
-          <Wordmark compact />
-          <p className="text-center text-xs text-stone-400">
+        <div className="mt-8 border-t border-stone-200/60 pt-8 dark:border-ink-700/40">
+          <DecoWordmark />
+          <p className="mt-6 text-center text-xs text-stone-400">
             © 2026 Scentarchy. Independent reviews — never sponsored placements.
             {isDemoMode && <span className="mt-1 block">Demo build: scores, prices and community content shown are illustrative samples.</span>}
           </p>

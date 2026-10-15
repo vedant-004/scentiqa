@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Option 14 Varieties — Petal Deco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Cinzel:wght@500;600;700&family=Marcellus&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Jost:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0c0a09; color: #e7e5e4; padding: 40px 20px; }
+  h1.page { text-align: center; font-size: 22px; margin-bottom: 8px; font-weight: 600; }
+  h1.page .p { color: #f472b6; } h1.page .g { color: #e8c547; }
+  p.sub { text-align: center; color: #a8a29e; font-size: 14px; margin-bottom: 36px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .grid { display: grid; gap: 24px; max-width: 860px; margin: 0 auto; }
+  .opt { border: 1px solid #292524; border-radius: 20px; overflow: hidden; background: #1c1917; }
+  .opt-head { padding: 14px 20px; border-bottom: 1px solid #292524; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .opt-head b { font-size: 15px; } .opt-head b .pick { color: #f472b6; }
+  .opt-head span { font-size: 12px; color: #a8a29e; text-align: right; }
+  .stage { padding: 52px 24px; display: flex; align-items: center; justify-content: center; background: #0c0a09; }
+  .note { padding: 12px 20px; font-size: 13px; color: #a8a29e; border-top: 1px solid #292524; line-height: 1.6; }
+  .note b { color: #e7e5e4; }
+
+  .v { text-align: center; }
+  .deco { display: flex; align-items: center; gap: 14px; justify-content: center; margin-bottom: 12px; }
+  .tag { font-size: 10px; letter-spacing: .42em; color: #a8a29e; margin-top: 10px; text-indent: .42em; }
+
+  /* 14A classic */
+  .a .deco::before, .a .deco::after { content:''; height:1px; width:62px; background:linear-gradient(90deg,transparent,#f472b6); }
+  .a .deco::after { background:linear-gradient(90deg,#f472b6,transparent); }
+  .a .deco i { color:#e8c547; font-style:normal; font-size:11px; letter-spacing:.55em; text-indent:.55em; }
+  .a .word { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:42px; letter-spacing:.14em; text-indent:.14em; background:linear-gradient(100deg,#f9a8d4 20%,#e8c547 80%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  /* 14B gold dominant */
+  .b .deco::before, .b .deco::after { content:''; height:1px; width:62px; background:linear-gradient(90deg,transparent,#e8c547); }
+  .b .deco::after { background:linear-gradient(90deg,#e8c547,transparent); }
+  .b .deco i { color:#f472b6; font-style:normal; font-size:11px; letter-spacing:.55em; text-indent:.55em; }
+  .b .word { font-family:'Marcellus',serif; font-size:38px; letter-spacing:.16em; text-indent:.16em; background:linear-gradient(100deg,#e8c547 25%,#f9a8d4 85%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  /* 14C medallion */
+  .c .med { width:46px; height:46px; margin:0 auto 14px; border-radius:50%; border:1.5px solid #e8c547; display:flex; align-items:center; justify-content:center; font-family:'Marcellus',serif; font-size:22px; color:#f472b6; box-shadow:0 0 0 4px #0c0a09, 0 0 0 5px rgba(232,197,71,.35); }
+  .c .deco::before, .c .deco::after { content:''; height:3px; width:56px; border-top:1px solid #f472b6; border-bottom:1px solid #f472b6; opacity:.8; }
+  .c .deco i { color:#e8c547; font-style:normal; font-size:10px; }
+  .c .word { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:40px; letter-spacing:.14em; text-indent:.14em; background:linear-gradient(100deg,#f9a8d4 20%,#e8c547 80%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  /* 14D cinzel imperial */
+  .d .deco::before, .d .deco::after { content:''; height:7px; width:70px; border-top:1px solid #e8c547; border-bottom:1px solid #e8c547; }
+  .d .deco i { color:#f472b6; font-style:normal; font-size:12px; }
+  .d .word { font-family:'Cinzel',serif; font-weight:700; font-size:34px; letter-spacing:.18em; text-indent:.18em; color:#f3e3c0; }
+  .d .word .pk { color:#f472b6; }
+
+  /* 14E blush noir */
+  .e .deco::before, .e .deco::after { content:''; height:1px; width:62px; background:linear-gradient(90deg,transparent,#f9a8d4); }
+  .e .deco::after { background:linear-gradient(90deg,#f9a8d4,transparent); }
+  .e .deco i { color:#e8c547; font-style:normal; font-size:11px; letter-spacing:.55em; text-indent:.55em; }
+  .e .word { font-family:'Playfair Display',serif; font-weight:700; font-size:40px; letter-spacing:.1em; text-indent:.1em; color:#fbcfe8; }
+  .e .tag { font-family:'Playfair Display',serif; font-style:italic; letter-spacing:.18em; text-transform:none; font-size:13px; color:#d6b25e; }
+
+  /* 14F offering */
+  .f .deco::before, .f .deco::after { content:''; height:1px; width:52px; background:linear-gradient(90deg,transparent,#f472b6); }
+  .f .deco::after { background:linear-gradient(90deg,#f472b6,transparent); }
+  .f .deco i { color:#e8c547; font-style:normal; font-size:11px; letter-spacing:.4em; text-indent:.4em; }
+  .f .word { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:44px; letter-spacing:.12em; text-indent:.12em; background:linear-gradient(100deg,#f472b6 10%,#f9a8d4 40%,#e8c547 90%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .f .tag { color:#e8c547; font-weight:500; }
+
+  /* 14G compact header mock */
+  .gmock { width:100%; background:#141110; border:1px solid #292524; border-radius:12px; padding:12px 16px; display:flex; align-items:center; gap:10px; }
+  .gmock .dia { color:#e8c547; font-size:9px; letter-spacing:.3em; }
+  .gmock .w { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:24px; letter-spacing:.1em; background:linear-gradient(100deg,#f9a8d4 20%,#e8c547 80%); -webkit-background-clip:text; background-clip:text; color:transparent; white-space:nowrap; }
+  .gmock .sp { flex:1; }
+  .gmock .ic { width:30px; height:30px; border-radius:50%; background:#292524; }
+
+  /* 14H flourish */
+  .h .word { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:42px; letter-spacing:.14em; text-indent:.14em; background:linear-gradient(100deg,#f9a8d4 20%,#e8c547 80%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+</style>
+</head>
+<body>
+  <h1 class="page">Petal Deco <span class="p">—</span> 8 Varieties <span class="p">(14A–14H)</span></h1>
+  <p class="sub">All keep your pink + gold deco soul. The differences: font, color balance, ornament, tagline, and how it sits in the real header. Reply with the letter.</p>
+  <div class="grid">
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14A</span> — Classic Petal</b><span>The one you picked, refined</span></div>
+      <div class="stage"><div class="v a">
+        <div class="deco"><i>◆ ◆ ◆</i></div>
+        <div class="word">SCENTARCHY</div>
+        <div class="tag">THE INDIAN FRAGRANCE ARCHIVE</div>
+      </div></div>
+      <div class="note"><b>Baseline:</b> pink lines, gold diamonds, pink-to-gold name, archive tagline. The exact design you chose, spacing tightened.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14B</span> — Gold Dominant</b><span>Heavier gold, Marcellus type</span></div>
+      <div class="stage"><div class="v b">
+        <div class="deco"><i>◆ ◆ ◆</i></div>
+        <div class="word">SCENTARCHY</div>
+        <div class="tag">THE INDIAN FRAGRANCE ARCHIVE</div>
+      </div></div>
+      <div class="note"><b>Difference:</b> gradient flipped (gold leads, pink trails), gold divider lines, pink diamonds, Marcellus font — reads more "royal", less "blush".</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14C</span> — Medallion</b><span>S seal above the name</span></div>
+      <div class="stage"><div class="v c">
+        <div class="med">S</div>
+        <div class="deco"><i>◆</i></div>
+        <div class="word">SCENTARCHY</div>
+        <div class="tag">INDIA'S PERFUME ENCYCLOPEDIA</div>
+      </div></div>
+      <div class="note"><b>Difference:</b> adds a gold-ringed pink-S medallion (doubles as your app icon/favicon), double-rule dividers, "encyclopedia" tagline.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14D</span> — Imperial Cinzel</b><span>Roman-inscription luxury</span></div>
+      <div class="stage"><div class="v d">
+        <div class="deco"><i>◆</i></div>
+        <div class="word">SCENT<span class="pk">ARCHY</span></div>
+        <div class="tag">INDIA'S PERFUME ENCYCLOPEDIA</div>
+      </div></div>
+      <div class="note"><b>Difference:</b> Cinzel font (carved-Roman look), champagne-gold name with pink "ARCHY", double gold rules. Most expensive-looking of the set.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14E</span> — Blush Noir</b><span>Soft pink monochrome, gold whisper</span></div>
+      <div class="stage"><div class="v e">
+        <div class="deco"><i>◆ ◆ ◆</i></div>
+        <div class="word">Scentarchy</div>
+        <div class="tag">India's fragrance encyclopedia</div>
+      </div></div>
+      <div class="note"><b>Difference:</b> all-blush-pink name (title case, Playfair), gold only in the diamonds, italic gold tagline. Softest, most feminine.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14F</span> — The Offering</b><span>Tagline says what you do</span></div>
+      <div class="stage"><div class="v f">
+        <div class="deco"><i>✦ ✦ ✦</i></div>
+        <div class="word">SCENTARCHY</div>
+        <div class="tag">DUPES · PRICES · HEAT SCORES</div>
+      </div></div>
+      <div class="note"><b>Difference:</b> triple-tone gradient (deep pink → blush → gold), star ornaments, and the tagline states your actual offering — dupes, prices, heat scores. Marketing built into the logo.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14G</span> — Header Reality Check</b><span>How 14A looks in the actual header</span></div>
+      <div class="stage" style="padding:24px;"><div style="width:100%;max-width:520px;">
+        <div class="gmock"><span class="dia">◆</span><span class="w">SCENTARCHY</span><span class="sp"></span><span class="ic"></span><span class="ic"></span></div>
+        <p style="font-size:12px;color:#a8a29e;margin-top:12px;line-height:1.7;">This is the compact truth: in the phone header there's no room for taglines or big flourishes. <b style="color:#e7e5e4">14G = 14A adapted</b> — gradient Cormorant wordmark + one gold diamond, tagline dropped. Whatever you pick, the header gets this compact treatment.</p>
+      </div></div>
+      <div class="note"><b>Not a separate design</b> — shows the practical header version of your pick. Full deco version lives on the homepage hero, footer, about page, and PWA splash.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b><span class="pick">14H</span> — Grand Flourish</b><span>Swash lines, widest presence</span></div>
+      <div class="stage"><div class="v h">
+        <svg width="300" height="18" viewBox="0 0 300 18" fill="none" style="margin-bottom:12px;"><path d="M6 12 C 70 4, 110 4, 150 9 S 240 14, 294 6" stroke="#f472b6" stroke-width="1.4" stroke-linecap="round"/><circle cx="150" cy="9" r="3" fill="#e8c547"/><circle cx="294" cy="6" r="2" fill="#e8c547"/><circle cx="6" cy="12" r="2" fill="#e8c547"/></svg>
+        <div class="word">SCENTARCHY</div>
+        <svg width="300" height="18" viewBox="0 0 300 18" fill="none" style="margin-top:12px;transform:scaleY(-1);"><path d="M6 12 C 70 4, 110 4, 150 9 S 240 14, 294 6" stroke="#f472b6" stroke-width="1.4" stroke-linecap="round"/><circle cx="150" cy="9" r="3" fill="#e8c547"/><circle cx="294" cy="6" r="2" fill="#e8c547"/><circle cx="6" cy="12" r="2" fill="#e8c547"/></svg>
+        <div class="tag">THE INDIAN FRAGRANCE ARCHIVE</div>
+      </div></div>
+      <div class="note"><b>Difference:</b> replaces straight dividers with pink calligraphic swashes and gold dots — most ornamental, made for the homepage hero and splash screen.</div>
+    </div>
+
+  </div>
+  <p class="sub" style="margin-top:32px">My honest take: <b style="color:#e7e5e4">14F for the hero</b> (it tells visitors what you do), <b style="color:#e7e5e4">14G compact in the header</b>, <b style="color:#e7e5e4">14C's medallion as the app icon</b>. But your call — send the letter.</p>
+</body>
+</html>

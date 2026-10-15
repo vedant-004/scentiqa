@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scentarchy Wordmark Options 10-14 (Pink)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Great+Vibes&family=Marcellus&family=Oswald:wght@600;700&family=Jost:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0c0a09; color: #e7e5e4; padding: 40px 20px; }
+  h1.page { text-align: center; font-size: 22px; margin-bottom: 8px; font-weight: 600; }
+  h1.page .p { color: #f472b6; }
+  p.sub { text-align: center; color: #a8a29e; font-size: 14px; margin-bottom: 36px; }
+  .grid { display: grid; gap: 24px; max-width: 860px; margin: 0 auto; }
+  .opt { border: 1px solid #292524; border-radius: 20px; overflow: hidden; background: #1c1917; }
+  .opt-head { padding: 14px 20px; border-bottom: 1px solid #292524; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .opt-head b { font-size: 15px; }
+  .opt-head span { font-size: 12px; color: #a8a29e; text-align: right; }
+  .stage { padding: 48px 24px; display: flex; align-items: center; justify-content: center; background: #0c0a09; }
+  .note { padding: 12px 20px; font-size: 13px; color: #a8a29e; border-top: 1px solid #292524; line-height: 1.6; }
+
+  /* Option 10: Rose-gold gradient serif */
+  .o10 { display: flex; align-items: center; gap: 14px; }
+  .o10 .icon { width: 46px; height: 46px; border-radius: 14px; background: linear-gradient(135deg, #f472b6, #a21caf); display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 26px; box-shadow: 0 4px 18px rgba(244,114,182,.4); }
+  .o10 .word { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 34px; background: linear-gradient(115deg, #f9a8d4 5%, #e8c547 55%, #f472b6 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .o10 .tag { font-size: 9px; letter-spacing: .42em; color: #a8a29e; margin-top: 3px; font-weight: 500; }
+
+  /* Option 11: Blush script + gold caps */
+  .o11 { text-align: center; }
+  .o11 .script { font-family: 'Great Vibes', cursive; font-size: 54px; color: #f472b6; line-height: 1; text-shadow: 0 2px 24px rgba(244,114,182,.35); }
+  .o11 .caps { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: .55em; color: #e8c547; margin-top: 4px; text-indent: .55em; }
+
+  /* Option 12: Rose crest, gold ring */
+  .o12 { display: flex; align-items: center; gap: 16px; }
+  .o12 .crest { width: 54px; height: 54px; border-radius: 50%; border: 2px solid #e8c547; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus', serif; font-size: 26px; color: #f472b6; background: radial-gradient(circle at 35% 30%, #2a1620, #12100c); box-shadow: 0 0 0 3px #12100c, 0 0 0 4px rgba(232,197,71,.25), 0 0 22px rgba(244,114,182,.25); }
+  .o12 .word { font-family: 'Marcellus', serif; font-size: 24px; letter-spacing: .26em; text-transform: uppercase; background: linear-gradient(100deg, #f9a8d4, #e8c547); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .o12 .tag { font-size: 9px; letter-spacing: .34em; color: #a8a29e; margin-top: 5px; }
+
+  /* Option 13: Noir rose editorial */
+  .o13 { display: flex; align-items: center; gap: 16px; }
+  .o13 .box { background: linear-gradient(135deg, #f472b6, #db2777); color: #fff; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 30px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 6px; box-shadow: 0 4px 16px rgba(219,39,119,.4); }
+  .o13 .word { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 34px; letter-spacing: .06em; color: #fafaf9; text-transform: uppercase; line-height: 1; }
+  .o13 .word em { font-style: normal; color: #f472b6; }
+  .o13 .tag { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: .4em; color: #e8c547; margin-top: 4px; }
+
+  /* Option 14: Petal deco */
+  .o14 { text-align: center; }
+  .o14 .deco { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 10px; }
+  .o14 .deco::before, .o14 .deco::after { content: ''; height: 1px; width: 60px; background: linear-gradient(90deg, transparent, #f472b6); }
+  .o14 .deco::after { background: linear-gradient(90deg, #f472b6, transparent); }
+  .o14 .deco span { color: #e8c547; font-size: 11px; letter-spacing: .5em; }
+  .o14 .word { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; background: linear-gradient(100deg, #f9a8d4 20%, #e8c547 80%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .o14 .tag { font-size: 10px; letter-spacing: .4em; color: #a8a29e; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1 class="page">Scentarchy — Options 10–14 <span class="p">(Pink + Pink-Gold Mix)</span></h1>
+  <p class="sub">Reply with the option number (1–14 across all three pages), or mix ideas.</p>
+  <div class="grid">
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 10 — Rose-Gold Blend</b><span>Pink-to-gold gradient serif</span></div>
+      <div class="stage"><div class="o10">
+        <div class="icon">S</div>
+        <div><div class="word">Scentarchy</div><div class="tag">FRAGRANCE ENCYCLOPEDIA</div></div>
+      </div></div>
+      <div class="note">Your current layout, but the name flows from blush pink into gold — the full mix in one wordmark. Pink icon keeps it fresh.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 11 — Blush Signature</b><span>Pink script, gold caps</span></div>
+      <div class="stage"><div class="o11">
+        <div class="script">Scent</div>
+        <div class="caps">ARCHY</div>
+      </div></div>
+      <div class="note">Pink handwritten "Scent" glowing over gold letterspaced "ARCHY" — the prettiest mix of the two colors, very perfume-ad.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 12 — Rose Crest</b><span>Pink monogram, gold ring</span></div>
+      <div class="stage"><div class="o12">
+        <div class="crest">S</div>
+        <div><div class="word">Scentarchy</div><div class="tag">EST. 2026 · INDIA</div></div>
+      </div></div>
+      <div class="note">Pink S inside a gold-ringed crest, name blending pink into gold. Regal but softer than the all-gold crest.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 13 — Noir Rose Editorial</b><span>Bold masthead, pink + gold</span></div>
+      <div class="stage"><div class="o13">
+        <div class="box">S</div>
+        <div><div class="word">Scent<em>archy</em></div><div class="tag">PERFUME ENCYCLOPEDIA</div></div>
+      </div></div>
+      <div class="note">Bold condensed type: white "Scent", hot pink "archy", gold tagline. Loud, modern, unmissable on mobile.</div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><b>Option 14 — Petal Deco</b><span>Deco lines in pink, gold diamond</span></div>
+      <div class="stage"><div class="o14">
+        <div class="deco"><span>◆ ◆ ◆</span></div>
+        <div class="word">Scentarchy</div>
+        <div class="tag">THE INDIAN FRAGRANCE ARCHIVE</div>
+      </div></div>
+      <div class="note">Art deco frame with pink divider lines and a pink-to-gold name — vintage glamour in your two colors.</div>
+    </div>
+
+  </div>
+  <p class="sub" style="margin-top:32px">All 14 options are yours to pick from — just send the number.</p>
+</body>
+</html>

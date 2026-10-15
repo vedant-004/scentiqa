@@ -5,6 +5,7 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-deco: var(--font-cormorant), ui-serif, Georgia, serif;
 
   --color-cream-50: #faf8f4;
   --color-cream-100: #f4efe6;
@@ -87,6 +88,23 @@ body {
   background: rgb(244 63 94 / 0.35);
 }
 
+/* ============ SCENTARCHY Petal Deco wordmark ============
+   #F01348 fading to gold. In light mode the gold deepens so the
+   gradient stays readable on cream surfaces; dark mode keeps the
+   luminous gold from the approved design. */
+.wordmark-deco {
+  --wm-from: #F01348;
+  --wm-to: #a87b14;
+  font-family: var(--font-deco);
+  background: linear-gradient(100deg, var(--wm-from) 12%, var(--wm-to) 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dark .wordmark-deco {
+  --wm-to: #e3b93c;
+}
+
 /* Refined focus ring everywhere */
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid var(--color-gold-500);
@@ -141,9 +159,6 @@ input[type="range"].slider-gold::-moz-range-thumb {
   background: #fff; border: 2px solid var(--color-gold-600);
   box-shadow: 0 2px 8px rgb(28 25 23 / 0.25);
 }
-
-/* Wordmark letter-spacing */
-.wordmark { letter-spacing: -0.02em; }
 
 /* Stagger helper for grids */
 .stagger > * { animation: var(--animate-fade-up); }
