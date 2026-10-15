@@ -122,6 +122,8 @@ async function StatsDisplayForm() {
     <form action={async (fd: FormData) => {
       'use server';
       const c2 = getSupabaseServer(true)!;
+      const { revalidatePath } = await import('next/cache');
+      const { clearStatsCache } = await import('@/lib/data');
       for (const k of keys) {
         const v = fd.get(k);
         const num = v ? Number(v) : null;
@@ -131,6 +133,9 @@ async function StatsDisplayForm() {
           await c2.from('site_settings').delete().eq('key', k);
         }
       }
+      clearStatsCache();
+      revalidatePath('/');
+      revalidatePath('/admin/settings');
     }} className="grid gap-4 sm:grid-cols-2">
       {[
         ['stats_display_perfumes', 'Perfumes'],

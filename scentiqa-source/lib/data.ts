@@ -79,6 +79,11 @@ export interface SiteStats {
 const STATS_TTL_MS = 60_000;
 let statsCache: { at: number; value: SiteStats } | null = null;
 
+/** Clear the in-memory stats cache. Call after admin updates display overrides. */
+export function clearStatsCache() {
+  statsCache = null;
+}
+
 export async function getSiteStats(): Promise<SiteStats> {
   const now = Date.now();
   if (statsCache && now - statsCache.at < STATS_TTL_MS) {

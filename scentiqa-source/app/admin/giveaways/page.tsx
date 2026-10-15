@@ -166,6 +166,7 @@ function DisplayCountForm({ slug, current }: { slug: string; current: number | n
         'use server';
         const { getSupabaseServer } = await import('@/lib/supabase');
         const { requireAdmin } = await import('@/lib/admin');
+        const { revalidatePath } = await import('next/cache');
         await requireAdmin();
         const c = getSupabaseServer(true)!;
         const v = fd.get('display_count');
@@ -173,6 +174,8 @@ function DisplayCountForm({ slug, current }: { slug: string; current: number | n
         await c.from('giveaways').update({
           display_entry_count: num && num > 0 ? num : null,
         }).eq('slug', slug);
+        revalidatePath('/admin/giveaways');
+        revalidatePath('/giveaways');
       }}
       className="mt-2 flex items-center gap-2"
     >
@@ -197,9 +200,12 @@ function DisplayCountForm({ slug, current }: { slug: string; current: number | n
             'use server';
             const { getSupabaseServer } = await import('@/lib/supabase');
             const { requireAdmin } = await import('@/lib/admin');
+            const { revalidatePath } = await import('next/cache');
             await requireAdmin();
             const c = getSupabaseServer(true)!;
             await c.from('giveaways').update({ display_entry_count: null }).eq('slug', slug);
+            revalidatePath('/admin/giveaways');
+            revalidatePath('/giveaways');
           }}
           className="text-xs font-semibold text-stone-400 hover:text-stone-600"
         >
