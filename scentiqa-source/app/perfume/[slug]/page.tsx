@@ -97,10 +97,42 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
     ],
   };
 
+  // FAQ schema for AI Overviews and rich results
+  const faqs: Array<{ q: string; a: string }> = [];
+  if (p.lowestPriceInr) {
+    faqs.push({
+      q: `What is the price of ${p.name} in India?`,
+      a: `${p.name} by ${p.houseInfo.name} starts at ${inr(p.lowestPriceInr)} in India from verified sellers. Prices vary by bottle size and seller.`,
+    });
+  }
+  if (p.isDupe && p.inspiredBy) {
+    faqs.push({
+      q: `Is ${p.name} a good dupe for ${p.inspiredBy}?`,
+      a: `${p.name} is inspired by ${p.inspiredBy}. Scentarchy tracks community-reported similarity to help you decide if it matches your expectations.`,
+    });
+  }
+  const topAccords = (p.accords ?? []).slice(0, 3).map((a: { name: string }) => a.name).join(', ');
+  if (topAccords) {
+    faqs.push({
+      q: `What does ${p.name} smell like?`,
+      a: `${p.name} features ${topAccords} as its dominant accords. ${p.description ? p.description.slice(0, 200) : ''}`,
+    });
+  }
+  const faqJsonLd = faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  } : null;
+
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
       <JsonLd data={productJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
+      {faqJsonLd && <JsonLd data={faqJsonLd} />}
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Houses', href: '/houses' }, { label: p.houseInfo.name, href: `/house/${p.houseInfo.slug}` }, { label: p.name }]} />
 
       {/* ===== 1. HEADER — Fragrantica-style product hero ===== */}
