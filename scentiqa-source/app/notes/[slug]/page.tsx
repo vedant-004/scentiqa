@@ -19,6 +19,24 @@ export async function generateStaticParams() {
   return ranked.map(({ slug }) => ({ slug }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const metas = await getNoteMetas();
+  const meta = metas.find((m) => m.slug === slug);
+  const displayName = meta?.name ?? slug.replace(/-/g, ' ');
+  const { SITE_URL } = await import('@/lib/site-url');
+  return {
+    title: `Best ${displayName} Perfumes in India`,
+    description: `Discover the best ${displayName.toLowerCase()} perfumes available in India — top-rated fragrances featuring ${displayName.toLowerCase()} notes, with INR prices.`,
+    alternates: { canonical: `${SITE_URL}/notes/${slug}` },
+    openGraph: {
+      title: `Best ${displayName} Perfumes in India | Scentarchy`,
+      description: `Top-rated ${displayName.toLowerCase()} perfumes with INR prices from Indian sellers.`,
+      url: `${SITE_URL}/notes/${slug}`,
+    },
+  };
+}
+
 function PerfumeRow({ p }: { p: NotePerfumeRef }) {
   return (
     <Link href={`/perfume/${p.slug}`} className="flex items-center gap-3 rounded-xl border border-stone-200/70 bg-white/60 p-2.5 transition hover:shadow-sm dark:border-white/10 dark:bg-white/[0.03]">
