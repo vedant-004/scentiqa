@@ -57,6 +57,39 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 const GENDER_LABEL = { men: 'For Men', women: 'For Women', unisex: 'Unisex' } as const;
 
+// Reciprocal blog links (SEO): perfume pages link back to relevant blog posts.
+// Matching is data-driven: name/inspiredBy for Sauvage, real notes/accords for
+// oud and summer, gender+price for the office post, house type for the fakes guide.
+function relatedGuides(p: {
+  name: string; gender: string; lowestPriceInr: number | null;
+  inspiredBy: string | null; houseInfo: { type: string };
+  accords: Array<{ name: string }>; topNotes: string[]; heartNotes: string[]; baseNotes: string[];
+}): Array<{ href: string; label: string }> {
+  const guides: Array<{ href: string; label: string }> = [];
+  const nameLower = p.name.toLowerCase();
+  const inspiredLower = (p.inspiredBy ?? '').toLowerCase();
+  const allNotes = [...p.topNotes, ...p.heartNotes, ...p.baseNotes].map((n) => n.toLowerCase());
+  const accordNames = p.accords.map((a) => a.name.toLowerCase());
+  const scentWords = [...allNotes, ...accordNames];
+
+  if (nameLower.includes('sauvage') || inspiredLower.includes('sauvage')) {
+    guides.push({ href: '/blog/dior-sauvage-vs-indian-dupes', label: 'Dior Sauvage vs Indian dupes: honest comparison' });
+  }
+  if (scentWords.some((w) => w.includes('oud'))) {
+    guides.push({ href: '/blog/what-is-oud-beginners-guide-india', label: "What is oud? A beginner's guide" });
+  }
+  if (p.gender === 'men' && p.lowestPriceInr !== null && p.lowestPriceInr < 3000) {
+    guides.push({ href: '/blog/best-office-perfumes-men-india-under-3000', label: 'Best office perfumes for men under \u20B93,000' });
+  }
+  if (scentWords.some((w) => ['citrus', 'bergamot', 'aquatic', 'marine', 'fresh', 'green', 'lemon', 'lime', 'grapefruit', 'neroli'].some((k) => w.includes(k)))) {
+    guides.push({ href: '/blog/best-long-lasting-perfumes-indian-summer-2026', label: 'Best long-lasting perfumes for Indian summers' });
+  }
+  if (p.houseInfo.type === 'designer' || p.houseInfo.type === 'niche') {
+    guides.push({ href: '/blog/how-to-spot-fake-perfumes-india', label: 'How to spot fake perfumes in India' });
+  }
+  return guides.slice(0, 3);
+}
+
 export default async function PerfumePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const p = await getPerfume(slug);
@@ -288,6 +321,27 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               </div>
             </section>
           )}
+
+          {/* ===== 9. RELATED GUIDES (reciprocal blog links) ===== */}
+          {(() => {
+            const guides = relatedGuides(p);
+            return guides.length > 0 ? (
+              <section>
+                <SectionHeading kicker="From the journal" title="Related guides" />
+                <Card className="p-6">
+                  <ul className="space-y-2.5">
+                    {guides.map((g) => (
+                      <li key={g.href}>
+                        <Link href={g.href} className="text-sm font-semibold text-gold-700 hover:underline dark:text-gold-300">
+                          {g.label} &rarr;
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </section>
+            ) : null;
+          })()}
         </div>
 
         {/* ===== SIDEBAR ===== */}
