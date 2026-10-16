@@ -6,7 +6,7 @@ import { Breadcrumbs, ProductImage, StarRating } from '@/components';
 import { Card, SectionHeading } from '@/components/ui';
 
 export const dynamicParams = true;
-export const revalidate = 3600;
+export const revalidate = 604800; // weekly: catalog data rarely changes (was hourly, burned ISR quota)
 
 export async function generateStaticParams() {
   // Pre-render the 24 most-used notes; the rest render on first visit.

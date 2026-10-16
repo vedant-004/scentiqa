@@ -9,7 +9,7 @@ export const metadata = {
   title: 'Fragrance Notes Encyclopedia',
   description: 'Explore 400 fragrance notes — what each smells like, and every Scentarchy perfume that features it.',
 };
-export const revalidate = 3600;
+export const revalidate = 604800; // weekly: catalog data rarely changes (was hourly, burned ISR quota)
 
 // Note images (Wikimedia Commons) for the encyclopedia cards.
 let noteImages: Record<string, string | null> = {};

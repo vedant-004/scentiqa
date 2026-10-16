@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Browse every perfume house on Scentarchy — Indian clone houses, designers, niche, attar makers and more, with INR prices from verified sellers.',
 };
 
-export const revalidate = 86400; // refresh counts daily
+export const revalidate = 604800; // weekly: perfume data rarely changes (was daily, burned ISR quota) // refresh counts daily
 
 export default async function HousesPage() {
   const houses = await getAllHouses();

@@ -9,7 +9,7 @@ export const metadata = {
   title: 'Fragrance Accords Encyclopedia',
   description: 'Explore every fragrance accord — what each smells like, and the perfumes built around it.',
 };
-export const revalidate = 3600;
+export const revalidate = 604800; // weekly: catalog data rarely changes (was hourly, burned ISR quota)
 
 export default async function AccordsIndex() {
   const data = await getAccordIndex();

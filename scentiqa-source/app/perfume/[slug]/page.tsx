@@ -15,7 +15,7 @@ import {
 
 // Revalidate daily so new catalog data (notes, accords, prices) appears without
 // a redeploy, while keeping ISR write volume low.
-export const revalidate = 86400;
+export const revalidate = 604800; // weekly: perfume data rarely changes (was daily, burned ISR quota)
 import { AIPredictions } from './ai-predictions';
 
 // Note images (Wikimedia Commons). Absent file or missing entries fall back

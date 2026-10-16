@@ -4,7 +4,7 @@ import { getDupeGuideOriginals } from '@/lib/seo';
 import { SITE_URL } from '@/lib/site-url';
 import { Breadcrumbs, Card, SectionHeading } from '@/components';
 
-export const revalidate = 86400;
+export const revalidate = 604800; // weekly: perfume data rarely changes (was daily, burned ISR quota)
 
 export const metadata = {
   title: 'Designer Perfume Dupe Guides in India',

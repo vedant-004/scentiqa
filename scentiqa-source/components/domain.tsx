@@ -453,15 +453,16 @@ export function BottleVisual({ name, house, size = 'md' }: { name: string; house
 }
 
 /* ---------- ProductImage: real product photo with CSS bottle fallback ---------- */
-import Image from 'next/image';
 export function ProductImage({ name, house, image, size = 'md' }: { name: string; house: string; image?: string | null; size?: 'sm' | 'md' | 'lg' }) {
   const dims = { sm: 'h-36 w-28', md: 'h-64 w-48', lg: 'h-80 w-60' }[size];
-  const sizes = { sm: '(max-width: 640px) 112px, 112px', md: '(max-width: 640px) 192px, 192px', lg: '(max-width: 640px) 240px, 240px' }[size];
   if (image) {
     return (
       <div className={cn('relative flex items-center justify-center overflow-hidden rounded-2xl', dims)}>
-        <Image src={image} alt={`${name} by ${house}`} loading="lazy" fill sizes={sizes}
-          className="object-contain drop-shadow-xl" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {/* Plain img (not next/image): Vercel Hobby image-optimization quota (5K/mo) can't
+            handle 11K+ product images. Re-enable next/image after upgrading to Pro. */}
+        <img src={image} alt={`${name} by ${house}`} loading="lazy"
+          className="h-full w-full object-contain drop-shadow-xl" />
       </div>
     );
   }

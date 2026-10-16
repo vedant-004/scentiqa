@@ -8,7 +8,7 @@ import { SITE_URL } from '@/lib/site-url';
 import { inr } from '@/lib/utils';
 import { Breadcrumbs, Card, SectionHeading, Badge, DupeCard, StarRating, ProductImage } from '@/components';
 
-export const revalidate = 86400;
+export const revalidate = 604800; // weekly: perfume data rarely changes (was daily, burned ISR quota)
 
 export async function generateStaticParams() {
   try {
