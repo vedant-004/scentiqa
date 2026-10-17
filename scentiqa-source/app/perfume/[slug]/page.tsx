@@ -100,23 +100,35 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
   const labDupes = p.dupes.filter((d) => d.testedBy === 'lab');
   const communityDupes = p.dupes.filter((d) => d.testedBy !== 'lab');
 
-  const productJsonLd = {
+  // Product rich results require at least one of: offers, review, aggregateRating.
+  // Most catalog perfumes have no genuine price or rating data, so only emit
+  // Product markup when we actually have it. Emitting bare Product markup on
+  // those pages is what Search Console flags.
+  const hasOffers = p.prices.length > 0;
+  const hasRating = p.ratingCount > 0;
+  const { SITE_URL: _siteUrl } = await import('@/lib/site-url');
+  const absoluteImage = p.bottleImage
+    ? (p.bottleImage.startsWith('http') ? p.bottleImage : `${_siteUrl}${p.bottleImage}`)
+    : null;
+  const productJsonLd = (hasOffers || hasRating) ? {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: `${p.name} by ${p.houseInfo.name}`,
+    ...(absoluteImage ? { image: absoluteImage } : {}),
     description: p.description,
     brand: { '@type': 'Brand', name: p.houseInfo.name },
-    ...(p.ratingCount > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: p.ratingAvg, reviewCount: p.ratingCount } } : {}),
-    ...(p.prices.length ? {
+    ...(hasRating ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: p.ratingAvg, reviewCount: p.ratingCount } } : {}),
+    ...(hasOffers ? {
       offers: p.prices.slice(0, 5).map((pr) => ({
         '@type': 'Offer',
         price: pr.priceInr,
         priceCurrency: 'INR',
         availability: pr.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
         seller: { '@type': 'Organization', name: pr.seller },
+        ...(pr.url ? { url: pr.url } : {}),
       })),
     } : {}),
-  };
+  } : null;
 
   const { SITE_URL } = await import('@/lib/site-url');
   const breadcrumbJsonLd = {
@@ -163,7 +175,7 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
-      <JsonLd data={productJsonLd} />
+      {productJsonLd && <JsonLd data={productJsonLd} />}
       <JsonLd data={breadcrumbJsonLd} />
       {faqJsonLd && <JsonLd data={faqJsonLd} />}
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Houses', href: '/houses' }, { label: p.houseInfo.name, href: `/house/${p.houseInfo.slug}` }, { label: p.name }]} />
