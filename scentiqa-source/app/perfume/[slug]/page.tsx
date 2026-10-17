@@ -61,7 +61,7 @@ const GENDER_LABEL = { men: 'For Men', women: 'For Women', unisex: 'Unisex' } as
 // Matching is data-driven: name/inspiredBy for Sauvage, real notes/accords for
 // oud and summer, gender+price for the office post, house type for the fakes guide.
 function relatedGuides(p: {
-  name: string; gender: string; lowestPriceInr: number | null;
+  name: string; gender: string; lowestPriceInr: number | null; isDupe: boolean;
   inspiredBy: string | null; houseInfo: { type: string };
   accords: Array<{ name: string }>; topNotes: string[]; heartNotes: string[]; baseNotes: string[];
 }): Array<{ href: string; label: string }> {
