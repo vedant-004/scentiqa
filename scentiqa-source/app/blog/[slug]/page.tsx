@@ -118,8 +118,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
     author: { '@type': 'Organization', name: 'Scentarchy', url: SITE_URL },
-    publisher: { '@type': 'Organization', name: 'Scentarchy', url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Scentarchy',
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/icons/icon-512.png`, width: 512, height: 512 },
+    },
     mainEntityOfPage: `${SITE_URL}/blog/${slug}`,
   };
 

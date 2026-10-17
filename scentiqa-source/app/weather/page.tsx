@@ -15,14 +15,18 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQS = [
+  { q: 'Which perfumes work best in Indian summer heat?', a: 'Light, fresh fragrances with citrus, aquatic and green notes perform best in Indian summer. Heavy ouds and sweet gourmands can feel overwhelming in heat and humidity. Scentarchy\'s weather matcher scores perfumes by accord profile for each weather type.' },
+  { q: 'Do perfumes last longer in winter?', a: 'Yes, cooler temperatures slow evaporation so perfumes project longer in winter. This is the best season for rich ouds, ambers and warm spicy fragrances in India.' },
+  { q: 'What should I wear in monsoon humidity?', a: 'Choose fresh aquatic, green or light citrus scents for monsoon. Avoid heavy sweet fragrances that can turn cloying in high humidity.' },
+];
+
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'Which perfumes work best in Indian summer heat?', acceptedAnswer: { '@type': 'Answer', text: 'Light, fresh fragrances with citrus, aquatic and green notes perform best in Indian summer. Heavy ouds and sweet gourmands can feel overwhelming in heat and humidity. Scentarchy\'s weather matcher scores perfumes by accord profile for each weather type.' } },
-    { '@type': 'Question', name: 'Do perfumes last longer in winter?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, cooler temperatures slow evaporation so perfumes project longer in winter. This is the best season for rich ouds, ambers and warm spicy fragrances in India.' } },
-    { '@type': 'Question', name: 'What should I wear in monsoon humidity?', acceptedAnswer: { '@type': 'Answer', text: 'Choose fresh aquatic, green or light citrus scents for monsoon. Avoid heavy sweet fragrances that can turn cloying in high humidity.' } },
-  ],
+  mainEntity: FAQS.map((f) => (
+    { '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }
+  )),
 };
 
 export default function WeatherPage() {
@@ -43,6 +47,18 @@ export default function WeatherPage() {
           selectLabel="Pick a weather type"
         />
       </div>
+      {/* Visible FAQ: FAQPage JSON-LD requires the questions to be user-visible */}
+      <section className="mt-12">
+        <h2 className="font-display text-2xl font-bold">Frequently asked questions</h2>
+        <div className="mt-4 space-y-3">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group rounded-2xl border border-stone-200/70 bg-white p-5 dark:border-white/10 dark:bg-white/[0.03]">
+              <summary className="cursor-pointer text-sm font-bold marker:text-gold-600">{f.q}</summary>
+              <p className="mt-2 text-sm leading-relaxed text-stone-500 dark:text-stone-400">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

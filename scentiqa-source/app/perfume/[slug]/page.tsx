@@ -354,6 +354,23 @@ export default async function PerfumePage({ params }: { params: Promise<{ slug: 
               </section>
             ) : null;
           })()}
+
+          {/* Visible FAQ: FAQPage JSON-LD requires the questions to be user-visible */}
+          {faqs.length > 0 && (
+            <section>
+              <SectionHeading kicker="Quick answers" title="Frequently asked questions" />
+              <Card className="p-6">
+                <div className="space-y-3">
+                  {faqs.map((f) => (
+                    <details key={f.q} className="group rounded-xl border border-stone-200/70 p-4 dark:border-white/10">
+                      <summary className="cursor-pointer text-sm font-bold marker:text-gold-600">{f.q}</summary>
+                      <p className="mt-2 text-sm leading-relaxed text-stone-500 dark:text-stone-400">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </Card>
+            </section>
+          )}
         </div>
 
         {/* ===== SIDEBAR ===== */}
