@@ -1,6 +1,6 @@
 // Site chrome: header, autocomplete search, mobile bottom nav, footer.
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -253,9 +253,11 @@ export function SearchBar({ autoFocus = false, big = false, initialQuery, onPick
       localStorage.setItem(recentKey, JSON.stringify(r));
       setRecent(r);
     } catch { /* noop */ }
-    // onPick closes the wrapping overlay (e.g. header search on mobile).
-    // When onPick is provided (e.g. Compare page), the caller handles the
-    // selection — do NOT navigate to the perfume page.
+    // onPick lets the caller handle the selection itself (e.g. Compare and
+    // Find-a-Dupe pages add the perfume to their own UI) — in that case do
+    // NOT navigate to the perfume page. Callers that want normal navigation
+    // (e.g. the header search overlay) should omit onPick and rely on the
+    // pathname effect to close any wrapping UI after navigation.
     if (onPick) {
       onPick(slug, name);
       setQ('');
@@ -522,6 +524,153 @@ const NAV = [
   { href: '/awards/2026', label: 'Awards' },
   { href: '/about', label: 'About' },
 ];
+/* ---------- Desktop nav: items that fit render inline, the rest go into a "More" dropdown.
+   Link widths are content-driven (whitespace-nowrap) so they are measured once
+   and the visible count is computed arithmetically on every resize. ---------- */
+const NAV_LINK_CLASS = 'whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white';
+const MIN_VISIBLE_LINKS = 4;
+
+function DesktopNav() {
+  const navRef = useRef<HTMLElement>(null);
+  const moreBtnRef = useRef<HTMLButtonElement>(null);
+  const widthsRef = useRef<number[]>([]);
+  const moreWidthRef = useRef(84);
+  const [visibleCount, setVisibleCount] = useState(NAV.length);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const [morePos, setMorePos] = useState<{ top: number; right: number } | null>(null);
+  const pathname = usePathname();
+
+  const compute = useCallback(() => {
+    const nav = navRef.current;
+    const widths = widthsRef.current;
+    if (!nav || widths.length === 0) return;
+    const avail = nav.clientWidth;
+    const gap = 4;
+    let used = 0;
+    let count = 0;
+    for (let i = 0; i < widths.length; i++) {
+      const reserve = i < widths.length - 1 ? moreWidthRef.current + gap : 0;
+      if (used + widths[i] + gap + reserve > avail + 1) break;
+      used += widths[i] + gap;
+      count++;
+    }
+    const next = Math.min(widths.length, Math.max(MIN_VISIBLE_LINKS, count));
+    setVisibleCount((prev) => (prev === next ? prev : next));
+  }, []);
+
+  // Measure once mounted (all links render initially), re-measure after fonts load.
+  useEffect(() => {
+    const measure = () => {
+      const nav = navRef.current;
+      if (!nav) return;
+      const links = Array.from(nav.querySelectorAll<HTMLElement>('[data-nav-link]'));
+      if (links.length !== NAV.length) return;
+      widthsRef.current = links.map((l) => l.offsetWidth);
+      compute();
+    };
+    measure();
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(measure).catch(() => {});
+    }
+    const ro = new ResizeObserver(() => compute());
+    if (navRef.current) ro.observe(navRef.current);
+    return () => ro.disconnect();
+  }, [compute]);
+
+  // Once the More button appears, measure its real width and recompute.
+  const hasOverflow = visibleCount < NAV.length;
+  useEffect(() => {
+    if (hasOverflow && moreBtnRef.current) {
+      moreWidthRef.current = moreBtnRef.current.offsetWidth;
+      compute();
+    }
+  }, [hasOverflow, compute]);
+
+  // Close the More menu on navigation.
+  useEffect(() => { setMoreOpen(false); setMorePos(null); }, [pathname]);
+
+  // Close the More menu on outside tap, Escape, scroll, or resize.
+  useEffect(() => {
+    if (!moreOpen) return;
+    const close = () => { setMoreOpen(false); setMorePos(null); };
+    const onDown = (e: MouseEvent) => {
+      if ((e.target as HTMLElement).closest('[data-more-menu]')) return;
+      close();
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
+    window.addEventListener('mousedown', onDown);
+    window.addEventListener('keydown', onKey);
+    window.addEventListener('scroll', close, true);
+    window.addEventListener('resize', close);
+    return () => {
+      window.removeEventListener('mousedown', onDown);
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('scroll', close, true);
+      window.removeEventListener('resize', close);
+    };
+  }, [moreOpen]);
+
+  const openMore = () => {
+    const btn = moreBtnRef.current;
+    if (btn) {
+      const r = btn.getBoundingClientRect();
+      setMorePos({ top: r.bottom + 8, right: Math.max(8, window.innerWidth - r.right) });
+    }
+    setMoreOpen(true);
+  };
+
+  const visible = NAV.slice(0, visibleCount);
+  const overflow = NAV.slice(visibleCount);
+
+  return (
+    <div className="relative ml-2 hidden min-w-0 flex-1 lg:block">
+      <nav ref={navRef} className="flex items-center gap-1 overflow-hidden" aria-label="Primary">
+        {visible.map((n) => (
+          <Link key={n.href} href={n.href} data-nav-link className={NAV_LINK_CLASS}>
+            {n.label}
+          </Link>
+        ))}
+        {overflow.length > 0 && (
+          <div className="relative shrink-0" data-more-menu>
+            <button
+              ref={moreBtnRef}
+              type="button"
+              onClick={() => { if (moreOpen) { setMoreOpen(false); setMorePos(null); } else { openMore(); } }}
+              aria-expanded={moreOpen}
+              aria-haspopup="true"
+              className={cn(NAV_LINK_CLASS, 'flex items-center gap-1')}
+            >
+              More <span aria-hidden="true" className={cn('inline-block transition-transform', moreOpen && 'rotate-180')}>▾</span>
+            </button>
+          </div>
+        )}
+      </nav>
+      {moreOpen && morePos && typeof document !== 'undefined' && createPortal(
+        <div
+          data-more-menu
+          role="menu"
+          aria-label="More navigation"
+          className="fixed z-[90] w-60 overflow-hidden rounded-2xl border border-stone-200 bg-white py-2 shadow-2xl dark:border-ink-600 dark:bg-ink-900"
+          style={{ top: morePos.top, right: morePos.right }}
+        >
+          {overflow.map((n) => (
+            <Link
+              key={n.href}
+              href={n.href}
+              role="menuitem"
+              onClick={() => { setMoreOpen(false); setMorePos(null); }}
+              className="block whitespace-nowrap px-4 py-2.5 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white"
+            >
+              {n.label}
+            </Link>
+          ))}
+        </div>,
+        document.body
+      )}
+    </div>
+  );
+}
+
 /* ---------- Auth-aware nav button ---------- */
 function AuthButton() {
   const { user, loading } = useAuth();
@@ -576,7 +725,11 @@ function HeaderSearch() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
           <div className="absolute inset-x-0 top-0 mx-auto max-w-2xl px-4 pt-20 sm:pt-24">
             <div className="overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-ink-900">
-              <SearchBar autoFocus big onPick={() => setOpen(false)} />
+              {/* No onPick here: HeaderSearch relies on the pathname effect below
+                  to close the overlay after navigation. Passing onPick would
+                  suppress the perfume-page navigation entirely (pick() returns
+                  early when onPick is set). */}
+              <SearchBar autoFocus big />
             </div>
             <p className="mt-3 text-center text-xs text-white/70">Press <kbd className="rounded bg-white/20 px-1.5 py-0.5 font-mono">Esc</kbd> to close</p>
           </div>
@@ -657,17 +810,7 @@ export function Header({ stats }: { stats?: { perfumes: number; houses: number; 
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6">
         <Wordmark />
         <DemoPill />
-        <div className="relative ml-2 hidden min-w-0 flex-1 lg:block">
-          <nav className="flex items-center gap-1 overflow-x-auto" aria-label="Primary" style={{ scrollbarWidth: 'none' }}>
-            {NAV.map((n) => (
-              <Link key={n.href} href={n.href} className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white">
-                {n.label}
-              </Link>
-            ))}
-          </nav>
-          {/* Fade indicator showing the nav is scrollable */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-cream-50 to-transparent dark:from-ink-950" aria-hidden="true" />
-        </div>
+        <DesktopNav />
         <div className="ml-auto flex shrink-0 items-center gap-1">
           <HeaderSearch />
           <MobileMenu />
