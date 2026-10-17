@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAccordIndex, getAccordDescription, accordSlug, type AccordPerfumeRef } from '@/lib/accords-data';
+import { getAccordImage } from '@/lib/accord-images';
 import { Breadcrumbs, ProductImage, StarRating } from '@/components';
 import { Card, SectionHeading } from '@/components/ui';
 
@@ -56,16 +57,56 @@ export default async function AccordDetail({ params }: { params: Promise<{ slug:
   const related = [...co.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10)
     .map(([k, n]) => ({ name: data.displayNames.get(k) ?? k, slug: accordSlug(data.displayNames.get(k) ?? k), count: n }));
 
+  // Representative image for the accord (illustrative, not a product photo).
+  const accordImage = getAccordImage(displayName);
+
   return (
     <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Accords', href: '/accords' }, { label: displayName }]} />
       <SectionHeading kicker="Accord" title={displayName} />
 
-      {description && (
-        <Card className="mb-6 border-l-4 border-l-gold-500 p-6">
-          <p className="font-display text-lg italic leading-relaxed text-stone-700 dark:text-stone-200">“{description}”</p>
-        </Card>
-      )}
+      <div className="mb-6 grid gap-4 md:grid-cols-[280px_1fr]">
+        {accordImage ? (
+          <figure className="overflow-hidden rounded-2xl border border-stone-200/70 bg-white dark:border-white/10 dark:bg-white/[0.03]">
+            {/* Plain img: Vercel Hobby image-optimization quota can't handle per-page transforms */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={accordImage.url}
+              alt={`${displayName} accord illustration`}
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover"
+            />
+            <figcaption className="px-4 py-2.5 text-center">
+              <span className="text-xs font-bold text-stone-600 dark:text-stone-300">{accordImage.caption}</span>
+              {accordImage.creditUrl && (
+                <span className="text-[11px] text-stone-400">
+                  {' '}· <a href={accordImage.creditUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">Wikimedia Commons</a>
+                </span>
+              )}
+            </figcaption>
+          </figure>
+        ) : (
+          <div
+            role="img"
+            aria-label={`${displayName} accords illustration`}
+            className="flex aspect-[4/3] flex-col items-center justify-center rounded-2xl border border-stone-200/70 bg-gradient-to-br from-gold-500/30 via-[#F01348]/15 to-gold-700/30 p-6 text-center dark:border-white/10"
+          >
+            <p className="font-display text-3xl font-bold capitalize text-stone-800 dark:text-stone-100">{displayName}</p>
+            <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">accords</p>
+          </div>
+        )}
+        {description ? (
+          <Card className="border-l-4 border-l-gold-500 p-6">
+            <p className="font-display text-lg italic leading-relaxed text-stone-700 dark:text-stone-200">“{description}”</p>
+          </Card>
+        ) : (
+          <Card className="flex items-center p-6">
+            <p className="text-sm leading-relaxed text-stone-500 dark:text-stone-400">
+              {displayName} is a fragrance accord family. The perfumes below are built around it, ranked by prominence.
+            </p>
+          </Card>
+        )}
+      </div>
 
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {[
