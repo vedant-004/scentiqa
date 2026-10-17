@@ -75,14 +75,32 @@ function relatedGuides(p: {
   if (nameLower.includes('sauvage') || inspiredLower.includes('sauvage')) {
     guides.push({ href: '/blog/dior-sauvage-vs-indian-dupes', label: 'Dior Sauvage vs Indian dupes: honest comparison' });
   }
+  if (nameLower.includes('khamrah')) {
+    guides.push({ href: '/blog/lattafa-khamrah-vs-angel-share', label: 'Lattafa Khamrah vs Kilian Angels Share: is the hype real?' });
+  }
+  if (nameLower.includes('aventus') || inspiredLower.includes('aventus')) {
+    guides.push({ href: '/blog/best-aventus-dupes-india', label: '10 best Aventus clones and dupes in India' });
+  }
+  if (nameLower.includes('baccarat') || nameLower.includes('rouge 540')) {
+    guides.push({ href: '/blog/baccarat-rouge-540-dupes-india', label: '8 Baccarat Rouge 540 dupes that smell expensive' });
+  }
   if (scentWords.some((w) => w.includes('oud'))) {
     guides.push({ href: '/blog/what-is-oud-beginners-guide-india', label: "What is oud? A beginner's guide" });
   }
   if (p.gender === 'men' && p.lowestPriceInr !== null && p.lowestPriceInr < 3000) {
     guides.push({ href: '/blog/best-office-perfumes-men-india-under-3000', label: 'Best office perfumes for men under \u20B93,000' });
   }
+  if (p.gender === 'men' && p.lowestPriceInr !== null && p.lowestPriceInr < 1500) {
+    guides.push({ href: '/blog/best-perfumes-men-india-under-1500', label: 'Best perfumes for men under \u20B91,500' });
+  }
+  if (p.isDupe) {
+    guides.push({ href: '/blog/complete-guide-perfume-dupes-india', label: 'The complete guide to perfume dupes in India' });
+  }
   if (scentWords.some((w) => ['citrus', 'bergamot', 'aquatic', 'marine', 'fresh', 'green', 'lemon', 'lime', 'grapefruit', 'neroli'].some((k) => w.includes(k)))) {
     guides.push({ href: '/blog/best-long-lasting-perfumes-indian-summer-2026', label: 'Best long-lasting perfumes for Indian summers' });
+  }
+  if (scentWords.some((w) => ['cinnamon', 'vanilla', 'amber', 'tobacco', 'spice', 'spicy', 'cognac', 'rum', 'whiskey', 'whisky', 'dates', 'praline', 'nutmeg', 'clove', 'cardamom', 'leather'].some((k) => w.includes(k)))) {
+    guides.push({ href: '/blog/best-winter-perfumes-india-2026', label: '12 best winter perfumes for India' });
   }
   if (p.houseInfo.type === 'designer' || p.houseInfo.type === 'niche') {
     guides.push({ href: '/blog/how-to-spot-fake-perfumes-india', label: 'How to spot fake perfumes in India' });
